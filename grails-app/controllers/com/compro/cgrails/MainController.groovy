@@ -2,7 +2,7 @@ package com.compro.cgrails
 
 class MainController {
 	def index() {
-		return
+		render (view:"singlepage",model:[:])
 	}
 	
 }

@@ -8,7 +8,8 @@ class UrlMappings {
 			}
 		}                
 			
-		"/"(view:"/index")
+		"/"(controller:"main")
+		"/api/discipline/$id?"(resource:"discipline")
 		
 	}
 }

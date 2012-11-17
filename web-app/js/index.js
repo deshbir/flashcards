@@ -60,12 +60,13 @@ com.compro.application.hsc = (function() {
 	 * 
 	 */
 	function backbone_init_routers()	{
-		//ToolView.routerInitialize();
+		AppView.routerInitialize();
+		DisciplineView.routerInitialize();
 	}
 	
 	function backbone_start_navigation()	{
-		//Backbone.history.start();
-		//Backbone.history.navigate("#/tool", {trigger:true,replace:true});
+		Backbone.history.start();
+		Backbone.history.navigate("#/home", {trigger:true,replace:true});
 	}
 		
 	/********************************************************/
