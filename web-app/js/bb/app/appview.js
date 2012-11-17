@@ -15,6 +15,7 @@ AppView = new function() {
 		if (router == null) {
 			router = new Router();
 		}
+		$("#bb-container").html("");
 		
 		TemplateManager.get('app-static', 
 			function(template){
