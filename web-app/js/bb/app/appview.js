@@ -18,7 +18,7 @@ AppView = new function() {
 		
 		TemplateManager.get('app-static', 
 			function(template){
-				$("#main-body").append(template);
+				$("#bb-container").append(template);
 		});
 		
 	};

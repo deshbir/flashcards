@@ -1,0 +1,196 @@
+/* ---------- Bootstrap Custom ----------- */
+
+@HSCThemeColor: #e4e8e6; //Light Gray
+@HSCBodyBackgroundColor: #454545;  //Dark Gray (Steel)
+@HSCFooterBackgroundColor: #333333; //Very Dark Gray (near Black)
+
+
+body    {
+    background-color: @HSCBodyBackgroundColor;
+    font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.main-header	{
+	background-color: @HSCThemeColor;
+	padding: 10px 20px 20px 20px;
+	
+	/* Remove later*/
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+   /* -- */
+}
+
+.hero  {
+    background-color: @HSCThemeColor;
+    padding: 10px 20px 20px 20px;
+    color: #000000;
+
+    .row	{   /* ------- Custom Styling for Splash Section ------ */
+    	text-align: center;    	
+    	font-weight: 600;
+    	letter-spacing: -1px;
+
+    	h1 {
+     		font-size: 40px;
+        	line-height: 44px;
+
+        	padding-top: 30px;
+        	padding-bottom: 30px;
+    	}
+
+    	h2 {
+     		font-size: 30px;
+        	line-height: 32px;
+
+        	padding-top: 10px;
+    	}
+
+		p 	{
+			.btn {
+              	font-size: 28px;
+              	line-height: 28px;
+              	font-weight: 400;
+              	width: 30%;
+    		}
+    	}
+
+    }
+    /* Remove later*/
+    border-left: 2px solid;
+    border-right: 2px solid;
+   /* -- */
+}
+
+
+/* ------------------------------------ Navbar ------------------ */
+@navbarHeight:                    20px;
+@navbarBackground:                @HSCThemeColor;
+@navbarBackgroundHighlight:       @grayDark;
+@navbarLinkBackgroundHover:       transparent;
+
+@navbarText:                      @grayDark;
+@navbarLinkColor:                 @grayDark;
+@navbarLinkColorHover:            #000000;
+
+.navbar {
+    padding-top: 0px;
+    margin-bottom: 0px;
+
+    .brand {
+        color: @textColor;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 2px;
+
+        img {
+            padding-right: 5px;
+        }
+
+        span    {
+            line-height: 1;
+        }
+    }
+    .divider-vertical {
+        border-style: 2px;
+        height: 20px;
+        margin-top: 10px;
+    }
+
+    .navbar-inner {
+        background-color: @HSCThemeColor;
+        background-image: none;
+        background-repeat: none;
+        border-radius: 0px 0px 0px 0px;
+        box-shadow: none;
+        min-height: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        -webkit-box-shadow: none;
+        .reset-filter();
+
+        .nav-collapse    {
+            /* Customize font of the Menu items (bigger)*/
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            li  {
+                font-size: 16px;
+                li  {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .nav .active > a, .navbar .nav .active > a:hover {
+        background-color: transparent;
+        border: 2px solid rgba(0, 0, 0, 0.4);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+
+    .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
+        border-top-color: @grayDark;
+    }
+
+    .btn-navbar {
+        background-color: #F5F5F5;
+        background-image: none;
+        border-color: none;
+    }
+}
+
+
+// Active nav items
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+	background-color: @HSCThemeColor;
+}
+
+
+/*----------------------------------- Main Page Body ----------------------------------*/
+.main-body   {
+   
+   background-color: @white;
+   padding: 0px 20px 20px 20px;
+
+	/* Remove later*/
+    border-left: 2px solid;
+    border-right: 2px solid;
+	/* -- */
+
+	/* Default font-weight for Lucida Causual is very bold!*/
+    h1, h2, h3, h4, h5, h6  {
+        font-weight:500;
+    }
+
+    /* Make the default button bigger*/
+    .btn    {
+        font-size: 14px;
+        line-height: 24px;
+        border-color: @grayDark;
+        border-width: 2px;
+    }
+}
+
+.main-body-splash	{
+	padding-top: 20px;
+}
+
+/*--------------------------------------- Main Page Footer --------------------------- */
+.main-footer {
+        background-color: @white;
+        padding: 10px 20px 0px 20px;
+        
+        text-align: center;
+        /* Remove later*/
+        border-left: 2px solid #000000;
+        border-right: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        /* -- */
+}

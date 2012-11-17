@@ -15,7 +15,8 @@ DisciplineView = new function() {
 		if (router == null) {
 			router = new Router();
 		}
-		$("#main-body").html("");
+		
+		$("#bb-container").html("");
 		
 		DisciplineCollection.get().fetch({
 			success: function(){
@@ -23,7 +24,7 @@ DisciplineView = new function() {
 					function(template){
 						DisciplineCollection.get().each(function(model){
 							var compiledTemplate = Mustache.render(template, model.toJSON());
-							$("#main-body").append(compiledTemplate);
+							$("#bb-container").append(compiledTemplate);
 						});
 				});
 			}		

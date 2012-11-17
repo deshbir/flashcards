@@ -25,9 +25,11 @@
 	</head>
 	<body dir="${direction}">
 		<g:include view="layout-helpers/header.gsp"/>
-		<div id="main_container" class="container">
-			<g:layoutBody/>
-		</div>
+		
+
+		<g:layoutBody/>
+	
+	
 		<g:include view="layout-helpers/footer.gsp"/>
 		<r:layoutResources/>	
 	</body>
