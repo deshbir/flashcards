@@ -13,9 +13,9 @@
 	<ul class="nav pull-right">
 	{{#user}}
 		<!-- Logged In Menu Options	 START -->
-		<li class="active"><a href="#">Home</a></li>
-		<li class=""><a href="#">Disciplines</a></li>
-		<li class=""><a href="#">Products</a></li>
+		<li class="{{home}}"><a href="#">Home</a></li>
+		<li class="{{disciplines}}"><a href="#">Disciplines</a></li>
+		<li class="{{products}}"><a href="#">Products</a></li>
 	
 		<li class="divider-vertical"></li>
 	

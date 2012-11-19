@@ -6,16 +6,16 @@ DisciplineView = new function() {
 	
 	var Router = Backbone.Router.extend({
 		routes: {
-	      'discipline':'discipline-list',
-	      'discipline/$1':'discipline-home'
+	      'discipline':'disciplinelist',
+	      'discipline/:displineId':'disciplinehome'
 	    },	    
 	    
-	    discipline-list : function() {
+	    disciplinelist : function() {
 	    	DisciplineView.initialize()
 	    },
 
-	    discipline-home : function(displineId) {
-	    	DisciplineView.initialize(displineId)
+	    disciplinehome : function(displineId) {
+	    	DisciplineView.disciplineinitialize(displineId)
 	    }
 	    
 	    
@@ -30,7 +30,7 @@ DisciplineView = new function() {
 		
 		TemplateManager.get('header', 
 				function(template){
-			 		var templateHTML = Mustache.render(template, {"user": true});
+			 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
 					$(clsMainHeader).html(templateHTML);
 		});
 		
@@ -41,21 +41,37 @@ DisciplineView = new function() {
 					
 					var compiledTemplate = Mustache.render(template, DisciplineCollection.get().toJSON());
 					$(idTopContainer).append(compiledTemplate);
-					
-					
-					/*
-					
-						DisciplineCollection.get().each(function(model){
-							var compiledTemplate = Mustache.render(template, model.toJSON());
-							$(idTopContainer).append(compiledTemplate);
-						});
-					*/	
 				});
 			}		
 		});		
 		
 	};
 
+	this.disciplineinitialize = function(displineId){
+		if (router == null) {
+			router = new Router();
+		}
+		
+		$(idTopContainer).html("");
+		
+		TemplateManager.get('header', 
+				function(template){
+			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "active", "products": ""});
+					$(clsMainHeader).html(templateHTML);
+		});
+			
+		DisciplineCollection.get(displineId).fetch({
+			success: function(model){
+				TemplateManager.get('product-list', 
+					function(template){
+						var compiledTemplate = Mustache.render(template, model.toJSON());
+						$(idTopContainer).append(compiledTemplate);
+					});
+			}
+		});
+		
+	};
+	
 	this.routerInitialize = function(){
 		router = new Router();   
 	};
