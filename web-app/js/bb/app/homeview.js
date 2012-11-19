@@ -1,13 +1,14 @@
-AppView = new function() {
+HomeView = new function() {
 
 	var router = null;
+	var idTopContainer = com.compro.application.hsc.idTopContainer;
 	
 	var Router = Backbone.Router.extend({
 		routes: {
 	      'home':'home'
 	    },	    
 	    home : function() {
-	    	AppView.initialize();
+	    	HomeView.initialize();
 	    }
 	});
 	
@@ -15,11 +16,12 @@ AppView = new function() {
 		if (router == null) {
 			router = new Router();
 		}
-		$("#bb-container").html("");
 		
-		TemplateManager.get('app-static', 
+		$(idTopContainer).html("");
+		
+		TemplateManager.get('splash', 
 			function(template){
-				$("#bb-container").append(template);
+				$(idTopContainer).append(template);
 		});
 		
 	};

@@ -12,7 +12,7 @@ class BootStrap {
 			
 			allDisciplines.disciplines.each
 			{
-				new Discipline(name: it.name, decsription: it.decsription, thumbnail: it.thumbnail, image: it.image).save(failOnError: true)
+				new Discipline(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image).save(failOnError: true)
 			}
 		}
     }

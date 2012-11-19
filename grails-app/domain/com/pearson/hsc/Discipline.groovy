@@ -3,7 +3,7 @@ package com.pearson.hsc
 class Discipline {
 
 	String name
-	String decsription
+	String description
 	String thumbnail
 	String image
 	

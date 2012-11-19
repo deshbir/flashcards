@@ -20,7 +20,7 @@ function namespace(namespaceString) {
 
 /*
 -----------------
-Anonymouse Module
+Anonymous Application Module
 -----------------
 
 Name: HSC app
@@ -34,16 +34,17 @@ com.compro.application.hsc = (function() {
 	/********************************************************/
 
 	//JS Library Dependencies
-	/////var UTILS = com.compro.Util;
+	
+
 
 	//DOM Dependencies
+	var idTopContainer = "#bb-container";
+	
 	/*
-
 	TODO
 	1. Can we assume that these DOM element are initializaed by this time
 	2. Exception handling - do not allow code to proceed, if any of these depencies
 	   are not present.
-
 	*/
 		
 	/********************************************************/
@@ -60,7 +61,7 @@ com.compro.application.hsc = (function() {
 	 * 
 	 */
 	function backbone_init_routers()	{
-		AppView.routerInitialize();
+		HomeView.routerInitialize();
 		DisciplineView.routerInitialize();
 	}
 	
@@ -144,7 +145,8 @@ com.compro.application.hsc = (function() {
 	/********************************************************/
 
 	return	{
-		"config":config
+		"config":config,
+		"idTopContainer" : idTopContainer
 	}
 
 })();

@@ -17,7 +17,7 @@ modules = {
 		resource url:'js/index.js'
 		
 		//Backbone app View
-		resource url:'js/bb/app/appview.js'
+		resource url:'js/bb/app/homeview.js'
 		
 		//Backbone discipline View & Models & Collections
 		resource url:'js/bb/discipline/disciplinemodel.js'

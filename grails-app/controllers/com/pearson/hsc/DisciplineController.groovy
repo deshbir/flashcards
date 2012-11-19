@@ -23,7 +23,7 @@ class DisciplineController {
 				return
 			}
 		}
-		else {	
+		else {			
 			def allDiscipline = Discipline.list()
 			render allDiscipline as JSON
 		}

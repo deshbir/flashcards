@@ -1,6 +1,7 @@
 DisciplineView = new function() {
 
 	var router = null;
+	var idTopContainer = com.compro.application.hsc.idTopContainer;
 	
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -16,16 +17,24 @@ DisciplineView = new function() {
 			router = new Router();
 		}
 		
-		$("#bb-container").html("");
+		$(idTopContainer).html("");
 		
 		DisciplineCollection.get().fetch({
 			success: function(){
-				TemplateManager.get('discipline-panel', 
+				TemplateManager.get('discipline-list', 
 					function(template){
+					
+					var compiledTemplate = Mustache.render(template, DisciplineCollection.get().toJSON());
+					$(idTopContainer).append(compiledTemplate);
+					
+					
+					/*
+					
 						DisciplineCollection.get().each(function(model){
 							var compiledTemplate = Mustache.render(template, model.toJSON());
-							$("#bb-container").append(compiledTemplate);
+							$(idTopContainer).append(compiledTemplate);
 						});
+					*/	
 				});
 			}		
 		});		
