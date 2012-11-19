@@ -7,7 +7,7 @@
 		<title>Pearson HSC Flashcards</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Pearson HSC Demo, 2012">
+		<meta name="description" content="Pearson HSC Flashcards, 2012">
 		<meta name="author" content="Compro Technologies Pvt. Ltd.">
 
 	    <cgrails:stylesheet src="index"/>

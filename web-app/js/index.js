@@ -64,6 +64,7 @@ com.compro.application.hsc = (function() {
 	function backbone_init_routers()	{
 		HomeView.routerInitialize();
 		DisciplineView.routerInitialize();
+		ProductView.routerInitialize();
 	}
 	
 	function backbone_start_navigation()	{

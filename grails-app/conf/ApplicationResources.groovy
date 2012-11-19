@@ -23,5 +23,9 @@ modules = {
 		resource url:'js/bb/discipline/disciplinemodel.js'
 		resource url:'js/bb/discipline/disciplinecollection.js'
 		resource url:'js/bb/discipline/disciplineview.js'
+		
+		resource url:'js/bb/product/productmodel.js'
+		resource url:'js/bb/product/productcollection.js'
+		resource url:'js/bb/product/productview.js'
     }
 }

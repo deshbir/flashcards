@@ -11,11 +11,18 @@
 	<div class="row">
 		{{#products}}
 	 	<div class="span4 media">
-			<a href="#/discipline/product/{{id}}"> 
+			<a href="#/discipline/1/product/{{id}}"> 
 	          <img alt="{{name}}" class="pull-left" src="{{image}}">
 	          <div class="media-body">
 				<h2>{{name}}</h2>
 				<p>{{description}}</p>
+				<div class="rating">
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+				</div>
 	          </div>
 	        </a>  	
 		</div>

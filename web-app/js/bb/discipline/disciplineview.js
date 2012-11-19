@@ -18,7 +18,6 @@ DisciplineView = new function() {
 	    	DisciplineView.disciplineinitialize(displineId)
 	    }
 	    
-	    
 	});
 	
 	this.initialize = function(){
@@ -47,7 +46,7 @@ DisciplineView = new function() {
 		
 	};
 
-	this.disciplineinitialize = function(displineId){
+	this.disciplineinitialize = function(displineId, productId){
 		if (router == null) {
 			router = new Router();
 		}
@@ -60,7 +59,7 @@ DisciplineView = new function() {
 					$(clsMainHeader).html(templateHTML);
 		});
 			
-		DisciplineCollection.get(displineId).fetch({
+		DisciplineCollection.get(displineId, productId).fetch({
 			success: function(model){
 				TemplateManager.get('product-list', 
 					function(template){
@@ -71,6 +70,7 @@ DisciplineView = new function() {
 		});
 		
 	};
+	
 	
 	this.routerInitialize = function(){
 		router = new Router();   

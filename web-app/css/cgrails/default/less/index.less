@@ -3,4 +3,29 @@
 
 @import "bootstrap/responsive.less";
 @import "responsive-custom.less";
-                   
+
+
+/* --------------- Ratings Component -------------------------- */
+
+.rating {
+  unicode-bidi: bidi-override;
+  
+  span	{
+		display: inline-block;
+		position: relative;
+		width: 1.1em;
+	  
+		:hover,
+		:hover ~ span {
+  			color: transparent;
+		}
+		
+		:hover:before,
+		:hover ~ span:before {
+			content: "\2605";
+			position: absolute;
+			left: 0; 
+			color: gold;
+		}
+  }
+}
