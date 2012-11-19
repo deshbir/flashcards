@@ -29,7 +29,7 @@ DisciplineView = new function() {
 		
 		TemplateManager.get('header', 
 				function(template){
-			 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
+			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "active", "products": ""});
 					$(clsMainHeader).html(templateHTML);
 		});
 		
@@ -55,7 +55,7 @@ DisciplineView = new function() {
 		
 		TemplateManager.get('header', 
 				function(template){
-			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "active", "products": ""});
+			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "", "products": "active"});
 					$(clsMainHeader).html(templateHTML);
 		});
 			

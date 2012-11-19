@@ -6,6 +6,8 @@ class Topic {
 	String audioTrack
 	String audioSequence
 	
+	static belongsTo = [product: Product]
+	
 	static constraints = {
 	}
 	

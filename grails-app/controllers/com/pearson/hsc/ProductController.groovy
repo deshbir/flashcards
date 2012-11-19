@@ -13,7 +13,7 @@ class ProductController {
 	def show = {
 		if(params.id && params.pid) {
 			Discipline discipline = Discipline.get(params.id)
-			Product product = discipline.getProduct(params.pid); 
+			Product product = Product.findByDisciplineAndId(discipline , params.pid) 
 			
 			if(product) {
 				render product as JSON

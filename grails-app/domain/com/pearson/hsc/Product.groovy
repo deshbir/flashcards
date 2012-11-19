@@ -4,6 +4,8 @@ class Product {
 
 	static hasMany = [topics: Topic]
 	
+	static belongsTo = [discipline: Discipline]
+	
 	static mapping = {
 		topics lazy: false
 	}
