@@ -2,6 +2,12 @@ package com.pearson.hsc
 
 class Discipline {
 
+	static hasMany = [products: Product]
+	
+	static mapping = {
+		products lazy: false
+	}
+
 	String name
 	String description
 	String thumbnail

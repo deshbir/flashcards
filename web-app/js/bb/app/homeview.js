@@ -2,6 +2,7 @@ HomeView = new function() {
 
 	var router = null;
 	var idTopContainer = com.compro.application.hsc.idTopContainer;
+	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
 	
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -20,7 +21,7 @@ HomeView = new function() {
 		TemplateManager.get('header', 
 				function(template){
 			 		var templateHTML = Mustache.render(template, {"user": false});
-					$(".nav-collapse").html(templateHTML);
+					$(clsMainHeader).html(templateHTML);
 		});
 		
 		TemplateManager.get('splash', 

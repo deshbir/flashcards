@@ -2,14 +2,23 @@ DisciplineView = new function() {
 
 	var router = null;
 	var idTopContainer = com.compro.application.hsc.idTopContainer;
+	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
 	
 	var Router = Backbone.Router.extend({
 		routes: {
-	      'discipline':'discipline'
+	      'discipline':'discipline-list',
+	      'discipline/$1':'discipline-home'
 	    },	    
-	    discipline : function() {
+	    
+	    discipline-list : function() {
 	    	DisciplineView.initialize()
+	    },
+
+	    discipline-home : function(displineId) {
+	    	DisciplineView.initialize(displineId)
 	    }
+	    
+	    
 	});
 	
 	this.initialize = function(){
@@ -22,7 +31,7 @@ DisciplineView = new function() {
 		TemplateManager.get('header', 
 				function(template){
 			 		var templateHTML = Mustache.render(template, {"user": true});
-					$(".nav-collapse").html(templateHTML);
+					$(clsMainHeader).html(templateHTML);
 		});
 		
 		DisciplineCollection.get().fetch({

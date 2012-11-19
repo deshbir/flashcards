@@ -39,6 +39,7 @@ com.compro.application.hsc = (function() {
 
 	//DOM Dependencies
 	var idTopContainer = "#bb-container";
+	var clsMainHeader = ".main-header";
 	
 	/*
 	TODO
@@ -146,7 +147,8 @@ com.compro.application.hsc = (function() {
 
 	return	{
 		"config":config,
-		"idTopContainer" : idTopContainer
+		"idTopContainer" : idTopContainer,
+		"clsMainHeader" : clsMainHeader
 	}
 
 })();
