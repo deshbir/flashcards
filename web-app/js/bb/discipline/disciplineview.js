@@ -19,6 +19,12 @@ DisciplineView = new function() {
 		
 		$(idTopContainer).html("");
 		
+		TemplateManager.get('header', 
+				function(template){
+			 		var templateHTML = Mustache.render(template, {"user": true});
+					$(".nav-collapse").html(templateHTML);
+		});
+		
 		DisciplineCollection.get().fetch({
 			success: function(){
 				TemplateManager.get('discipline-list', 

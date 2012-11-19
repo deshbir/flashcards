@@ -17,11 +17,15 @@ HomeView = new function() {
 			router = new Router();
 		}
 		
-		$(idTopContainer).html("");
+		TemplateManager.get('header', 
+				function(template){
+			 		var templateHTML = Mustache.render(template, {"user": false});
+					$(".nav-collapse").html(templateHTML);
+		});
 		
 		TemplateManager.get('splash', 
 			function(template){
-				$(idTopContainer).append(template);
+				$(idTopContainer).html(template);
 		});
 		
 	};
