@@ -36,6 +36,12 @@ ProductView = new function() {
 					function(template){
 						var compiledTemplate = Mustache.render(template, model.toJSON());
 						$(idTopContainer).append(compiledTemplate);
+						
+						soundManager.onready(function() {
+							  var pagePlayer = new PagePlayer();
+							  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
+						});
+						
 					});
 			}
 		});

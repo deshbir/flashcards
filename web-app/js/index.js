@@ -71,6 +71,21 @@ com.compro.application.hsc = (function() {
 		Backbone.history.start();
 		Backbone.history.navigate("#/home", {trigger:true,replace:true});
 	}
+	
+	function soundmanager2_init()	{
+		
+		soundManager.setup({
+			  // disable or enable debug output
+			  debugMode: true,
+			  // use HTML5 audio for MP3/MP4, if available
+			  preferFlash: false,
+			  useFlashBlock: false,
+			  // path to directory containing SM2 SWF
+			  url: 'images/sm/',
+			  // optional: enable MPEG-4/AAC support (requires flash 9)
+			  flashVersion: 9
+			});
+	}
 		
 	/********************************************************/
 	/*                 ONE TIME INIT FUNCTION              */
@@ -80,6 +95,7 @@ com.compro.application.hsc = (function() {
 			$(document).ready(function() {
 				backbone_init_routers();
 				backbone_start_navigation();
+				soundmanager2_init();
 			});
 
 			/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */

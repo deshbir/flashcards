@@ -6,16 +6,16 @@
                 <!-- This is shown for mobile devices - collapsed icon -->
                 <i class="icon-align-justify"></i>
             </a>
-            <a class="brand" title="Pearson Health Sciences & Careers" href="">
-                <img src="http://placehold.it/16x16" alt=logo"><span>Pearson</span>
+            <a class="brand" title="Pearson Health Sciences & Careers" href="#/home">
+                <img src="http://placehold.it/64x32" alt=logo"><span>Pearson</span>
             </a>
             <div class="nav-collapse">
 	<ul class="nav pull-right">
 	{{#user}}
 		<!-- Logged In Menu Options	 START -->
-		<li class="{{home}}"><a href="#">Home</a></li>
-		<li class="{{disciplines}}"><a href="#">Disciplines</a></li>
-		<li class="{{products}}"><a href="#">Products</a></li>
+		<li class="{{home}}"><a href="#/home">Home</a></li>
+		<li class="{{disciplines}}"><a href="#/discipline">Disciplines</a></li>
+		<li class="{{products}}"><a href="#/discipline">Products</a></li>
 	
 		<li class="divider-vertical"></li>
 	

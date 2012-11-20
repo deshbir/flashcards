@@ -13,6 +13,10 @@ modules = {
 		//View Templates
 		resource url:'js/libs/mustache.js'
 		
+		//Sound Manager
+		resource url:'js/sm/soundmanager2.js'
+		resource url:'js/sm/page-player.js'
+		
 		//Main Application JavaScript - init and event binding
 		resource url:'js/index.js'
 		
