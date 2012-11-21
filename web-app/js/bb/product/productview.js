@@ -3,6 +3,7 @@ ProductView = new function() {
 	var router = null;
 	var idTopContainer = com.compro.application.hsc.idTopContainer;
 	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
+	var pagePlayer = new PagePlayer();
 	
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -38,7 +39,6 @@ ProductView = new function() {
 						$(idTopContainer).append(compiledTemplate);
 						
 						soundManager.onready(function() {
-							  var pagePlayer = new PagePlayer();
 							  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 						});
 						

@@ -918,7 +918,21 @@ function PagePlayer() {
   };
 
   this.init = function(oConfig) {
-
+	  
+	//DSD - clean up from previous ajax page
+	//Ref: https://getsatisfaction.com/schillmania/topics/page_player_and_ajax
+	  this.links = [];	
+	  this.strings = [];
+	  this.soundsByObject = [];
+	  lastSound = null;
+	  if(this.sounds.length > 0) {
+		  for (var i=this.sounds.length; i--;) {
+			  this.stopSound(this.sounds[i]);
+		  }
+	  }
+	  this.sounds = [];
+	//End of Cleanup  
+	  
     if (oConfig) {
       // allow overriding via arguments object
       sm._writeDebug('pagePlayer.init(): Using custom configuration');
