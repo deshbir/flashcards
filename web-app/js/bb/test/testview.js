@@ -22,11 +22,19 @@ TestView = new function() {
 		
 		$(idTopContainer).html("");
 		
+		TemplateManager.get('header', 
+				function(template){
+			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "active", "products": ""});
+					$(clsMainHeader).html(templateHTML);
+		});
+				
 		TemplateManager.get('test-home', 
 				function(template){
 			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "", "products": "active"});
-					$(clsMainHeader).html(templateHTML);
+					$(idTopContainer).append(templateHTML);
 		});
+		
+		com.compro.application.hsc.flashcards = new Swipe($(".flashcard"));
 	};
 	
 	

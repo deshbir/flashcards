@@ -56,6 +56,10 @@ com.compro.application.hsc = (function() {
 	var config = {
 	};
 	
+	//Global Flashcards holder (object of SwipeJs)
+	var flashcards;
+	
+	
 	/*
 	 * Backbone Initialization
 	 * 
@@ -65,6 +69,7 @@ com.compro.application.hsc = (function() {
 		HomeView.routerInitialize();
 		DisciplineView.routerInitialize();
 		ProductView.routerInitialize();
+		TestView.routerInitialize();
 	}
 	
 	function backbone_start_navigation()	{
@@ -164,6 +169,7 @@ com.compro.application.hsc = (function() {
 
 	return	{
 		"config":config,
+		"flashcards":flashcards,
 		"idTopContainer" : idTopContainer,
 		"clsMainHeader" : clsMainHeader
 	}

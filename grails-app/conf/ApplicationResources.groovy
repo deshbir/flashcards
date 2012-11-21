@@ -17,6 +17,9 @@ modules = {
 		resource url:'js/sm/soundmanager2.js'
 		resource url:'js/sm/page-player.js'
 		
+		//Swipe (Flash Card touch swiping)
+		resource url:'js/libs/swipe.js'
+		
 		//Main Application JavaScript - init and event binding
 		resource url:'js/index.js'
 		
@@ -31,5 +34,9 @@ modules = {
 		resource url:'js/bb/product/productmodel.js'
 		resource url:'js/bb/product/productcollection.js'
 		resource url:'js/bb/product/productview.js'
+		
+		resource url:'js/bb/test/testmodel.js'
+		resource url:'js/bb/test/testcollection.js'
+		resource url:'js/bb/test/testview.js'
     }
 }
