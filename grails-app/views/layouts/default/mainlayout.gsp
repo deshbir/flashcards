@@ -9,6 +9,8 @@
 		<title>Pearson HSC</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
 		<meta name="description" content="Pearson HSC Flashcards, 2012">
 		<meta name="author" content="Compro Technologies Pvt. Ltd.">
 
@@ -23,6 +25,8 @@
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<link rel="apple-touch-icon" href="@{'/public/images/apple-touch-icon.png">
+		<link rel="apple-touch-startup-image" href="@{'/public/images/apple-touch-startup-image-320x460.png">
 		<link rel="shortcut icon" href="@{'/public/images/favicon.ico'}" type="image/x-icon">
 	</head>
 	<body dir="${direction}">
