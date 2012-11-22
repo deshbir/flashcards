@@ -19,11 +19,17 @@ window.Swipe = function(element, options) {
   this.speed = this.options.speed || 300;
   this.callback = this.options.callback || function() {};
   this.delay = this.options.auto || 0;
+  
+  //DSD Customization for passing child-sequence
+  this.containersequence = this.options.containersequence || 0;
 
   // reference dom elements
   this.container = element;
-  this.element = this.container.children[0]; // the slide pane
-
+  
+  //DSD Customization for passing child-sequence
+  		///ORIGINAL this.element = this.container.children[0]; // the slide pane
+  this.element = this.container.children[this.containersequence]; // the slide pane
+  
   // static css
   this.container.style.overflow = 'hidden';
   this.element.style.listStyle = 'none';
