@@ -2,7 +2,7 @@ package com.pearson.hsc
 
 class Product {
 
-	static hasMany = [topics: Topic]
+	static hasMany = [topics: Topic, tests: Test]
 	
 	static belongsTo = [discipline: Discipline]
 	

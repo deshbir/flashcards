@@ -1,3 +1,4 @@
+{{#.}}
 <div id="page-header" class="container main-body">
 	<div class="row">
 		<div class="span12">
@@ -25,32 +26,38 @@
 					</div>
         		</div>
         		<div id="body-set">
-	        		<div class="body" style='display:block'>
-		        		<h2 class="question"><i class="icon-question-sign"></i> Duis mollis, est non commodo luctus, nisi erat porttitor ligula?</h2>
+        			{{#questions}}
+	        			<div class="body" style='display:none'>
+		        		<h2 class="question"><i class="icon-question-sign"></i> {{text}}</h2>
 		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 1 (Duis mollis, est non commodo luctus)</button>
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 2 (Duis mollis, est non commodo luctus)</button>
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 3 (Duis mollis, est non commodo luctus)</button>
+							 {{#option1}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option1}}</button>
+							 {{/option1}}
+							 {{#option2}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option2}}</button>
+							 {{/option2}}
+							 {{#option3}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option3}}</button>
+							 {{/option3}}							 
+							 {{#option4}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option4}}</button>
+							 {{/option4}}							 
+							 {{#option5}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option5}}</button>
+							 {{/option5}}							 
+							 {{#option6}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option6}}</button>
+							 {{/option6}}
+							 {{#option7}}
+							    <button class="btn btn-large"><i class="icon-ok-circle"></i> {{option7}}</button>
+							 {{/option7}}
 						</div>
 					</div>
-					<div class="body" style='display:none'>
-		        		<h2 class="question"><i class="icon-question-sign"></i> Duis mollis, est non commodo luctus, nisi erat porttitor ligula?</h2>
-		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 1 (Duis mollis, est non commodo luctus)</button>
-						</div>
-					</div>
-					<div class="body" style='display:none'>
-		        		<h2 class="question"><i class="icon-question-sign"></i> Duis mollis, est non commodo luctus, nisi erat porttitor ligula?</h2>
-		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 1 (Duis mollis, est non commodo luctus)</button>
-		  					<button class="btn btn-large"><i class="icon-ok-circle"></i> Option 3 (Duis mollis, est non commodo luctus)</button>
-						</div>
-					</div>
+					{{/questions}}
 				</div>									        		
 				<div class="footer">(1/5)</div>	
         	</div>
         </div>	
   </div>     	      
 </div>	
-
-
+{{/.}}

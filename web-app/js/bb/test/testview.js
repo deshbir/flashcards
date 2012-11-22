@@ -28,13 +28,18 @@ TestView = new function() {
 					$(clsMainHeader).html(templateHTML);
 		});
 				
-		TemplateManager.get('test-home', 
-				function(template){
-			 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "", "products": "active"});
-					$(idTopContainer).append(templateHTML);
+		TestCollection.get(productId, testId).fetch({
+			success: function(model){
+				TemplateManager.get('test-home', 
+					function(template){
+					
+					var compiledTemplate = Mustache.render(template, model.toJSON());
+					$(idTopContainer).append(compiledTemplate);
+				});
+				$("#body-set > .body").css("display", "block");
+				com.compro.application.hsc.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});
+			}
 		});
-		
-		com.compro.application.hsc.flashcards = new Swipe($(".flashcard"));
 	};
 	
 	

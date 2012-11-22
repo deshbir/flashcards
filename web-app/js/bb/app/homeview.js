@@ -18,6 +18,7 @@ HomeView = new function() {
 			router = new Router();
 		}
 		
+		
 		TemplateManager.get('header', 
 				function(template){
 			 		var templateHTML = Mustache.render(template, {"user": false});

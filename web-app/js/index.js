@@ -74,7 +74,8 @@ com.compro.application.hsc = (function() {
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
-		Backbone.history.navigate("#/home", {trigger:true,replace:true});
+		if (location.href.indexOf("#") == -1)
+			Backbone.history.navigate("#/home", {trigger:true,replace:true});
 	}
 	
 	function soundmanager2_init()	{

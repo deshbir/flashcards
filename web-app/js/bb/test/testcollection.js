@@ -18,10 +18,10 @@ TestCollection = new function() {
  			  urlGET =  urlGET + "/test/" + testId ;
  		  } 
  		  
-          if (collectionMap[productid] == null) {
-        	  collectionMap[productid] = new Collection();
-        	  collectionMap[productid].url = urlGET;
+          if (collectionMap[productId] == null) {
+        	  collectionMap[productId] = new Collection();
+        	  collectionMap[productId].url = urlGET;
           }
-		  return collectionMap[productid];
+		  return collectionMap[productId];
 	  };	  
 };
