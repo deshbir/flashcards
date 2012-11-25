@@ -27,7 +27,7 @@
 				<li class="divider"></li>
 				<li><a rel="tooltip" data-original-title="Not active in demo"
 					href="#">Preferences</a></li>
-				<li><a href="/ngldemo/ngconnect/traditional/logout">Sign out</a></li>
+				<li><a href="javascript:void(0);" onclick="Authenticate.logout()">Sign out</a></li>
 			</ul>
 		</li>
 	

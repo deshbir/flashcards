@@ -5,6 +5,8 @@
 	
 	<body>
 			<div id="bb-container"></div>
-			
+		<r:script disposition="defer">	
+			Authenticate.initialize();
+   		</r:script>						
 	</body>
 </html>

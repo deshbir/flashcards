@@ -38,5 +38,10 @@ modules = {
 		resource url:'js/bb/test/testmodel.js'
 		resource url:'js/bb/test/testcollection.js'
 		resource url:'js/bb/test/testview.js'
+		
+		resource url:'js/bb/user/usermodel.js'
+		
+		//Facebook authentication
+		resource url:'js/authenticate/authenticate.js'
     }
 }

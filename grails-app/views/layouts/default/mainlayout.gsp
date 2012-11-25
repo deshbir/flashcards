@@ -30,6 +30,7 @@
 		<link rel="shortcut icon" href="@{'/public/images/favicon.ico'}" type="image/x-icon">
 	</head>
 	<body dir="${direction}">
+		<g:include view="layout-helpers/facebook_init.gsp"/>
 		<g:include view="layout-helpers/header.gsp"/>
 		
 

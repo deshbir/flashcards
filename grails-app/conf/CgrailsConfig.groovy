@@ -2,13 +2,14 @@ cgrails {
 	skinning {
 		baseskin = "default"
 		defaultskin = "default"
-		skins {
-			skin1 { parent = "default" }
-		}		
 	}
 	less {
 		//Array of Less Files to compile.
-		files = ["styles"]
+		files = ["index"]
+	}
+	offline {
+		username = 'comprotest'
+		password = 'compro'
 	}
 	javascriptMVC = "backbone"
 }
