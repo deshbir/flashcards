@@ -18,27 +18,27 @@ ProductView = new function() {
 	});
 	
 	var View = Backbone.View.extend({
-		el: idTopContainer,
 		events: {
 			"click .flashcardAssess"	:	"flashcardassess"
 		},
-		initialize: function(displineId, productId) {
-			this.collection = ProductCollection.get(displineId, productId);
-			this.collection.fetch();
+		initialize: function() {
+			this.collection = ProductCollection.get(this.options.displineId, this.options.productId);
 			//binding view object (this) as an arguments to the listed functions.
 		    _.bindAll(this, 'flashcardassess','fillTemplate');
-		    this.collection.bind('reset',this.fillTemplate);		    
+		    this.collection.bind('reset',this.fillTemplate);
+			this.collection.fetch();
 			this.render();
 		},
 		render : function() {
 			TemplateManager.get('header', 
-					function(template){
-				 		var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "", "products": "active"});
-						$(clsMainHeader).html(templateHTML);
+				function(template){
+					var templateHTML = Mustache.render(template, {"user": true, "home": "", "disciplines": "", "products": "active"});
+					$(clsMainHeader).html(templateHTML);
 			});
 		},
 		fillTemplate :  function() {
 			var collection = this.collection;
+			var view = this;
 			$(idTopContainer).html("");
 			TemplateManager.get('product-home', 
 					function(template){
@@ -47,12 +47,13 @@ ProductView = new function() {
 						soundManager.onready(function() {
 							  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 						});
+						view.setElement("#product-home");
 			});
 		},
 		flashcardassess : function(e) {
+			var productid = this.options.productId;
 			var testid = e.target.id;
-		
-			Backbone.history.navigate("#/product/3/test/"+testid);
+			Backbone.history.navigate("#/product/" + productid + "/test/"+testid);
 		}
 	});
 
@@ -62,10 +63,9 @@ ProductView = new function() {
 		}
 		
 		if (currentView == null) {
-			currentView = new View(displineId, productId);
+			currentView = new View({displineId:displineId,productId:productId});
 		} else {
-			currentView.render({el: idTopContainer});
-			currentView.fillTemplate();
+			currentView.render();
 		}
 	};
 	

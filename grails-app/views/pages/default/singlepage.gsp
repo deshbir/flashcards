@@ -4,7 +4,7 @@
 	</head>
 	
 	<body>
-			<div id="bb-container"></div>
+			<div id="bb-container" class="container"></div>
 		<r:script disposition="defer">	
 			Authenticate.initialize();
    		</r:script>						

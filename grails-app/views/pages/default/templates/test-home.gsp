@@ -1,5 +1,5 @@
 {{#.}}
-<div id="page-header" class="container main-body">
+<div id="page-header" class="main-body">
 	<div class="row">
 		<div class="span12">
 			<small>{{product.discipline.name}}</small>
@@ -7,7 +7,7 @@
         </div>
 	</div>
 </div> 	
-<div id="test-home" class="container main-body">
+<div id="test-home" class="main-body">
     <div class="row">
     	<div class="span12">
         	<div id="flashcard" class="flashcard">
