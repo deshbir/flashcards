@@ -17,7 +17,7 @@ Authenticate = new function() {
 						UserModel.get().fetch({
 							success: function(model, response){
 								var compiledTemplate = Mustache.render(template,UserModel.get().toJSON());
-								$("loginform").html(compiledTemplate);
+								$("#loginform").html(compiledTemplate);
 							}
 						});						
 				 	  });

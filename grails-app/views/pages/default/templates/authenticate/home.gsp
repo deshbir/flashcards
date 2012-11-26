@@ -16,7 +16,7 @@
 						<br/>
 						<input type="password" name="j_password" class="input-xlarge" placeholder="Password">
 					</fieldset> 
-					<button class="btn btn-large" type="submit">
+					<button class="btn btn-large" onclick='Authenticate.authAjax(); return false;'>
 						login
 					</button>                      
 				</form>

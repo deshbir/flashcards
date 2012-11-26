@@ -24,12 +24,20 @@ environments {
         }
     }
     production {
+		
+		/*
+		 *  Uncomment for Local H2 
+		 */
+		/*
         dataSource {
             dbCreate = "create-drop"
-			dialect = org.hibernate.dialect.MySQLInnoDBDialect
-			driverClassName = 'com.mysql.jdbc.Driver'
-			url = 'jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=utf8'
-            //url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			
+			
+			//dialect = org.hibernate.dialect.MySQLInnoDBDialect
+			//driverClassName = 'com.mysql.jdbc.Driver'
+			//url = 'jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=utf8'
+			
+            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
 			username = ""
 			password = ""
 			pooled = true
@@ -44,5 +52,26 @@ environments {
                validationQuery="SELECT 1"
             }
         }
+		
+		*/
+		
+			/*
+			 * Heroku automatically provisions a small database when you create a Grails application 
+			 * and sets the DATABASE_URL environment variable to a URL of the format
+   			 * postgres://user:password@hostname:port/dbname
+			*/	
+		
+			dataSource {
+				dbCreate = "update"
+				driverClassName = "org.postgresql.Driver"
+				dialect = org.hibernate.dialect.PostgreSQLDialect
+			
+				uri = new URI(System.env.DATABASE_URL?:"postgres://test:test@localhost/test")
+		
+				url = "jdbc:postgresql://"+uri.host+uri.path
+				username = uri.userInfo.split(":")[0]
+				password = uri.userInfo.split(":")[1]
+			}
+		
     }
 }

@@ -2,7 +2,7 @@
 <div id="page-header" class="container main-body">
 	<div class="row">
 		<div class="span9">
-			<small>Criminal Justice</small>
+			<small>{{discipline.name}}</small>
 			<h1>{{name}}</h1>
         </div>
         <div class="span3">
@@ -39,8 +39,11 @@
 	</div>
 	<div class="row">
 		<div class="span6">
-			  <p><a class="btn btn-large" href="#/product/{{id}}/test/1">Flash cards<small> (Train)</small></a></p>
-		      <p> <a class="btn btn-large href="#/product/{{id}}/test/2">Flash cards<small> (Assess)</small></a></p> 
+			{{#tests}}
+			  <p><a class="btn btn-large" href="#/product/3/test/{{id}}">Flash cards<small> (Train)</small></a></p>
+		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
+		      <p><a id="{{id}}" class="btn btn-large flashcardAssess" href="javascript:void(0);">Flash cards<small> (Assess)</small></a></p>
+		    {{/tests}} 
 	   	</div>
 	</div>			      
 </div>	

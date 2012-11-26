@@ -2,8 +2,8 @@
 <div id="page-header" class="container main-body">
 	<div class="row">
 		<div class="span12">
-			<small>Criminal Justice</small>
-			<h1>Product 1</h1>
+			<small>{{product.discipline.name}}</small>
+			<h1>{{product.name}}</h1>
         </div>
 	</div>
 </div> 	
@@ -14,14 +14,14 @@
         		<div class="header">
 					<div class="btn-toolbar">
 						<div class="btn-group">
-							<button class="btn"><i class="icon-resize-full"></i></button>
+							<button class="btn resize"><i class="icon-resize-full"></i></button>
 							<button class="btn"><i class="icon-share-alt"></i></button>
 						</div>
 						<div class="btn-group">
-							<button class="btn" onclick='com.compro.application.hsc.flashcards.prev();return false;'>Previous</button>
+							<button class="btn previous">Previous</button>
 						</div>
 						<div class="btn-group">
-							<button class="btn" onclick='com.compro.application.hsc.flashcards.next();return false;'>Next</button>
+							<button class="btn next">Next</button>
 						</div>						
 					</div>
         		</div>
