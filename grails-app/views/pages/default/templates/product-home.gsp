@@ -1,5 +1,5 @@
 {{#.}}
-<div id="page-header" class="container main-body">
+<div id="page-header" class="main-body">
 	<div class="row">
 		<div class="span9">
 			<small>{{discipline.name}}</small>
@@ -10,7 +10,7 @@
         </div>	
 	</div>
 </div> 	
-<div id="product-home" class="container main-body">
+<div id="product-home" class="main-body">
 	<div class="row">
 		<div class="span6 media">
 	        <img class="pull-left" src="{{image}}">

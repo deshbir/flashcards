@@ -28,7 +28,7 @@ HomeView = new function() {
 		TemplateManager.get('splash', 
 			function(template){
 				$(idTopContainer).html(template);
-		});
+		},{cache:false});
 		
 	};
 	this.routerInitialize = function(){
