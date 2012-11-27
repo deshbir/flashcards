@@ -18,20 +18,19 @@ TestView = new function() {
 	});
 
 	var View = Backbone.View.extend({
-		el: idTopContainer,
 		events: {
 			"click .next"	:	"nextQuestion",
 			"click .previous"	:	"prevQuestion",
 			"click .resize"	:	"resizeContainer"
 		},
-		initialize: function(productId, testId) {
-			this.collection = TestCollection.get(productId, testId);
-			this.collection.fetch();
+		initialize: function() {
+			this.collection = TestCollection.get(this.options.productId, this.options.testId);
 			//binding view object (this) as an arguments to the listed functions.
 		    _.bindAll(this, 'nextQuestion', 'prevQuestion','resizeContainer','fillTemplate');
 			//binding collection update with functions
 			//this.collection.bind('add',this.addOne);
 		    this.collection.bind('reset',this.fillTemplate);
+		    this.collection.fetch();
 		    this.render();
 			
 		},
@@ -45,12 +44,14 @@ TestView = new function() {
 		
 		fillTemplate: function() {
 			var collection = this.collection;
+			var view = this;
 			$(idTopContainer).html("");
 			TemplateManager.get('test-home', 
 				function(template){
 					var compiledTemplate = Mustache.render(template, collection.toJSON());
 					$(idTopContainer).append(compiledTemplate);
 				});
+				view.setElement("#test-home");
 				$("#body-set > .body").css("display", "block");
 				com.compro.application.hsc.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});
 		},
@@ -72,7 +73,7 @@ TestView = new function() {
 			router = new Router();
 		}
 		if (currentView == null) {
-			currentView = new View(productId, testId);
+			currentView = new View({productId:productId,testId:testId});
 		} else {
 			currentView.render({el: idTopContainer});
 		}

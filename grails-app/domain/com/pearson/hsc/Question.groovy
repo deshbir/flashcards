@@ -1,6 +1,6 @@
 package com.pearson.hsc
 
-class Question {
+class Question implements Comparable {
 
 	String type
 	String text
@@ -26,7 +26,11 @@ class Question {
 	
 	static constraints = {
 	}
+
 	
+	int compareTo(def val) {
+		return sequence <=> val?.sequence
+	}
 	
 	/***********************************
 	 * START Offline configurations
