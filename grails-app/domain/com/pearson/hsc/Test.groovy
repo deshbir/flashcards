@@ -2,6 +2,7 @@ package com.pearson.hsc
 
 class Test {
 
+	SortedSet questions
 	static hasMany = [questions: Question]
 	
 	String name
