@@ -92,6 +92,8 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 grails.converters.json.default.deep = true
+grails.converters.default.circular.reference.behaviour="INSERT_NULL"
+
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.pearson.hsc.authenticate.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.pearson.hsc.authenticate.UserRole'

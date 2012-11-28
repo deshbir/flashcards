@@ -14,10 +14,11 @@ ProductView = new function() {
 	    
 	    producthome : function(displineId, productId) {
 	    	
-	    	if (bbView == null) {  //First OR After Browser Refresh 
+	    	if (bbView == null) {  //First OR After Browser Refresh
+	    		
 	    		bbView = new View({displineId:displineId,productId:productId});
 			} 
-	    	else {
+	    	else { 	 //If the View has been created (bbView) never re-create
 	    		
 				bbView.loadCollection(displineId,productId);
 				bbView.render();
@@ -28,16 +29,11 @@ ProductView = new function() {
 	
 	var View = Backbone.View.extend({
 		
+		/*--------------- Static Class Variable ------------*/
+		
 		myPanelId:"#panel_product-home",
 		
-		template_header: "",
-		template_body: "",
-		
-		last_discipline_id: -1,
-		last_product_id: -1,
-
-		
-	
+		/*------------------------------------------------------*/
 		
 		events: {
 			"click .flashcardAssess"	:	"flashcardassess"
@@ -46,17 +42,27 @@ ProductView = new function() {
 		
 		initialize: function() {
 			
+			/* -------------- Setup and Initialize INSTANCE Variables -----------------*/
+			this.template_header="";
+			this.template_body="";
+			this.current_discipline_id=-1;
+			this.current_product_id=-1;
+			this.requested_discipline_id=-1;
+			this.requested_product_id=-1;
+			/* ------------------------------------------------------------------------*/
+		
+			
 			this.loadCollection(this.options.displineId,this.options.productId);
 			
 			//Fill Templates
 			var that = this;
 			TemplateManager.get('header', 
 				function(template){
-					template_header = template;
+					that.template_header = template;
 					
 					TemplateManager.get('product-home', 
 						function(template){
-							template_body = template;
+							that.template_body = template;
 							
 							//Always call render from initialize - as Backbone does not automatically call it.
 							that.render();
@@ -66,7 +72,10 @@ ProductView = new function() {
 		
 		loadCollection: function(discipline_id, product_id)	{
 			
-			if(this.last_discipline_id!=discipline_id || this.last_product_id!=product_id)	{				
+			this.requested_discipline_id=discipline_id;
+			this.requested_product_id=product_id;
+			
+			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{				
 				this.collection = ProductCollection.get(discipline_id, product_id);
 				this.collection.fetch();
 			}
@@ -75,32 +84,42 @@ ProductView = new function() {
 		
 		render: function() {
 
-			var compiled_template_header = Mustache.render(template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
+			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
 			
-			//$(idTopContainer).html("");
-			if(this.last_discipline_id!=this.options.displineId || this.last_product_id!=this.options.productId)	{
-				this.last_discipline_id=this.options.displineId;
-				this.last_product_id=this.options.productId;				
-				//DO NOT OVERRIDE HTML IN THE TEMPLATE
-				var compiled_template_body = Mustache.render(template_body, this.collection.toJSON());
+			
+			//Check if we need to update the PANEL HTML
+			if(this.last_discipline_id!=this.requested_discipline_id || this.last_product_id!=this.requested_product_id)	{
+				
+				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
+				
 				$(this.myPanelId).html(compiled_template_body);
+				
 				soundManager.onready(function() {
 					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 				});
+				
 				this.setElement("#product-home");
+				
+				this.current_displine_id=this.requested_discipline_id;
+				this.current_product_id=this.requested_product_id;
 			}
-			var currentpanel = com.compro.application.hsc.currentPanelId;
-			$(currentpanel).hide();
-
+			
+			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			if ( $(currentpanel).attr("data-order") < $(currentpanel).attr("data-order")) {
+			
+			var currentpanel = com.compro.application.hsc.currentPanelId;
+			$(currentpanel).hide();
+
+			
+			if ( $(currentpanel).attr("data-order") < $(this.myPanelId).attr("data-order")) {
 				$(this.myPanelId).show("slide", { direction: "right" }, 500);	
 			} else{ 
 				$(this.myPanelId).show("slide", { direction: "left" }, 500);
 			}
+
 			//setting current panel to current view id
 			com.compro.application.hsc.currentPanelId = this.myPanelId
 			
