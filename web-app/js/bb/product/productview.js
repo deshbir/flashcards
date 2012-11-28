@@ -1,11 +1,15 @@
 ProductView = new function() {
 
+	/* ----- Global View Variables ----------------------*/
 	var bbView = null;
-
-	var idTopContainer = com.compro.application.hsc.idTopContainer;
-	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
 	var pagePlayer = new PagePlayer();
+	/* -------------------------------------------------*/
+
 	
+	var mainApp = com.compro.application.hsc;
+	var idTopContainer = mainApp.idTopContainer;
+	var clsMainHeader = mainApp.clsMainHeader;
+
 	
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -30,9 +34,7 @@ ProductView = new function() {
 	var View = Backbone.View.extend({
 		
 		/*--------------- Static Class Variable ------------*/
-		
 		myPanelId:"#panel_product-home",
-		
 		/*------------------------------------------------------*/
 		
 		events: {
@@ -88,7 +90,8 @@ ProductView = new function() {
 			$(clsMainHeader).html(compiled_template_header);
 			
 			
-			//Check if we need to update the PANEL HTML
+			// Check if we need to update the PANEL HTML - 
+			// if we're back the same/previous product, then do NOT re-create the DOM
 			if(this.last_discipline_id!=this.requested_discipline_id || this.last_product_id!=this.requested_product_id)	{
 				
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
@@ -109,19 +112,7 @@ ProductView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			
-			var currentpanel = com.compro.application.hsc.currentPanelId;
-			$(currentpanel).hide();
-
-			
-			if ( $(currentpanel).attr("data-order") < $(this.myPanelId).attr("data-order")) {
-				$(this.myPanelId).show("slide", { direction: "right" }, 500);	
-			} else{ 
-				$(this.myPanelId).show("slide", { direction: "left" }, 500);
-			}
-
-			//setting current panel to current view id
-			com.compro.application.hsc.currentPanelId = this.myPanelId
+			mainApp.transitionAppPanel(this.myPanelId);
 			
 			return this; //Do this at the end to allow for method chaining.
 		},

@@ -40,6 +40,7 @@ com.compro.application.hsc = (function() {
 	//DOM Dependencies
 	var idTopContainer = "#bb-container";
 	var clsMainHeader = ".main-header";
+	var currentPanelId = -1;
 	
 	/*
 	TODO
@@ -92,6 +93,29 @@ com.compro.application.hsc = (function() {
 			  flashVersion: 9
 			});
 	}
+	
+	
+	function transitionAppPanel(newPanelId) {
+		
+		if(this.currentPanelId == -1)  //First time
+		{	
+			$(newPanelId).show("slide", { direction: "right" }, 300);
+		}
+		else
+		{
+			$(this.currentPanelId).hide();
+			
+			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
+				$(newPanelId).show("slide", { direction: "right" }, 300);	
+			} else{ 
+				$(newPanelId).show("slide", { direction: "left" }, 300);
+			}
+
+		}
+		
+		this.currentPanelId = newPanelId
+		
+	}
 		
 	/********************************************************/
 	/*                 ONE TIME INIT FUNCTION              */
@@ -115,7 +139,9 @@ com.compro.application.hsc = (function() {
 		"config":config,
 		"flashcards":flashcards,
 		"idTopContainer" : idTopContainer,
-		"clsMainHeader" : clsMainHeader
+		"clsMainHeader" : clsMainHeader,
+		"currentPanelId" : currentPanelId,
+		"transitionAppPanel" : transitionAppPanel
 	}
 
 })();
