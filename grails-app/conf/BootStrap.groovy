@@ -26,7 +26,7 @@ class BootStrap {
 			
 			allDisciplines.disciplines.each	{
 				def jsonDiscipline = it 
-				def aDiscipline = new Discipline(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image).save(failOnError: true)
+				def aDiscipline = new Discipline(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image, sequence: it.sequence).save(failOnError: true)
 				
 				if(jsonDiscipline.products)
 				{

@@ -6,17 +6,18 @@ class Discipline {
 	
 	static mapping = {
 		products lazy: false
+		sort "sequence"
 	}
 
 	String name
 	String description
 	String thumbnail
 	String image
+	int sequence
 	
 	static constraints = {
 	}
-	
-	
+
 	/***********************************
 	 * START Offline configurations
 	 ***********************************/
