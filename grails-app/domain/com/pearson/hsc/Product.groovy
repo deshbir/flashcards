@@ -15,7 +15,7 @@ class Product implements Comparable {
 	String thumbnail
 	String image
 	int sequence
-	
+	String author
 	
 	int compareTo(def val) {
 		return sequence <=> val?.sequence
