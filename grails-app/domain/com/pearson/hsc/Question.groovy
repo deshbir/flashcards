@@ -21,12 +21,16 @@ class Question implements Comparable {
 	String answer2
 	String answer3
 	String answer4
+	String answerDetails
 	
 	static belongsTo = [test: Test]
 	
 	static constraints = {
 	}
 
+	static mapping = {
+		answerDetails type: 'text'
+	}
 	
 	int compareTo(def val) {
 		return sequence <=> val?.sequence

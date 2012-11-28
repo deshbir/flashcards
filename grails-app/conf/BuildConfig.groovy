@@ -66,4 +66,4 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.0'
     }
 }
-grails.plugin.location.'cgrails' = "cgrails"
+grails.plugin.location.'cgrails' = "../cgrails"

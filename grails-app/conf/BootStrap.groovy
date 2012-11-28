@@ -50,7 +50,7 @@ class BootStrap {
 								if(jsonTest.questions)
 								{
 									jsonTest.questions.each	{
-										aTest.addToQuestions(type:it.type,text:it.text,sequence:it.sequence,maxscore:it.maxscore, mediatype:it.mediatype,imageurl:it.imageurl,audiourl:it.audiourl,videourl:it.videourl,option1:it.option1,option2:it.option2,option3:it.option3,option4:it.option4,option5:it.option5,option6:it.option6,option7:it.option7,answer1:it.answer1,answer2: it.answer2, answer3: it.answer3, answer4: it.answer4)
+										aTest.addToQuestions(type:it.type,text:it.text,sequence:it.sequence,maxscore:it.maxscore, mediatype:it.mediatype,imageurl:it.imageurl,audiourl:it.audiourl,videourl:it.videourl,option1:it.option1,option2:it.option2,option3:it.option3,option4:it.option4,option5:it.option5,option6:it.option6,option7:it.option7,answer1:it.answer1,answer2: it.answer2, answer3: it.answer3, answer4: it.answer4, answerDetails: it.answerDetails)
 									}
 								}
 								aProduct.addToTests(aTest)

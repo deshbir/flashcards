@@ -59,7 +59,8 @@
 													        	"answer1": "answer 1",
 													        	"answer2": "answer 2",
 													        	"answer3": "answer 3",
-													        	"answer4": "answer 4"
+													        	"answer4": "answer 4",
+													        	"answerDetails": "Explain the correct answer here"
 									        				}, 
 															{
 													        	"type": "MCQSS",
@@ -80,7 +81,8 @@
 													        	"answer1": "answer 1",
 													        	"answer2": "answer 2",
 													        	"answer3": "answer 3",
-													        	"answer4": "answer 4"
+													        	"answer4": "answer 4",
+													        	"answerDetails": "Explain the correct answer here"
 									        				},
 															{
 													        	"type": "MCQSS",
@@ -101,7 +103,8 @@
 													        	"answer1": "answer 1",
 													        	"answer2": "answer 2",
 													        	"answer3": "answer 3",
-													        	"answer4": "answer 4"
+													        	"answer4": "answer 4",
+													        	"answerDetails": "Explain the correct answer here"
 									        				}]
 									        }]			        				
         				}, 
