@@ -21,7 +21,8 @@ TestView = new function() {
 		events: {
 			"click .next"	:	"nextQuestion",
 			"click .previous"	:	"prevQuestion",
-			"click .resize"	:	"resizeContainer"
+			"click .resize"	:	"resizeContainer",
+			"click .radio-control"	:	"switchRadioState"
 		},
 		initialize: function() {
 			this.collection = TestCollection.get(this.options.productId, this.options.testId);
@@ -65,6 +66,10 @@ TestView = new function() {
 		},
 		resizeContainer: function() {
 			return false;
+		},
+		switchRadioState: function(e){
+			$(".options").find("span.radio-on").toggleClass("radio-on radio-off");
+			$(e.target).find("span").toggleClass("radio-on radio-off");
 		}
 	});	
 	
