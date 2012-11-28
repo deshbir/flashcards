@@ -7,7 +7,6 @@ ProductView = new function() {
 
 	
 	var mainApp = com.compro.application.hsc;
-	var idTopContainer = mainApp.idTopContainer;
 	var clsMainHeader = mainApp.clsMainHeader;
 
 	
@@ -78,7 +77,7 @@ ProductView = new function() {
 			this.requested_product_id=product_id;
 			
 			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{				
-				this.collection = ProductCollection.get(discipline_id, product_id);
+				this.collection = ProductCollection.get(this.requested_discipline_id, this.requested_product_id);
 				this.collection.fetch();
 			}
 			
@@ -88,7 +87,6 @@ ProductView = new function() {
 
 			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
-			
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM

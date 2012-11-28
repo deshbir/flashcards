@@ -99,7 +99,7 @@ com.compro.application.hsc = (function() {
 		
 		if(this.currentPanelId == -1)  //First time
 		{	
-			$(newPanelId).show("slide", { direction: "right" }, 300);
+			$(newPanelId).show();
 		}
 		else
 		{
