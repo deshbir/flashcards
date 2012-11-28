@@ -90,7 +90,7 @@ ProductView = new function() {
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
-			if(this.last_discipline_id!=this.requested_discipline_id || this.last_product_id!=this.requested_product_id)	{
+			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{
 				
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				

@@ -26,7 +26,10 @@ HomeView = new function() {
 		TemplateManager.get('splash', 
 			function(template){
 				$("#panel_home").html(template);
-				$("#panel_home").show("slide", { direction: "top" }, 500);
+				/*
+				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
+				 */
+				com.compro.application.hsc.transitionAppPanel("#panel_home");
 		},{cache:false});
 				
 		//setting current panel to current view id

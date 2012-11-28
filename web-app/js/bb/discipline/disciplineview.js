@@ -155,9 +155,15 @@ DisciplineView = new function() {
 			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
 			
-			var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
-			$(this.myPanelId).html(compiled_template_body);			
-			this.setElement("#product-list");
+			// Check if we need to update the PANEL HTML - 
+			// if we're back the same/previous product, then do NOT re-create the DOM
+			if(this.current_discipline_id!=this.requested_discipline_id)	{			
+				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
+				$(this.myPanelId).html(compiled_template_body);			
+				this.setElement("#product-list");
+				
+				this.current_displine_id=this.requested_discipline_id;
+			}
 			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId

@@ -1,8 +1,11 @@
 TestView = new function() {
 
+	/* ----- Global View Variables ----------------------*/
 	var bbTestView = null;
-	var idTopContainer = com.compro.application.hsc.idTopContainer;
-	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
+	/* -------------------------------------------------*/
+	
+	var mainApp = com.compro.application.hsc;
+	var clsMainHeader = mainApp.clsMainHeader;
 	
 	
 	var Router = Backbone.Router.extend({
@@ -11,23 +14,26 @@ TestView = new function() {
 	    },	    
 	    
 	    testhome : function(productId, testId) {
-			if (bbTestView == null) {
+			
+			if (bbTestView == null) { //First OR After Browser Refresh
+				
 				bbTestView = new View({productId:productId,testId:testId});
-			} else {
-				bbTestView.render({el: idTopContainer});
+			
+			} else { //If the View has been created (bbView) never re-create
+				
+				bbTestView.loadCollection(productId,testId);
+				bbTestView.render();
 			}
 	    }
 	    
 	});
 
 	var View = Backbone.View.extend({
+		
+		/*--------------- Static Class Variable ------------*/
 		myPanelId:"#panel_test-home",
-		
-		template_header: "",
-		template_body: "",		
-		last_product_Id: -1,
-		last_test_Id: -1,
-		
+		/*------------------------------------------------------*/
+
 		events: {
 			"click .next"	:	"nextQuestion",
 			"click .previous"	:	"prevQuestion",
@@ -35,17 +41,27 @@ TestView = new function() {
 			"click .radio-control"	:	"switchRadioState"
 		},
 		initialize: function() {
+			
+			/* -------------- Setup and Initialize INSTANCE Variables -----------------*/
+			this.template_header="";
+			this.template_body="";
+			this.current_product_id=-1;
+			this.current_test_id=-1;
+			this.requested_product_id=-1;
+			this.requested_test_id=-1;			
+			/* ------------------------------------------------------------------------*/			
+			
 			this.loadCollection(this.options.productId,this.options.testId);
 			
 			//Fill Templates
 			var that = this;
 			TemplateManager.get('header', 
 				function(template){
-					template_header = template;
+					that.template_header = template;
 						
 					TemplateManager.get('test-home', 
 						function(template){
-							template_body = template;
+							that.template_body = template;
 							
 							//Always call render from initialize - as Backbone does not automatically call it.
 							that.render();
@@ -53,51 +69,48 @@ TestView = new function() {
 			});
 		},
 		loadCollection: function(product_Id,test_Id)	{
+
+			this.requested_product_id=product_Id;
+			this.requested_test_id=test_Id;
 			
-			if(this.last_product_Id!=product_Id || this.last_test_Id!=test_Id)	{				
-				this.collection = TestCollection.get(product_Id,test_Id);
+			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{				
+				this.collection = TestCollection.get(this.requested_product_id,this.requested_test_id);
 				this.collection.fetch();
-			}	
+			}
 		},		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(template_header, {"user": true, "home": "", "disciplines": "active", "products": ""});
+			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "active", "products": ""});
 			$(clsMainHeader).html(compiled_template_header);
 			
-			if(this.last_product_Id!=this.options.productId || this.last_test_Id!=this.options.testId)	{			
-				this.last_product_Id=this.options.productId;
-				this.last_test_Id=this.options.testId;
-				
-				var compiled_template_body = Mustache.render(template_body, this.collection.toJSON());
+			// Check if we need to update the PANEL HTML - 
+			// if we're back the same/previous product, then do NOT re-create the DOM		
+			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{			
+
+				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-home");
+				
+				this.current_product_id=this.requested_product_id;
+				this.current_test_id=this.requested_test_id;				
 			}
-			var currentpanel = com.compro.application.hsc.currentPanelId;
-			$(currentpanel).hide();
-
+			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			if ( $(currentpanel).attr("data-order") < $(this.myPanelId).attr("data-order")) {
-				$(this.myPanelId).show("slide", { direction: "right" }, 500);	
-			} else{ 
-				$(this.myPanelId).show("slide", { direction: "left" }, 500);
-			}
+			mainApp.transitionAppPanel(this.myPanelId);
 			
 			$("#body-set > .body").css("display", "block");
-			com.compro.application.hsc.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});
-			
-			//setting current panel to current view id
-			com.compro.application.hsc.currentPanelId = this.myPanelId
+			mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
 			
 			return this; //Do this at the end to allow for method chaining.			
 		},
 		nextQuestion: function() {
-			com.compro.application.hsc.flashcards.next();
+			mainApp.flashcards.next();
 			return false;
 		},
 		prevQuestion: function() {
-			com.compro.application.hsc.flashcards.prev();
+			mainApp.flashcards.prev();
 			return false;
 		},
 		resizeContainer: function() {
