@@ -96,14 +96,14 @@ ProductView = new function() {
 				
 				$(this.myPanelId).html(compiled_template_body);
 				
+				this.setElement("#product-home");
+				
+				this.current_discipline_id=this.requested_discipline_id;
+				this.current_product_id=this.requested_product_id;
+				
 				soundManager.onready(function() {
 					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 				});
-				
-				this.setElement("#product-home");
-				
-				this.current_displine_id=this.requested_discipline_id;
-				this.current_product_id=this.requested_product_id;
 			}
 			
 			
