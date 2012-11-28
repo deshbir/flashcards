@@ -28,7 +28,7 @@ ProductView = new function() {
 	
 	var View = Backbone.View.extend({
 		
-		myPanelId:"panel_product_home",
+		myPanelId:"#panel_product-home",
 		
 		template_header: "",
 		template_body: "",
@@ -66,52 +66,43 @@ ProductView = new function() {
 		
 		loadCollection: function(discipline_id, product_id)	{
 			
-			if(this.last_discipline_id!=discipline_id || this.last_product_id!=product_id)	{
-
-				this.last_discipline_id=discipline_id;
-				this.last_product_id=product_id;
-				
-				this.collection = ProductCollection.get(this.last_discipline_id, this.last_product_id);
+			if(this.last_discipline_id!=discipline_id || this.last_product_id!=product_id)	{				
+				this.collection = ProductCollection.get(discipline_id, product_id);
 				this.collection.fetch();
 			}
 			
 		},
 		
 		render: function() {
-			
-			
-			/*
-			if(last_discipline_id==discipline_id && last_product_id==product_id)	{
-				
-				//DO NOT OVERRIDE HTML IN THE TEMPLATE
-			}
-			*/
-			
+
 			var compiled_template_header = Mustache.render(template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
 			
-			$(idTopContainer).html("");
-			
-			var compiled_template_body = Mustache.render(template_body, this.collection.toJSON());
-			$(idTopContainer).append(compiled_template_body);
-			
+			//$(idTopContainer).html("");
+			if(this.last_discipline_id!=this.options.displineId || this.last_product_id!=this.options.productId)	{
+				this.last_discipline_id=this.options.displineId;
+				this.last_product_id=this.options.productId;				
+				//DO NOT OVERRIDE HTML IN THE TEMPLATE
+				var compiled_template_body = Mustache.render(template_body, this.collection.toJSON());
+				$(this.myPanelId).html(compiled_template_body);
+				soundManager.onready(function() {
+					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
+				});
+				this.setElement("#product-home");
+			}
+			var currentpanel = com.compro.application.hsc.currentPanelId;
+			$(currentpanel).hide();
+
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 *    
-			 *  if ( $(com.compro.application.hsc.currentPanelId).data-order < $(com.compro.application.hsc.currentPanelId).data-order)
-			 *  	slide-in
-			 *  else
-			 *  	slide-out
-			 *  com.compro.application.hsc.currentPanelId = myPanelId
-			 * 
 			 */
-			
-			
-			soundManager.onready(function() {
-				  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
-			});
-			
-			this.setElement("#product-home");
+			if ( $(currentpanel).attr("data-order") < $(currentpanel).attr("data-order")) {
+				$(this.myPanelId).show("slide", { direction: "right" }, 500);	
+			} else{ 
+				$(this.myPanelId).show("slide", { direction: "left" }, 500);
+			}
+			//setting current panel to current view id
+			com.compro.application.hsc.currentPanelId = this.myPanelId
 			
 			return this; //Do this at the end to allow for method chaining.
 		},

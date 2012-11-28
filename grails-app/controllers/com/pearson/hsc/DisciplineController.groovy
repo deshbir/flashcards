@@ -12,9 +12,9 @@ class DisciplineController {
 	*/
 	def show = {
 		if(params.id) {
+			
 			Discipline discipline = Discipline.get(params.id)
 			
-		
 			if(discipline) {
 				render discipline as JSON
 				return

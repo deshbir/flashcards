@@ -1,6 +1,6 @@
 package com.pearson.hsc
 
-class Product {
+class Product implements Comparable {
 
 	static hasMany = [topics: Topic, tests: Test]
 	
@@ -14,10 +14,12 @@ class Product {
 	String description
 	String thumbnail
 	String image
+	int sequence
 	
-	static constraints = {
+	
+	int compareTo(def val) {
+		return sequence <=> val?.sequence
 	}
-	
 	
 	/***********************************
 	 * START Offline configurations

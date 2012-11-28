@@ -11,6 +11,7 @@
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
 				        	"thumbnail": "http://placehold.it/100x140",
 				        	"image": "http://placehold.it/200x260",
+				        	"sequence": 1,
 				        	"topics": [	{
 				        					"name": "Topic 1",
 				        					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
@@ -112,13 +113,15 @@
 				        	"name": "Product 2",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 				        	"thumbnail": "http://placehold.it/100x140",
-				        	"image": "http://placehold.it/200x260"
+				        	"image": "http://placehold.it/200x260",
+				        	"sequence": 2
         				},
         				{
 				        	"name": "Product 3",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 				        	"thumbnail": "http://placehold.it/100x140",
-				        	"image": "http://placehold.it/200x260"
+				        	"image": "http://placehold.it/200x260",
+				        	"sequence": 3
         				}]
         },
         

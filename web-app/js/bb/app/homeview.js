@@ -1,7 +1,5 @@
 HomeView = new function() {
 
-	var router = null;
-	var idTopContainer = com.compro.application.hsc.idTopContainer;
 	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
 	
 	var Router = Backbone.Router.extend({
@@ -27,9 +25,12 @@ HomeView = new function() {
 		
 		TemplateManager.get('splash', 
 			function(template){
-				$(idTopContainer).html(template);
+				$("#panel_home").html(template);
+				$("#panel_home").show("slide", { direction: "top" }, 500);
 		},{cache:false});
-		
+				
+		//setting current panel to current view id
+		com.compro.application.hsc.currentPanelId = $("#panel_home");		
 	};
 	this.routerInitialize = function(){
 		router = new Router();   

@@ -1,7 +1,10 @@
 package com.pearson.hsc
 
-class Discipline {
+import java.util.SortedSet;
 
+class Discipline {
+	
+	SortedSet products
 	static hasMany = [products: Product]
 	
 	static mapping = {
