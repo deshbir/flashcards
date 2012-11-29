@@ -19,7 +19,12 @@ Authenticate = new function() {
 								var compiledTemplate = Mustache.render(template,UserModel.get().toJSON());
 								$("#loginform").html(compiledTemplate);
 							}
-						});						
+						});
+						TemplateManager.get('header', 
+								function(template){
+							 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
+									$(clsMainHeader).html(templateHTML);
+						},{cache:false});						
 				 	  });
 				} else if (response.error) { 
 					$("#loginErrorMessage").show();
@@ -42,9 +47,9 @@ Authenticate = new function() {
 			   
 				TemplateManager.get('header', 
 						function(template){
-					 		var templateHTML = Mustache.render(template, {"user": "", "home": true, "disciplines": "active", "products": ""});
+					 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
 							$(clsMainHeader).html(templateHTML);
-				});			   
+				},{cache:false});			   
 			   TemplateManager.get('authenticate/home', function(template){
 					UserModel.get().fetch({
 						success: function(model, response){
@@ -65,9 +70,8 @@ Authenticate = new function() {
 			  FB.logout(function() {				 
                   window.location.href = com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout";
               });
-		  } else {
-			  window.location.href = com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout";
-		  }		  
+		  }  
 		});
+		window.location.href = com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout";
 	}
 };
