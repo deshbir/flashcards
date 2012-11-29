@@ -81,7 +81,6 @@ ProductView = new function() {
 			
 			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{				
 				this.collection = ProductCollection.get(this.requested_discipline_id, this.requested_product_id);
-				this.collection.fetch();
 			}
 			
 		},
