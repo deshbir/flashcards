@@ -22,7 +22,6 @@
 	<sec:ifNotLoggedIn>
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
 			<h3>Log In</h3>
-			<br/>
 			<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="text">
 			<br>
 			<input name="j_password" class="input-xlarge" placeholder="Password" type="password">
@@ -32,9 +31,9 @@
 		</form>
 		<h2 class="align-or"> or </h2>
 		<div class="facebook-login">
-			<button class="btn btn-large align-right" onclick="Authenticate.loginWithFacebook(); return false;">
+			<button class="btn btn-large" onclick="Authenticate.loginWithFacebook(); return false;">
 				<span class="span-facebook"><i class="icon-facebook-sign"></i></span>
-				<span class="facebook-text">Login using your <br/> Facebook</span>
+				<span class="facebook-text">Login using your Facebook</span>
 			</button>
 	        </div>
 		<div id="loginErrorMessage"></div> 	
