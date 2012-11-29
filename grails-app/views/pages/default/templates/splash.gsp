@@ -1,9 +1,13 @@
 <div class="row-fluid">
         <div class="span6 center" id="business-info">
-		<h2>Health Sciences &amp; Careers</h2>
-		<h3>(HSC)</h3>
+                <br/>
+		<h1>Health Sciences &amp; Careers</h1>
+		<h2>(HSC)</h2>
+		<br/>
 		<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo"/>
-		<h4>We Change Lives !</h4>
+		<br/>
+		<br/>
+		<h3>We Change Lives !</h3>
 		<br/>
 		<p class="align-left">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -13,7 +17,7 @@
 		</p>
 	    </div>
         <!-- p><a class="btn btn-large" rel="tooltip" data-original-title="Not active in demo" href="#/discipline">Sign In</a></p -->
-        <div class="span6 vert-border">
+        <div class="span6">
 	        <div id="loginform" class="hero">
 				<g:include view="templates/authenticate/home.gsp" />
 		</div> 

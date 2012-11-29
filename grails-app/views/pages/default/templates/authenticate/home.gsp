@@ -7,8 +7,8 @@
 			<i class="icon-github-sign"></i>
 			<div>
 				<h3><sec:username/></h3>
-						
-				<h4><sec:username/></h4>
+
+				<h4>{email}</h4>
 			</div>
 			
 		</div>	

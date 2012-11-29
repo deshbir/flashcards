@@ -159,10 +159,10 @@
 				        	"sequence": 7
         				},         				
         				{
-				        	"name": "MyCJLab @tm",
+				        	"name": "MyCJLab tm",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "http://placehold.it/100x140",
-				        	"image": "http://placehold.it/200x260",
+				        	"thumbnail": "/images/placehold100x140.jpg",
+				        	"image": "/images/placehold200x260.jpg",
 				        	"author": "Pearson",     	
 				        	"sequence": 7
         				},
