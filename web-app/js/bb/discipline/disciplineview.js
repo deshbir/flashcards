@@ -69,16 +69,18 @@ DisciplineView = new function() {
 					TemplateManager.get('discipline-list', 
 						function(template){
 							that.template_body = template;
-							
-							//Always call render from initialize - as Backbone does not automatically call it.
-							that.render();
+							that.collection.fetch({
+								success: function(){							
+									//Always call render from initialize - as Backbone does not automatically call it.
+									that.render();
+								}
+							});		
 					});
 			});
 		},
 		
 		loadCollection: function()	{
-				this.collection = DisciplineCollection.get();
-				this.collection.fetch();	
+			this.collection = DisciplineCollection.get();	
 		},
 		
 		render : function() {

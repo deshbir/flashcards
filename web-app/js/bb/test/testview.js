@@ -62,9 +62,12 @@ TestView = new function() {
 					TemplateManager.get('test-home', 
 						function(template){
 							that.template_body = template;
-							
-							//Always call render from initialize - as Backbone does not automatically call it.
-							that.render();
+							that.collection.fetch({
+								success: function(){
+									//Always call render from initialize - as Backbone does not automatically call it.
+									that.render();
+								}
+							});
 					});
 			});
 		},
@@ -80,7 +83,7 @@ TestView = new function() {
 		},		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "active", "products": ""});
+			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
 			
 			// Check if we need to update the PANEL HTML - 

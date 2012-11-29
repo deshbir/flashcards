@@ -64,9 +64,12 @@ ProductView = new function() {
 					TemplateManager.get('product-home', 
 						function(template){
 							that.template_body = template;
-							
-							//Always call render from initialize - as Backbone does not automatically call it.
-							that.render();
+							that.collection.fetch({
+								success: function(){							
+									//Always call render from initialize - as Backbone does not automatically call it.
+									that.render();
+								}
+							});
 					});
 			});
 		},
