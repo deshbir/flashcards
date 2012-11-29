@@ -40,9 +40,9 @@
 	<div class="row">
 		<div class="span6">
 			{{#tests}}
-			  <p><a id="{{id}}" class="btn btn-large flashcardAssess" href="javascript:void(0);">Flash cards<small> (Train)</small></a></p>
+			  <button id="{{id}}" class="btn btn-large flashcardAssess">Flash cards<small> (Train)</small></button>
 		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
-		      <p><a id="{{id}}" class="btn btn-large flashcardAssess" href="javascript:void(0);">Flash cards<small> (Assess)</small></a></p>
+		      <button id="{{id}}" class="btn btn-large flashcardAssess">Flash cards<small> (Assess)</small></button>
 		    {{/tests}} 
 	   	</div>
 	</div>			      
