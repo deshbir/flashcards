@@ -134,9 +134,12 @@ DisciplineView = new function() {
 					TemplateManager.get('product-list', 
 						function(template){
 							that.template_body = template;
-							
-							//Always call render from initialize - as Backbone does not automatically call it.
-							that.render();
+							that.collection.fetch({
+								success: function(){							
+									//Always call render from initialize - as Backbone does not automatically call it.
+									that.render();
+								}
+							});
 					});
 			});
 		},
@@ -148,7 +151,6 @@ DisciplineView = new function() {
 			if(this.current_discipline_id!=this.requested_discipline_id)	{
 				
 				this.collection = DisciplineCollection.get(this.requested_discipline_id);
-				this.collection.fetch();
 			}	
 		},		
 		
