@@ -33,7 +33,7 @@
 		<h2 class="align-or"> or </h2>
 		<div class="facebook-login">
 			<button class="btn btn-large align-right" onclick="Authenticate.loginWithFacebook(); return false;">
-				<span class="span-facebook"><i class="icon-facebook"></i></span>
+				<span class="span-facebook"><i class="icon-facebook-sign"></i></span>
 				<span class="facebook-text">Login using your <br/> Facebook</span>
 			</button>
 	        </div>
