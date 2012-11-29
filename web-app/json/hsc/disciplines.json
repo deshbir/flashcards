@@ -7,12 +7,12 @@
         	"image": "http://placehold.it/100x150",
         	"sequence": 1,
         	"products": [{
-				        	"name": "Product 1",
+				        	"name": "Criminal Justice Today, 12e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
 				        	"thumbnail": "http://placehold.it/100x140",
 				        	"image": "http://placehold.it/200x260",
 				        	"sequence": 1,
-				        	"author": "kotler",
+				        	"author": "Frank J. Schmalleger",
 				        	"topics": [	{
 				        					"name": "Topic 1",
 				        					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
@@ -111,78 +111,141 @@
 									        }]			        				
         				}, 
         				{
-				        	"name": "Product 2",
+				        	"name": "Criminology Today, 6e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 				        	"thumbnail": "http://placehold.it/100x140",
 				        	"image": "http://placehold.it/200x260",
-				        	"author": "kotler",
+				        	"author": "Frank J. Schmalleger",
 				        	"sequence": 2
         				},
         				{
-				        	"name": "Product 3",
+				        	"name": "Criminology: A Brief Introduction, 2e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 				        	"thumbnail": "http://placehold.it/100x140",
 				        	"image": "http://placehold.it/200x260",
-				        	"author": "kotler",				        	
+				        	"author": "Frank J. Schmalleger",				        	
 				        	"sequence": 3
+        				},
+        				{
+				        	"name": "Criminal Justice: A Brief Introduction, 10e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Frank J. Schmalleger",				        	
+				        	"sequence": 4
+        				},
+        				{
+				        	"name": "Corrections: An Introduction, 4e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Richard P. Seiter",				        	
+				        	"sequence": 5
+        				},     				
+        				{
+				        	"name": "Criminal Investigation, 1e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Richard P. Seiter",				        	
+				        	"sequence": 6
+        				},         				
+        				{
+				        	"name": "Criminal Law & Procedure, 1e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "John L. Worrall",				        	
+				        	"sequence": 7
+        				},         				
+        				{
+				        	"name": "MyCJLab @tm",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Pearson",				        	
+				        	"sequence": 7
+        				},
+        				{
+				        	"name": "Criminal Investigation, 8e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Lyman",				        	
+				        	"sequence": 7
+        				},        				
+        				{
+				        	"name": "Juvenile Justice in America, 7e",
+				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				        	"thumbnail": "http://placehold.it/100x140",
+				        	"image": "http://placehold.it/200x260",
+				        	"author": "Clemens Bartollas, Stuart J. Miller Ph.D. ",				        	
+				        	"sequence": 8
         				}]
         },
         
         {
-        	"name": "Discipline 2",
+        	"name": "Automotive",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 2
         },
         {
-        	"name": "Discipline 3",
+        	"name": "Brady",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 3     	
         },
         {
-        	"name": "Discipline 4",
+        	"name": "Construction Management",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 4        	
         },
         {
-        	"name": "Discipline 5",
+        	"name": "Culinary",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 5        	
         },
         {
-        	"name": "Discipline 6",
+        	"name": "Health Professions",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 6       	
         },
         {
-        	"name": "Discipline 7",
+        	"name": "Hospitality",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 7       	
         },
         {
-        	"name": "Discipline 8",
+        	"name": "Nursing",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 8      	
         },                
         {
-        	"name": "Discipline 9",
+        	"name": "Paralegal",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
         	"sequence": 9       	
-        }        
+        },
+        {
+        	"name": "Trades",
+        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
+        	"thumbnail": "http://placehold.it/100x100",
+        	"image": "http://placehold.it/100x150",
+        	"sequence": 10       	
+        }                
     ]    
 }

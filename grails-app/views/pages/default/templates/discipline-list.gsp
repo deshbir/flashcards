@@ -8,13 +8,10 @@
 <div id="discipline-list" class="main-body">
 	<div class="row">
 		{{#.}}
-	 	<div class="span4 media">
+	 	<div class="span4">
 			<a href="#/discipline/{{id}}"> 
-	          <img alt="{{name}}" class="pull-left" src="{{image}}">
-	          <div class="media-body">
-				<h2>{{name}}</h2>
+				<h2><i class="icon-tag"></i> {{name}}</h2> 
 				<p>{{description}}</p>
-	          </div>
 	        </a>  	
 		</div>
 		{{/.}}
