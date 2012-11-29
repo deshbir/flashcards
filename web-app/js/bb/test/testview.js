@@ -78,7 +78,6 @@ TestView = new function() {
 			
 			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{				
 				this.collection = TestCollection.get(this.requested_product_id,this.requested_test_id);
-				this.collection.fetch();
 			}
 		},		
 		render : function() {
