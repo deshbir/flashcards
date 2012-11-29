@@ -13,7 +13,7 @@
 <div id="product-home" class="main-body">
 	<div class="row">
 		<div class="span6 media">
-	        <img class="pull-left" src="{{image}}">
+	        <r:img alt="{{name}}" class="pull-left" uri="{{image}}"/>
 	        <div class="media-body">
 	        	<p>{{description}}</p>
 				<div class="rating">

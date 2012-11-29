@@ -103,11 +103,12 @@ com.compro.application.hsc = (function() {
 		}
 		else
 		{
-			$(this.currentPanelId).hide();
 			
 			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
+				$(this.currentPanelId).hide("slide", { direction: "left" }, 200);
 				$(newPanelId).show("slide", { direction: "right" }, 300);	
 			} else{ 
+				$(this.currentPanelId).hide("slide", { direction: "right" }, 200);
 				$(newPanelId).show("slide", { direction: "left" }, 300);
 			}
 

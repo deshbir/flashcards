@@ -24,7 +24,12 @@ ProductView = new function() {
 	    	else { 	 //If the View has been created (bbView) never re-create
 	    		
 				bbView.loadCollection(displineId,productId);
-				bbView.render();
+				bbView.collection.fetch({
+					success: function(){
+						bbView.render();
+					}
+				});				
+				
 			}
 	    }
 	    

@@ -22,7 +22,11 @@ TestView = new function() {
 			} else { //If the View has been created (bbView) never re-create
 				
 				bbTestView.loadCollection(productId,testId);
-				bbTestView.render();
+				bbTestView.collection.fetch({
+					success: function(){
+						bbTestView.render();
+					}
+				});				
 			}
 	    }
 	    

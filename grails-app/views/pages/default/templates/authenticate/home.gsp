@@ -1,21 +1,31 @@
 <div id="home">
 	<sec:ifLoggedIn>
-		<p>
-			<h3>Hello <sec:username/></h3>
-		</p>	
-		<p>
-			<a href="#/discipline" class="btn btn-large">Continue.. <small>( <sec:username/>)</small></a>
-		</p>
+	    <div id="loggedin-container">
+		<h3> Welcome back!</h3>
+		
+		<div class="user-info">
+			<i class="icon-github-sign"></i>
+			<div>
+				<h3><sec:username/></h3>
+						
+				<h4><sec:username/></h4>
+			</div>
+			
+		</div>	
+		<div class="user-buttons">
+			<a href="#/discipline" class="btn">Browse Disciplines</a>
+			<br/>
+			<a href="#/discipline" class="btn">Test yourself</a>
+		</div>
+	    </div>
 	</sec:ifLoggedIn>
 	<sec:ifNotLoggedIn>
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
-			<fieldset>
-				<h3>Log In</h3>
-				<br/>
-				<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="text">
-				<br>
-				<input name="j_password" class="input-xlarge" placeholder="Password" type="password">
-			</fieldset>
+			<h3>Log In</h3>
+			<br/>
+			<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="text">
+			<br>
+			<input name="j_password" class="input-xlarge" placeholder="Password" type="password">
 			<button class="btn" onclick="Authenticate.authAjax(); return false;">
 				Sign In
 			</button>                    
@@ -23,10 +33,10 @@
 		<h2 class="align-or"> or </h2>
 		<div class="facebook-login">
 			<button class="btn btn-large align-right" onclick="Authenticate.loginWithFacebook(); return false;">
-				<i class="icon-facebook"></i>
-				Login using your <br/> Facebook
+				<span class="span-facebook"><i class="icon-facebook"></i></span>
+				<span class="facebook-text">Login using your <br/> Facebook</span>
 			</button>
-	    </div>
+	        </div>
 		<div id="loginErrorMessage"></div> 	
 	</sec:ifNotLoggedIn>				
 </div>		

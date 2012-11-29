@@ -11,7 +11,7 @@
 		{{#products}}
 	 	<div class="span4 media">
 			<a href="#/discipline/1/product/{{id}}"> 
-	          <img alt="{{name}}" class="pull-left" src="{{thumbnail}}">
+	          <r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/>
 	          <div class="media-body">
 				<h2>{{name}} <small>({{author}})</small></h2>
 				<p>{{description}}</p>

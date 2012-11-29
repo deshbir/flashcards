@@ -36,7 +36,11 @@ DisciplineView = new function() {
 			} else {  	 //If the View has been created (bbView) never re-create
 				
 				detailbbView.loadCollection(displineId);
-				detailbbView.render();
+				detailbbView.collection.fetch({
+					success: function(){
+						detailbbView.render();
+					}
+				});
 			}
 	    }
 	    
