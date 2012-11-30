@@ -22,6 +22,7 @@
 	<sec:ifNotLoggedIn>
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
 			<h3>Log In</h3>
+			<p>Enter your username (or email-id) followed by your password.</p>
 			<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="text">
 			<br>
 			<input name="j_password" class="input-xlarge" placeholder="Password" type="password">

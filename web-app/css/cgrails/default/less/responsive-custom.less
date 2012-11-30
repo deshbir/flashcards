@@ -150,6 +150,9 @@
 /* --------------- Flashcard Splash -------------------------- */
 
 @media (max-width: 480px) {  
+    .center { 
+    	border:0 none;
+    }
     #loginform {
         margin:0 10px;
         padding:0;
@@ -173,8 +176,9 @@
 	        margin-left: 2em;
         }
 	.btn {
-		padding: 4px 10.7em;
+		padding:0.5em 4em;
 		margin-top:0.5em;
+		width:94%;
 	}
 	.user-buttons {
 	 	.btn {
@@ -189,13 +193,14 @@
 		     		font-size:40px;  
 	        	}
 	        	float:left;
-	        	margin:0em;
+	        	margin-right:0.5em;
                  }
 	        .facebook-text {
 	        	font-size: 15px;
 		}
 		.btn {
 			padding: 0.5em 10px 0.5em 0.5em;
+			width: 93%;
 		}
 		
 	}
@@ -204,6 +209,8 @@
     	margin-bottom:0;
     }
     #business-info {
+    	margin:0;
+    	padding:0;
     	p {
     		display:none;
     	}
@@ -214,19 +221,79 @@
 	        width:80%;
 	}
 	h1 {
-		font-size:25px;
+		font-size:17px;
 	}
 	h2 {
-		font-size:20px;
+		font-size:15px;
 	}
 	h3 {
-		font-size:15px;
+		font-size:13px;
 	}
 	
     }
     
 }
+@media (max-width: 767px) {  
+	 .facebook-login  {
+			margin-left:0;
+			.span-facebook {
+				.icon-facebook-sign {
+					font-size:40px;  
+				}
+				float:left;
+				margin:0em;
+			 }
+			.facebook-text {
+				font-size: 15px;
+			}
+			.btn {
+				padding: 0.5em 10px 0.5em 0.5em;
+			}  		
+  		}
 
-@media (min-width: 771px) and (max-width: 979px) {
-	
 }
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#loginform {
+		 margin: 1em 0.2em;
+		.user-buttons {
+			     .btn {
+			          padding:1em 2em;
+			     }
+		}
+		.user-info  {
+			div {
+				 margin: 0 0.5em;
+			}
+		}
+		.facebook-login  {
+		  		margin-left:0;
+		  		.span-facebook {
+		  		        .icon-facebook-sign {
+		  		     		font-size:40px;  
+		  	        	}
+		  	        	float:left;
+		  	        	 margin-right: 1em;
+		                 }
+		  	        .facebook-text {
+		  	        	font-size: 15px;
+		  		}
+		  		.btn {
+		  			padding: 0.5em 10px 0.5em 0.5em;
+		  		}
+		  		
+  		}
+  		#ajaxLoginForm, #loggedin-container {
+  			margin:0px;
+  		}
+	}
+	.align-or  {
+	    	margin-bottom:0;
+    	}
+    	#business-info {
+		h1 {
+			font-size:28px;
+		}	
+    	}
+}
+
