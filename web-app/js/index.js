@@ -61,10 +61,15 @@ com.compro.application.hsc = (function() {
 	var config = {
 	};
 	
+	//User Logged In Flag
+	var userinfo = {
+			loggedin: false,
+			name: "Compro"
+	}
+	
 	//Global Flashcards holder (object of SwipeJs)
 	var flashcards;
-	
-	
+		
 	//Logger
 	var logger = JSLog.Register('App.Login');
 	
@@ -243,6 +248,7 @@ com.compro.application.hsc = (function() {
 
 	return	{
 		"config":config,
+		"userinfo": userinfo,
 		"flashcards":flashcards,
 		"idTopContainer" : idTopContainer,
 		"clsMainHeader" : clsMainHeader,

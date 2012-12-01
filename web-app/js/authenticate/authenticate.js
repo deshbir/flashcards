@@ -13,10 +13,14 @@ Authenticate = new function() {
 	    	},
 	        success: function(response) {
 				if (response.success) { 
+					
+					var mainApp = com.compro.application.hsc;
+					mainApp.userinfo.loggedin = true;		
+					
 					TemplateManager.get('authenticate/home', function(template){
 						UserModel.get().fetch({
 							success: function(model, response){
-								var compiledTemplate = Mustache.render(template,UserModel.get().toJSON());
+								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": UserModel.get("email")} );
 								$("#loginform").html(compiledTemplate);
 							}
 						});
@@ -27,9 +31,17 @@ Authenticate = new function() {
 						},{cache:false});						
 				 	  });
 				} else if (response.error) { 
+					
+					var mainApp = com.compro.application.hsc;
+					mainApp.userinfo.loggedin = false;	
+					
 					$("#loginErrorMessage").show();
 					$("#loginErrorMessage").html("<span class='errorMessage'>" + response.error + "</span>");
-				} else { 
+				} else {
+					
+					var mainApp = com.compro.application.hsc;
+					mainApp.userinfo.loggedin = false;
+					
 					$("#loginErrorMessage").show();
 					$("#loginErrorMessage").html(response); 
 				} 
@@ -38,8 +50,11 @@ Authenticate = new function() {
   	},
   	this.initialize = function(){
 		TemplateManager.get('authenticate/home', function(template){
-			$("#loginform").html(template);				
-	 	 },{cache:false});
+			
+			var mainApp = com.compro.application.hsc;
+			var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": "I dont know. Help me."});
+			$("#loginform").html(templateHTML);				
+	 	 });
   	},
   	this.loginWithFacebook = function(){
 		FB.login(function(response) {

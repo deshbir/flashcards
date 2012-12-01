@@ -16,7 +16,7 @@
         <!-- p><a class="btn btn-large" rel="tooltip" data-original-title="Not active in demo" href="#/discipline">Sign In</a></p -->
         <div class="span5">
 	        <div id="loginform" class="hero">
-				<g:include view="templates/authenticate/home.gsp" />
+			
 		</div> 
 	</div>           
  </div>

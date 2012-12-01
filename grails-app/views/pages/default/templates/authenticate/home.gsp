@@ -1,5 +1,5 @@
 <div id="home">
-	<sec:ifLoggedIn>
+	{{#loggedin}}
 	    <div id="loggedin-container">
 		<h3> Welcome back!</h3>
 		
@@ -16,8 +16,8 @@
 			<a href="#/discipline" class="btn btn-large btn-block">Test yourself</a>
 		</div>
 	    </div>
-	</sec:ifLoggedIn>
-	<sec:ifNotLoggedIn>
+	{{/loggedin}}
+	{{^loggedin}}
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
 			<h3>Log In</h3>
 			<p>Enter your username (or email-id) followed by your password.</p>
@@ -36,6 +36,6 @@
 			</button>
 	        </div>
 		<div id="loginErrorMessage"></div> 	
-	</sec:ifNotLoggedIn>				
+	{{/loggedin}}				
 </div>		
 			

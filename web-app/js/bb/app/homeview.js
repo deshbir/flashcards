@@ -25,12 +25,17 @@ HomeView = new function() {
 		
 		TemplateManager.get('splash', 
 			function(template){
+				var mainApp = com.compro.application.hsc;			
 				$("#panel_home").html(template);
+				TemplateManager.get('authenticate/home', function(template){
+							var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": "I don't know"} );
+							$("#loginform").html(compiledTemplate);
+				});
 				/*
 				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 				 */
 				com.compro.application.hsc.transitionAppPanel("#panel_home");
-		},{cache:false});
+		});
 				
 		//setting current panel to current view id
 		com.compro.application.hsc.currentPanelId = $("#panel_home");		
