@@ -189,3 +189,29 @@ input[type="submit"].btn {
     *padding-bottom: 1px;
   }
 }
+
+// TODO: This is bootstrap 2.2.1 feature. Added specifically as it overcomes padding issues in responsive behaviour.
+// Block button
+// -------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  .box-sizing(border-box);
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
