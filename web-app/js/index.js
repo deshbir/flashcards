@@ -175,7 +175,7 @@ com.compro.application.hsc = (function() {
 	}
 	
 	
-	function transitionAppPanel(newPanelId) {
+	function transitionAppPanel(newPanelId, callback) {
 		
 		if(this.currentPanelId == -1)  //First time
 		{	
@@ -186,17 +186,27 @@ com.compro.application.hsc = (function() {
 			
 			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
 				$(this.currentPanelId).hide("slide", { direction: "left" }, 300, function() {
-					$(newPanelId).show("slide", { direction: "right" }, 300);					
+					$(newPanelId).show("slide", { direction: "right" }, 300, function() {
+						
+						if(!(typeof callback === 'undefined') )	{
+							callback();	
+						}						
+						
+					});					
 				});
 			} else{ 
 				$(this.currentPanelId).hide("slide", { direction: "right" }, 300,  function() {
-					$(newPanelId).show("slide", { direction: "left" }, 300);
+					$(newPanelId).show("slide", { direction: "left" }, 300, function()	{
+						
+						if(!(typeof callback === 'undefined') )	{
+							callback();	
+						}
+						
+					});
 				});
 			}
-
+			this.currentPanelId = newPanelId;
 		}
-		
-		this.currentPanelId = newPanelId
 		
 	}
 		

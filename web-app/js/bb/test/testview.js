@@ -104,10 +104,11 @@ TestView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			mainApp.transitionAppPanel(this.myPanelId);
+			mainApp.transitionAppPanel(this.myPanelId, function() {
+				$("#body-set > .body").css("display", "block");
+				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
+			});
 			
-			$("#body-set > .body").css("display", "block");
-			mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
 			
 			return this; //Do this at the end to allow for method chaining.			
 		},
