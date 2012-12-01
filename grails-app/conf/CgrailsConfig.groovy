@@ -13,3 +13,11 @@ cgrails {
 	}
 	javascriptMVC = "backbone"
 }
+environments {
+	development {
+		cgrails.cloudMode = false
+	}
+	production {
+		cgrails.cloudMode = true
+	}
+}

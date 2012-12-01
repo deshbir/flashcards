@@ -6,11 +6,11 @@
         </div>
 	</div>
 </div> 	
-<div id="discipline-list" class="main-body">
+<div id="product-list" class="main-body">
 	<div class="row">
 		{{#products}}
-	 	<div class="span4 media">
-			<a href="#/discipline/1/product/{{id}}"> 
+	 	<div id="{{id}}" class="span4 media disciplinebox">
+			<a href="javascript:;"> 
 	          <r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/>
 	          <div class="media-body">
 				<h2>{{name}} <small>({{author}})</small></h2>

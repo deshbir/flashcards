@@ -63,11 +63,13 @@ environments {
     development {
         grails.logging.jul.usebridge = true
 		grails.resources.debug = true  // Add this line in development environment.
-		grails.serverURL = "http://dev1-pearson-hsc.herokuapp.com" // server url for facebook
+		grails.serverURL = "http://localhost:8080/flashcards" // server url for facebook
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
+		grails.serverURL = "http://dev1-pearson-hsc.herokuapp.com" // server url for facebook
+		
     }
 }
 

@@ -124,7 +124,7 @@ ProductView = new function() {
 
 		flashcardassess : function(e) {
 			var productid = this.options.productId;
-			var testid = e.target.id;
+			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/test/"+testid);
 		}
 	});

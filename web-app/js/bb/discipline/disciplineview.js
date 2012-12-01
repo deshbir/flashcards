@@ -116,6 +116,7 @@ DisciplineView = new function() {
 		last_discipline_id: -1,
 		
 		events: {
+			"click .disciplinebox"	:	"disciplinebox"
 		},
 		
 		initialize: function() {
@@ -180,6 +181,11 @@ DisciplineView = new function() {
 			
 			return this; //Do this at the end to allow for method chaining.			
 			
+		},
+		disciplinebox : function(e) {
+			var disciplineid = this.options.displineId;
+			var productid = e.currentTarget.id;
+			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);			
 		}
 	});
 	

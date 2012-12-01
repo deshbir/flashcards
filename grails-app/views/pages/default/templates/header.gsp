@@ -9,6 +9,9 @@
             <a class="brand" title="Pearson Health Sciences & Careers" href="#/home">
                 <img src="http://placehold.it/64x32" alt=logo"><span>Pearson</span>
             </a>
+            <div id="loadingIcon">
+				<r:img dir="images" file="ajax_loader.gif"/>
+			</div>            
             <div class="nav-collapse">
 	<ul class="nav pull-right">
 	{{#user}}

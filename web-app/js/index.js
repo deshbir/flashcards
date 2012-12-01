@@ -41,7 +41,11 @@ com.compro.application.hsc = (function() {
 	var idTopContainer = "#bb-container";
 	var clsMainHeader = ".main-header";
 	var currentPanelId = -1;
-	
+	var globalAjaxOptions = {
+		elProgress : ".main-header",
+		cssProgressLoading : "loadingIcon",
+		disableLoadingProgress : true
+	}
 	/*
 	TODO
 	1. Can we assume that these DOM element are initializaed by this time
@@ -72,6 +76,70 @@ com.compro.application.hsc = (function() {
 		ProductView.routerInitialize();
 		TestView.routerInitialize();
 	}
+	
+	/*
+	 * Global errorHandler 
+	 */
+	function ajax_init_global_handlers()	{
+		/* -------------  Ajax events fire in following order ----------------*/
+
+		$(document).ajaxStart(function () {
+		    var elProgress = globalAjaxOptions.elProgress;
+		    var cssProgressLoading = globalAjaxOptions.cssProgressLoading;
+
+		    if(!globalAjaxOptions.disableLoadingProgress) {
+		        //Show Waiting Icon
+		    	$("#loadingIcon").show()
+		    }
+		});
+
+		$(document).ajaxSend(function (e, xhr, opts) {
+		    /* Do Nothing */
+		});
+
+		$(document).ajaxError(function(event, xhr, settings, exception) {
+		    var msgHeader = "Oops!";
+		    var msgTitle = "Error!";
+		    var msgDesc = "An error has occured. Please try again by refreshing your browser or restarting the Application. If the problem persists, please contact your System Administrator.";
+
+		    if (xhr.status === 0) { // Not connected. Verify Network
+		        var msgHeader = "Not Connected to Network";
+		    } else if (xhr.status == 404) { // Requested page not found. [404]
+		        var msgHeader = "Requested page not found. [404]";
+		    } else if (xhr.status == 404) { // Requested page not found. [404]
+		        var msgHeader = "Requested page not found. [404]";
+		    } else if (xhr.status >= 500) { //Internal Server Error [500]
+		        var msgHeader = "Internal Server Error [500]";
+		        var msgDesc = xhr.responseText;
+		    } else if (exception === 'parsererror') { //Requested JSON parse failed
+		        var msgHeader = "Response Parsing Error (Invalid JSON)";
+		        var msgDesc = xhr.responseText;
+		    } else if (exception === 'timeout') { //Server Timeout - Check Connection
+		        var msgHeader = "Server Timeout Error";
+		    } else if (exception === '') { //Server Aborted request
+		        var msgHeader = "Server Aborted Request";
+		    } else { //Unknown Error
+		        var msgHeader = "Unknown Error";    
+		        //xhr.responseText               
+		    }
+		    return true;
+		});
+		        
+		$(document).ajaxSuccess(function (e, xhr, opts) {
+		        /* Do Nothing */
+		});
+
+		$(document).ajaxComplete(function (e, xhr, opts) {
+		    /* Do Nothing */
+			$("#loadingIcon").hide();
+		});
+
+		$(document).ajaxStop(function () {
+		    //Stop loading animation
+			$("#loadingIcon").hide();
+		});
+	}
+	
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
@@ -105,11 +173,13 @@ com.compro.application.hsc = (function() {
 		{
 			
 			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
-				$(this.currentPanelId).hide("slide", { direction: "left" }, 200);
-				$(newPanelId).show("slide", { direction: "right" }, 300);	
+				$(this.currentPanelId).hide("slide", { direction: "left" }, 300, function() {
+					$(newPanelId).show("slide", { direction: "right" }, 300);					
+				});
 			} else{ 
-				$(this.currentPanelId).hide("slide", { direction: "right" }, 200);
-				$(newPanelId).show("slide", { direction: "left" }, 300);
+				$(this.currentPanelId).hide("slide", { direction: "right" }, 300,  function() {
+					$(newPanelId).show("slide", { direction: "left" }, 300);
+				});
 			}
 
 		}
@@ -124,6 +194,7 @@ com.compro.application.hsc = (function() {
 
 	(function init()	{
 			$(document).ready(function() {
+				ajax_init_global_handlers();
 				backbone_init_routers();
 				backbone_start_navigation();
 				soundmanager2_init();
@@ -142,6 +213,7 @@ com.compro.application.hsc = (function() {
 		"idTopContainer" : idTopContainer,
 		"clsMainHeader" : clsMainHeader,
 		"currentPanelId" : currentPanelId,
+		"globalAjaxOptions" : globalAjaxOptions,
 		"transitionAppPanel" : transitionAppPanel
 	}
 

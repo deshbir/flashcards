@@ -3,6 +3,9 @@ modules = {
 		//'cgrailsLibs' includes JQuery, Backbone, JSON2 & Underscore
 		dependsOn 'cgrailsLibs'
 
+		//logging component
+		resource url:'js/libs/JSLog.js'
+		
 		//Bootstrap JS components
 		resource url:'js/libs/bootstrap-button.js'
 		resource url:'js/libs/bootstrap-collapse.js'

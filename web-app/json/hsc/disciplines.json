@@ -9,8 +9,8 @@
         	"products": [{
 				        	"name": "Criminal Justice Today, 12e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
-				        	"thumbnail": "images/media/criminal-justice-today/cj-today-thumb.jpg",
-				        	"image": "images/media/criminal-justice-today/cj-today.jpg",
+				        	"thumbnail": "/images/media/criminal-justice-today/cj-today-thumb.jpg",
+				        	"image": "/images/media/criminal-justice-today/cj-today.jpg",
 				        	"sequence": 1,
 				        	"author": "Frank J. Schmalleger",
 				        	"topics": [	{
@@ -113,72 +113,72 @@
         				{
 				        	"name": "Criminology Today, 6e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminology-today/cr-today-thumb.jpg",
-				        	"image": "images/media/criminology-today/cr-today.jpg",
+				        	"thumbnail": "/images/media/criminology-today/cr-today-thumb.jpg",
+				        	"image": "/images/media/criminology-today/cr-today.jpg",
 				        	"author": "Frank J. Schmalleger",
 				        	"sequence": 2
         				},
         				{
 				        	"name": "Criminology: A Brief Introduction, 2e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminology-intro/cr-introduction-thumb.jpg",
-				        	"image": "images/media/criminology-intro/cr-introduction.jpg",
+				        	"thumbnail": "/images/media/criminology-intro/cr-introduction-thumb.jpg",
+				        	"image": "/images/media/criminology-intro/cr-introduction.jpg",
 				        	"author": "Frank J. Schmalleger",				        	
 				        	"sequence": 3
         				},
         				{
 				        	"name": "Criminal Justice: A Brief Introduction, 10e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminal-justice/cr-justice-thumb.jpg",
-				        	"image": "images/media/criminal-justice/cr-justice.jpg",
+				        	"thumbnail": "/images/media/criminal-justice/cr-justice-thumb.jpg",
+				        	"image": "/images/media/criminal-justice/cr-justice.jpg",
 				        	"author": "Frank J. Schmalleger",				        	
 				        	"sequence": 4
         				},
         				{
 				        	"name": "Corrections: An Introduction, 4e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/corrections-intro/co-introduction-thumb.jpg",
-				        	"image": "images/media/corrections-intro/co-introduction.jpg",
+				        	"thumbnail": "/images/media/corrections-intro/co-introduction-thumb.jpg",
+				        	"image": "/images/media/corrections-intro/co-introduction.jpg",
 				        	"author": "Richard P. Seiter",				        	
 				        	"sequence": 5
         				},     				
         				{
 				        	"name": "Criminal Investigation, 1e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminal-invest/cr-investigation-1e-thumb.jpg",
-				        	"image": "images/media/criminal-invest/cr-investigation-1e.jpg",
+				        	"thumbnail": "/images/media/criminal-invest/cr-investigation-1e-thumb.jpg",
+				        	"image": "/images/media/criminal-invest/cr-investigation-1e.jpg",
 				        	"author": "Richard P. Seiter",				        	
 				        	"sequence": 6
         				},         				
         				{
 				        	"name": "Criminal Law & Procedure, 1e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
-				        	"image": "images/media/criminal-procedure/cr-procedure.jpg",
+				        	"thumbnail": "/images/media/criminal-procedure/cr-procedure-thumb.jpg",
+				        	"image": "/images/media/criminal-procedure/cr-procedure.jpg",
 				        	"author": "John L. Worrall",				        	
 				        	"sequence": 7
         				},         				
         				{
 				        	"name": "MyCJLab tm",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/placehold100x140.jpg",
-				        	"image": "images/placehold200x260.jpg",
+				        	"thumbnail": "/images/placehold100x140.jpg",
+				        	"image": "/images/placehold200x260.jpg",
 				        	"author": "Pearson",     	
 				        	"sequence": 7
         				},
         				{
 				        	"name": "Criminal Investigation, 8e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/criminal-invest/cr-investigation-8e-thumb.jpg",
-				        	"image": "images/media/criminal-invest/cr-investigation-8e.jpg",
+				        	"thumbnail": "/images/media/criminal-invest/cr-investigation-8e-thumb.jpg",
+				        	"image": "/images/media/criminal-invest/cr-investigation-8e.jpg",
 				        	"author": "Lyman",				        	
 				        	"sequence": 7
         				},        				
         				{
 				        	"name": "Juvenile Justice in America, 7e",
 				        	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				        	"thumbnail": "images/media/juvenile-justice/juvenile-justice-thumb.jpg",
-				        	"image": "images/media/juvenile-justice/juvenile-justice.jpg",
+				        	"thumbnail": "/images/media/juvenile-justice/juvenile-justice-thumb.jpg",
+				        	"image": "/images/media/juvenile-justice/juvenile-justice.jpg",
 				        	"author": "Clemens Bartollas, Stuart J. Miller Ph.D. ",				        	
 				        	"sequence": 8
         				}]
