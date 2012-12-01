@@ -42,8 +42,8 @@ com.compro.application.hsc = (function() {
 	var clsMainHeader = ".main-header";
 	var currentPanelId = -1;
 	var globalAjaxOptions = {
-		elProgress : ".main-header",
-		cssProgressLoading : "loadingIcon",
+		elProgress : ".main-header #loadingIcon",
+		cssProgressLoading : "",
 		disableLoadingProgress : true
 	}
 	/*
@@ -65,6 +65,10 @@ com.compro.application.hsc = (function() {
 	var flashcards;
 	
 	
+	//Logger
+	var logger = JSLog.Register('App.Login');
+	
+	
 	/*
 	 * Backbone Initialization
 	 * 
@@ -84,12 +88,15 @@ com.compro.application.hsc = (function() {
 		/* -------------  Ajax events fire in following order ----------------*/
 
 		$(document).ajaxStart(function () {
+			
+			logger.info("ajaxStart");
+			
 		    var elProgress = globalAjaxOptions.elProgress;
 		    var cssProgressLoading = globalAjaxOptions.cssProgressLoading;
 
 		    if(!globalAjaxOptions.disableLoadingProgress) {
 		        //Show Waiting Icon
-		    	$("#loadingIcon").show()
+		    	$(globalAjaxOptions.elProgress).show()
 		    }
 		});
 
@@ -122,6 +129,9 @@ com.compro.application.hsc = (function() {
 		        var msgHeader = "Unknown Error";    
 		        //xhr.responseText               
 		    }
+		    
+		    alert(msgTitle + '\n\n' + msgDesc);
+		    logger.info(msgTitle + '\n\n' + msgDesc);
 		    return true;
 		});
 		        
@@ -131,12 +141,14 @@ com.compro.application.hsc = (function() {
 
 		$(document).ajaxComplete(function (e, xhr, opts) {
 		    /* Do Nothing */
-			$("#loadingIcon").hide();
+			$(globalAjaxOptions.elProgress).hide();
+			
 		});
 
 		$(document).ajaxStop(function () {
 		    //Stop loading animation
-			$("#loadingIcon").hide();
+			$(globalAjaxOptions.elProgress).hide();
+			logger.info("AjaxStop");
 		});
 	}
 	
@@ -194,10 +206,22 @@ com.compro.application.hsc = (function() {
 
 	(function init()	{
 			$(document).ready(function() {
+				
+				logger.info("On Ready - Starting Initialization");
+
+				logger.info("--- global error handlers");
 				ajax_init_global_handlers();
+				
+				logger.info("--- bb routers");
 				backbone_init_routers();
+				
+				logger.info("--- bb start navigation");
 				backbone_start_navigation();
+				
+				logger.info("--- sound manager");
 				soundmanager2_init();
+				
+				logger.info("On Ready - Completed Initialization");
 			});
 
 					
