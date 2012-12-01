@@ -50,6 +50,7 @@ DisciplineView = new function() {
 		
 		/*--------------- Static Class Variable ------------*/
 		myPanelId:"#panel_discipline-list",
+		myPanelRowId:"#panel_discipline-list #discipline-list",
 		/*------------------------------------------------------*/		
 	
 		events: {
@@ -60,6 +61,7 @@ DisciplineView = new function() {
 			/* -------------- Setup and Initialize INSTANCE Variables -----------------*/
 			this.template_header="";
 			this.template_body="";
+			this.template_body_row="";
 			/* ------------------------------------------------------------------------*/
 			
 			this.loadCollection();
@@ -71,16 +73,21 @@ DisciplineView = new function() {
 					that.template_header = template;
 						
 					TemplateManager.get('discipline-list', 
-						function(template){
-							that.template_body = template;
-							that.collection.fetch({
-								success: function(){							
-									//Always call render from initialize - as Backbone does not automatically call it.
-									that.render();
-								}
-							});		
+							function(template){
+								that.template_body = template;
+								
+								TemplateManager.get('discipline-list-row', 
+									function(template){
+										that.template_body_row = template;
+										that.collection.fetch({
+											success: function(){							
+												//Always call render from initialize - as Backbone does not automatically call it.
+												that.render();
+											}
+									});		
+								});
+							});
 					});
-			});
 		},
 		
 		loadCollection: function()	{
@@ -92,8 +99,23 @@ DisciplineView = new function() {
 			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "active", "products": ""});
 			$(clsMainHeader).html(compiled_template_header);
 
-			var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
-			$(this.myPanelId).html(compiled_template_body);			
+			var compiled_template_body = Mustache.render(this.template_body);
+			$(this.myPanelId).html(compiled_template_body);
+			
+			/* ----- Breaking Into 3 column row sets  ----------- */
+			var threeitem_lists = this.collection.groupBy(function(discipline){
+				return Math.floor((discipline.get("sequence")-1)/3); 
+			});
+			
+			/* ----- Appending Rows (3 columns)  ----------- */
+			that = this;
+			_.each(threeitem_lists, function(num, key){
+				
+				var compiled_template_body_row = Mustache.render(that.template_body_row, num);
+				$(that.myPanelRowId).append(compiled_template_body_row);
+				
+			});
+
 			this.setElement("#discipline-list");
 			
 			/*
