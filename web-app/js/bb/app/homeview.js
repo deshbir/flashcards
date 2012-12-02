@@ -19,7 +19,8 @@ HomeView = new function() {
 		
 		TemplateManager.get('header', 
 				function(template){
-			 		var templateHTML = Mustache.render(template, {"user": false});
+					var mainApp = com.compro.application.hsc;
+			 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
 					$(clsMainHeader).html(templateHTML);
 		});
 		
@@ -28,7 +29,7 @@ HomeView = new function() {
 				var mainApp = com.compro.application.hsc;			
 				$("#panel_home").html(template);
 				TemplateManager.get('authenticate/home', function(template){
-							var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": "I don't know"} );
+							var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": "I don't know", "email": "I don't know"} );
 							$("#loginform").html(compiledTemplate);
 				});
 				/*

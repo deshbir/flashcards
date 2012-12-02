@@ -1,3 +1,4 @@
+<g:set var="contextPath" value="${request.contextPath}"/>
 {{#.}}
 <div id="page-header" class="main-body">
 	<div class="row">
@@ -13,7 +14,7 @@
 <div id="product-home" class="main-body">
 	<div class="row">
 		<div class="span6 media">
-	        <r:img alt="{{name}}" class="pull-left" uri="{{image}}"/>
+	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
 	        <div class="media-body">
 	        	<p>{{description}}</p>
 				<div class="rating">

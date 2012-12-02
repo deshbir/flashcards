@@ -5432,10 +5432,14 @@ body {
 .flashcard .body .btn span.radio-on {
   background: url('../../../../images/radio-on.png') no-repeat left center;
   padding-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 .flashcard .body .btn span.radio-off {
   background: url('../../../../images/radio-off.png') no-repeat left center;
   padding-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 .flashcard .body .btn-group-vertical .btn-large:first-child,
 .flashcard .body .btn-group-vertical .btn-large:last-child {

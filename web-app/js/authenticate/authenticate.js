@@ -20,13 +20,13 @@ Authenticate = new function() {
 					TemplateManager.get('authenticate/home', function(template){
 						UserModel.get().fetch({
 							success: function(model, response){
-								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": UserModel.get("email")} );
+								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"), "email":  model.get("email")} );
 								$("#loginform").html(compiledTemplate);
 							}
 						});
 						TemplateManager.get('header', 
 								function(template){
-							 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
+							 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
 									$(clsMainHeader).html(templateHTML);
 						},{cache:false});						
 				 	  });
@@ -52,23 +52,24 @@ Authenticate = new function() {
 		TemplateManager.get('authenticate/home', function(template){
 			
 			var mainApp = com.compro.application.hsc;
-			var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "email": "I dont know. Help me."});
+			var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": "I dont know", "email": "I dont know. Help me."});
 			$("#loginform").html(templateHTML);				
 	 	 });
   	},
   	this.loginWithFacebook = function(){
 		FB.login(function(response) {
+			var mainApp = com.compro.application.hsc;
 		   if (response.authResponse) {
 			   
 				TemplateManager.get('header', 
 						function(template){
-					 		var templateHTML = Mustache.render(template, {"user": true, "home": "active", "disciplines": "", "products": ""});
+					 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
 							$(clsMainHeader).html(templateHTML);
 				},{cache:false});			   
 			   TemplateManager.get('authenticate/home', function(template){
 					UserModel.get().fetch({
 						success: function(model, response){
-							var compiledTemplate = Mustache.render(template,UserModel.get().toJSON());
+							var compiledTemplate = Mustache.render(template,{"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"),"email":model.get("email") });
 							$("#loginform").html(compiledTemplate);
 						}
 					});						
@@ -78,15 +79,25 @@ Authenticate = new function() {
 			   $("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");  
 		   }
 		 },{scope: 'email,user_likes'});		
-	} ,
+	},
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
 		  if (response.status === 'connected') {
-			  FB.logout(function() {				 
-                  window.location.href = com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout";
-              });
-		  }  
+			  FB.logout();
+		  } 
 		});
-		window.location.href = com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout";
+		ajaxLogout();		  
+	}
+	
+	function ajaxLogout() {
+		$.ajax({
+			url: com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout",
+			type: 'GET',    	
+			success: function(response) {
+				var mainApp = com.compro.application.hsc;
+				mainApp.userinfo.loggedin = false;
+				window.location.href = com.compro.cgrails.REQUEST_CONTEXT 
+			}
+		});		    
 	}
 };

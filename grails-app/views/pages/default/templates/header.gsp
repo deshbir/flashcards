@@ -14,7 +14,7 @@
 			</div>            
             <div class="nav-collapse">
 	<ul class="nav pull-right">
-	<sec:ifLoggedIn>
+	{{#loggedin}}
 		<!-- Logged In Menu Options	 START -->
 		<li class="{{home}}"><a href="#/home">Home</a></li>
 		<li class="{{disciplines}}"><a href="#/discipline">Disciplines</a></li>
@@ -36,7 +36,7 @@
 	
 		<li class="divider-vertical"></li>
 		<!-- Logged In Menu END-->
-	</sec:ifLoggedIn>
+	{{/loggedin}}
 		<!-- App Preferences Menu Option START (available to Logged out users also) -->
 		<li class="dropdown"><a href="#" class="dropdown-toggle"
 			data-toggle="dropdown"><i class="icon-cog"></i><b class="caret"></b></a>

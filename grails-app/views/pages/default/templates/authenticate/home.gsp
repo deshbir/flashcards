@@ -6,8 +6,8 @@
 		<div class="row-fluid user-info">
 			<div class="span3"><i class="icon-github-sign"></i></div>
 			<div class="span6">
-				<h3><sec:username/></h3>
-				<h4>{email}</h4>
+				<h3>{{username}}</h3>
+				<h4>{{email}}</h4>
 			</div>
 		</div>	
 		<div class="user-buttons">

@@ -96,7 +96,7 @@ DisciplineView = new function() {
 		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "active", "products": ""});
+			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "active", "products": ""});
 			$(clsMainHeader).html(compiled_template_header);
 
 			var compiled_template_body = Mustache.render(this.template_body);
@@ -131,6 +131,7 @@ DisciplineView = new function() {
 		
 		/*--------------- Static Class Variable ------------*/
 		myPanelId:"#panel_discipline-home",
+		myPanelRowId:"#panel_discipline-home #product-list",
 		/*------------------------------------------------------*/		
 			
 		template_header: "",
@@ -146,6 +147,7 @@ DisciplineView = new function() {
 			/* -------------- Setup and Initialize INSTANCE Variables -----------------*/
 			this.template_header="";
 			this.template_body="";
+			this.template_body_row="";
 			this.current_discipline_id=-1;
 			this.requested_discipline_id=-1;
 			/* ------------------------------------------------------------------------*/
@@ -157,40 +159,59 @@ DisciplineView = new function() {
 			TemplateManager.get('header', 
 				function(template){
 					that.template_header = template;
-						
+
 					TemplateManager.get('product-list', 
 						function(template){
-							that.template_body = template;
-							that.collection.fetch({
-								success: function(){							
-									//Always call render from initialize - as Backbone does not automatically call it.
-									that.render();
-								}
+							that.template_body = template;					
+							TemplateManager.get('product-list-row', 
+								function(template){
+									that.template_body_row = template;
+									that.collection.fetch({
+										success: function(){							
+											//Always call render from initialize - as Backbone does not automatically call it.
+											that.render();
+										}
+									});
 							});
 					});
 			});
 		},
 		
 		loadCollection: function(discipline_id)	{
-			
 			this.requested_discipline_id=discipline_id;
 			
 			if(this.current_discipline_id!=this.requested_discipline_id)	{
-				
 				this.collection = DisciplineCollection.get(this.requested_discipline_id);
 			}	
 		},		
 		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"user": true, "home": "", "disciplines": "", "products": "active"});
+			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "", "products": "active"});
 			$(clsMainHeader).html(compiled_template_header);
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
-			if(this.current_discipline_id!=this.requested_discipline_id)	{			
-				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
-				$(this.myPanelId).html(compiled_template_body);			
+			if(this.current_discipline_id!=this.requested_discipline_id)	{
+				
+				var compiled_template_body = Mustache.render(this.template_body, {"name" : this.collection.first().attributes.name});
+				$(this.myPanelId).html(compiled_template_body);
+				
+				/* ----- Breaking Into 3 column row sets  ----------- */
+				var productCollection = this.collection.first().attributes.products;
+				var threeitem_lists = _.groupBy(productCollection, function(product){
+					return Math.floor((product.sequence-1)/3); 
+				});
+				
+				/* ----- Appending Rows (3 columns)  ----------- */
+				that = this;
+				_.each(threeitem_lists, function(num, key){
+					
+					var compiled_template_body_row = Mustache.render(that.template_body_row, num);
+					$(that.myPanelRowId).append(compiled_template_body_row);
+					
+				});
+				
 				this.setElement("#product-list");
 				
 				this.current_displine_id=this.requested_discipline_id;
