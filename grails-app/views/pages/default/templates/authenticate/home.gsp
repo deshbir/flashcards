@@ -27,15 +27,13 @@
 				<button class="btn btn-large btn-block" onclick="Authenticate.authAjax(); return false;">
 					Log In
 				</button> 
-				<p> Forgot your password? <a href="#">Get Help</a> </p>
+				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
-		<div class="facebook-login">
-			<button class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook(); return false;">
-				<span class="span-facebook"><i class="icon-facebook"></i></span>
-				<span class="facebook-text">Connect with Facebook</span>
-			</button>
-	        </div>
+		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook(); return false;">
+			<p><i class="icon-facebook"></i></p>
+			<span class="facebook-text">Connect with Facebook</span>
+		</button>
 		<div id="loginErrorMessage"></div> 	
 	{{/loggedin}}				
 </div>		
