@@ -1,23 +1,26 @@
 HeaderView = new function() {
 
-	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
+	/* ----- Global View Variables ----------------------*/
+	var headerbbView = null;
+	/* -------------------------------------------------*/
+	var mainApp = com.compro.application.hsc;
+	var clsMainHeader = mainApp.clsMainHeader;
 	
 	this.initialize = function(){
-		
-		View.initialize();
-			
+		if (headerbbView == null)
+			headerbbView = new View();
 	};
 	
-	this.setActiveMenu(menuId)	{
+	this.setHeaderMenu = function()	{
+		headerbbView.updateloginheader();
+	};
 	
-	}
+	this.setHomeIcon = function(show) {
+		headerbbView.setHomeIcon(show);
+	};
 	
-	this.setLoggedIn()	{
-		
-	}
-	
-	this.setLoggedOut()	{
-		
+	this.setBackIcon = function(show) {
+		headerbbView.setBackIcon(show); 
 	}
 	
 	
@@ -30,7 +33,9 @@ HeaderView = new function() {
 		template_header: "",
 		
 		events: {
-			"click .disciplinebox"	:	"disciplinebox"
+			"click #back"	:	"backbutton",
+			"click #home"	:	"homebutton",
+			"click #logout"	:	"logout"
 		},
 		
 		initialize: function() {
@@ -44,20 +49,59 @@ HeaderView = new function() {
 			TemplateManager.get('header', 
 				function(template){
 					that.template_header = template;
+					that.render();
 			});
 		},
 		
-		
-		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "", "products": "active"});
+			var compiled_template_header = Mustache.render(this.template_header);
 			$(clsMainHeader).html(compiled_template_header);
 			
-			return this; //Do this at the end to allow for method chaining.			
+			this.setElement(clsMainHeader);
 			
-		}
+			this.updateloginheader();
+			this.setHomeIcon(false);
+			this.setBackIcon(false);
+			return this; //Do this at the end to allow for method chaining.
+		},
 		
+		backbutton : function() {
+			window.history.back();
+		},
+		
+		homebutton : function() {
+			Backbone.history.navigate("#/home");
+			this.setBackIcon(false);
+		},
+		
+		logout : function() {
+			Authenticate.logout();
+		},
+		
+		updateloginheader : function() {
+			if (mainApp.userinfo.loggedin) {
+				$(".navbar-inner .loggedin").css("display", "block");
+			} else {
+				$(".navbar-inner .loggedin").css("display", "none");
+			}
+		},
+		
+		setHomeIcon : function(show) {
+			if (show) {
+				$(".navbar-inner #home").css("display", "block");
+			} else {
+				$(".navbar-inner #home").css("display", "none");
+			}
+		},
+		
+		setBackIcon : function(show) {
+			if (show) {
+				$(".navbar-inner #back").css("display", "block");
+			} else {
+				$(".navbar-inner #back").css("display", "none");
+			}
+		}		
 	});
 		
 };

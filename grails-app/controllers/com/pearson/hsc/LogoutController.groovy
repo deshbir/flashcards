@@ -8,6 +8,6 @@ class LogoutController {
 	
 	def after = {
 		// TODO put any pre-logout code here
-		redirect uri: "/"
+		render ""
 	}
 }

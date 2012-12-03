@@ -96,8 +96,12 @@ DisciplineView = new function() {
 		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "active", "products": ""});
-			$(clsMainHeader).html(compiled_template_header);
+			HeaderView.setHeaderMenu();
+			HeaderView.setHomeIcon(true);
+			HeaderView.setBackIcon(false);
+			
+			//var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "active", "products": ""});
+			//$(clsMainHeader).html(compiled_template_header);
 
 			var compiled_template_body = Mustache.render(this.template_body);
 			$(this.myPanelId).html(compiled_template_body);
@@ -139,7 +143,7 @@ DisciplineView = new function() {
 		last_discipline_id: -1,
 		
 		events: {
-			"click .disciplinebox"	:	"disciplinebox"
+			"click .clickbox"	:	"disciplinebox"
 		},
 		
 		initialize: function() {

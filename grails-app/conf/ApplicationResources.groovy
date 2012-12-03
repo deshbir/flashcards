@@ -33,6 +33,8 @@ modules = {
 		
 		//Backbone app View
 		resource url:'js/bb/app/homeview.js'
+		//Backbone header View
+		resource url:'js/bb/app/headerview.js'
 		
 		//Backbone discipline View & Models & Collections
 		resource url:'js/bb/discipline/disciplinemodel.js'

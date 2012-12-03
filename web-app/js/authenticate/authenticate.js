@@ -22,13 +22,17 @@ Authenticate = new function() {
 							success: function(model, response){
 								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"), "email":  model.get("email")} );
 								$("#loginform").html(compiledTemplate);
+								
+								HeaderView.setHeaderMenu();
+								HeaderView.setHomeIcon(false);
+								HeaderView.setBackIcon(false);
 							}
 						});
-						TemplateManager.get('header', 
+						/*TemplateManager.get('header', 
 								function(template){
 							 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
 									$(clsMainHeader).html(templateHTML);
-						},{cache:false});						
+						},{cache:false});*/						
 				 	  });
 				} else if (response.error) { 
 					
@@ -60,17 +64,21 @@ Authenticate = new function() {
 		FB.login(function(response) {
 			var mainApp = com.compro.application.hsc;
 		   if (response.authResponse) {
-			   
+			   /*
 				TemplateManager.get('header', 
 						function(template){
 					 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
 							$(clsMainHeader).html(templateHTML);
-				},{cache:false});			   
+				},{cache:false});*/		   
 			   TemplateManager.get('authenticate/home', function(template){
 					UserModel.get().fetch({
 						success: function(model, response){
 							var compiledTemplate = Mustache.render(template,{"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"),"email":model.get("email") });
 							$("#loginform").html(compiledTemplate);
+							
+							HeaderView.setHeaderMenu();
+							HeaderView.setHomeIcon(false);
+							HeaderView.setBackIcon(false);
 						}
 					});						
 			 	});
@@ -97,6 +105,10 @@ Authenticate = new function() {
 				var mainApp = com.compro.application.hsc;
 				mainApp.userinfo.loggedin = false;
 				window.location.href = com.compro.cgrails.REQUEST_CONTEXT 
+				
+				HeaderView.setHeaderMenu();
+				HeaderView.setHomeIcon(false);
+				HeaderView.setBackIcon(false);
 			}
 		});		    
 	}
