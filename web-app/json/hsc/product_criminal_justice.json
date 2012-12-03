@@ -7,27 +7,27 @@
 	"sequence": 1,
 	"author": "Frank J. Schmalleger",
 	"topics": [	{
-					"name": "Topic 1",
+					"name": "Track 1, Lorem ipsum dolor sit amet",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "1"
 				},
 				{
-					"name": "Topic 2",
+					"name": "Track 2, Lorem ipsum dolor sit amet",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "2"
 				},
 				{
-					"name": "Topic 3",
+					"name": "Track 3, Lorem ipsum dolor sit amet",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "3"
 				},
 				{
-					"name": "Topic 4",
+					"name": "Track 4, Lorem ipsum dolor sit amet",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "4"
 				},
 				{
-					"name": "Topic 5",
+					"name": "Track 5, Lorem ipsum dolor sit amet",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "5"
 				}],
