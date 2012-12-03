@@ -6030,6 +6030,11 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
 }
+/* ----------------- media customization --------------------------- */
+.media,
+.media .media {
+  margin-top: 0px;
+}
 /* ----------------- Navbar --------------------------- */.navbar .nav > li > a {
   padding: 10px 0;
 }
@@ -6050,11 +6055,12 @@ body {
   position: absolute;
   left: 0;
   text-align: left;
+  z-index: 10;
 }
 .brand-button .btn {
   font-size: 13px;
   margin-left: 4px;
-  padding: 4px 20px;
+  padding: 2px 20px;
 }
 /* ----------------- Buttons styling --------------------------- */
 .btn {
@@ -6067,7 +6073,7 @@ body {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7dccdf', endColorstr='#ff69c4da', GradientType=0);
   color: #FFFFFF;
-  padding: 0.7em 1em;
+  line-height: 30px;
   font-size: 23px;
   font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
 }
@@ -6091,7 +6097,7 @@ body {
 }
 #business-info .hero-unit {
   margin-top: 1em;
-  padding: 10px;
+  padding: 20px;
   background-color: #e5e5e5;
 }
 #business-info .hero-unit p {
@@ -6215,6 +6221,7 @@ body {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  border: 1px solid #eeeeee;
   background-color: #e5e5e5;
   color: #2b2b2b;
   display: block;
@@ -6240,7 +6247,61 @@ body {
   margin-top: 0px;
 }
 .clickbox-light a {
-  background-color: #e5e5e5;
+  background-color: #f4f4f4;
+}
+#discipline-list .heading {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+#discipline-list .head-icon {
+  font-size: 28px;
+}
+#discipline-list .navigate-icon {
+  font-size: 20px;
+  margin-left: 10px;
+}
+#discipline-list p {
+  margin-top: 20px;
+}
+#product-list .heading {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+#product-list i {
+  font-size: 20px;
+  margin-left: 10px;
+}
+/* --------------- Ratings Component -------------------------- */
+.rating {
+  unicode-bidi: bidi-override;
+  padding-bottom: 20px;
+}
+.rating span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating span :hover,
+.rating span :hover ~ span {
+  color: transparent;
+}
+.rating span :hover:before,
+.rating span :hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: gold;
+}
+/* --------------- Page Header -------------------------- */
+#page-header h1 {
+  font-size: 26px;
+  line-height: 1.1;
+  margin-top: 5px;
 }
 #soundmanager-debug {
   /* SM2 debug container */
@@ -6452,6 +6513,84 @@ ul.playlist li .peak .r {
 }
 #control-template {
   display: none;
+}
+/* --------------- Flashcard Component -------------------------- */
+.flashcard {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid gray;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0px;
+}
+.flashcard .header {
+  padding: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+.flashcard .footer {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  border-top: 1px solid gray;
+}
+.flashcard .body {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.flashcard .body h2 {
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 20px;
+  line-height: 1.0;
+}
+.flashcard .body h2 i {
+  font-size: 32px;
+  margin-right: 10px;
+}
+.flashcard .body .btn {
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid gray;
+}
+.flashcard .body .btn i {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.flashcard .body .btn span.radio-on {
+  background: url('../../../../images/radio-on.png') no-repeat left center;
+  padding-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.flashcard .body .btn span.radio-off {
+  background: url('../../../../images/radio-off.png') no-repeat left center;
+  padding-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.flashcard .body .btn-group-vertical .btn-large:first-child,
+.flashcard .body .btn-group-vertical .btn-large:last-child {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+#product-home h3 {
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1;
 }
 /*------------- Global Responsive ----------*/
 /*!
@@ -8174,5 +8313,192 @@ ul.playlist li .peak .r {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
+  }
+}
+/* ---------- Responsive Custom ----------- */
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  body {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .hero .row {
+    /* ------- Custom Styling for Splash Section ------ */
+  
+  }
+  .hero .row p .btn {
+    width: 90%;
+  }
+  .main-body {
+    padding: 0 10px;
+    padding-bottom: 20px;
+  }
+  .main-body-splash {
+    padding-top: 20px;
+  }
+  #product-home .btn {
+    width: 85%;
+  }
+  /* --------------- Flashcard Component -------------------------- */
+  .flashcard {
+    border: 0px;
+    width: 100%;
+  }
+  .flashcard .header {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .flashcard .footer {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .flashcard .body {
+    padding: 10px;
+  }
+  .flashcard .body h2 {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.0;
+  }
+  .flashcard .body h2 i {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .flashcard .body .btn {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .flashcard .body .btn i {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  body {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /* Navbar customization */
+  .navbar .nav > li > a,
+  .navbar .dropdown-menu a {
+    color: #000000;
+    font-weight: normal;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /* Navbar customization */
+  .navbar .nav > li > a,
+  .navbar .dropdown-menu a {
+    color: #000000;
+    font-weight: normal;
+  }
+}
+/*-- TABLETS AND BELOW */
+@media (max-width: 979px) {
+  /* Navbar customization */
+  .navbar .nav > li > a:hover,
+  .navbar .dropdown-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .navbar-fixed-top .navbar-inner {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+}
+/*-- Large desktops */
+@media (min-width: 1200px) {
+  
+}
+/* --------------- Flashcard Splash -------------------------- */
+@media (max-width: 480px) {
+  #panel_home {
+    margin: 0 20px;
+  }
+  #business-info #change-lives-info {
+    display: none;
+  }
+  #business-info img {
+    width: 80%;
+    margin-left: 20px;
+  }
+  #business-info h1 {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  #business-info h3 {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #business-info .hero-unit {
+    background-color: transparent;
+    margin-top: 0em;
+    padding: 0px;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+  #loginform {
+    margin-top: 0;
+  }
+  #loginform #ajaxLoginForm,
+  #loginform #loggedin-container {
+    border: 0 none;
+  }
+  #loginform #ajaxLoginForm .hero-unit,
+  #loginform #loggedin-container .hero-unit {
+    padding: 0;
+    background-color: transparent;
+  }
+  #loginform #ajaxLoginForm .hero-unit > p,
+  #loginform #loggedin-container .hero-unit > p {
+    display: none;
+  }
+  #loginform #ajaxLoginForm h3,
+  #loginform #loggedin-container h3 {
+    display: none;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 18px;
+    margin-left: 0.5em;
+  }
+  #loginform #facebook-login p i {
+    font-size: 30px;
+  }
+  #loginform #user-info div {
+    float: left;
+  }
+  #loginform #user-info .span3 {
+    width: 30%;
+  }
+  #loginform #user-info .span6 {
+    width: 60%;
+  }
+}
+@media (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
+  #loginform #loggedin-container .hero-unit #forgot-pwd {
+    font-size: 14px;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 21px;
+    margin-left: 0.5em;
+  }
+  #loginform #facebook-login i {
+    font-size: 36px;
   }
 }

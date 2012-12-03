@@ -6,10 +6,10 @@
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
           <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
           <div class="media-body">
-			<h2>{{name}}  <i class="icon-chevron-right visible-phone"></i></h2>
+			<span class="heading">{{name}} <i class="icon-chevron-right visible-phone"></i></span>
 			<h3>({{author}})</h3>
 			<p class="hidden-phone">{{description}}</p>
-			<div class="rating">
+			<div class="rating hidden-phone">
 				<span>☆</span>
 				<span>☆</span>
 				<span>☆</span>
