@@ -1,5 +1,6 @@
 Authenticate = new function() {
 	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
+	var mainApp = com.compro.application.hsc;
 	
 	this.authAjax = function(){
 		$("#loginErrorMessage").hide();
@@ -13,8 +14,6 @@ Authenticate = new function() {
 	    	},
 	        success: function(response) {
 				if (response.success) { 
-					
-					var mainApp = com.compro.application.hsc;
 					mainApp.userinfo.loggedin = true;		
 					
 					TemplateManager.get('authenticate/home', function(template){
@@ -108,7 +107,6 @@ Authenticate = new function() {
 			url: com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout",
 			type: 'GET',    	
 			success: function(response) {
-				var mainApp = com.compro.application.hsc;
 				mainApp.userinfo.loggedin = false;
 				window.location.href = com.compro.cgrails.REQUEST_CONTEXT 
 				

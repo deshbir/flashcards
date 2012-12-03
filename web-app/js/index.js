@@ -267,6 +267,7 @@ com.compro.application.hsc = (function() {
 		"userinfo": userinfo,
 		"flashcards":flashcards,
 		"appHeader":appHeader,
+		"setHeaderOptions":setHeaderOptions,
 		"idTopContainer" : idTopContainer,
 		"clsMainHeader" : clsMainHeader,
 		"currentPanelId" : currentPanelId,

@@ -4,9 +4,12 @@
                 <!-- This is shown for mobile devices - collapsed icon -->
                 <i class="icon-align-justify"></i>
             </a>
+			<div class="brand-button">
+                <a id="back" class="btn btn-mini pull-left"><i class="icon-chevron-left"></i> Back</a>
+			</div>
+            
             <div class="brand">
-            	<button id="back" class="btn btn-small">Back</button>
-    			<a href="#/home" title="Pearson Health Sciences & Careers">Pearson</a>
+    			<a title="Pearson Health Sciences & Careers">Pearson</a>
 			</div>
 
             <div class="nav-collapse">

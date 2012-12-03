@@ -108,11 +108,18 @@ DisciplineView = new function() {
 			
 			/* ----- Appending Rows (3 columns)  ----------- */
 			that = this;
+			var mainClass="clickbox";
+			var alternateClass="clickbox-light";
+			var prevClass = alternateClass;
 			_.each(threeitem_lists, function(num, key){
-				
+					
 				var compiled_template_body_row = Mustache.render(that.template_body_row, num);
 				$(that.myPanelRowId).append(compiled_template_body_row);
 				
+				if (prevClass == alternateClass)
+					$("#discipline-list div .span4").addClass(mainClass);
+				else
+					$("#discipline-list div .span4").addClass(alternateClass);
 			});
 
 			this.setElement("#discipline-list");

@@ -1,7 +1,7 @@
 {
 "products" : [{
 	"name": "Criminal Justice Today, 12e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 	"thumbnail": "images/media/criminal-justice-today/cj-today-thumb.jpg",
 	"image": "images/media/criminal-justice-today/cj-today.jpg",
 	"sequence": 1,
