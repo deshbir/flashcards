@@ -207,8 +207,8 @@ com.compro.application.hsc = (function() {
 		{
 			
 			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
-				$(this.currentPanelId).hide("slide", { direction: "left" }, 300, function() {
-					$(newPanelId).show("slide", { direction: "right" }, 300, function() {
+				$(this.currentPanelId).hide("slide", { direction: "left" }, 150, function() {
+					$(newPanelId).show("slide", { direction: "right" }, 150, function() {
 						
 						if(!(typeof callback === 'undefined') )	{
 							callback();	
@@ -217,8 +217,8 @@ com.compro.application.hsc = (function() {
 					});					
 				});
 			} else{ 
-				$(this.currentPanelId).hide("slide", { direction: "right" }, 300,  function() {
-					$(newPanelId).show("slide", { direction: "left" }, 300, function()	{
+				$(this.currentPanelId).hide("slide", { direction: "right" }, 150,  function() {
+					$(newPanelId).show("slide", { direction: "left" }, 150, function()	{
 						
 						if(!(typeof callback === 'undefined') )	{
 							callback();	
@@ -227,8 +227,8 @@ com.compro.application.hsc = (function() {
 					});
 				});
 			}
-			this.currentPanelId = newPanelId;
 		}
+		this.currentPanelId = newPanelId;
 		
 	}
 		
