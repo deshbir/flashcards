@@ -188,6 +188,13 @@ com.compro.application.hsc = (function() {
 			});
 	}
 	
+	function setHeaderOptions(updateHeader, showHomeLink, showBackLink) {
+		if (updateHeader)
+			HeaderView.setHeaderMenu();
+		
+		HeaderView.setHomeIcon(showHomeLink);
+		HeaderView.setBackIcon(showBackLink);
+	}	
 	
 	function transitionAppPanel(newPanelId, callback) {
 		
