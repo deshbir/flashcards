@@ -3,8 +3,8 @@
 			<h1>Health Sciences &amp; Careers</h1>
 			<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo"/>
 			<div class="hero-unit">
-				<h3 id="change-lives-header">We Change Lives !</h3>
-				<p>
+				<h3>We Change Lives !</h3>
+				<p id="change-lives-info">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Nulla in diam sit amet sapien pharetra auctor. Aenean volutpat velit
 					lectus, non lacinia ante.Lorem ipsum dolor sit amet, consectetur

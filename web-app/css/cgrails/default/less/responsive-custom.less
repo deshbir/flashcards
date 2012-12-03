@@ -143,134 +143,101 @@
 
 /*-- Large desktops */
 @media (min-width: 1200px) {  
-
 }
 
 
 /* --------------- Flashcard Splash -------------------------- */
 
 @media (max-width: 480px) {  
-    .center { 
-    	border:0 none;
-    }
-    #loginform {
-        margin:0 10px;
-        padding:0;
-        .user-info {
-        	margin: 2em 0;
-        	.span3 {
-        		float:left;
-        	}
-        	
-        }
-		#ajaxLoginForm, #loggedin-container {
-			border:0 none;
-			max-width:100%;
-			padding:0;
-			#change-lives-header {
-				display:none;
-			}
-			input[type="text"], input[type="email"], input[type="password"] {
-				    height: 35px;
-				    width: 100%;
-				    margin-top:0.2em;
-			}
-			margin:0px;
-		}
-		.btn {
-			margin-top:0.5em;
-		}
-		.facebook-login  {
-			margin-left:0;
-			.span-facebook {
-			        .icon-facebook-sign {
-			     		font-size:40px;  
-		        	}
-		        	float:left;
-		        	margin-right:0.5em;
-	                 }
-		        .facebook-text {
-		        	font-size: 15px;
-			}
-		}
-    }
-    .align-or  {
-    	margin-bottom:0;
-    }
-    #business-info {
-    	margin:0;
-    	padding:0;
-    	p {
-    		display:none;
-    	}
-		h3 {
-			margin:0 0.2em;
-			font-size:13px;
+	#panel_home {
+		margin: 0 20px;
+	}
+	#business-info { 
+	    #change-lives-info {
+			display:none;
 		}
 		img {
-		        width:80%;
+		    width:80%;
+		    margin-left:20px;
 		}
 		h1 {
-			font-size:17px;
+			font-size:21px;
 			line-height: 25px;
 		}
-		h2 {
+		h3 {
 			font-size:15px;
 			line-height: 25px;
 		}
-    }
-    
+		.hero-unit {
+			background-color:transparent;
+   			margin-top: 0em;
+    		padding: 0px;
+    		margin-left:20px;
+    		margin-bottom:0;
+		}
+	}
+	#loginform {
+		margin-top:0;
+		#ajaxLoginForm, #loggedin-container { 
+			border:0 none;
+			.hero-unit {
+				padding:0;
+				background-color:transparent;
+				> p {
+					display:none;
+				}
+			}
+			h3 {
+				display:none;
+			}
+		}
+		#facebook-login {
+			.facebook-text {
+				font-size:18px;
+	    		margin-left: 0.5em;
+			}
+			p {
+				i {
+					font-size:30px;
+				}
+			}
+		}
+		#user-info {
+			div {
+				float:left;
+			}
+			.span3 {
+				width:30%;
+			}
+			.span6 {
+				width:65%;
+			}
+		}
+	}
 }
 @media (max-width: 767px) {  
-	 .facebook-login  {
-			margin-left:0;
-			.span-facebook {
-				.icon-facebook-sign {
-					font-size:40px;  
-				}
-				float:left;
-				margin:0em;
-			 }
-			.facebook-text {
-				font-size: 15px;
-			} 		
-  		}
 
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
 	#loginform {
-		 margin: 1em 0.2em;
-		.user-info  {
-			div {
-				 margin: 0 0.5em;
+		#ajaxLoginForm, #loggedin-container {
+			.hero-unit {
+				#forgot-pwd {
+					font-size:14px;
+				}
 			}
 		}
-		.facebook-login  {
-		  		margin-left:0;
-		  		.span-facebook {
-		  		        .icon-facebook-sign {
-		  		     		font-size:40px;  
-		  	        	}
-		  	        	float:left;
-		  	        	 margin-right: 1em;
-		                 }
-		  	        .facebook-text {
-		  	        	font-size: 15px;
-		  		}
-  		}
-  		#ajaxLoginForm, #loggedin-container {
-  			margin:0px;
-  		}
+		#facebook-login {
+			.facebook-text {
+				font-size: 21px;
+	    		margin-left: 0.5em;
+			}
+			i {
+				font-size:36px;
+			}
+		}
 	}
-	.align-or  {
-	    	margin-bottom:0;
-    	}
-    	#business-info {
-			h1 {
-				font-size:28px;
-			}	
-    	}
 }
 
 
