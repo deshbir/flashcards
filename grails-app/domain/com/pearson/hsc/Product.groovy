@@ -1,7 +1,10 @@
 package com.pearson.hsc
 
+import java.util.SortedSet;
+
 class Product implements Comparable {
 
+	SortedSet topics
 	static hasMany = [topics: Topic, tests: Test]
 	
 	static belongsTo = [discipline: Discipline]

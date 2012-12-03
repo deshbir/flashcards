@@ -1,6 +1,6 @@
 package com.pearson.hsc
 
-class Topic {
+class Topic implements Comparable {
 
 	String name
 	String audioTrack
@@ -11,6 +11,9 @@ class Topic {
 	static constraints = {
 	}
 	
+	int compareTo(def val) {
+		return audioSequence <=> val?.audioSequence
+	}
 	
 	/***********************************
 	 * START Offline configurations
