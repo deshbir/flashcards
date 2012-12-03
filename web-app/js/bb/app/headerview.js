@@ -51,6 +51,7 @@ HeaderView = new function() {
 					that.template_header = template;
 					that.render();
 			});
+			this.setElement(clsMainHeader);
 		},
 		
 		render : function() {
@@ -58,7 +59,6 @@ HeaderView = new function() {
 			var compiled_template_header = Mustache.render(this.template_header);
 			$(clsMainHeader).html(compiled_template_header);
 			
-			this.setElement(clsMainHeader);
 			
 			this.updateloginheader();
 			this.setHomeIcon(false);

@@ -97,7 +97,8 @@ Authenticate = new function() {
 			type: 'GET',    	
 			success: function(response) {
 				mainApp.userinfo.loggedin = false;
-				window.location.href = com.compro.cgrails.REQUEST_CONTEXT 
+				
+				Backbone.history.navigate("#/home");
 				
 				/*
 				 * 1st parameter - update header for login

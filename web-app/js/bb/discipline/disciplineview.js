@@ -108,21 +108,24 @@ DisciplineView = new function() {
 			
 			/* ----- Appending Rows (3 columns)  ----------- */
 			that = this;
-			var mainClass="clickbox";
-			var alternateClass="clickbox-light";
-			var prevClass = alternateClass;
-			_.each(threeitem_lists, function(num, key){
-					
+
+			_.each(threeitem_lists, function(num, key){				
 				var compiled_template_body_row = Mustache.render(that.template_body_row, num);
 				$(that.myPanelRowId).append(compiled_template_body_row);
 				
-				if (prevClass == alternateClass)
-					$("#discipline-list div .span4").addClass(mainClass);
-				else
-					$("#discipline-list div .span4").addClass(alternateClass);
 			});
 
 			this.setElement("#discipline-list");
+			
+			var currentClass="clickbox";
+			$(".span4").each(function(index) {
+			    $(this).addClass(currentClass);
+				if (currentClass ==  "clickbox clickbox-light") {
+					currentClass = "clickbox";
+				} else {
+					currentClass = "clickbox clickbox-light";
+				}				    
+			});			
 			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
@@ -220,6 +223,16 @@ DisciplineView = new function() {
 				this.setElement("#product-list");
 				
 				this.current_displine_id=this.requested_discipline_id;
+				
+				var currentClass="clickbox";
+				$(".span4").each(function(index) {
+				    $(this).addClass(currentClass);
+					if (currentClass ==  "clickbox clickbox-light") {
+						currentClass = "clickbox";
+					} else {
+						currentClass = "clickbox clickbox-light";
+					}				    
+				});					
 			}
 			
 			/*

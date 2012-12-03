@@ -111,8 +111,7 @@ ProductView = new function() {
 					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 				});
 			}
-			
-			
+
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */

@@ -4,8 +4,8 @@
                 <!-- This is shown for mobile devices - collapsed icon -->
                 <i class="icon-align-justify"></i>
             </a>
-			<div class="brand-button">
-                <a id="back" class="btn btn-mini pull-left"><i class="icon-chevron-left"></i> Back</a>
+			<div id="back" class="brand-button">
+                <a href="#" class="btn btn-mini pull-left"><i class="icon-chevron-left"></i> Back</a>
 			</div>
             
             <div class="brand">
