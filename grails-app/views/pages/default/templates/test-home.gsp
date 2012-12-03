@@ -4,6 +4,7 @@
 		<div class="span12">
 			<small>{{product.discipline.name}}</small>
 			<h1>{{product.name}}</h1>
+			<small>Question 1 of 5</small><small>
         </div>
 	</div>
 </div> 	
@@ -13,10 +14,6 @@
         	<div id="flashcard" class="flashcard">
         		<div class="header">
 					<div class="btn-toolbar">
-						<div class="btn-group">
-							<button class="btn resize"><i class="icon-resize-full"></i></button>
-							<button class="btn"><i class="icon-share-alt"></i></button>
-						</div>
 						<div class="btn-group">
 							<button class="btn previous">Previous</button>
 						</div>
@@ -55,7 +52,6 @@
 					</div>
 					{{/questions}}
 				</div>									        		
-				<div class="footer">(1/5)</div>	
         	</div>
         </div>	
   </div>     	      

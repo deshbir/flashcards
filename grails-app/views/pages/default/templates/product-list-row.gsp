@@ -4,11 +4,11 @@
  	<div id="{{id}}" class="span4 media clickbox">
 		<a href="javascript:;"> 
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
-          <img alt="{{name}}" class="pull-left" src="${contextPath}/{{thumbnail}}"/>
+          <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
           <div class="media-body">
-			<h2>{{name}}</h2>
+			<h2>{{name}}  <i class="icon-chevron-right visible-phone"></i></h2>
 			<h3>({{author}})</h3>
-			<p>{{description}}</p>
+			<p class="hidden-phone">{{description}}</p>
 			<div class="rating">
 				<span>☆</span>
 				<span>☆</span>
