@@ -67,27 +67,22 @@ DisciplineView = new function() {
 			this.loadCollection();
 			
 			//Fill Templates
-			var that = this;
-			TemplateManager.get('header', 
-				function(template){
-					that.template_header = template;
+			var that = this;					
+			TemplateManager.get('discipline-list', 
+					function(template){
+						that.template_body = template;
 						
-					TemplateManager.get('discipline-list', 
+						TemplateManager.get('discipline-list-row', 
 							function(template){
-								that.template_body = template;
-								
-								TemplateManager.get('discipline-list-row', 
-									function(template){
-										that.template_body_row = template;
-										that.collection.fetch({
-											success: function(){							
-												//Always call render from initialize - as Backbone does not automatically call it.
-												that.render();
-											}
-									});		
-								});
-							});
+								that.template_body_row = template;
+								that.collection.fetch({
+									success: function(){							
+										//Always call render from initialize - as Backbone does not automatically call it.
+										that.render();
+									}
+						});		
 					});
+			});
 		},
 		
 		loadCollection: function()	{
@@ -96,12 +91,12 @@ DisciplineView = new function() {
 		
 		render : function() {
 			
-			HeaderView.setHeaderMenu();
-			HeaderView.setHomeIcon(true);
-			HeaderView.setBackIcon(false);
-			
-			//var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "active", "products": ""});
-			//$(clsMainHeader).html(compiled_template_header);
+			/*
+			 * 1st parameter - update header for login
+			 * 2nd parameter - showHomeLink
+			 * 3rd parameter - setBackLink 
+			 */
+			mainApp.setHeaderOptions(false, true, true);
 
 			var compiled_template_body = Mustache.render(this.template_body);
 			$(this.myPanelId).html(compiled_template_body);
@@ -160,22 +155,17 @@ DisciplineView = new function() {
 
 			//Fill Templates
 			var that = this;
-			TemplateManager.get('header', 
+			TemplateManager.get('product-list', 
 				function(template){
-					that.template_header = template;
-
-					TemplateManager.get('product-list', 
+					that.template_body = template;					
+					TemplateManager.get('product-list-row', 
 						function(template){
-							that.template_body = template;					
-							TemplateManager.get('product-list-row', 
-								function(template){
-									that.template_body_row = template;
-									that.collection.fetch({
-										success: function(){							
-											//Always call render from initialize - as Backbone does not automatically call it.
-											that.render();
-										}
-									});
+							that.template_body_row = template;
+							that.collection.fetch({
+								success: function(){							
+									//Always call render from initialize - as Backbone does not automatically call it.
+									that.render();
+								}
 							});
 					});
 			});
@@ -191,8 +181,12 @@ DisciplineView = new function() {
 		
 		render : function() {
 			
-			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin,"home": "", "disciplines": "", "products": "active"});
-			$(clsMainHeader).html(compiled_template_header);
+			/*
+			 * 1st parameter - update header for login
+			 * 2nd parameter - showHomeLink
+			 * 3rd parameter - setBackLink 
+			 */
+			mainApp.setHeaderOptions(false, true, true);
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM

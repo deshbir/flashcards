@@ -23,9 +23,12 @@ Authenticate = new function() {
 								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"), "email":  model.get("email")} );
 								$("#loginform").html(compiledTemplate);
 								
-								HeaderView.setHeaderMenu();
-								HeaderView.setHomeIcon(false);
-								HeaderView.setBackIcon(false);
+								/*
+								 * 1st parameter - update header for login
+								 * 2nd parameter - showHomeLink
+								 * 3rd parameter - setBackLink 
+								 */
+								mainApp.setHeaderOptions(true, false, false);
 							}
 						});
 						/*TemplateManager.get('header', 
@@ -76,9 +79,12 @@ Authenticate = new function() {
 							var compiledTemplate = Mustache.render(template,{"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"),"email":model.get("email") });
 							$("#loginform").html(compiledTemplate);
 							
-							HeaderView.setHeaderMenu();
-							HeaderView.setHomeIcon(false);
-							HeaderView.setBackIcon(false);
+							/*
+							 * 1st parameter - update header for login
+							 * 2nd parameter - showHomeLink
+							 * 3rd parameter - setBackLink 
+							 */
+							mainApp.setHeaderOptions(true, false, false);
 						}
 					});						
 			 	});
@@ -106,9 +112,12 @@ Authenticate = new function() {
 				mainApp.userinfo.loggedin = false;
 				window.location.href = com.compro.cgrails.REQUEST_CONTEXT 
 				
-				HeaderView.setHeaderMenu();
-				HeaderView.setHomeIcon(false);
-				HeaderView.setBackIcon(false);
+				/*
+				 * 1st parameter - update header for login
+				 * 2nd parameter - showHomeLink
+				 * 3rd parameter - setBackLink 
+				 */
+				mainApp.setHeaderOptions(true, false, false);
 			}
 		});		    
 	}

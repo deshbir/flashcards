@@ -61,20 +61,15 @@ ProductView = new function() {
 			this.loadCollection(this.options.displineId,this.options.productId);
 			
 			//Fill Templates
-			var that = this;
-			TemplateManager.get('header', 
+			var that = this;					
+			TemplateManager.get('product-home', 
 				function(template){
-					that.template_header = template;
-					
-					TemplateManager.get('product-home', 
-						function(template){
-							that.template_body = template;
-							that.collection.fetch({
-								success: function(){							
-									//Always call render from initialize - as Backbone does not automatically call it.
-									that.render();
-								}
-							});
+					that.template_body = template;
+					that.collection.fetch({
+						success: function(){							
+							//Always call render from initialize - as Backbone does not automatically call it.
+							that.render();
+						}
 					});
 			});
 		},
@@ -91,8 +86,13 @@ ProductView = new function() {
 		},
 		
 		render: function() {
-			var compiled_template_header = Mustache.render(this.template_header, {"loggedin": mainApp.userinfo.loggedin, "home": "", "disciplines": "", "products": "active"});
-			$(clsMainHeader).html(compiled_template_header);
+
+			/*
+			 * 1st parameter - update header for login
+			 * 2nd parameter - showHomeLink
+			 * 3rd parameter - setBackLink 
+			 */
+			mainApp.setHeaderOptions(false, true, true);			
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
