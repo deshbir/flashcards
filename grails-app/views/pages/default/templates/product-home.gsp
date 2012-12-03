@@ -4,13 +4,13 @@
 </div> 	
 <div id="product-home" class="main-body">
 	<div class="row">
-	    <div class="span10 offset1 media">
+	    <div class="span10">
 	    	<small>{{discipline.name}}</small>
 	        <h1>{{name}}</h1>
 	    </div>    
 	</div>
 	<div class="row">
-		<div class="span10 offset1 media">
+		<div class="span10 media">
 	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
 	        <div class="media-body">
 	        	<h3>({{author}})</h3>
@@ -35,7 +35,7 @@
 	</div>
    	
 	<div class="row">
-		    <div class="span10 offset1">
+		    <div class="span10 ">
         	<h3><i class="icon-list"></i> Audio Playlist</h3>
         	<ul class="unstyled playlist">
         		{{#topics}}
