@@ -1,5 +1,3 @@
-<!-- Top  Navbar for logo, brand, menu, and language selection -->
-<div class="navbar">
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -7,11 +5,8 @@
                 <i class="icon-align-justify"></i>
             </a>
             <a class="brand" title="Pearson Health Sciences & Careers" href="#/home">
-                <img src="http://placehold.it/64x32" alt=logo"><span>Pearson</span>
+            	<span>Pearson</span>
             </a>
-            <div id="loadingIcon">
-				<r:img dir="images" file="ajax_loader.gif"/>
-			</div>            
             <div class="nav-collapse">
 	<ul class="nav pull-right">
 	{{#loggedin}}
@@ -50,6 +45,4 @@
             </div><!--/.nav-collapse -->
         </div>
     </div>
-</div>
-
 

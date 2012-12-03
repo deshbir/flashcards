@@ -1,5 +1,5 @@
-/*
- * Bootstrap v2.0.4
+/*!
+ * Bootstrap v2.2.1
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -17,7 +17,6 @@
 
 // Grid system and page structure
 @import "scaffolding.less";
-@import "scaffolding.less";
 @import "grid.less";
 @import "layouts.less";
 
@@ -28,7 +27,9 @@
 @import "tables.less";
 
 // Components: common
+// -- Commented for Font Awesome @import "sprites.less";
 @import "font-awesome.less";
+
 @import "dropdowns.less";
 @import "wells.less";
 @import "component-animations.less";
@@ -49,14 +50,11 @@
 // Components: Popovers
 @import "modals.less";
 @import "tooltip.less";
-//@import "popovers.less"; //Note:Removed as we are using jquery popover and both have same class definition.
+@import "popovers.less";
 
 // Components: Misc
 @import "thumbnails.less";
-
-/*---- Custom Component ---*/
 @import "media.less";
-
 @import "labels-badges.less";
 @import "progress-bars.less";
 @import "accordion.less";
@@ -65,4 +63,3 @@
 
 // Utility classes
 @import "utilities.less"; // Has to be last to override when necessary
-

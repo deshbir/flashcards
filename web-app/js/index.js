@@ -79,7 +79,7 @@ com.compro.application.hsc = (function() {
 		TestView.routerInitialize();
 		
 		//One time loading of common Header View
-		HeaderView.initialize();
+		//HeaderView.initialize();
 	}
 	
 	/*
@@ -101,6 +101,8 @@ com.compro.application.hsc = (function() {
 			
 			logger.info("ajaxStart");
 			
+			/*
+			
 		    var elProgress = globalAjaxOptions.elProgress;
 		    var cssProgressLoading = globalAjaxOptions.cssProgressLoading;
 
@@ -108,6 +110,8 @@ com.compro.application.hsc = (function() {
 		        //Show Waiting Icon
 		    	$(globalAjaxOptions.elProgress).show()
 		    }
+		    */
+			
 		});
 
 		$(document).ajaxSend(function (e, xhr, opts) {

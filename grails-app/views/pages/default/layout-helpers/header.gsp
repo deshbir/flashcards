@@ -1,3 +1,3 @@
 <!-- Top  Navbar for logo, brand, menu, and language selection -->
-<div class="container main-header">
-</div>  
+<div class="navbar navbar-inverse navbar-fixed-top main-header">
+</div>
