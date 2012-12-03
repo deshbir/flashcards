@@ -67,7 +67,14 @@ HeaderView = new function() {
 		},
 		
 		backbutton : function() {
-			window.history.back();
+			//window.history.back();
+            if (window.history.length > 0) {
+                window.history.back();
+                if (window.location.hash == "#/home")
+                	this.setBackIcon(false);
+                return false;
+            }
+            navigator.app.exitApp();
 		},
 		
 		homebutton : function() {

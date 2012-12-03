@@ -16,20 +16,12 @@ HomeView = new function() {
 			router = new Router();
 		}
 		
-		/*
-		TemplateManager.get('header', 
-				function(template){
-					var mainApp = com.compro.application.hsc;
-			 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
-					$(clsMainHeader).html(templateHTML);
-		});*/
-		
 		TemplateManager.get('splash', 
 			function(template){
 				var mainApp = com.compro.application.hsc;			
 				$("#panel_home").html(template);
 				TemplateManager.get('authenticate/home', function(template){
-						var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": "I don't know", "email": "I don't know"} );
+						var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email} );
 						$("#loginform").html(compiledTemplate);
 						HeaderView.setHeaderMenu();
 						HeaderView.setHomeIcon(false);							

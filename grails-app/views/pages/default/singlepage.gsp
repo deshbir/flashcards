@@ -14,6 +14,14 @@
 			</div>
 		<r:script disposition="defer">	
 			Authenticate.initialize();
-   		</r:script>						
+   		</r:script>
+		<sec:ifLoggedIn>	
+			<r:script disposition="defer">
+				var mainApp = com.compro.application.hsc;
+				mainApp.userinfo.loggedin = true;					
+				mainApp.userinfo.name = "<sec:username/>";
+				mainApp.userinfo.email = "<sec:username/>";
+			</r:script>
+		</sec:ifLoggedIn>   		
 	</body>
 </html>

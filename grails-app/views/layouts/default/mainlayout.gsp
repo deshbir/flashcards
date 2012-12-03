@@ -39,14 +39,5 @@
 	
 		<g:include view="layout-helpers/footer.gsp"/>
 		<r:layoutResources/>
-		
-		<sec:ifLoggedIn>	
-			<script>
-				var mainApp = com.compro.application.hsc;
-				mainApp.userinfo.loggedin = true;					
-				mainApp.userinfo.name = "Logged In User";
-			</script>
-		</sec:ifLoggedIn>
-			
 	</body>
 </html>

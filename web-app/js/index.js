@@ -57,7 +57,8 @@ com.compro.application.hsc = (function() {
 	//User Logged In Flag
 	var userinfo = {
 			loggedin: false,
-			name: "Compro"
+			name: "Compro",
+			email: "Compro"
 	}
 	
 	//Global Flashcards holder (object of SwipeJs)
