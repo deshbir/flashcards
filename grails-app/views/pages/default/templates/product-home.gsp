@@ -1,14 +1,14 @@
 <g:set var="contextPath" value="${request.contextPath}"/>
 {{#.}}
 <div id="page-header" class="main-body">
-</div> 	
-<div id="product-home" class="main-body">
 	<div class="row">
 	    <div class="span10">
 	    	<small>{{discipline.name}}</small>
 	        <h1>{{name}}</h1>
 	    </div>    
 	</div>
+</div> 	
+<div id="product-home" class="main-body">
 	<div class="row">
 		<div class="span10 media">
 	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
