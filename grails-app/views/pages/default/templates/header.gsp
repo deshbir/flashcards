@@ -4,9 +4,10 @@
                 <!-- This is shown for mobile devices - collapsed icon -->
                 <i class="icon-align-justify"></i>
             </a>
-            <a class="brand" title="Pearson Health Sciences & Careers" href="#/home">
-            	<span>Pearson</span>
-            </a>
+            <div class="brand">
+    			<a href="#/home" title="Pearson Health Sciences & Careers">Pearson</a>
+			</div>
+
             <div class="nav-collapse">
 	<ul class="nav pull-right">
 	{{#loggedin}}
