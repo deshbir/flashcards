@@ -1,0 +1,180 @@
+{
+"products" : [{
+	"name": "Criminal Justice Today, 12e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat, nisi velit consectetur augue, vitae hendrerit mauris dui sit amet arcu.",
+	"thumbnail": "images/media/criminal-justice-today/cj-today-thumb.jpg",
+	"image": "images/media/criminal-justice-today/cj-today.jpg",
+	"sequence": 1,
+	"author": "Frank J. Schmalleger",
+	"topics": [	{
+					"name": "Topic 1",
+					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Topic 2",
+					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Topic 3",
+					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"audioSequence": "3"
+				},
+				{
+					"name": "Topic 4",
+					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"audioSequence": "4"
+				},
+				{
+					"name": "Topic 5",
+					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"audioSequence": "5"
+				}],
+			    "tests": [
+			        {
+			        	"name": "test1",
+			        	"instructions": "This is a test.",        	
+			        	"questions": [{
+							        	"type": "MCQSS",
+							        	"text": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula?",
+							        	"sequence": 1,
+							        	"maxscore": 5.0,
+							        	"mediatype": "None",
+							        	"imageurl": "",
+							        	"audiourl": "",
+							        	"videourl": "",
+							        	"option1": "Option 1 (Duis mollis, est non commodo luctus)",
+							        	"option2": "Option 2 (Duis mollis, est non commodo luctus)",
+							        	"option3": "Option 3 (Duis mollis, est non commodo luctus)",
+							        	"option4": "Option 4 (Duis mollis, est non commodo luctus)",
+							        	"option5": "",
+							        	"option6": "",
+							        	"option7": "Option 7",
+							        	"answer1": "answer 1",
+							        	"answer2": "answer 2",
+							        	"answer3": "answer 3",
+							        	"answer4": "answer 4",
+							        	"answerDetails": "Explain the correct answer here"
+			        				}, 
+									{
+							        	"type": "MCQSS",
+							        	"text": "Duis mollis, est non commodo luctus, nisi erat porttitor ligul",
+							        	"sequence": "2",
+							        	"maxscore": "5",
+							        	"mediatype": "None",
+							        	"imageurl": "",
+							        	"audiourl": "",
+							        	"videourl": "",
+							        	"option1": "Option 1 (Duis mollis, est non commodo luctus)",
+							        	"option2": "Option 2 (Duis mollis, est non commodo luctus)",
+							        	"option3": "Option 3 (Duis mollis, est non commodo luctus)",
+							        	"option4": "",
+							        	"option5": "",
+							        	"option6": "",
+							        	"option7": "",
+							        	"answer1": "answer 1",
+							        	"answer2": "answer 2",
+							        	"answer3": "answer 3",
+							        	"answer4": "answer 4",
+							        	"answerDetails": "Explain the correct answer here"
+			        				},
+									{
+							        	"type": "MCQSS",
+							        	"text": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula?",
+							        	"sequence": "3",
+							        	"maxscore": "5",
+							        	"mediatype": "None",
+							        	"imageurl": "",
+							        	"audiourl": "",
+							        	"videourl": "",
+							        	"option1": "Option 1 (Duis mollis, est non commodo luctus)",
+							        	"option2": "Option 2 (Duis mollis, est non commodo luctus)",
+							        	"option3": "Option 3 (Duis mollis, est non commodo luctus)",
+							        	"option4": "Option 4 (Duis mollis, est non commodo luctus)",
+							        	"option5": "Option 5 (Duis mollis, est non commodo luctus)",
+							        	"option6": "",
+							        	"option7": "",
+							        	"answer1": "answer 1",
+							        	"answer2": "answer 2",
+							        	"answer3": "answer 3",
+							        	"answer4": "answer 4",
+							        	"answerDetails": "Explain the correct answer here"
+			        				}]
+			        }]			        				
+}, 
+{
+	"name": "Criminology Today, 6e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminology-today/cr-today-thumb.jpg",
+	"image": "images/media/criminology-today/cr-today.jpg",
+	"author": "Frank J. Schmalleger",
+	"sequence": 2
+},
+{
+	"name": "Criminology: A Brief Introduction, 2e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminology-intro/cr-introduction-thumb.jpg",
+	"image": "images/media/criminology-intro/cr-introduction.jpg",
+	"author": "Frank J. Schmalleger",				        	
+	"sequence": 3
+},
+{
+	"name": "Criminal Justice: A Brief Introduction, 10e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminal-justice/cr-justice-thumb.jpg",
+	"image": "images/media/criminal-justice/cr-justice.jpg",
+	"author": "Frank J. Schmalleger",				        	
+	"sequence": 4
+},
+{
+	"name": "Corrections: An Introduction, 4e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/corrections-intro/co-introduction-thumb.jpg",
+	"image": "images/media/corrections-intro/co-introduction.jpg",
+	"author": "Richard P. Seiter",				        	
+	"sequence": 5
+},     				
+{
+	"name": "Criminal Investigation, 1e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminal-invest/cr-investigation-1e-thumb.jpg",
+	"image": "images/media/criminal-invest/cr-investigation-1e.jpg",
+	"author": "Richard P. Seiter",				        	
+	"sequence": 6
+},         				
+{
+	"name": "Criminal Law & Procedure, 1e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
+	"image": "images/media/criminal-procedure/cr-procedure.jpg",
+	"author": "John L. Worrall",				        	
+	"sequence": 7
+},         				
+{
+	"name": "MyCJLab tm",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/placeholder_148_120.png",
+	"image": "images/placeholder_148_120.png",
+	"author": "Pearson",     	
+	"sequence": 8
+},
+{
+	"name": "Criminal Investigation, 8e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/criminal-invest/cr-investigation-8e-thumb.jpg",
+	"image": "images/media/criminal-invest/cr-investigation-8e.jpg",
+	"author": "Lyman",				        	
+	"sequence": 9
+},        				
+{
+	"name": "Juvenile Justice in America, 7e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/juvenile-justice/juvenile-justice-thumb.jpg",
+	"image": "images/media/juvenile-justice/juvenile-justice.jpg",
+	"author": "Clemens Bartollas, Stuart J. Miller Ph.D. ",				        	
+	"sequence": 10
+}]
+}
+
+        				

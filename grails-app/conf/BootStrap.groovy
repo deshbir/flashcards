@@ -8,29 +8,42 @@ import com.pearson.hsc.authenticate.UserRole
 import groovy.json.JsonSlurper
 
 class BootStrap {
-
-    def init = { servletContext ->
-		String jsonDisciplineData = new File(servletContext.getRealPath("/json/hsc/disciplines.json")).text
-		Product aProduct
+	
+	def bootstrap_user_data =	{ servletContext ->
 		
 		new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)
 		new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
 		def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
 		def testUser = new User(username: 'comprotest', enabled: true, password: 'compro', email: 'email@compro.com')
 		testUser.save(flush: true)
+		
 		UserRole.create testUser, adminRole, true
+
+	}
+	
+	def bootstrap_disciplines =	{ servletContext ->
+		
+		String jsonDisciplineData = new File(servletContext.getRealPath("/json/hsc/discipline_master.json")).text
 		
 		if (!Discipline.count()) {
 			def slurper = new JsonSlurper()
 			def allDisciplines = slurper.parseText(jsonDisciplineData)
-			
+		
 			allDisciplines.disciplines.each	{
-				def jsonDiscipline = it 
+				def jsonDiscipline = it
 				def aDiscipline = new Discipline(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image, sequence: it.sequence).save(failOnError: true)
 				
-				if(jsonDiscipline.products)
+				def product_data_filename =  it.product_data_filename;
+				
+				if(product_data_filename)
 				{
-					jsonDiscipline.products.each	{
+				
+					String  jsonProductData = new File(servletContext.getRealPath("/json/hsc/" + product_data_filename)).text
+					def allProducts = slurper.parseText(jsonProductData)
+					
+					def aProduct
+					
+					allProducts.products.each	{
 						
 						def jsonProduct = it
 						aProduct = new Product(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image, sequence: it.sequence, author: it.author)
@@ -59,10 +72,24 @@ class BootStrap {
 						}
 						aDiscipline.addToProducts (aProduct).save(failOnError: true)
 					}
+					
+				
 				}
+		
 			}
+			
 		}
-    }
-    def destroy = {
-    }
+
+	}
+	
+
+	def init = { servletContext ->
+		
+		bootstrap_user_data(servletContext);
+		bootstrap_disciplines(servletContext);
+	
+	}
+	
+	def destroy = {
+	}
 }
