@@ -1,5 +1,9 @@
 /* ---------- Bootstrap Custom ----------- */
 
+/* ---------- Bootstrap Common Variables ----------- */
+@HSCHeaderColor: #2b2b2c; //Dark Black
+@HSCButtonColor: #7dccdf; //turquoise blue
+
 body {
     font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
 	padding-top: 60px;
@@ -19,5 +23,11 @@ body {
     a	{
     	color: #fff;
     }
+}
+
+.btn {
+	#gradient > .vertical(@HSCButtonColor, darken(@HSCButtonColor, 5%));
+	color:#FFFFFF;
+	padding:1em;
 }
      
