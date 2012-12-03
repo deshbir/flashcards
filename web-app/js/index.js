@@ -36,7 +36,6 @@ com.compro.application.hsc = (function() {
 	//JS Library Dependencies
 	
 
-
 	//DOM Dependencies
 	var idTopContainer = "#bb-container";
 	var clsMainHeader = ".main-header";
@@ -46,18 +45,12 @@ com.compro.application.hsc = (function() {
 		cssProgressLoading : "",
 		disableLoadingProgress : true
 	}
-	/*
-	TODO
-	1. Can we assume that these DOM element are initializaed by this time
-	2. Exception handling - do not allow code to proceed, if any of these depencies
-	   are not present.
-	*/
 		
 	/********************************************************/
 	/*                 PRIVATE MEMBERS                     */
 	/********************************************************/
 	
-	// Config for plug
+	// Config 
 	var config = {
 	};
 	
@@ -84,7 +77,19 @@ com.compro.application.hsc = (function() {
 		DisciplineView.routerInitialize();
 		ProductView.routerInitialize();
 		TestView.routerInitialize();
+		
+		//One time loading of common Header View
+		HeaderView.initialize();
 	}
+	
+	/*
+	 * Global Viewas
+	 * 
+	 * 
+	 */
+	var appHeader;
+	
+	
 	
 	/*
 	 * Global errorHandler 
@@ -250,6 +255,7 @@ com.compro.application.hsc = (function() {
 		"config":config,
 		"userinfo": userinfo,
 		"flashcards":flashcards,
+		"appHeader":appHeader,
 		"idTopContainer" : idTopContainer,
 		"clsMainHeader" : clsMainHeader,
 		"currentPanelId" : currentPanelId,
