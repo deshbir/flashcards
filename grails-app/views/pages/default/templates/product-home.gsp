@@ -2,18 +2,15 @@
 {{#.}}
 <div id="page-header" class="main-body">
 	<div class="row">
-		<div class="span9">
+		<div class="span12">
 			<small>{{discipline.name}}</small>
 			<h1>{{name}}</h1>
         </div>
-        <div class="span3">
-        	<a class="btn play-all-audio"><i class="icon-play"></i> Play All audio</a>
-        </div>	
 	</div>
 </div> 	
 <div id="product-home" class="main-body">
 	<div class="row">
-		<div class="span6 media">
+		<div class="span8 media">
 	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
 	        <div class="media-body">
 	        	<p>{{description}}</p>
@@ -26,8 +23,17 @@
 				</div>
 			</div>		        
     	</div>
-	    <div class="span6">
-        	<h3><i class="icon-list"></i> Topic Playlist</h3>
+    	<div class="span4">
+			{{#tests}}
+			  <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flash cards<small> (Train)</small></button>
+		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
+		      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flash cards<small> (Assess)</small></button>
+		    {{/tests}} 
+	   	</div>
+	</div>
+	<div class="row">
+		    <div class="span6">
+        	<h3><i class="icon-list"></i>Audio Playlist</h3>
         	<ul class="unstyled playlist">
         		{{#topics}}
 	            <li><a href="{{audioTrack}}">{{name}}</a></li>
@@ -36,16 +42,7 @@
 	        <div id="sm2-container">
 			<!-- SM2 flash goes here -->
 			</div>
-	   	</div>
-	</div>
-	<div class="row">
-		<div class="span6">
-			{{#tests}}
-			  <button id="{{id}}" class="btn btn-large flashcardAssess">Flash cards<small> (Train)</small></button>
-		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
-		      <button id="{{id}}" class="btn btn-large flashcardAssess">Flash cards<small> (Assess)</small></button>
-		    {{/tests}} 
-	   	</div>
+	   	</div>	
 	</div>			      
 </div>	
 {{/.}}
