@@ -1,8 +1,6 @@
 <div class="row-fluid">
         <div class="span7" id="business-info">
-            <br/>
 			<h1>Health Sciences &amp; Careers</h1>
-			<br/>
 			<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo"/>
 			<div class="hero-unit">
 				<h3 id="change-lives-header">We Change Lives !</h3>

@@ -1,19 +1,18 @@
 <div id="home">
 	{{#loggedin}}
 	    <div id="loggedin-container">
-			<h3> Welcome back!</h3>
-			<div class="row-fluid user-info">
-			<div class="span3"><i class="icon-github-sign"></i></div>
-			<div class="span6">
-				<h3>{{username}}</h3>
-				<h4>{{email}}</h4>
+	    	<h3> Welcome back</h3>
+	    	<div class="hero-unit">
+				<div class="row-fluid" id="user-info">
+					<div class="span3"><r:img uri="/images/profile_image.png" alt="profile-image"/></div>
+					<div class="span6">
+						<p>{{username}}</p>
+						<p>{{email}}</p>
+					</div>
+				</div>	
+				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
+				<a href="#/discipline" class="btn btn-large btn-block">Test yourself</a>
 			</div>
-		</div>	
-		<div class="user-buttons">
-			<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
-			<br/>
-			<a href="#/discipline" class="btn btn-large btn-block">Test yourself</a>
-		</div>
 	    </div>
 	{{/loggedin}}
 	{{^loggedin}}
