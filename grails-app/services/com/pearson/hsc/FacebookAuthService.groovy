@@ -10,11 +10,9 @@ import com.the6hours.grails.springsecurity.facebook.FacebookAuthToken
 class FacebookAuthService {
 	FacebookAuthDao facebookAuthDao
 	void prepopulateAppUser(User user, FacebookAuthToken token) {
-		def accessToken  = token.accessToken?.accessToken
-println "accessToken:" accessToken		
+		def accessToken  = token.accessToken?.accessToken	
 		String authUrl = "https://graph.facebook.com/me?access_token=$accessToken"
 		URL url = new URL(authUrl)
-println "url:" url
 		JSONObject me = JSON.parse(url.readLines().first())
 		user.password = me.first_name.toLowerCase()
 		user.username = me.username
