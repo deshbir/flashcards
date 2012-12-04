@@ -118,6 +118,8 @@ DisciplineView = new function() {
 			this.setElement("#discipline-list");
 			
 			var currentClass="clickbox";
+			$(".span4").addClass(currentClass);
+			/*
 			$(".span4").each(function(index) {
 			    $(this).addClass(currentClass);
 				if (currentClass ==  "clickbox clickbox-light") {
@@ -126,7 +128,7 @@ DisciplineView = new function() {
 					currentClass = "clickbox clickbox-light";
 				}				    
 			});			
-			
+			*/
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
@@ -225,6 +227,8 @@ DisciplineView = new function() {
 				this.current_displine_id=this.requested_discipline_id;
 				
 				var currentClass="clickbox";
+				$(".span4").addClass(currentClass);
+				/*
 				$(".span4").each(function(index) {
 				    $(this).addClass(currentClass);
 					if (currentClass ==  "clickbox clickbox-light") {
@@ -232,7 +236,7 @@ DisciplineView = new function() {
 					} else {
 						currentClass = "clickbox clickbox-light";
 					}				    
-				});					
+				});*/	
 			}
 			
 			/*

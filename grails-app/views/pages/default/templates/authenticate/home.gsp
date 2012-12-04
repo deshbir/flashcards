@@ -7,7 +7,7 @@
 					<div class="span3"><r:img uri="/images/profile_image.png" alt="profile-image"/></div>
 					<div class="span6">
 						<p>{{username}}</p>
-						<p>{{email}}</p>
+						<p><small>{{email}}</small></p>
 					</div>
 				</div>	
 				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>

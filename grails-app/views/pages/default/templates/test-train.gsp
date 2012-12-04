@@ -29,10 +29,10 @@
         		</div>
         		<div id="body-set">
         			{{#questions}}
-	        			<div class="body" style='display:none'>
+	        		<div class="body train" style='display:none'>
 		        		<h2 class="question"><i class="icon-question-sign"></i> {{text}}</h2>
 		        		<h3 class="answer">{{answer1}}</h3>
-		        		<p class="explainanswer">{{answerDetails}}</p>
+		        		<blockquote> <p class="explainanswer">{{answerDetails}}</p></blockquote>
 					</div>
 					{{/questions}}
 				</div>									        		
