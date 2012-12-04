@@ -11,7 +11,6 @@
 					</div>
 				</div>	
 				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
-				<a href="#/discipline" class="btn btn-large btn-block">Test yourself</a>
 			</div>
 	    </div>
 	{{/loggedin}}

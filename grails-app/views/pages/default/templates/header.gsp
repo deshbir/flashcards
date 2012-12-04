@@ -29,18 +29,6 @@
 							<li id="logout"><a href="javascript:void(0);">Sign out</a></li>
 						</ul>
 					</li>
-				
-					<li class="divider-vertical loggedin"></li>
-					<!-- Logged In Menu END-->
-					<!-- App Preferences Menu Option START (available to Logged out users also) -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"><i class="icon-cog"></i><b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="?lang=en">English</a></li>
-							<li><a href="?lang=ja">Japanese</a></li>
-							<li><a href="?lang=ar">Arabic</a></li>
-						</ul></li>
-					<!-- App Preferences Menu Option END-->
 				</ul>
             </div><!--/.nav-collapse -->
         </div>
