@@ -17,10 +17,11 @@
 				<!-- Logged In Menu Options	 START -->
 				<li id="home" class="{{home}} loggedin"><a href="#"><i class="icon-home"></i></a></li>	
 				<li class="divider-vertical loggedin"></li>
-			
-				<li class="dropdown loggedin">
-					<!-- User Preferences Menu Option START --> <a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><b class="caret"></b></a>
+				<li class="dropdown-submenu loggedin">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-user"></i>
+						<b class="caret"></b>
+					</a>
 					<ul class="dropdown-menu">
 						<li><a href="#"> (Profile)</a></li>
 						<li class="divider"></li>
