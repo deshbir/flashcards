@@ -2,8 +2,25 @@
 
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
-
-
+	
+	/**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+	 body {
+	 	padding-left: 0px;
+    	padding-right: 0px;
+    }
+    
+    /** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+	
+	.brand-button {
+		.btn	{
+			padding: 0 20px;
+		}
+	}
     
     .hero  {
         .row    {   /* ------- Custom Styling for Splash Section ------ */
@@ -12,7 +29,6 @@
                     width: 90%;
                 }
             }
-
         }
     }
 
@@ -77,13 +93,8 @@
 		  			margin-right:10px;
 		  		}
 		  	 }
-		  	 
-
 		}
 	}
-
-
-    
 }
 
 /*-- Landscape phone to portrait tablet */
@@ -101,13 +112,30 @@
 /*-- Portrait tablet to landscape and desktop */
 
 @media (min-width: 771px) and (max-width: 979px) {
-
+		
+   /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+	 body {
+	 	padding-left: 0px;
+    	padding-right: 0px;
+    }
     
-        /* Navbar customization */
+    /** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+    
+   /* Navbar customization */
     .navbar .nav > li > a, .navbar .dropdown-menu a {
         color: #000000;
         font-weight: normal;
     }
+    .brand-button {
+		.btn	{
+			padding: 0 20px;
+		}
+	}
 }
 
 /*-- TABLETS AND BELOW */
@@ -196,6 +224,9 @@
 				#forgot-pwd {
 					font-size:14px;
 				}
+			}
+			.span3 {
+				min-width: 35%;
 			}
 		}
 		#facebook-login {

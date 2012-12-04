@@ -1,7 +1,9 @@
 <div class="row-fluid">
         <div class="span7" id="business-info">
 			<h1>Health Sciences &amp; Careers</h1>
-			<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo" class="hidden-phone"/>
+			<div class="hero-unit hidden-phone"  id="business-logo">
+				<r:img uri="/images/placeholder-icon.png" alt="Business-Logo" class="hidden-phone"/>
+			</div>
 			<div class="hero-unit hidden-phone">
 				<h3>Lorem ipsum !</h3>
 				<p id="change-lives-info">
