@@ -42,7 +42,8 @@ ProductView = new function() {
 		/*------------------------------------------------------*/
 		
 		events: {
-			"click .flashcardAssess"	:	"flashcardassess"
+			"click .flashcardAssess"	:	"flashcardassess",
+			"click .flashcardTraining"	:	"flashcardtraining",
 		},
 		
 		
@@ -124,7 +125,13 @@ ProductView = new function() {
 			var productid = this.options.productId;
 			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/test/"+testid);
-		}
+		},
+		
+		flashcardtraining : function(e) {
+			var productid = this.options.productId;
+			var testid = e.currentTarget.id;
+			Backbone.history.navigate("#/product/" + productid + "/testtraining/"+testid);
+		}		
 	});
 
 	this.routerInitialize = function(){
