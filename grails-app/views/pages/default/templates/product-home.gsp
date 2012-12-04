@@ -36,10 +36,10 @@
    	
 	<div class="row">
 		    <div class="span10 ">
-        	<h3><i class="icon-list"></i> Audio Playlist</h3>
+        	<h3><i class="icon-list"></i> Playlist</h3>
         	<ul class="unstyled playlist">
         		{{#topics}}
-	            <li><a href="{{audioTrack}}"><span>({{audioSequence}})</span> <i class="icon-play"></i> {{name}}</a></li>
+	            <li><a href="{{audioTrack}}"><i class="icon-play"></i> Segment {{audioSequence}}: {{name}}</a></li>
 	            {{/topics}}
 	        <ul>
 	        <div id="sm2-container">
