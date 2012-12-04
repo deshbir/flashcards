@@ -58,7 +58,7 @@ Authenticate = new function() {
 	 	 });
   	},
   	this.loginWithFacebook = function(){
-		FB.login({scope: 'email'});		
+		FB.login();		
 	},
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
