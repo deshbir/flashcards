@@ -6150,6 +6150,14 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
+#business-info #business-logo {
+  min-height: 200px;
+}
+#business-info #business-logo img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 3.5em;
+}
 #loginform {
   margin-top: 4em;
 }
@@ -6236,6 +6244,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 1em 0;
+}
+#loginform #ajaxLoginForm #user-info .span6 p,
+#loginform #loggedin-container #user-info .span6 p {
+  font-size: 18px;
+}
+#loginform #ajaxLoginForm #user-info .span6 p:first-child,
+#loginform #loggedin-container #user-info .span6 p:first-child {
+  font-weight: bold;
 }
 #loginform #facebook-login {
   padding: 0;
@@ -8386,11 +8402,19 @@ ul.playlist li .peak .r {
 /* ---------- Responsive Custom ----------- */
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
   body {
-    margin-top: 0px;
-    margin-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
+  }
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .brand-button .btn {
+    padding: 0 20px;
   }
   .hero .row {
     /* ------- Custom Styling for Splash Section ------ */
@@ -8450,12 +8474,6 @@ ul.playlist li .peak .r {
 }
 /*-- Landscape phone to portrait tablet */
 @media (max-width: 770px) {
-  body {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
   /* Navbar customization */
   .navbar .nav > li > a,
   .navbar .dropdown-menu a {
@@ -8465,11 +8483,25 @@ ul.playlist li .peak .r {
 }
 /*-- Portrait tablet to landscape and desktop */
 @media (min-width: 771px) and (max-width: 979px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
   /* Navbar customization */
   .navbar .nav > li > a,
   .navbar .dropdown-menu a {
     color: #000000;
     font-weight: normal;
+  }
+  .brand-button .btn {
+    padding: 0 20px;
   }
 }
 /*-- TABLETS AND BELOW */
@@ -8543,6 +8575,10 @@ ul.playlist li .peak .r {
   #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
   #loginform #loggedin-container .hero-unit #forgot-pwd {
     font-size: 14px;
+  }
+  #loginform #ajaxLoginForm .span3,
+  #loginform #loggedin-container .span3 {
+    min-width: 35%;
   }
   #loginform #facebook-login .facebook-text {
     font-size: 21px;
