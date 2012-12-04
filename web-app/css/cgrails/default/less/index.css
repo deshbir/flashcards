@@ -8545,6 +8545,9 @@ ul.playlist li .peak .r {
   #loginform #loggedin-container h3 {
     display: none;
   }
+  #loginform #facebook-login {
+    margin-bottom: 5px;
+  }
   #loginform #facebook-login .facebook-text {
     font-size: 18px;
     margin-left: 0.5em;
