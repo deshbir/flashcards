@@ -20,16 +20,10 @@
 						<div class="btn-group">
 							<button class="btn next">Next</button>
 						</div>
-					</div>
-					<div class="btn-toolbar">
-						<div class="btn-group">
-							<button class="btn bothQuestionAnswer">Both Sides</button>
-						</div>
-						<div class="btn-group">
-							<button class="btn onlyQuestion">Only Question</button>
-						</div>
-						<div class="btn-group">
-							<button class="btn onlyAnswer">Only Answer</button>
+						<div class="btn-group pull-right">
+							<button class="btn bothQuestionAnswer">Q & A</button>
+							<button class="btn onlyQuestion">Q</button>
+							<button class="btn onlyAnswer">A</button>
 						</div>						
 					</div>
         		</div>
