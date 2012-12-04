@@ -6051,7 +6051,6 @@ body {
   width: 100%;
   left: 0;
   text-align: center;
-  margin: auto;
 }
 .brand a {
   color: #fff;
@@ -6640,6 +6639,9 @@ ul.playlist li .peak .r {
 .flashcard .body h2 i {
   font-size: 32px;
   margin-right: 10px;
+}
+.flashcard .body h3 {
+  line-height: 1.1;
 }
 .flashcard .body .btn-group {
   width: 95%;
@@ -8323,7 +8325,8 @@ ul.playlist li .peak .r {
   .navbar .brand {
     padding-left: 10px;
     padding-right: 10px;
-    margin: 0 0 0 -5px;
+    /*margin: 0 0 0 -5px;*/
+  
   }
   .nav-collapse {
     clear: both;
