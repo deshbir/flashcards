@@ -10,23 +10,40 @@
 		padding-left: 10px;
 		padding-bottom: 20px;
 		li	{
-			border-bottom: 1px solid @grayLight;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			font-size:16px;
-			font-weight:100;
-			
+		  	.border-radius(4px);
+			background-color: #2B2B2C;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-bottom: 5px;
+
 			i	{
-				color: @gray;
+				color: @grayLighter;
+				font-size:12px;
+			}
+			
+			a	{
+				color: @grayLighter;
+				font-size:16px;
+				font-weight:100;
 			}
 		}
+		
+		.timing {
+    		background-color: #75C9DD;
+    	}
 		
 	}
 	
 	ul.playlist li.sm2_playing, ul.playlist li.sm2_playing:hover {
-    	background-color: #75C9DD;
+    	background-color: black;
+	}
+	
+	ul.playlist li .controls .statusbar .position {
+		background-color: #75C9DD;
+    	border-right: 3px solid #75C9DD;
 	}
 	
 
 }
+
 
