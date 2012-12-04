@@ -87,6 +87,13 @@ HeaderView = new function() {
 		},
 		
 		updateloginheader : function() {
+			/******* hiding navbar when no elements to show ********/
+			var doesElement = $("a.btn-navbar").find("span.icon-bar:visible").length;
+			
+			if (doesElement <= 0) {
+				$("a.btn-navbar").hide();
+			}
+			/***************/
 			if (mainApp.userinfo.loggedin) {
 				$(".navbar-inner .loggedin").css("display", "block");
 			} else {

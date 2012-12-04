@@ -16,6 +16,11 @@
 	  	margin-bottom: 10px;
 	  	
 	  	border-bottom: 1px solid gray;
+		.btn-group-vertical	{ 
+			.btn-large:first-child, .btn-large:last-child {
+				.border-radius(2px);
+			}
+		}	  	
 	}
 	
 	.footer	{
@@ -29,8 +34,7 @@
 	}
 
 	.body	{
-	  	padding:20px;
-		text-align: center;
+	  	padding:5px 20px 20px;
 		margin-bottom: 10px;
 	
 		h2	{
@@ -47,38 +51,32 @@
 		
 	  	.btn	{
 	  		margin-bottom: 10px;
-	  		font-size:20px;
-	  		line-height: 1.0;
+	  		color: black;
+	  		font-size:17px;
+	  		line-height: 2em;
 	  		padding-top: 10px;
 	  		padding-bottom: 10px;
-	  		
+	  		padding-right: 60px;
+	  		#gradient > .vertical(#e9e9e9, darken(#e9e9e9, 5%));
+	  		.border-radius(8px);
+	  		margin-left: 3em;
 	  		i	{
 	  			font-size:24px;
 	  			margin-right:20px;
 	  		}
-		
-	  		.border-radius(2px);
-	  		 border: 1px solid gray;
-
+	  		border: 0px none;
 			span.radio-on {
 				background:url('../../../../images/radio-on.png')no-repeat left center;
-				padding-left: 30px;
-    			padding-bottom: 5px;
-				padding-top: 5px;				
+				padding-left: 50px;
+    			padding-bottom: 15px;
+				padding-top: 15px;				
 			}
 			span.radio-off {
 				background:url('../../../../images/radio-off.png')no-repeat left center;
-				padding-left: 30px;
-    			padding-bottom: 5px;
-				padding-top: 5px;				
+				padding-left: 50px;
+    			padding-bottom: 15px;
+				padding-top: 15px;	
 			}
-
 	  	 }
-	  	 
-		.btn-group-vertical	{ 
-			.btn-large:first-child, .btn-large:last-child {
-				.border-radius(2px);
-			}
-		}
 	}
 }
