@@ -58,29 +58,7 @@ Authenticate = new function() {
 	 	 });
   	},
   	this.loginWithFacebook = function(){
-		FB.login(function(response) {
-		   if (response.authResponse) {
-	   
-			   TemplateManager.get('authenticate/home', function(template){
-					UserModel.get().fetch({
-						success: function(model, response){
-							var compiledTemplate = Mustache.render(template,{"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"),"email":model.get("email") });
-							$("#loginform").html(compiledTemplate);
-							
-							/*
-							 * 1st parameter - update header for login
-							 * 2nd parameter - showHomeLink
-							 * 3rd parameter - setBackLink 
-							 */
-							mainApp.setHeaderOptions(true, false, false);
-						}
-					});						
-			 	});
-		   } else {
-			   $("#loginErrorMessage").show();
-			   $("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");  
-		   }
-		 },{scope: 'email,user_likes'});		
+		FB.login({scope: 'email'});		
 	},
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
