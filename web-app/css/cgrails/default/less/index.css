@@ -6187,6 +6187,9 @@ body {
   margin: 0;
   padding: 0.3em 0;
   font-weight: normal;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 #loginform #ajaxLoginForm .hero-unit,
 #loginform #loggedin-container .hero-unit {
@@ -8473,27 +8476,9 @@ ul.playlist li .peak .r {
   #panel_home {
     margin: 0 20px;
   }
-  #business-info #change-lives-info {
-    display: none;
-  }
-  #business-info img {
-    width: 80%;
-    margin-left: 20px;
-  }
   #business-info h1 {
     font-size: 21px;
     line-height: 25px;
-  }
-  #business-info h3 {
-    font-size: 15px;
-    line-height: 25px;
-  }
-  #business-info .hero-unit {
-    background-color: transparent;
-    margin-top: 0em;
-    padding: 0px;
-    margin-left: 20px;
-    margin-bottom: 0;
   }
   #loginform {
     margin-top: 0;

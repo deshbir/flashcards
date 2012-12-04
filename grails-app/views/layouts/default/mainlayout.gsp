@@ -25,9 +25,9 @@
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link rel="apple-touch-icon" href="@{'/public/images/apple-touch-icon.png">
-		<link rel="apple-touch-startup-image" href="@{'/public/images/apple-touch-startup-image-320x460.png">
-		<link rel="shortcut icon" href="@{'/public/images/favicon.ico'}" type="image/x-icon">
+		<link rel="apple-touch-icon" href="<r:resource uri="/images/apple-touch-icon.png"/>">
+		<link rel="apple-touch-startup-image" href="<r:resource uri="/images/apple-touch-startup-image-320x460.png"/>">
+		<link rel="shortcut icon" href="<r:resource uri="/images/favicon.ico"/>" type="image/x-icon">
 	</head>
 	<body dir="${direction}">
 		<g:include view="layout-helpers/facebook_init.gsp"/>
