@@ -14,12 +14,14 @@
         	<div id="flashcard" class="flashcard">
         		<div class="header">
 					<div class="btn-toolbar">
-						<div class="btn-group">
+						<div class="btn-group ">
 							<button class="btn previous">Previous</button>
 						</div>
 						<div class="btn-group">
 							<button class="btn next">Next</button>
 						</div>
+					</div>
+					<div class="btn-toolbar">
 						<div class="btn-group">
 							<button class="btn bothQuestionAnswer">Both Sides</button>
 						</div>

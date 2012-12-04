@@ -17,18 +17,10 @@
 				<!-- Logged In Menu Options	 START -->
 				<li id="home" class="{{home}} loggedin"><a href="#"><i class="icon-home"></i></a></li>	
 				<li class="divider-vertical loggedin"></li>
-				<li class="dropdown-submenu loggedin">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<li class="loggedin">
+					<a href="javascript:void(0);" id="logout" title="Sign Out">
 						<i class="icon-user"></i>
-						<b class="caret"></b>
 					</a>
-					<ul class="dropdown-menu">
-						<li><a href="#"> (Profile)</a></li>
-						<li class="divider"></li>
-						<li><a rel="tooltip" data-original-title="Not active in demo"
-							href="#">Preferences</a></li>
-						<li id="logout"><a href="javascript:void(0);">Sign out</a></li>
-					</ul>
 				</li>
             </ul>
           </div><!--/.nav-collapse -->
