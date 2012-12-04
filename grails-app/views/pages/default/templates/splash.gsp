@@ -1,9 +1,9 @@
 <div class="row-fluid">
         <div class="span7" id="business-info">
 			<h1>Health Sciences &amp; Careers</h1>
-			<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo"/>
-			<div class="hero-unit">
-				<h3>We Change Lives !</h3>
+			<r:img uri="/images/placeholder_730_480_1.gif" alt="Business-Logo" class="hidden-phone"/>
+			<div class="hero-unit hidden-phone">
+				<h3>Lorem ipsum !</h3>
 				<p id="change-lives-info">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Nulla in diam sit amet sapien pharetra auctor. Aenean volutpat velit
