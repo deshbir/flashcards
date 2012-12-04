@@ -6627,6 +6627,10 @@ ul.playlist li .peak .r {
   padding: 5px 20px 20px;
   margin-bottom: 10px;
 }
+.flashcard .body .explainanswer {
+  font-size: 12px;
+  font-style: italic;
+}
 .flashcard .body h2 {
   font-size: 24px;
   font-weight: 100;
@@ -6686,6 +6690,9 @@ ul.playlist li .peak .r {
   font-size: 22px;
   font-weight: 100;
   line-height: 1;
+  margin-bottom: 10px;
+}
+#product-home .media button {
   margin-bottom: 10px;
 }
 #product-home ul.playlist {
