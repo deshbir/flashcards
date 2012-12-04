@@ -230,7 +230,8 @@ TestView = new function() {
 			 */
 			mainApp.transitionAppPanel(this.myPanelId, function() {
 				$("#body-set > .body").css("display", "block");
-				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
+				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});	
+				//$("#test-train .onlyQuestion").trigger('click');
 			});
 			
 			

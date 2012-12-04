@@ -37,7 +37,7 @@
 							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option3}}</span></button>
 							 {{/option3}}							 
 							 {{#option4}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-on"></span><span class="text">{{option4}}</span></button>
+							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option4}}</span></button>
 							 {{/option4}}							 
 							 {{#option5}}
 							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option5}}</span></button>

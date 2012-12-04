@@ -55,7 +55,7 @@
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
-							        	"answerDetails": "Explain the correct answer here"
+							        	"answerDetails": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh."
 			        				}, 
 									{
 							        	"type": "MCQSS",
@@ -77,7 +77,7 @@
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
-							        	"answerDetails": "Explain the correct answer here"
+							        	"answerDetails": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh."
 			        				},
 									{
 							        	"type": "MCQSS",
@@ -99,12 +99,12 @@
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
-							        	"answerDetails": "Explain the correct answer here"
+							        	"answerDetails": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh."
 			        				},
 			        				{
 							        	"type": "MCQSS",
 							        	"text": "Why would an instructor like gruesome photos in a textbook?",
-							        	"sequence": "3",
+							        	"sequence": "4",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
 							        	"imageurl": "",
@@ -126,7 +126,7 @@
 			        				{
 							        	"type": "MCQSS",
 							        	"text": "Roughly how much less will a student pay for Lasley versus Swanson?",
-							        	"sequence": "3",
+							        	"sequence": "5",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
 							        	"imageurl": "",
@@ -143,7 +143,7 @@
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
-							        	"answerDetails": "Explain the correct answer here"
+							        	"answerDetails": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh."
 			        				}]
 			        }]			        				
 }, 
@@ -220,5 +220,3 @@
 	"sequence": 10
 }]
 }
-
-        				
