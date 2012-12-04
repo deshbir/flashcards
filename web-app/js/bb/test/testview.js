@@ -147,7 +147,7 @@ TestView = new function() {
 		},
 		switchRadioState: function(e){
 			$(".options").find("span.radio-on").toggleClass("radio-on radio-off");
-			$(e.target).find("span").toggleClass("radio-on radio-off");
+			$(e.target).find("span.radio").toggleClass("radio-on radio-off");
 		}
 	});	
 

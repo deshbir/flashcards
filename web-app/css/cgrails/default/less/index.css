@@ -6046,6 +6046,9 @@ body {
 .nav-collapse li i {
   font-size: 24px;
 }
+.nav-collapse .dropdown-submenu > a:after {
+  display: none;
+}
 .brand {
   position: absolute;
   width: 80%;
@@ -6093,6 +6096,9 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff69c4da', endColorstr='#ff54bcd5', GradientType=0);
   background-position: 0 0;
   color: #FFFFFF;
+}
+.btn-group {
+  white-space: normal;
 }
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
@@ -6597,6 +6603,12 @@ ul.playlist li .peak .r {
   margin-bottom: 10px;
   border-bottom: 1px solid gray;
 }
+.flashcard .header .btn-group-vertical .btn-large:first-child,
+.flashcard .header .btn-group-vertical .btn-large:last-child {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
 .flashcard .footer {
   padding: 10px;
   margin-left: 10px;
@@ -6605,8 +6617,7 @@ ul.playlist li .peak .r {
   border-top: 1px solid gray;
 }
 .flashcard .body {
-  padding: 20px;
-  text-align: center;
+  padding: 5px 20px 20px;
   margin-bottom: 10px;
 }
 .flashcard .body h2 {
@@ -6621,14 +6632,25 @@ ul.playlist li .peak .r {
 }
 .flashcard .body .btn {
   margin-bottom: 10px;
-  font-size: 20px;
-  line-height: 1.0;
+  color: black;
+  font-size: 17px;
+  line-height: 2em;
   padding-top: 10px;
   padding-bottom: 10px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid gray;
+  padding-right: 60px;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin-left: 3em;
+  border: 0px none;
 }
 .flashcard .body .btn i {
   font-size: 24px;
@@ -6636,21 +6658,15 @@ ul.playlist li .peak .r {
 }
 .flashcard .body .btn span.radio-on {
   background: url('../../../../images/radio-on.png') no-repeat left center;
-  padding-left: 30px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-left: 50px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .flashcard .body .btn span.radio-off {
   background: url('../../../../images/radio-off.png') no-repeat left center;
-  padding-left: 30px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-.flashcard .body .btn-group-vertical .btn-large:first-child,
-.flashcard .body .btn-group-vertical .btn-large:last-child {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  padding-left: 50px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 #product-home h3 {
   font-size: 22px;
@@ -6663,18 +6679,33 @@ ul.playlist li .peak .r {
   padding-bottom: 20px;
 }
 #product-home ul.playlist li {
-  border-bottom: 1px solid #999999;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #2B2B2C;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+#product-home ul.playlist li i {
+  color: #eeeeee;
+  font-size: 12px;
+}
+#product-home ul.playlist li a {
+  color: #eeeeee;
   font-size: 16px;
   font-weight: 100;
 }
-#product-home ul.playlist li i {
-  color: #555555;
+#product-home ul.playlist .timing {
+  background-color: #75C9DD;
 }
 #product-home ul.playlist li.sm2_playing,
 #product-home ul.playlist li.sm2_playing:hover {
+  background-color: black;
+}
+#product-home ul.playlist li .controls .statusbar .position {
   background-color: #75C9DD;
+  border-right: 3px solid #75C9DD;
 }
 /*------------- Global Responsive ----------*/
 /*!
