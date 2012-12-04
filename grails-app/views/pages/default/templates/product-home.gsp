@@ -25,9 +25,9 @@
 			</div>
 		 	<div class="media-body">
 			{{#tests}}
-			  <button id="{{id}}" class="btn btn-large btn-block flashcardTraining">Flash cards<small> (Train)</small></button>
+			  <button id="{{id}}" class="btn btn-large btn-block flashcardTraining">Flashcards<small> (Training)</small></button>
 		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
-		      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flash cards<small> (Assess)</small></button>
+		      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flashcards<small> (Assess)</small></button>
 		    {{/tests}}
 		    </div> 		        
     	</div>

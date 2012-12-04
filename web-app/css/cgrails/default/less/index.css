@@ -6032,7 +6032,7 @@ body {
   background-color: black;
 }
 #footer .credit {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
 /* ----------------- media.less customization to align product view--------------------------- */
@@ -6125,12 +6125,12 @@ body {
   height: 100%;
   /* Negative indent footer by it's height + any padding applied to body */
 
-  margin: 0 auto -60px;
+  margin: 0 auto -40px;
 }
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-  height: 60px;
+  height: 40px;
 }
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {
@@ -6210,7 +6210,12 @@ body {
 #loginform #ajaxLoginForm .hero-unit p,
 #loginform #loggedin-container .hero-unit p {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1;
+}
+#loginform #ajaxLoginForm .hero-unit small,
+#loginform #loggedin-container .hero-unit small {
+  font-size: 12px;
+  line-height: 1;
 }
 #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
 #loginform #loggedin-container .hero-unit #forgot-pwd {
@@ -6614,6 +6619,10 @@ ul.playlist li .peak .r {
   text-align: center;
   border-top: 1px solid gray;
 }
+.flashcard .train {
+  height: 250px;
+  text-align: center;
+}
 .flashcard .body {
   padding: 5px 20px 20px;
   margin-bottom: 10px;
@@ -6687,7 +6696,7 @@ ul.playlist li .peak .r {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #2B2B2C;
+  background-color: #545454;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 5px;
