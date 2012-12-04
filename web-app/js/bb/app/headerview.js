@@ -92,6 +92,13 @@ HeaderView = new function() {
 			} else {
 				$(".navbar-inner .loggedin").css("display", "none");
 			}
+			if (window.location.hash == "#/home") {
+				TemplateManager.get('authenticate/home', function(template){
+					
+					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
+					$("#loginform").html(templateHTML);				
+			 	 });
+			}			
 		},
 		
 		setHomeIcon : function(show) {
