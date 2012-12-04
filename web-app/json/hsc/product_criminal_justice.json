@@ -154,16 +154,16 @@
 {
 	"name": "MyCJLab tm",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/placeholder_148_120.png",
-	"image": "images/placeholder_148_120.png",
+	"thumbnail": "images/media/mycjlab/mycjlab_thumb.png",
+	"image": "images/media/mycjlab/mycjlab.png",
 	"author": "Pearson",     	
 	"sequence": 8
 },
 {
 	"name": "Criminal Investigation, 8e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/criminal-invest/cr-investigation-8e-thumb.jpg",
-	"image": "images/media/criminal-invest/cr-investigation-8e.jpg",
+	"thumbnail": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
+	"image": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
 	"author": "Lyman",				        	
 	"sequence": 9
 },        				

@@ -10,7 +10,7 @@
 
             <ul class="nav pull-right">
 				<!-- Logged In Menu Options	 START -->
-				<li id="home" class="{{home}} loggedin"><a href="#"><i class="icon-home"></i></a></li>	
+				<li id="home" class="{{home}} loggedin"><a href="#/home"><i class="icon-home"></i></a></li>	
 				<li class="divider-vertical loggedin"></li>
 				<li class="loggedin">
 					<a href="javascript:void(0);" id="logout" title="Sign Out">

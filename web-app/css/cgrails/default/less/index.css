@@ -6043,15 +6043,12 @@ body {
 /* ----------------- Navbar --------------------------- */.navbar .nav > li > a {
   padding: 10px 0;
 }
-.nav-collapse li i {
+.nav i {
   font-size: 24px;
-}
-.nav-collapse .dropdown-submenu > a:after {
-  display: none;
 }
 .brand {
   position: absolute;
-  width: 80%;
+  width: 100%;
   left: 0;
   text-align: center;
   margin: auto;
@@ -6594,6 +6591,7 @@ ul.playlist li .peak .r {
   width: 85%;
   margin: 0 auto;
   padding: 0px;
+  margin-bottom: 20px;
 }
 .flashcard .header {
   padding: 0px;
@@ -6630,14 +6628,14 @@ ul.playlist li .peak .r {
   font-size: 32px;
   margin-right: 10px;
 }
+.flashcard .body .btn-group {
+  width: 95%;
+}
 .flashcard .body .btn {
   margin-bottom: 10px;
-  color: black;
+  color: #555555;
   font-size: 17px;
-  line-height: 2em;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 60px;
+  line-height: 1;
   background-color: #e4e4e4;
   background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
@@ -6649,12 +6647,19 @@ ul.playlist li .peak .r {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  margin-left: 3em;
+  margin-left: 20px;
+  text-align: left;
+  padding: 20px;
   border: 0px none;
 }
 .flashcard .body .btn i {
   font-size: 24px;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.flashcard .body .btn span.text {
+  display: block;
+  margin-left: 54px;
+  margin-top: -18px;
 }
 .flashcard .body .btn span.radio-on {
   background: url('../../../../images/radio-on.png') no-repeat left center;
@@ -8438,6 +8443,10 @@ ul.playlist li .peak .r {
     padding-left: 0px;
     padding-right: 0px;
   }
+  #bb-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   /** this is to adjust the default values in accordance to body styling ***********/
   .navbar-fixed-top {
     margin-left: 0px;
@@ -8446,23 +8455,6 @@ ul.playlist li .peak .r {
   /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
   .brand-button .btn {
     padding: 0 20px;
-  }
-  .hero .row {
-    /* ------- Custom Styling for Splash Section ------ */
-  
-  }
-  .hero .row p .btn {
-    width: 90%;
-  }
-  .main-body {
-    padding: 0 10px;
-    padding-bottom: 20px;
-  }
-  .main-body-splash {
-    padding-top: 20px;
-  }
-  #product-home .btn {
-    width: 85%;
   }
   /* --------------- Flashcard Component -------------------------- */
   .flashcard {
@@ -8480,37 +8472,24 @@ ul.playlist li .peak .r {
     margin-right: 5px;
   }
   .flashcard .body {
-    padding: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
   }
   .flashcard .body h2 {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.0;
+    font-size: 18px;
   }
-  .flashcard .body h2 i {
-    font-size: 14px;
-    margin-right: 5px;
+  .flashcard .body .btn-group {
+    width: 95%;
   }
   .flashcard .body .btn {
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .flashcard .body .btn i {
-    font-size: 18px;
-    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 14px;
+    line-height: 1.1;
   }
 }
 /*-- Landscape phone to portrait tablet */
 @media (max-width: 770px) {
-  /* Navbar customization */
-  .navbar .nav > li > a,
-  .navbar .dropdown-menu a {
-    color: #000000;
-    font-weight: normal;
-  }
+  
 }
 /*-- Portrait tablet to landscape and desktop */
 @media (min-width: 771px) and (max-width: 979px) {
@@ -8525,35 +8504,19 @@ ul.playlist li .peak .r {
     margin-right: 0px;
   }
   /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  /* Navbar customization */
-  .navbar .nav > li > a,
-  .navbar .dropdown-menu a {
-    color: #000000;
-    font-weight: normal;
-  }
   .brand-button .btn {
     padding: 0 20px;
   }
 }
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {
-  /* Navbar customization */
-  .navbar .nav > li > a:hover,
-  .navbar .dropdown-menu a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  .navbar-fixed-top .navbar-inner {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-  }
+  
 }
 /*-- Large desktops */
 @media (min-width: 1200px) {
   
 }
-/* --------------- Flashcard Splash -------------------------- */
+/* --------------- Splash -------------------------- */
 @media (max-width: 480px) {
   #panel_home {
     margin: 0 20px;

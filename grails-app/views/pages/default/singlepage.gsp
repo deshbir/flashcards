@@ -19,8 +19,8 @@
 			<r:script disposition="defer">
 				var mainApp = com.compro.application.hsc;
 				mainApp.userinfo.loggedin = true;					
-				mainApp.userinfo.name = "<sec:username/>";
-				mainApp.userinfo.email = "<sec:username/>";
+				mainApp.userinfo.name = "John Doe";
+				mainApp.userinfo.email = "(john@pearson.com)";
 			</r:script>
 		</sec:ifLoggedIn>   		
 	</body>
