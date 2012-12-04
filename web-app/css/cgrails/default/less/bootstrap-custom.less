@@ -5,13 +5,20 @@
 @HSCButtonColor: #7dccdf; //turquoise blue
 
 body {
-    font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
-	padding-top: 60px;
-	padding-bottom: 40px;
+	font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
 }
 
-/* ----------------- media customization --------------------------- */
-// to align product view
+#footer	{
+	background-color: black;
+	.credit	{
+		padding-top: 20px;
+		text-align: center;
+	}
+}
+
+
+/* ----------------- media.less customization to align product view--------------------------- */
+
 .media,
 .media .media {
   margin-top: 0px;
@@ -50,7 +57,7 @@ body {
 {
 	.btn	{	       
 	  font-size: 13px;
-	  margin-left: 4px;
+	  margin-left: 2em;
 	  padding: 2px 20px;
 	}
   position: absolute;
@@ -72,5 +79,34 @@ body {
 		background-position:0 0;
 		color:#FFFFFF;
 	}
+}
+
+
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+
+	.brand-button
+	{
+		.btn	{	       
+		  margin-left: 4px;
+		}
+	 
+	}
+
+}
+
+
+/*-- Landscape phone to portrait tablet */
+
+@media (max-width: 770px) {
+
+	.brand-button
+	{
+		.btn	{	       
+		  margin-left: 4px;
+		}
+	 
+	}
+
 }
      

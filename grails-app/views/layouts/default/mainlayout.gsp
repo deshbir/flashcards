@@ -31,13 +31,17 @@
 	</head>
 	<body dir="${direction}">
 		<g:include view="layout-helpers/facebook_init.gsp"/>
-		<g:include view="layout-helpers/header.gsp"/>
 		
+		<div id="wrap"> <!--  Sticky Footer Container -->
+			<g:include view="layout-helpers/header.gsp"/>
 
-		<g:layoutBody/>
-	
-	
+			<g:layoutBody/>
+			
+			<!--  Sticky Footer Filler -->
+			<div id="push"></div> 
+		</div>
 		<g:include view="layout-helpers/footer.gsp"/>
+		
 		<r:layoutResources/>
 	</body>
 </html>

@@ -6027,10 +6027,15 @@ a.badge:hover {
 /* ---------- Bootstrap Common Variables ----------- */
 body {
   font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
-  padding-top: 60px;
-  padding-bottom: 40px;
 }
-/* ----------------- media customization --------------------------- */
+#footer {
+  background-color: black;
+}
+#footer .credit {
+  padding-top: 20px;
+  text-align: center;
+}
+/* ----------------- media.less customization to align product view--------------------------- */
 .media,
 .media .media {
   margin-top: 0px;
@@ -6059,7 +6064,7 @@ body {
 }
 .brand-button .btn {
   font-size: 13px;
-  margin-left: 4px;
+  margin-left: 2em;
   padding: 2px 20px;
 }
 /* ----------------- Buttons styling --------------------------- */
@@ -6088,6 +6093,47 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff69c4da', endColorstr='#ff54bcd5', GradientType=0);
   background-position: 0 0;
   color: #FFFFFF;
+}
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  .brand-button .btn {
+    margin-left: 4px;
+  }
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  .brand-button .btn {
+    margin-left: 4px;
+  }
+}
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+
+}
+#bb-container {
+  padding-top: 60px;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height + any padding applied to body */
+
+  margin: 0 auto -60px;
+}
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+/*-- TABLETS AND BELOW */
+@media (max-width: 979px) {
+  #bb-container {
+    padding-top: 0px;
+  }
 }
 /* --------- HSC Components -------- */
 #business-info h1 {
