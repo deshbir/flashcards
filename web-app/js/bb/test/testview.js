@@ -70,8 +70,10 @@ TestView = new function() {
 			this.template_body="";
 			this.current_product_id=-1;
 			this.current_test_id=-1;
+			this.current_mode="";
 			this.requested_product_id=-1;
-			this.requested_test_id=-1;			
+			this.requested_test_id=-1;
+			this.requested_mode="asses";
 			/* ------------------------------------------------------------------------*/			
 			
 			this.loadCollection(this.options.productId,this.options.testId);
@@ -89,8 +91,9 @@ TestView = new function() {
 					});
 			});
 		},
-		loadCollection: function(product_Id,test_Id)	{
+		loadCollection: function(product_Id,test_Id, mode)	{
 
+			this.requested_mode=mode;
 			this.requested_product_id=product_Id;
 			this.requested_test_id=test_Id;
 			
@@ -109,14 +112,15 @@ TestView = new function() {
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM		
-			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{			
+			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
 
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-home");
 				
 				this.current_product_id=this.requested_product_id;
-				this.current_test_id=this.requested_test_id;				
+				this.current_test_id=this.requested_test_id;
+				this.current_mode="asses";
 			}
 			
 			/*
@@ -168,8 +172,10 @@ TestView = new function() {
 			this.template_body="";
 			this.current_product_id=-1;
 			this.current_test_id=-1;
+			this.current_mode="";
 			this.requested_product_id=-1;
-			this.requested_test_id=-1;			
+			this.requested_test_id=-1;
+			this.requested_mode="training";
 			/* ------------------------------------------------------------------------*/			
 			
 			this.loadCollection(this.options.productId,this.options.testId);
@@ -187,8 +193,9 @@ TestView = new function() {
 					});
 			});
 		},
-		loadCollection: function(product_Id,test_Id)	{
+		loadCollection: function(product_Id,test_Id, mode)	{
 
+			this.requested_mode=mode;
 			this.requested_product_id=product_Id;
 			this.requested_test_id=test_Id;
 			
@@ -207,14 +214,15 @@ TestView = new function() {
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM		
-			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{			
+			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
 
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-train");
 				
 				this.current_product_id=this.requested_product_id;
-				this.current_test_id=this.requested_test_id;				
+				this.current_test_id=this.requested_test_id;
+				this.current_mode="training";
 			}
 			
 			/*
