@@ -6048,7 +6048,7 @@ body {
 }
 .brand {
   position: absolute;
-  width: 100%;
+  width: 80%;
   left: 0;
   text-align: center;
   margin: auto;
@@ -6637,9 +6637,28 @@ ul.playlist li .peak .r {
   border-radius: 2px;
 }
 #product-home h3 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 100;
   line-height: 1;
+  margin-bottom: 10px;
+}
+#product-home ul.playlist {
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+#product-home ul.playlist li {
+  border-bottom: 1px solid #999999;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: 100;
+}
+#product-home ul.playlist li i {
+  color: #555555;
+}
+#product-home ul.playlist li.sm2_playing,
+#product-home ul.playlist li.sm2_playing:hover {
+  background-color: #75C9DD;
 }
 /*------------- Global Responsive ----------*/
 /*!
