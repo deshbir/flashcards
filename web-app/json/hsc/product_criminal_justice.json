@@ -27,7 +27,7 @@
 					"audioSequence": "4"
 				},
 				{
-					"name": "Lorem ipsum (2:00)t",
+					"name": "Lorem ipsum (2:00)",
 					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
 					"audioSequence": "5"
 				}],
@@ -50,7 +50,7 @@
 							        	"option4": "Option 4 (Duis mollis, est non commodo luctus)",
 							        	"option5": "",
 							        	"option6": "",
-							        	"option7": "Option 7",
+							        	"option7": "",
 							        	"answer1": "answer 1",
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
@@ -92,7 +92,7 @@
 							        	"option2": "Option 2 (Duis mollis, est non commodo luctus)",
 							        	"option3": "Option 3 (Duis mollis, est non commodo luctus)",
 							        	"option4": "Option 4 (Duis mollis, est non commodo luctus)",
-							        	"option5": "Option 5 (Duis mollis, est non commodo luctus)",
+							        	"option5": "",
 							        	"option6": "",
 							        	"option7": "",
 							        	"answer1": "answer 1",
