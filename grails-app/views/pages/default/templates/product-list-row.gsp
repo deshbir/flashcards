@@ -9,13 +9,6 @@
 			<span class="heading">{{name}} <i class="icon-chevron-right visible-phone"></i></span>
 			<h3>({{author}})</h3>
 			<p class="hidden-phone">{{description}}</p>
-			<div class="rating hidden-phone">
-				<span>☆</span>
-				<span>☆</span>
-				<span>☆</span>
-				<span>☆</span>
-				<span>☆</span>
-			</div>
           </div>
         </a>  	
 	</div>
