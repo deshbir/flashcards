@@ -4,7 +4,34 @@ ProductView = new function() {
 	var bbView = null;
 	var pagePlayer = new PagePlayer();
 	/* -------------------------------------------------*/
-
+	var pagePlayerPlay = pagePlayer.events.play;
+	pagePlayer.events.play = function(){
+		$("#music img").toggle();
+		var soundManager = this;
+		$("#music").click(function(){
+			soundManager.pause();
+		});
+		pagePlayerPlay.call(soundManager);
+		$("#product-home .sm2_playing i").toggleClass('icon-play icon-pause');
+	}
+	var pagePlayerPause = pagePlayer.events.pause;
+	pagePlayer.events.pause = function(){
+		$("#music img").toggle();
+		pagePlayerPause.call(this);
+		$("#product-home .sm2_paused i").toggleClass('icon-play icon-pause');
+	}
+	var pagePlayerResume = pagePlayer.events.resume;
+	pagePlayer.events.resume = function(){
+		$("#music img").toggle();
+		pagePlayerResume.call(this);
+		$("#product-home .sm2_playing i").toggleClass('icon-play icon-pause');
+	}
+	var pagePlayerStop = pagePlayer.events.stop;
+	pagePlayer.events.stop = function(){
+		$("#music img").toggle();
+		pagePlayerStop.call(this);
+		$("#product-home .sm2_paused i").toggleClass('icon-play icon-pause');
+	}
 	
 	var mainApp = com.compro.application.hsc;
 	var clsMainHeader = mainApp.clsMainHeader;
