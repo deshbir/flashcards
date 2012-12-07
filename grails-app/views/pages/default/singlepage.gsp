@@ -4,29 +4,24 @@
 	</head>
 	
 	<body>
-			<div id="bb-container" class="container">
-				<div id="panel_home" data-order="0"></div>
-				<div id="panel_discipline-list" data-order="1" style="display:none"></div>
-				<div id="panel_discipline-home" data-order="2" style="display:none"></div>
-				<div id="panel_product-list" data-order="3" style="display:none"></div>
-				<div id="panel_product-home" data-order="4" style="display:none"></div>
-				<div id="panel_test-home" data-order="5" style="display:none"></div>
+		<div id="bb-container" class="container">
+			<div id="panel-container">
+					<div id="panel_home" data-order="0" class="panel-item"></div>
+					<div id="panel_discipline-list" data-order="1" class="panel-item"></div>
+					<div id="panel_discipline-home" data-order="2" class="panel-item"></div>
+					<div id="panel_product-home" data-order="3" class="panel-item"></div>
+					<div id="panel_test-home" data-order="4" class="panel-item"></div>
 			</div>
+		</div>
 		<r:script disposition="defer">	
 			Authenticate.initialize();
    		</r:script>
 		<sec:ifLoggedIn>	
-			<r:script>
+			<r:script disposition="defer">
 				var mainApp = com.compro.application.hsc;
+				mainApp.userinfo.loggedin = true;					
 				mainApp.userinfo.name = "John Doe";
 				mainApp.userinfo.email = "(john@pearson.com)";
-				mainApp.userinfo.facebookuser = false;
-				<sec:ifLoggedIn>
-					mainApp.userinfo.loggedin = true;
-				</sec:ifLoggedIn>
-				<sec:access expression="hasRole('ROLE_FACEBOOK')">
-					mainApp.userinfo.facebookuser = true;
-				</sec:access>
 			</r:script>
 		</sec:ifLoggedIn>   		
 	</body>

@@ -58,8 +58,7 @@ com.compro.application.hsc = (function() {
 	var userinfo = {
 			loggedin: false,
 			name: "John Doe",
-			email: "(john@pearson.com)",
-			facebookuser: false
+			email: "(john@pearson.com)"
 	}
 	
 	//Global Flashcards holder (object of SwipeJs)
@@ -171,10 +170,6 @@ com.compro.application.hsc = (function() {
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
-		//When user is not authorized to access the page
-		if (!userinfo.loggedin)
-			Backbone.history.navigate("#/home", {trigger:true,replace:true});
-		
 		if (location.href.indexOf("#") == -1)
 			Backbone.history.navigate("#/home", {trigger:true,replace:true});
 	}
@@ -206,35 +201,27 @@ com.compro.application.hsc = (function() {
 		
 		if(this.currentPanelId == -1)  //First time
 		{	
-			$(newPanelId).show("fast",function() {
-				if(!(typeof callback === 'undefined') )	{
-					callback();	
-				}						
-			});
+			$(newPanelId).show();
 		}
 		else
-		{
-			
+		{	
+			var itemWidth = $("#bb-container").width();
+			$("#panel-container").width(itemWidth * $('.panel-item').length);
+			$('.panel-item').width(itemWidth);
 			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
-				$(this.currentPanelId).hide("slide", { direction: "left" }, 150, function() {
-					$(newPanelId).show("slide", { direction: "right" }, 150, function() {
-						
+				
+				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
 						if(!(typeof callback === 'undefined') )	{
 							callback();	
 						}						
-						
-					});					
-				});
 			} else{ 
-				$(this.currentPanelId).hide("slide", { direction: "right" }, 150,  function() {
-					$(newPanelId).show("slide", { direction: "left" }, 150, function()	{
-						
+				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");				
 						if(!(typeof callback === 'undefined') )	{
 							callback();	
 						}
 						
-					});
-				});
 			}
 		}
 		this.currentPanelId = newPanelId;
@@ -269,7 +256,7 @@ com.compro.application.hsc = (function() {
 	})();
 
 	/********************************************************/
-	/*                 Public   */
+	/*                 Public   							*/
 	/********************************************************/
 
 	return	{
