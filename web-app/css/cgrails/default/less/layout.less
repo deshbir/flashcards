@@ -21,6 +21,41 @@ html, body {
 	height:40px;
 }
 
+#footer	{
+	background-color: black;
+	.credit	{
+		padding-top: 10px;
+		text-align: center;
+	}
+}
+
+/********************************** Responsive Styles **********************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+	
+	/**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+	 body {
+	 	padding-left: 0px;
+    	padding-right: 0px;
+    }
+    
+     #bb-container {
+    	margin-left:5px;
+    	margin-right:5px;
+    }
+}
+
+/*-- Portrait tablet to landscape and desktop */
+
+@media (min-width: 771px) and (max-width: 979px) {
+		
+   /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+	 body {
+	 	padding-left: 0px;
+    	padding-right: 0px;
+    }
+}
+
 
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {

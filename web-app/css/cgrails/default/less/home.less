@@ -112,5 +112,80 @@
     			margin-top: 1em;
 		}
 	}
-	
+}
+
+/*********************** Responsive Styles ************************************/ 
+@media (max-width: 480px) {  
+	#panel_home {
+		margin: 0 20px;
+	}
+	#business-info { 
+		h1 {
+			font-size:21px;
+			line-height: 25px;
+		}
+	}
+	#loginform {
+		margin-top:0;
+		#ajaxLoginForm, #loggedin-container { 
+			border:0 none;
+			.hero-unit {
+				padding:0;
+				background-color:transparent;
+				> p {
+					display:none;
+				}
+			}
+			h3 {
+				display:none;
+			}
+		}
+		#facebook-login {
+			margin-bottom:5px;
+			.facebook-text {
+				font-size:18px;
+	    		margin-left: 0.5em;
+			}
+			p {
+				i {
+					font-size:30px;
+				}
+			}
+		}
+		#user-info {
+			div {
+				float:left;
+			}
+			.span3 {
+				width:30%;
+			}
+			.span6 {
+				width:60%;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#loginform {
+		#ajaxLoginForm, #loggedin-container {
+			.hero-unit {
+				#forgot-pwd {
+					font-size:14px;
+				}
+			}
+			.span3 {
+				min-width: 35%;
+			}
+		}
+		#facebook-login {
+			.facebook-text {
+				font-size: 21px;
+	    		margin-left: 0.5em;
+			}
+			i {
+				font-size:36px;
+			}
+		}
+	}
 }

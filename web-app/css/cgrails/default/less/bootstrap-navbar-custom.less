@@ -1,0 +1,84 @@
+/* ----------------- Navbar --------------------------- */ 
+
+
+.navbar .nav > li > a {
+    padding: 10px 0;
+}
+
+.nav	{
+	i	{
+		font-size: 24px;
+	}
+}
+
+.brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    a	{
+    	color: #fff;
+    }
+}
+
+.brand-button
+{
+	.btn	{	       
+	  font-size: 13px;
+	  margin-left: 2em;
+	  padding: 2px 20px;
+	}
+  position: absolute;
+  left: 0;
+  text-align: left;
+  z-index:10;
+}
+
+/********************************************* Responsive Styles *******************************/
+
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+	/** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+	
+	.brand-button {
+		.btn	{
+			padding: 0 20px;
+		}
+	}
+}
+
+/*-- Landscape phone to portrait tablet */
+
+@media (max-width: 770px) {
+	.brand-button {
+		.btn	{	       
+		  margin-left: 4px;
+		}
+	}
+}
+
+
+/*-- Portrait tablet to landscape and desktop */
+
+@media (min-width: 771px) and (max-width: 979px) {
+	/** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+    
+    .brand-button {
+		.btn	{
+			padding: 0 20px;
+		}
+	}
+}
+
+
