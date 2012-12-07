@@ -16,7 +16,6 @@
 	    </div>
         <div class="span5">
 	        <div id="loginform">
-	        	<g:include src="templates/authenticate/home.gsp"/>
 			</div>
 		</div>         
  </div>
