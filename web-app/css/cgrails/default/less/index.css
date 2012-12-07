@@ -6028,18 +6028,6 @@ a.badge:hover {
 body {
   font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
 }
-#footer {
-  background-color: black;
-}
-#footer .credit {
-  padding-top: 10px;
-  text-align: center;
-}
-/* ----------------- media.less customization to align product view--------------------------- */
-.media,
-.media .media {
-  margin-top: 0px;
-}
 /* ----------------- Navbar --------------------------- */.navbar .nav > li > a {
   padding: 10px 0;
 }
@@ -6056,15 +6044,46 @@ body {
   color: #fff;
 }
 .brand-button {
-  position: absolute;
+  position: relative;
   left: 0;
-  text-align: left;
   z-index: 10;
 }
 .brand-button .btn {
   font-size: 13px;
   margin-left: 2em;
   padding: 2px 20px;
+}
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .brand-button .btn {
+    padding: 0 20px;
+    margin-left: 4px;
+  }
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  .brand-button .btn {
+    margin-left: 4px;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .brand-button .btn {
+    padding: 0 20px;
+  }
 }
 /* ----------------- Buttons styling --------------------------- */
 .btn {
@@ -6096,18 +6115,6 @@ body {
 .btn-group {
   white-space: normal;
 }
-/*--  Landscape phones and down */
-@media (max-width: 480px) {
-  .brand-button .btn {
-    margin-left: 4px;
-  }
-}
-/*-- Landscape phone to portrait tablet */
-@media (max-width: 770px) {
-  .brand-button .btn {
-    margin-left: 4px;
-  }
-}
 html,
 body {
   height: 100%;
@@ -6130,6 +6137,34 @@ body {
 #push,
 #footer {
   height: 40px;
+}
+#footer {
+  background-color: black;
+}
+#footer .credit {
+  padding-top: 10px;
+  text-align: center;
+}
+/********************************** Responsive Styles **********************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #bb-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {
@@ -6289,6 +6324,71 @@ body {
   margin-left: 1em;
   margin-top: 1em;
 }
+/*********************** Responsive Styles ************************************/@media (max-width: 480px) {
+  #panel_home {
+    margin: 0 20px;
+  }
+  #business-info h1 {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  #loginform {
+    margin-top: 0;
+  }
+  #loginform #ajaxLoginForm,
+  #loginform #loggedin-container {
+    border: 0 none;
+  }
+  #loginform #ajaxLoginForm .hero-unit,
+  #loginform #loggedin-container .hero-unit {
+    padding: 0;
+    background-color: transparent;
+  }
+  #loginform #ajaxLoginForm .hero-unit > p,
+  #loginform #loggedin-container .hero-unit > p {
+    display: none;
+  }
+  #loginform #ajaxLoginForm h3,
+  #loginform #loggedin-container h3 {
+    display: none;
+  }
+  #loginform #facebook-login {
+    margin-bottom: 5px;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 18px;
+    margin-left: 0.5em;
+  }
+  #loginform #facebook-login p i {
+    font-size: 30px;
+  }
+  #loginform #user-info div {
+    float: left;
+  }
+  #loginform #user-info .span3 {
+    width: 30%;
+  }
+  #loginform #user-info .span6 {
+    width: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
+  #loginform #loggedin-container .hero-unit #forgot-pwd {
+    font-size: 14px;
+  }
+  #loginform #ajaxLoginForm .span3,
+  #loginform #loggedin-container .span3 {
+    min-width: 35%;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 21px;
+    margin-left: 0.5em;
+  }
+  #loginform #facebook-login i {
+    font-size: 36px;
+  }
+}
 .clickbox a {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -6315,7 +6415,6 @@ body {
   font-size: 12px;
   font-weight: 100;
   line-height: 1.1;
-  color: blue;
   margin-top: 0px;
 }
 .clickbox-light a {
@@ -6687,6 +6786,44 @@ ul.playlist li .peak .r {
   padding-left: 50px;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+/************************************ Responsive Styles ************************/
+/* --------------- Flashcard Component -------------------------- */
+@media (max-width: 480px) {
+  .flashcard {
+    border: 0px;
+    width: 100%;
+  }
+  .flashcard .header {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .flashcard .footer {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .flashcard .body {
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+  .flashcard .body h2 {
+    font-size: 18px;
+  }
+  .flashcard .body .btn-group {
+    width: 95%;
+  }
+  .flashcard .body .btn {
+    margin-left: 5px;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+}
+/* ----------------- media.less customization to align product view--------------------------- */
+.media,
+.media .media {
+  margin-top: 0px;
 }
 #product-home h3 {
   font-size: 22px;
@@ -8457,54 +8594,7 @@ ul.playlist li .peak .r {
 /* ---------- Responsive Custom ----------- */
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
-  body {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  #bb-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-  }
-  /* --------------- Flashcard Component -------------------------- */
-  .flashcard {
-    border: 0px;
-    width: 100%;
-  }
-  .flashcard .header {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  .flashcard .footer {
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .flashcard .body {
-    margin-bottom: 15px;
-    padding: 5px;
-  }
-  .flashcard .body h2 {
-    font-size: 18px;
-  }
-  .flashcard .body .btn-group {
-    width: 95%;
-  }
-  .flashcard .body .btn {
-    margin-left: 5px;
-    font-size: 14px;
-    line-height: 1.1;
-  }
+  
 }
 /*-- Landscape phone to portrait tablet */
 @media (max-width: 770px) {
@@ -8512,20 +8602,7 @@ ul.playlist li .peak .r {
 }
 /*-- Portrait tablet to landscape and desktop */
 @media (min-width: 771px) and (max-width: 979px) {
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
-  body {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-  }
+  
 }
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {
@@ -8534,73 +8611,4 @@ ul.playlist li .peak .r {
 /*-- Large desktops */
 @media (min-width: 1200px) {
   
-}
-/* --------------- Splash -------------------------- */
-@media (max-width: 480px) {
-  #panel_home {
-    margin: 0 20px;
-  }
-  #business-info h1 {
-    font-size: 21px;
-    line-height: 25px;
-  }
-  #loginform {
-    margin-top: 0;
-  }
-  #loginform #ajaxLoginForm,
-  #loginform #loggedin-container {
-    border: 0 none;
-  }
-  #loginform #ajaxLoginForm .hero-unit,
-  #loginform #loggedin-container .hero-unit {
-    padding: 0;
-    background-color: transparent;
-  }
-  #loginform #ajaxLoginForm .hero-unit > p,
-  #loginform #loggedin-container .hero-unit > p {
-    display: none;
-  }
-  #loginform #ajaxLoginForm h3,
-  #loginform #loggedin-container h3 {
-    display: none;
-  }
-  #loginform #facebook-login {
-    margin-bottom: 5px;
-  }
-  #loginform #facebook-login .facebook-text {
-    font-size: 18px;
-    margin-left: 0.5em;
-  }
-  #loginform #facebook-login p i {
-    font-size: 30px;
-  }
-  #loginform #user-info div {
-    float: left;
-  }
-  #loginform #user-info .span3 {
-    width: 30%;
-  }
-  #loginform #user-info .span6 {
-    width: 60%;
-  }
-}
-@media (max-width: 767px) {
-  
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
-  #loginform #loggedin-container .hero-unit #forgot-pwd {
-    font-size: 14px;
-  }
-  #loginform #ajaxLoginForm .span3,
-  #loginform #loggedin-container .span3 {
-    min-width: 35%;
-  }
-  #loginform #facebook-login .facebook-text {
-    font-size: 21px;
-    margin-left: 0.5em;
-  }
-  #loginform #facebook-login i {
-    font-size: 36px;
-  }
 }
