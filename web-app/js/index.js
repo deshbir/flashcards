@@ -145,7 +145,18 @@ com.compro.application.hsc = (function() {
 		        //xhr.responseText               
 		    }
 		    
-		    alert(msgTitle + '\n\n' + msgDesc);
+		    var logs = JSLog.Logs['App.Login'];
+		    var innerHTML = "<ol>"; 
+		    for (var i = 0, len = logs.length; i < len; i++) {
+		    	innerHTML += "<li>" +logs[i] + "</li>";
+	        }
+		    innerHTML += "</ol>"
+		    
+		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
+		    $('#ajax-error-modal .modal-body .content-body').text(msgDesc);
+		    //console.log("***"+JSLog.Logs);
+		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
+		    $('#ajax-error-modal').modal();
 		    logger.info(msgTitle + '\n\n' + msgDesc);
 		    return true;
 		});

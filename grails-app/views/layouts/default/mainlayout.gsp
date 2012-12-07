@@ -30,6 +30,7 @@
 		<ga:trackPageview />
 	</head>
 	<body dir="${direction}">
+		<g:include view="layout-helpers/modals.gsp"/>
 		<g:include view="layout-helpers/facebook_init.gsp"/>
 		
 		<div id="wrap"> <!--  Sticky Footer Container -->
