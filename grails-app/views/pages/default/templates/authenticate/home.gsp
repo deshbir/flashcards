@@ -4,7 +4,14 @@
 	    	<h3> Welcome back</h3>
 	    	<div class="hero-unit">
 				<div class="row-fluid" id="user-info">
-					<div class="span3"><r:img uri="/images/profile_image.png" alt="profile-image"/></div>
+					<div class="span3">
+						{{#facebookuser}}
+							<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image"/>
+						{{/facebookuser}}
+						{{^facebookuser}}
+							<r:img uri="/images/profile_image.png" alt="profile-image"/>
+						{{/facebookuser}}						
+					</div>
 					<div class="span6">
 						<p>{{username}}</p>
 						<p><small>{{email}}</small></p>
@@ -28,11 +35,11 @@
 				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
-		<button id="facebook-login" class="btn btn-large btn-block">
-		<!-- onclick="Authenticate.loginWithFacebook(); return false;" -->
+		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
 			<p><i class="icon-facebook"></i></p>
 			<span class="facebook-text">Connect with Facebook</span>
 		</button>
+		<div id="loginErrorMessage"></div> 
 	{{/loggedin}}				
 </div>		
 			

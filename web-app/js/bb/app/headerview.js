@@ -98,13 +98,6 @@ HeaderView = new function() {
 				$(".navbar-inner .loggedin").css("display", "block");
 			} else {
 				$(".navbar-inner .loggedin").css("display", "none");
-			}
-			if (window.location.hash == "#/home") {
-				TemplateManager.get('authenticate/home', function(template){
-					
-					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email});
-					$("#loginform").html(templateHTML);				
-			 	 });
 			}			
 		},
 		

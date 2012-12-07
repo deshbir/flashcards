@@ -61,33 +61,34 @@ Authenticate = new function() {
   	},
   	this.loginWithFacebook = function(){
   		 FB.login(function(response) {
-  			if (response.authResponse) { 
-  				
-		  		mainApp.userinfo.loggedin = true;
-		  		
-				TemplateManager.get('authenticate/home', function(template){
-					UserModel.get().fetch({
-						success: function(model, response){
-							mainApp.userinfo.name = model.get("username");
-							mainApp.userinfo.email =  model.get("email");
-							var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
-							$("#loginform").html(compiledTemplate);
-							
-							/*
-							 * 1st parameter - update header for login
-							 * 2nd parameter - showHomeLink
-							 * 3rd parameter - setBackLink 
-							 */
-							mainApp.setHeaderOptions(true, false, false);
-						}
-					});
-			 	  });
-		  	} else {
-		  		mainApp.userinfo.loggedin = false;					
-				$("#loginErrorMessage").show();
-				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
-	  		}
-  		},{scope: 'email,user_likes'}); 		
+   			if (response.authResponse) { 
+   				
+ 		  		mainApp.userinfo.loggedin = true;
+ 		  		
+ 				TemplateManager.get('authenticate/home', function(template){
+ 					UserModel.get().fetch({
+ 						success: function(model, response){
+ 							mainApp.userinfo.name = model.get("username");
+ 							mainApp.userinfo.email =  model.get("email");
+ 							mainApp.userinfo.facebookuser =  true;
+ 							var compiledTemplate = Mustache.render(template, {"facebookuser":mainApp.userinfo.facebookuser, "loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
+ 							$("#loginform").html(compiledTemplate);
+ 							
+ 							/*
+ 							 * 1st parameter - update header for login
+ 							 * 2nd parameter - showHomeLink
+ 							 * 3rd parameter - setBackLink 
+ 							 */
+ 							mainApp.setHeaderOptions(true, false, false);
+ 						}
+ 					});
+ 			 	  });
+ 		  	} else {
+ 		  		mainApp.userinfo.loggedin = false;					
+ 				$("#loginErrorMessage").show();
+ 				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
+ 	  		}
+   		},{scope: 'email,user_likes'});  		
 	},
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
@@ -104,8 +105,10 @@ Authenticate = new function() {
 			type: 'GET',    	
 			success: function(response) {
 				mainApp.userinfo.loggedin = false;
-				
-				Backbone.history.navigate("#/home");
+				TemplateManager.get('authenticate/home', function(template){
+					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
+					$("#loginform").html(templateHTML);				
+			 	 });
 				
 				/*
 				 * 1st parameter - update header for login
