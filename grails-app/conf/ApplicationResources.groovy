@@ -15,6 +15,7 @@ modules = {
 			
 		//Jquery UI for effects
 		resource url:'js/libs/jquery.ui.core.js'
+		resource url:'js/libs/jquery.imagesloaded.js'
 		resource url:'js/libs/jquery.ui.effect.js'
 		resource url:'js/libs/jquery.ui.effect-slide.js'
 		

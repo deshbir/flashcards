@@ -250,10 +250,10 @@ DisciplineView = new function() {
 			 */
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
-				that.resizeColumns();
-			});
-			
-			
+				$('#product-list').imagesLoaded(function() {
+					that.resizeColumns();
+				});		
+			});	
 			return this; //Do this at the end to allow for method chaining.			
 			
 		},
