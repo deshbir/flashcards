@@ -19,7 +19,9 @@ Authenticate = new function() {
 					TemplateManager.get('authenticate/home', function(template){
 						UserModel.get().fetch({
 							success: function(model, response){
-								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"), "email":  model.get("email")} );
+								mainApp.userinfo.name = model.get("username");
+								mainApp.userinfo.email =  model.get("email");
+								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
 								$("#loginform").html(compiledTemplate);
 								
 								/*
@@ -59,24 +61,31 @@ Authenticate = new function() {
   	},
   	this.loginWithFacebook = function(){
   		 FB.login(function(response) {
-  			if (response.authResponse) {
-		  		TemplateManager.get('authenticate/home', function(template){
-			  		UserModel.get().fetch({
-				  		success: function(model, response){
-					  		var compiledTemplate = Mustache.render(template,{"loggedin": mainApp.userinfo.loggedin, "username": model.get("username"),"email":model.get("email") });
-					  		$("#loginform").html(compiledTemplate);
-					  		/*
-					  		* 1st parameter - update header for login
-					  		* 2nd parameter - showHomeLink
-					  		* 3rd parameter - setBackLink
-					  		*/
-					  		mainApp.setHeaderOptions(true, false, false);
-				  		}
-			  		});
-		  		});
+  			if (response.authResponse) { 
+  				
+		  		mainApp.userinfo.loggedin = true;
+		  		
+				TemplateManager.get('authenticate/home', function(template){
+					UserModel.get().fetch({
+						success: function(model, response){
+							mainApp.userinfo.name = model.get("username");
+							mainApp.userinfo.email =  model.get("email");
+							var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
+							$("#loginform").html(compiledTemplate);
+							
+							/*
+							 * 1st parameter - update header for login
+							 * 2nd parameter - showHomeLink
+							 * 3rd parameter - setBackLink 
+							 */
+							mainApp.setHeaderOptions(true, false, false);
+						}
+					});
+			 	  });
 		  	} else {
-		  		$("#loginErrorMessage").show();
-		  		$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
+		  		mainApp.userinfo.loggedin = false;					
+				$("#loginErrorMessage").show();
+				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
 	  		}
   		},{scope: 'email,user_likes'}); 		
 	},

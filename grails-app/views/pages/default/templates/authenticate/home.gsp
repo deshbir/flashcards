@@ -27,8 +27,7 @@
 				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
-		<button id="facebook-login" class="btn btn-large btn-block">
-		<!-- onclick="Authenticate.loginWithFacebook(); return false;" -->
+		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
 			<p><i class="icon-facebook"></i></p>
 			<span class="facebook-text">Connect with Facebook</span>
 		</button>
