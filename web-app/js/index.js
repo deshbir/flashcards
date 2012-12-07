@@ -170,6 +170,10 @@ com.compro.application.hsc = (function() {
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
+		//When user is not authorized to access the page
+		if (!userinfo.loggedin)
+			Backbone.history.navigate("#/home", {trigger:true,replace:true});
+		
 		if (location.href.indexOf("#") == -1)
 			Backbone.history.navigate("#/home", {trigger:true,replace:true});
 	}
