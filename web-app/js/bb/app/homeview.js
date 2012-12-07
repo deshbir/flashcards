@@ -48,21 +48,30 @@ HomeView = new function() {
 			return false;
 		},
 		render : function() {
-			
 			var compiled_template_body = Mustache.render(this.template_splash);
 			$(this.myPanelId).html(compiled_template_body);
+			var view = this;
+			if(mainApp.userinfo.loggedin){
+				UserModel.get().fetch({
+					success: function(model, response){
+						mainApp.userinfo.name = model.get("username");
+						mainApp.userinfo.email =  model.get("email");
+						var compiledTemplate = Mustache.render(view.template_body_home, {"facebookuser":mainApp.userinfo.facebookuser,"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
+						$("#loginform").html(compiledTemplate);
 						
-			var compiled_template_home = Mustache.render(this.template_body_home, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email});
-			$("#loginform").html(compiled_template_home);
-
-			this.setElement("#splash-container");
-			/*
-			 * 1st parameter - update header for login
-			 * 2nd parameter - showHomeLink
-			 * 3rd parameter - setBackLink 
-			 */
-			mainApp.setHeaderOptions(true, false, false);
-			
+						/*
+						 * 1st parameter - update header for login
+						 * 2nd parameter - showHomeLink
+						 * 3rd parameter - setBackLink 
+						 */
+						mainApp.setHeaderOptions(true, false, false);
+					}
+				});
+			} else {
+				var compiledTemplate = Mustache.render(view.template_body_home, {"loggedin": mainApp.userinfo.loggedin});
+				$("#loginform").html(compiledTemplate);
+			}
+			this.setElement("#loginform");			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */

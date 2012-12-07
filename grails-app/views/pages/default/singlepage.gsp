@@ -16,11 +16,17 @@
 			Authenticate.initialize();
    		</r:script>
 		<sec:ifLoggedIn>	
-			<r:script disposition="defer">
+			<r:script>
 				var mainApp = com.compro.application.hsc;
-				mainApp.userinfo.loggedin = true;					
 				mainApp.userinfo.name = "John Doe";
 				mainApp.userinfo.email = "(john@pearson.com)";
+				mainApp.userinfo.facebookuser = false;
+				<sec:ifLoggedIn>
+					mainApp.userinfo.loggedin = true;
+				</sec:ifLoggedIn>
+				<sec:access expression="hasRole('ROLE_FACEBOOK')">
+					mainApp.userinfo.facebookuser = true;
+				</sec:access>
 			</r:script>
 		</sec:ifLoggedIn>   		
 	</body>
