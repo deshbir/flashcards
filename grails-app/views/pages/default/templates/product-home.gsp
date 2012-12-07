@@ -13,15 +13,8 @@
 		<div class="span10 media">
 	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
 	        <div class="media-body">
-	        	<h3>({{author}})</h3>
+	        	<h3>{{author}}</h3>
 	        	<p>{{description}}</p>
-				<div class="rating">
-					<span>☆</span>
-					<span>☆</span>
-					<span>☆</span>
-					<span>☆</span>
-					<span>☆</span>
-				</div>
 			</div>
 		 	<div class="media-body">
 			{{#tests}}
