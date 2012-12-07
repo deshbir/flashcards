@@ -4,7 +4,7 @@
 		<div class="span12">
 			<small>{{product.discipline.name}}</small>
 			<h1>{{product.name}}</h1>
-			<p>Question 1 of 5</small></p>
+			<p>Question <span id="current-question-no">1</span> of 5</small></p>
         </div>
 	</div>
 </div> 	

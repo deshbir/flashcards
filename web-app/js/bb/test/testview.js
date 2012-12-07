@@ -239,10 +239,16 @@ TestView = new function() {
 		},
 		nextQuestion: function() {
 			mainApp.flashcards.next();
+			//Order increment should be done after doing the "next".
+			//As current position starts from "0" add 1 to it to get the current slide.
+			$("#current-question-no").html(mainApp.flashcards.getPos()+1);
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
+			//Order increment should be done after doing the "prev".
+			//As current position starts from "0" add 1 to it to get the current slide.
+			$("#current-question-no").html(mainApp.flashcards.getPos()+1);
 			return false;
 		},
 		showOnlyQuestion: function() {
