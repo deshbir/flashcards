@@ -1,6 +1,7 @@
 TestView = new function() {
+	
 
-	/* ----- Global View Variables ----------------------*/
+	/* ----- Global View Variables -----------------*/
 	var bbTestView = null;
 	var bbTrainView = null;
 	/* -------------------------------------------------*/
