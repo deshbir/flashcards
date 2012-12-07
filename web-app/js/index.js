@@ -201,7 +201,11 @@ com.compro.application.hsc = (function() {
 		
 		if(this.currentPanelId == -1)  //First time
 		{	
-			$(newPanelId).show();
+			$(newPanelId).show("fast",function() {
+				if(!(typeof callback === 'undefined') )	{
+					callback();	
+				}						
+			});
 		}
 		else
 		{

@@ -181,6 +181,11 @@ DisciplineView = new function() {
 							});
 					});
 			});
+			$(window).bind("resize.discipline", _.bind(function(){
+					if(mainApp.currentPanelId==this.myPanelId){
+						this.resizeColumns();
+					}
+			}, this));
 		},
 		
 		loadCollection: function(discipline_id)	{
@@ -242,7 +247,11 @@ DisciplineView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			mainApp.transitionAppPanel(this.myPanelId);
+			var that=this;
+			mainApp.transitionAppPanel(this.myPanelId,function(){
+				that.resizeColumns();
+			});
+			
 			
 			return this; //Do this at the end to allow for method chaining.			
 			
@@ -251,6 +260,23 @@ DisciplineView = new function() {
 			var disciplineid = this.options.displineId;
 			var productid = e.currentTarget.id;
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);			
+		},
+		resizeColumns:function(){
+				$(".row").each(function(){
+					var currentTallest = 0;
+					$(this).children().each(function(i){
+						$(this).children().each(function(){
+							if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+						});
+					});
+					$(this).children().each(function(){
+						if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+						// for ie6, set height since min-height isn't supported
+						if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currentTallest}); }
+						$(this).children().css({'min-height': currentTallest}); 
+					});
+			    
+				});
 		}
 	});
 	
