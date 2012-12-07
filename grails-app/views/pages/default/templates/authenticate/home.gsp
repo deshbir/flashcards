@@ -17,21 +17,22 @@
 	{{^loggedin}}
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
 			<h3>Log In</h3>
+			<div id="loginErrorMessage"></div> 	
 			<div class="hero-unit">
 				<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="text">
 				<br>
 				<input name="j_password" class="input-xlarge" placeholder="Password" type="password">
-				<button class="btn btn-large btn-block" onclick="Authenticate.authAjax(); return false;">
+				<button class="btn btn-large btn-block" id="login-button">
 					Log In
 				</button> 
 				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
-		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
+		<button id="facebook-login" class="btn btn-large btn-block">
+		<!-- onclick="Authenticate.loginWithFacebook(); return false;" -->
 			<p><i class="icon-facebook"></i></p>
 			<span class="facebook-text">Connect with Facebook</span>
 		</button>
-		<div id="loginErrorMessage"></div> 	
 	{{/loggedin}}				
 </div>		
 			
