@@ -27,6 +27,7 @@
 		<![endif]-->
 		<link rel="apple-touch-icon" href="<r:resource uri="/images/apple-touch-icon.png"/>">
 		<link rel="shortcut icon" href="<r:resource uri="/images/favicon.ico"/>" type="image/x-icon">
+		<ga:trackPageview />
 	</head>
 	<body dir="${direction}">
 		<g:include view="layout-helpers/facebook_init.gsp"/>
