@@ -147,7 +147,7 @@ TestView = new function() {
 		},
 		switchRadioState: function(e){
 			$(".options").find("span.radio-on").toggleClass("radio-on radio-off");
-			$(e.target).find("span.radio").toggleClass("radio-on radio-off");
+			$(e.currentTarget).find("span.radio").toggleClass("radio-on radio-off");
 		}
 	});	
 
@@ -256,21 +256,21 @@ TestView = new function() {
 			$(element + " .question").show()
 			$(element + " .answer").hide()
 			$(element + " .explainanswer").hide()
-			return false;
+			return true;
 		},
 		showOnlyAnswer: function(e){
 			var element = "#" + $(this.el).attr('id');
 			$(element + " .question").hide()
 			$(element + " .answer").show()
 			$(element + " .explainanswer").show()			
-			return false;
+			return true;
 		},
 		showQuestionAnswer: function(e){
 			var element = "#" + $(this.el).attr('id');
 			$(element + " .question").show()
 			$(element + " .answer").show()
 			$(element + " .explainanswer").show()			
-			return false;
+			return true;
 		}		
 	});
 	
