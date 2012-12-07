@@ -183,6 +183,7 @@ DisciplineView = new function() {
 			});
 			$(window).bind("resize.discipline", _.bind(function(){
 					if(mainApp.currentPanelId==this.myPanelId){
+						this.resetColumns();
 						this.resizeColumns();
 					}
 			}, this));
@@ -277,7 +278,18 @@ DisciplineView = new function() {
 					});
 			    
 				});
-		}
+		},
+		resetColumns:function(){
+			$(".row").each(function(){
+				$(this).children().each(function(){
+					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+					// for ie6, set height since min-height isn't supported
+					if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
+					$(this).children().css({'min-height':''}); 
+				});
+		    
+			});
+	}
 	});
 	
 	
