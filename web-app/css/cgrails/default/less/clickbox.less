@@ -9,6 +9,7 @@
 	    padding: 10px;
 	    margin: 10px 0px;
 	    text-decoration: none;
+	    .clearfix(); // Clear the float from controls
 	    
 	    h2	{
 	    	font-size: 18px;
@@ -27,7 +28,6 @@
 	    	line-height: 1.1;
 	    	margin-top:0px	   
 	    }
-	    
 	}
 }
 
@@ -35,4 +35,14 @@
 	a	{
 		background-color: #f4f4f4;
 	}	
+}
+
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+	#discipline-list div.span4:last-child {
+		  a {
+			margin:0;
+		  }
+	} 
 }
