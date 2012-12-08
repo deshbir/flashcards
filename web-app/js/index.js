@@ -152,6 +152,9 @@ com.compro.application.hsc = (function() {
 
 		    if (xhr.status === 0) { // Not connected. Verify Network
 		        var msgHeader = "Not Connected to Network";
+		    } else if (xhr.status == 401) { // UnAuthorized
+		    	Backbone.history.navigate("#/home");
+			    return true;
 		    } else if (xhr.status == 404) { // Requested page not found. [404]
 		        var msgHeader = "Requested page not found. [404]";
 		    } else if (xhr.status == 404) { // Requested page not found. [404]
