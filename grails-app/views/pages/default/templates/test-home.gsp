@@ -24,7 +24,7 @@
         		</div>
         		<div id="body-set">
         			{{#questions}}
-	        		<div class="body" style='display:none'>
+	        		<div class="body">
 		        		<h2 class="question"><i class="icon-question-sign"></i> {{text}}</h2>
 		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
 							 {{#option1}}
