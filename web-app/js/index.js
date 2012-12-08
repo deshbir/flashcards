@@ -331,6 +331,14 @@ com.compro.application.hsc = (function() {
 				muscula_log_init();
 
 				logger.info("--- Normalized address bar hiding for iOS & Android");
+				
+				
+				//for resetting translate3d on resize
+				$(window).bind("resize.translation", _.bind(function(){
+					mainApp.transitionAppPanel(mainApp.currentPanelId);
+				}, this));
+				
+				
 				/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
 				(function( win ){
 				    var doc = win.document;
