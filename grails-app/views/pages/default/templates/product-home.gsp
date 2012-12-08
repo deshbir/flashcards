@@ -1,45 +1,39 @@
 <g:set var="contextPath" value="${request.contextPath}"/>
-{{#.}}
-<div id="page-header" class="main-body">
-	<div class="row">
-	    <div class="span10">
-	    	<small>{{discipline.name}}</small>
-	        <h1>{{name}}</h1>
-	    </div>    
-	</div>
-</div> 	
+{{#.}}	
 <div id="product-home" class="main-body">
-	<div class="row">
-		<div class="span10 media">
-	        <img alt="{{name}}" class="pull-left" src="${contextPath}/{{image}}"/>
-	        <div class="media-body">
+		<div class="pull-left" id="product-info">
+			<a class="pull-left" href="#">
+	        	<img alt="{{name}}" src="${contextPath}/{{image}}"/>
+	        </a>
+	        <div class="pull-left">
+	        	<h2>{{name}}</h2>
 	        	<h3>{{author}}</h3>
 	        	<p>{{description}}</p>
 			</div>
-		 	<div class="media-body">
-			{{#tests}}
-			  <button id="{{id}}" class="btn btn-large btn-block flashcardTraining">Flashcards<small> (Training)</small></button>
-		      <!-- p><a class="btn btn-large href="#/product/3/test/{{id}}">Flash cards<small> (Assess)</small></a></p -->
-		      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flashcards<small> (Assess)</small></button>
-		    {{/tests}}
-		    </div> 		        
-    	</div>
-    
 	</div>
    	
 	<div class="row">
-		    <div class="span10 ">
-        	<h3><i class="icon-list"></i> Playlist</h3>
+		    <div class="span10">
+        	<h2><i class="icon-list"></i> Playlist</h2>
         	<ul class="unstyled playlist">
         		{{#topics}}
-	            <li><a href="{{audioTrack}}"><i class="icon-play"></i> <small>{{audioSequence}}.</small> {{name}}</a></li>
+	            <li>
+	            	<a href="{{audioTrack}}">
+	            		<i class=" icon-volume-up"></i> 
+	            		<span>{{audioSequence}}</span>
+	            		{{name}}
+	            	</a>
+	            </li>
 	            {{/topics}}
-	        <ul>
+	        </ul>
 	        <div id="sm2-container">
 			<!-- SM2 flash goes here -->
 			</div>
 	   	</div>	
-	</div>			      
+	</div>		
+	{{#tests}}
+	      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flashcard</button>
+	{{/tests}}	      
 </div>	
 {{/.}}
 

@@ -20,44 +20,72 @@
 	}
 	
 	ul.playlist {
-		padding-left: 10px;
 		padding-bottom: 20px;
 		li	{
-		  	.border-radius(4px);
-			background-color: #545454;
-			padding-top: 5px;
-			padding-bottom: 5px;
+		  	#gradient > .vertical(#e9e9e9, darken(#e9e9e9, 5%));
+			line-height:44px;
 			margin-bottom: 5px;
-
-			i	{
-				color: @grayLighter;
-				font-size:12px;
-			}
-			
+			.border-radius(10px);
 			a	{
-				color: @grayLighter;
-				font-size:16px;
-				font-weight:100;
+				color: @black;
+				text-align:left;
+				i	{
+					font-size:23px;
+				}
+				span {
+					margin-right:15px;
+					margin-left:5px;
+				}
 			}
 		}
-		
 		.timing {
     		background-color: #75C9DD;
+    		height:1.5em;
+    		top:20px;
     	}
 		
 	}
 	
 	ul.playlist li.sm2_playing, ul.playlist li.sm2_playing:hover {
-    	background-color: black;
+    	#gradient > .vertical(#e9e9e9, darken(#e9e9e9, 5%));
 	}
 	
-	ul.playlist li .controls .statusbar .position {
+	ul.playlist li.controls .statusbar .position {
 		background-color: #75C9DD;
     	border-right: 3px solid #75C9DD;
 	}
 	
-
+	ul.playlist li .controls .statusbar .loading {
+		background-color: @blue;
+	}
+	.flashcardAssess {
+		margin-bottom:20px;
+	}
 }
-
+/*********************** Responsive Styles ************************************/ 
+@media (max-width: 480px) { 
+	#product-home  {
+		margin-top:10px;
+	    h2 {
+			 font-size: 23px;
+		}
+		h3 {
+			font-size: 18px;
+		}
+	}
+	#product-info	{
+		a {
+			width:35%;
+			margin-right:15px;
+		}
+		div {
+			width:60%;
+		}
+		h2 {
+			 line-height: 25px;
+			 margin:0;
+		}
+	}
+}
 
 
