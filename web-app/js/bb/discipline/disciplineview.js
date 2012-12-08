@@ -263,7 +263,7 @@ DisciplineView = new function() {
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);			
 		},
 		resizeColumns:function(){
-				$(".row").each(function(){
+				$(this.myPanelId+" .row").each(function(){
 					var currentTallest = 0;
 					$(this).children().each(function(i){
 						$(this).children().each(function(){
@@ -280,7 +280,7 @@ DisciplineView = new function() {
 				});
 		},
 		resetColumns:function(){
-			$(".row").each(function(){
+			$(this.myPanelId+" .row").each(function(){
 				$(this).children().each(function(){
 					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
 					// for ie6, set height since min-height isn't supported
