@@ -28,13 +28,20 @@ Name: HSC app
 */
 namespace("com.compro.application");
 com.compro.application.hsc = (function() {
+	
+	// Config for MailToAdmin link
+	var emailDetails = {
+			adminEmail : "deshbir.dugal@comprotechnologies.com", 
+			subject : "Error Reporting",
+			// "cc" is an array. Add other values in comma separated format. 
+			cc : ["preeti.gupta@comprotechnologies.com"]
+	}
 
     /********************************************************/
 	/*                   DEPENDENCIES                       */
 	/********************************************************/
 
 	//JS Library Dependencies
-	
 
 	//DOM Dependencies
 	var idTopContainer = "#bb-container";
@@ -146,16 +153,26 @@ com.compro.application.hsc = (function() {
 		    }
 		    
 		    var logs = JSLog.Logs['App.Login'];
-		    var innerHTML = "<ol>"; 
+		    var innerHTML = "<ol>";
+		    var planeLogs = ""; 
 		    for (var i = 0, len = logs.length; i < len; i++) {
 		    	innerHTML += "<li>" +logs[i] + "</li>";
+		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
+		    	planeLogs += logs[i];
 	        }
 		    innerHTML += "</ol>"
 		    
 		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
 		    $('#ajax-error-modal .modal-body .content-body').text(msgDesc);
-		    //console.log("***"+JSLog.Logs);
 		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
+		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
+		    	var ccEmails = "";
+		    	emailDetails.cc.map(function(element){
+		    		ccEmails += "&cc="+element;
+		    	})
+		    	var email = "mailto:"+emailDetails.adminEmail+"?subject="+emailDetails.subject+ ccEmail + "&body="+planeLogs;
+		    	location.href=email;
+		    });
 		    $('#ajax-error-modal').modal();
 		    logger.info(msgTitle + '\n\n' + msgDesc);
 		    return true;

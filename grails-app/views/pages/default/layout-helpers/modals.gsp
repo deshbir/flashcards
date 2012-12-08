@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="modal-footer">
-		<button class="btn btn-small" data-dismiss="modal" aria-hidden="true">
+		<button class="btn btn-small mailToAdmin" data-dismiss="modal" aria-hidden="true">
 			Mail to : Admin
 		</button>
 		<button class="btn btn-small" data-dismiss="modal" aria-hidden="true">
