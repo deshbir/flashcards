@@ -176,19 +176,15 @@ TestView = new function() {
 			this.clearMarkedAnswer(currentOptionparentDiv);
 			var self = this;
 			//Calling markCorrectAnswer after the delay
-			this.timeOutObj = _.delay(function(){self.markCorrectAnswer(correct,answered,currentOptionparentDiv)},1000);
+			this.timeOutObj = _.delay(function(){self.markCorrectAnswer(correct,answered,currentOptionparentDiv)},500);
 		},
 		markCorrectAnswer: function(correct,answered,currentOptionparentDiv){
 			$(correct).addClass('correct-ans');
 			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
 			$(answerExplanation).removeClass("hide");
 			$(answerExplanation).children(".explainanswer").text(this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answerDetails)
-			$(answerExplanation).children(".header-wrong").addClass("hide");
-			$(answerExplanation).children(".header-correct").removeClass("hide");
 			if(answered!=correct){
 				$(answered).addClass('wrong-ans');
-				$(answerExplanation).children(".header-wrong").removeClass("hide");
-				$(answerExplanation).children(".header-correct").addClass("hide");
 			}
 		},
 		clearMarkedAnswer: function(currentOptionparentDiv){

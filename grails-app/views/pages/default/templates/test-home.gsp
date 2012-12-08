@@ -50,8 +50,6 @@
 							 {{/option7}}
 						</div>
 						<div class="answer-explanation hide">
-							<p class="header-correct">Correct!!!</p>
-							<p class="header-wrong">Incorrect!!!</p>
 							<p class="explainanswer"></p>
 						</div>
 					</div>
