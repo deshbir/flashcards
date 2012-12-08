@@ -194,7 +194,7 @@ com.compro.application.hsc = (function() {
 		    		emailConfig.ccEmails += "&cc="+element;
 		    	})
 		    	var email = "mailto:"+emailConfig.adminEmail+"?subject="+emailConfig.subject+ emailConfig.ccEmails + "&body="+planeLogs;
-		    	location.href=email;
+		    	window.open(email);
 		    });
 		    $('#ajax-error-modal').modal();
 		    logger.info(msgTitle + '\n\n' + msgDesc);
