@@ -27,15 +27,36 @@ Name: HSC app
 
 */
 namespace("com.compro.application");
+
 com.compro.application.hsc = (function() {
 	
-	// Config for MailToAdmin link
-	var emailDetails = {
+	
+	var emailConfig = {
 			adminEmail : "deshbir.dugal@comprotechnologies.com", 
 			subject : "Error Reporting",
 			// "cc" is an array. Add other values in comma separated format. 
 			cc : ["preeti.gupta@comprotechnologies.com"]
 	}
+	
+	// Add separate Log Settings from Mascula for different logs.
+	var musculaLogSettingsConfig = {
+		"default-log" : {
+			logId:"aaa4d152-e808-4f89-9cde-3e7b396ae1f8",
+			suppressErrors: false,
+			branding: 'none'
+		},
+		"q1-pearson-hsc.herokuapp.com" : {
+			logId:"MnDNuBC-RkEpE",
+			suppressErrors: false,
+			branding: 'none'
+		},
+		"d1-pearson-hsc.herokuapp.com" : {
+			logId:"s5zFzBC-Ug6Ff",
+			suppressErrors: false,
+			branding: 'none'
+		}
+	}
+
 
     /********************************************************/
 	/*                   DEPENDENCIES                       */
@@ -167,10 +188,10 @@ com.compro.application.hsc = (function() {
 		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
 		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
 		    	var ccEmails = "";
-		    	emailDetails.cc.map(function(element){
+		    	emailConfig.cc.map(function(element){
 		    		ccEmails += "&cc="+element;
 		    	})
-		    	var email = "mailto:"+emailDetails.adminEmail+"?subject="+emailDetails.subject+ ccEmail + "&body="+planeLogs;
+		    	var email = "mailto:"+emailConfig.adminEmail+"?subject="+emailConfig.subject+ ccEmails + "&body="+planeLogs;
 		    	location.href=email;
 		    });
 		    $('#ajax-error-modal').modal();
@@ -203,7 +224,6 @@ com.compro.application.hsc = (function() {
 	}
 	
 	function soundmanager2_init()	{
-		
 		soundManager.setup({
 			  // disable or enable debug output
 			  debugMode: true,
@@ -215,6 +235,30 @@ com.compro.application.hsc = (function() {
 			  // optional: enable MPEG-4/AAC support (requires flash 9)
 			  flashVersion: 9
 			});
+	}
+	
+	function muscula_log_init()	{
+		var domain = document.domain;
+		if(!musculaLogSettingsConfig[domain]) {
+			// Add the errors to the default logs file if the domain don't have separate logs config. 
+			domain = "default-log";
+		}
+		var masculaLogSettings = musculaLogSettingsConfig[domain];
+		
+	    window.Muscula = { settings:{
+	        logId:masculaLogSettings.logId,
+	        suppressErrors: masculaLogSettings.suppressErrors,
+	        branding: masculaLogSettings.branding
+	    }};
+	    (function () {
+	        var m = document.createElement('script'); m.type = 'text/javascript'; m.async = true;
+	        m.src = (window.location.protocol == 'https:' ? 'https:' : 'http:') +
+	            '//musculahq.appspot.com/Muscula.js';
+	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(m, s);
+	        window.Muscula.run=function(c){eval(c);window.Muscula.run=function(){};};
+	        window.Muscula.errors=[];window.onerror=function(){window.Muscula.errors.push(arguments);
+	        return window.Muscula.settings.suppressErrors===undefined;}
+	    })();
 	}
 	
 	function setHeaderOptions(updateHeader, showHomeLink, showBackLink) {
@@ -275,6 +319,9 @@ com.compro.application.hsc = (function() {
 				logger.info("--- sound manager");
 				soundmanager2_init();
 				
+				logger.info("--- muscula Initialiation");
+				muscula_log_init();
+
 				logger.info("On Ready - Completed Initialization");
 			});
 
