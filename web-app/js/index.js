@@ -261,9 +261,14 @@ com.compro.application.hsc = (function() {
 	    })();
 	}
 	
-	function setHeaderOptions(updateHeader, showHomeLink, showBackLink) {
-		if (updateHeader)
-			HeaderView.setHeaderMenu();
+	function setHeaderOptions(updateHeader, showHomeLink, showBackLink, showProfileButton) {
+		if (updateHeader) {
+			if (showProfileButton != undefined) {
+				HeaderView.setHeaderMenu(showProfileButton);
+			} else {
+				HeaderView.setHeaderMenu();
+			}
+		}
 		
 		HeaderView.setHomeIcon(showHomeLink);
 		HeaderView.setBackIcon(showBackLink);
