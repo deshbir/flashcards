@@ -5,17 +5,16 @@
     .navbar-fixed-top {
     	margin-left: 0px;
     	margin-right: 0px;
+    	margin-bottom:5px;
     }
     /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-	
-	.brand-button {
-		.btn	{
-			padding: 0 20px;
-			 margin-left: 4px;
-		}
-	}
-	
 	.navbar {
+		.brand-button {
+			.btn	{
+				padding: 0 20px;
+				 margin-left: 4px;
+			}
+		}
 		.brand {
 			 margin:0 0 0 -20px;
 		}
@@ -25,9 +24,11 @@
 /*-- Landscape phone to portrait tablet */
 
 @media (max-width: 770px) {
-	.brand-button {
-		.btn	{	       
-		  margin-left: 4px;
+	.navbar {
+		.brand-button {
+			.btn	{	       
+			  margin-left: 4px;
+			}
 		}
 	}
 }
@@ -42,10 +43,11 @@
     	margin-right: 0px;
     }
     /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-    
-    .brand-button {
-		.btn	{
-			padding: 0 20px;
+    .navbar {
+	    .brand-button {
+			.btn	{
+				padding: 0 20px;
+			}
 		}
 	}
 }

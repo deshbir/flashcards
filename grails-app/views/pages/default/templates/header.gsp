@@ -4,8 +4,7 @@
 <div class="navbar-inner">
 	<div class="container">
 		<div id="back" class="brand-button">
-			<a href="#" class="btn btn-mini pull-left"><i
-				class="icon-chevron-left"></i> Back</a>
+			<a href="#" class="pull-left"><i class="icon-arrow-left"></i></a>
 		</div>
 
 		<div class="brand">
