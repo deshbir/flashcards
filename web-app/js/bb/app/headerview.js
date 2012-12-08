@@ -84,7 +84,8 @@ HeaderView = new function() {
 		},
 		
 		logout : function() {
-			Authenticate.logout();
+			Backbone.history.navigate("#/home");
+			return false;
 		},
 		
 		updateloginheader : function() {

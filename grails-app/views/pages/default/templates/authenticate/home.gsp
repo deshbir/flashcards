@@ -18,6 +18,7 @@
 					</div>
 				</div>	
 				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
+				<a href="#" id="logout-button" class="btn btn-large btn-block">Logout</a>
 			</div>
 	    </div>
 	{{/loggedin}}

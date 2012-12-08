@@ -22,7 +22,8 @@ HomeView = new function() {
 		myPanelId:"#panel_home",
 		
 		events: {
-			"click #login-button"	:	"userlogin"
+			"click #login-button"	:	"userlogin",
+			"click #logout-button"	:	"userlogout"
 		},
 				
 		initialize: function() {
@@ -42,10 +43,6 @@ HomeView = new function() {
 						that.render();
 					});
 			});	
-		},
-		userlogin : function(e) {
-			Authenticate.authAjax(); 
-			return false;
 		},
 		render : function() {
 			var compiled_template_body = Mustache.render(this.template_splash);
@@ -77,7 +74,15 @@ HomeView = new function() {
 			 */
 			mainApp.transitionAppPanel(this.myPanelId);
 			return this; //Do this at the end to allow for method chaining.		
-		}
+		},
+		userlogin : function() {
+			Authenticate.authAjax(); 
+			return false;
+		},
+		userlogout : function() {
+			Authenticate.logout();
+			return false;
+		}	
 	});
 	
 	this.routerInitialize = function(){
