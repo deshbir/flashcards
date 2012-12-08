@@ -78,8 +78,9 @@ HeaderView = new function() {
 		},
 		
 		homebutton : function() {
-			Backbone.history.navigate("#/home");
+			Backbone.history.navigate("#/discipline");
 			this.setBackIcon(false);
+			return false;
 		},
 		
 		logout : function() {

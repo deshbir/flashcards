@@ -21,15 +21,19 @@ Authenticate = new function() {
 							success: function(model, response){
 								mainApp.userinfo.name = model.get("username");
 								mainApp.userinfo.email =  model.get("email");
+								/*
 								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
 								$("#loginform").html(compiledTemplate);
-								
+								*/
+								Backbone.history.navigate("#/discipline");								
 								/*
 								 * 1st parameter - update header for login
 								 * 2nd parameter - showHomeLink
 								 * 3rd parameter - setBackLink 
 								 */
 								mainApp.setHeaderOptions(true, false, false);
+								
+								
 							}
 						});
 						/*TemplateManager.get('header', 
@@ -71,9 +75,11 @@ Authenticate = new function() {
  							mainApp.userinfo.name = model.get("username");
  							mainApp.userinfo.email =  model.get("email");
  							mainApp.userinfo.facebookuser =  true;
+ 							/*
  							var compiledTemplate = Mustache.render(template, {"facebookuser":mainApp.userinfo.facebookuser, "loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
  							$("#loginform").html(compiledTemplate);
- 							
+ 							*/
+ 							Backbone.history.navigate("#/discipline"); 							
  							/*
  							 * 1st parameter - update header for login
  							 * 2nd parameter - showHomeLink
