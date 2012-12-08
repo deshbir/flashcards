@@ -33,7 +33,7 @@ com.compro.application.hsc = (function() {
 	
 	var emailConfig = {
 			adminEmail : "deshbir.dugal@comprotechnologies.com", 
-			subject : "Error Reporting",
+			subject : "Pearson HSC Error Report",
 			// "cc" is an array. Add other values in comma separated format. 
 			cc : ["preeti.gupta@comprotechnologies.com"]
 	}
@@ -181,7 +181,7 @@ com.compro.application.hsc = (function() {
 		    for (var i = 0, len = logs.length; i < len; i++) {
 		    	innerHTML += "<li>" +logs[i] + "</li>";
 		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
-		    	planeLogs += logs[i];
+		    	planeLogs += logs[i]+" ~~ ";
 	        }
 		    innerHTML += "</ol>"
 		    
@@ -295,7 +295,6 @@ com.compro.application.hsc = (function() {
 				else{
 					$('#panel-container').addClass('easing');
 				}
-				
 				$('.panel-item').css("visibility","hidden");
 				$(newPanelId).css("visibility","visible");
 				$(this.currentPanelId).css("visibility","visible");
@@ -338,8 +337,6 @@ com.compro.application.hsc = (function() {
 				muscula_log_init();
 
 				logger.info("--- Normalized address bar hiding for iOS & Android");
-				
-				
 				//for resetting translate3d on resize
 				$(window).bind("resize.translation", _.bind(function(){
 					mainApp.transitionAppPanel(mainApp.currentPanelId);
