@@ -292,6 +292,10 @@ com.compro.application.hsc = (function() {
 				else{
 					$('#panel-container').addClass('easing');
 				}
+				
+				$('.panel-item').css("visibility","hidden");
+				$(newPanelId).css("visibility","visible");
+				$(this.currentPanelId).css("visibility","visible");
 				var itemWidth = $("#bb-container").width();
 				$("#panel-container").width(itemWidth * $('.panel-item').length);
 				$('.panel-item').width(itemWidth);
