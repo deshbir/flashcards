@@ -27,27 +27,9 @@
 	        		<div class="body">
 		        		<h2 class="question"><i class="icon-question-sign"></i> {{text}}</h2>
 		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
-							 {{#option1}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option1}}</span></button>
-							 {{/option1}}
-							 {{#option2}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option2}}</span></button>
-							 {{/option2}}
-							 {{#option3}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option3}}</span></button>
-							 {{/option3}}							 
-							 {{#option4}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option4}}</span></button>
-							 {{/option4}}							 
-							 {{#option5}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option5}}</span></button>
-							 {{/option5}}							 
-							 {{#option6}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option6}}</span></button>
-							 {{/option6}}
-							 {{#option7}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{option7}}</span></button>
-							 {{/option7}}
+							 {{#options}}
+							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{.}}</span></button>
+							 {{/options}} 
 						</div>
 						<div class="answer-explanation hide">
 							<p class="explainanswer"></p>

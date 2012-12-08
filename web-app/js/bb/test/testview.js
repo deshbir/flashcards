@@ -97,6 +97,19 @@ TestView = new function() {
 			// if we're back the same/previous product, then do NOT re-create the DOM		
 			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
 
+				//Getting all the questions
+				var questions = this.collection.first().attributes.questions;
+				//Shuffling options
+				for(var i=0;i<questions.length;i++){
+					var optionArray = [];
+					for(var j=1;j<=7;j++){
+						if(questions[i]["option"+j])
+							//Stroring options in array
+							optionArray.push(questions[i]["option"+j]);
+					}
+					//Adding new parameter options which stores shuffled options.
+					questions[i].options=_.shuffle(optionArray);
+				}
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-home");
@@ -144,10 +157,10 @@ TestView = new function() {
 			$(currentOptionparentDiv).find(".options").find("span.radio-on").toggleClass("radio-on radio-off");
 			$(e.currentTarget).find("span.radio").toggleClass("radio-on radio-off");
 			//Calculating correct answer matching text
-			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim();
-			if(($(e.currentTarget).find("span.text").text()).trim()!=correctAns){
+			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim().toUpperCase();
+			if(($(e.currentTarget).find("span.text").text()).trim().toUpperCase() !=correctAns){
 				$(currentOptionparentDiv).find(".options").children().each(function(){
-					if($(this).find("span.text").text().trim()==correctAns){
+					if($(this).find("span.text").text().trim().toUpperCase() == correctAns){
 						correct = this;
 						return false;
 					}
