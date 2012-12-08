@@ -71,7 +71,7 @@ com.compro.application.hsc = (function() {
 	var globalAjaxOptions = {
 		elProgress : ".main-header #loadingIcon",
 		cssProgressLoading : "",
-		disableLoadingProgress : true
+		disableLoadingProgress : false
 	}
 		
 	/********************************************************/
@@ -127,19 +127,17 @@ com.compro.application.hsc = (function() {
 		/* -------------  Ajax events fire in following order ----------------*/
 
 		$(document).ajaxStart(function () {
-			
 			logger.info("ajaxStart");
 			
-			/*
 			
 		    var elProgress = globalAjaxOptions.elProgress;
 		    var cssProgressLoading = globalAjaxOptions.cssProgressLoading;
 
 		    if(!globalAjaxOptions.disableLoadingProgress) {
 		        //Show Waiting Icon
-		    	$(globalAjaxOptions.elProgress).show()
+		    	$(globalAjaxOptions.elProgress).show();
 		    }
-		    */
+		    
 			
 		});
 
@@ -188,10 +186,10 @@ com.compro.application.hsc = (function() {
 		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
 		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
 		    	var ccEmails = "";
-		    	emailConfig.cc.map(function(element){
+		    	emailDetails.cc.map(function(element){
 		    		ccEmails += "&cc="+element;
 		    	})
-		    	var email = "mailto:"+emailConfig.adminEmail+"?subject="+emailConfig.subject+ ccEmails + "&body="+planeLogs;
+		    	var email = "mailto:"+emailDetails.adminEmail+"?subject="+emailDetails.subject+ ccEmail + "&body="+planeLogs;
 		    	location.href=email;
 		    });
 		    $('#ajax-error-modal').modal();
