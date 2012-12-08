@@ -226,35 +226,33 @@ com.compro.application.hsc = (function() {
 	}	
 	
 	function transitionAppPanel(newPanelId, callback) {
-		
-		if(this.currentPanelId == -1)  //First time
-		{	
-			$(newPanelId).show();
-		}
-		else
-		{	
-			var itemWidth = $("#bb-container").width();
-			$("#panel-container").width(itemWidth * $('.panel-item').length);
-			$('.panel-item').width(itemWidth);
-			if ( $(this.currentPanelId).attr("data-order") < $(newPanelId).attr("data-order")) {
-				
+			
+			if(this.currentPanelId == -1)  //First time
+			{	
+				$(newPanelId).show();
+			}
+			else
+			{	
+				//when window resized easing effect is removed temporarily.
+				if(newPanelId == this.currentPanelId ){
+					$('#panel-container').removeClass('easing');
+				}
+				else{
+					$('#panel-container').addClass('easing');
+				}
+				var itemWidth = $("#bb-container").width();
+				$("#panel-container").width(itemWidth * $('.panel-item').length);
+				$('.panel-item').width(itemWidth);
 				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
 				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-						if(!(typeof callback === 'undefined') )	{
-							callback();	
-						}						
-			} else{ 
-				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");				
-						if(!(typeof callback === 'undefined') )	{
-							callback();	
-						}
-						
+				if(!(typeof callback === 'undefined') )	{
+					callback();	
+				}
+				//$('#bb-container').height($(newPanelId).height());
 			}
+			this.currentPanelId = newPanelId;
+			
 		}
-		this.currentPanelId = newPanelId;
-		
-	}
 		
 	/********************************************************/
 	/*                 ONE TIME INIT FUNCTION              */

@@ -5,7 +5,7 @@
 	
 	<body>
 		<div id="bb-container" class="container">
-			<div id="panel-container">
+			<div id="panel-container" class="easing">
 					<div id="panel_home" data-order="0" class="panel-item"></div>
 					<div id="panel_discipline-list" data-order="1" class="panel-item"></div>
 					<div id="panel_discipline-home" data-order="2" class="panel-item"></div>

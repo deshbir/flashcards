@@ -14,10 +14,7 @@ modules = {
 		resource url:'js/libs/bootstrap-modal.js'
 			
 		//Jquery UI for effects
-		resource url:'js/libs/jquery.ui.core.js'
 		resource url:'js/libs/jquery.imagesloaded.js'
-		resource url:'js/libs/jquery.ui.effect.js'
-		resource url:'js/libs/jquery.ui.effect-slide.js'
 		
 		//View Templates
 		resource url:'js/libs/mustache.js'
