@@ -137,18 +137,67 @@ TestView = new function() {
 		},
 		nextQuestion: function() {
 			mainApp.flashcards.next();
+			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
+			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 			return false;
 		},
 		resizeContainer: function() {
 			return false;
 		},
 		switchRadioState: function(e){
-			$(".options").find("span.radio-on").toggleClass("radio-on radio-off");
+			if(this.timeOutObj){
+				clearTimeout(this.timeOutObj);
+				this.timeOutObj = null;
+			}
+			//Dummy settign for correct answer
+			var correct = $(e.currentTarget);
+			//Getting current clicked div element
+			var currentOptionparentDiv = mainApp.flashcards.slides[mainApp.flashcards.index];
+			var answered = correct;
+			
+			$(currentOptionparentDiv).find(".options").find("span.radio-on").toggleClass("radio-on radio-off");
 			$(e.currentTarget).find("span.radio").toggleClass("radio-on radio-off");
+			//Calculating correct answer matching text
+			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim();
+			if(($(e.currentTarget).find("span.text").text()).trim()!=correctAns){
+				$(currentOptionparentDiv).find(".options").children().each(function(){
+					if($(this).find("span.text").text().trim()==correctAns){
+						correct = this;
+						return false;
+					}
+				})
+			} 
+			
+			//Clearing already marked ans if any
+			this.clearMarkedAnswer(currentOptionparentDiv);
+			var self = this;
+			//Calling markCorrectAnswer after the delay
+			this.timeOutObj = _.delay(function(){self.markCorrectAnswer(correct,answered,currentOptionparentDiv)},1000);
+		},
+		markCorrectAnswer: function(correct,answered,currentOptionparentDiv){
+			$(correct).addClass('correct-ans');
+			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			$(answerExplanation).removeClass("hide");
+			$(answerExplanation).children(".explainanswer").text(this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answerDetails)
+			$(answerExplanation).children(".header-wrong").addClass("hide");
+			$(answerExplanation).children(".header-correct").removeClass("hide");
+			if(answered!=correct){
+				$(answered).addClass('wrong-ans');
+				$(answerExplanation).children(".header-wrong").removeClass("hide");
+				$(answerExplanation).children(".header-correct").addClass("hide");
+			}
+		},
+		clearMarkedAnswer: function(currentOptionparentDiv){
+			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');
+			$(currentOptionparentDiv).find('.wrong-ans').removeClass('wrong-ans');
+			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			$(answerExplanation).addClass("hide");
+			$(answerExplanation).children(".explainanswer").text("");
+
 		}
 	});	
 

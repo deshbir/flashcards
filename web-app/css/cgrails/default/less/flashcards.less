@@ -48,6 +48,23 @@
 			font-style: italic;
 		}
 		
+		.answer-explanation{
+			width:95%;
+			margin-left: 20px;
+			#gradient > .vertical(#e9e9e9, darken(#e9e9e9, 5%));
+			.explainanswer {
+				padding:0 20px 20px 20px;
+			}
+			.header-correct{
+				color:@green;
+				padding:20px 20px 0px 20px;
+			}
+			.header-wrong{
+				color:@red;
+				padding:20px 20px 0px 20px;
+			}
+		}
+		
 		h2	{
 		   	font-size: 24px;
     		font-weight: 100;
@@ -67,6 +84,22 @@
 		.btn-group	{
 			width:95%;
 		}	
+		.btn.correct-ans{
+			span.text{
+				color: @green;
+			}
+			span.radio{
+				background:url('../../../../images/radio-correct.png')no-repeat left center;
+			}
+		}
+		.btn.wrong-ans{
+			span.text{
+				color: @red;
+			}
+			span.radio{
+				background:url('../../../../images/radio-wrong.png')no-repeat left center;
+			}
+		}
 		
 	  	.btn	{
 	  		margin-bottom: 10px;
@@ -141,6 +174,13 @@
 				margin-left: 5px;
 				font-size:14px;
 				line-height: 1.1;
+			}
+			.answer-explanation {
+				width:90%;
+				margin-left: 5px;
+				p {
+					padding:5px;
+				}
 			}
 		}
 	}	
