@@ -167,13 +167,14 @@ com.compro.application.hsc = (function() {
 		    } else if (exception === '') { //Server Aborted request
 		        var msgHeader = "Server Aborted Request";
 		    } else { //Unknown Error
-		        var msgHeader = "Unknown Error";    
+		        var msgHeader = "Unknown Error";
+		        var msgDesc = xhr.responseText;
 		        //xhr.responseText               
 		    }
 		    
 		    var logs = JSLog.Logs['App.Login'];
 		    var innerHTML = "<ol>";
-		    var planeLogs = ""; 
+		    var planeLogs = "";
 		    for (var i = 0, len = logs.length; i < len; i++) {
 		    	innerHTML += "<li>" +logs[i] + "</li>";
 		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
@@ -185,11 +186,11 @@ com.compro.application.hsc = (function() {
 		    $('#ajax-error-modal .modal-body .content-body').text(msgDesc);
 		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
 		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
-		    	var ccEmails = "";
-		    	emailDetails.cc.map(function(element){
-		    		ccEmails += "&cc="+element;
+		    	emailConfig.ccEmails = "";
+		    	emailConfig.cc.map(function(element){
+		    		emailConfig.ccEmails += "&cc="+element;
 		    	})
-		    	var email = "mailto:"+emailDetails.adminEmail+"?subject="+emailDetails.subject+ ccEmail + "&body="+planeLogs;
+		    	var email = "mailto:"+emailConfig.adminEmail+"?subject="+emailConfig.subject+ emailConfig.ccEmails + "&body="+planeLogs;
 		    	location.href=email;
 		    });
 		    $('#ajax-error-modal').modal();
