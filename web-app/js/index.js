@@ -27,15 +27,36 @@ Name: HSC app
 
 */
 namespace("com.compro.application");
+
 com.compro.application.hsc = (function() {
 	
-	// Config for MailToAdmin link
-	var emailDetails = {
+	
+	var emailConfig = {
 			adminEmail : "deshbir.dugal@comprotechnologies.com", 
 			subject : "Error Reporting",
 			// "cc" is an array. Add other values in comma separated format. 
 			cc : ["preeti.gupta@comprotechnologies.com"]
 	}
+	
+	// Add separate Log Settings from Mascula for different logs.
+	var musculaLogSettingsConfig = {
+		"default-log" : {
+			logId:"aaa4d152-e808-4f89-9cde-3e7b396ae1f8",
+			suppressErrors: false,
+			branding: 'none'
+		},
+		"q1-pearson-hsc.herokuapp.com" : {
+			logId:"MnDNuBC-RkEpE",
+			suppressErrors: false,
+			branding: 'none'
+		},
+		"d1-pearson-hsc.herokuapp.com" : {
+			logId:"s5zFzBC-Ug6Ff",
+			suppressErrors: false,
+			branding: 'none'
+		}
+	}
+
 
     /********************************************************/
 	/*                   DEPENDENCIES                       */
@@ -50,7 +71,7 @@ com.compro.application.hsc = (function() {
 	var globalAjaxOptions = {
 		elProgress : ".main-header #loadingIcon",
 		cssProgressLoading : "",
-		disableLoadingProgress : true
+		disableLoadingProgress : false
 	}
 		
 	/********************************************************/
@@ -106,19 +127,17 @@ com.compro.application.hsc = (function() {
 		/* -------------  Ajax events fire in following order ----------------*/
 
 		$(document).ajaxStart(function () {
-			
 			logger.info("ajaxStart");
 			
-			/*
 			
 		    var elProgress = globalAjaxOptions.elProgress;
 		    var cssProgressLoading = globalAjaxOptions.cssProgressLoading;
 
 		    if(!globalAjaxOptions.disableLoadingProgress) {
 		        //Show Waiting Icon
-		    	$(globalAjaxOptions.elProgress).show()
+		    	$(globalAjaxOptions.elProgress).show();
 		    }
-		    */
+		    
 			
 		});
 
@@ -203,7 +222,6 @@ com.compro.application.hsc = (function() {
 	}
 	
 	function soundmanager2_init()	{
-		
 		soundManager.setup({
 			  // disable or enable debug output
 			  debugMode: true,
@@ -217,9 +235,38 @@ com.compro.application.hsc = (function() {
 			});
 	}
 	
-	function setHeaderOptions(updateHeader, showHomeLink, showBackLink) {
-		if (updateHeader)
-			HeaderView.setHeaderMenu();
+	function muscula_log_init()	{
+		var domain = document.domain;
+		if(!musculaLogSettingsConfig[domain]) {
+			// Add the errors to the default logs file if the domain don't have separate logs config. 
+			domain = "default-log";
+		}
+		var masculaLogSettings = musculaLogSettingsConfig[domain];
+		
+	    window.Muscula = { settings:{
+	        logId:masculaLogSettings.logId,
+	        suppressErrors: masculaLogSettings.suppressErrors,
+	        branding: masculaLogSettings.branding
+	    }};
+	    (function () {
+	        var m = document.createElement('script'); m.type = 'text/javascript'; m.async = true;
+	        m.src = (window.location.protocol == 'https:' ? 'https:' : 'http:') +
+	            '//musculahq.appspot.com/Muscula.js';
+	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(m, s);
+	        window.Muscula.run=function(c){eval(c);window.Muscula.run=function(){};};
+	        window.Muscula.errors=[];window.onerror=function(){window.Muscula.errors.push(arguments);
+	        return window.Muscula.settings.suppressErrors===undefined;}
+	    })();
+	}
+	
+	function setHeaderOptions(updateHeader, showHomeLink, showBackLink, showProfileButton) {
+		if (updateHeader) {
+			if (showProfileButton != undefined) {
+				HeaderView.setHeaderMenu(showProfileButton);
+			} else {
+				HeaderView.setHeaderMenu();
+			}
+		}
 		
 		HeaderView.setHomeIcon(showHomeLink);
 		HeaderView.setBackIcon(showBackLink);
@@ -274,6 +321,45 @@ com.compro.application.hsc = (function() {
 				
 				logger.info("--- sound manager");
 				soundmanager2_init();
+				
+				logger.info("--- muscula Initialiation");
+				muscula_log_init();
+
+				logger.info("--- Normalized address bar hiding for iOS & Android");
+				/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
+				(function( win ){
+				    var doc = win.document;
+
+				    // If there's a hash, or addEventListener is undefined, stop here
+				    if( !location.hash && win.addEventListener ){
+
+				        //scroll to 1
+				        window.scrollTo( 0, 1 );
+				        var scrollTop = 1,
+				            getScrollTop = function(){
+				                return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+				            },
+
+				        //reset to 0 on bodyready, if needed
+				            bodycheck = setInterval(function(){
+				                if( doc.body ){
+				                    clearInterval( bodycheck );
+				                    scrollTop = getScrollTop();
+				                    win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+				                }
+				            }, 15 );
+
+				        win.addEventListener( "load", function(){
+				            setTimeout(function(){
+				                //at load, if user hasn't scrolled more than 20 or so...
+				                if( getScrollTop() < 20 ){
+				                    //reset to hide addr bar at onload
+				                    win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+				                }
+				            }, 0);
+				        } );
+				    }
+				})( this );
 				
 				logger.info("On Ready - Completed Initialization");
 			});

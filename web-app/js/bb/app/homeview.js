@@ -60,8 +60,9 @@ HomeView = new function() {
 						 * 1st parameter - update header for login
 						 * 2nd parameter - showHomeLink
 						 * 3rd parameter - setBackLink 
+						 * 4th parameter - showLogoutIcon
 						 */
-						mainApp.setHeaderOptions(true, false, false);
+						mainApp.setHeaderOptions(true, false, false, false);
 					}
 				});
 			} else {

@@ -31,7 +31,7 @@ Authenticate = new function() {
 								 * 2nd parameter - showHomeLink
 								 * 3rd parameter - setBackLink 
 								 */
-								mainApp.setHeaderOptions(true, false, false);
+								mainApp.setHeaderOptions(true, false, false, false);
 								
 								
 							}

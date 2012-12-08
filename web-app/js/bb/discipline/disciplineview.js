@@ -96,7 +96,7 @@ DisciplineView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(false, false, true);
+			mainApp.setHeaderOptions(true, false, true);
 
 			var compiled_template_body = Mustache.render(this.template_body);
 			$(this.myPanelId).html(compiled_template_body);
