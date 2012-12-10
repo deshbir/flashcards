@@ -1,0 +1,69 @@
+{
+"products" : [{
+	"name": "The Paralegal Professional",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 1,
+	"author": "Thomas F. Goldman"
+},
+{
+	"name": "Legal Research and Writing",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 2,
+	"author": "Myers"
+},
+{
+	"name": "Real Estate Fundamentals",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 3,
+	"author": "Alice Hughes"
+},
+{
+	"name": "Ethics for the Legal Professional",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 4,
+	"author": "Deborah K. Orlik"
+},
+{
+	"name": "Torts and Personal Injury Law",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 5,
+	"author": "Jeffries Richard"
+},
+{
+	"name": "Tort Law",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 6,
+	"author": "Hillary J. Michaud"
+},
+{
+	"name": "Real Estate Fundamentals",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 7,
+	"author": "Alice Hughes"
+},
+{
+	"name": "MyLegalStudiesLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 8,
+	"author": "Pearson"
+}]
+}
+
+
+

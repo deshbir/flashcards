@@ -1,0 +1,98 @@
+{
+"products" : [{
+	"name": "Med Surg,2e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 1,
+	"author": "Osborn"
+},
+{
+	"name": "Adams Pharmacology,4e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 2,
+	"author": "Pearson"
+},
+{
+	"name": "Maternal Newborn,8e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 3,
+	"author": "Ladewig"
+},
+{
+	"name": "Child Health,3e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 4,
+	"author": "jane Ball"
+},
+{
+	"name": "Lab & Diagnostics,9e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 5,
+	"author": "Joyce LeFever Kee"
+},
+{
+	"name": "Giangrasso, 2e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 6,
+	"author": "Giangrasso"
+},
+{
+	"name": "Real EHRPrep w",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 7,
+	"author": "Pearson"
+},
+{
+	"name": "Live Review",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 8,
+	"author": "Pearson"
+},
+{
+	"name": "Readypoint",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 9,
+	"author": "Pearson"
+},
+{
+	"name": "MyNursingLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 10,
+	"author": "Pearson"
+},
+{
+	"name": "Neighborhood 2.0",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 11,
+	"author": "Pearson"
+},
+{
+	"name": "RN to BSN",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 12,
+	"author": "Pearson"
+}]
+}
