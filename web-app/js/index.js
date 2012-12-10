@@ -338,7 +338,7 @@ com.compro.application.hsc = (function() {
 
 				//for resetting translate3d on resize
 				$(window).bind("resize.translation", _.bind(function(){
-					transitionAppPanel(currentPanelId);
+					com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
 				}, this));
 				
 				logger.info("--- Normalized address bar hiding for iOS & Android");				
