@@ -1,7 +1,7 @@
 <div class="row">
 	{{#.}}
- 	<div class="span4">
-		<a href="#/discipline/{{attributes.id}}"> 
+ 	<div id="{{attributes.id}}" class="span4 clickbox">
+		<a href="javascript:;"> 
 			 <span class="pull-left"><r:img alt="{{attributes.name}}" uri="/images/icon_placeholder.png"/></span>
 			 <span class="heading">{{attributes.name}}</span> 
 			 <p class="hidden-phone">{{attributes.description}}</p>

@@ -5258,7 +5258,17 @@ input[type="submit"].btn.btn-mini {
 .modal-body {
   overflow-y: auto;
   max-height: 400px;
-  padding: 15px;
+  padding: 0 15px 15px;
+}
+.modal-body .content-body {
+  max-height: 100px;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+.modal-body .content-logs {
+  max-height: 100px;
+  overflow-y: auto;
+  border: 1px solid black;
 }
 .modal-form {
   margin-bottom: 0;
@@ -5304,6 +5314,9 @@ input[type="submit"].btn.btn-mini {
 }
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
+}
+.modal-footer .btn {
+  line-height: 15px;
 }
 .tooltip {
   position: absolute;
@@ -6034,56 +6047,48 @@ body {
 .nav i {
   font-size: 24px;
 }
-.brand {
+.navbar .navbar-inner {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar .brand {
   position: absolute;
   width: 100%;
   left: 0;
   text-align: center;
+  /*----------- This is done to avoid horizontal scroll on page ----------------- */
+
+  padding-left: 0;
+  padding-right: 0;
 }
-.brand a {
+.navbar .brand a {
   color: #fff;
 }
-.brand-button {
+.navbar .brand-button {
   position: relative;
   left: 0;
   z-index: 10;
 }
-.brand-button .btn {
-  font-size: 13px;
-  margin-left: 2em;
-  padding: 2px 20px;
+.navbar .brand-button a {
+  height: 30px;
+  margin-top: 5px;
+  width: 30px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #999999;
+  border: solid 1px black;
 }
-/********************************************* Responsive Styles *******************************/
-/*--  Landscape phones and down */
-@media (max-width: 480px) {
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-    margin-left: 4px;
-  }
+.navbar .brand-button a i {
+  font-size: 25px;
+  color: #ffffff;
+  padding: 5px;
 }
-/*-- Landscape phone to portrait tablet */
-@media (max-width: 770px) {
-  .brand-button .btn {
-    margin-left: 4px;
-  }
-}
-/*-- Portrait tablet to landscape and desktop */
-@media (min-width: 771px) and (max-width: 979px) {
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-  }
+.navbar .brand-button a:hover {
+  text-decoration: none;
 }
 /* ----------------- Buttons styling --------------------------- */
 .btn {
@@ -6122,7 +6127,7 @@ body {
 
 }
 #bb-container {
-  padding-top: 60px;
+  padding-top: 15px;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -6145,33 +6150,32 @@ body {
   padding-top: 10px;
   text-align: center;
 }
-/********************************** Responsive Styles **********************/
-/*--  Landscape phones and down */
-@media (max-width: 480px) {
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
-  body {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  #bb-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+/***Harsh***/
+#panel-container {
+  margin: auto;
 }
-/*-- Portrait tablet to landscape and desktop */
-@media (min-width: 771px) and (max-width: 979px) {
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
-  body {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+.easing {
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
-/*-- TABLETS AND BELOW */
-@media (max-width: 979px) {
-  #bb-container {
-    padding-top: 0px;
-  }
+#bb-container {
+  overflow: hidden;
 }
+.panel-item {
+  float: left;
+  min-height: 10px;
+}
+#loadingIcon {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  opacity: 0.18;
+  margin: -23px 0px 0px -23px;
+}
+/***Harsh***/
 /* --------- HSC Components -------- */
 #business-info h1 {
   font-size: 30px;
@@ -6213,8 +6217,22 @@ body {
 #loginform #loggedin-container input[type="password"] {
   font-size: 17px;
   height: 37px;
-  width: 95%;
+  width: 100%;
   margin-top: 1em;
+}
+#loginform #ajaxLoginForm .errorMessage,
+#loginform #loggedin-container .errorMessage {
+  color: #b94a48;
+  padding: 10px;
+  display: block;
+}
+#loginform #ajaxLoginForm input.invalid-name,
+#loginform #loggedin-container input.invalid-name {
+  color: #b94a48;
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #f8b9b7;
 }
 #loginform #ajaxLoginForm h3,
 #loginform #loggedin-container h3 {
@@ -6282,10 +6300,9 @@ body {
 }
 #loginform #ajaxLoginForm #user-info .span3 img,
 #loginform #loggedin-container #user-info .span3 img {
+  border: 1px solid #E5E5E5;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em 0;
+  margin: 1em auto;
 }
 #loginform #ajaxLoginForm #user-info .span6 p,
 #loginform #loggedin-container #user-info .span6 p {
@@ -6325,51 +6342,71 @@ body {
   margin-top: 1em;
 }
 /*********************** Responsive Styles ************************************/@media (max-width: 480px) {
-  #panel_home {
-    margin: 0 20px;
-  }
   #business-info h1 {
     font-size: 21px;
     line-height: 25px;
+    padding-bottom: 10px;
   }
   #loginform {
     margin-top: 0;
   }
-  #loginform #ajaxLoginForm,
+  #loginform #ajaxLoginForm {
+    border: 0 none;
+    margin-bottom: 10px;
+  }
+  #loginform #ajaxLoginForm input[type="text"],
+  #loginform #ajaxLoginForm input[type="email"],
+  #loginform #ajaxLoginForm input[type="password"] {
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+  #loginform #ajaxLoginForm .hero-unit {
+    padding: 0;
+    margin-bottom: 10px;
+    background-color: transparent;
+  }
+  #loginform #ajaxLoginForm .hero-unit > p {
+    display: none;
+  }
+  #loginform #ajaxLoginForm .hero-unit .btn {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  #loginform #ajaxLoginForm h3 {
+    display: none;
+  }
   #loginform #loggedin-container {
     border: 0 none;
   }
-  #loginform #ajaxLoginForm .hero-unit,
   #loginform #loggedin-container .hero-unit {
     padding: 0;
+    margin-bottom: 10px;
     background-color: transparent;
   }
-  #loginform #ajaxLoginForm .hero-unit > p,
   #loginform #loggedin-container .hero-unit > p {
     display: none;
   }
-  #loginform #ajaxLoginForm h3,
   #loginform #loggedin-container h3 {
     display: none;
+  }
+  #loginform #loggedin-container #user-info div {
+    float: left;
+  }
+  #loginform #loggedin-container #user-info .span3 {
+    width: 30%;
+  }
+  #loginform #loggedin-container #user-info .span6 {
+    width: 60%;
   }
   #loginform #facebook-login {
     margin-bottom: 5px;
   }
   #loginform #facebook-login .facebook-text {
     font-size: 18px;
-    margin-left: 0.5em;
+    margin-left: 2em;
   }
   #loginform #facebook-login p i {
     font-size: 30px;
-  }
-  #loginform #user-info div {
-    float: left;
-  }
-  #loginform #user-info .span3 {
-    width: 30%;
-  }
-  #loginform #user-info .span6 {
-    width: 60%;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -6401,6 +6438,25 @@ body {
   padding: 10px;
   margin: 10px 0px;
   text-decoration: none;
+  *zoom: 1;
+}
+.clickbox a:before,
+.clickbox a:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clickbox a:after {
+  clear: both;
+}
+.clickbox a:before,
+.clickbox a:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clickbox a:after {
+  clear: both;
 }
 .clickbox a h2 {
   font-size: 18px;
@@ -6420,6 +6476,13 @@ body {
 .clickbox-light a {
   background-color: #f4f4f4;
 }
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  #discipline-list div.span4:last-child a {
+    margin: 0;
+  }
+}
 #discipline-list .heading {
   font-size: 18px;
   font-weight: 300;
@@ -6433,6 +6496,7 @@ body {
 #discipline-list .navigate-icon {
   font-size: 20px;
   margin-left: 10px;
+  float: right;
 }
 #discipline-list p {
   margin-top: 20px;
@@ -6729,6 +6793,21 @@ ul.playlist li .peak .r {
   font-size: 12px;
   font-style: italic;
 }
+.flashcard .body .answer-explanation {
+  width: 95%;
+  margin-left: 20px;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
+}
+.flashcard .body .answer-explanation .explainanswer {
+  padding: 20px;
+}
 .flashcard .body h2 {
   font-size: 24px;
   font-weight: 100;
@@ -6744,6 +6823,18 @@ ul.playlist li .peak .r {
 }
 .flashcard .body .btn-group {
   width: 95%;
+}
+.flashcard .body .btn.correct-ans span.text {
+  color: #46a546;
+}
+.flashcard .body .btn.correct-ans span.radio {
+  background: url('../../../../images/radio-correct.png') no-repeat left center;
+}
+.flashcard .body .btn.wrong-ans span.text {
+  color: #9d261d;
+}
+.flashcard .body .btn.wrong-ans span.radio {
+  background: url('../../../../images/radio-wrong.png') no-repeat left center;
 }
 .flashcard .body .btn {
   margin-bottom: 10px;
@@ -6819,6 +6910,13 @@ ul.playlist li .peak .r {
     font-size: 14px;
     line-height: 1.1;
   }
+  .flashcard .body .answer-explanation {
+    width: 95%;
+    margin-left: 5px;
+  }
+  .flashcard .body .answer-explanation .explainanswer {
+    padding: 5px;
+  }
 }
 /* ----------------- media.less customization to align product view--------------------------- */
 .media,
@@ -6835,37 +6933,81 @@ ul.playlist li .peak .r {
   margin-bottom: 10px;
 }
 #product-home ul.playlist {
-  padding-left: 10px;
   padding-bottom: 20px;
 }
 #product-home ul.playlist li {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background-color: #545454;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
+  line-height: 44px;
   margin-bottom: 5px;
-}
-#product-home ul.playlist li i {
-  color: #eeeeee;
-  font-size: 12px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 #product-home ul.playlist li a {
-  color: #eeeeee;
-  font-size: 16px;
-  font-weight: 100;
+  color: #000000;
+  text-align: left;
+}
+#product-home ul.playlist li a i {
+  font-size: 23px;
+}
+#product-home ul.playlist li a span {
+  margin-right: 15px;
+  margin-left: 5px;
 }
 #product-home ul.playlist .timing {
   background-color: #75C9DD;
+  height: 1.5em;
+  top: 20px;
 }
 #product-home ul.playlist li.sm2_playing,
 #product-home ul.playlist li.sm2_playing:hover {
-  background-color: black;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
 }
-#product-home ul.playlist li .controls .statusbar .position {
+#product-home ul.playlist li.controls .statusbar .position {
   background-color: #75C9DD;
   border-right: 3px solid #75C9DD;
+}
+#product-home ul.playlist li .controls .statusbar .loading {
+  background-color: #049cdb;
+}
+#product-home .flashcardAssess {
+  margin-bottom: 20px;
+}
+/*********************** Responsive Styles ************************************/@media (max-width: 480px) {
+  #product-home {
+    margin-top: 10px;
+  }
+  #product-home h2 {
+    font-size: 23px;
+  }
+  #product-home h3 {
+    font-size: 18px;
+  }
+  #product-info a {
+    width: 35%;
+    margin-right: 15px;
+  }
+  #product-info div {
+    width: 60%;
+  }
+  #product-info h2 {
+    line-height: 25px;
+    margin: 0;
+  }
 }
 /*------------- Global Responsive ----------*/
 /*!
@@ -8462,8 +8604,7 @@ ul.playlist li .peak .r {
   .navbar .brand {
     padding-left: 10px;
     padding-right: 10px;
-    /*margin: 0 0 0 -5px;*/
-  
+    margin: 0 0 0 -5px;
   }
   .nav-collapse {
     clear: both;
@@ -8589,6 +8730,83 @@ ul.playlist li .peak .r {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
+  }
+}
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top,
+  .navbar-static-top {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .navbar-static-top .navbar-inner {
+    padding: 5px;
+  }
+  .navbar .brand-button .btn {
+    padding: 0 20px;
+    margin-left: 4px;
+  }
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+  .navbar .divider-vertical {
+    margin: 0 4px;
+  }
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  .navbar .brand-button .btn {
+    margin-left: 4px;
+  }
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top,
+  .navbar-static-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .navbar .brand-button .btn {
+    padding: 0 20px;
+  }
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+}
+/********************************** Responsive Styles **********************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #bb-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+/*-- TABLETS AND BELOW */
+@media (max-width: 979px) {
+  #bb-container {
+    padding-top: 0px;
   }
 }
 /* ---------- Responsive Custom ----------- */
