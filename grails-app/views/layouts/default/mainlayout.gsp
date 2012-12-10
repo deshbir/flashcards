@@ -26,8 +26,8 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
-        <!-- iPad (landscape) SPLASHSCREEN-->
         
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="<r:resource uri="/images/ipad_startup_landscape.png"/>">
 		<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="<r:resource uri="/images/apple-touch-startup-image-320x460.png"/>" >  
 		<link rel="apple-touch-icon" href="<r:resource uri="/images/apple-touch-icon.png"/>">
 		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="<r:resource uri="/images/ipad-startup-image.png"/>">
