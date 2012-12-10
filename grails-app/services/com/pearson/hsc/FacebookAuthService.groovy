@@ -21,6 +21,8 @@ class FacebookAuthService {
 		user.enabled = true
 		user.passwordExpired = false
 		user.email = me.email
+		user.firstName = me.first_name
+		user.lastName = me.last_name
 	}
 	
 	
