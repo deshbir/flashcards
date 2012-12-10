@@ -122,11 +122,13 @@ TestView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
+			var self = this;
 			mainApp.transitionAppPanel(this.myPanelId, function() {
 				$("#body-set > .body").css("display", "block");
 				if(document.activeElement)
 					$(document.activeElement).blur();
-				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
+				window.scrollTo(0, 0);
+				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1,callback:self.updateQuestionNumber});			
 			});
 			
 			
@@ -134,13 +136,14 @@ TestView = new function() {
 		},
 		nextQuestion: function() {
 			mainApp.flashcards.next();
-			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
-			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 			return false;
+		},
+		updateQuestionNumber:function(){
+			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 		},
 		resizeContainer: function() {
 			return false;
