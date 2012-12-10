@@ -229,7 +229,7 @@ com.compro.application.hsc = (function() {
 	function soundmanager2_init()	{
 		soundManager.setup({
 			  // disable or enable debug output
-			  debugMode: true,
+			  debugMode: false,
 			  // use HTML5 audio for MP3/MP4, if available
 			  preferFlash: false,
 			  useFlashBlock: false,
@@ -304,6 +304,12 @@ com.compro.application.hsc = (function() {
 				$('.panel-item').width(itemWidth);
 				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
 				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+				$("#panel-container").css("-moz-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+				// For IE 10.0
+				$("#panel-container").css("-ms-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+				// For IE 9.0
+				$("#panel-container").css("-ms-transform","translateX("+$(newPanelId).attr("data-order") * -itemWidth+"px)");
+				$("#panel-container").css("-o-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
 				if(!(typeof callback === 'undefined') )	{
 					callback();	
 				}
