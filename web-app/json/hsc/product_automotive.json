@@ -18,8 +18,8 @@
 {
 	"name": "Automtotive Fundamentals",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/automtotive-fundamentals/auto-fundamentals-thumb.jpg",
+	"image": "images/media/automtotive-fundamentals/auto-fundamentals.jpg",
 	"sequence": 3,
 	"author": "Martin T. Stockel"
 }]

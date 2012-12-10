@@ -2,10 +2,10 @@
 "products" : [{
 	"name": "Med Surg,2e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/nursing-med-surg/nursing-med-surg-thumb.jpg",
+	"image": "images/media/nursing-med-surg/nursing-med-surg.jpg",
 	"sequence": 1,
-	"author": "Osborn"
+	"author": "Kathleen S. Osborn"
 },
 {
 	"name": "Adams Pharmacology,4e",
@@ -18,18 +18,18 @@
 {
 	"name": "Maternal Newborn,8e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/maternal-newborn/maternal-newborn-thumb.jpg",
+	"image": "images/media/maternal-newborn/maternal-newborn.jpg",
 	"sequence": 3,
-	"author": "Ladewig"
+	"author": "Patricia W. Ladewig"
 },
 {
 	"name": "Child Health,3e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/nursing-child-health/nursing-child-health-thumb.jpg",
+	"image": "images/media/nursing-child-health/nursing-child-health.jpg",
 	"sequence": 4,
-	"author": "jane Ball"
+	"author": "Jane W. Ball"
 },
 {
 	"name": "Lab & Diagnostics,9e",
@@ -90,9 +90,9 @@
 {
 	"name": "RN to BSN",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/nursing-rn-bsn/nursing-rn-bsn-thumb.jpg",
+	"image": "images/media/nursing-rn-bsn/nursing-rn-bsn.jpg",
 	"sequence": 12,
-	"author": "Pearson"
+	"author": "Nursing ACE Exam Secrets Test Prep Team"
 }]
 }

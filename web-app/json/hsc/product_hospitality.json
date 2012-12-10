@@ -10,8 +10,8 @@
 {
 	"name": "Marketing for Hospitality and Tourism",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/marketing-hospitality-tourism/marketing-hospitality-tourism-thumb.jpg",
+	"image": "images/media/marketing-hospitality-tourism/marketing-hospitality-tourism.jpg",
 	"sequence": 2,
 	"author": "Philip R Kotler"
 },

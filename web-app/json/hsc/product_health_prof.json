@@ -10,34 +10,34 @@
 {
 	"name": "Rich",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-rich/health-prof-rich-thumb.jpg",
+	"image": "images/media/health-prof-rich/health-prof-rich.jpg",
 	"sequence": 2,
-	"author": "Pearson"
+	"author": "Ann Ehrlich"
 },
 {
 	"name": "Vines",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-rich/health-prof-vines-thumb.jpg",
+	"image": "images/media/health-prof-rich/health-prof-vines.jpg",
 	"sequence": 3,
-	"author": "Pearson"
+	"author": "Stephen B. Levine"
 },
 {
 	"name": "Papazian",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-rich/health-prof-papazian-thumb.jpg",
+	"image": "images/media/health-prof-rich/health-prof-papazian.jpg",
 	"sequence": 4,
-	"author": "Pearson"
+	"author": "Elizabeth Astrid Papazian"
 },
 {
 	"name": "Turley",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-turley/health-prof-turley-thumb.jpg",
+	"image": "images/media/health-prof-turley/health-prof-turley.jpg",
 	"sequence": 5,
-	"author": "Pearson"
+	"author": "Susan M. Turley"
 },
 {
 	"name": "Myhplab for MIBC",
@@ -50,16 +50,16 @@
 {
 	"name": "Mymedicalterminologylab",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-med-term-lab/health-prof-med-term-lab-thumb.jpg",
+	"image": "images/media/health-prof-med-term-lab/health-prof-med-term-lab.jpg",
 	"sequence": 7,
 	"author": "Pearson"
 },
 {
 	"name": "Med Term",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/health-prof-med-term/health-prof-med-term-thumb.jpg",
+	"image": "images/media/health-prof-med-term/health-prof-med-term.jpg",
 	"sequence": 8,
 	"author": "Susan M. Turley"
 }]
