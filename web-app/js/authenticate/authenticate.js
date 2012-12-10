@@ -4,6 +4,8 @@ Authenticate = new function() {
 	
 	this.authAjax = function(){
 		$("#loginErrorMessage").hide();
+		$($("#ajaxLoginForm").find("input[type=email]")).removeClass("invalid-name");
+		$($("#ajaxLoginForm").find("input[type=password]")).removeClass("invalid-name");
 		var form = document.ajaxLoginForm; 
 		$.ajax({
  			url: form.action,
@@ -47,11 +49,15 @@ Authenticate = new function() {
 					
 					$("#loginErrorMessage").show();
 					$("#loginErrorMessage").html("<span class='errorMessage'>" + response.error + "</span>");
+					$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
+					$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
 				} else {
 					mainApp.userinfo.loggedin = false;
 					
 					$("#loginErrorMessage").show();
 					$("#loginErrorMessage").html(response); 
+					$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
+					$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
 				} 
 	        }
 	    });		    
@@ -93,6 +99,8 @@ Authenticate = new function() {
  		  		mainApp.userinfo.loggedin = false;					
  				$("#loginErrorMessage").show();
  				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
+ 				$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
+				$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
  	  		}
    		},{scope: 'email,user_likes'});  		
 	},

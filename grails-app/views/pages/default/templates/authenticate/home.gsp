@@ -27,9 +27,8 @@
 			<h3>Log In</h3>
 			<div id="loginErrorMessage"></div> 	
 			<div class="hero-unit">
-				<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="email">
-				<br>
-				<input name="j_password" class="input-xlarge" placeholder="Password" type="password">
+				<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="email" required>
+				<input name="j_password" class="input-xlarge" placeholder="Password" type="password" required>
 				<button class="btn btn-large btn-block" id="login-button">
 					Log In
 				</button> 
