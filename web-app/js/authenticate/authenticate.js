@@ -126,6 +126,7 @@ Authenticate = new function() {
 				 */
 				mainApp.setHeaderOptions(true, false, false);
 			}
-		});		    
+		});
+		$("#music").trigger('click');
 	}
 };
