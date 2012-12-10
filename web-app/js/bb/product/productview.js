@@ -5,32 +5,34 @@ ProductView = new function() {
 	var pagePlayer = new PagePlayer();
 	/* -------------------------------------------------*/
 	var pagePlayerPlay = pagePlayer.events.play;
+	pagePlayer.config.updatePageTitle = false;
 	pagePlayer.events.play = function(){
-		$("#music img").toggle();
+		$("#music img").show();
 		var soundManager = this;
 		$("#music").click(function(){
 			soundManager.pause();
 		});
 		pagePlayerPlay.call(soundManager);
-		$("#product-home .sm2_playing i").toggleClass('icon-play icon-pause');
+		$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
+		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerPause = pagePlayer.events.pause;
 	pagePlayer.events.pause = function(){
-		$("#music img").toggle();
+		$("#music img").hide();
 		pagePlayerPause.call(this);
-		$("#product-home .sm2_paused i").toggleClass('icon-play icon-pause');
+		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerResume = pagePlayer.events.resume;
 	pagePlayer.events.resume = function(){
-		$("#music img").toggle();
+		$("#music img").show();
 		pagePlayerResume.call(this);
-		$("#product-home .sm2_playing i").toggleClass('icon-play icon-pause');
+		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
-		$("#music img").toggle();
+		$("#music img").hide();
 		pagePlayerStop.call(this);
-		$("#product-home .sm2_paused i").toggleClass('icon-play icon-pause');
+		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
 	}
 	
 	var mainApp = com.compro.application.hsc;
