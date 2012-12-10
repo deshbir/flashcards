@@ -80,6 +80,7 @@ com.compro.application.hsc = (function() {
 	
 	// Config 
 	var config = {
+		soundManagerObject : null
 	};
 	
 	//User Logged In Flag

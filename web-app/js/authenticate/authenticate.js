@@ -127,6 +127,7 @@ Authenticate = new function() {
 				mainApp.setHeaderOptions(true, false, false);
 			}
 		});
-		$("#music").trigger('click');
+		if(mainApp.config.soundManagerObject!=null)
+			mainApp.config.soundManagerObject.stop();
 	}
 };
