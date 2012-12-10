@@ -12,6 +12,11 @@
 }
 
 .navbar {
+	.navbar-inner {
+		.border-radius(0);
+		padding-left:0;
+		padding-right:0;
+	}
 	.brand {
 	    position: absolute;
 	    width: 100%;
@@ -20,6 +25,9 @@
 	    a	{
 	    	color: #fff;
 	    }
+	    /*----------- This is done to avoid horizontal scroll on page ----------------- */
+	    padding-left: 0;
+   	    padding-right: 0;
 	}
 	.brand-button {
 		 a {

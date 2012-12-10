@@ -2,12 +2,15 @@
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
 	/** this is to adjust the default values in accordance to body styling ***********/
-    .navbar-fixed-top {
+    .navbar-fixed-top, .navbar-static-top {
     	margin-left: 0px;
     	margin-right: 0px;
     	margin-bottom:5px;
     }
     /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+    .navbar-static-top .navbar-inner {
+    		padding: 5px; 
+  	}
 	.navbar {
 		.brand-button {
 			.btn	{
@@ -44,7 +47,7 @@
 
 @media (min-width: 771px) and (max-width: 979px) {
 	/** this is to adjust the default values in accordance to body styling ***********/
-    .navbar-fixed-top {
+    .navbar-fixed-top,.navbar-static-top {
     	margin-left: 0px;
     	margin-right: 0px;
     }
@@ -54,6 +57,9 @@
 			.btn	{
 				padding: 0 20px;
 			}
+		}
+		.brand {
+			 margin:0 0 0 -20px;
 		}
 	}
 }
