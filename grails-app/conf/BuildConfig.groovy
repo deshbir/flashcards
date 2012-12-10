@@ -20,8 +20,6 @@ grails.project.dependency.resolution = {
 
         grailsPlugins()
         grailsHome()
-		grailsRepo "http://http://115.249.54.110:8081/nexus/content/repositories/grails/"
-		mavenRepo "http://115.249.54.110:8081/nexus/content/groups/public/"
         grailsCentral()
 
         mavenLocal()
