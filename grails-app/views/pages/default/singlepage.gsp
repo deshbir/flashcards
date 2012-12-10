@@ -22,6 +22,9 @@
 				mainApp.userinfo.loggedin = true;					
 				mainApp.userinfo.name = "John Doe";
 				mainApp.userinfo.email = "(john@pearson.com)";
+				<sec:access expression="hasRole('ROLE_FACEBOOK')">
+ 					mainApp.userinfo.facebookuser = true;
+    			</sec:access>
 			</r:script>
 		</sec:ifLoggedIn>   		
 	</body>
