@@ -32,7 +32,7 @@
 	   	</div>	
 	</div>		
 	{{#tests}}
-	      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flashcard</button>
+	      <button id="{{id}}" class="btn btn-large btn-block flashcardAssess">Flashcards</button>
 	{{/tests}}	      
 </div>	
 {{/.}}

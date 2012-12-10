@@ -124,6 +124,8 @@ TestView = new function() {
 			 */
 			mainApp.transitionAppPanel(this.myPanelId, function() {
 				$("#body-set > .body").css("display", "block");
+				if(document.activeElement)
+					$(document.activeElement).blur();
 				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
 			});
 			
