@@ -1,0 +1,18 @@
+{
+"products" : [{
+	"name": "NCCER - The General Story",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 1,
+	"author": "Pearson"
+},
+{
+	"name": "Validated Testing Solution",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "http://placehold.it/100x100",
+	"image": "http://placehold.it/100x150",
+	"sequence": 2,
+	"author": "Pearson"
+}]
+}
