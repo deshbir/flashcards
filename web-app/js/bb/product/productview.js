@@ -28,15 +28,23 @@ ProductView = new function() {
 	pagePlayer.events.resume = function(){
 		$("#music img").show();
 		pagePlayerResume.call(this);
-		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
+		$("#product-home .sm2_playing i").addClass('icon-volume-up');
+		$("#product-home .sm2_playing i").addClass('icon-pause'); 
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
 		$("#music img").hide();
+		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
+		$("#product-home .sm2_playing i").removeClass('icon-pause');
 		pagePlayerStop.call(this);
-		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
 	}
-	
+	var pagePlayerFinish = pagePlayer.events.finish;
+	pagePlayer.events.finish = function(){
+		$("#music img").hide();
+		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
+		$("#product-home .sm2_playing i").removeClass('icon-pause');
+		pagePlayerFinish.call(this);
+	}
 	var mainApp = com.compro.application.hsc;
 	var clsMainHeader = mainApp.clsMainHeader;
 
@@ -126,7 +134,7 @@ ProductView = new function() {
 			 * 3rd parameter - setBackLink 
 			 */
 			mainApp.setHeaderOptions(false, true, true);			
-			
+			$("#music").hide();
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
 			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{
