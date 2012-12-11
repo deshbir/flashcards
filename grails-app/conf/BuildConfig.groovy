@@ -58,7 +58,7 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 		runtime ":spring-security-core:1.2.7.3"
 		runtime ":spring-security-facebook:0.9"
-		runtime ":cookie-session:2.0.2"
+		//runtime ":cookie-session:2.0.2"
 
         runtime ":database-migration:1.1"
 
