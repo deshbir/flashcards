@@ -1,22 +1,38 @@
 /* --------------- Flashcard Component -------------------------- */
 
+#page-header {
+	.container-fluid {
+		padding-left:0;
+	}
+	h3 {
+	    font-size: 22px;
+	    font-weight: 100;
+	    line-height: 1;
+	    margin-bottom:10px
+	}
+	#product-info	{
+		padding-bottom:5px;
+	}
+}
+
 .flashcard {
-	
 	.border-radius(4px);
   	border: 2px solid gray;
-  	width: 85%;
   	margin: 0 auto;
 	padding:0px;
 	margin-bottom:20px;
 
 	.header	{
-	  	padding:0px;
-	  	margin-left: 10px;
-	  	margin-right: 10px;
-	  	margin-top: 0px;
-	  	margin-bottom: 10px;
-	  	
+	  	padding: 1em;
+	  	margin: 0px 10px 10px 10px;
 	  	border-bottom: 1px solid gray;
+	  	h4 {
+	  		font-weight:normal;
+	  	}
+	  	.btn-toolbar {
+	  		margin:0;
+	  		text-align:right;
+	  	}
 		.btn-group-vertical	{ 
 			.btn-large:first-child, .btn-large:last-child {
 				.border-radius(2px);
@@ -44,7 +60,7 @@
 		margin-bottom: 10px;
 	
 		.explainanswer {
-			font-size: 12px;
+			font-size: 14px;
 			font-style: italic;
 		}
 		
@@ -143,9 +159,19 @@
 	  	border: 0px;
 	  	width: 100%;
 		.header	{
+			padding-bottom:0;
 		  	margin-left: 5px;
 		  	margin-right: 5px;
 		  	margin-bottom: 5px;
+		  	border:0 none;
+		  	.span5 {
+		  		float:left;
+		  		width:45%;
+		  	}
+		  	.span7 {
+		  		float:left;
+		  		width:50%;
+		  	}
 		}
 		.footer	{
 		  	padding:5px;
@@ -175,5 +201,37 @@
 				}
 			}
 		}
+	}
+	#page-header  {
+		margin-top:10px;
+		margin-left: 10px;
+		border-bottom: 1px solid gray;
+		#product-info	{
+			h3 {
+				font-size: 16px;
+			}
+			#product-img {
+				width:35%;
+				float:left;
+				margin-right: 10px;
+			}
+			h2 {
+				 line-height: 1;
+				 margin:0;
+				 font-size: 21px;
+			}
+			#product-desc {
+				width:60%;
+				float:left;
+				p {
+					display:none;
+				}
+			}
+		}
 	}	
+}
+@media (min-width: 481px) and (max-width: 979px) {
+	#page-header  {
+		margin-top:10px;
+	}
 }
