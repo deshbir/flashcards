@@ -136,10 +136,16 @@ TestView = new function() {
 		},
 		nextQuestion: function() {
 			mainApp.flashcards.next();
+			//Calling function for IE browsers
+			if(mainApp.isIE)
+				this.updateQuestionNumber();
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
+			//Calling function for IE browsers
+			if(mainApp.isIE)
+				this.updateQuestionNumber();
 			return false;
 		},
 		updateQuestionNumber:function(){
