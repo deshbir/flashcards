@@ -121,8 +121,8 @@ grails.plugins.springsecurity.facebook.secret='e3f4f6a27622a3dea5853b88629de03b'
 google.analytics.webPropertyID = "UA-36885090-1"
 
 // Cookie Session plugin configuration
-grails.plugin.cookiesession.enabled = true
-grails.plugin.cookiesession.encryptcookie = true
-grails.plugin.cookiesession.secret = "pearsonhsc"
-grails.plugin.cookiesession.cookiecount = 10
-grails.plugin.cookiesession.maxcookiesize = 3072
+//grails.plugin.cookiesession.enabled = true
+//grails.plugin.cookiesession.encryptcookie = true
+//grails.plugin.cookiesession.secret = "pearsonhsc"
+//grails.plugin.cookiesession.cookiecount = 10
+//grails.plugin.cookiesession.maxcookiesize = 3072

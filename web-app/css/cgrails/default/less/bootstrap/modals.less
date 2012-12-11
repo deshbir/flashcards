@@ -60,17 +60,7 @@
 .modal-body {
   overflow-y: auto;
   max-height: 400px;
-  padding: 0 15px 15px;
-  .content-body {
-  	max-height: 100px;
-  	overflow-y: auto;
-  	border : 1px solid black;
-  }
-  .content-logs {
-  	max-height: 100px;
-  	overflow-y: auto;
-  	border : 1px solid black;
-  }
+  padding: 15px;
 }
 // Remove bottom margin if need be
 .modal-form {
@@ -93,7 +83,6 @@
     margin-left: 5px;
     margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
   }
-  
   // but override that for button groups
   .btn-group .btn + .btn {
     margin-left: -1px;
@@ -102,9 +91,4 @@
   .btn-block + .btn-block {
     margin-left: 0;
   }
-  
-  .btn {
-      line-height: 15px;
-  }
-  
 }
