@@ -7,7 +7,7 @@
           <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
           <div class="media-body">
 			<span class="heading">{{{name}}}</span>
-			<i class="icon-chevron-right visible-phone" style="float:right;margin-t"></i>
+			<i class="icon-chevron-right visible-phone"></i>
 			<h3>{{author}}</h3>
 			<p class="hidden-phone">{{description}}</p>
           </div>
