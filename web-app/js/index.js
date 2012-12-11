@@ -148,32 +148,36 @@ com.compro.application.hsc = (function() {
 		});
 
 		$(document).ajaxError(function(event, xhr, settings, exception) {
-		    var msgHeader = "Oops!";
-		    var msgTitle = "Error!";
+			var msgHeader = "Ajax Error!";
+		    var msgTitle = "Oops!";
 		    var msgDesc = "An error has occured. Please try again by refreshing your browser or restarting the Application. If the problem persists, please contact your System Administrator.";
 
 		    if (xhr.status === 0) { // Not connected. Verify Network
-		        var msgHeader = "Not Connected to Network";
-		    } else if (xhr.status == 401) { // UnAuthorized
-		    	Backbone.history.navigate("#/home");
-			    return true;
+		        msgDesc = xhr.responseText;
+		    } else if (xhr.status == 403) { // Requested page not found. [404]
+		        msgHeader = "[403]:The requested url is forbidden.";
+		        msgDesc = xhr.responseText;
 		    } else if (xhr.status == 404) { // Requested page not found. [404]
-		        var msgHeader = "Requested page not found. [404]";
-		    } else if (xhr.status == 404) { // Requested page not found. [404]
-		        var msgHeader = "Requested page not found. [404]";
+		        msgHeader = "[404]:Requested page not found.";
+		        msgDesc = xhr.responseText;
+		    } else if (xhr.status > 400 && xhr.status< 500) { // Requested page not found. [404]
+		    	msgHeader = xhr.status;
+		    	msgHeader = ":Client-Side Error.";
+		        msgDesc = xhr.responseText;
 		    } else if (xhr.status >= 500) { //Internal Server Error [500]
-		        var msgHeader = "Internal Server Error [500]";
-		        var msgDesc = xhr.responseText;
+		        msgHeader = "[500]:Internal Server Error";
+		        msgDesc = xhr.responseText;
 		    } else if (exception === 'parsererror') { //Requested JSON parse failed
-		        var msgHeader = "Response Parsing Error (Invalid JSON)";
-		        var msgDesc = xhr.responseText;
+		        msgHeader = "Response Parsing Error (Invalid JSON)";
+		        msgDesc = xhr.responseText;
 		    } else if (exception === 'timeout') { //Server Timeout - Check Connection
-		        var msgHeader = "Server Timeout Error";
+		        msgHeader = "Request to server has timed out";
+		        msgTitle = "No Network Detected!";
+		        msgDesc = "You don't seem to be connected to the network. Please check network settings or connectivity and try again.";
 		    } else if (exception === '') { //Server Aborted request
-		        var msgHeader = "Server Aborted Request";
+		       msgHeader = "Server Aborted Request";
 		    } else { //Unknown Error
-		        var msgHeader = "Unknown Error";
-		        var msgDesc = xhr.responseText;
+		       msgHeader = "Unknown Error";    
 		        //xhr.responseText               
 		    }
 		    
@@ -185,11 +189,18 @@ com.compro.application.hsc = (function() {
 		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
 		    	planeLogs += logs[i]+" ~~ ";
 	        }
-		    innerHTML += "</ol>"
-		    
+		    innerHTML += "</ol>";
+		    console.log(settings.url + "anurag");
+		    var regex = new RegExp("\<style.*style\>");
+		    msgDesc = msgDesc.replace(regex, "");
+		    $("#ajax-error-label").text(msgTitle);
 		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
-		    $('#ajax-error-modal .modal-body .content-body').text(msgDesc);
-		    $('#ajax-error-modal .modal-body .content-logs').html(innerHTML);
+		    $('#message').html(msgDesc);
+		    $('#logs').html(innerHTML);
+		    $('#headers').html("<div><h4>Error occured for request: </h4></div><ul>");  
+		    $('#headers').append("<li>url: " + settings.url + "</li>");
+		    $('#headers').append("<li>type: " + settings.type + "</li>");
+		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
 		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
 		    	emailConfig.ccEmails = "";
 		    	emailConfig.cc.map(function(element){
@@ -199,10 +210,8 @@ com.compro.application.hsc = (function() {
 		    	window.open(email);
 		    });
 		    $('#ajax-error-modal').modal();
-		    logger.info(msgTitle + '\n\n' + msgDesc);
 		    return true;
-		});
-		        
+		});		        
 		$(document).ajaxSuccess(function (e, xhr, opts) {
 		        /* Do Nothing */
 		});
