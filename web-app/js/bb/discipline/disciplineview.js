@@ -241,7 +241,7 @@ DisciplineView = new function() {
 			
 		},
 		productdetail : function(e) {
-			var disciplineid = this.options.displineId;
+			var disciplineid = this.requested_discipline_id;
 			var productid = e.currentTarget.id;
 			//this.cleanUp();
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);

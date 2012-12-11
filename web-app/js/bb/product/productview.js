@@ -156,13 +156,13 @@ ProductView = new function() {
 		},
 
 		flashcardassess : function(e) {
-			var productid = this.options.productId;
+			var productid = this.requested_product_id;
 			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/test/"+testid);
 		},
 		
 		flashcardtraining : function(e) {
-			var productid = this.options.productId;
+			var productid = this.requested_product_id;
 			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/testtraining/"+testid);
 		}		

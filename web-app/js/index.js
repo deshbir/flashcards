@@ -383,7 +383,7 @@ com.compro.application.hsc = (function() {
 				            }, 0);
 				        } );
 				    }
-				})( this );
+				})( window );
 				
 				logger.info("--- phone viewport rotate landscape fix");
 				//FIX: iphone viewport scaling bug. The bug occurs when you set the viewport width
