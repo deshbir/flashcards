@@ -18,13 +18,11 @@
 					<r:img dir="images" file="audio_icon.png" style="display:none"></r:img>
 				</a>
 			</li>
-			<li class="divider-vertical loggedin"></li>
 			<li id="home" class="{{home}} loggedin">
 				<a href="#/home" title="Home">
 					<i class="icon-home"></i>
 				</a>
 			</li>
-			<li class="divider-vertical loggedin"></li>
 			<li class="loggedin">
 				<a href="javascript:void(0);" id="logout" title="Profile"> 
 					<i class="icon-user"></i>
