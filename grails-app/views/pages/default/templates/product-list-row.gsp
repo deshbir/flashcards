@@ -6,7 +6,7 @@
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
           <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
           <div class="media-body">
-			<span class="heading">{{name}} <i class="icon-chevron-right visible-phone"></i></span>
+			<span class="heading">{{{name}}} <i class="icon-chevron-right visible-phone"></i></span>
 			<h3>{{author}}</h3>
 			<p class="hidden-phone">{{description}}</p>
           </div>

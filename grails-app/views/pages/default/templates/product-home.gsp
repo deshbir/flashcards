@@ -9,7 +9,7 @@
 			        </a>
 		    	</div>
 	        	<div class="span8" id="product-desc">
-		        	<h2>{{name}}</h2>
+		        	<h2>{{{name}}}</h2>
 		        	<h3>{{author}}</h3>
 		        	<p>{{description}}</p>
 				</div>
