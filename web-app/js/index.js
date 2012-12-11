@@ -68,6 +68,7 @@ com.compro.application.hsc = (function() {
 	var idTopContainer = "#bb-container";
 	var clsMainHeader = ".main-header";
 	var currentPanelId = -1;
+	var isIE = false;
 	var globalAjaxOptions = {
 		elProgress : ".main-header #loadingIcon",
 		cssProgressLoading : "",
@@ -333,6 +334,8 @@ com.compro.application.hsc = (function() {
 	/********************************************************/
 
 	(function init()	{
+			//Check if browser is IE
+			isIE = navigator.appVersion.indexOf("MSIE") != -1
 			$(document).ready(function() {
 				
 				logger.info("On Ready - Starting Initialization");
@@ -437,7 +440,8 @@ com.compro.application.hsc = (function() {
 		"clsMainHeader" : clsMainHeader,
 		"currentPanelId" : currentPanelId,
 		"globalAjaxOptions" : globalAjaxOptions,
-		"transitionAppPanel" : transitionAppPanel
+		"transitionAppPanel" : transitionAppPanel,
+		"isIE":isIE
 	}
 
 })();
