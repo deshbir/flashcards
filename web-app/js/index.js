@@ -288,7 +288,8 @@ com.compro.application.hsc = (function() {
 	}	
 	
 	function transitionAppPanel(newPanelId, callback) {
-			
+		var panelContainer = $('#panel-container');
+		var panelItems = $('.panel-item');
 			if(this.currentPanelId == -1)  //First time
 			{	
 				 $(newPanelId).show("fast",function() {
@@ -296,38 +297,61 @@ com.compro.application.hsc = (function() {
 				       callback();  	
 					 }            
 				 });
+			// onResizeTranslationHandler(newPanelId);
+			 
 			}
 			else
 			{	
-				//when window resized easing effect is removed temporarily.
-				if(newPanelId == this.currentPanelId ){
-					$('#panel-container').removeClass('easing');
-				}
-				else{
-					$('#panel-container').addClass('easing');
-				}
-				$('.panel-item').css("visibility","hidden");
+			
+			panelContainer.addClass('easing');
+			panelItems.css("visibility","hidden");
 				$(newPanelId).css("visibility","visible");
 				$(this.currentPanelId).css("visibility","visible");
 				var itemWidth = $("#bb-container").width();
-				$("#panel-container").width(itemWidth * $('.panel-item').length);
+			panelContainer.width(itemWidth * panelItems.length);
 				$('.panel-item').width(itemWidth);
-				$("#panel-container").css("transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-				$("#panel-container").css("-webkit-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-				$("#panel-container").css("-moz-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-				// For IE 10.0
-				$("#panel-container").css("-ms-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
-				// For IE 9.0
-				$("#panel-container").css("-ms-transform","translateX("+$(newPanelId).attr("data-order") * -itemWidth+"px)");
-				$("#panel-container").css("-o-transform","translate3d("+$(newPanelId).attr("data-order") * -itemWidth+"px,0,0)");
+			var translationWidth = $(newPanelId).attr("data-order") * -itemWidth;
+			applyTransition(panelContainer, translationWidth);
 				if(!(typeof callback === 'undefined') )	{
 					callback();	
 				}
-				//$('#bb-container').height($(newPanelId).height());
+			panelContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(event){ 
+				if(event.target!=$("#panel-container")[0]){
+					logger.info("transitionend fired on" + event.target);
+					return;
+				}
+				panelContainer.removeClass('easing');
+				$("#bb-container").height($(com.compro.application.hsc.currentPanelId).height());
+				$('.panel-item').css("visibility","hidden");
+				$(com.compro.application.hsc.currentPanelId).css("visibility","visible");
+				
+			});
 			}
 			this.currentPanelId = newPanelId;
 			
 		}
+		
+	function applyTransition(element, width){
+		element.css("transform","translate3d("+width+"px,0,0)");
+		element.css("-webkit-transform","translate3d("+width+"px,0,0)");
+		element.css("-moz-transform","translate3d("+width+"px,0,0)");
+		// For IE 10.0
+		element.css("-ms-transform","translate3d("+width+"px,0,0)");
+		// For IE 9.0
+		element.css("-ms-transform","translateX("+width+"px)");
+		element.css("-o-transform","translate3d("+width+"px,0,0)");
+	}
+	
+	function onResizeTranslationHandler(panelId){
+		$("#panel-container").removeClass('easing');
+		var itemWidth = $("#bb-container").width();
+		$("#panel-container").width(itemWidth * $(".panel-item").length);
+		$('.panel-item').width(itemWidth);
+		var translationWidth = $(panelId).attr("data-order") * -itemWidth;
+		console.log($(panelId).attr("data-order"));
+		applyTransition($("#panel-container"), translationWidth);
+		$("#bb-container").height($(panelId).height());
+	}
 		
 	/********************************************************/
 	/*                 ONE TIME INIT FUNCTION              */
@@ -357,7 +381,8 @@ com.compro.application.hsc = (function() {
 
 				//for resetting translate3d on resize
 				$(window).bind("resize.translation", _.bind(function(){
-					com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
+					onResizeTranslationHandler(com.compro.application.hsc.currentPanelId);
+					//com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
 				}, this));
 				
 				logger.info("--- Normalized address bar hiding for iOS & Android");				
@@ -441,7 +466,8 @@ com.compro.application.hsc = (function() {
 		"currentPanelId" : currentPanelId,
 		"globalAjaxOptions" : globalAjaxOptions,
 		"transitionAppPanel" : transitionAppPanel,
-		"isIE":isIE
+		"isIE":isIE,
+		"onResizeTranslationHandler":onResizeTranslationHandler
 	}
 
 })();

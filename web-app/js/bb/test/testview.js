@@ -192,6 +192,7 @@ TestView = new function() {
 			if(answered!=correct){
 				$(answered).addClass('wrong-ans');
 			}
+			mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 		},
 		clearMarkedAnswer: function(currentOptionparentDiv){
 			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');

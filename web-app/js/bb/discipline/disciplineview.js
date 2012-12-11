@@ -180,6 +180,7 @@ DisciplineView = new function() {
 					if(mainApp.currentPanelId==this.myPanelId){
 						this.resetColumns();
 						this.resizeColumns();
+						mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 					}
 			}, this));
 		},
