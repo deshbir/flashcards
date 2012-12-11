@@ -10,8 +10,8 @@
 {
 	"name": "Adams Pharmacology,4e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 2,
 	"author": "Pearson"
 },
@@ -34,56 +34,56 @@
 {
 	"name": "Lab & Diagnostics,9e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 5,
 	"author": "Joyce LeFever Kee"
 },
 {
 	"name": "Giangrasso, 2e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 6,
 	"author": "Giangrasso"
 },
 {
 	"name": "Real EHRPrep w",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 7,
 	"author": "Pearson"
 },
 {
 	"name": "Live Review",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 8,
 	"author": "Pearson"
 },
 {
 	"name": "Readypoint",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 9,
 	"author": "Pearson"
 },
 {
 	"name": "MyNursingLab",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 10,
 	"author": "Pearson"
 },
 {
 	"name": "Neighborhood 2.0",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 11,
 	"author": "Pearson"
 },

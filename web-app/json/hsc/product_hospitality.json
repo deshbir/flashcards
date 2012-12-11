@@ -2,8 +2,8 @@
 "products" : [{
 	"name": "MyHospitalityLab",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 1,
 	"author": "Pearson"
 },
@@ -18,24 +18,24 @@
 {
 	"name": "Cook-Tourism & Hospitality",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 3,
 	"author": "Pearson"
 },
 {
 	"name": "AHLEI - The General Story and the product Line",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 4,
 	"author": "Pearson"
 },
 {
 	"name": "NRA - Which products fit in Hospitality? (ServSafe, ServSafe Alcohol, ManageFirst)",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 5,
 	"author": "Pearson"
 }]

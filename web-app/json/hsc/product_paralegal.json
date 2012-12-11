@@ -10,16 +10,16 @@
 {
 	"name": "Legal Research and Writing",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 2,
 	"author": "Myers"
 },
 {
 	"name": "Real Estate Fundamentals",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 3,
 	"author": "Alice Hughes"
 },
@@ -34,8 +34,8 @@
 {
 	"name": "Torts and Personal Injury Law",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
 	"sequence": 5,
 	"author": "Jeffries Richard"
 },
@@ -48,19 +48,11 @@
 	"author": "Hillary J. Michaud"
 },
 {
-	"name": "Real Estate Fundamentals",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
-	"sequence": 7,
-	"author": "Alice Hughes"
-},
-{
 	"name": "MyLegalStudiesLab",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "http://placehold.it/100x100",
-	"image": "http://placehold.it/100x150",
-	"sequence": 8,
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 7,
 	"author": "Pearson"
 }]
 }
