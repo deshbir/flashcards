@@ -17,33 +17,13 @@ Authenticate = new function() {
 	        success: function(response) {
 				if (response.success) { 
 					mainApp.userinfo.loggedin = true;		
-					
-					TemplateManager.get('authenticate/home', function(template){
-						UserModel.get().fetch({
-							success: function(model, response){
-								mainApp.userinfo.name = model.get("username");
-								mainApp.userinfo.email =  model.get("email");
-								/*
-								var compiledTemplate = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
-								$("#loginform").html(compiledTemplate);
-								*/
-								Backbone.history.navigate("#/discipline");								
-								/*
-								 * 1st parameter - update header for login
-								 * 2nd parameter - showHomeLink
-								 * 3rd parameter - setBackLink 
-								 */
-								mainApp.setHeaderOptions(true, false, false, false);
-								
-								
-							}
-						});
-						/*TemplateManager.get('header', 
-								function(template){
-							 		var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "home": "active", "disciplines": "", "products": ""});
-									$(clsMainHeader).html(templateHTML);
-						},{cache:false});*/						
-				 	  });
+					Backbone.history.navigate("#/discipline");
+					/*
+					 * 1st parameter - update header for login
+					 * 2nd parameter - showHomeLink
+					 * 3rd parameter - setBackLink 
+					 */
+					mainApp.setHeaderOptions(true, false, false, false);	
 				} else if (response.error) { 
 					mainApp.userinfo.loggedin = false;	
 					
