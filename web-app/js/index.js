@@ -190,7 +190,6 @@ com.compro.application.hsc = (function() {
 		    	planeLogs += logs[i]+" ~~ ";
 	        }
 		    innerHTML += "</ol>";
-		    console.log(settings.url + "anurag");
 		    var regex = new RegExp("\<style.*style\>");
 		    msgDesc = msgDesc.replace(regex, "");
 		    $("#ajax-error-label").text(msgTitle);
