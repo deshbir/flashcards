@@ -2,8 +2,8 @@
 {{#.}}
 <div id="page-header" class="main-body">
 	<div class="container-fluid">
-		<div id="product-info" class="row-fluid">
-        	<div id="product-desc" class="span12" >
+		<div class="row-fluid">
+        	<div class="span12" id="product">
 	        	<img alt="{{name}}" class="pull-left" src="${contextPath}/{{product.thumbnail}}"/>
 	        	<h2>{{product.name}}</h2>
 	        	<h3>{{product.author}}</h3>
