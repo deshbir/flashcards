@@ -14,7 +14,7 @@
 		<ul class="nav pull-right">
 			<!-- Logged In Menu Options	 START -->
 			<li id="music" class="{{home}} loggedin">
-				<a href="javascript:void(0);" title="Playing Audio.Select to pause.">
+				<a href="javascript:void(0);" title="Playing Audio. Select to pause.">
 					<i class="icon-volume-up"></i>
 				</a>
 			</li>
