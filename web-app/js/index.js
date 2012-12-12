@@ -369,7 +369,7 @@ com.compro.application.hsc = (function() {
 				 * transitionend fired on buttons
 				 */
 				if(event.target!=$("#panel-container")[0]){
-					logger.info("transitionend fired on" + event.target);
+					//logger.info("transitionend fired on" + event.target);
 					return;
 				}
 				var myApp = com.compro.application.hsc;
