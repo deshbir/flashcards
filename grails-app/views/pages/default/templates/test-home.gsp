@@ -3,16 +3,11 @@
 <div id="page-header" class="main-body">
 	<div class="container-fluid">
 		<div id="product-info" class="row-fluid">
-		    	<div class="span1" id="product-img">
-		    		<a href="#">
-			        	<img alt="{{name}}" src="${contextPath}/{{product.thumbnail}}"/>
-			        </a>
-		    	</div>
-	        	<div class="span8" id="product-desc">
-		        	<h2>{{product.name}}</h2>
-		        	<h3>{{product.author}}</h3>
-		        	<p>{{product.description}}</p>
-				</div>
+        	<div id="product-desc" class="span12" >
+	        	<img alt="{{name}}" class="pull-left" src="${contextPath}/{{product.thumbnail}}"/>
+	        	<h2>{{product.name}}</h2>
+	        	<h3>{{product.author}}</h3>
+			</div>
 		</div>
 	</div>
 </div> 	
