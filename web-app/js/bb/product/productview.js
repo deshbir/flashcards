@@ -8,7 +8,7 @@ ProductView = new function() {
 	var mainApp = com.compro.application.hsc;
 	pagePlayer.config.updatePageTitle = false;
 	pagePlayer.events.play = function(){
-		$("#music img").show();
+		$("#music i").show();
 		var soundManager = this;
 		$("#music").click(function(){
 			soundManager.pause();
@@ -20,27 +20,27 @@ ProductView = new function() {
 	}
 	var pagePlayerPause = pagePlayer.events.pause;
 	pagePlayer.events.pause = function(){
-		$("#music img").hide();
+		$("#music i").hide();
 		pagePlayerPause.call(this);
 		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerResume = pagePlayer.events.resume;
 	pagePlayer.events.resume = function(){
-		$("#music img").show();
+		$("#music i").show();
 		pagePlayerResume.call(this);
 		$("#product-home .sm2_playing i").addClass('icon-volume-up');
 		$("#product-home .sm2_playing i").addClass('icon-pause'); 
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
-		$("#music img").hide();
+		$("#music i").hide();
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
 		$("#product-home .sm2_playing i").removeClass('icon-pause');
 		pagePlayerStop.call(this);
 	}
 	var pagePlayerFinish = pagePlayer.events.finish;
 	pagePlayer.events.finish = function(){
-		$("#music img").hide();
+		$("#music i").hide();
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
 		$("#product-home .sm2_playing i").removeClass('icon-pause');
 		pagePlayerFinish.call(this);
@@ -157,7 +157,7 @@ ProductView = new function() {
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
 			mainApp.transitionAppPanel(this.myPanelId);
-			if($("#product-home i.icon-pause").length > 0 && !$("#music img").is(":visible")){
+			if($("#product-home i.icon-pause").length > 0 && !$("#music i").is(":visible")){
 				$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
 			}
 			return this; //Do this at the end to allow for method chaining.

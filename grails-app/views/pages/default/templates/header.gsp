@@ -15,7 +15,7 @@
 			<!-- Logged In Menu Options	 START -->
 			<li id="music" class="{{home}} loggedin">
 				<a href="javascript:void(0);" title="Playing Audio.Select to pause.">
-					<r:img dir="images" file="audio_icon.png" style="display:none"></r:img>
+					<i class="icon-volume-up"></i>
 				</a>
 			</li>
 			<li id="home" class="{{home}} loggedin">
