@@ -3,13 +3,13 @@
 <div id="page-header" class="main-body">
 	<div class="container-fluid">
 		<div id="product-info" class="row-fluid">
-		    	<div class="span2" id="product-img">
+		    	<div class="span1" id="product-img">
 		    		<a href="#">
-			        	<img alt="{{name}}" src="${contextPath}/{{product.image}}"/>
+			        	<img alt="{{name}}" src="${contextPath}/{{product.thumbnail}}"/>
 			        </a>
 		    	</div>
 	        	<div class="span8" id="product-desc">
-		        		<h2>{{product.name}}</h2>
+		        	<h2>{{product.name}}</h2>
 		        	<h3>{{product.author}}</h3>
 		        	<p>{{product.description}}</p>
 				</div>
@@ -21,22 +21,20 @@
     	<div class="span12">
         	<div id="flashcard" class="flashcard">
         		<div class="header">
-        			<div class="container-fluid">
-	        			<div class="row-fluid">
-	        				<div class="span5">
-	        					<h4>Question <span id="current-question-no-home">1</span> of 5</small></h4>
-	        				</div>
-	        				<div class="span7">
-								<div class="btn-toolbar">
-									<div class="btn-group">
-										<button class="btn previous">Previous</button>
-									</div>
-									<div class="btn-group">
-										<button class="btn next">Next</button>
-									</div>				
+        			<div class="row-fluid">
+        				<div class="span3">
+        					<h4>Question <span id="current-question-no-home">1</span> of 5</small></h4>
+        				</div>
+        				<div class="span9">
+							<div class="btn-toolbar">
+								<div class="btn-group">
+									<button class="btn previous">Previous</button>
 								</div>
-	        				</div>
-	        			</div>
+								<div class="btn-group">
+									<button class="btn next">Next</button>
+								</div>				
+							</div>
+        				</div>
         			</div>
         		</div>
         		<div id="body-set">
