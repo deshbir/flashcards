@@ -295,7 +295,7 @@ com.compro.application.hsc = (function() {
 				 $(newPanelId).show("fast",function() {
 					 if(!(typeof callback === 'undefined') )  {
 				       callback();  	
-					 }            
+					 }
 				 });
 			// onResizeTranslationHandler(newPanelId);
 			 
@@ -316,21 +316,30 @@ com.compro.application.hsc = (function() {
 					callback();	
 				}
 			panelContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(event){ 
+				/*
+				 * temporary check -- needs to be fixed
+				 * transitionend fired on buttons
+				 */
 				if(event.target!=$("#panel-container")[0]){
 					logger.info("transitionend fired on" + event.target);
 					return;
 				}
-				panelContainer.removeClass('easing');
-				$("#bb-container").height($(com.compro.application.hsc.currentPanelId).height());
+				var myApp = com.compro.application.hsc;
 				$('.panel-item').css("visibility","hidden");
-				$(com.compro.application.hsc.currentPanelId).css("visibility","visible");
-				
+				$(myApp.currentPanelId).css("visibility","visible");
+				myApp.onResizeTranslationHandler(myApp.currentPanelId);
 			});
 			}
 			this.currentPanelId = newPanelId;
 			
 		}
-		
+	/*
+	 * function to apply cross browser transition effect for sliding
+	 * (works for only X coordinate)
+	 * @params 
+	 * 		- element to apply the trasition on
+	 * 		- width in X coordinate (can be -ve or +ve)
+	 * */
 	function applyTransition(element, width){
 		element.css("transform","translate3d("+width+"px,0,0)");
 		element.css("-webkit-transform","translate3d("+width+"px,0,0)");
@@ -341,14 +350,15 @@ com.compro.application.hsc = (function() {
 		element.css("-ms-transform","translateX("+width+"px)");
 		element.css("-o-transform","translate3d("+width+"px,0,0)");
 	}
-	
+	/*function to accomodate resizing of browser window or content.
+	 * @params - currentPanelId
+	 * */
 	function onResizeTranslationHandler(panelId){
 		$("#panel-container").removeClass('easing');
 		var itemWidth = $("#bb-container").width();
 		$("#panel-container").width(itemWidth * $(".panel-item").length);
 		$('.panel-item').width(itemWidth);
 		var translationWidth = $(panelId).attr("data-order") * -itemWidth;
-		console.log($(panelId).attr("data-order"));
 		applyTransition($("#panel-container"), translationWidth);
 		$("#bb-container").height($(panelId).height());
 	}
