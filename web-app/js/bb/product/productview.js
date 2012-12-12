@@ -109,6 +109,9 @@ ProductView = new function() {
 						success: function(){							
 							//Always call render from initialize - as Backbone does not automatically call it.
 							that.render();
+							soundManager.onready(function() {
+								  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
+							});							
 						}
 					});
 					
@@ -147,10 +150,6 @@ ProductView = new function() {
 				
 				this.current_discipline_id=this.requested_discipline_id;
 				this.current_product_id=this.requested_product_id;
-				
-				soundManager.onready(function() {
-					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
-				});
 			}
 
 			/*
