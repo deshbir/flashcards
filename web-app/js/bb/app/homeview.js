@@ -63,6 +63,9 @@ HomeView = new function() {
 						 * 4th parameter - showLogoutIcon
 						 */
 						mainApp.setHeaderOptions(true, false, false, false);
+						if(mainApp.userinfo.facebookuser) {
+							$($("#user-info").find("img")).css("border","1px solid #E5E5E5");
+						}
 					}
 				});
 			} else {
