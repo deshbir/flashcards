@@ -66,17 +66,21 @@ HomeView = new function() {
 						if(mainApp.userinfo.facebookuser) {
 							$($("#user-info").find("img")).css("border","1px solid #E5E5E5");
 						}
+						/*
+						 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
+						 */
+						mainApp.transitionAppPanel(view.myPanelId);						
 					}
 				});
 			} else {
 				var compiledTemplate = Mustache.render(view.template_body_home, {"loggedin": mainApp.userinfo.loggedin});
 				$("#loginform").html(compiledTemplate);
+				/*
+				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
+				 */
+				mainApp.transitionAppPanel(this.myPanelId);				
 			}
 			this.setElement("#loginform");			
-			/*
-			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 */
-			mainApp.transitionAppPanel(this.myPanelId);
 			return this; //Do this at the end to allow for method chaining.		
 		},
 		userlogin : function() {
