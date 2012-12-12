@@ -4,9 +4,7 @@
 	<div class="container-fluid">
 		<div id="product-info" class="row-fluid">
 		    	<div class="span2" id="product-img">
-		    		<a href="#">
-			        	<img alt="{{name}}" src="${contextPath}/{{image}}"/>
-			        </a>
+			        <img alt="{{name}}" src="${contextPath}/{{image}}"/>
 		    	</div>
 	        	<div class="span8" id="product-desc">
 		        	<h2>{{{name}}}</h2>
