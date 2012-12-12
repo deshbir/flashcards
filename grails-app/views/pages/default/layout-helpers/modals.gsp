@@ -12,14 +12,14 @@
 		<h4 class="content-header"></h4>
 		<div class="content-body">
 			<ul id="myTab" class="nav nav-tabs">
-				<li class="active"><a href="#message" data-toggle="tab">Message</a></li>
-				<li class=""><a href="#logs" data-toggle="tab">Default</a></li>
+				<li class="active"><a href="#logs" data-toggle="tab">Logs</a></li>
+				<li class=""><a href="#message" data-toggle="tab">Message</a></li>
 				<li class=""><a href="#headers" data-toggle="tab">Headers-Parameters</a></li>
 			</ul>
 			<div id="myTabContent" class="tab-content">
-				<div class="tab-pane fade active in" id="message">
+				<div class="tab-pane fade active in" id="logs">
 				</div>
-				<div class="tab-pane fade" id="logs">
+				<div class="tab-pane fade" id="message">
 				</div>
 				<div class="tab-pane fade" id="headers">
 				</div>
