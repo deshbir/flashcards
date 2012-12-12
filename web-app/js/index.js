@@ -155,6 +155,9 @@ com.compro.application.hsc = (function() {
 
 		    if (xhr.status === 0) { // Not connected. Verify Network
 		        msgDesc = xhr.responseText;
+		    } else if (xhr.status == 401) { // UnAuthorized
+		    	Backbone.history.navigate("#/home");
+			    return true;
 		    } else if (xhr.status == 403) { // Requested page not found. [404]
 		        msgHeader = "[403]:The requested url is forbidden.";
 		        msgDesc = xhr.responseText;
