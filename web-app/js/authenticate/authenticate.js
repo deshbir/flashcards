@@ -107,13 +107,11 @@ Authenticate = new function() {
 		if(("standalone" in window.navigator) && window.navigator.standalone){
 			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	function formFacebookRedirectURI () {
-  		var currentLocation = window.location.href;
-  		var requestContext = com.compro.cgrails.REQUEST_CONTEXT;
-  		var URI = currentLocation.substring(0, currentLocation.indexOf(requestContext) + requestContext.length + 1);
+  		var URI = window.location.protocol + "//" + window.location.host + com.compro.cgrails.REQUEST_CONTEXT + "/"
   		return URI;
   	}
 };
