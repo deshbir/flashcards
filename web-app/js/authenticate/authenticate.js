@@ -1,6 +1,7 @@
 Authenticate = new function() {
 	var clsMainHeader = com.compro.application.hsc.clsMainHeader;
 	var mainApp = com.compro.application.hsc;
+	var facebookAppId;
 	
 	this.authAjax = function(){
 		$("#loginErrorMessage").hide();
@@ -16,14 +17,7 @@ Authenticate = new function() {
 	    	},
 	        success: function(response) {
 				if (response.success) { 
-					mainApp.userinfo.loggedin = true;		
-					Backbone.history.navigate("#/discipline");
-					/*
-					 * 1st parameter - update header for login
-					 * 2nd parameter - showHomeLink
-					 * 3rd parameter - setBackLink 
-					 */
-					mainApp.setHeaderOptions(true, false, false, false);	
+					mainApp.handleLoginSuccess(false);	
 				} else if (response.error) { 
 					mainApp.userinfo.loggedin = false;	
 					
@@ -50,30 +44,25 @@ Authenticate = new function() {
 	 	 });
   	},
   	this.loginWithFacebook = function(){
-  		 FB.login(function(response) {
-   			if (response.authResponse) { 
-   				
- 		  		mainApp.userinfo.loggedin = true;
- 		  		mainApp.userinfo.facebookuser =  true;
-				/*
-				var compiledTemplate = Mustache.render(template, {"facebookuser":mainApp.userinfo.facebookuser, "loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
-				$("#loginform").html(compiledTemplate);
-				*/
-				Backbone.history.navigate("#/discipline"); 							
-				/*
-				 * 1st parameter - update header for login
-				 * 2nd parameter - showHomeLink
-				 * 3rd parameter - setBackLink 
-				 */
-				mainApp.setHeaderOptions(true, false, false);
- 		  	} else {
- 		  		mainApp.userinfo.loggedin = false;					
- 				$("#loginErrorMessage").show();
- 				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
- 				$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
-				$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
- 	  		}
-   		},{scope: 'email,user_likes'});  		
+  		if(isStandaloneWebApp()) {
+  			var redirectURI = formFacebookRedirectURI();
+  			var authURL = "https://www.facebook.com/dialog/oauth/?client_id=" + this.facebookAppId +
+  				"&redirect_uri=" + redirectURI + "&scope=email,user_likes&response_type=token";
+  			window.location = authURL;
+  		    return;
+  		} else {
+	  		 FB.login(function(response) {
+	   			if (response.authResponse) {	   				
+	   				mainApp.handleLoginSuccess(true);
+	 		  	} else {
+	 		  		mainApp.userinfo.loggedin = false;					
+	 				$("#loginErrorMessage").show();
+	 				$("#loginErrorMessage").html("<span class='errorMessage'>User cancelled login or did not fully authorize</span>");
+	 				$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
+					$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
+	 	  		}
+	   		},{scope: 'email,user_likes'});  
+  		}	 
 	},
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
@@ -82,7 +71,11 @@ Authenticate = new function() {
 		  } 
 		});
 		ajaxLogout();		  
-	}
+	},
+	this.setFacebookAppId = function(appId){
+		this.facebookAppId =  appId;
+	}	
+	
 	
 	function ajaxLogout() {
 		$.ajax({
@@ -110,4 +103,17 @@ Authenticate = new function() {
 		if(mainApp.config.soundManagerObject!=null)
 			mainApp.config.soundManagerObject.stop();
 	}
+	function isStandaloneWebApp () {
+		if(("standalone" in window.navigator) && window.navigator.standalone){
+			return true;
+		}
+		return true;
+	}
+	
+	function formFacebookRedirectURI () {
+  		var currentLocation = window.location.href;
+  		var requestContext = com.compro.cgrails.REQUEST_CONTEXT;
+  		var URI = currentLocation.substring(0, currentLocation.indexOf(requestContext) + requestContext.length + 1);
+  		return URI;
+  	}
 };
