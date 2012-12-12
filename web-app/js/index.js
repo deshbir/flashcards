@@ -98,6 +98,9 @@ com.compro.application.hsc = (function() {
 	//Logger
 	var logger = JSLog.Register('App.Login');
 	
+	//...
+	var facebookLoginCheckTimer;
+	var facebookLoginTries=20;
 	
 	/*
 	 * Backbone Initialization
@@ -232,11 +235,53 @@ com.compro.application.hsc = (function() {
 		});
 	}
 	
+	function handleLoginSuccess(isFacebookUser) {
+		
+		//Check for double call
+		if(userinfo.loggedin)	{
+			return;
+		}
+
+		userinfo.facebookuser =  isFacebookUser;
+		userinfo.loggedin = true;
+		Backbone.history.navigate("#/discipline"); 							
+		/*
+		 * 1st parameter - update header for login
+		 * 2nd parameter - showHomeLink
+		 * 3rd parameter - setBackLink 
+		 */
+		setHeaderOptions(true, false, false);
+	  		
+	}
+	
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
-		if (location.href.indexOf("#") == -1)
-			Backbone.history.navigate("#/home", {trigger:true,replace:true});
+		if (location.href.indexOf("#access_token") != -1) { //Facebook login success
+			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
+		}	
+		else if (location.href.indexOf("#") == -1) //Normal App startup
+			Backbone.history.navigate("#/home", {trigger:true,replace:true});		
+	}
+	
+	function getFBLoginStatus(){
+		
+		FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected')  {
+				  clearInterval(facebookLoginCheckTimer);
+				  handleLoginSuccess(true);
+			  }
+			  else
+			  {
+				  facebookLoginTries--;
+				  if(facebookLoginTries == 0)	{
+					  //No more checking
+					  clearInterval(facebookLoginCheckTimer);
+					  facebookLoginTries=20;
+					  alert("Unable to login via Facebook. Did not recive a timely response from Facebook.")
+				  }
+			  }
+		});
 	}
 	
 	function soundmanager2_init()	{
@@ -324,7 +369,7 @@ com.compro.application.hsc = (function() {
 				 * transitionend fired on buttons
 				 */
 				if(event.target!=$("#panel-container")[0]){
-					logger.info("transitionend fired on" + event.target);
+					//logger.info("transitionend fired on" + event.target);
 					return;
 				}
 				var myApp = com.compro.application.hsc;
@@ -480,7 +525,8 @@ com.compro.application.hsc = (function() {
 		"globalAjaxOptions" : globalAjaxOptions,
 		"transitionAppPanel" : transitionAppPanel,
 		"isIE":isIE,
-		"onResizeTranslationHandler":onResizeTranslationHandler
+		"onResizeTranslationHandler":onResizeTranslationHandler,
+		"handleLoginSuccess" : handleLoginSuccess
 	}
 
 })();

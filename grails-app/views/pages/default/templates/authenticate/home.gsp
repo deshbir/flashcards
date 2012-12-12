@@ -1,3 +1,6 @@
+<%@ page import="org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils" %>
+<g:set var="facebookAppId" value="${SpringSecurityUtils.securityConfig.facebook.appId}" />
+
 <div id="home">
 	{{#loggedin}}
 	    <div id="loggedin-container">
@@ -22,7 +25,10 @@
 			</div>
 	    </div>
 	{{/loggedin}}
-	{{^loggedin}}
+	{{^loggedin}}			
+		<script>
+			Authenticate.setFacebookAppId(${facebookAppId})
+		</script>	
 		<form action="${request.contextPath}/j_spring_security_check" method='POST' id='ajaxLoginForm' name='ajaxLoginForm'>
 			<h3>Log In</h3>
 			<div id="loginErrorMessage"></div> 	
