@@ -91,7 +91,7 @@ TestView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(false, true, true);
+			mainApp.setHeaderOptions(true, true, true);
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM		

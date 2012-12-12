@@ -157,7 +157,7 @@ ProductView = new function() {
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
 			mainApp.transitionAppPanel(this.myPanelId);
-			if($("#product-home i.icon-pause").length > 0 && !$("#music i").is(":visible")){
+			if($("#product-home i.icon-pause").length > 0 && !($("#product-home .sm2_playing").length > 0)){
 				$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
 			}
 			return this; //Do this at the end to allow for method chaining.
