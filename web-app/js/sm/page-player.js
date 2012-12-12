@@ -226,6 +226,14 @@ function PagePlayer() {
     var curleft = 0;
     if (o.offsetParent) {
       while (o.offsetParent) {
+    	  /* 
+    	   * Due to "transition" of slides the offset of the o.offsetParent, "panel container" gives 
+    	   * incorrect offsetLeft.   
+    	  */ 
+    	  if (o.offsetParent.offsetWidth > screen.width){ //means that its parent div containing smaller panels divs
+    		  curleft +=$(o).offset().left;
+    		  break;
+    	  }
         curleft += o.offsetLeft;
         o = o.offsetParent;
       }
@@ -359,6 +367,8 @@ function PagePlayer() {
       if (pl.dragActive) {
         return false;
       }
+      console.log("pl.dragActive :"+pl.dragActive);
+      
       pl.removeClass(this._data.oLI,this._data.className);
       this._data.className = pl.css.sPlaying;
       pl.addClass(this._data.oLI,this._data.className);
@@ -697,6 +707,7 @@ function PagePlayer() {
   };
   
   this.handleMouseDown = function(e) {
+	  console.log("handleMouseDown started");
     // a sound link was clicked
     if (isTouchDevice && e.touches) {
       e = e.touches[0];
@@ -723,6 +734,7 @@ function PagePlayer() {
       _event.add(document,'touchmove',self.handleMouseMove);
     }
     self.addClass(self.lastSound._data.oControls,'dragging');
+    console.log("handleMouseDown end");
     return self.stopEvent(e);
   };
   
@@ -754,6 +766,7 @@ function PagePlayer() {
   };
   
   this.stopDrag = function(e) {
+	  console.log("self.lastSound.position:"+self.lastSound.position);
     if (self.dragActive) {
       self.removeClass(self.lastSound._data.oControls,'dragging');
       if (!isTouchDevice) {
@@ -797,13 +810,20 @@ function PagePlayer() {
       return true;
     }
     oControl = oThis;
+    console.log("Before while");
     while (!self.hasClass(oControl,'controls') && oControl.parentNode) {
       oControl = oControl.parentNode;
     }
+    console.log("After while");
     oSound = self.lastSound;
     x = parseInt(e.clientX,10);
     // play sound at this position
+    console.log("in setPosition x"+x);
+    console.log("x-self.getOffX(oControl)-4) :"+(x-self.getOffX(oControl)-4));
+    console.log("oControl.offsetWidth) :"+(oControl.offsetWidth));
+    console.log("self.getDurationEstimate(oSound) :"+(self.getDurationEstimate(oSound)));
     nMsecOffset = Math.floor((x-self.getOffX(oControl)-4)/(oControl.offsetWidth)*self.getDurationEstimate(oSound));
+    console.log("in setPosition nMsecOffset"+nMsecOffset);
     if (!isNaN(nMsecOffset)) {
       nMsecOffset = Math.min(nMsecOffset,oSound.duration);
     }
