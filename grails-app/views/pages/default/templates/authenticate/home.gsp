@@ -16,7 +16,7 @@
 						{{/facebookuser}}						
 					</div>
 					<div class="span6">
-						<p>{{username}}</p>
+						<p>{{firstname}} {{lastname}}</p>
 						<p><small>{{email}}</small></p>
 					</div>
 				</div>	

@@ -53,7 +53,7 @@ HomeView = new function() {
 					success: function(model, response){
 						mainApp.userinfo.name = model.get("username");
 						mainApp.userinfo.email =  model.get("email");
-						var compiledTemplate = Mustache.render(view.template_body_home, {"facebookuser":mainApp.userinfo.facebookuser,"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email":  mainApp.userinfo.email} );
+						var compiledTemplate = Mustache.render(view.template_body_home, {"facebookuser":mainApp.userinfo.facebookuser,"loggedin": mainApp.userinfo.loggedin,"username": mainApp.userinfo.name,"firstname": model.get("firstName"),"lastname": model.get("lastName"), "email":  mainApp.userinfo.email} );
 						$("#loginform").html(compiledTemplate);
 						
 						/*
