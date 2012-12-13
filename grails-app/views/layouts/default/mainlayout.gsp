@@ -28,10 +28,23 @@
 		<![endif]-->
 		
         
+         <!-- iPad (landscape) -->
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="<r:resource uri="/images/ipad_startup_landscape.png"/>">
 		<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="<r:resource uri="/images/apple-touch-startup-image-320x460.png"/>" >  
 		<link rel="apple-touch-icon" href="<r:resource uri="/images/apple-touch-icon.png"/>">
+		<!-- iPad (portrait)-->
 		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="<r:resource uri="/images/ipad-startup-image.png"/>">
+		
+		<!-- iPhone (Retina) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x920.png"/>">
+		<!-- iPad (Retina, portrait) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad-startup-image-retina.png"/>">
+        <!-- iPad (Retina, landscape) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 768px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad_startup_landscape_retina.png"/>">
+        <!-- iPhone 5 -->
+        <link rel="apple-touch-startup-image" media="(device-width: 320px)  and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x1096.png"/>">
+
+        
 		
 		<link rel="shortcut icon" href="<r:resource uri="/images/favicon.ico"/>" type="image/x-icon">
 		<ga:trackPageview />
