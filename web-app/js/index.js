@@ -255,7 +255,7 @@ com.compro.application.hsc = (function() {
 				 * 2nd parameter - showHomeLink
 				 * 3rd parameter - setBackLink 
 				 */
-				setHeaderOptions(true, false, false);
+				mainApp.setHeaderOptions(true, false, false);
 				Backbone.history.navigate("#/discipline");
 			}
 		});	

@@ -13,6 +13,11 @@
 					<div id="panel_test-home" data-order="4" class="panel-item"></div>
 			</div>
 		</div>
+		<div class="ui-loader ui-loader-default" id="loadingIcon">
+			<span class="ui-icon ui-icon-loading">
+				<r:img dir="images" file="ajax-loader.gif"/>
+			</span>
+		</div>
 		<r:script disposition="defer">	
 			Authenticate.initialize();
    		</r:script>

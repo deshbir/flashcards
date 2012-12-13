@@ -1,8 +1,3 @@
-<div class="ui-loader ui-loader-default" id="loadingIcon">
-	<span class="ui-icon ui-icon-loading">
-		<r:img dir="images" file="ajax-loader.gif"/>
-	</span>
-</div>
 <div class="navbar-inner">
 	<div class="container">
 		<div id="back" class="brand-button">
