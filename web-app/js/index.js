@@ -248,14 +248,14 @@ com.compro.application.hsc = (function() {
 		UserModel.get().fetch({
 			success: function(model, response){
 				if(model.get('isAdmin')){
-					mainApp.userinfo.admin = true;
+					userinfo.admin = true;
 				}
 				/*
 				 * 1st parameter - update header for login
 				 * 2nd parameter - showHomeLink
 				 * 3rd parameter - setBackLink 
 				 */
-				mainApp.setHeaderOptions(true, false, false);
+				setHeaderOptions(true, false, false);
 				Backbone.history.navigate("#/discipline");
 			}
 		});	
