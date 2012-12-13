@@ -14,63 +14,72 @@
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 2
+        	"sequence": 2,
+        	"product_data_filename": "product_automotive.json"
         },
         {
         	"name": "Brady",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 3     	
+        	"sequence": 3,
+        	"product_data_filename": "product_brady.json" 	
         },
         {
         	"name": "Construction Management",
         	 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 4        	
+        	"sequence": 4,
+        	"product_data_filename": "product_construction_mgmt.json"       	
         },
         {
         	"name": "Culinary",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 5        	
+        	"sequence": 5,
+        	"product_data_filename": "product_culinary.json"   	
         },
         {
         	"name": "Health Professions",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 6       	
+        	"sequence": 6,
+        	"product_data_filename": "product_health_prof.json"   	
         },
         {
         	"name": "Hospitality",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 7       	
+        	"sequence": 7,
+        	"product_data_filename": "product_hospitality.json"  	
         },
         {
         	"name": "Nursing",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 8      	
+        	"sequence": 8,
+        	"product_data_filename": "product_nursing.json"
         },                
         {
         	"name": "Paralegal",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 9       	
+        	"sequence": 9,
+        	"product_data_filename": "product_paralegal.json"
         },
         {
         	"name": "Trades",
         	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mauris vel laoreet volutpat.",
         	"thumbnail": "http://placehold.it/100x100",
         	"image": "http://placehold.it/100x150",
-        	"sequence": 10       	
+        	"sequence": 10,
+        	"product_data_filename": "product_trades.json"  	
         }                
     ]    
 }

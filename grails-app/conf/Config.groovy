@@ -101,18 +101,28 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.pearson.hsc.
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.pearson.hsc.authenticate.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.pearson.hsc.authenticate.Role'
 
-grails.plugins.springsecurity.rememberMe.alwaysRemember = true
+grails.plugins.springsecurity.rememberMe.alwaysRemember = false
 
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
 	'/*/singlepage/splash':['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/*/singlepage/**':['ROLE_ADMIN','ROLE_FACEBOOK'],
-	'/cgrailstemplate':['ROLE_ADMIN','ROLE_FACEBOOK'],
-	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK'],
-	
- ]
+	'/*/singlepage/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
+	'/cgrailstemplate':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
+	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER']	
+]
 grails.plugins.springsecurity.facebook.domain.classname='com.pearson.hsc.authenticate.FacebookUser'
 grails.plugins.springsecurity.facebook.appId='569095856437624'
 grails.plugins.springsecurity.facebook.secret='2370e6414826fdb25762fef99c8c2fb9'
+
+
+// Google Analaytics
+google.analytics.webPropertyID = "UA-36885090-1"
+
+// Cookie Session plugin configuration
+//grails.plugin.cookiesession.enabled = true
+//grails.plugin.cookiesession.encryptcookie = true
+//grails.plugin.cookiesession.secret = "pearsonhsc"
+//grails.plugin.cookiesession.cookiecount = 10
+//grails.plugin.cookiesession.maxcookiesize = 3072

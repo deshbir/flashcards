@@ -1,0 +1,61 @@
+{
+"products" : [{
+	"name": "The Paralegal Professional",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/paralegal-professional/paralegal-professional-thumb.jpg",
+	"image": "images/media/paralegal-professional/paralegal-professional.jpg",
+	"sequence": 1,
+	"author": "Thomas F. Goldman"
+},
+{
+	"name": "Legal Research and Writing",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 2,
+	"author": "Myers"
+},
+{
+	"name": "Real Estate Fundamentals",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 3,
+	"author": "Alice Hughes"
+},
+{
+	"name": "Ethics for the Legal Professional",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/ethics-legal-professional/ethics-legal-professional-thumb.jpg",
+	"image": "images/media/ethics-legal-professional/ethics-legal-professional.jpg",
+	"sequence": 4,
+	"author": "Deborah Orlik"
+},
+{
+	"name": "Torts and Personal Injury Law",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 5,
+	"author": "Jeffries Richard"
+},
+{
+	"name": "Tort Law",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/tort-law/tort-law-thumb.jpg",
+	"image": "images/media/tort-law/tort-law.jpg",
+	"sequence": 6,
+	"author": "Hillary J. Michaud"
+},
+{
+	"name": "MyLegalStudiesLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 7,
+	"author": "Pearson"
+}]
+}
+
+
+

@@ -223,17 +223,9 @@ function PagePlayer() {
 
   this.getOffX = function(o) {
     // http://www.xs4all.nl/~ppk/js/findpos.html
-    var curleft = 0;
-    if (o.offsetParent) {
-      while (o.offsetParent) {
-        curleft += o.offsetLeft;
-        o = o.offsetParent;
-      }
-    }
-    else if (o.x) {
-      curleft += o.x;
-    }
-    return curleft;
+	// Updating the function for supporting transition in panel. 
+	// Offset width was giving errors in original version.  
+    return $(o).offset().left;
   };
 
   this.getTime = function(nMSec, bAsString) {

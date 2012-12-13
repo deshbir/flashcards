@@ -3,7 +3,7 @@ html, body {
 }
 
 #bb-container	{
-	padding-top:60px;
+	padding-top:15px;
 }
 
 /* Wrapper for page content to push down footer */
@@ -21,11 +21,55 @@ html, body {
 	height:40px;
 }
 
-
-/*-- TABLETS AND BELOW */
-@media (max-width: 979px) {
-	#bb-container	{
-		padding-top:0px;
+#footer	{
+	background-color: black;
+	.credit	{
+		padding-top: 10px;
+		text-align: center;
 	}
 }
+
+/***Harsh***/
+#panel-container{
+	margin:auto;
+}
+.easing{
+	.transition(all 0.25s ease-in-out);
+}
+#bb-container{
+	overflow:hidden;
+ }  
+  
+     
+.panel-item{
+	float:left;
+	min-height:10px;
+}
+.ui-loader-default {
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    height: 46px;
+    margin-left: -23px;
+    margin-top: -23px;
+    opacity: 0.18;
+    width: 46px;
+}
+.ui-loader {
+    border: 0 none;
+    display: none;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    z-index: 9999999;
+}
+.ui-loader .ui-icon {
+    background-color: #000000;
+    border-radius: 36px 36px 36px 36px;
+    display: block;
+    height: 44px;
+    margin: 0;
+    padding: 1px;
+    width: 44px;
+}
+
 

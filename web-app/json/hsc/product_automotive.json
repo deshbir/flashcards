@@ -1,0 +1,26 @@
+{
+"products" : [{
+	"name": "Automotive Systems",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 1,
+	"author": "Pearson"
+},
+{
+	"name": "MyAutomtoiveLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 2,
+	"author": "Pearson"
+},
+{
+	"name": "Automtotive Fundamentals",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/automtotive-fundamentals/auto-fundamentals-thumb.jpg",
+	"image": "images/media/automtotive-fundamentals/auto-fundamentals.jpg",
+	"sequence": 3,
+	"author": "Martin T. Stockel"
+}]
+}

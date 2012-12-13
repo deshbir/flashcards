@@ -4,8 +4,47 @@ ProductView = new function() {
 	var bbView = null;
 	var pagePlayer = new PagePlayer();
 	/* -------------------------------------------------*/
-
-	
+	var pagePlayerPlay = pagePlayer.events.play;
+	var mainApp = com.compro.application.hsc;
+	pagePlayer.config.updatePageTitle = false;
+	pagePlayer.events.play = function(){
+		$("#music i").show();
+		var soundManager = this;
+		$("#music").click(function(){
+			soundManager.pause();
+		});
+		mainApp.config.soundManagerObject = soundManager;
+		pagePlayerPlay.call(soundManager);
+		$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
+		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
+	}
+	var pagePlayerPause = pagePlayer.events.pause;
+	pagePlayer.events.pause = function(){
+		$("#music i").hide();
+		pagePlayerPause.call(this);
+		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
+	}
+	var pagePlayerResume = pagePlayer.events.resume;
+	pagePlayer.events.resume = function(){
+		$("#music i").show();
+		pagePlayerResume.call(this);
+		$("#product-home .sm2_playing i").addClass('icon-volume-up');
+		$("#product-home .sm2_playing i").addClass('icon-pause'); 
+	}
+	var pagePlayerStop = pagePlayer.events.stop;
+	pagePlayer.events.stop = function(){
+		$("#music i").hide();
+		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
+		$("#product-home .sm2_playing i").removeClass('icon-pause');
+		pagePlayerStop.call(this);
+	}
+	var pagePlayerFinish = pagePlayer.events.finish;
+	pagePlayer.events.finish = function(){
+		$("#music i").hide();
+		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
+		$("#product-home .sm2_playing i").removeClass('icon-pause');
+		pagePlayerFinish.call(this);
+	}
 	var mainApp = com.compro.application.hsc;
 	var clsMainHeader = mainApp.clsMainHeader;
 
@@ -70,8 +109,12 @@ ProductView = new function() {
 						success: function(){							
 							//Always call render from initialize - as Backbone does not automatically call it.
 							that.render();
+							soundManager.onready(function() {
+								  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
+							});							
 						}
 					});
+					
 			});
 		},
 		
@@ -94,7 +137,7 @@ ProductView = new function() {
 			 * 3rd parameter - setBackLink 
 			 */
 			mainApp.setHeaderOptions(false, true, true);			
-			
+			$("#music").hide();
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
 			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{
@@ -107,28 +150,26 @@ ProductView = new function() {
 				
 				this.current_discipline_id=this.requested_discipline_id;
 				this.current_product_id=this.requested_product_id;
-				
-				soundManager.onready(function() {
-					  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
-				});
 			}
 
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
 			mainApp.transitionAppPanel(this.myPanelId);
-			
+			if($("#product-home i.icon-pause").length > 0 && !($("#product-home .sm2_playing").length > 0)){
+				$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
+			}
 			return this; //Do this at the end to allow for method chaining.
 		},
 
 		flashcardassess : function(e) {
-			var productid = this.options.productId;
+			var productid = this.requested_product_id;
 			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/test/"+testid);
 		},
 		
 		flashcardtraining : function(e) {
-			var productid = this.options.productId;
+			var productid = this.requested_product_id;
 			var testid = e.currentTarget.id;
 			Backbone.history.navigate("#/product/" + productid + "/testtraining/"+testid);
 		}		

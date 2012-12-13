@@ -1,0 +1,18 @@
+{
+"products" : [{
+	"name": "Andres Principles,9e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/andres-principles/andres-principles-thumb.jpg",
+	"image": "images/media/andres-principles/andres-principles.jpg",
+	"sequence": 1,
+	"author": "Cameron K. Andres"
+},
+{
+	"name": "USGBC - The General Story",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/construction-mgmt-usgbc/construction-mgmt-usgbc-thumb.jpg",
+	"image": "images/media/construction-mgmt-usgbc/construction-mgmt-usgbc.jpg",
+	"sequence": 2,
+	"author": "USGBC"
+}]
+}

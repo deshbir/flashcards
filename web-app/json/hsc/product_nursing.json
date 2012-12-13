@@ -1,0 +1,98 @@
+{
+"products" : [{
+	"name": "Med Surg,2e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/nursing-med-surg/nursing-med-surg-thumb.jpg",
+	"image": "images/media/nursing-med-surg/nursing-med-surg.jpg",
+	"sequence": 1,
+	"author": "Kathleen S. Osborn"
+},
+{
+	"name": "Adams Pharmacology,4e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 2,
+	"author": "Pearson"
+},
+{
+	"name": "Maternal Newborn,8e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/maternal-newborn/maternal-newborn-thumb.jpg",
+	"image": "images/media/maternal-newborn/maternal-newborn.jpg",
+	"sequence": 3,
+	"author": "Patricia W. Ladewig"
+},
+{
+	"name": "Child Health,3e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/nursing-child-health/nursing-child-health-thumb.jpg",
+	"image": "images/media/nursing-child-health/nursing-child-health.jpg",
+	"sequence": 4,
+	"author": "Jane W. Ball"
+},
+{
+	"name": "Lab & Diagnostics,9e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 5,
+	"author": "Joyce LeFever Kee"
+},
+{
+	"name": "Giangrasso, 2e",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 6,
+	"author": "Giangrasso"
+},
+{
+	"name": "Real EHRPrep w",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 7,
+	"author": "Pearson"
+},
+{
+	"name": "Live Review",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 8,
+	"author": "Pearson"
+},
+{
+	"name": "Readypoint",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 9,
+	"author": "Pearson"
+},
+{
+	"name": "MyNursingLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 10,
+	"author": "Pearson"
+},
+{
+	"name": "Neighborhood 2.0",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 11,
+	"author": "Pearson"
+},
+{
+	"name": "RN to BSN",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/nursing-rn-bsn/nursing-rn-bsn-thumb.jpg",
+	"image": "images/media/nursing-rn-bsn/nursing-rn-bsn.jpg",
+	"sequence": 12,
+	"author": "Nursing ACE Exam Secrets Test Prep Team"
+}]
+}

@@ -7,29 +7,19 @@
 	"sequence": 1,
 	"author": "Frank J. Schmalleger",
 	"topics": [	{
-					"name": "The Story (2:00)",
-					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
 					"audioSequence": "1"
 				},
 				{
-					"name": "Competition (2:45)",
-					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
 					"audioSequence": "2"
 				},
 				{
-					"name": "Supplements (3:00)",
-					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
 					"audioSequence": "3"
-				},
-				{
-					"name": "Lorem ipsum (3:00)",
-					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
-					"audioSequence": "4"
-				},
-				{
-					"name": "Lorem ipsum (2:00)",
-					"audioTrack": "http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3",
-					"audioSequence": "5"
 				}],
 			    "tests": [
 			        {
@@ -153,7 +143,22 @@
 	"thumbnail": "images/media/criminology-today/cr-today-thumb.jpg",
 	"image": "images/media/criminology-today/cr-today.jpg",
 	"author": "Frank J. Schmalleger",
-	"sequence": 2
+	"sequence": 2,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 31 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 32 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 33 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]	
 },
 {
 	"name": "Criminology: A Brief Introduction, 2e",
@@ -161,7 +166,22 @@
 	"thumbnail": "images/media/criminology-intro/cr-introduction-thumb.jpg",
 	"image": "images/media/criminology-intro/cr-introduction.jpg",
 	"author": "Frank J. Schmalleger",				        	
-	"sequence": 3
+	"sequence": 3,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]
 },
 {
 	"name": "Criminal Justice: A Brief Introduction, 10e",
@@ -169,7 +189,22 @@
 	"thumbnail": "images/media/criminal-justice/cr-justice-thumb.jpg",
 	"image": "images/media/criminal-justice/cr-justice.jpg",
 	"author": "Frank J. Schmalleger",				        	
-	"sequence": 4
+	"sequence": 4,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]		
 },
 {
 	"name": "Corrections: An Introduction, 4e",
@@ -177,7 +212,7 @@
 	"thumbnail": "images/media/corrections-intro/co-introduction-thumb.jpg",
 	"image": "images/media/corrections-intro/co-introduction.jpg",
 	"author": "Richard P. Seiter",				        	
-	"sequence": 5
+	"sequence": 5	
 },     				
 {
 	"name": "Criminal Investigation, 1e",
@@ -185,7 +220,22 @@
 	"thumbnail": "images/media/criminal-invest/cr-investigation-1e-thumb.jpg",
 	"image": "images/media/criminal-invest/cr-investigation-1e.jpg",
 	"author": "Richard P. Seiter",				        	
-	"sequence": 6
+	"sequence": 6,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Seiter 91 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Seiter 92 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Seiter 93 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]	
 },         				
 {
 	"name": "Criminal Law & Procedure, 1e",
@@ -193,7 +243,22 @@
 	"thumbnail": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
 	"image": "images/media/criminal-procedure/cr-procedure.jpg",
 	"author": "John L. Worrall",				        	
-	"sequence": 7
+	"sequence": 7,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Worrall CLP8 1 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Worrall CLP 82 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Worrall CLP8 1 Story.mp3",
+					"audioSequence": "3"
+				}]		
 },         				
 {
 	"name": "MyCJLab tm",
@@ -201,7 +266,17 @@
 	"thumbnail": "images/media/mycjlab/mycjlab_thumb.png",
 	"image": "images/media/mycjlab/mycjlab.png",
 	"author": "Pearson",     	
-	"sequence": 8
+	"sequence": 8,
+	"topics": [{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ MyCJLab 11 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ MyCJLab 12 Competition.mp3",
+					"audioSequence": "2"
+				}]	
 },
 {
 	"name": "Criminal Investigation, 8e",
@@ -209,7 +284,22 @@
 	"thumbnail": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
 	"image": "images/media/criminal-procedure/cr-procedure-thumb.jpg",
 	"author": "Lyman",				        	
-	"sequence": 9
+	"sequence": 9,
+	"topics": [{
+					"name": "The Story",
+					"audioTrack": "audio/12-9-12 CJ Lasley 1 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-9-12 CJ Lasley 2 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-9-12 CJ Lasley 3 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]	
 },        				
 {
 	"name": "Juvenile Justice in America, 7e",
@@ -217,6 +307,21 @@
 	"thumbnail": "images/media/juvenile-justice/juvenile-justice-thumb.jpg",
 	"image": "images/media/juvenile-justice/juvenile-justice.jpg",
 	"author": "Clemens Bartollas, Stuart J. Miller Ph.D. ",				        	
-	"sequence": 10
+	"sequence": 10,
+	"topics": [	{
+					"name": "The Story",
+					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 101 Story.mp3",
+					"audioSequence": "1"
+				},
+				{
+					"name": "Competition",
+					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 102 Competition.mp3",
+					"audioSequence": "2"
+				},
+				{
+					"name": "Driving Sell Thru",
+					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 103 Driving Sell Thru.mp3",
+					"audioSequence": "3"
+				}]
 }]
 }

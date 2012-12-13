@@ -5,106 +5,10 @@
 @HSCButtonColor: #7dccdf; //turquoise blue
 
 body {
-	font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
+	/*font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';*/
 }
 
-#footer	{
-	background-color: black;
-	.credit	{
-		padding-top: 10px;
-		text-align: center;
-	}
+h2,h3 {
+	font-weight:normal;
 }
 
-
-/* ----------------- media.less customization to align product view--------------------------- */
-
-.media,
-.media .media {
-  margin-top: 0px;
-}
-
-/* ----------------- Navbar --------------------------- */ 
-
-
-.navbar .nav > li > a {
-    padding: 10px 0;
-}
-
-.nav	{
-	i	{
-		font-size: 24px;
-	}
-}
-
-.brand
-{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    a	{
-    	color: #fff;
-    }
-}
-
-.brand-button
-{
-	.btn	{	       
-	  font-size: 13px;
-	  margin-left: 2em;
-	  padding: 2px 20px;
-	}
-  position: absolute;
-  left: 0;
-  text-align: left;
-  z-index:10;
-}
-
-
-/* ----------------- Buttons styling --------------------------- */
-.btn {
-	#gradient > .vertical(@HSCButtonColor, darken(@HSCButtonColor, 5%));
-	color:#FFFFFF;
-	line-height:30px;
-	font-size:23px;
-	font-family: 'Lucida Casual','Comic Sans MS','HelveticaNeue';
-	&:hover {
-		#gradient > .vertical(darken(@HSCButtonColor, 5%), darken(@HSCButtonColor, 10%));
-		background-position:0 0;
-		color:#FFFFFF;
-	}
-}
-
-.btn-group {
-	white-space: normal;
-}
-
-/*--  Landscape phones and down */
-@media (max-width: 480px) {
-
-	.brand-button
-	{
-		.btn	{	       
-		  margin-left: 4px;
-		}
-	 
-	}
-
-}
-
-
-/*-- Landscape phone to portrait tablet */
-
-@media (max-width: 770px) {
-
-	.brand-button
-	{
-		.btn	{	       
-		  margin-left: 4px;
-		}
-	 
-	}
-
-}
-     

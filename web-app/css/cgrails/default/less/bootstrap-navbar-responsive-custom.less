@@ -1,0 +1,60 @@
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+	/** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top, .navbar-static-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    	margin-bottom:5px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+    .navbar-static-top .navbar-inner {
+    		padding: 5px; 
+  	}
+	.navbar {
+		.brand-button {
+			a	{
+				margin-left: 4px;
+			}
+		}
+		.brand {
+			 margin:0 0 0 -20px;
+		}
+		.nav > li {
+  			margin: 0 4px;
+		}
+	}
+}
+
+/*-- Landscape phone to portrait tablet */
+
+@media (max-width: 770px) {
+	.navbar {
+		.brand-button {
+			a	{	       
+			  margin-left: 4px;
+			}
+		}
+		.brand {
+			 margin:0 0 0 -20px;
+		}
+	}
+}
+
+
+/*-- Portrait tablet to landscape and desktop */
+
+@media (min-width: 771px) and (max-width: 979px) {
+	/** this is to adjust the default values in accordance to body styling ***********/
+    .navbar-fixed-top,.navbar-static-top {
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+    .navbar {
+	   
+		.brand {
+			 margin:0 0 0 -20px;
+		}
+	}
+}

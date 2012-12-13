@@ -6026,19 +6026,12 @@ a.badge:hover {
 /* ---------- Bootstrap Custom ----------- */
 /* ---------- Bootstrap Common Variables ----------- */
 body {
-  font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
+  /*font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';*/
+
 }
-#footer {
-  background-color: black;
-}
-#footer .credit {
-  padding-top: 10px;
-  text-align: center;
-}
-/* ----------------- media.less customization to align product view--------------------------- */
-.media,
-.media .media {
-  margin-top: 0px;
+h2,
+h3 {
+  font-weight: normal;
 }
 /* ----------------- Navbar --------------------------- */.navbar .nav > li > a {
   padding: 10px 0;
@@ -6046,25 +6039,59 @@ body {
 .nav i {
   font-size: 24px;
 }
-.brand {
+.nav li#music a {
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+.nav li#music a i {
+  font-size: 26px;
+  display: none;
+}
+.navbar .nav > li {
+  margin: 0 9px;
+}
+.navbar .navbar-inner {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar .brand {
   position: absolute;
   width: 100%;
   left: 0;
   text-align: center;
+  /*----------- This is done to avoid horizontal scroll on page ----------------- */
+
+  padding-left: 0;
+  padding-right: 0;
 }
-.brand a {
+.navbar .brand a {
   color: #fff;
 }
-.brand-button {
-  position: absolute;
+.navbar .brand-button {
+  position: relative;
   left: 0;
-  text-align: left;
   z-index: 10;
 }
-.brand-button .btn {
-  font-size: 13px;
-  margin-left: 2em;
-  padding: 2px 20px;
+.navbar .brand-button a {
+  height: 30px;
+  margin-top: 5px;
+  width: 30px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #999999;
+  border: solid 1px black;
+}
+.navbar .brand-button a i {
+  font-size: 25px;
+  color: #ffffff;
+  padding: 5px;
+}
+.navbar .brand-button a:hover {
+  text-decoration: none;
 }
 /* ----------------- Buttons styling --------------------------- */
 .btn {
@@ -6078,7 +6105,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7dccdf', endColorstr='#ff69c4da', GradientType=0);
   color: #FFFFFF;
   line-height: 30px;
-  font-size: 23px;
+  font-size: 21px;
   font-family: 'Lucida Casual', 'Comic Sans MS', 'HelveticaNeue';
 }
 .btn:hover {
@@ -6096,17 +6123,14 @@ body {
 .btn-group {
   white-space: normal;
 }
-/*--  Landscape phones and down */
-@media (max-width: 480px) {
-  .brand-button .btn {
-    margin-left: 4px;
-  }
+.modal-body {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 0 15px 15px;
 }
-/*-- Landscape phone to portrait tablet */
-@media (max-width: 770px) {
-  .brand-button .btn {
-    margin-left: 4px;
-  }
+.modal-body .content-body .tab-content {
+  height: 120px;
+  overflow-y: auto;
 }
 html,
 body {
@@ -6115,7 +6139,7 @@ body {
 
 }
 #bb-container {
-  padding-top: 60px;
+  padding-top: 15px;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -6131,11 +6155,55 @@ body {
 #footer {
   height: 40px;
 }
-/*-- TABLETS AND BELOW */
-@media (max-width: 979px) {
-  #bb-container {
-    padding-top: 0px;
-  }
+#footer {
+  background-color: black;
+}
+#footer .credit {
+  padding-top: 10px;
+  text-align: center;
+}
+/***Harsh***/
+#panel-container {
+  margin: auto;
+}
+.easing {
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+#bb-container {
+  overflow: hidden;
+}
+.panel-item {
+  float: left;
+  min-height: 10px;
+}
+.ui-loader-default {
+  background: none repeat scroll 0 0 transparent;
+  display: block;
+  height: 46px;
+  margin-left: -23px;
+  margin-top: -23px;
+  opacity: 0.18;
+  width: 46px;
+}
+.ui-loader {
+  border: 0 none;
+  display: none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  z-index: 9999999;
+}
+.ui-loader .ui-icon {
+  background-color: #000000;
+  border-radius: 36px 36px 36px 36px;
+  display: block;
+  height: 44px;
+  margin: 0;
+  padding: 1px;
+  width: 44px;
 }
 /* --------- HSC Components -------- */
 #business-info h1 {
@@ -6178,8 +6246,22 @@ body {
 #loginform #loggedin-container input[type="password"] {
   font-size: 17px;
   height: 37px;
-  width: 95%;
+  width: 100%;
   margin-top: 1em;
+}
+#loginform #ajaxLoginForm .errorMessage,
+#loginform #loggedin-container .errorMessage {
+  color: #b94a48;
+  padding: 10px;
+  display: block;
+}
+#loginform #ajaxLoginForm input.invalid-name,
+#loginform #loggedin-container input.invalid-name {
+  color: #b94a48;
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #f8b9b7;
 }
 #loginform #ajaxLoginForm h3,
 #loginform #loggedin-container h3 {
@@ -6248,17 +6330,11 @@ body {
 #loginform #ajaxLoginForm #user-info .span3 img,
 #loginform #loggedin-container #user-info .span3 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em 0;
+  margin: 1em auto;
 }
 #loginform #ajaxLoginForm #user-info .span6 p,
 #loginform #loggedin-container #user-info .span6 p {
   font-size: 18px;
-}
-#loginform #ajaxLoginForm #user-info .span6 p:first-child,
-#loginform #loggedin-container #user-info .span6 p:first-child {
-  font-weight: bold;
 }
 #loginform #facebook-login {
   padding: 0;
@@ -6289,6 +6365,91 @@ body {
   margin-left: 1em;
   margin-top: 1em;
 }
+/*********************** Responsive Styles ************************************/@media (max-width: 480px) {
+  #business-info h1 {
+    font-size: 21px;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+  #loginform {
+    margin-top: 0;
+  }
+  #loginform #ajaxLoginForm {
+    border: 0 none;
+    margin-bottom: 10px;
+  }
+  #loginform #ajaxLoginForm input[type="text"],
+  #loginform #ajaxLoginForm input[type="email"],
+  #loginform #ajaxLoginForm input[type="password"] {
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+  #loginform #ajaxLoginForm .hero-unit {
+    padding: 0;
+    margin-bottom: 10px;
+    background-color: transparent;
+  }
+  #loginform #ajaxLoginForm .hero-unit > p {
+    display: none;
+  }
+  #loginform #ajaxLoginForm .hero-unit .btn {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  #loginform #ajaxLoginForm h3 {
+    display: none;
+  }
+  #loginform #loggedin-container {
+    border: 0 none;
+  }
+  #loginform #loggedin-container .hero-unit {
+    padding: 0;
+    margin-bottom: 10px;
+    background-color: transparent;
+  }
+  #loginform #loggedin-container .hero-unit > p {
+    display: none;
+  }
+  #loginform #loggedin-container h3 {
+    display: none;
+  }
+  #loginform #loggedin-container #user-info div {
+    float: left;
+  }
+  #loginform #loggedin-container #user-info .span3 {
+    width: 30%;
+  }
+  #loginform #loggedin-container #user-info .span6 {
+    width: 60%;
+  }
+  #loginform #facebook-login {
+    margin-bottom: 5px;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 18px;
+    margin-left: 2em;
+  }
+  #loginform #facebook-login p i {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
+  #loginform #loggedin-container .hero-unit #forgot-pwd {
+    font-size: 14px;
+  }
+  #loginform #ajaxLoginForm .span3,
+  #loginform #loggedin-container .span3 {
+    min-width: 35%;
+  }
+  #loginform #facebook-login .facebook-text {
+    font-size: 21px;
+    margin-left: 0.5em;
+  }
+  #loginform #facebook-login i {
+    font-size: 36px;
+  }
+}
 .clickbox a {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -6298,9 +6459,31 @@ body {
   color: #2b2b2b;
   display: block;
   line-height: 1;
-  padding: 10px;
+  padding: 10px 5px;
   margin: 10px 0px;
   text-decoration: none;
+  *zoom: 1;
+}
+.clickbox a:before,
+.clickbox a:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clickbox a:after {
+  clear: both;
+}
+.clickbox a:before,
+.clickbox a:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clickbox a:after {
+  clear: both;
+}
+.clickbox a img {
+  margin-top: -3px;
 }
 .clickbox a h2 {
   font-size: 18px;
@@ -6315,7 +6498,6 @@ body {
   font-size: 12px;
   font-weight: 100;
   line-height: 1.1;
-  color: blue;
   margin-top: 0px;
 }
 .clickbox-light a {
@@ -6325,7 +6507,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.1;
-  padding: 10px;
+  padding: 0 5px;
   margin-bottom: 20px;
 }
 #discipline-list .head-icon {
@@ -6334,9 +6516,13 @@ body {
 #discipline-list .navigate-icon {
   font-size: 20px;
   margin-left: 10px;
+  float: right;
 }
 #discipline-list p {
   margin-top: 20px;
+}
+#panel_discipline-home h1 {
+  font-size: 37px;
 }
 #product-list .heading {
   font-size: 18px;
@@ -6347,6 +6533,14 @@ body {
 #product-list i {
   font-size: 20px;
   margin-left: 10px;
+  float: right;
+}
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  #discipline-list div.span4:last-child a {
+    margin-bottom: 0;
+  }
 }
 /* --------------- Ratings Component -------------------------- */
 .rating {
@@ -6587,23 +6781,50 @@ ul.playlist li .peak .r {
   display: none;
 }
 /* --------------- Flashcard Component -------------------------- */
+#page-header {
+  padding-bottom: 5px;
+}
+#page-header .container-fluid {
+  padding-left: 0;
+}
+#page-header #product-info {
+  padding-bottom: 5px;
+}
+#page-header #product-info #product-desc {
+  margin-left: 1%;
+}
+#page-header #product-info #product-desc h2 {
+  font-size: 28px;
+  line-height: 30px;
+  margin-top: 0;
+}
+#page-header #product-info #product-desc h3 {
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 16px;
+  margin-top: 0;
+}
 .flashcard {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid gray;
-  width: 85%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: 2px solid #cccccc;
   margin: 0 auto;
   padding: 0px;
   margin-bottom: 20px;
 }
 .flashcard .header {
-  padding: 0px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid gray;
+  padding: 1em;
+  margin: 0px 10px 10px 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.flashcard .header h4 {
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+.flashcard .header .btn-toolbar {
+  margin: 0;
+  text-align: right;
 }
 .flashcard .header .btn-group-vertical .btn-large:first-child,
 .flashcard .header .btn-group-vertical .btn-large:last-child {
@@ -6627,8 +6848,23 @@ ul.playlist li .peak .r {
   margin-bottom: 10px;
 }
 .flashcard .body .explainanswer {
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
+}
+.flashcard .body .answer-explanation {
+  width: 95%;
+  margin-left: 20px;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
+}
+.flashcard .body .answer-explanation .explainanswer {
+  padding: 20px;
 }
 .flashcard .body h2 {
   font-size: 24px;
@@ -6645,6 +6881,18 @@ ul.playlist li .peak .r {
 }
 .flashcard .body .btn-group {
   width: 95%;
+}
+.flashcard .body .btn.correct-ans span.text {
+  color: #46a546;
+}
+.flashcard .body .btn.correct-ans span.radio {
+  background: url('../../../../images/radio-correct.png') no-repeat left center;
+}
+.flashcard .body .btn.wrong-ans span.text {
+  color: #9d261d;
+}
+.flashcard .body .btn.wrong-ans span.radio {
+  background: url('../../../../images/radio-wrong.png') no-repeat left center;
 }
 .flashcard .body .btn {
   margin-bottom: 10px;
@@ -6688,6 +6936,112 @@ ul.playlist li .peak .r {
   padding-bottom: 15px;
   padding-top: 15px;
 }
+/************************************ Responsive Styles ************************/
+/* --------------- Flashcard Component -------------------------- */
+@media (max-width: 480px) {
+  .flashcard {
+    border: 0px;
+    width: 100%;
+  }
+  .flashcard .header {
+    padding: 10px 0 0 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 0 none;
+  }
+  .flashcard .header .span3 {
+    float: left;
+    width: 36%;
+  }
+  .flashcard .header .span3 h4 {
+    font-size: 16px;
+  }
+  .flashcard .header .span9 {
+    float: left;
+    width: 64%;
+  }
+  .flashcard .footer {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .flashcard .body {
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+  .flashcard .body h2 {
+    font-size: 18px;
+  }
+  .flashcard .body .btn-group {
+    width: 95%;
+  }
+  .flashcard .body .btn {
+    margin-left: 5px;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .flashcard .body .answer-explanation {
+    width: 95%;
+    margin-left: 5px;
+  }
+  .flashcard .body .answer-explanation .explainanswer {
+    padding: 5px;
+  }
+  #page-header {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-bottom: 1px solid gray;
+  }
+  #page-header #product-info #product-img {
+    width: 24%;
+    float: left;
+    margin-right: 10px;
+  }
+  #page-header #product-info #product-desc {
+    width: 60%;
+    float: left;
+  }
+  #page-header #product-info #product-desc h3 {
+    font-size: 16px;
+  }
+  #page-header #product-info #product-desc h2 {
+    font-size: 21px;
+    line-height: 25px;
+    margin-bottom: 10px;
+  }
+  #page-header #product-info #product-desc p {
+    display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 979px) {
+  #page-header {
+    margin-top: 10px;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  #page-header #product-info #product-desc h3 {
+    line-height: 19px;
+  }
+  #page-header #product-info #product-desc h2 {
+    line-height: 22px;
+  }
+  #page-header #product-info #product-desc p {
+    display: none;
+  }
+}
+/* ----------------- media.less customization to align product view--------------------------- */
+.media,
+.media .media {
+  margin-top: 0px;
+}
+#product-home .container-fluid {
+  padding-left: 0;
+}
+#product-home .container-fluid #product-desc {
+  margin-left: 1%;
+}
 #product-home h3 {
   font-size: 22px;
   font-weight: 100;
@@ -6698,37 +7052,109 @@ ul.playlist li .peak .r {
   margin-bottom: 10px;
 }
 #product-home ul.playlist {
-  padding-left: 10px;
   padding-bottom: 20px;
 }
 #product-home ul.playlist li {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background-color: #545454;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background-color: #e4e4e4;
+  background-image: -moz-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e9e9e9), to(#dcdcdc));
+  background-image: -webkit-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: -o-linear-gradient(top, #e9e9e9, #dcdcdc);
+  background-image: linear-gradient(to bottom, #e9e9e9, #dcdcdc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9e9e9', endColorstr='#ffdcdcdc', GradientType=0);
+  line-height: 44px;
   margin-bottom: 5px;
-}
-#product-home ul.playlist li i {
-  color: #eeeeee;
-  font-size: 12px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 0 5px 1px;
 }
 #product-home ul.playlist li a {
-  color: #eeeeee;
-  font-size: 16px;
-  font-weight: 100;
+  color: #000000;
+  text-align: left;
+}
+#product-home ul.playlist li a i {
+  font-size: 20px;
+  margin-left: 5px;
+  border-right: solid 2px white;
+  padding-right: 10px;
+}
+#product-home ul.playlist li a span {
+  margin-right: 15px;
+  margin-left: 5px;
 }
 #product-home ul.playlist .timing {
-  background-color: #75C9DD;
+  background-color: #7fb269;
+  height: 1.5em;
+  top: 10px;
+  border: solid 1px #75C9DD;
+}
+#product-home ul.playlist .timing .timing-data {
+  margin-top: 4px;
 }
 #product-home ul.playlist li.sm2_playing,
 #product-home ul.playlist li.sm2_playing:hover {
-  background-color: black;
+  background-color: #cacaca;
+  background-image: -moz-linear-gradient(top, #d0d0d0, #c3c3c3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d0d0d0), to(#c3c3c3));
+  background-image: -webkit-linear-gradient(top, #d0d0d0, #c3c3c3);
+  background-image: -o-linear-gradient(top, #d0d0d0, #c3c3c3);
+  background-image: linear-gradient(to bottom, #d0d0d0, #c3c3c3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd0d0d0', endColorstr='#ffc3c3c3', GradientType=0);
+}
+#product-home ul.playlist li .controls {
+  margin-top: 0;
 }
 #product-home ul.playlist li .controls .statusbar .position {
   background-color: #75C9DD;
-  border-right: 3px solid #75C9DD;
+  border-right: 1px solid #75C9DD;
+}
+#product-home ul.playlist li .controls .statusbar .loading {
+  background-color: #b6b6b6;
+}
+#product-home .flashcardAssess {
+  margin: 10px 0 15px;
+}
+#product-home #product-info {
+  padding-bottom: 5px;
+}
+/*********************** Responsive Styles ************************************/@media (max-width: 480px) {
+  #product-home {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  #product-home h2 {
+    font-size: 21px;
+  }
+  #product-home h3 {
+    font-size: 16px;
+  }
+  #playlist h2 {
+    display: none;
+  }
+  #product-info #product-img {
+    width: 35%;
+    float: left;
+    margin-right: 10px;
+  }
+  #product-info h2 {
+    line-height: 1;
+    margin: 0;
+  }
+  #product-info #product-desc {
+    width: 60%;
+    float: left;
+  }
+  #product-info #product-desc p {
+    display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 979px) {
+  #product-home {
+    margin-top: 10px;
+  }
 }
 /*------------- Global Responsive ----------*/
 /*!
@@ -8325,8 +8751,7 @@ ul.playlist li .peak .r {
   .navbar .brand {
     padding-left: 10px;
     padding-right: 10px;
-    /*margin: 0 0 0 -5px;*/
-  
+    margin: 0 0 0 -5px;
   }
   .nav-collapse {
     clear: both;
@@ -8454,7 +8879,53 @@ ul.playlist li .peak .r {
     overflow: visible !important;
   }
 }
-/* ---------- Responsive Custom ----------- */
+/********************************************* Responsive Styles *******************************/
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top,
+  .navbar-static-top {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .navbar-static-top .navbar-inner {
+    padding: 5px;
+  }
+  .navbar .brand-button a {
+    margin-left: 4px;
+  }
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+  .navbar .nav > li {
+    margin: 0 4px;
+  }
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  .navbar .brand-button a {
+    margin-left: 4px;
+  }
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  /** this is to adjust the default values in accordance to body styling ***********/
+  .navbar-fixed-top,
+  .navbar-static-top {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
+  .navbar .brand {
+    margin: 0 0 0 -20px;
+  }
+}
+/********************************** Responsive Styles **********************/
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
   /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side starts. *******/
@@ -8466,49 +8937,6 @@ ul.playlist li .peak .r {
     margin-left: 5px;
     margin-right: 5px;
   }
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-  }
-  /* --------------- Flashcard Component -------------------------- */
-  .flashcard {
-    border: 0px;
-    width: 100%;
-  }
-  .flashcard .header {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  .flashcard .footer {
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .flashcard .body {
-    margin-bottom: 15px;
-    padding: 5px;
-  }
-  .flashcard .body h2 {
-    font-size: 18px;
-  }
-  .flashcard .body .btn-group {
-    width: 95%;
-  }
-  .flashcard .body .btn {
-    margin-left: 5px;
-    font-size: 14px;
-    line-height: 1.1;
-  }
-}
-/*-- Landscape phone to portrait tablet */
-@media (max-width: 770px) {
-  
 }
 /*-- Portrait tablet to landscape and desktop */
 @media (min-width: 771px) and (max-width: 979px) {
@@ -8517,15 +8945,25 @@ ul.playlist li .peak .r {
     padding-left: 0px;
     padding-right: 0px;
   }
-  /** this is to adjust the default values in accordance to body styling ***********/
-  .navbar-fixed-top {
-    margin-left: 0px;
-    margin-right: 0px;
+}
+/*-- TABLETS AND BELOW */
+@media (max-width: 979px) {
+  #bb-container {
+    padding-top: 0px;
   }
-  /**  BODY STYLES overridden from bootstrap as creates unnecessary space in left right side ends. *******/
-  .brand-button .btn {
-    padding: 0 20px;
-  }
+}
+/* ---------- Responsive Custom ----------- */
+/*--  Landscape phones and down */
+@media (max-width: 480px) {
+  
+}
+/*-- Landscape phone to portrait tablet */
+@media (max-width: 770px) {
+  
+}
+/*-- Portrait tablet to landscape and desktop */
+@media (min-width: 771px) and (max-width: 979px) {
+  
 }
 /*-- TABLETS AND BELOW */
 @media (max-width: 979px) {
@@ -8534,73 +8972,4 @@ ul.playlist li .peak .r {
 /*-- Large desktops */
 @media (min-width: 1200px) {
   
-}
-/* --------------- Splash -------------------------- */
-@media (max-width: 480px) {
-  #panel_home {
-    margin: 0 20px;
-  }
-  #business-info h1 {
-    font-size: 21px;
-    line-height: 25px;
-  }
-  #loginform {
-    margin-top: 0;
-  }
-  #loginform #ajaxLoginForm,
-  #loginform #loggedin-container {
-    border: 0 none;
-  }
-  #loginform #ajaxLoginForm .hero-unit,
-  #loginform #loggedin-container .hero-unit {
-    padding: 0;
-    background-color: transparent;
-  }
-  #loginform #ajaxLoginForm .hero-unit > p,
-  #loginform #loggedin-container .hero-unit > p {
-    display: none;
-  }
-  #loginform #ajaxLoginForm h3,
-  #loginform #loggedin-container h3 {
-    display: none;
-  }
-  #loginform #facebook-login {
-    margin-bottom: 5px;
-  }
-  #loginform #facebook-login .facebook-text {
-    font-size: 18px;
-    margin-left: 0.5em;
-  }
-  #loginform #facebook-login p i {
-    font-size: 30px;
-  }
-  #loginform #user-info div {
-    float: left;
-  }
-  #loginform #user-info .span3 {
-    width: 30%;
-  }
-  #loginform #user-info .span6 {
-    width: 60%;
-  }
-}
-@media (max-width: 767px) {
-  
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  #loginform #ajaxLoginForm .hero-unit #forgot-pwd,
-  #loginform #loggedin-container .hero-unit #forgot-pwd {
-    font-size: 14px;
-  }
-  #loginform #ajaxLoginForm .span3,
-  #loginform #loggedin-container .span3 {
-    min-width: 35%;
-  }
-  #loginform #facebook-login .facebook-text {
-    font-size: 21px;
-    margin-left: 0.5em;
-  }
-  #loginform #facebook-login i {
-    font-size: 36px;
-  }
 }

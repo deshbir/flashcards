@@ -1,0 +1,26 @@
+{
+"products" : [{
+	"name": "NCCER - The General Story",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 1,
+	"author": "Pearson"
+},
+{
+	"name": "NCCER - The Product Line",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 2,
+	"author": "Pearson"
+},
+{
+	"name": "NCCERconnect",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 3,
+	"author": "Pearson"
+}]
+}

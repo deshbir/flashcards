@@ -52,8 +52,9 @@ DisciplineView = new function() {
 		myPanelId:"#panel_discipline-list",
 		myPanelRowId:"#panel_discipline-list #discipline-list",
 		/*------------------------------------------------------*/		
-	
+
 		events: {
+			"click .clickbox"	:	"disciplinedetail"
 		},
 		
 		initialize: function() {
@@ -96,7 +97,7 @@ DisciplineView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(false, true, true);
+			mainApp.setHeaderOptions(true, false, true);
 
 			var compiled_template_body = Mustache.render(this.template_body);
 			$(this.myPanelId).html(compiled_template_body);
@@ -115,26 +116,20 @@ DisciplineView = new function() {
 				
 			});
 
-			this.setElement("#discipline-list");
-			
-			var currentClass="clickbox";
-			$(".span4").addClass(currentClass);
-			/*
-			$(".span4").each(function(index) {
-			    $(this).addClass(currentClass);
-				if (currentClass ==  "clickbox clickbox-light") {
-					currentClass = "clickbox";
-				} else {
-					currentClass = "clickbox clickbox-light";
-				}				    
-			});			
-			*/
+			this.setElement(this.myPanelId);
+
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
 			mainApp.transitionAppPanel(this.myPanelId);
 
 			return this; //Do this at the end to allow for method chaining.			
+		},
+		
+		disciplinedetail: function(e) {
+			var disciplineid = e.currentTarget.id;
+			//this.cleanUp();
+			Backbone.history.navigate("#/discipline/" + disciplineid);
 		}
 	});
 	
@@ -150,7 +145,7 @@ DisciplineView = new function() {
 		last_discipline_id: -1,
 		
 		events: {
-			"click .clickbox"	:	"disciplinebox"
+			"click .clickbox"	:	"productdetail"
 		},
 		
 		initialize: function() {
@@ -181,6 +176,13 @@ DisciplineView = new function() {
 							});
 					});
 			});
+			$(window).bind("resize.discipline", _.bind(function(){
+					if(mainApp.currentPanelId==this.myPanelId){
+						this.resetColumns();
+						this.resizeColumns();
+						mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
+					}
+			}, this));
 		},
 		
 		loadCollection: function(discipline_id)	{
@@ -198,7 +200,7 @@ DisciplineView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(false, true, true);
+			mainApp.setHeaderOptions(true, true, true);
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
@@ -222,35 +224,61 @@ DisciplineView = new function() {
 					
 				});
 				
-				this.setElement("#product-list");
+				this.setElement(this.myPanelId);
 				
 				this.current_displine_id=this.requested_discipline_id;
-				
-				var currentClass="clickbox";
-				$(".span4").addClass(currentClass);
-				/*
-				$(".span4").each(function(index) {
-				    $(this).addClass(currentClass);
-					if (currentClass ==  "clickbox clickbox-light") {
-						currentClass = "clickbox";
-					} else {
-						currentClass = "clickbox clickbox-light";
-					}				    
-				});*/	
 			}
 			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			mainApp.transitionAppPanel(this.myPanelId);
-			
+			var that=this;
+			mainApp.transitionAppPanel(this.myPanelId,function(){
+				$('#product-list').imagesLoaded(function() {
+					that.resizeColumns();
+				});		
+			});	
 			return this; //Do this at the end to allow for method chaining.			
 			
 		},
-		disciplinebox : function(e) {
-			var disciplineid = this.options.displineId;
+		productdetail : function(e) {
+			var disciplineid = this.requested_discipline_id;
 			var productid = e.currentTarget.id;
-			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);			
+			//this.cleanUp();
+			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);
+		},
+		resizeColumns:function(){ //for setting the min-height of each column based on the maximun height of that row.
+			$(this.myPanelId+" .row").each(function(){
+				var currentTallest = 0;
+				$(this).children().each(function(i){
+					$(this).children().each(function(){
+						if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+					});
+				});
+				$(this).children().each(function(){
+					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+					// for ie6, set height since min-height isn't supported
+					if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currentTallest}); }
+					$(this).children().css({'min-height': currentTallest}); 
+				});
+		    
+			});
+		},
+		resetColumns:function(){ // for removing the min-height of each column.
+			$(this.myPanelId+" .row").each(function(){
+				$(this).children().each(function(){
+					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+					// for ie6, set height since min-height isn't supported
+					if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
+					$(this).children().css({'min-height':''}); 
+				});
+		    
+			});
+		},
+		cleanUp:function() { // for cleaning up view before moving to another view of backbone
+			this.undelegateEvents();
+			$(this).empty;
+			this.unbind();			
 		}
 	});
 	

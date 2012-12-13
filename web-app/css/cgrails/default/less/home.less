@@ -35,8 +35,20 @@
 		input[type="text"], input[type="email"], input[type="password"] {
 		    font-size: 17px;
 		    height: 37px;
-		    width: 95%;
+		    width: 100%;
 		    margin-top:1em;
+		}
+		
+		.errorMessage {
+			color: #b94a48;
+			padding:10px;
+			display:block;
+		}
+		input.invalid-name {
+			color: #b94a48;
+		    border-color: darken(#ee5f5b, 10%);
+		    @shadow: 0 0 6px lighten(#ee5f5b, 20%);
+		    .box-shadow(@shadow);
 		}
 		h3 {
 			color:@white;
@@ -75,18 +87,13 @@
 				.border-radius(5px);
 				margin-right:1em;
 				img {
-					 display: block;
-				     margin-left: auto;
-				     margin-right: auto;
-				     padding: 1em 0;
+   					  display: block;
+    				  margin: 1em auto;
 				}
 			}
 			.span6 {
 				p {
 					font-size:18px;
-				}
-				p:first-child {
-					font-weight:bold;
 				}
 			}
 		}
@@ -112,5 +119,103 @@
     			margin-top: 1em;
 		}
 	}
+}
+
+/*********************** Responsive Styles ************************************/ 
+@media (max-width: 480px) {  
 	
+	#business-info { 
+		h1 {
+			font-size:21px;
+			line-height: 25px;
+			padding-bottom:10px;
+		}
+	}
+	#loginform {
+		margin-top:0;
+		#ajaxLoginForm { 
+			border:0 none;
+			input[type="text"], input[type="email"], input[type="password"] {
+				margin-bottom:15px;
+				margin-top:0;
+			}
+			.hero-unit {
+				padding:0;
+				margin-bottom:10px;
+				background-color:transparent;
+				> p {
+					display:none;
+				}
+				.btn {
+					margin-top:10px;
+					font-size:18px;
+				}
+			}
+			h3 {
+				display:none;
+			}
+			margin-bottom:10px;
+		}
+		#loggedin-container {
+			border:0 none;
+			.hero-unit {
+				padding:0;
+				margin-bottom:10px;
+				background-color:transparent;
+				> p {
+					display:none;
+				}
+			}
+			h3 {
+				display:none;
+			}
+			#user-info {
+				div {
+					float:left;
+				}
+				.span3 {
+					width:30%;
+				}
+				.span6 {
+					width:60%;
+				}
+			}
+		}
+		#facebook-login {
+				margin-bottom:5px;
+				.facebook-text {
+					font-size:18px;
+		    		margin-left: 2em;
+				}
+				p {
+					i {
+						font-size:30px;
+					}
+				}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#loginform {
+		#ajaxLoginForm, #loggedin-container {
+			.hero-unit {
+				#forgot-pwd {
+					font-size:14px;
+				}
+			}
+			.span3 {
+				min-width: 35%;
+			}
+		}
+		#facebook-login {
+			.facebook-text {
+				font-size: 21px;
+	    		margin-left: 0.5em;
+			}
+			i {
+				font-size:36px;
+			}
+		}
+	}
 }

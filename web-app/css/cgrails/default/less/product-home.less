@@ -1,4 +1,17 @@
+/* ----------------- media.less customization to align product view--------------------------- */
+
+.media,
+.media .media {
+  margin-top: 0px;
+}
+
 #product-home	{
+	.container-fluid {
+		padding-left:0;
+		#product-desc {
+			margin-left:1%;
+		}
+	}
 	h3 {
 	    font-size: 22px;
 	    font-weight: 100;
@@ -13,43 +26,106 @@
 	}
 	
 	ul.playlist {
-		padding-left: 10px;
 		padding-bottom: 20px;
 		li	{
-		  	.border-radius(4px);
-			background-color: #545454;
-			padding-top: 5px;
-			padding-bottom: 5px;
+		  	#gradient > .vertical(#e9e9e9, darken(#e9e9e9, 5%));
+			line-height:44px;
 			margin-bottom: 5px;
-
-			i	{
-				color: @grayLighter;
-				font-size:12px;
-			}
-			
+			.border-radius(10px);
+			padding:0 5px 1px;
 			a	{
-				color: @grayLighter;
-				font-size:16px;
-				font-weight:100;
+				color: @black;
+				text-align:left;
+				i	{
+					font-size:20px;
+					margin-left:5px;
+					border-right:solid 2px white;
+					padding-right:10px;
+				}
+				span {
+					margin-right:15px;
+					margin-left:5px;
+				}
 			}
 		}
-		
 		.timing {
-    		background-color: #75C9DD;
+    		background-color: rgb(127,178,105);
+    		height:1.5em;
+    		top:10px;
+    		border:solid 1px #75C9DD;
+    		.timing-data {
+    			margin-top: 4px;
+    		}
     	}
 		
 	}
 	
 	ul.playlist li.sm2_playing, ul.playlist li.sm2_playing:hover {
-    	background-color: black;
+    	#gradient > .vertical(darken(#e9e9e9, 10%), darken(#e9e9e9, 15%));
 	}
 	
-	ul.playlist li .controls .statusbar .position {
-		background-color: #75C9DD;
-    	border-right: 3px solid #75C9DD;
+	ul.playlist li  {
+		.controls {
+			margin-top:0;
+			.statusbar {
+				.position {
+					background-color: #75C9DD;
+			    	border-right:1px solid #75C9DD;
+			    }
+			}
+		}
 	}
 	
-
+	ul.playlist li .controls .statusbar .loading {
+		background-color: darken(#E9E9E9, 20%);
+	}
+	.flashcardAssess {
+		margin:10px 0 15px;
+	}
+	#product-info	{
+		padding-bottom:5px;
+	}
+}
+/*********************** Responsive Styles ************************************/ 
+@media (max-width: 480px) { 
+	#product-home  {
+		margin-top:10px;
+		margin-left: 10px;
+	    h2 {
+			 font-size: 21px;
+		}
+		h3 {
+			font-size: 16px;
+		}
+	}
+	#playlist {
+		h2 {
+			display:none;
+		}
+	}
+	#product-info	{
+		#product-img {
+			width:35%;
+			float:left;
+			margin-right: 10px;
+		}
+		h2 {
+			 line-height: 1;
+			 margin:0;
+		}
+		
+		#product-desc {
+			width:60%;
+			float:left;
+			p {
+				display:none;
+			}
+		}
+	}
 }
 
-
+@media (min-width: 481px) and (max-width: 979px) {
+	#product-home  {
+		margin-top:10px;
+	}
+}

@@ -1,0 +1,74 @@
+{
+"products" : [{
+	"name": "On Cooking",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 1,
+	"author": "Pearson"
+},
+{
+	"name": "On Baking",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 2,
+	"author": "Pearson"
+},
+{
+	"name": "MyCulinaryLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 3,
+	"author": "Pearson"
+},
+{
+	"name": "NRA - The General Story",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 4,
+	"author": "Pearson"
+},
+{
+	"name": "NRA - The products (ServSafe, ServSafe Alcohol, ManageFirst)",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 5,
+	"author": "Pearson"
+},
+{
+	"name": "NRA - MyServSafeLab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 6,
+	"author": "Pearson"
+},
+{
+	"name": "Discovering Global Cuisines",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/culinary-discovering-global-cuisines/culinary-discovering-global-cuisines-thumb.jpg",
+	"image": "images/media/culinary-discovering-global-cuisines/culinary-discovering-global-cuisines.jpg",
+	"sequence": 7,
+	"author": "Krcek Allen Nancy"
+},
+{
+	"name": "Foundations of Menu Planning",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 8,
+	"author": "Traster Daniel"
+},
+{
+	"name": "The Professional Restaurant Manager",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 9,
+	"author": "Hayes David K"
+}]
+}

@@ -11,8 +11,8 @@ HeaderView = new function() {
 			headerbbView = new View();
 	};
 	
-	this.setHeaderMenu = function()	{
-		headerbbView.updateloginheader();
+	this.setHeaderMenu = function(show)	{
+		headerbbView.updateloginheader(show);
 	};
 	
 	this.setHomeIcon = function(show) {
@@ -78,34 +78,38 @@ HeaderView = new function() {
 		},
 		
 		homebutton : function() {
-			Backbone.history.navigate("#/home");
+			Backbone.history.navigate("#/discipline");
 			this.setBackIcon(false);
+			return false;
 		},
 		
 		logout : function() {
-			Authenticate.logout();
+			Backbone.history.navigate("#/home");
+			this.updateloginheader(false);
+			return false;
 		},
 		
-		updateloginheader : function() {
+		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
 			var doesElement = $("a.btn-navbar").find("span.icon-bar:visible").length;
 			if (doesElement <= 0) {
 				$("a.btn-navbar").hide();
 			}
 			***************/
-			
-			if (mainApp.userinfo.loggedin) {
-				$(".navbar-inner .loggedin").css("display", "block");
+			if (show == undefined) {
+				if (mainApp.userinfo.loggedin) {
+					$(".navbar-inner .loggedin").css("display", "block");
+				} else {
+					$(".navbar-inner .loggedin").css("display", "none");
+				}
 			} else {
-				$(".navbar-inner .loggedin").css("display", "none");
+				if (show) {
+					$(".navbar-inner .loggedin").css("display", "block");
+				} else {
+					$(".navbar-inner .loggedin").css("display", "none");
+				}				
 			}
-			if (window.location.hash == "#/home") {
-				TemplateManager.get('authenticate/home', function(template){
-					
-					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email});
-					$("#loginform").html(templateHTML);				
-			 	 });
-			}			
+				
 		},
 		
 		setHomeIcon : function(show) {

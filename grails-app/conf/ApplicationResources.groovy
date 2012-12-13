@@ -12,11 +12,10 @@ modules = {
 		resource url:'js/libs/bootstrap-dropdown.js'
 		resource url:'js/libs/bootstrap-transition.js'
 		resource url:'js/libs/bootstrap-modal.js'
+		resource url:'js/libs/bootstrap-tab.js'
 			
 		//Jquery UI for effects
-		resource url:'js/libs/jquery.ui.core.js'
-		resource url:'js/libs/jquery.ui.effect.js'
-		resource url:'js/libs/jquery.ui.effect-slide.js'
+		resource url:'js/libs/jquery.imagesloaded.js'
 		
 		//View Templates
 		resource url:'js/libs/mustache.js'

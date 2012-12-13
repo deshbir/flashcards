@@ -1,0 +1,66 @@
+{
+"products" : [{
+	"name": "MIBC",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 1,
+	"author": "Pearson"
+},
+{
+	"name": "Rich",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-rich/health-prof-rich-thumb.jpg",
+	"image": "images/media/health-prof-rich/health-prof-rich.jpg",
+	"sequence": 2,
+	"author": "Ann Ehrlich"
+},
+{
+	"name": "Vines",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-vines/health-prof-vines-thumb.jpg",
+	"image": "images/media/health-prof-vines/health-prof-vines.jpg",
+	"sequence": 3,
+	"author": "Stephen B. Levine"
+},
+{
+	"name": "Papazian",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-papazian/health-prof-papazian-thumb.jpg",
+	"image": "images/media/health-prof-papazian/health-prof-papazian.jpg",
+	"sequence": 4,
+	"author": "Elizabeth Astrid Papazian"
+},
+{
+	"name": "Turley",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-turley/health-prof-turley-thumb.jpg",
+	"image": "images/media/health-prof-turley/health-prof-turley.jpg",
+	"sequence": 5,
+	"author": "Susan M. Turley"
+},
+{
+	"name": "Myhplab for MIBC",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/generic/thumb.png",
+	"image": "images/media/generic/full.png",
+	"sequence": 6,
+	"author": "Pearson"
+},
+{
+	"name": "Mymedicalterminologylab",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-med-term-lab/health-prof-med-term-lab-thumb.jpg",
+	"image": "images/media/health-prof-med-term-lab/health-prof-med-term-lab.jpg",
+	"sequence": 7,
+	"author": "Pearson"
+},
+{
+	"name": "Med Term",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"thumbnail": "images/media/health-prof-med-term/health-prof-med-term-thumb.jpg",
+	"image": "images/media/health-prof-med-term/health-prof-med-term.jpg",
+	"sequence": 8,
+	"author": "Susan M. Turley"
+}]
+}

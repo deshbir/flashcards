@@ -1,0 +1,68 @@
+/* ----------------- Navbar --------------------------- */ 
+
+
+.navbar .nav > li > a {
+    padding: 10px 0;
+}
+
+.nav	{
+	i	{
+		font-size: 24px;
+	}
+	li#music {
+		a {
+			padding-top: 12px;
+			padding-bottom: 8px;
+			i {
+				font-size: 26px;
+				display:none;
+			}
+		} 
+	}
+}
+.navbar .nav > li {
+  margin: 0 9px;
+}
+
+.navbar {
+	.navbar-inner {
+		.border-radius(0);
+		padding-left:0;
+		padding-right:0;
+	}
+	.brand {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    text-align: center;
+	    a	{
+	    	color: #fff;
+	    }
+	    /*----------- This is done to avoid horizontal scroll on page ----------------- */
+	    padding-left: 0;
+   	    padding-right: 0;
+	}
+	.brand-button {
+		 a {
+		 	 height: 30px;
+    		 margin-top: 5px;
+    		 width: 30px;
+		 	.border-radius(20px);
+		 	 background-color:#999999;
+		 	 border:solid 1px black;
+			 i {
+			 	font-size:25px;
+			 	color: @white;
+			 	padding: 5px;
+			 }
+			 &:hover {
+			 	text-decoration:none;
+			 }
+		 }
+	  	position: relative;
+	  	left: 0;
+	  	z-index:10;
+	}
+}
+
+

@@ -1,6 +1,7 @@
 TestView = new function() {
+	
 
-	/* ----- Global View Variables ----------------------*/
+	/* ----- Global View Variables -----------------*/
 	var bbTestView = null;
 	var bbTrainView = null;
 	/* -------------------------------------------------*/
@@ -11,8 +12,7 @@ TestView = new function() {
 	
 	var Router = Backbone.Router.extend({
 		routes: {
-	      'product/:productId/test/:testId':'testhome',
-	      'product/:productId/testtraining/:testId':'testtrain'
+	      'product/:productId/test/:testId':'testhome'
 	    },	    
 	    
 	    testhome : function(productId, testId) {
@@ -31,24 +31,7 @@ TestView = new function() {
 				});				
 			}
 	    },
-	    
-	    testtrain : function(productId, testId) {
-			
-			if (bbTrainView == null) { //First OR After Browser Refresh
-				
-				bbTrainView = new TrainView({productId:productId,testId:testId});
-			
-			} else { //If the View has been created (bbView) never re-create
-				
-				bbTrainView.loadCollection(productId,testId);
-				bbTrainView.collection.fetch({
-					success: function(){
-						bbTrainView.render();
-					}
-				});				
-			}
-	    }	    
-	    
+	    	    
 	});
 
 	var View = Backbone.View.extend({
@@ -108,12 +91,25 @@ TestView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(false, true, true);
+			mainApp.setHeaderOptions(true, true, true);
 			
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM		
 			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
 
+				//Getting all the questions
+				var questions = this.collection.first().attributes.questions;
+				//Shuffling options
+				for(var i=0;i<questions.length;i++){
+					var optionArray = [];
+					for(var j=1;j<=7;j++){
+						if(questions[i]["option"+j])
+							//Stroring options in array
+							optionArray.push(questions[i]["option"+j]);
+					}
+					//Adding new parameter options which stores shuffled options.
+					questions[i].options=_.shuffle(optionArray);
+				}
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-home");
@@ -126,9 +122,13 @@ TestView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
+			var self = this;
 			mainApp.transitionAppPanel(this.myPanelId, function() {
 				$("#body-set > .body").css("display", "block");
-				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});			
+				if(document.activeElement)
+					$(document.activeElement).blur();
+				window.scrollTo(0, 0);
+				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1,callback:self.updateQuestionNumber});			
 			});
 			
 			
@@ -136,137 +136,73 @@ TestView = new function() {
 		},
 		nextQuestion: function() {
 			mainApp.flashcards.next();
+			//Calling function for IE browsers
+			if(mainApp.isIE)
+				this.updateQuestionNumber();
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
+			//Calling function for IE browsers
+			if(mainApp.isIE)
+				this.updateQuestionNumber();
 			return false;
+		},
+		updateQuestionNumber:function(){
+			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
 		},
 		resizeContainer: function() {
 			return false;
 		},
 		switchRadioState: function(e){
-			$(".options").find("span.radio-on").toggleClass("radio-on radio-off");
-			$(e.target).find("span.radio").toggleClass("radio-on radio-off");
+			if(this.timeOutObj){
+				clearTimeout(this.timeOutObj);
+				this.timeOutObj = null;
+			}
+			//Dummy settign for correct answer
+			var correct = $(e.currentTarget);
+			//Getting current clicked div element
+			var currentOptionparentDiv = mainApp.flashcards.slides[mainApp.flashcards.index];
+			var answered = correct;
+			
+			$(currentOptionparentDiv).find(".options").find("span.radio-on").toggleClass("radio-on radio-off");
+			$(e.currentTarget).find("span.radio").toggleClass("radio-on radio-off");
+			//Calculating correct answer matching text
+			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim().toUpperCase();
+			if(($(e.currentTarget).find("span.text").text()).trim().toUpperCase() !=correctAns){
+				$(currentOptionparentDiv).find(".options").children().each(function(){
+					if($(this).find("span.text").text().trim().toUpperCase() == correctAns){
+						correct = this;
+						return false;
+					}
+				})
+			} 
+			
+			//Clearing already marked ans if any
+			this.clearMarkedAnswer(currentOptionparentDiv);
+			var self = this;
+			//Calling markCorrectAnswer after the delay
+			this.timeOutObj = _.delay(function(){self.markCorrectAnswer(correct,answered,currentOptionparentDiv)},500);
+		},
+		markCorrectAnswer: function(correct,answered,currentOptionparentDiv){
+			$(correct).addClass('correct-ans');
+			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			$(answerExplanation).removeClass("hide");
+			$(answerExplanation).children(".explainanswer").text(this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answerDetails)
+			if(answered!=correct){
+				$(answered).addClass('wrong-ans');
+			}
+			mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
+		},
+		clearMarkedAnswer: function(currentOptionparentDiv){
+			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');
+			$(currentOptionparentDiv).find('.wrong-ans').removeClass('wrong-ans');
+			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			$(answerExplanation).addClass("hide");
+			$(answerExplanation).children(".explainanswer").text("");
+
 		}
 	});	
-
-	
-	var TrainView = Backbone.View.extend({
-		
-		/*--------------- Static Class Variable ------------*/
-		myPanelId:"#panel_test-home",
-		/*------------------------------------------------------*/
-
-		events: {
-			"click .next"	:	"nextQuestion",
-			"click .previous"	:	"prevQuestion",
-			"click .onlyQuestion"	:	"showOnlyQuestion",
-			"click .onlyAnswer"	:	"showOnlyAnswer",
-			"click .bothQuestionAnswer"	:	"showQuestionAnswer"
-		},
-		initialize: function() {
-			
-			/* -------------- Setup and Initialize INSTANCE Variables -----------------*/
-			this.template_header="";
-			this.template_body="";
-			this.current_product_id=-1;
-			this.current_test_id=-1;
-			this.current_mode="";
-			this.requested_product_id=-1;
-			this.requested_test_id=-1;
-			this.requested_mode="training";
-			/* ------------------------------------------------------------------------*/			
-			
-			this.loadCollection(this.options.productId,this.options.testId);
-			
-			//Fill Templates
-			var that = this;					
-			TemplateManager.get('test-train', 
-				function(template){
-					that.template_body = template;
-					that.collection.fetch({
-						success: function(){
-							//Always call render from initialize - as Backbone does not automatically call it.
-							that.render();
-						}
-					});
-			});
-		},
-		loadCollection: function(product_Id,test_Id, mode)	{
-
-			this.requested_mode=mode;
-			this.requested_product_id=product_Id;
-			this.requested_test_id=test_Id;
-			
-			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id)	{				
-				this.collection = TestCollection.get(this.requested_product_id,this.requested_test_id);
-			}
-		},		
-		render : function() {
-			
-			/*
-			 * 1st parameter - update header for login
-			 * 2nd parameter - showHomeLink
-			 * 3rd parameter - setBackLink 
-			 */
-			mainApp.setHeaderOptions(false, true, true);
-			
-			// Check if we need to update the PANEL HTML - 
-			// if we're back the same/previous product, then do NOT re-create the DOM		
-			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
-
-				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
-				$(this.myPanelId).html(compiled_template_body);
-				this.setElement("#test-train");
-				
-				this.current_product_id=this.requested_product_id;
-				this.current_test_id=this.requested_test_id;
-				this.current_mode="training";
-			}
-			
-			/*
-			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 */
-			mainApp.transitionAppPanel(this.myPanelId, function() {
-				$("#body-set > .body").css("display", "block");
-				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1});	
-				//$("#test-train .onlyQuestion").trigger('click');
-			});
-			
-			
-			return this; //Do this at the end to allow for method chaining.			
-		},
-		nextQuestion: function() {
-			mainApp.flashcards.next();
-			return false;
-		},
-		prevQuestion: function() {
-			mainApp.flashcards.prev();
-			return false;
-		},
-		showOnlyQuestion: function() {
-			var element = "#" + $(this.el).attr('id');
-			$(element + " .question").show()
-			$(element + " .answer").hide()
-			$(element + " .explainanswer").hide()
-			return false;
-		},
-		showOnlyAnswer: function(e){
-			var element = "#" + $(this.el).attr('id');
-			$(element + " .question").hide()
-			$(element + " .answer").show()
-			$(element + " .explainanswer").show()			
-			return false;
-		},
-		showQuestionAnswer: function(e){
-			var element = "#" + $(this.el).attr('id');
-			$(element + " .question").show()
-			$(element + " .answer").show()
-			$(element + " .explainanswer").show()			
-			return false;
-		}		
-	});
 	
 	this.routerInitialize = function(){
 		router = new Router();   
