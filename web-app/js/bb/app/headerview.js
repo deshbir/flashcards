@@ -35,7 +35,9 @@ HeaderView = new function() {
 		events: {
 			"click #back"	:	"backbutton",
 			"click #home"	:	"homebutton",
-			"click #logout"	:	"logout"
+			"click #logout"	:	"logout",
+			"click #admin-panel" :	"showModal",
+			"click #music" :	"pauseMusic"
 		},
 		
 		initialize: function() {
@@ -88,7 +90,13 @@ HeaderView = new function() {
 			this.updateloginheader(false);
 			return false;
 		},
-		
+		showModal : function(){
+			$('#ajax-error-modal').modal('show');
+		},
+		pauseMusic : function(){
+			mainApp.config.soundManagerObject.pause();
+			$("#music").css('display','none');
+		},
 		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
 			var doesElement = $("a.btn-navbar").find("span.icon-bar:visible").length;
@@ -108,6 +116,16 @@ HeaderView = new function() {
 				} else {
 					$(".navbar-inner .loggedin").css("display", "none");
 				}				
+			}
+			if(mainApp.config.musicPlaying){
+				$("#music").css("display", "block");
+			} else{
+				$("#music").css("display", "none");
+			}
+			if(mainApp.userinfo.admin){
+				$("#admin-panel").css("display", "block");
+			} else{
+				$("#admin-panel").css("display", "none");
 			}
 				
 		},

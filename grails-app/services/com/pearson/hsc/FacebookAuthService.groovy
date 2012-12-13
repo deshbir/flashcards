@@ -23,6 +23,7 @@ class FacebookAuthService {
 		user.email = me.email
 		user.firstName = me.first_name
 		user.lastName = me.last_name
+		user.isAdmin = false
 	}
 	
 	

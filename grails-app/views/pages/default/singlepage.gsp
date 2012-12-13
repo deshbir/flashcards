@@ -25,6 +25,9 @@
 				<sec:access expression="hasRole('ROLE_FACEBOOK')">
  					mainApp.userinfo.facebookuser = true;
     			</sec:access>
+    			<sec:access expression="hasRole('ROLE_ADMIN')">
+ 					mainApp.userinfo.admin = true;
+    			</sec:access>
 			</r:script>
 		</sec:ifLoggedIn>   		
 	</body>

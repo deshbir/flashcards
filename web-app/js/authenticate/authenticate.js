@@ -83,6 +83,7 @@ Authenticate = new function() {
 			type: 'GET',    	
 			success: function(response) {
 				mainApp.userinfo.loggedin = false;
+				mainApp.userinfo.admin = false;
 				mainApp.userinfo.facebookuser =  false;
 				Backbone.history.navigate("#/home",{trigger:true});
 				if (window.location.hash == "#/home") {

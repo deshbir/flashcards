@@ -70,7 +70,7 @@ com.compro.application.hsc = (function() {
 	var currentPanelId = -1;
 	var isIE = false;
 	var globalAjaxOptions = {
-		elProgress : ".main-header #loadingIcon",
+		elProgress : "#loadingIcon",
 		cssProgressLoading : "",
 		disableLoadingProgress : false
 	}
@@ -81,7 +81,8 @@ com.compro.application.hsc = (function() {
 	
 	// Config 
 	var config = {
-		soundManagerObject : null
+		soundManagerObject : null,
+		musicPlaying : false
 	};
 	
 	//User Logged In Flag
@@ -89,7 +90,8 @@ com.compro.application.hsc = (function() {
 			loggedin: false,
 			name: "John Doe",
 			email: "(john@pearson.com)",
-			facebookuser: false
+			facebookuser: false,
+			admin: false
 	}
 	
 	//Global Flashcards holder (object of SwipeJs)
@@ -241,16 +243,22 @@ com.compro.application.hsc = (function() {
 		if(userinfo.loggedin)	{
 			return;
 		}
-
 		userinfo.facebookuser =  isFacebookUser;
 		userinfo.loggedin = true;
-		Backbone.history.navigate("#/discipline"); 							
-		/*
-		 * 1st parameter - update header for login
-		 * 2nd parameter - showHomeLink
-		 * 3rd parameter - setBackLink 
-		 */
-		setHeaderOptions(true, false, false);
+		UserModel.get().fetch({
+			success: function(model, response){
+				if(model.get('isAdmin')){
+					mainApp.userinfo.admin = true;
+				}
+				/*
+				 * 1st parameter - update header for login
+				 * 2nd parameter - showHomeLink
+				 * 3rd parameter - setBackLink 
+				 */
+				setHeaderOptions(true, false, false);
+				Backbone.history.navigate("#/discipline");
+			}
+		});	
 	  		
 	}
 	

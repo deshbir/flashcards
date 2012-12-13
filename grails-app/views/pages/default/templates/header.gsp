@@ -15,7 +15,12 @@
 
 		<ul class="nav pull-right">
 			<!-- Logged In Menu Options	 START -->
-			<li id="music" class="{{home}} loggedin">
+			<li id="admin-panel" class="{{home}}">
+				<a href="javascript:void(0);" title="Click to see logs." class="hide">
+					<i class="icon-legal"></i>
+				</a>
+			</li>
+			<li id="music" class="{{home}}">
 				<a href="javascript:void(0);" title="Playing Audio. Select to pause.">
 					<i class="icon-volume-up"></i>
 				</a>
