@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="//connect.facebook.net/en_US/all.js" id="facebook-jssdk"></script>
+		<g:if test="${isFacebookLoginSuccess}">
+			<script src="//connect.facebook.net/en_US/all.js" id="facebook-jssdk"></script>
+		</g:if>	
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Pearson HSC</title>

@@ -75,6 +75,9 @@ HomeView = new function() {
 			} else {
 				var compiledTemplate = Mustache.render(view.template_body_home, {"loggedin": mainApp.userinfo.loggedin});
 				$("#loginform").html(compiledTemplate);
+				if (typeof FB != 'undefined') {
+					$("button#facebook-login").show();
+				}	
 				/*
 				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 				 */

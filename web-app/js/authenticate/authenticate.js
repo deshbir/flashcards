@@ -88,13 +88,13 @@ Authenticate = new function() {
 				mainApp.userinfo.admin = false;
 				mainApp.userinfo.facebookuser =  false;
 				UserModel.destroy();
-				Backbone.history.navigate("#/home",{trigger:true});
-				if (window.location.hash == "#/home") {
-					TemplateManager.get('authenticate/home', function(template){
-						var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
-						$("#loginform").html(templateHTML);				
-				 	 });
-				}	
+				TemplateManager.get('authenticate/home', function(template){
+					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
+					$("#loginform").html(templateHTML);	
+					if (typeof FB != 'undefined') {
+						$("button#facebook-login").show();
+					}					
+			 	 });
 				
 				/*
 				 * 1st parameter - update header for login
@@ -115,7 +115,9 @@ Authenticate = new function() {
 	}
 	
 	function formFacebookRedirectURI () {
-  		var URI = window.location.protocol + "//" + window.location.host + com.compro.cgrails.REQUEST_CONTEXT + "/"
+  		var URI = window.location.protocol + "//" + window.location.host 
+  					+ com.compro.cgrails.REQUEST_CONTEXT + "/"
+  					+ com.compro.cgrails.SKIN + "/main/facebookLoginSuccess/"  					
   		return URI;
   	}
 };

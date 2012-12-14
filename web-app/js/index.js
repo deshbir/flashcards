@@ -265,7 +265,7 @@ com.compro.application.hsc = (function() {
 	
 	function backbone_start_navigation()	{
 		Backbone.history.start();
-		if (location.href.indexOf("#access_token") != -1) { //Facebook login success
+		if (location.href.indexOf("?isFacebookLoginSuccess=") != -1) { //Facebook login success in iOS Home Screen Apps
 			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
 		}	
 		else if (location.href.indexOf("#") == -1) //Normal App startup

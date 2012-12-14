@@ -2,7 +2,15 @@ package com.compro.cgrails
 
 class MainController {
 	def index() {
-		render (view:"singlepage",model:[:])
+		boolean isFacebookLoginSuccess = false;
+		if (params.isFacebookLoginSuccess) {
+			isFacebookLoginSuccess = true;
+		}
+		render (view:"singlepage",model:[isFacebookLoginSuccess:isFacebookLoginSuccess])
+	}
+	
+	def facebookLoginSuccess() {
+		redirect(action: "index", params: [isFacebookLoginSuccess: true])
 	}
 	
 }
