@@ -64,6 +64,7 @@ Authenticate = new function() {
 	   		},{scope: 'email,user_likes'});  
   		}	 
 	},
+	
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
 		  if (response.status === 'connected') {
@@ -72,6 +73,7 @@ Authenticate = new function() {
 		});
 		ajaxLogout();		  
 	},
+	
 	this.setFacebookAppId = function(appId){
 		this.facebookAppId =  appId;
 	}	
@@ -85,6 +87,7 @@ Authenticate = new function() {
 				mainApp.userinfo.loggedin = false;
 				mainApp.userinfo.admin = false;
 				mainApp.userinfo.facebookuser =  false;
+				UserModel.destroy();
 				Backbone.history.navigate("#/home",{trigger:true});
 				if (window.location.hash == "#/home") {
 					TemplateManager.get('authenticate/home', function(template){

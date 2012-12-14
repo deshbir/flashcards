@@ -101,7 +101,7 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.pearson.hsc.
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.pearson.hsc.authenticate.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.pearson.hsc.authenticate.Role'
 
-grails.plugins.springsecurity.rememberMe.alwaysRemember = false
+grails.plugins.springsecurity.rememberMe.alwaysRemember = true
 
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 
