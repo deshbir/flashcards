@@ -41,10 +41,10 @@
 							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{.}}</span></button>
 							 {{/options}} 
 						</div>
-						<div class="answer-explanation hide">
+						<%--<div class="answer-explanation hide">
 							<p class="explainanswer"></p>
 						</div>
-					</div>
+					--%></div>
 					{{/questions}}
 				</div>									        		
         	</div>

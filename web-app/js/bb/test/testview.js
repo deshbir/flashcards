@@ -186,10 +186,10 @@ TestView = new function() {
 		},
 		markCorrectAnswer: function(correct,answered,currentOptionparentDiv){
 			$(correct).addClass('correct-ans');
-			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			/*var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
 			$(answerExplanation).removeClass("hide");
 			$(answerExplanation).children(".explainanswer").text(this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answerDetails)
-			if(answered!=correct){
+			*/if(answered!=correct){
 				$(answered).addClass('wrong-ans');
 			}
 			mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
@@ -197,9 +197,9 @@ TestView = new function() {
 		clearMarkedAnswer: function(currentOptionparentDiv){
 			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');
 			$(currentOptionparentDiv).find('.wrong-ans').removeClass('wrong-ans');
-			var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
+			/*var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
 			$(answerExplanation).addClass("hide");
-			$(answerExplanation).children(".explainanswer").text("");
+			$(answerExplanation).children(".explainanswer").text("");*/
 
 		}
 	});	
