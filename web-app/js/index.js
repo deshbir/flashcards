@@ -361,27 +361,25 @@ com.compro.application.hsc = (function() {
 		var panelItems = $('.panel-item');
 		if(this.currentPanelId == -1)  //First time
 		{	
+			panelItems.hide();
 			 $(newPanelId).show("fast",function() {
 				 if(!(typeof callback === 'undefined') )  {
 			       callback();  	
 				 }
 				 //set fixed width of panel on loading first time
 				 panelContainer.removeClass('easing');
-				 $(newPanelId).width($(newPanelId).width());
-				 panelContainer.width(2*$(newPanelId).outerWidth(true));
 			 });
 		}
-		else
-		{	
+		else{
 			$(this.currentPanelId).width($(this.currentPanelId).width());
-			$(newPanelId).width($(newPanelId).width());
+			$(newPanelId).width($(this.currentPanelId).width());
 			panelContainer.width($(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true));
-			var that=this;
+			/*var that=this;
 			$('.panel-item').each(function(){
 				if(that.currentPanelId.indexOf($(this).attr("id"))<0){
 					$(this).hide();
 				}
-			});
+			});*/
 			var translationWidth = 0;
 			if($(newPanelId).attr("data-order")>$(this.currentPanelId).attr("data-order")){
 				translationWidth = $(this.currentPanelId).outerWidth(true);
@@ -480,7 +478,10 @@ com.compro.application.hsc = (function() {
 					$("#panel-container").removeClass('easing');
 					applyTransition($("#panel-container"),0);
 					$("#panel-container").width("auto");
-					$('.panel-item').css("float","none");
+					$('.panel-item').css({
+						"float":"none",
+						"width":"auto"
+						});
 					var myApp = com.compro.application.hsc;
 					$('.panel-item').each(function(){
 						if(myApp.currentPanelId.indexOf($(this).attr("id"))<0){
@@ -488,7 +489,7 @@ com.compro.application.hsc = (function() {
 						}
 					});
 					$(myApp.currentPanelId).show();
-					$(myApp.currentPanelId).width("auto");
+					//$(myApp.currentPanelId).width("auto");
 				});
 				
 				logger.info("--- Normalized address bar hiding for iOS & Android");				
