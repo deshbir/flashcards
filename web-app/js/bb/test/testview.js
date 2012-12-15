@@ -165,13 +165,12 @@ TestView = new function() {
 			var currentOptionparentDiv = mainApp.flashcards.slides[mainApp.flashcards.index];
 			var answered = correct;
 			
-			$(currentOptionparentDiv).find(".options").find("span.radio-on").toggleClass("radio-on radio-off");
-			$(e.currentTarget).find("span.radio").toggleClass("radio-on radio-off");
+			$(e.currentTarget).find("i.radio-options").toggleClass("icon-quiz-circle icon-quiz-selected");
 			//Calculating correct answer matching text
 			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim().toUpperCase();
-			if(($(e.currentTarget).find("span.text").text()).trim().toUpperCase() !=correctAns){
+			if(($(e.currentTarget).find("span").text()).trim().toUpperCase() !=correctAns){
 				$(currentOptionparentDiv).find(".options").children().each(function(){
-					if($(this).find("span.text").text().trim().toUpperCase() == correctAns){
+					if($(this).find("span").text().trim().toUpperCase() == correctAns){
 						correct = this;
 						return false;
 					}
@@ -186,17 +185,21 @@ TestView = new function() {
 		},
 		markCorrectAnswer: function(correct,answered,currentOptionparentDiv){
 			$(correct).addClass('correct-ans');
+			$(correct).find("i.radio-options").attr("class" , "radio-options icon-quiz-correct");
 			/*var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
 			$(answerExplanation).removeClass("hide");
 			$(answerExplanation).children(".explainanswer").text(this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answerDetails)
 			*/if(answered!=correct){
 				$(answered).addClass('wrong-ans');
+				$(answered).find("i.radio-options").toggleClass("icon-quiz-selected icon-quiz-wrong");
 			}
 			mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 		},
 		clearMarkedAnswer: function(currentOptionparentDiv){
 			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');
 			$(currentOptionparentDiv).find('.wrong-ans').removeClass('wrong-ans');
+			$(currentOptionparentDiv).find('i.icon-quiz-correct').toggleClass("icon-quiz-correct icon-quiz-circle");
+			$(currentOptionparentDiv).find('i.icon-quiz-wrong').toggleClass("icon-quiz-wrong icon-quiz-circle");
 			/*var answerExplanation =$(currentOptionparentDiv).find("div.answer-explanation");
 			$(answerExplanation).addClass("hide");
 			$(answerExplanation).children(".explainanswer").text("");*/

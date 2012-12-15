@@ -38,7 +38,7 @@
 		        		<h2 class="question"><i class="icon-question-sign"></i> {{text}}</h2>
 		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
 							 {{#options}}
-							    <button class="btn btn-large radio-control"><span class="radio radio-off"></span><span class="text">{{.}}</span></button>
+							    <button class="btn radio-control"><i class="radio-options icon-quiz-circle"></i><span>{{.}}</span></button>
 							 {{/options}} 
 						</div>
 						<%--<div class="answer-explanation hide">

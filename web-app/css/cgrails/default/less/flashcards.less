@@ -60,11 +60,6 @@
 	  	
 	  	border-top: 1px solid gray;
 	}
-
-	.train	{
-		height:250px;
-		 text-align: center;
-	}	
 		
 	.body	{
 	  	padding:5px 20px 20px;
@@ -74,6 +69,7 @@
 			font-size: 14px;
 			font-style: italic;
 		}
+		
 		
 		.answer-explanation{
 			width:95%;
@@ -104,19 +100,13 @@
 			width:95%;
 		}	
 		.btn.correct-ans{
-			span.text{
+			span{
 				color: @green;
-			}
-			span.radio{
-				background:url('../../../../images/radio-correct.png')no-repeat left center;
 			}
 		}
 		.btn.wrong-ans{
-			span.text{
+			span{
 				color: @red;
-			}
-			span.radio{
-				background:url('../../../../images/radio-wrong.png')no-repeat left center;
 			}
 		}
 		
@@ -129,34 +119,24 @@
 	  		.border-radius(8px);
 	  		margin-left: 20px;
 	  		text-align: left;
-	  		padding:20px;
+ 			padding: 10px;
 	  		
 	  		i	{
-	  			font-size:24px;
+	  			font-size:40px;
 	  			margin-right:10px;
+	  			vertical-align: middle;
 	  		}
 	  		
+	  		i.icon-quiz-correct {
+	  			color: #46A546;	
+	  		}
+	  		
+	  		i.icon-quiz-wrong {
+	  			color: #9D261D;	
+	  		}
+	  			  		
 	  		border: 0px none;
-			
-			span.text {
-				display: block;
-				margin-left:54px;
-				margin-top: -18px;
-			}
-			
-			span.radio-on {
-				background:url('../../../../images/radio-on.png')no-repeat left center;
-				padding-left: 50px;
-    			padding-bottom: 15px;
-				padding-top: 15px;				
-			}
-			
-			span.radio-off {
-				background:url('../../../../images/radio-off.png')no-repeat left center;
-				padding-left: 50px;
-    			padding-bottom: 15px;
-				padding-top: 15px;	
-			}
+
 	  	 }
 	}
 }
