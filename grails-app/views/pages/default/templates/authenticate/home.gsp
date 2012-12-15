@@ -12,7 +12,7 @@
 							<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image"/>
 						{{/facebookuser}}
 						{{^facebookuser}}
-							<a><i class="icon-user-hsc"></i></a>
+							<a class="btn"><i class="icon-user-hsc"></i></a>
 						{{/facebookuser}}						
 					</div>
 					<div class="span6">
