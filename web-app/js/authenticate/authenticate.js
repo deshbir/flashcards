@@ -104,8 +104,8 @@ Authenticate = new function() {
 				mainApp.setHeaderOptions(true, false, false);
 			}
 		});
-		if(mainApp.config.soundManagerObject!=null)
-			mainApp.config.soundManagerObject.stop();
+		if(mainApp.soundManagerConfig.soundManagerObject!=null)
+			mainApp.soundManagerConfig.soundManagerObject.stop();
 	}
 	function isStandaloneWebApp () {
 		if(("standalone" in window.navigator) && window.navigator.standalone){

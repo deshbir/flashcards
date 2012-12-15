@@ -8,36 +8,38 @@ ProductView = new function() {
 	var mainApp = com.compro.application.hsc;
 	pagePlayer.config.updatePageTitle = false;
 	pagePlayer.events.play = function(){
-		mainApp.config.musicPlaying = true;
+		mainApp.soundManagerConfig.musicPlaying = true;
+		mainApp.soundManagerConfig.musicStopped = false;
 		var soundManager = this;
-		mainApp.config.soundManagerObject = soundManager;
+		mainApp.soundManagerConfig.soundManagerObject = soundManager;
 		pagePlayerPlay.call(soundManager);
-		$("#product-home i.icon-pause").toggleClass('icon-volume-up icon-pause');
 		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerPause = pagePlayer.events.pause;
 	pagePlayer.events.pause = function(){
-		mainApp.config.musicPlaying = false;
+		mainApp.soundManagerConfig.musicPlaying = false;
 		pagePlayerPause.call(this);
 		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
 	}
 	var pagePlayerResume = pagePlayer.events.resume;
 	pagePlayer.events.resume = function(){
-		mainApp.config.musicPlaying = true;
+		mainApp.soundManagerConfig.musicPlaying = true;
 		pagePlayerResume.call(this);
 		$("#product-home .sm2_playing i").addClass('icon-volume-up');
 		$("#product-home .sm2_playing i").addClass('icon-pause'); 
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
-		mainApp.config.musicPlaying = false;
+		mainApp.soundManagerConfig.musicPlaying = false;
+		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
 		$("#product-home .sm2_playing i").removeClass('icon-pause');
 		pagePlayerStop.call(this);
 	}
 	var pagePlayerFinish = pagePlayer.events.finish;
 	pagePlayer.events.finish = function(){
-		mainApp.config.musicPlaying = false;
+		mainApp.soundManagerConfig.musicPlaying = false;
+		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
 		$("#product-home .sm2_playing i").removeClass('icon-pause');
 		pagePlayerFinish.call(this);
