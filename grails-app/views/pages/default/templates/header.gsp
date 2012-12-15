@@ -17,7 +17,7 @@
 			</li>
 			<li id="music" class="{{home}}">
 				<a href="javascript:void(0);" title="Playing Audio. Select to pause.">
-					<i class="icon-volume-up"></i>
+					<i class="icon-play"></i>
 				</a>
 			</li>
 			<li id="home" class="{{home}} loggedin">
