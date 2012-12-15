@@ -37,7 +37,8 @@ HeaderView = new function() {
 			"click #home"	:	"homebutton",
 			"click #logout"	:	"logout",
 			"click #admin-panel" :	"showModal",
-			"click #music" :	"pauseMusic"
+			"click #music .icon-play" :	"playMusic",
+			"click #music .icon-pause" : "pauseMusic"
 		},
 		
 		initialize: function() {
@@ -91,11 +92,27 @@ HeaderView = new function() {
 			return false;
 		},
 		showModal : function(){
-			$('#ajax-error-modal').modal('show');
+			var logs = JSLog.Logs['App.Login'];
+		    var innerHTML = "<ol>";
+		    var planeLogs = "";
+		    for (var i = 0, len = logs.length; i < len; i++) {
+		    	innerHTML += "<li>" +logs[i] + "</li>";
+		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
+		    	planeLogs += logs[i]+" ~~ ";
+	        }
+		    innerHTML += "</ol>";
+		    $('#logs').html(innerHTML);
+		    $('#ajax-error-modal').modal('show');
 		},
 		pauseMusic : function(){
-			mainApp.config.soundManagerObject.pause();
-			$("#music").css('display','none');
+			mainApp.soundManagerConfig.soundManagerObject.pause();
+			$("#music i").addClass('icon-play');
+			$("#music i").removeClass('icon-pause');
+		},
+		playMusic : function(){
+			mainApp.soundManagerConfig.soundManagerObject.play();
+			$("#music i").removeClass('icon-play');
+			$("#music i").addClass('icon-pause');
 		},
 		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
@@ -117,8 +134,15 @@ HeaderView = new function() {
 					$(".navbar-inner .loggedin").css("display", "none");
 				}				
 			}
-			if(mainApp.config.musicPlaying){
+			if(!mainApp.soundManagerConfig.musicStopped){
 				$("#music").css("display", "block");
+				if(mainApp.soundManagerConfig.musicPlaying){
+					$("#music i").removeClass('icon-play');
+					$("#music i").addClass('icon-pause');
+				} else {
+					$("#music i").addClass('icon-play');
+					$("#music i").removeClass('icon-pause');
+				}
 			} else{
 				$("#music").css("display", "none");
 			}

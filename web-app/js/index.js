@@ -79,10 +79,15 @@ com.compro.application.hsc = (function() {
 	/*                 PRIVATE MEMBERS                     */
 	/********************************************************/
 	
+	// SoundManager config 
+	var soundManagerConfig = {
+		soundManagerObject : null,
+		musicPlaying : false,
+		musicStopped :  true
+	};
+	
 	// Config 
 	var config = {
-		soundManagerObject : null,
-		musicPlaying : false
 	};
 	
 	//User Logged In Flag
@@ -156,38 +161,46 @@ com.compro.application.hsc = (function() {
 		$(document).ajaxError(function(event, xhr, settings, exception) {
 			var msgHeader = "Ajax Error!";
 		    var msgTitle = "Oops!";
+		    var statusCode = "?..";
+		 
 		    var msgDesc = "An error has occured. Please try again by refreshing your browser or restarting the Application. If the problem persists, please contact your System Administrator.";
 
 		    if (xhr.status === 0) { // Not connected. Verify Network
+		    	statusCode = xhr.status;
+		    	msgHeader = statusCode + " :No Network Detected!";
 		        msgDesc = xhr.responseText;
 		    } else if (xhr.status == 401) { // UnAuthorized
 		    	Backbone.history.navigate("#/home");
 			    return true;
 		    } else if (xhr.status == 403) { // Requested page not found. [404]
-		        msgHeader = "[403]:The requested url is forbidden.";
+		    	statusCode = xhr.status;
+		    	msgHeader = statusCode + " :The requested url is forbidden.";
 		        msgDesc = xhr.responseText;
 		    } else if (xhr.status == 404) { // Requested page not found. [404]
-		        msgHeader = "[404]:Requested page not found.";
+		    	statusCode = xhr.status;
+		    	msgHeader = statusCode + " :Requested page not found.";
 		        msgDesc = xhr.responseText;
 		    } else if (xhr.status > 400 && xhr.status< 500) { // Requested page not found. [404]
-		    	msgHeader = xhr.status;
-		    	msgHeader = ":Client-Side Error.";
+		    	statusCode = xhr.status;
+		    	msgHeader = statusCode + " :Client-Side Error.";
 		        msgDesc = xhr.responseText;
 		    } else if (xhr.status >= 500) { //Internal Server Error [500]
-		        msgHeader = "[500]:Internal Server Error";
+		    	statusCode = xhr.status;
+		    	msgHeader = statusCode + " :Internal Server Error";
 		        msgDesc = xhr.responseText;
 		    } else if (exception === 'parsererror') { //Requested JSON parse failed
-		        msgHeader = "Response Parsing Error (Invalid JSON)";
+		        msgHeader = statusCode + " :Response Parsing Error (Invalid JSON)";
 		        msgDesc = xhr.responseText;
 		    } else if (exception === 'timeout') { //Server Timeout - Check Connection
-		        msgHeader = "Request to server has timed out";
-		        msgTitle = "No Network Detected!";
+		        msgHeader = statusCode + "Request to server has timed out";
+		        msgTitle = " :No Network Detected!";
 		        msgDesc = "You don't seem to be connected to the network. Please check network settings or connectivity and try again.";
 		    } else if (exception === '') { //Server Aborted request
-		       msgHeader = "Server Aborted Request";
+		       msgHeader = statusCode + " :Server Aborted Request";
+		       msgDesc = xhr.responseText
 		    } else { //Unknown Error
-		       msgHeader = "Unknown Error";    
-		        //xhr.responseText               
+		       msgHeader = statusCode + " :Unknown Error";    
+		       msgDesc = xhr.responseText               
 		    }
 		    
 		    var logs = JSLog.Logs['App.Login'];
@@ -256,9 +269,9 @@ com.compro.application.hsc = (function() {
 				 * 3rd parameter - setBackLink 
 				 */
 				setHeaderOptions(true, false, false);
-				Backbone.history.navigate("#/discipline");
 			}
 		});	
+		Backbone.history.navigate("#/discipline");
 	  		
 	}
 	
@@ -523,6 +536,7 @@ com.compro.application.hsc = (function() {
 
 	return	{
 		"config":config,
+		"soundManagerConfig":soundManagerConfig,
 		"userinfo": userinfo,
 		"flashcards":flashcards,
 		"appHeader":appHeader,
