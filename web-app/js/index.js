@@ -359,77 +359,79 @@ com.compro.application.hsc = (function() {
 	function transitionAppPanel(newPanelId, callback) {
 		var panelContainer = $('#panel-container');
 		var panelItems = $('.panel-item');
-			if(this.currentPanelId == -1)  //First time
-			{	
-				 $(newPanelId).show("fast",function() {
-					 if(!(typeof callback === 'undefined') )  {
-				       callback();  	
-					 }
-				 });
-			// onResizeTranslationHandler(newPanelId);
-			 
-			}
-			else
-			{	
-			
-			panelContainer.addClass('easing');
-			panelItems.css("visibility","hidden");
-				$(newPanelId).css("visibility","visible");
-				$(this.currentPanelId).css("visibility","visible");
-				var itemWidth = $("#bb-container").width();
-			panelContainer.width(itemWidth * panelItems.length);
-				$('.panel-item').width(itemWidth);
-			var translationWidth = $(newPanelId).attr("data-order") * -itemWidth;
-			applyTransition(panelContainer, translationWidth);
-				if(!(typeof callback === 'undefined') )	{
-					callback();	
-				}
-			panelContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(event){ 
-				/*
-				 * temporary check -- needs to be fixed
-				 * transitionend fired on buttons
-				 */
-				if(event.target!=$("#panel-container")[0]){
-					//logger.info("transitionend fired on" + event.target);
-					return;
-				}
-				var myApp = com.compro.application.hsc;
-				$('.panel-item').css("visibility","hidden");
-				$(myApp.currentPanelId).css("visibility","visible");
-				myApp.onResizeTranslationHandler(myApp.currentPanelId);
-			});
-			}
-			this.currentPanelId = newPanelId;
-			
+		if(this.currentPanelId == -1)  //First time
+		{	
+			 $(newPanelId).show("fast",function() {
+				 if(!(typeof callback === 'undefined') )  {
+			       callback();  	
+				 }
+				 //set fixed width of panel on loading first time
+				 panelContainer.removeClass('easing');
+				 $(newPanelId).width($(newPanelId).width());
+				 panelContainer.width(2*$(newPanelId).outerWidth(true));
+			 });
 		}
+		else
+		{	
+			$(this.currentPanelId).width($(this.currentPanelId).width());
+			$(newPanelId).width($(newPanelId).width());
+			panelContainer.width($(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true));
+			var that=this;
+			$('.panel-item').each(function(){
+				if(that.currentPanelId.indexOf($(this).attr("id"))<0){
+					$(this).hide();
+				}
+			});
+			var translationWidth = 0;
+			if($(newPanelId).attr("data-order")>$(this.currentPanelId).attr("data-order")){
+				translationWidth = $(this.currentPanelId).outerWidth(true);
+				applyTransition(panelContainer, 0);
+			}else{
+				applyTransition(panelContainer, -$(this.currentPanelId).outerWidth(true));
+			}
+			$(newPanelId).show();
+		panelItems.css("float","left");
+		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
+		panelContainer.addClass('easing');
+		applyTransition(panelContainer, -translationWidth);
+			if(!(typeof callback === 'undefined') )	{
+				callback();	
+			}
+		}
+		this.currentPanelId = newPanelId;
+		
+	}
+	
 	/*
 	 * function to apply cross browser transition effect for sliding
 	 * (works for only X coordinate)
 	 * @params 
-	 * 		- element to apply the trasition on
-	 * 		- width in X coordinate (can be -ve or +ve)
+	 * 		- element(jquery wrapper) to apply the trasition on
+	 * 		- width to be translated (can be -ve or +ve)
 	 * */
 	function applyTransition(element, width){
-		element.css("transform","translate3d("+width+"px,0,0)");
-		element.css("-webkit-transform","translate3d("+width+"px,0,0)");
-		element.css("-moz-transform","translate3d("+width+"px,0,0)");
-		// For IE 10.0
-		element.css("-ms-transform","translate3d("+width+"px,0,0)");
-		// For IE 9.0
-		element.css("-ms-transform","translateX("+width+"px)");
-		element.css("-o-transform","translate3d("+width+"px,0,0)");
+		element.css({
+			"transform":"translate3d("+width+"px,0,0)",
+			"-webkit-transform":"translate3d("+width+"px,0,0)",
+			"-moz-transform":"translate3d("+width+"px,0,0)",
+			// For IE 10.0
+			"-ms-transform":"translate3d("+width+"px,0,0)",
+			// For IE 9.0
+			"-ms-transform":"translateX("+width+"px)",
+			"-o-transform":"translate3d("+width+"px,0,0)"
+		});
 	}
 	/*function to accomodate resizing of browser window or content.
 	 * @params - currentPanelId
 	 * */
 	function onResizeTranslationHandler(panelId){
-		$("#panel-container").removeClass('easing');
+		/*$("#panel-container").removeClass('easing');
 		var itemWidth = $("#bb-container").width();
 		$("#panel-container").width(itemWidth * $(".panel-item").length);
 		$('.panel-item').width(itemWidth);
 		var translationWidth = $(panelId).attr("data-order") * -itemWidth;
 		applyTransition($("#panel-container"), translationWidth);
-		$("#bb-container").height($(panelId).height());
+		$("#bb-container").height($(panelId).height());*/
 	}
 		
 	/********************************************************/
@@ -463,6 +465,31 @@ com.compro.application.hsc = (function() {
 					onResizeTranslationHandler(com.compro.application.hsc.currentPanelId);
 					//com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
 				}, this));
+				
+				
+				//called on end of transition of panel-container
+				$("#panel-container").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(event){ 
+					/*
+					 * temporary check -- needs to be fixed
+					 * transitionend fired on buttons by bootstrap
+					 */
+					if(event.target!=$("#panel-container")[0]){
+						//logger.info("transitionend fired on" + event.target);
+						return;
+					}
+					$("#panel-container").removeClass('easing');
+					applyTransition($("#panel-container"),0);
+					$("#panel-container").width("auto");
+					$('.panel-item').css("float","none");
+					var myApp = com.compro.application.hsc;
+					$('.panel-item').each(function(){
+						if(myApp.currentPanelId.indexOf($(this).attr("id"))<0){
+							$(this).hide();
+						}
+					});
+					$(myApp.currentPanelId).show();
+					$(myApp.currentPanelId).width("auto");
+				});
 				
 				logger.info("--- Normalized address bar hiding for iOS & Android");				
 				/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
