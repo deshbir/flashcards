@@ -1,58 +1,56 @@
 {
 "products" : [{
-	"name": "The Paralegal Professional",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/paralegal-professional/paralegal-professional-thumb.jpg",
-	"image": "images/media/paralegal-professional/paralegal-professional.jpg",
+	"name": "The Paralegal Professional,4e",
+	"description": "The Paralegal Professional walkthrough",
+	"thumbnail": "images/assets/paralegal/the paralegal professional/the paralegal professional-thumb.png",
+	"image": "images/assets/paralegal/the paralegal professional/the paralegal professional.png",
 	"sequence": 1,
-	"author": "Thomas F. Goldman"
+	"type": "book",
+	"author": "Goldman"
 },
 {
-	"name": "Legal Research and Writing",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Real Estate Fundamentals,1e",
+	"description": " Real Estate Fundamentals walkthrough",
+	"thumbnail": "images/assets/paralegal/real estate fundamentals/real estate fundamentals-thumb.gif",
+	"image": "images/assets/paralegal/real estate fundamentals/real estate fundamentals.gif",
 	"sequence": 2,
-	"author": "Myers"
+	"type": "book",
+	"author": "Hughes"
 },
 {
-	"name": "Real Estate Fundamentals",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Ethics for the Legal Professional,8e",
+	"description": "Ethics for the Legal Professional Walkthrough",
+	"thumbnail": "images/assets/paralegal/ethics for the legal prof/ethics for the legal prof-thumb.jpg",
+	"image": "images/assets/paralegal/ethics for the legal prof/ethics for the legal prof.jpg",
 	"sequence": 3,
-	"author": "Alice Hughes"
+	"type": "book",
+	"author": "Orlik"
 },
 {
-	"name": "Ethics for the Legal Professional",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/ethics-legal-professional/ethics-legal-professional-thumb.jpg",
-	"image": "images/media/ethics-legal-professional/ethics-legal-professional.jpg",
+	"name": "Torts and Personal Injury Law,4e",
+	"description": "Torts and Personal Injury Law Walkthrough",
+	"thumbnail": "images/assets/paralegal/torts and pers injury law/torts and pers injury law-thumb.gif",
+	"image": "images/assets/paralegal/torts and pers injury law/torts and pers injury law.gif",
 	"sequence": 4,
-	"author": "Deborah Orlik"
+	"type": "book",
+	"author": "Jeffries"
 },
 {
-	"name": "Torts and Personal Injury Law",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Tort Law , 2e",
+	"description": "Tort Law walkthrough",
+	"thumbnail": "images/assets/paralegal/tort law/tort law-thumb.jpg",
+	"image": "images/assets/paralegal/tort law/tort law.jpg",
 	"sequence": 5,
-	"author": "Jeffries Richard"
-},
-{
-	"name": "Tort Law",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/tort-law/tort-law-thumb.jpg",
-	"image": "images/media/tort-law/tort-law.jpg",
-	"sequence": 6,
-	"author": "Hillary J. Michaud"
+	"type": "book",
+	"author": "Michaud"
 },
 {
 	"name": "MyLegalStudiesLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 7,
+	"description": "MyLegalStudiesLab walkthrough",
+	"thumbnail": "images/assets/paralegal/mylegalstudieslab/mylegalstudieslab-thumb.png",
+	"image": "images/assets/paralegal/mylegalstudieslab/mylegalstudieslab.png",
+	"sequence": 6,
+	"type": "lab",
 	"author": "Pearson"
 }]
 }

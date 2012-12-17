@@ -1,74 +1,29 @@
 {
 "products" : [{
-	"name": "On Cooking",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "On Cooking & On Baking: The Story",
+	"description": "The Labensky story for On Cooking and On Baking",
+	"thumbnail": "images/assets/culinary/on cooking - on baking/on cooking - on baking-thumb.jpg",
+	"image": "images/assets/culinary/on cooking - on baking/on cooking - on baking.jpg",
 	"sequence": 1,
-	"author": "Pearson"
-},
-{
-	"name": "On Baking",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 2,
-	"author": "Pearson"
+	"type": "book",
+	"author": "Labensky"
 },
 {
 	"name": "MyCulinaryLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"description": "MyCulinaryLab walkthrough",
+	"thumbnail": "images/assets/culinary/myculinarylab/myculinarylab-thumb.png",
+	"image": "images/assets/culinary/myculinarylab/myculinarylab.png",
+	"sequence": 2,
+	"type": "lab",
+	"author": "Pearson"
+},
+{
+	"name": "NRA: The Story",
+	"description": "A brief overview of the NRA and the four main solutions that Pearson sells.",
+	"thumbnail": "images/assets/culinary/nra the story/nra the story-thumb.jpeg",
+	"image": "images/assets/culinary/nra the story/nra the story.jpeg",
 	"sequence": 3,
+	"type": "lab",
 	"author": "Pearson"
-},
-{
-	"name": "NRA - The General Story",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 4,
-	"author": "Pearson"
-},
-{
-	"name": "NRA - The products (ServSafe, ServSafe Alcohol, ManageFirst)",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 5,
-	"author": "Pearson"
-},
-{
-	"name": "NRA - MyServSafeLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 6,
-	"author": "Pearson"
-},
-{
-	"name": "Discovering Global Cuisines",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/culinary-discovering-global-cuisines/culinary-discovering-global-cuisines-thumb.jpg",
-	"image": "images/media/culinary-discovering-global-cuisines/culinary-discovering-global-cuisines.jpg",
-	"sequence": 7,
-	"author": "Krcek Allen Nancy"
-},
-{
-	"name": "Foundations of Menu Planning",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 8,
-	"author": "Traster Daniel"
-},
-{
-	"name": "The Professional Restaurant Manager",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 9,
-	"author": "Hayes David K"
 }]
 }

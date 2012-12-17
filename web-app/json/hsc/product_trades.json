@@ -1,26 +1,29 @@
 {
 "products" : [{
-	"name": "NCCER - The General Story",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "NCCER: The Story",
+	"description": "An overview of NCCER, the credentials they provide, the products we jointly publish, knowing when to sell NCCER, and the tips for how to effectively sell the solution.",
+	"thumbnail": "images/assets/trades/nccer the story/nccer the story-thumb.jpg",
+	"image": "images/assets/trades/nccer the story/nccer the story.jpg",
 	"sequence": 1,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
-	"name": "NCCER - The Product Line",
+	"name": "HVAC,2e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"thumbnail": "images/assets/trades/hvac/hvac-thumb.jpg",
+	"image": "images/assets/trades/hvac/hvac.jpg",
 	"sequence": 2,
-	"author": "Pearson"
+	"type": "book",
+	"author": "Stanfield"
 },
 {
 	"name": "NCCERconnect",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"description": "A unique online course supplement in the form of an electronic book and essential course management tools ",
+	"thumbnail": "images/assets/trades/nccerconnect/nccerconnect-thumb.jpg",
+	"image": "images/assets/trades/nccerconnect/nccerconnect.jpg",
 	"sequence": 3,
+	"type": "lab",
 	"author": "Pearson"
 }]
 }

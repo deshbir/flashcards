@@ -1,66 +1,38 @@
 {
 "products" : [{
-	"name": "MIBC",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "MIBC Overview",
+	"description": "What is MIBC and what are the instructors talking about?   Learn how to have a great conversation for a solution sale.",
+	"thumbnail": "images/assets/health prof/mibc overview/mibc overview-thumb.jpg",
+	"image": "images/assets/health prof/mibc overview/mibc overview.jpg",
 	"sequence": 1,
-	"author": "Pearson"
+	"type": "book",
+	"author": "Various"
 },
 {
-	"name": "Rich",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-rich/health-prof-rich-thumb.jpg",
-	"image": "images/media/health-prof-rich/health-prof-rich.jpg",
+	"name": "Medical Coding: A Journey Plus,1e",
+	"description": "How to win vs Buck with Rich.  (For PLS Reps)",
+	"thumbnail": "images/assets/health prof/medical coding/medical coding-thumb.jpg",
+	"image": "images/assets/health prof/medical coding/medical coding.jpg",
 	"sequence": 2,
-	"author": "Ann Ehrlich"
+	"type": "book",
+	"author": "Rich"
 },
 {
-	"name": "Vines",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-vines/health-prof-vines-thumb.jpg",
-	"image": "images/media/health-prof-vines/health-prof-vines.jpg",
+	"name": "Medical Language,3e",
+	"description": "Pearson's number one selling med term book set to take the number one market position in 2013.",
+	"thumbnail": "images/assets/health prof/medical language/medical language-thumb.jpg",
+	"image": "images/assets/health prof/medical language/medical language.jpg",
 	"sequence": 3,
-	"author": "Stephen B. Levine"
+	"type": "book",
+	"author": "Turley"
 },
 {
-	"name": "Papazian",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-papazian/health-prof-papazian-thumb.jpg",
-	"image": "images/media/health-prof-papazian/health-prof-papazian.jpg",
+	"name": "MyMedicalTerminologyLab",
+	"description": "New to our Medical Terminology list in 2013.",
+	"thumbnail": "images/assets/health prof/mymedicalterminologylab/mymedicalterminologylab-thumb.png",
+	"image": "images/assets/health prof/mymedicalterminologylab/mymedicalterminologylab.png",
 	"sequence": 4,
-	"author": "Elizabeth Astrid Papazian"
-},
-{
-	"name": "Turley",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-turley/health-prof-turley-thumb.jpg",
-	"image": "images/media/health-prof-turley/health-prof-turley.jpg",
-	"sequence": 5,
-	"author": "Susan M. Turley"
-},
-{
-	"name": "Myhplab for MIBC",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 6,
+	"type": "lab",
 	"author": "Pearson"
-},
-{
-	"name": "Mymedicalterminologylab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-med-term-lab/health-prof-med-term-lab-thumb.jpg",
-	"image": "images/media/health-prof-med-term-lab/health-prof-med-term-lab.jpg",
-	"sequence": 7,
-	"author": "Pearson"
-},
-{
-	"name": "Med Term",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/health-prof-med-term/health-prof-med-term-thumb.jpg",
-	"image": "images/media/health-prof-med-term/health-prof-med-term.jpg",
-	"sequence": 8,
-	"author": "Susan M. Turley"
 }]
 }

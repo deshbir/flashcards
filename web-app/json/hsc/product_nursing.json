@@ -1,98 +1,92 @@
 {
 "products" : [{
-	"name": "Med Surg,2e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/nursing-med-surg/nursing-med-surg-thumb.jpg",
-	"image": "images/media/nursing-med-surg/nursing-med-surg.jpg",
+	"name": "Medical Surgical Nursing,2e",
+	"description": "An overview of Osborn's Medical Surgical Nursing",
+	"thumbnail": "images/assets/nursing/med surg nursing/med surg nursing-thumb.jpg",
+	"image": "images/assets/nursing/med surg nursing/med surg nursing.jpg",
 	"sequence": 1,
-	"author": "Kathleen S. Osborn"
+	"type": "book",
+	"author": "Osborne"
 },
 {
-	"name": "Adams Pharmacology,4e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Pharmacology,4e",
+	"description": "An overview of Adams' Pharmacology",
+	"thumbnail": "images/assets/nursing/pharmacology/pharmacology-thumb.jpg",
+	"image": "images/assets/nursing/pharmacology/pharmacology.jpg",
 	"sequence": 2,
-	"author": "Pearson"
+	"type": "book",
+	"author": "Adams"
 },
 {
 	"name": "Maternal Newborn,8e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/maternal-newborn/maternal-newborn-thumb.jpg",
-	"image": "images/media/maternal-newborn/maternal-newborn.jpg",
+	"description": "An overview of Ladewig, Maternal Newborn",
+	"thumbnail": "images/assets/nursing/maternal new/maternal new-thumb.jpg",
+	"image": "images/assets/nursing/maternal new/maternal new.jpg",
 	"sequence": 3,
-	"author": "Patricia W. Ladewig"
+	"type": "book",
+	"author": "Ladewig"
 },
 {
 	"name": "Child Health,3e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/nursing-child-health/nursing-child-health-thumb.jpg",
-	"image": "images/media/nursing-child-health/nursing-child-health.jpg",
+	"description": "An overview of Ball, Child Health",
+	"thumbnail": "images/assets/nursing/child health/child health-thumb.jpg",
+	"image": "images/assets/nursing/child health/child health.jpg",
 	"sequence": 4,
-	"author": "Jane W. Ball"
+	"type": "book",
+	"author": "Ball"
 },
 {
-	"name": "Lab & Diagnostics,9e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Real EHRPrep with Cerner",
+	"description": "An overview of Real EHRPrep with Cerner",
+	"thumbnail": "images/assets/nursing/real ehrprep/real ehrprep-thumb.jpg",
+	"image": "images/assets/nursing/real ehrprep/real ehrprep.jpg",
 	"sequence": 5,
-	"author": "Joyce LeFever Kee"
-},
-{
-	"name": "Giangrasso, 2e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 6,
-	"author": "Giangrasso"
-},
-{
-	"name": "Real EHRPrep w",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 7,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
 	"name": "Live Review",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 8,
+	"description": "An overview of Pearson's Live Review services",
+	"thumbnail": "images/assets/nursing/live review/live review-thumb.jpg",
+	"image": "images/assets/nursing/live review/live review.jpg",
+	"sequence": 6,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
-	"name": "Readypoint",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 9,
+	"name": "ReadyPoint",
+	"description": "An overview of Readypoint",
+	"thumbnail": "images/assets/nursing/readypoint/readypoint-thumb.jpg",
+	"image": "images/assets/nursing/readypoint/readypoint.jpg",
+	"sequence": 7,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
 	"name": "MyNursingLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 10,
+	"description": "An overview of MyNursingLab",
+	"thumbnail": "images/assets/nursing/mynursinglab/mynursinglab-thumb.jpg",
+	"image": "images/assets/nursing/mynursinglab/mynursinglab.jpg",
+	"sequence": 8,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
 	"name": "Neighborhood 2.0",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 11,
+	"description": "An overview of The Neighborhood",
+	"thumbnail": "images/assets/nursing/neighborhood 2/neighborhood 2-thumb.jpg",
+	"image": "images/assets/nursing/neighborhood 2/neighborhood 2.jpg",
+	"sequence": 9,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
-	"name": "RN to BSN",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/nursing-rn-bsn/nursing-rn-bsn-thumb.jpg",
-	"image": "images/media/nursing-rn-bsn/nursing-rn-bsn.jpg",
-	"sequence": 12,
-	"author": "Nursing ACE Exam Secrets Test Prep Team"
+	"name": "RN-to-BSN",
+	"description": "An overview of RN to BSN program offerings",
+	"thumbnail": "images/assets/nursing/rn-to-bsn/rn-to-bsn-thumb.jpg",
+	"image": "images/assets/nursing/rn-to-bsn/rn-to-bsn.jpg",
+	"sequence": 10,
+	"type": "lab",
+	"author": "Pearson"
 }]
 }

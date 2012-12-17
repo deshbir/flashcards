@@ -1,26 +1,29 @@
 {
 "products" : [{
-	"name": "Automotive Systems",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Automotive Systems Overview",
+	"description": "An overview of Automotive Systems titles A1-A8 their shared story and their competitive advantage.",
+	"thumbnail": "images/assets/automotive/auto sys overview/auto sys overview-thumb.jpg",
+	"image": "images/assets/automotive/auto sys overview/auto sys overview.jpg",
 	"sequence": 1,
-	"author": "Pearson"
+	"type": "book",
+	"author": "Halderman"
 },
 {
-	"name": "MyAutomtoiveLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "MyAutomotiveLab",
+	"description": "Automotive Fundamentals course offerings compared and the competitive landscape.",
+	"thumbnail": "images/assets/automotive/myautomotivelab/myautomotivelab-thumb.jpg",
+	"image": "images/assets/automotive/myautomotivelab/myautomotivelab.jpg",
 	"sequence": 2,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
-	"name": "Automtotive Fundamentals",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/automtotive-fundamentals/auto-fundamentals-thumb.jpg",
-	"image": "images/media/automtotive-fundamentals/auto-fundamentals.jpg",
+	"name": "Automotive Fundamentals Overview",
+	"description": "MyAutomotiveLab for Fundamentals, new for Systems and the automotive media competition.",
+	"thumbnail": "images/assets/automotive/auto fund overview/auto fund overview-thumb.jpg",
+	"image": "images/assets/automotive/auto fund overview/auto fund overview.jpg",
 	"sequence": 3,
-	"author": "Martin T. Stockel"
+	"type": "book",
+	"author": "Halderman"
 }]
 }

@@ -1,18 +1,11 @@
 {
 "products" : [{
-	"name": "Andres Principles,9e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/andres-principles/andres-principles-thumb.jpg",
-	"image": "images/media/andres-principles/andres-principles.jpg",
+	"name": "Construction Management Front List Titles",
+	"description": "An overview of key new 2013 titles, including Mehta 2e, Borden's Architecture, Schodek Structures 7e, Kavanagh 9e, and Andres Principles 9e.",
+	"thumbnail": "images/assets/construction mgmt/const mgmt front list titles/const mgmt front list titles-thumb.jpg",
+	"image": "images/assets/construction mgmt/const mgmt front list titles/const mgmt front list titles.jpg",
 	"sequence": 1,
-	"author": "Cameron K. Andres"
-},
-{
-	"name": "USGBC - The General Story",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/construction-mgmt-usgbc/construction-mgmt-usgbc-thumb.jpg",
-	"image": "images/media/construction-mgmt-usgbc/construction-mgmt-usgbc.jpg",
-	"sequence": 2,
-	"author": "USGBC"
+	"type": "book",
+	"author": "Various"
 }]
 }

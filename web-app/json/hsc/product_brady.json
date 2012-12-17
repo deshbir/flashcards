@@ -1,18 +1,20 @@
 {
 "products" : [{
-	"name": "NCCER - The General Story",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "MyBRADYLab",
+	"description": "MyBRADYLab is an online, super-charged personalized assessment and remediation tool to accompany Brady’s EMT, AEMT, Paramedic, and Fire solutions. ",
+	"thumbnail": "images/assets/brady/mybradylab/mybradylab-thumb.jpeg",
+	"image": "images/assets/brady/mybradylab/mybradylab.jpeg",
 	"sequence": 1,
+	"type": "lab",
 	"author": "Pearson"
 },
 {
-	"name": "Validated Testing Solution",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"name": "Brady: The Story",
+	"description": "Brady has been the leading EMS publisher for over 30 years.  With a 65% market share in the EMT space you can bet that most instructors will know the name BRADY when you talk to them.",
+	"thumbnail": "images/assets/brady/brady-the story/brady-the story-thumb.jpg",
+	"image": "images/assets/brady/brady-the story/brady-the story.jpg",
 	"sequence": 2,
+	"type": "lab",
 	"author": "Pearson"
 }]
 }

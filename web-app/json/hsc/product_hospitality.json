@@ -1,42 +1,11 @@
 {
 "products" : [{
 	"name": "MyHospitalityLab",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
+	"description": "MyHospitalityLab walkthrough",
+	"thumbnail": "images/assets/hospitality/myhospitalitylab/myhospitalitylab-thumb.png",
+	"image": "images/assets/hospitality/myhospitalitylab/myhospitalitylab.png",
 	"sequence": 1,
-	"author": "Pearson"
-},
-{
-	"name": "Marketing for Hospitality and Tourism",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/marketing-hospitality-tourism/marketing-hospitality-tourism-thumb.jpg",
-	"image": "images/media/marketing-hospitality-tourism/marketing-hospitality-tourism.jpg",
-	"sequence": 2,
-	"author": "Philip R Kotler"
-},
-{
-	"name": "Cook-Tourism & Hospitality",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 3,
-	"author": "Pearson"
-},
-{
-	"name": "AHLEI - The General Story and the product Line",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 4,
-	"author": "Pearson"
-},
-{
-	"name": "NRA - Which products fit in Hospitality? (ServSafe, ServSafe Alcohol, ManageFirst)",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/media/generic/thumb.png",
-	"image": "images/media/generic/full.png",
-	"sequence": 5,
+	"type": "lab",
 	"author": "Pearson"
 }]
 }
