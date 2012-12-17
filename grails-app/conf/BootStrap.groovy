@@ -51,7 +51,7 @@ class BootStrap {
 					allProducts.products.each	{
 						
 						def jsonProduct = it
-						aProduct = new Product(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image, sequence: it.sequence, author: it.author)
+						aProduct = new Product(name: it.name, description: it.description, thumbnail: it.thumbnail, image: it.image, sequence: it.sequence, type: it.type, author: it.author)
 						Test aTest
 						if(jsonProduct.topics)
 						{

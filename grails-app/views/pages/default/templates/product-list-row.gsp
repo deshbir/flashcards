@@ -2,15 +2,24 @@
 <div class="row-fluid">
 	{{#.}}
  	<div id="{{id}}" class="span4 media clickbox">
-		<a href="javascript:;"> 
+		<a href="javascript:;">
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
-          <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
-          <div class="media-body">
-			<span class="heading">{{{name}}}</span>
-			<i class="icon-chevron-right visible-phone"></i>
-			<h3>{{author}}</h3>
-			<p class="hidden-phone">{{description}}</p>
-          </div>
+		  {{#book}}
+		      <img alt="{{name}}" class="pull-left hidden-phone" src="${contextPath}/{{thumbnail}}"/>
+	          <div class="media-body">
+				<span class="heading">{{{name}}}</span>
+				<i class="icon-chevron-right visible-phone"></i>
+				<h3>{{author}}</h3>
+				<p class="hidden-phone">{{description}}</p>
+			  </div>
+		  {{/book}}
+		  {{#lab}}
+		        <img alt="{{name}}" style="height:40px;margin-bottom:20px" class="hidden-phone" src="${contextPath}/{{thumbnail}}"/> 
+				<p class="heading visible-phone">{{{name}}}</p>
+				<i class="icon-chevron-right visible-phone"></i>
+				<h3 class="visible-phone">{{author}}</h3>
+				<p class="hidden-phone">{{description}}</p>
+		  {{/lab}}
         </a>  	
 	</div>
 	{{/.}}

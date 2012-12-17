@@ -104,7 +104,7 @@ TestView = new function() {
 					var optionArray = [];
 					for(var j=1;j<=7;j++){
 						if(questions[i]["option"+j])
-							//Stroring options in array
+							//Storing options in array
 							optionArray.push(questions[i]["option"+j]);
 					}
 					//Adding new parameter options which stores shuffled options.

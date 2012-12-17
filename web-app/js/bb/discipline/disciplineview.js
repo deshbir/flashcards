@@ -211,14 +211,21 @@ DisciplineView = new function() {
 				
 				/* ----- Breaking Into 3 column row sets  ----------- */
 				var productCollection = this.collection.first().attributes.products;
+				
 				var threeitem_lists = _.groupBy(productCollection, function(product){
+					if (product.type == "book") {
+						product.book = true;
+						product.lab = false;
+					} else {
+						product.book = false;
+						product.lab = true;
+					}
 					return Math.floor((product.sequence-1)/3); 
 				});
 				
 				/* ----- Appending Rows (3 columns)  ----------- */
 				that = this;
 				_.each(threeitem_lists, function(num, key){
-					
 					var compiled_template_body_row = Mustache.render(that.template_body_row, num);
 					$(that.myPanelRowId).append(compiled_template_body_row);
 					
