@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row-fluid">
 	{{#.}}
  	<div id="{{attributes.id}}" class="span4 clickbox">
 		<a href="javascript:;"> 

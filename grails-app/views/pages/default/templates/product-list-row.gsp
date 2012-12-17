@@ -1,5 +1,5 @@
 <g:set var="contextPath" value="${request.contextPath}"/>
-<div class="row">
+<div class="row-fluid">
 	{{#.}}
  	<div id="{{id}}" class="span4 media clickbox">
 		<a href="javascript:;"> 

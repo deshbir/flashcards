@@ -24,6 +24,10 @@
 		margin-top:20px;
 	}
 	
+	.row-fluid {
+		margin:20px 0;
+	}
+	
 }
 #panel_discipline-home h1 {
 	font-size:37px;
@@ -42,6 +46,14 @@
 		margin-left:10px;
 		float:right;
 	}
+	
+	.row-fluid {
+		margin:15px 0;
+	}
+	
+	.media, .media-body {
+		overflow:visible;
+	}
 
 }
 
@@ -49,9 +61,12 @@
 /********************************************* Responsive Styles *******************************/
 /*--  Landscape phones and down */
 @media (max-width: 480px) {
-	#discipline-list div.span4:last-child {
-		  a {
-			margin-bottom:0;
-		  }
+	#discipline-list, #product-list {
+		.row-fluid {
+			margin:0px;
+			div.clickbox {
+				margin-bottom:15px;
+			}
+		}
 	} 
 }
