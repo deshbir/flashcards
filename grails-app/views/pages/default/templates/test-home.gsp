@@ -1,8 +1,8 @@
 <g:set var="contextPath" value="${request.contextPath}"/>
 {{#.}}
 <div id="page-header" class="main-body">
-	<div class="container-fluid">
-		<div class="row-fluid">
+	<div class="container">
+		<div class="row">
         	<div class="span12" id="product">
 	        	<img alt="{{name}}" class="pull-left" src="${contextPath}/{{product.thumbnail}}"/>
 	        	<h2>{{product.name}}</h2>
@@ -13,7 +13,8 @@
 </div> 	
 <div id="test-home" class="main-body">
     <div class="row">
-    	<div class="span12">
+    	<div class="span2"></div>
+    	<div class="span8">
         	<div id="flashcard" class="flashcard">
         		<div class="header">
         			<div class="row-fluid">
@@ -49,6 +50,7 @@
 				</div>									        		
         	</div>
         </div>	
+        <div class="span2"></div>
   </div>     	      
 </div>	
 {{/.}}

@@ -1,8 +1,8 @@
 <div class="row">
         <div class="span7" id="business-info">
 			<h1>Health Sciences &amp; Careers</h1>
-			<div class="hidden-phone">
-				<r:img uri="/images/homepage_picture.png" alt="Business-Logo" class="hidden-phone"/>
+			<div>
+				<r:img uri="/images/homepage_picture.png" alt="Business-Logo"/>
 			</div>
 	    </div>
         <div class="span5">

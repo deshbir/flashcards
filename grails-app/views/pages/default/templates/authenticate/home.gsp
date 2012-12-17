@@ -6,19 +6,20 @@
 	    <div id="loggedin-container">
 	    	<h3> Welcome back</h3>
 	    	<div class="hero-unit">
-				<div class="row-fluid" id="user-info">
-					<div class="span3">
-						{{#facebookuser}}
-							<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image"/>
-						{{/facebookuser}}
-						{{^facebookuser}}
-							<a class="btn"><i class="icon-user-hsc"></i></a>
-						{{/facebookuser}}						
-					</div>
-					<div class="span6">
-						<p>{{firstname}} {{lastname}}</p>
-						<p><small>{{email}}</small></p>
-					</div>
+				<div id="user-info">
+						<div class="profile-image">
+							{{#facebookuser}}
+								<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" class=""/>
+							{{/facebookuser}}
+							{{^facebookuser}}
+								<a class="btn"><i class="icon-user-hsc"></i></a>
+							{{/facebookuser}}	
+						</div>	
+						<div>
+							<p>{{firstname}} {{lastname}}</p>
+							<p><small>{{email}}</small></p>
+						</div>				
+						
 				</div>	
 				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
 				<a href="#" id="logout-button" class="btn btn-large btn-block">Logout</a>
@@ -33,16 +34,22 @@
 			<h3>Log In</h3>
 			<div id="loginErrorMessage"></div> 	
 			<div class="hero-unit">
-				<input id="username" name="j_username" class="input-xlarge" placeholder="Email" type="email" required>
-				<input name="j_password" class="input-xlarge" placeholder="Password" type="password" required>
+				 <div class="input-prepend">
+					<span class="add-on"><i class="icon-user"></i></span>
+					<input class="span2 input-xlarge" id="username" name="j_username" type="email" placeholder="Email" required>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><i class="icon-lock"></i></span>
+					<input class="span2 input-xlarge" id="j_password" name="j_password" type="Password" placeholder="Password" required>
+				</div>
 				<button class="btn btn-large btn-block" id="login-button">
-					Log In
+					Login
 				</button> 
 				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
 		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
-			<p><i class="icon-facebook"></i></p>
+			<a><i class="icon-facebook"></i></a>
 			<span class="facebook-text">Connect with Facebook</span>
 		</button>
 		<div id="loginErrorMessage"></div> 

@@ -7,6 +7,10 @@
 		color:@business-info-header;
 		text-align:center;
 	}
+	.hsc-logo {
+		margin:0 auto;
+		width:75%;
+	}
 }
 
 #loginform { 
@@ -14,12 +18,27 @@
 	#ajaxLoginForm, #loggedin-container {
 		border:solid 2px @HSCHeaderColor;
 		.border-radius(10px);
-		input[type="text"], input[type="email"], input[type="password"] {
-		    font-size: 17px;
-		    height: 37px;
-		    width: 100%;
-		    margin-top:1em;
-		}
+		.input-prepend  {
+			  margin-bottom: 20px;
+			.add-on {
+				height: 45px;
+				line-height: 43px;
+				i {
+					font-size:28px;
+					margin-right:5px;
+				}
+				i.icon-lock {
+					   margin-right: 9px;
+				}
+			}
+    		margin-top: 1em;
+    		input[type="text"], input[type="email"], input[type="password"] {
+			    font-size: 17px;
+			    width: 84%;
+			    height: 45px;
+			}
+    	}
+		
 		
 		.errorMessage {
 			color: #b94a48;
@@ -44,7 +63,7 @@
 		}
 		.hero-unit {
 			background-color:#f9fafb;
-			padding:0.5em 1.5em 0 1.5em;
+			padding:1.5em 1.5em 0 1.5em;
 			p {
 				font-size: 14px;
 		    	line-height: 1;
@@ -59,17 +78,25 @@
 				margin:1em 0 0 0;
 			}
 			.btn {
-				margin-top:1em;
+				margin-top:10px;
+			}
+			#login-button {
+				line-height:40px;
 			}
 		}
 		#user-info {
-			padding:1em 1em 1em 0;
-			.span3 {
+			border:solid 1px darken(@hero-unit-color,10%);
+			padding:1em;
+			width:90%;
+			div {
+				display:inline-block;
+			}
+			div.profile-image {
 				.border-radius(5px);
-				 margin-right:1.3em;
-				a.btn {
+				 margin-right:10px;
+				 a.btn {
 					margin-top:0;
-					padding:4px 21px;
+					padding:4px 12px;
 					i {
 						font-size:70px;
 						color:rgba(100, 100, 100, 0.7);
@@ -77,11 +104,6 @@
 					&:hover {
 						text-decoration:none;
 					} 
-				}
-			}
-			.span6 {
-				p {
-					font-size:18px;
 				}
 			}
 		}
@@ -92,11 +114,12 @@
 		padding:0;
 		border:0 none;
 		.border-radius(0);
-		p {
+		a {
 			float:left;
 			width:10%;
 			#gradient > .vertical(lighten(@HSCButtonColor, 10%), lighten(@HSCButtonColor, 10%));
 			margin:0;
+			color:white;
 			padding:0.5em 0.5em;
 			i {
 				font-size:50px;
@@ -112,7 +135,9 @@
 
 /*********************** Responsive Styles ************************************/ 
 @media (max-width: 480px) {  
-	
+	#panel_home {
+		margin:0 20px;
+	} 
 	#business-info { 
 		h1 {
 			font-size:21px;
@@ -121,13 +146,9 @@
 		}
 	}
 	#loginform {
-		margin-top:0;
+		margin-top:1em;
 		#ajaxLoginForm { 
 			border:0 none;
-			input[type="text"], input[type="email"], input[type="password"] {
-				margin-bottom:15px;
-				margin-top:0;
-			}
 			.hero-unit {
 				padding:0;
 				margin-bottom:10px;
@@ -137,8 +158,13 @@
 				}
 				.btn {
 					margin-top:10px;
-					font-size:18px;
+					font-size:20px;
 				}
+			}
+			.input-prepend  {
+    			input[type="text"], input[type="email"], input[type="password"] {
+			    	height: 55px;
+			    }
 			}
 			h3 {
 				display:none;
@@ -159,29 +185,23 @@
 				display:none;
 			}
 			#user-info {
-				div {
-					float:left;
-				}
-				.span3 {
-					width:30%;
-					a {
-						i {
-							font-size:60px;
-						}
+				a {
+					i {
+						font-size:60px;
 					}
-				}
-				.span6 {
-					width:60%;
-				}
+				}				
 			}
 		}
 		#facebook-login {
 				margin-bottom:5px;
+				line-height:45px;
 				.facebook-text {
-					font-size:18px;
-		    		margin-left: 2em;
+		    		font-size: 20px;
+    				margin-left:7px;
+		    		margin-top:10px;
 				}
-				p {
+				a {
+					padding-bottom:5px;
 					i {
 						font-size:30px;
 					}

@@ -1,11 +1,11 @@
 <div class="navbar-inner">
 	<div class="container">
 		<div id="back" class="brand-button">
-			<a href="#" class="pull-left" title="Back"><i class="icon-arrow-left"></i></a>
+			<a href="#" class="pull-left" title="Back"><i class="icon-circle-arrow-left"></i></a>
 		</div>
 
 		<div class="brand">
-			<a title="Pearson Health Sciences & Careers">Pearson</a>
+			<a title="Pearson Health Sciences & Careers">PEARSON</a>
 		</div>
 
 		<ul class="nav pull-right">
