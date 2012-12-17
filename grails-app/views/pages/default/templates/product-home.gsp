@@ -29,7 +29,7 @@
         	<ul class="unstyled playlist">
         		{{#topics}}
 	            <li>
-	            	<a href="{{audioTrack}}">
+	            	<a href="${grailsApplication.config.hsc.media.assets.basepath}{{audioTrack}}">
 	            		<i class="icon-play"></i> 
 	            		<span>{{audioSequence}}</span>
 	            		{{name}}

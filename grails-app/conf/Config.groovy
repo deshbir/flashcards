@@ -70,7 +70,7 @@ environments {
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
-		grails.serverURL = "http://d1-pearson-hsc.herokuapp.com" // server url for facebook
+		grails.serverURL = "http://p-pearson-hsc.herokuapp.com" // server url for facebook
 		
     }
 }
@@ -121,6 +121,8 @@ grails.plugins.springsecurity.facebook.secret='2370e6414826fdb25762fef99c8c2fb9'
 
 // Google Analaytics
 google.analytics.webPropertyID = "UA-36885090-1"
+//assets external path
+hsc.media.assets.basepath = "http://s3.amazonaws.com/pearson-hsc/assets/"
 
 // Cookie Session plugin configuration
 //grails.plugin.cookiesession.enabled = true
