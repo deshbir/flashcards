@@ -6,7 +6,8 @@ HomeView = new function() {
 	
 	var Router = Backbone.Router.extend({
 		routes: {
-	      'home':'home'
+	      'home':'home',
+	      '*notFound': 'notFound'
 	    },    
 	    home : function() {
 	    	if (homeView == null) {  //First OR After Browser Refresh
@@ -14,6 +15,24 @@ HomeView = new function() {
 			} else {  	 //If the View has been created (bbView) never re-create
 				homeView.render();
 			}
+	    },
+	    notFound : function(){
+	    	if(location.href.indexOf("#") == -1){
+	    		Backbone.history.navigate("#/home");
+	    		return true;
+	    	}
+	    	if(window.location.hash.indexOf("#access_token")>-1){
+	    		Backbone.history.navigate("#/home");
+	    		return true;
+	    	}
+	    	$('#message').html("The requested page does not exist.");
+	    	var logger = com.compro.application.hsc.logger;
+	    	logger.error("No such route defined.");
+	    	logger.error("The requested route "+ location.hash +" does not match with the specified routes.");
+	    	$('#headers').html("");
+	    	$("#ajax-error-label").text("Oops!");
+		    $('#ajax-error-modal .modal-body .content-header').text("Invalid path requested!");
+		    $('#ajax-error-modal').modal();
 	    }
 	});
 	
@@ -44,8 +63,7 @@ HomeView = new function() {
 					});
 			});	
 		},
-		// Updating method name from "render" to "custiomRender" for logging.
-		customRender : function() {
+		render : function() {
 			var compiled_template_body = Mustache.render(this.template_splash);
 			$(this.myPanelId).html(compiled_template_body);
 			var view = this;

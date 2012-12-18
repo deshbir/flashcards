@@ -176,7 +176,7 @@ com.compro.application.hsc = (function() {
 		 
 		    var msgDesc = "An error has occured. Please try again by refreshing your browser or restarting the Application. If the problem persists, please contact your System Administrator.";
 
-		    if (xhr.status === 0) { // Not connected. Verify Network
+		    if (xhr.status == 0) { // Not connected. Verify Network
 		    	statusCode = xhr.status;
 		    	msgHeader = statusCode + " :No Network Detected!";
 		        msgDesc = xhr.responseText;
@@ -288,14 +288,10 @@ com.compro.application.hsc = (function() {
 	
 	
 	function backbone_start_navigation()	{
+		Backbone.history.start();
 		if (location.href.indexOf("?isFacebookLoginSuccess=") != -1) { //Facebook login success in iOS Home Screen Apps
-			Backbone.history.start();
 			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
-			return true;
-		}	
-		else if (location.href.indexOf("#") == -1) //Normal App startup
-			location.replace(location.href + "#/home");
-		Backbone.history.start();		
+		}
 	}
 	
 	function getFBLoginStatus(){
