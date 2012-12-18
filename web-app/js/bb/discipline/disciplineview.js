@@ -256,7 +256,7 @@ DisciplineView = new function() {
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);
 		},
 		resizeColumns:function(){ //for setting the min-height of each column based on the maximun height of that row.
-			$(this.myPanelId+" .row").each(function(){
+			$(this.myPanelId+" .row-fluid").each(function(){
 				var currentTallest = 0;
 				$(this).children().each(function(i){
 					$(this).children().each(function(){
@@ -273,7 +273,7 @@ DisciplineView = new function() {
 			});
 		},
 		resetColumns:function(){ // for removing the min-height of each column.
-			$(this.myPanelId+" .row").each(function(){
+			$(this.myPanelId+" .row-fluid").each(function(){
 				$(this).children().each(function(){
 					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
 					// for ie6, set height since min-height isn't supported
