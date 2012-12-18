@@ -245,7 +245,10 @@ var JSLog = (function () {
                 methods[fn] = function () {
                     
                     var args = Array.prototype.slice.call(arguments);
-                    
+                    //setting the maximum size for logs.
+                    if(global.Logs[this.module].length == com.compro.application.hsc.JSLogsSettingsConfig.maxLogSize) {
+                    	global.Logs[this.module] = global.Logs[this.module].slice(1);
+                    }
                     global.Logs[this.module].push([fn].concat(args));
 
                     if (!fbcon || !hasLevel(idx) || hasFilter(this.module)) {

@@ -61,6 +61,13 @@ com.compro.application.hsc = (function() {
 			branding: 'none'
 		}
 	}
+	//Logger config
+	var JSLogsSettingsConfig = {
+			"loggerPrefix" : "App.Login",
+			"maxLogSize" : "10"
+	}
+
+
 
     /********************************************************/
 	/*                   DEPENDENCIES                       */
@@ -107,7 +114,7 @@ com.compro.application.hsc = (function() {
 	var flashcards;
 		
 	//Logger
-	var logger = JSLog.Register('App.Login');
+	var logger = JSLog.Register(JSLogsSettingsConfig.loggerPrefix);
 	
 	//...
 	var facebookLoginCheckTimer;
@@ -581,7 +588,8 @@ com.compro.application.hsc = (function() {
 		"isIE":isIE,
 		"onResizeTranslationHandler":onResizeTranslationHandler,
 		"handleLoginSuccess" : handleLoginSuccess,
-		"logger" : logger
+		"logger" : logger,
+		"JSLogsSettingsConfig" : JSLogsSettingsConfig
 	}
 
 })();
