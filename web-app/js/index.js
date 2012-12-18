@@ -64,7 +64,7 @@ com.compro.application.hsc = (function() {
 	//Logger config
 	var JSLogsSettingsConfig = {
 			"loggerPrefix" : "App.Login",
-			"maxLogSize" : "10"
+			"maxLogSize" : "50"
 	}
 
 
@@ -288,12 +288,14 @@ com.compro.application.hsc = (function() {
 	
 	
 	function backbone_start_navigation()	{
-		Backbone.history.start();
 		if (location.href.indexOf("?isFacebookLoginSuccess=") != -1) { //Facebook login success in iOS Home Screen Apps
+			Backbone.history.start();
 			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
+			return true;
 		}	
 		else if (location.href.indexOf("#") == -1) //Normal App startup
-			Backbone.history.navigate("#/home", {trigger:true,replace:true});		
+			location.replace(location.href + "#/home");
+		Backbone.history.start();		
 	}
 	
 	function getFBLoginStatus(){
