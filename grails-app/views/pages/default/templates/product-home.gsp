@@ -15,7 +15,6 @@
 	        	<div class="span12" id="product-desc-lab">
 	        		<img class="pull-right" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
 		        	<h2>{{{name}}}</h2>
-		        	<h3>{{author}}</h3>
 		        	<p>{{description}}</p>
 				</div>
 		  {{/lab}}
