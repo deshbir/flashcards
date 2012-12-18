@@ -56,7 +56,7 @@ class BootStrap {
 						if(jsonProduct.topics)
 						{
 							jsonProduct.topics.each	{
-								aProduct.addToTopics(name: it.name, audioTrack: it.audioTrack, audioSequence: it.audioSequence)
+								aProduct.addToTopics(name: it.name, audioTrack: it.audioTrack, sequence: it.sequence)
 							}
 						}
 						

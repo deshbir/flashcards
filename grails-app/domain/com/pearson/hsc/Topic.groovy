@@ -4,7 +4,7 @@ class Topic implements Comparable {
 
 	String name
 	String audioTrack
-	String audioSequence
+	String sequence
 	
 	static belongsTo = [product: Product]
 	
@@ -12,7 +12,7 @@ class Topic implements Comparable {
 	}
 	
 	int compareTo(def val) {
-		return audioSequence <=> val?.audioSequence
+		return sequence <=> val?.sequence
 	}
 	
 	/***********************************

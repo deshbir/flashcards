@@ -1,7 +1,7 @@
 cgrails {
 	skinning {
 		baseskin = "default"
-		defaultskin = "default"
+		defaultskin = "hsc"
 		skins {
 			hsc { parent = "default" }
 		}

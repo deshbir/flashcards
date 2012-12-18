@@ -9,18 +9,18 @@
 	"author": "Schmalleger",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 51 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 51 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 52 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 52 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 53 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "CJ/Schmall CJT/12-9-12 CJ Schmalleger CJT 12 53 Driving Sell Thru.mp3"
 				}],
 			    "tests": [
 			        {
@@ -148,18 +148,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 61 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 61 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 62 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 62 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 63 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Schmall CT6e/12-9-12 CJ Schmalleger CT6e 63 Driving Sell Thru.mp3"
 				}],
 				 "tests": [
 			        {
@@ -287,18 +287,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 41 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 41 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 42 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 42 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 43 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Schmall CB2e/12-9-12 CJ Schmalleger CB2e 43 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -426,18 +426,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "CJ/Schmall Intro Brief/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -565,18 +565,18 @@
 	"sequence": 5,
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 91 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 91 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 92 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 92 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 93 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Seiter/12-9-12 CJ Seiter 93 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -704,18 +704,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 1 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 2 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 3 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Lasley/12-9-12 CJ Lasley 3 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -843,18 +843,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP8 1 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP8 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP 82 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP 82 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP 83 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Worrall CLP/12-9-12 CJ Worrall CLP 83 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -982,13 +982,13 @@
 	"type": "lab",
 	"topics": [{
 					"name": "The Story",
-					"audioTrack": "CJ/MyCJLab/12-9-12 CJ MyCJLab 11 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/MyCJLab/12-9-12 CJ MyCJLab 11 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/MyCJLab/12-9-12 CJ MyCJLab 12 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/MyCJLab/12-9-12 CJ MyCJLab 12 Competition.mp3"
 				}],
 				"tests": [
 			        {
@@ -1116,18 +1116,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 101 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 101 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 102 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,				
+					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 102 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 103 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Bartollas JJ/12-10-12 CJ Bartollas JJ 103 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -1255,18 +1255,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 111 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 111 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 112 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 112 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 113 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Bartollas JD/12-10-12 CJ Bartollas JD 113 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {
@@ -1395,18 +1395,18 @@
 	"type": "book",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 31 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,					
+					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 31 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 32 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,					
+					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 32 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 33 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,					
+					"audioTrack": "CJ/Schmall CLT5E/12-9-12 CJ Schamlleger CLT5E 33 Driving Sell Thru.mp3"
 				}],
 				"tests": [
 			        {

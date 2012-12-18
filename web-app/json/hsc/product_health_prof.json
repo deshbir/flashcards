@@ -9,18 +9,18 @@
 	"author": "Various",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"	
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"					
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"	
 				}],
 			    "tests": [
 			        {
@@ -148,18 +148,18 @@
 	"author": "Rich",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"				
 				}],
 			    "tests": [
 			        {
@@ -287,18 +287,18 @@
 	"author": "Turley",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
 				}],
 			    "tests": [
 			        {
@@ -426,18 +426,18 @@
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3",
-					"audioSequence": "1"
+					"sequence": 1,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
 				},
 				{
 					"name": "Competition",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3",
-					"audioSequence": "2"
+					"sequence": 2,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3",
-					"audioSequence": "3"
+					"sequence": 3,
+					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
 				}],
 			    "tests": [
 			        {
