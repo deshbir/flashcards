@@ -213,22 +213,11 @@ com.compro.application.hsc = (function() {
 		       msgHeader = statusCode + " :Unknown Error";    
 		       msgDesc = xhr.responseText               
 		    }
-		    
-		    var logs = JSLog.Logs['App.Login'];
-		    var innerHTML = "<ol>";
-		    var planeLogs = "";
-		    for (var i = 0, len = logs.length; i < len; i++) {
-				innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i] + "</li>";
-				// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
-				planeLogs += logs[i]+" ~~ ";
-			}
-		    innerHTML += "</ol>";
 		    var regex = new RegExp("\<style.*style\>");
 		    msgDesc = msgDesc.replace(regex, "");
 		    $("#ajax-error-label").text(msgTitle);
 		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
 		    $('#message').html(msgDesc);
-		    $('#logs').html(innerHTML);
 		    $('#headers').html("<div><h4>Error occured for request: </h4></div><ul>");  
 		    $('#headers').append("<li>url: " + settings.url + "</li>");
 		    $('#headers').append("<li>type: " + settings.type + "</li>");
@@ -368,7 +357,20 @@ com.compro.application.hsc = (function() {
 	        return window.Muscula.settings.suppressErrors===undefined;}
 	    })();
 	}
-	
+	function initializeModal(){
+	    $('#ajax-error-modal').on('show', function () {
+			var logs = JSLog.Logs['App.Login'];
+			var innerHTML = "<ol>";
+			var planeLogs = "";
+			for (var i = 0, len = logs.length; i < len; i++) {
+				innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i] + "</li>";
+				// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
+				planeLogs += logs[i]+" ~~ ";
+			}
+		    innerHTML += "</ol>";
+		    $('#logs').html(innerHTML);
+	    });
+	}
 	function setHeaderOptions(updateHeader, showHomeLink, showBackLink, showProfileButton) {
 		if (updateHeader) {
 			if (showProfileButton != undefined) {
@@ -477,7 +479,8 @@ com.compro.application.hsc = (function() {
 				
 				logger.info("--- bb start navigation");
 				backbone_start_navigation();
-				
+				//Initializing error modal to trigger logging in modal box each time it is shown.
+				initializeModal();
 				logger.info("--- sound manager");
 				soundmanager2_init();
 				
