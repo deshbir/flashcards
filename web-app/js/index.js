@@ -207,10 +207,10 @@ com.compro.application.hsc = (function() {
 		    var innerHTML = "<ol>";
 		    var planeLogs = "";
 		    for (var i = 0, len = logs.length; i < len; i++) {
-		    	innerHTML += "<li>" +logs[i] + "</li>";
-		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
-		    	planeLogs += logs[i]+" ~~ ";
-	        }
+				innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i] + "</li>";
+				// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
+				planeLogs += logs[i]+" ~~ ";
+			}
 		    innerHTML += "</ol>";
 		    var regex = new RegExp("\<style.*style\>");
 		    msgDesc = msgDesc.replace(regex, "");
