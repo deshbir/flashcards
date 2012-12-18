@@ -146,12 +146,12 @@ ProductView = new function() {
 				if (attribs.type == "book") {
 					attribs.book = true;
 					attribs.lab = false;
+					attribs.thumbnail = mainApp.addSuffixToFilepath(attribs.image, "-thumb1");
 				} else {
 					attribs.book = false;
 					attribs.lab = true;
+					attribs.thumbnail = mainApp.addSuffixToFilepath(attribs.image, "-thumb2");
 				}
-				attribs.thumbnail = mainApp.addSuffixToFilepath(attribs.image, "-thumb1");
-				
 				
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				
