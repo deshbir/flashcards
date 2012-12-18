@@ -14,10 +14,9 @@
 			  </div>
 		  {{/book}}
 		  {{#lab}}
-		        <img alt="{{name}}" style="height:40px;margin-bottom:20px" class="hidden-phone" src="${imagePath}{{thumbnail}}"/> 
-				<p class="heading visible-phone">{{{name}}}</p>
+		        <img alt="{{name}}" class="logo hidden-phone pull-right" src="${imagePath}{{thumbnail}}"/> 
+				<p class="heading">{{{name}}}</p>
 				<i class="icon-chevron-right visible-phone"></i>
-				<h3 class="visible-phone">{{author}}</h3>
 				<p class="hidden-phone">{{description}}</p>
 		  {{/lab}}
         </a>  	
