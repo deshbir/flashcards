@@ -54,9 +54,13 @@ com.compro.application.hsc = (function() {
 			logId:"s5zFzBC-Ug6Ff",
 			suppressErrors: false,
 			branding: 'none'
+		},
+		"p-pearson-hsc.herokuapp.com" : {
+			logId:"xhbkHCC-xfrzib",
+			suppressErrors: false,
+			branding: 'none'
 		}
 	}
-
 
     /********************************************************/
 	/*                   DEPENDENCIES                       */
