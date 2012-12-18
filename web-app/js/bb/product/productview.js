@@ -128,7 +128,8 @@ ProductView = new function() {
 			
 		},
 		
-		render: function() {
+		// Updating method name from "render" to "custiomRender" for logging.
+		customRender: function() {
 
 			/*
 			 * 1st parameter - update header for login

@@ -576,7 +576,8 @@ com.compro.application.hsc = (function() {
 		"transitionAppPanel" : transitionAppPanel,
 		"isIE":isIE,
 		"onResizeTranslationHandler":onResizeTranslationHandler,
-		"handleLoginSuccess" : handleLoginSuccess
+		"handleLoginSuccess" : handleLoginSuccess,
+		"logger" : logger
 	}
 
 })();

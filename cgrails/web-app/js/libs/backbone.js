@@ -1173,10 +1173,14 @@
     // **render** is the core function that your view should override, in order
     // to populate its element (`this.el`), with the appropriate HTML. The
     // convention is for **render** to always return `this`.
-    render: function() {
+	render: function() {
+    	com.compro.application.hsc.logger.info("Render Start", this);
+    	if(this.customRender) {
+    		this.customRender();
+    	}
+    	com.compro.application.hsc.logger.info("Render End", this);
       return this;
     },
-
     // Remove this view from the DOM. Note that the view isn't present in the
     // DOM by default, so calling this method may be a no-op.
     remove: function() {

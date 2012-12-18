@@ -57,7 +57,8 @@ HeaderView = new function() {
 			this.setElement(clsMainHeader);
 		},
 		
-		render : function() {
+		// Updating method name from "render" to "custiomRender" for logging.
+		customRender : function() {
 			
 			var compiled_template_header = Mustache.render(this.template_header);
 			$(clsMainHeader).html(compiled_template_header);

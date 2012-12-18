@@ -90,7 +90,8 @@ DisciplineView = new function() {
 			this.collection = DisciplineCollection.get();	
 		},
 		
-		render : function() {
+		// Updating method name from "render" to "custiomRender" for logging.
+		customRender : function() {
 			
 			/*
 			 * 1st parameter - update header for login

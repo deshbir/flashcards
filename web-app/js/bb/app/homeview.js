@@ -44,7 +44,8 @@ HomeView = new function() {
 					});
 			});	
 		},
-		render : function() {
+		// Updating method name from "render" to "custiomRender" for logging.
+		customRender : function() {
 			var compiled_template_body = Mustache.render(this.template_splash);
 			$(this.myPanelId).html(compiled_template_body);
 			var view = this;

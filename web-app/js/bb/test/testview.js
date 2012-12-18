@@ -84,7 +84,9 @@ TestView = new function() {
 				this.collection = TestCollection.get(this.requested_product_id,this.requested_test_id);
 			}
 		},		
-		render : function() {
+
+		// Updating method name from "render" to "custiomRender" for logging.
+		customRender : function() {
 			
 			/*
 			 * 1st parameter - update header for login
