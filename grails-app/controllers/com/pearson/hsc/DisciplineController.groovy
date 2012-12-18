@@ -20,7 +20,7 @@ class DisciplineController {
 				return
 			} else {
 				// What is Backbone standard for this?
-				render "Not found."
+				render(status: 404, text: '<h2>No discipline found with the following id.</h2>')
 				return
 			}
 		}
