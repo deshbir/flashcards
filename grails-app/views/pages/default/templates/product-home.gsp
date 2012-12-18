@@ -8,14 +8,14 @@
 	        		<img class="pull-left" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
 		        	<h2>{{{name}}}</h2>
 		        	<h3>{{author}}</h3>
-		        	<p>{{description}}</p>
+		        	<p class="hidden-phone">{{description}}</p>
 				</div>
 		  {{/book}}
 		  {{#lab}}
 	        	<div class="span12" id="product-desc-lab">
 	        		<img class="pull-right" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
 		        	<h2>{{{name}}}</h2>
-		        	<p>{{description}}</p>
+		        	<p class="hidden-phone">{{description}}</p>
 				</div>
 		  {{/lab}}
 		</div>

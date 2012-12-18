@@ -3,10 +3,17 @@
 <div id="page-header" class="main-body">
 	<div class="container">
 		<div class="row">
-        	<div class="span12" id="product">
-	        	<img alt="{{name}}" class="pull-left" src="${imagePath}{{product.thumbnail}}"/>
+		  <div class="span12" id="product">
+		  {{#product.book}}
+	        	<img alt="{{product.name}}" class="pull-left" src="${imagePath}{{product.thumbnail}}"/>
 	        	<h2>{{product.name}}</h2>
 	        	<h3>{{product.author}}</h3>
+		  {{/product.book}}
+		  {{#product.lab}}
+	        	<img alt="{{product.name}}" class="logo pull-right" src="${imagePath}{{product.thumbnail}}"/>
+	        	<h2>{{product.name}}</h2>
+	        	<p class="hidden-phone">{{product.description}}</p>
+		  {{/product.lab}}		
 			</div>
 		</div>
 	</div>

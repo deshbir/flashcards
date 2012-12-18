@@ -114,12 +114,12 @@ TestView = new function() {
 					questions[i].options=_.shuffle(optionArray);
 				}
 				
-				if (attribs.product.type.type == "book") {
-					attribs.product.type.book = true;
-					attribs.product.type.lab = false;
+				if (attribs.product.type == "book") {
+					attribs.product.book = true;
+					attribs.product.lab = false;
 				} else {
-					attribs.product.type.book = false;
-					attribs.product.type.lab = true;
+					attribs.product.book = false;
+					attribs.product.lab = true;
 				}
 				attribs.product.thumbnail = mainApp.addSuffixToFilepath(attribs.product.image, "-thumb2");
 				
