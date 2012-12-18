@@ -4,18 +4,16 @@
 	<div class="container">
 		<div id="product-info" class="row">
 		  {{#book}}
-		    	<div class="span2" id="product-img">
-			        <img alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
-		    	</div>
-	        	<div class="span10" id="product-desc">
+	        	<div class="span12" id="product-desc-book">
+	        		<img class="pull-left" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
 		        	<h2>{{{name}}}</h2>
 		        	<h3>{{author}}</h3>
 		        	<p>{{description}}</p>
 				</div>
 		  {{/book}}
 		  {{#lab}}
-	        	<div class="span12" id="product-desc">
-	        		<img class="pull-right hidden-iphone" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
+	        	<div class="span12" id="product-desc-lab">
+	        		<img class="pull-right" alt="{{name}}" src="${imagePath}{{thumbnail}}"/>
 		        	<h2>{{{name}}}</h2>
 		        	<h3>{{author}}</h3>
 		        	<p>{{description}}</p>
