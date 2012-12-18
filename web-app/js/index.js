@@ -332,6 +332,23 @@ com.compro.application.hsc = (function() {
 			});
 	}
 	
+	// Util function - for adding suffix in images
+	function addSuffixToFilepath(filepath, suffix)	{
+
+	 	if(typeof filepath === 'undefined' || typeof suffix === 'undefined')	{
+	 		return filepath;
+	   	}
+	   	var retVal = filepath;
+
+	 	var arr=new Array()
+	  	arr=filepath.split('.')
+
+		if (typeof arr[1] !== 'undefined' && arr[1] !== null) {
+	  		retVal=arr[0] + suffix + "." + arr[1]	
+	  	}
+	  	return retVal;
+	}	
+	
 	function muscula_log_init()	{
 		var domain = document.domain;
 		if(!musculaLogSettingsConfig[domain]) {
@@ -591,6 +608,7 @@ com.compro.application.hsc = (function() {
 		"onResizeTranslationHandler":onResizeTranslationHandler,
 		"handleLoginSuccess" : handleLoginSuccess,
 		"logger" : logger,
+		"addSuffixToFilepath" : addSuffixToFilepath,
 		"JSLogsSettingsConfig" : JSLogsSettingsConfig
 	}
 

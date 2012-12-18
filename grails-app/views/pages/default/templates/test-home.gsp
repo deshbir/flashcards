@@ -1,10 +1,10 @@
-<g:set var="contextPath" value="${request.contextPath}"/>
+<g:set var="imagePath" value="${grailsApplication.config.hsc.media.assets.basepath}"/>
 {{#.}}
 <div id="page-header" class="main-body">
 	<div class="container">
 		<div class="row">
         	<div class="span12" id="product">
-	        	<img alt="{{name}}" class="pull-left" src="${contextPath}/{{product.thumbnail}}"/>
+	        	<img alt="{{name}}" class="pull-left" src="${imagePath}{{product.thumbnail}}"/>
 	        	<h2>{{product.name}}</h2>
 	        	<h3>{{product.author}}</h3>
 			</div>

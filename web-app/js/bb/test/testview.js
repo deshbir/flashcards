@@ -99,8 +99,9 @@ TestView = new function() {
 			// if we're back the same/previous product, then do NOT re-create the DOM		
 			if(this.current_product_id!=this.requested_product_id || this.current_test_id!=this.requested_test_id || this.current_mode!=this.requested_mode)	{			
 
+				var attribs = this.collection.first().attributes;
 				//Getting all the questions
-				var questions = this.collection.first().attributes.questions;
+				var questions = attribs.questions;
 				//Shuffling options
 				for(var i=0;i<questions.length;i++){
 					var optionArray = [];
@@ -112,6 +113,16 @@ TestView = new function() {
 					//Adding new parameter options which stores shuffled options.
 					questions[i].options=_.shuffle(optionArray);
 				}
+				
+				if (attribs.product.type.type == "book") {
+					attribs.product.type.book = true;
+					attribs.product.type.lab = false;
+				} else {
+					attribs.product.type.book = false;
+					attribs.product.type.lab = true;
+				}
+				attribs.product.thumbnail = mainApp.addSuffixToFilepath(attribs.product.image, "-thumb2");
+				
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
 				this.setElement("#test-home");
