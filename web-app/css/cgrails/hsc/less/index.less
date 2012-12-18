@@ -1,0 +1,35 @@
+/******************* HSC skin variables **********************/
+@import "../../default/less/index.less";
+
+@navbarInverseBackgroundHighlight:#ED6B06;
+@navbarInverseBackground : #ED6B06;
+@bodyBackgroundColor : #FFE5D0;
+@footer-bg-color:#ED6B06;
+@footer-color:@white;
+@navbarInverseLinkColor:@white; 
+@product_heading_color:#5b544e;
+
+body {
+	background-color: @bodyBackgroundColor;
+}
+
+#footer	{ 
+	.muted {
+		 color: @footer-color;
+	}
+}
+
+.btn {
+	#gradient > .vertical(@HSCButtonColor, darken(@HSCButtonColor, 5%));
+	color:#FFFFFF;
+	line-height:30px;
+	font-size:21px;
+	&:hover {
+		#gradient > .vertical(darken(@HSCButtonColor, 5%), darken(@HSCButtonColor, 10%));
+		background-position:0 0;
+		color:#FFFFFF;
+	}
+}
+
+
+@import "clickbox.less";

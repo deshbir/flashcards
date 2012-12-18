@@ -1,7 +1,7 @@
 <div class="navbar-inner">
 	<div class="container">
 		<div id="back" class="brand-button">
-			<a href="#" class="pull-left" title="Back"><i class="icon-circle-arrow-left"></i></a>
+			<a href="#" class="pull-left" title="Back"><i class="icon-back-btn"></i></a>
 		</div>
 
 		<div class="brand">

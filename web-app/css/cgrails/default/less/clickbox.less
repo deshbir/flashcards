@@ -1,14 +1,29 @@
+@clickbox-drop-shadow:0px 2px lighten(@gray, 5%);
+@clickbox-bg-color:#e5e5e5;
+@clickbox-border-color:@grayLighter;
+@clickbox-text-color:#2b2b2b;
+@clickbox-img-border-color:gray;
+@clickbox-logo-color:white;
+
 .clickbox {
+	img {
+		border:1px solid @clickbox-img-border-color; 
+		.border-radius(4px); 	
+	}
+    .logo {
+		background-color:@clickbox-logo-color;
+		padding:5px;    
+    }
 	a	{
 	  	.border-radius(10px);
-	  	border: 1px solid @grayLighter;
-	    background-color: #e5e5e5;
-	    color: #2b2b2b;
+	  	border: 1px solid @clickbox-border-color;
+	    background-color: @clickbox-bg-color;
+	    color: @clickbox-text-color;
 	    display: block;
 	    line-height: 1;
 	    padding: 10px 5px;
 	    text-decoration: none;
-	    .box-shadow(0px 2px lighten(@gray, 5%));
+	    .box-shadow(@clickbox-drop-shadow);
 	    .clearfix(); // Clear the float from controls
 	    img {
 	    	margin-top:-3px;
@@ -18,7 +33,6 @@
 	    	font-size: 18px;
 	    	font-weight: 300;
 	    	line-height: 1.1;
-	    	
 	    	i	{
 	    		font-size: 32px;
     			padding-right: 5px;
@@ -34,8 +48,3 @@
 	}
 }
 
-.clickbox-light	{
-	a	{
-		background-color: #f4f4f4;
-	}	
-}

@@ -2,6 +2,9 @@ cgrails {
 	skinning {
 		baseskin = "default"
 		defaultskin = "default"
+		skins {
+			hsc { parent = "default" }
+		}
 	}
 	less {
 		//Array of Less Files to compile.
