@@ -359,12 +359,12 @@ com.compro.application.hsc = (function() {
 	}
 	function modalEventRegistration(){
 	    $('#ajax-error-modal').on('show', function () {
-			var innerHTML = getJSLogsAsList";
+			var innerHTML = getJSLogsAsList;
 		    $('#logs').html(innerHTML);
 	    });
 	    
 	    $('#error-report').on('show', function () {
-		    var innerHTML = getJSLogsAsList";
+		    var innerHTML = getJSLogsAsList;
 		    $('#error-report .modal-body .content-body').html(innerHTML);
 	    });
 
