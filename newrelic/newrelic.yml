@@ -3,7 +3,7 @@
 # Java applications with deep visibility and low overhead.  For more
 # information, visit www.newrelic.com.
 #
-# This configuration file is custom generated for Compro Technologies_1
+# This configuration file is custom generated for p-pearson-hsc Heroku
 #
 # This section is for settings common to all environments.
 # Do not add anything above this next line.
@@ -14,7 +14,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '2ddac3f4355b6550eb04688d33703f66916226a8'
+  license_key: 'af713227d58229587a37b04eb1a8535ad3ce4989'
   
   # Agent Enabled
   # Use this setting to force the agent to run or not run.

@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "MIBC Overview",
 	"description": "What is MIBC and what are the instructors talking about?   Learn how to have a great conversation for a solution sale.",
-	"thumbnail": "images/assets/health prof/mibc overview/mibc overview-thumb.jpg",
-	"image": "images/assets/health prof/mibc overview/mibc overview.jpg",
+	"thumbnail": "Health Professions/MIBC/MIBC-web-thumb2.jpg",
+	"image": "Health Professions/MIBC/MIBC-web.jpg",
 	"sequence": 1,
-	"type": "book",
+	"type": "lab",
 	"author": "Various",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"	
+					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 1 .mp3"	
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"					
+					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 2 Billing.mp3"					
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"	
+					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 3 Coding.mp3"	
 				}],
 			    "tests": [
 			        {
@@ -141,25 +141,25 @@
 {
 	"name": "Medical Coding: A Journey Plus,1e",
 	"description": "How to win vs Buck with Rich.  (For PLS Reps)",
-	"thumbnail": "images/assets/health prof/medical coding/medical coding-thumb.jpg",
-	"image": "images/assets/health prof/medical coding/medical coding.jpg",
+	"thumbnail": "Health Professions/Rich/Rich-thumb2.jpg",
+	"image": "Health Professions/Rich/Rich.jpg",
 	"sequence": 2,
 	"type": "book",
 	"author": "Rich",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Health Professions/Rich/12-10-12 Health Prof Rich Part 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Health Professions/Rich/12-10-12 Health Prof Rich Part 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"				
+					"audioTrack": "Health Professions/Rich/12-10-12 Health Prof Rich Part 3 Technology.mp3"				
 				}],
 			    "tests": [
 			        {
@@ -280,25 +280,30 @@
 {
 	"name": "Medical Language,3e",
 	"description": "Pearson's number one selling med term book set to take the number one market position in 2013.",
-	"thumbnail": "images/assets/health prof/medical language/medical language-thumb.jpg",
-	"image": "images/assets/health prof/medical language/medical language.jpg",
+	"thumbnail": "Health Professions/Turley/Turley-thumb2.jpg",
+	"image": "Health Professions/Turley/Turley.jpg",
 	"sequence": 3,
 	"type": "book",
 	"author": "Turley",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Health Professions/Turley/12-6-12 Health Prof Turley 3 The Story.mp3"
+				},
+				{
+					"name": "Med Term",
+					"sequence": 2,
+					"audioTrack": "Health Professions/Turley/12-6-12 Health Prof Turley 1 Med Term.mp3"
 				},
 				{
 					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"sequence": 3,
+					"audioTrack": "Health Professions/Turley/12-6-12 Health Prof Turley 4 The Competition.mp3"
 				},
 				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"name": "Dig Solution",
+					"sequence": 4,
+					"audioTrack": "Health Professions/Turley/12-6-12 Health Prof Turley 2 Dig Solution.mp3"
 				}],
 			    "tests": [
 			        {
@@ -419,25 +424,20 @@
 {
 	"name": "MyMedicalTerminologyLab",
 	"description": "New to our Medical Terminology list in 2013.",
-	"thumbnail": "images/assets/health prof/mymedicalterminologylab/mymedicalterminologylab-thumb.png",
-	"image": "images/assets/health prof/mymedicalterminologylab/mymedicalterminologylab.png",
+	"thumbnail": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula-thumb2.png",
+	"image": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula.png",
 	"sequence": 4,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Health Professions/MMTL/12-6-12 Health Prof MMTL 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Health Professions/MMTL/12-6-12 Health Prof MMTL 2 Competition.mp3"
 				}],
 			    "tests": [
 			        {

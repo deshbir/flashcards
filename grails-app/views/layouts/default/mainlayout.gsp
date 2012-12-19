@@ -2,7 +2,7 @@
 <%@ page import="com.compro.cgrails.CgrailsUtils" %>
 <g:set var="direction" value="${CgrailsUtils.getOrientation()}" />
 <!DOCTYPE html>
-<html>
+<html manifest="cache.appcache">
 	<head>
 		<g:if test="${isFacebookLoginSuccess}">
 			<script src="//connect.facebook.net/en_US/all.js" id="facebook-jssdk"></script>

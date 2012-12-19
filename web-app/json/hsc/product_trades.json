@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "NCCER: The Story",
 	"description": "An overview of NCCER, the credentials they provide, the products we jointly publish, knowing when to sell NCCER, and the tips for how to effectively sell the solution.",
-	"thumbnail": "images/assets/trades/nccer the story/nccer the story-thumb2.jpg",
-	"image": "images/assets/trades/nccer the story/nccer the story.jpg",
+	"thumbnail": "Trades/NCCER/nccer new logo-thumb2.jpg",
+	"image": "Trades/NCCER/nccer new logo.jpg",
 	"sequence": 1,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Trades/NCCER/12-6-12 NCCER 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Trades/NCCER/12-6-12 NCCER 2 Credentials.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Trades/NCCER/12-6-12 NCCER 3 How it works.mp3"
 				}],
 	"tests": [{
 	        	"name": "test1",
@@ -140,25 +140,35 @@
 {
 	"name": "HVAC,2e",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	"thumbnail": "images/assets/trades/hvac/hvac-thumb2.jpg",
-	"image": "images/assets/trades/hvac/hvac.jpg",
+	"thumbnail": "Trades/HVAC/stanfield 2e cover-thumb2.jpg",
+	"image": "Trades/HVAC/stanfield 2e cover.jpg",
 	"sequence": 2,
 	"type": "book",
 	"author": "Stanfield",
 	"topics": [{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Trades/HVAC/12-8-12 HVAC_1_story .mp3"
+				},
+				{
+					"name": "Author",
+					"sequence": 2,
+					"audioTrack": "Trades/HVAC/12-8-12 HVAC_2_Author.mp3"
+				},
+				{
+					"name": "PIMP",
+					"sequence": 3,
+					"audioTrack": "Trades/HVAC/12-8-12_HVAC_4_MHL PIMP.mp3"
 				},
 				{
 					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"sequence": 4,
+					"audioTrack": "Trades/HVAC/12-8-12_HVAC_5_MHL competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"sequence": 5,
+					"audioTrack": "Trades/HVAC/12-8-12_HVAC_3_drive sell thru MHL.mp3"
 				}],
     "tests": [
         {
@@ -279,25 +289,25 @@
 {
 	"name": "NCCERconnect",
 	"description": "A unique online course supplement in the form of an electronic book and essential course management tools ",
-	"thumbnail": "images/assets/trades/nccerconnect/nccerconnect-thumb2.jpg",
-	"image": "images/assets/trades/nccerconnect/nccerconnect.jpg",
+	"thumbnail": "Trades/NCCERConnect/nccer new logo-thumb2.jpg",
+	"image": "Trades/NCCERConnect/nccer new logo.jpg",
 	"sequence": 3,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Trades/NCCERConnect/12-10-12 NCCERconnect 1a Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Trades/NCCERConnect/12-10-12 NCCERconnect 1c Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Trades/NCCERConnect/12-10-12 NCCERconnect 1b Features.mp3"
 				}],
     "tests": [{
         	"name": "test1",

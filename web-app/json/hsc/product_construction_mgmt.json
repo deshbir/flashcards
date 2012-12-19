@@ -2,26 +2,52 @@
 "products" : [{
 	"name": "Construction Management Front List Titles",
 	"description": "An overview of key new 2013 titles, including Mehta 2e, Borden's Architecture, Schodek Structures 7e, Kavanagh 9e, and Andres Principles 9e.",
-	"thumbnail": "images/assets/construction mgmt/const mgmt front list titles/const mgmt front list titles-thumb.jpg",
-	"image": "images/assets/construction mgmt/const mgmt front list titles/const mgmt front list titles.jpg",
+	"thumbnail": "Const Mgmt/MEhta 2e cover-thumb2.jpg",
+	"image": "Const Mgmt/MEhta 2e cover.jpg",
 	"sequence": 1,
 	"type": "book",
 	"author": "Various",
 		"topics": [	{
-					"name": "The Story",
+					"name": "Mover View",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Const Mgmt/12-8-12_CM_1_CMoverview.mp3"
 				},
 				{
-					"name": "Competition",
+					"name": "Mehta",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Const Mgmt/12-8-12_CM_2_Mehta2e.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
-				}],
+					"audioTrack": "Const Mgmt/12-8-12_CM_3_drive sell thru MCK.mp3"
+				},
+				{
+					"name": "Titles",
+					"sequence": 4,
+					"audioTrack": "Const Mgmt/12-8-12_CM_4_Jan CM titles.mp3"
+				},
+				{
+					"name": "Kavanagh",
+					"sequence": 5,
+					"audioTrack": "Const Mgmt/12-8-12_CM_5_Kavanagh9e.mp3"
+				},
+				{
+					"name": "Andres",
+					"sequence": 6,
+					"audioTrack": "Const Mgmt/12-8-12_CM_6_Andres 9e.mp3"
+				},
+				{
+					"name": "Schodek",
+					"sequence": 7,
+					"audioTrack": "Const Mgmt/12-8-12_CM_7_Schodek 7e.mp3"
+				},
+				{
+					"name": "Borden",
+					"sequence": 8,
+					"audioTrack": "Const Mgmt/12-8-12_CM_8_Borden 1e.mp3"
+				}
+				],
 			    "tests": [
 			        {
 			        	"name": "test1",
