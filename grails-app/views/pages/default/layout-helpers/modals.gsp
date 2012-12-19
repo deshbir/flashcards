@@ -49,9 +49,7 @@
 	</div>
 	<div class="modal-body">
 		<h4 class="content-header"></h4>
-		<div class="content-body">
-			ERROR RRRRRRRRRRRRRRRR
-		
+		<div class="content-body"> ERROR DETAILS
 		</div>
 	</div>
 
