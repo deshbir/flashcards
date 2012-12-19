@@ -32,6 +32,7 @@
 	.clickbox {
 		a {
 			padding:20px;
+			font-size:20px;
 		}
 	}
 }
@@ -68,12 +69,14 @@
 
 /********************************************* Responsive Styles *******************************/
 /*--  Landscape phones and down */
-@media (max-width: 780px) {
+@media(max-width: 480px) {
 	#discipline-list .clickbox {
 		a {
 	 		padding: 10px 5px;
 	 	}
 	}
+}
+@media (max-width: 780px) {
 	#discipline-list, #product-list {
 		 margin-top:10px;
 		.row-fluid {
@@ -82,5 +85,34 @@
 				margin-bottom:15px;
 			}
 		}
-	} 
+		img	{
+			width: 40px;
+		}
+		
+		.media .pull-left {
+	    	float: left;
+	    	display: inline;
+	    	margin-bottom: 0px;
+	 	}	
+	 	
+	 	.media .pull-right {
+			float: none;
+	    	display: block;
+	    	margin-bottom: 10px;
+	    	margin-left: 0px;
+	 	}
+	 	
+	 	.logo	{
+	 		width: 70px;
+	 	}
+	 	
+	 	p	{
+	 		display:inline;
+	 		margin:0px;
+	 	}
+	 	
+	 	.heading {
+	 		margin-bottom: 0px;
+	 	}
+	}
 }

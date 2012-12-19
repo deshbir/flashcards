@@ -8,6 +8,8 @@
 #page-header {
 	padding-bottom:5px;
 	margin-top:10px;
+	padding-bottom: 10px;
+	border-bottom:solid 1px @flashcard-border-color; 
 	.container {
 		padding-left:0;
 	}
@@ -34,6 +36,10 @@
 		   margin-top: 0;
 		}
 	}
+}
+
+#test-home {
+	margin-top:20px;
 }
 
 .flashcard {
@@ -168,6 +174,9 @@
 
 /* --------------- Flashcard Component -------------------------- */
 @media (max-width: 480px) {
+	#test-home {
+		margin-top:0px;
+	}
 	.flashcard {
 	  	border: 0px;
 	  	width: 100%;

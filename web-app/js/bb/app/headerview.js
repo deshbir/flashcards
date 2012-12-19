@@ -37,8 +37,8 @@ HeaderView = new function() {
 			"click #home"	:	"homebutton",
 			"click #logout"	:	"logout",
 			"click #admin-panel" :	"showModal",
-			"click #music .icon-play" :	"playMusic",
-			"click #music .icon-pause" : "pauseMusic"
+			"click #music .icon-pause-hsc" :	"playMusic",
+			"click #music .icon-mute-hsc" : "pauseMusic"
 		},
 		
 		initialize: function() {
@@ -107,13 +107,9 @@ HeaderView = new function() {
 		},
 		pauseMusic : function(){
 			mainApp.soundManagerConfig.soundManagerObject.pause();
-			$("#music i").addClass('icon-play');
-			$("#music i").removeClass('icon-pause');
 		},
 		playMusic : function(){
 			mainApp.soundManagerConfig.soundManagerObject.play();
-			$("#music i").removeClass('icon-play');
-			$("#music i").addClass('icon-pause');
 		},
 		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
@@ -138,11 +134,11 @@ HeaderView = new function() {
 			if(!mainApp.soundManagerConfig.musicStopped){
 				$("#music").css("display", "block");
 				if(mainApp.soundManagerConfig.musicPlaying){
-					$("#music i").removeClass('icon-play');
-					$("#music i").addClass('icon-pause');
+					$("#music i").removeClass('icon-pause-hsc');
+					$("#music i").addClass('icon-mute-hsc');
 				} else {
-					$("#music i").addClass('icon-play');
-					$("#music i").removeClass('icon-pause');
+					$("#music i").addClass('icon-pause-hsc');
+					$("#music i").removeClass('icon-mute-hsc');
 				}
 			} else{
 				$("#music").css("display", "none");
