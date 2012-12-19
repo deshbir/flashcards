@@ -32,6 +32,8 @@ HomeView = new function() {
 	    	$('#headers').html("");
 	    	$("#ajax-error-label").text("Oops!");
 		    $('#ajax-error-modal .modal-body .content-header').text("Invalid path requested!");
+		    $('#no-network').hide();
+	    	$('#ajax-error-modal .modal-body .content-body').show();
 		    $('#ajax-error-modal').modal();
 	    }
 	});
@@ -115,7 +117,6 @@ HomeView = new function() {
 			return false;
 		},
 		browseDiscipline: function() {
-			alert("chak de")
 			Backbone.history.navigate("#/discipline");
 		},
 	});

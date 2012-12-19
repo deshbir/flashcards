@@ -25,6 +25,9 @@
 				</div>
 			</div>
 		</div>
+		<div id="no-network">
+			You don't seem to have Internet connectivity at this time. Please check your devices settings and restart the App. In case you’re out of network range, please try again once internet is available.
+		</div>
 	</div>
 
 	<div class="modal-footer">
@@ -44,18 +47,27 @@
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">x</button>
 		<h3 id="ajax-error-label">
-			Error Report
+			HSC App Error Report
 		</h3>
+		<div class="date">
+			<span>Date:</span>
+			<span class="date-data"></span>
+		</div>
 	</div>
 	<div class="modal-body">
 		<h4 class="content-header"></h4>
-		<div class="content-body"> ERROR DETAILS
+		<div class="content-body">
+			<h2>Message</h2>
+			<div class="message"></div>
+			<h2>Logs</h2>
+			<div class="logs"></div>
+			<h2>Headers & Parameters</h2>
+			<div class="params"></div>
 		</div>
 	</div>
-
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">
-			OK
+			Ok
 		</button>
 	</div>
 </div>

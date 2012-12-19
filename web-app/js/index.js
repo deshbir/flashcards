@@ -221,7 +221,13 @@
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
- 		    
+ 		    if(statusCode == 0){
+		    	$('#ajax-error-modal .modal-body .content-body').hide();
+		    	$('#no-network').show();
+		    } else {
+		    	$('#no-network').hide();
+		    	$('#ajax-error-modal .modal-body .content-body').show();
+		    }
  		    $('#ajax-error-modal').modal();
  		    return true;
  		});		        
@@ -356,7 +362,13 @@
 	    
 	    $('#error-report').on('show', function () {
 		    var innerHTML = getJSLogsAsList;
-		    $('#error-report .modal-body .content-body').html(innerHTML);
+		    var date = new Date();
+		    var dateString = date.toDateString(); 
+		    $('#error-report .modal-header .date .date-data').html(dateString);
+		    $('#error-report .modal-body .content-header').html($('#ajax-error-modal .modal-body .content-header').html());
+		    $('#error-report .modal-body .content-body .logs').html(innerHTML);
+		    $('#error-report .modal-body .content-body .params').html($('#headers').html());
+		    $('#error-report .modal-body .content-body .message').html($('#message').html());
 	    });
 
 	    $("#ajax-error-modal .modal-footer .generateErrorReport").click(function(){
@@ -468,7 +480,7 @@
  		applyTransition($("#panel-container"), translationWidth);
  		$("#bb-container").height($(panelId).height());*/
  	}
- 	
+ 		
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
 		/*
