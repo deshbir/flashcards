@@ -11,19 +11,21 @@ class FacebookAuthService {
 	FacebookAuthDao facebookAuthDao
 	void prepopulateAppUser(User user, FacebookAuthToken token) {
 		def accessToken  = token.accessToken?.accessToken	
-		String authUrl = "https://graph.facebook.com/me?access_token=$accessToken"
-		URL url = new URL(authUrl)
-		JSONObject me = JSON.parse(url.readLines().first())
-		user.password = me.first_name.toLowerCase()
-		user.username = me.username
-		user.accountExpired = false
-		user.accountLocked = false
-		user.enabled = true
-		user.passwordExpired = false
-		user.email = me.email
-		user.firstName = me.first_name
-		user.lastName = me.last_name
-		user.isAdmin = false
+		if(accessToken){
+			String authUrl = "https://graph.facebook.com/me?access_token=$accessToken"
+			URL url = new URL(authUrl)
+			JSONObject me = JSON.parse(url.readLines().first())
+			user.password = me.first_name.toLowerCase()
+			user.username = me.username
+			user.accountExpired = false
+			user.accountLocked = false
+			user.enabled = true
+			user.passwordExpired = false
+			user.email = me.email
+			user.firstName = me.first_name
+			user.lastName = me.last_name
+			user.isAdmin = false
+		}
 	}
 	
 	
