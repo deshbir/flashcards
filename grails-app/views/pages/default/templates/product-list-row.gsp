@@ -5,7 +5,7 @@
 		<a href="javascript:;">
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
 		  {{#book}}
-		      <img alt="{{name}}" class="pull-left hidden-phone" src="${imagePath}{{thumbnail}}"/>
+		      <img alt="{{name}}" class="pull-left" src="${imagePath}{{thumbnail}}"/>
 	          <div class="media-body">
 				<span class="heading">{{{name}}}</span>
 				<i class="icon-chevron-right visible-phone"></i>
@@ -14,10 +14,12 @@
 			  </div>
 		  {{/book}}
 		  {{#lab}}
-		        <img alt="{{name}}" class="logo hidden-phone pull-right" src="${imagePath}{{thumbnail}}"/> 
-				<p class="heading">{{{name}}}</p>
-				<i class="icon-chevron-right visible-phone"></i>
-				<p class="hidden-phone">{{description}}</p>
+		        <img alt="{{name}}" class="logo pull-right" src="${imagePath}{{thumbnail}}"/>
+		        <div class="media-body"> 
+					<p class="heading">{{{name}}}</p>
+					<i class="icon-chevron-right visible-phone"></i>
+					<p class="hidden-phone">{{description}}</p>
+				</div>	
 		  {{/lab}}
         </a>  	
 	</div>
