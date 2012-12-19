@@ -29,7 +29,11 @@
 	.row-fluid {
 		margin:20px 0;
 	}
-	
+	.clickbox {
+		a {
+			padding:20px;
+		}
+	}
 }
 #panel_discipline-home h2 {
 	font-size:26px;
@@ -64,8 +68,14 @@
 
 /********************************************* Responsive Styles *******************************/
 /*--  Landscape phones and down */
-@media (max-width: 480px) {
+@media (max-width: 780px) {
+	#discipline-list .clickbox {
+		a {
+	 		padding: 10px 5px;
+	 	}
+	}
 	#discipline-list, #product-list {
+		 margin-top:10px;
 		.row-fluid {
 			margin:0px;
 			div.clickbox {

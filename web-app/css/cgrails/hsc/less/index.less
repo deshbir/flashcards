@@ -3,11 +3,30 @@
 
 @navbarInverseBackgroundHighlight:#ED6B06;
 @navbarInverseBackground : #ED6B06;
+@navbarInverseBorder : #C25A3C;
 @bodyBackgroundColor : #FFE5D0;
 @footer-bg-color:#ED6B06;
 @footer-color:@white;
 @navbarInverseLinkColor:@white; 
 @product_heading_color:#5b544e;
+
+@HSCButtonColor: #e39979; //orange
+@HSCButtonBottomColor:#d7604a;
+@HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
+
+
+@profile-img-top-color:#d0cdbc;
+@profile-img-bottom-color:#bbb8aa;
+@login-input-shadow:0px 2px #c2ad9b;
+@login-input-border:#ed6b06;
+
+@playlist-li-color:@white;
+@playlist-icon-border-color:rgb(211,208,191);
+@timing-bg-color :#FFE5D0;
+@playlist-li-text-color:#5b544e;
+@status-bar-bg-color : #ED6B06;
+@product-home-border-color:lighten(#ED6B06,15%);
+
 
 body {
 	background-color: @bodyBackgroundColor;
@@ -20,16 +39,35 @@ body {
 }
 
 .btn {
-	#gradient > .vertical(@HSCButtonColor, darken(@HSCButtonColor, 5%));
-	color:#FFFFFF;
-	line-height:30px;
-	font-size:21px;
-	&:hover {
-		#gradient > .vertical(darken(@HSCButtonColor, 5%), darken(@HSCButtonColor, 10%));
-		background-position:0 0;
-		color:#FFFFFF;
-	}
+	border-color:#c25a3c;
+	.box-shadow(0px 1px #c5231b);
 }
 
-
+/***************************************** Product-home styles****************************/
+#product-home {
+	ul.playlist li {
+		border: 1px solid #ABABAB;
+	}
+	ul.playlist li.sm2_playing, ul.playlist li.sm2_playing:hover {
+    	#gradient > .vertical(@playlist-li-color, @playlist-li-color);
+	}
+	
+	ul.playlist li.sm2_playing .timing {
+		color:#ED6B06;
+		border:0 none;
+		.border-radius(0);
+	}
+	#product-info {
+		h3 {
+			color:#ED6B06;
+		}
+		img {
+			background-color: @white;
+		}
+	}
+	
+}
+@import "home.less";
 @import "clickbox.less";
+@import "flashcards.less";
+

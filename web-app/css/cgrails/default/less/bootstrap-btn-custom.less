@@ -1,13 +1,17 @@
+@HSCButtonColor: #7dccdf; //turquoise blue
+@HSCButtonBottomColor:darken(@HSCButtonColor, 5%);
+@HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
 
 /* ----------------- Buttons styling --------------------------- */
 .btn {
-	#gradient > .vertical(@HSCButtonColor, darken(@HSCButtonColor, 5%));
+	#gradient > .vertical(@HSCButtonColor, @HSCButtonBottomColor);
 	color:#FFFFFF;
-	line-height:30px;
+	line-height:22px;
 	font-size:18px;
-	/*.box-shadow();*/
+	opacity:0.9;
+	.border-radius(10px);
 	&:hover {
-		#gradient > .vertical(darken(@HSCButtonColor, 5%), darken(@HSCButtonColor, 10%));
+		#gradient > .vertical(@HSCButtonBottomColor, @HSCButtonHoverColor);
 		background-position:0 0;
 		color:#FFFFFF;
 	}
