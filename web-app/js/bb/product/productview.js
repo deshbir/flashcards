@@ -9,13 +9,8 @@ ProductView = new function() {
 	pagePlayer.config.updatePageTitle = false;
 	pagePlayer.events.play = function(){
 		$("#music").show();
-<<<<<<< HEAD
 		$("#music i").removeClass('icon-play-hsc');
 		$("#music i").addClass('icon-pause-hsc');
-=======
-		$("#music i").removeClass('icon-play');
-		$("#music i").addClass('icon-pause');
->>>>>>> branch 'dev2' of https://github.com/deshbir/flashcards.git
 		mainApp.soundManagerConfig.musicPlaying = true;
 		mainApp.soundManagerConfig.musicStopped = false;
 		var soundManager = this;
@@ -25,13 +20,8 @@ ProductView = new function() {
 	}
 	var pagePlayerPause = pagePlayer.events.pause;
 	pagePlayer.events.pause = function(){
-<<<<<<< HEAD
 		$("#music i").addClass('icon-play-hsc');
 		$("#music i").removeClass('icon-pause-hsc');
-=======
-		$("#music i").addClass('icon-play');
-		$("#music i").removeClass('icon-pause');
->>>>>>> branch 'dev2' of https://github.com/deshbir/flashcards.git
 		mainApp.soundManagerConfig.musicPlaying = false;
 		pagePlayerPause.call(this);
 		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
@@ -39,26 +29,16 @@ ProductView = new function() {
 	var pagePlayerResume = pagePlayer.events.resume;
 	pagePlayer.events.resume = function(){
 		mainApp.soundManagerConfig.musicPlaying = true;
-<<<<<<< HEAD
 		$("#music i").removeClass('icon-play-hsc');
 		$("#music i").addClass('icon-pause-hsc');
-=======
-		$("#music i").removeClass('icon-play');
-		$("#music i").addClass('icon-pause');
->>>>>>> branch 'dev2' of https://github.com/deshbir/flashcards.git
 		pagePlayerResume.call(this);
 		$("#product-home .sm2_playing i").addClass('icon-volume-up');
 		$("#product-home .sm2_playing i").addClass('icon-pause'); 
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
-<<<<<<< HEAD
 		$("#music i").addClass('icon-play-hsc');
 		$("#music i").removeClass('icon-pause-hsc');
-=======
-		$("#music i").addClass('icon-play');
-		$("#music i").removeClass('icon-pause');
->>>>>>> branch 'dev2' of https://github.com/deshbir/flashcards.git
 		mainApp.soundManagerConfig.musicPlaying = false;
 		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
