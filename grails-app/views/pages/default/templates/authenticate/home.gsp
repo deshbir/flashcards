@@ -12,11 +12,11 @@
 								<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" class=""/>
 							{{/facebookuser}}
 							{{^facebookuser}}
-								<a class="btn"><i class="icon-user-hsc"></i></a>
+								<a><i class="icon-user-hsc"></i></a>
 							{{/facebookuser}}	
 						</div>	
 						<div>
-							<p>{{firstname}} {{lastname}}</p>
+							<p><strong>{{firstname}} {{lastname}}</strong></p>
 							<p><small>{{email}}</small></p>
 						</div>				
 						
@@ -35,17 +35,16 @@
 			<div id="loginErrorMessage"></div> 	
 			<div class="hero-unit">
 				 <div class="input-prepend">
-					<span class="add-on"><i class="icon-user"></i></span>
-					<input class="span2 input-xlarge" id="username" name="j_username" type="email" placeholder="Email" required>
+					<span class="add-on"><i class="icon-user-hsc"></i></span>
+					<input class="span2 input-xlarge" id="username" name="j_username" type="email" placeholder="email" required>
 				</div>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-lock"></i></span>
-					<input class="span2 input-xlarge" id="j_password" name="j_password" type="Password" placeholder="Password" required>
+					<input class="span2 input-xlarge" id="j_password" name="j_password" type="Password" placeholder="password" required>
 				</div>
 				<button class="btn btn-large btn-block" id="login-button">
 					Login
 				</button> 
-				<p id="forgot-pwd"> Forgot your password? <a href="#">Get Help</a> </p>
 			</div>
 		</form>
 		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">

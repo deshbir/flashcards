@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="brand">
-			<a title="Pearson Health Sciences & Careers">PEARSON</a>
+			<r:img uri="/images/Pearson_Logo_V2.png" title="Pearson Health Sciences & Careers" alt="Pearson"/>
 		</div>
 
 		<ul class="nav pull-right">

@@ -1,0 +1,28 @@
+@login-h3-color: #ED6B06;
+@facebook-icon-color:rgb(66, 104, 172);
+
+#loginform { 
+	#ajaxLoginForm, #loggedin-container {
+		.input-prepend  {
+			.add-on {
+				i {
+					color:#8F8F8F;
+				}
+			}
+		}
+		#user-info {
+			background-color:@white;
+		}
+	}
+	#facebook-login {
+		#gradient > .vertical(@black, @black);
+		border:solid 1px @black;
+		.border-radius(6px);
+		a {
+			#gradient > .vertical(lighten(@facebook-icon-color, 10%), lighten(@facebook-icon-color, 10%));
+		}
+		.facebook-text {
+			
+		}
+	}
+}
