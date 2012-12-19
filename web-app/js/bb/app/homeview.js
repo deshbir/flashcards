@@ -41,8 +41,9 @@ HomeView = new function() {
 		myPanelId:"#panel_home",
 		
 		events: {
-			"click #login-button"	:	"userlogin",
-			"click #logout-button"	:	"userlogout"
+			"click #login-button"		:	"userlogin",
+			"click #logout-button"		:	"userlogout",
+			"click #discipline-button"	:	"browseDiscipline"
 		},
 				
 		initialize: function() {
@@ -112,7 +113,11 @@ HomeView = new function() {
 		userlogout : function() {
 			Authenticate.logout();
 			return false;
-		}	
+		},
+		browseDiscipline: function() {
+			alert("chak de")
+			Backbone.history.navigate("#/discipline");
+		},
 	});
 	
 	this.routerInitialize = function(){

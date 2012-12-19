@@ -21,8 +21,8 @@
 						</div>				
 						
 				</div>	
-				<a href="#/discipline" class="btn btn-large btn-block">Browse Disciplines</a>
-				<a href="#" id="logout-button" class="btn btn-large btn-block">Logout</a>
+				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
+				<button id="logout-button" class="btn btn-large btn-block">Logout</button>
 			</div>
 	    </div>
 	{{/loggedin}}
