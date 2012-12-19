@@ -221,7 +221,6 @@
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
- 		    
  		    $('#ajax-error-modal').modal();
  		    return true;
  		});		        
