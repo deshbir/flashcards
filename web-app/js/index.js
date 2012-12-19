@@ -211,7 +211,7 @@
  		       msgHeader = statusCode + " :Unknown Error";    
  		       msgDesc = xhr.responseText               
  		    }
- 		    logger.error("Ajax Error  - statusCode:"+statusCode+" msgHeader :"+msgHeader+" msgDesc:"+msgDesc);
+ 		    logger.error("Ajax Error  - statusCode:"+statusCode+" msgHeader :"+msgHeader);
  		    var regex = new RegExp("\<style.*style\>");
  		    msgDesc = msgDesc.replace(regex, "");
  		    $("#ajax-error-label").text(msgTitle);
@@ -221,14 +221,7 @@
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
- 		    $('#ajax-error-modal .modal-footer .mailToAdmin').click(function() {
- 		    	emailConfig.ccEmails = "";
- 		    	emailConfig.cc.map(function(element){
- 		    		emailConfig.ccEmails += "&cc="+element;
- 		    	})
- 		    	var email = "mailto:"+emailConfig.adminEmail+"?subject="+emailConfig.subject+ emailConfig.ccEmails + "&body="+planeLogs;
- 		    	window.open(email);
- 		    });
+ 		    
  		    $('#ajax-error-modal').modal();
  		    return true;
  		});		        
@@ -494,7 +487,7 @@
  				logger.info("backbone navigation start");
  				backbone_start_navigation();
  				//Initializing error modal to trigger logging in modal box each time it is shown.
- 				initializeModal();
+ 				modalEventRegistration();
  				logger.info("sound manager initialization");
  				soundmanager2_init();
  				
