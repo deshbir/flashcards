@@ -37,8 +37,8 @@ HeaderView = new function() {
 			"click #home"	:	"homebutton",
 			"click #logout"	:	"logout",
 			"click #admin-panel" :	"showModal",
-			"click #music .icon-play-hsc" :	"playMusic",
-			"click #music .icon-pause-hsc" : "pauseMusic"
+			"click #music .icon-pause-hsc" :	"playMusic",
+			"click #music .icon-mute-hsc" : "pauseMusic"
 		},
 		
 		initialize: function() {
@@ -134,11 +134,11 @@ HeaderView = new function() {
 			if(!mainApp.soundManagerConfig.musicStopped){
 				$("#music").css("display", "block");
 				if(mainApp.soundManagerConfig.musicPlaying){
-					$("#music i").removeClass('icon-play-hsc');
-					$("#music i").addClass('icon-pause-hsc');
-				} else {
-					$("#music i").addClass('icon-play-hsc');
 					$("#music i").removeClass('icon-pause-hsc');
+					$("#music i").addClass('icon-mute-hsc');
+				} else {
+					$("#music i").addClass('icon-pause-hsc');
+					$("#music i").removeClass('icon-mute-hsc');
 				}
 			} else{
 				$("#music").css("display", "none");
