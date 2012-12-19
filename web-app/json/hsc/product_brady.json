@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "MyBRADYLab",
 	"description": "MyBRADYLab is an online, super-charged personalized assessment and remediation tool to accompany Brady’s EMT, AEMT, Paramedic, and Fire solutions. ",
-	"thumbnail": "images/assets/brady/mybradylab/mybradylab-thumb.jpeg",
-	"image": "images/assets/brady/mybradylab/mybradylab.jpeg",
+	"thumbnail": "Brady/02 MyBRADYLab/mybradylab-thumb2.jpg",
+	"image": "Brady/02 MyBRADYLab/mybradylab.jpg",
 	"sequence": 1,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Brady/02 MyBRADYLab/12-10-12 MyBradyLab 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Brady/02 MyBRADYLab/12-10-12 MyBradyLab 2 Marketing Support.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Brady/02 MyBRADYLab/12-10-12 MyBradyLab 3 Additional Technologies.mp3"
 				}],
 			    "tests": [
 			        {
@@ -141,25 +141,20 @@
 {
 	"name": "Brady: The Story",
 	"description": "Brady has been the leading EMS publisher for over 30 years.  With a 65% market share in the EMT space you can bet that most instructors will know the name BRADY when you talk to them.",
-	"thumbnail": "images/assets/brady/brady-the story/brady-the story-thumb.jpg",
-	"image": "images/assets/brady/brady-the story/brady-the story.jpg",
+	"thumbnail": "Brady/01 Brady/brady-thumb2.jpeg",
+	"image": "Brady/01 Brady/brady.jpeg",
 	"sequence": 2,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Brady/01 Brady/12-10-12 Brady 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Brady/01 Brady/12-10-12 Brady 2 Competition.mp3"
 				}],
 			    "tests": [
 			        {

@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "Medical Surgical Nursing,2e",
 	"description": "An overview of Osborn's Medical Surgical Nursing",
-	"thumbnail": "images/assets/nursing/med surg nursing/med surg nursing-thumb.jpg",
-	"image": "images/assets/nursing/med surg nursing/med surg nursing.jpg",
+	"thumbnail": "Nursing/Osborn/Osborn_front_cvr_highres-thumb2.jpg",
+	"image": "Nursing/Osborn/Osborn_front_cvr_highres.jpg",
 	"sequence": 1,
 	"type": "book",
 	"author": "Osborne",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/Osborn/12-6-12 Nurs Osborn 1 The Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Osborn/12-6-12 Nurs Osborn 2 The Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Osborn/12-6-12 Nurs Osborn 3 Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -141,25 +141,25 @@
 {
 	"name": "Pharmacology,4e",
 	"description": "An overview of Adams' Pharmacology",
-	"thumbnail": "images/assets/nursing/pharmacology/pharmacology-thumb.jpg",
-	"image": "images/assets/nursing/pharmacology/pharmacology.jpg",
+	"thumbnail": "Nursing/Adams/Adams COV MECH_HIRES-thumb2.jpg",
+	"image": "Nursing/Adams/Adams COV MECH_HIRES.jpg",
 	"sequence": 2,
 	"type": "book",
 	"author": "Adams",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/Adams/12-6-12 Nurs Adams 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Adams/12-6-12 Nurs Adams 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Adams/12-6-12 Nurs Adams 3 Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -280,25 +280,20 @@
 {
 	"name": "Maternal Newborn,8e",
 	"description": "An overview of Ladewig, Maternal Newborn",
-	"thumbnail": "images/assets/nursing/maternal new/maternal new-thumb.jpg",
-	"image": "images/assets/nursing/maternal new/maternal new.jpg",
+	"thumbnail": "Nursing/Ladewig/Ladewig_NursingCare8e-thumb2.jpg",
+	"image": "Nursing/Ladewig/Ladewig_NursingCare8e.jpg",
 	"sequence": 3,
 	"type": "book",
 	"author": "Ladewig",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Ladewig/12-10-12 Nurs Ladewig 1 Story.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Ladewig/12-10-12 Nurs Ladewig 2 Driving Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -419,25 +414,25 @@
 {
 	"name": "Child Health,3e",
 	"description": "An overview of Ball, Child Health",
-	"thumbnail": "images/assets/nursing/child health/child health-thumb.jpg",
-	"image": "images/assets/nursing/child health/child health.jpg",
+	"thumbnail": "Nursing/Ball/Ball_ChildHealthNursing3e-thumb2.jpg",
+	"image": "Nursing/Ball/Ball_ChildHealthNursing3e.jpg",
 	"sequence": 4,
 	"type": "book",
 	"author": "Ball",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/Ball/12-10-12 Nurs Ball 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Ball/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Ball/12-10-12 Nurs Ball 2 Driving Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -558,25 +553,15 @@
 {
 	"name": "Real EHRPrep with Cerner",
 	"description": "An overview of Real EHRPrep with Cerner",
-	"thumbnail": "images/assets/nursing/real ehrprep/real ehrprep-thumb.jpg",
-	"image": "images/assets/nursing/real ehrprep/real ehrprep.jpg",
+	"thumbnail": "Nursing/RealEHRPrep/cerner_logo_cmyk_horizontal-thumb2.jpg",
+	"image": "Nursing/RealEHRPrep/cerner_logo_cmyk_horizontal.jpg",
 	"sequence": 5,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/RealEHRPrep/12-10-12 Nurs RealEHRPrep Story.mp3"
 				}],
 			    "tests": [
 			        {
@@ -697,26 +682,12 @@
 {
 	"name": "Live Review",
 	"description": "An overview of Pearson's Live Review services",
-	"thumbnail": "images/assets/nursing/live review/live review-thumb.jpg",
-	"image": "images/assets/nursing/live review/live review.jpg",
+	"thumbnail": "Nursing/Live Review/RP_Nursing_blue-thumb2.jpg",
+	"image": "Nursing/Live Review/RP_Nursing_blue.jpg",
 	"sequence": 6,
 	"type": "lab",
 	"author": "Pearson",
-	"topics": [	{
-					"name": "The Story",
-					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
-				}],
+	"topics": [],
 			    "tests": [
 			        {
 			        	"name": "test1",
@@ -836,25 +807,25 @@
 {
 	"name": "ReadyPoint",
 	"description": "An overview of Readypoint",
-	"thumbnail": "images/assets/nursing/readypoint/readypoint-thumb.jpg",
-	"image": "images/assets/nursing/readypoint/readypoint.jpg",
+	"thumbnail": "Nursing/Readypoint/RP_Nursing_blue-thumb2.jpg",
+	"image": "Nursing/Readypoint/RP_Nursing_blue.jpg",
 	"sequence": 7,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/Readypoint/12-12-12 Nursing Readypoint 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Readypoint/12-12-12 Nursing Readypoint 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Readypoint/12-12-12 Nursing Readypoint 2 Supplements.mp3"
 				}],
 			    "tests": [
 			        {
@@ -975,25 +946,25 @@
 {
 	"name": "MyNursingLab",
 	"description": "An overview of MyNursingLab",
-	"thumbnail": "images/assets/nursing/mynursinglab/mynursinglab-thumb.jpg",
-	"image": "images/assets/nursing/mynursinglab/mynursinglab.jpg",
+	"thumbnail": "Nursing/MNL/MNL Wordmark - Blue-thumb2.jpg",
+	"image": "Nursing/MNL/MNL Wordmark - Blue.jpg",
 	"sequence": 8,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/MNL/12-10-12 Nurs MyNursingLab 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/MNL/12-10-12 Nurs MyNursingLab 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/MNL/12-10-12 Nurs MyNursingLab 3 Driving Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -1114,25 +1085,25 @@
 {
 	"name": "Neighborhood 2.0",
 	"description": "An overview of The Neighborhood",
-	"thumbnail": "images/assets/nursing/neighborhood 2/neighborhood 2-thumb.jpg",
-	"image": "images/assets/nursing/neighborhood 2/neighborhood 2.jpg",
+	"thumbnail": "Nursing/Neighborhood/TheNeighborhood_logo_blue-thumb2.png",
+	"image": "Nursing/Neighborhood/TheNeighborhood_logo_blue.png",
 	"sequence": 9,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/Neighborhood/12-10-12 Nurs Neighborhood 2 The Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/Neighborhood/12-10-12 Nurs Neighborhood 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/Neighborhood/12-10-12 Nurs Neighborhood 1 Driving Sell Through.mp3"
 				}],
 			    "tests": [
 			        {
@@ -1253,25 +1224,25 @@
 {
 	"name": "RN-to-BSN",
 	"description": "An overview of RN to BSN program offerings",
-	"thumbnail": "images/assets/nursing/rn-to-bsn/rn-to-bsn-thumb.jpg",
-	"image": "images/assets/nursing/rn-to-bsn/rn-to-bsn.jpg",
+	"thumbnail": "Nursing/RN2BSN/RN to BSN-web-thumb2.jpg",
+	"image": "Nursing/RN2BSN/RN to BSN-web.jpg",
 	"sequence": 10,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Nursing/RN2BSN/12-10-12 Nurs RN to BSN 1 The Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Nursing/RN2BSN/12-10-12 Nurs RN to BSN 2 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Nursing/RN2BSN/12-10-12 Nurs RN to BSN 3 Driving Sell Through.mp3"
 				}],
 			    "tests": [
 			        {

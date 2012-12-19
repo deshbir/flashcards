@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "The Paralegal Professional,4e",
 	"description": "The Paralegal Professional walkthrough",
-	"thumbnail": "images/assets/paralegal/the paralegal professional/the paralegal professional-thumb.png",
-	"image": "images/assets/paralegal/the paralegal professional/the paralegal professional.png",
+	"thumbnail": "Paralegal/Goldman/goldmanintro-thumb2.png",
+	"image": "Paralegal/Goldman/goldmanintro.png",
 	"sequence": 1,
 	"type": "book",
 	"author": "Goldman",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Paralegal/Goldman/12-6-12 Paral Goldman 1 The Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Paralegal/Goldman/12-6-12 Paral Goldman 2 The Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/Goldman/12-6-12 Paral Goldman 3 The Technology.mp3"
 				}],
 			    "tests": [
 			        {
@@ -141,25 +141,15 @@
 {
 	"name": "Real Estate Fundamentals,1e",
 	"description": " Real Estate Fundamentals walkthrough",
-	"thumbnail": "images/assets/paralegal/real estate fundamentals/real estate fundamentals-thumb.gif",
-	"image": "images/assets/paralegal/real estate fundamentals/real estate fundamentals.gif",
+	"thumbnail": "Paralegal/Hughes/cover_placeholder-thumb2.gif",
+	"image": "Paralegal/Hughes/cover_placeholder.gif",
 	"sequence": 2,
 	"type": "book",
 	"author": "Hughes",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/Hughes/12-6-12 Paral Hughes 1 The Story.mp3"
 				}],
 			    "tests": [
 			        {
@@ -280,25 +270,15 @@
 {
 	"name": "Ethics for the Legal Professional,8e",
 	"description": "Ethics for the Legal Professional Walkthrough",
-	"thumbnail": "images/assets/paralegal/ethics for the legal prof/ethics for the legal prof-thumb.jpg",
-	"image": "images/assets/paralegal/ethics for the legal prof/ethics for the legal prof.jpg",
+	"thumbnail": "Paralegal/Orlik/orlik_i-thumb2.jpg",
+	"image": "Paralegal/Orlik/orlik_i.jpg",
 	"sequence": 3,
 	"type": "book",
 	"author": "Orlik",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/Orlik/12-6-12 Paral Orlik 1 The Story.mp3"
 				}],
 			    "tests": [
 			        {
@@ -419,25 +399,15 @@
 {
 	"name": "Torts and Personal Injury Law,4e",
 	"description": "Torts and Personal Injury Law Walkthrough",
-	"thumbnail": "images/assets/paralegal/torts and pers injury law/torts and pers injury law-thumb.gif",
-	"image": "images/assets/paralegal/torts and pers injury law/torts and pers injury law.gif",
+	"thumbnail": "Paralegal/Jeffries/cover_placeholder-thumb2.gif",
+	"image": "Paralegal/Jeffries/cover_placeholder.gif",
 	"sequence": 4,
 	"type": "book",
 	"author": "Jeffries",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/Jeffries/12-6-12 Paral Jeffries 1 The Story.mp3"
 				}],
 			    "tests": [
 			        {
@@ -558,25 +528,15 @@
 {
 	"name": "Tort Law , 2e",
 	"description": "Tort Law walkthrough",
-	"thumbnail": "images/assets/paralegal/tort law/tort law-thumb.jpg",
-	"image": "images/assets/paralegal/tort law/tort law.jpg",
+	"thumbnail": "Paralegal/Michaud/michaudtorts_i-thumb2.jpg",
+	"image": "Paralegal/Michaud/michaudtorts_i.jpg",
 	"sequence": 5,
 	"type": "book",
 	"author": "Michaud",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-				},
-				{
-					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
-					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/Michaud/12-6-12 Paral Michaud 1 The Story.mp3"
 				}],
 			    "tests": [
 			        {
@@ -697,25 +657,25 @@
 {
 	"name": "MyLegalStudiesLab",
 	"description": "MyLegalStudiesLab walkthrough",
-	"thumbnail": "images/assets/paralegal/mylegalstudieslab/mylegalstudieslab-thumb.png",
-	"image": "images/assets/paralegal/mylegalstudieslab/mylegalstudieslab.png",
+	"thumbnail": "Paralegal/MLSL/mylab-thumb2.png",
+	"image": "Paralegal/MLSL/mylab.png",
 	"sequence": 6,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Paralegal/MLSL/12-6-12 Paral MLSL 1 The Story.mp3"
 				},
+				{
+					"name": "Features",
+					"sequence": 2,
+					"audioTrack": "Paralegal/MLSL/12-6-12 Paral MLSL 2 Features.mp3"
+				},				
 				{
 					"name": "Competition",
-					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-				},
-				{
-					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Paralegal/MLSL/12-6-12 Paral MLSL 3 The Competition.mp3"
 				}],
 			    "tests": [
 			        {

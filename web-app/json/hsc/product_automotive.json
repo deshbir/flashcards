@@ -2,27 +2,36 @@
 "products" : [{
 	"name": "Automotive Systems Overview",
 	"description": "An overview of Automotive Systems titles A1-A8 their shared story and their competitive advantage.",
-	"thumbnail": "images/assets/automotive/auto sys overview/auto sys overview-thumb.jpg",
-	"image": "images/assets/automotive/auto sys overview/auto sys overview.jpg",
+	"thumbnail": "Auto/Systems/HALDERMAN ENGPERF4 COVER -thumb2.jpg",
+	"image": "Auto/Systems/HALDERMAN ENGPERF4 COVER .jpg",
 	"sequence": 1,
 	"type": "book",
 	"author": "Halderman",
 	"topics": [{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-					
+					"audioTrack": "Auto/Systems/12-6-12 Auto 1 Story.mp3"
+				},
+				{
+					"name": "Systems",
+					"sequence": 2,
+					"audioTrack": "Auto/Systems/12-6-12 Auto 2 Systems.mp3"
+				},
+				{
+					"name": "Authors",
+					"sequence": 3,
+					"audioTrack": "Auto/Systems/12-6-12 Auto 3 Authors.mp3"
 				},
 				{
 					"name": "Competition",
-					"sequence":2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"sequence":4,
+					"audioTrack": "Auto/Systems/12-6-12 Auto 5 Competition.mp3"
 					
 				},
 				{
 					"name": "Driving Sell Thru",
-					"sequence":3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"sequence":5,
+					"audioTrack": "Auto/Systems/12-6-12 Auto 4 Driving Sellthru.mp3"
 					
 				}],
 			    "tests": [
@@ -144,25 +153,25 @@
 {
 	"name": "MyAutomotiveLab",
 	"description": "Automotive Fundamentals course offerings compared and the competitive landscape.",
-	"thumbnail": "images/assets/automotive/myautomotivelab/myautomotivelab-thumb.jpg",
-	"image": "images/assets/automotive/myautomotivelab/myautomotivelab.jpg",
+	"thumbnail": "Auto/MAL/myautomotivelab-thumb2.jpg",
+	"image": "Auto/MAL/myautomotivelab.jpg",
 	"sequence": 2,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence":1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"		
+					"audioTrack": "Auto/MAL/12-6-12 Auto 21 MAL Story.mp3"		
 				},
 				{
 					"name": "Competition",
 					"sequence":2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Auto/MAL/12-6-12 Auto 24 MAL Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence":3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Auto/MAL/12-6-12 Auto 23 MAL Sell Thru.mp3"
 				}],
 			    "tests": [
 			        {
@@ -283,27 +292,30 @@
 {
 	"name": "Automotive Fundamentals Overview",
 	"description": "MyAutomotiveLab for Fundamentals, new for Systems and the automotive media competition.",
-	"thumbnail": "images/assets/automotive/auto fund overview/auto fund overview-thumb.jpg",
-	"image": "images/assets/automotive/auto fund overview/auto fund overview.jpg",
+	"thumbnail": "Auto/Fundamentals/Halderman E&E4 cover-thumb2.jpg",
+	"image": "Auto/Fundamentals/Halderman E&E4 cover.jpg",
 	"sequence": 3,
 	"type": "book",
 	"author": "Halderman",
 	"topics": [	{
 					"name": "The Story",
 					"sequence":1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
-					
+					"audioTrack": "Auto/Fundamentals/12-6-12 Auto 11 Fundls Story.mp3"
 				},
 				{
-					"name": "Competition",
+					"name": "Brief",
 					"sequence":2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
-					
+					"audioTrack": "Auto/Fundamentals/12-6-12 Auto 12 Brief.mp3"
+				},				
+				{
+					"name": "Competition",
+					"sequence":3,
+					"audioTrack": "Auto/Fundamentals/12-6-12 Auto 13 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
-					"sequence":3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"sequence":4,
+					"audioTrack": "Auto/Fundamentals/12-6-12 Auto 14 Sell thru.mp3"
 					
 				}],
 			    "tests": [

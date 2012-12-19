@@ -2,25 +2,25 @@
 "products" : [{
 	"name": "On Cooking & On Baking: The Story",
 	"description": "The Labensky story for On Cooking and On Baking",
-	"thumbnail": "images/assets/culinary/on cooking - on baking/on cooking - on baking-thumb.jpg",
-	"image": "images/assets/culinary/on cooking - on baking/on cooking - on baking.jpg",
+	"thumbnail": "Culinary/Labensky/oncooking_i-thumb2.jpg",
+	"image": "Culinary/Labensky/oncooking_i.jpg",
 	"sequence": 1,
 	"type": "book",
 	"author": "Labensky",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 71 Story.mp3"
+					"audioTrack": "Culinary/Labensky/12-6-12 Cul Labensky 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 72 Competition.mp3"
+					"audioTrack": "Culinary/Labensky/12-6-12 Cul Labensky 3 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schmalleger Intro Brief 10 73 Driving Sell Thru.mp3"
+					"audioTrack": "Culinary/Labensky/12-6-12 Cul Labensky 2 Technology.mp3"
 				}],
 			    "tests": [
 			        {
@@ -141,25 +141,25 @@
 {
 	"name": "MyCulinaryLab",
 	"description": "MyCulinaryLab walkthrough",
-	"thumbnail": "images/assets/culinary/myculinarylab/myculinarylab-thumb.png",
-	"image": "images/assets/culinary/myculinarylab/myculinarylab.png",
+	"thumbnail": "Culinary/MCL/mcl-thumb2.png",
+	"image": "Culinary/MCL/mcl.png",
 	"sequence": 2,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 31 Story.mp3"
+					"audioTrack": "Culinary/MCL/12-6-12 Cul MCL 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 32 Competition.mp3"
+					"audioTrack": "Culinary/MCL/12-6-12 Cul MCL 3 Competition.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-9-12 CJ Schamlleger CLT5E 33 Driving Sell Thru.mp3"
+					"audioTrack": "Culinary/MCL/12-6-12 Cul MCL 2 Features.mp3"
 				}],
 				 "tests": [
 			        {
@@ -280,25 +280,25 @@
 {
 	"name": "NRA: The Story",
 	"description": "A brief overview of the NRA and the four main solutions that Pearson sells.",
-	"thumbnail": "images/assets/culinary/nra the story/nra the story-thumb.jpeg",
-	"image": "images/assets/culinary/nra the story/nra the story.jpeg",
+	"thumbnail": "Culinary/NRA/NRA-thumb2.jpeg",
+	"image": "Culinary/NRA/NRA.jpeg",
 	"sequence": 3,
 	"type": "lab",
 	"author": "Pearson",
 	"topics": [	{
 					"name": "The Story",
 					"sequence": 1,
-					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 101 Story.mp3"
+					"audioTrack": "Culinary/NRA/12-6-12 NRA 1 Story.mp3"
 				},
 				{
 					"name": "Competition",
 					"sequence": 2,
-					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 102 Competition.mp3"
+					"audioTrack": "Culinary/NRA/12-6-12 NRA 2 By Industry.mp3"
 				},
 				{
 					"name": "Driving Sell Thru",
 					"sequence": 3,
-					"audioTrack": "audio/12-10-12 CJ Bartollas JJ 103 Driving Sell Thru.mp3"
+					"audioTrack": "Culinary/NRA/12-6-12 NRA 3 Products.mp3"
 				}],
 				"tests": [
 			        {
