@@ -1174,11 +1174,11 @@
     // to populate its element (`this.el`), with the appropriate HTML. The
     // convention is for **render** to always return `this`.
 	render: function() {
-    	com.compro.application.hsc.logger.info("Render Start", this);
+    	com.compro.application.hsc.logger.info("Render Start", this.myPanelId);
     	if(this.customRender) {
     		this.customRender();
     	}
-    	com.compro.application.hsc.logger.info("Render End", this);
+    	com.compro.application.hsc.logger.info("Render End", this.myPanelId);
       return this;
     },
     // Remove this view from the DOM. Note that the view isn't present in the
