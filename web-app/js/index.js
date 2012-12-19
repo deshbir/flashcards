@@ -432,7 +432,9 @@
  			}
  		}
  		this.currentPanelId = newPanelId;
- 		
+ 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
+			transitionEndHandler();
+		}
  	}
  	
  	/*
@@ -466,6 +468,54 @@
  		applyTransition($("#panel-container"), translationWidth);
  		$("#bb-container").height($(panelId).height());*/
  	}
+ 	
+ 	//function to handle "transitionend" event of panel-container
+	 function transitionEndHandler(event){ 
+		/*
+		 * temporary check -- needs to be fixed
+		 * transitionend fired on buttons by bootstrap
+		 */
+		if(event && event.target!=$("#panel-container")[0]){
+			//logger.info("transitionend fired on" + event.target);
+			return;
+		}
+		
+		//removing the styles added for trasitioning 
+		$("#panel-container").removeClass('easing');
+		applyTransition($("#panel-container"),0);
+		$("#panel-container").width("auto");
+		$('.panel-item').css({
+			"float":"none",
+			"width":"auto"
+			});
+		var myApp = com.compro.application.hsc;
+		$('.panel-item').each(function(){
+			if(myApp.currentPanelId.indexOf($(this).attr("id"))<0){
+				$(this).hide();
+			}
+		});
+		$(myApp.currentPanelId).show();
+		//$(myApp.currentPanelId).width("auto");
+	}
+ 	
+ 	
+ 	//Check if browser is IE
+	 function getInternetExplorerVersion()
+	 	// Returns the version of Internet Explorer or a -1
+	 	// (indicating the use of another browser).
+	 	{
+	 	  var rv = -1; // Return value assumes failure.
+	 	  if (navigator.appName == 'Microsoft Internet Explorer')
+	 	  {
+	 	    var ua = navigator.userAgent;
+	 	    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+	 	    if (re.exec(ua) != null)
+	 	      rv = parseFloat( RegExp.$1 );
+	 	  }
+	 	  return rv;
+	 	}
+ 	
+ 	
  		
  	/********************************************************/
  	/*                 ONE TIME INIT FUNCTION              */
@@ -501,32 +551,8 @@
  				}, this));
  				
  				
- 				//called on end of transition of panel-container
- 				$("#panel-container").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(event){ 
- 					/*
- 					 * temporary check -- needs to be fixed
- 					 * transitionend fired on buttons by bootstrap
- 					 */
- 					if(event.target!=$("#panel-container")[0]){
- 						//logger.info("transitionend fired on" + event.target);
- 						return;
- 					}
- 					$("#panel-container").removeClass('easing');
- 					applyTransition($("#panel-container"),0);
- 					$("#panel-container").width("auto");
- 					$('.panel-item').css({
- 						"float":"none",
- 						"width":"auto"
- 						});
- 					var myApp = com.compro.application.hsc;
- 					$('.panel-item').each(function(){
- 						if(myApp.currentPanelId.indexOf($(this).attr("id"))<0){
- 							$(this).hide();
- 						}
- 					});
- 					$(myApp.currentPanelId).show();
- 					//$(myApp.currentPanelId).width("auto");
- 				});
+ 				//to remove styles added for trasitioning on end of transition
+				$("#panel-container").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",transitionEndHandler);
  				
  				/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
  				(function( win ){
