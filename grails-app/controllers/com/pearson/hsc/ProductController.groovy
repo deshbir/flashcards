@@ -19,8 +19,8 @@ class ProductController {
 				render product as JSON
 				return
 			} else {
-				// What is Backbone standard for this?
-				render(status: 404, text: '<h2>No product found with the following id.</h2>')
+				def errorMsg = "<h2>No product found with the discipline id :<b>${params.id}</b> and product id :<b>${params.pid}</b></h2>"
+				render(status: 404, text: errorMsg)
 				return
 			}
 		}

@@ -19,8 +19,8 @@ class DisciplineController {
 				render discipline as JSON
 				return
 			} else {
-				// What is Backbone standard for this?
-				render(status: 404, text: '<h2>No discipline found with the following id.</h2>')
+				def errorMsg = "<h2>No discipline found with the id :<b>${params.id}</b></h2>"
+				render(status: 404, text: errorMsg)
 				return
 			}
 		}

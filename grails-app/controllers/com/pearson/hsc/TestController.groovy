@@ -20,8 +20,8 @@ class TestController {
 				render test as JSON
 				return
 			} else {
-				// What is Backbone standard for this?
-				render(status: 404, text: '<h2>No test found with the following id.</h2>')
+				def errorMsg = "<h2>No test found with the product id :<b>${params.id} </b>and test id :<b>${params.pid} </b></h2>"
+				render(status: 404, text: errorMsg)
 				return
 			}
 		}
