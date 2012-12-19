@@ -15,6 +15,9 @@
 	}
 	.hsc-logo {
 		text-align:center;
+		img.hidden-phone {
+			margin-top:30px;
+		}
 	}
 }
 
@@ -28,8 +31,6 @@
 			.add-on {
 				height: 42px;
 				line-height: 43px;
-				border:solid 1px @login-input-border;
-				.box-shadow(@login-input-shadow);
 				i {
 					font-size:28px;
 					margin-right:5px;
@@ -45,8 +46,6 @@
 			    height: 42px;
 			    background-color:@white;
 			    color:#595959;
-			    border:solid 1px @login-input-border;
-			    .box-shadow(@login-input-shadow);
 			}
     	}
 		
@@ -160,7 +159,7 @@
 }
 
 /*********************** Responsive Styles ************************************/ 
-@media (max-width: 480px) {  
+@media (max-width: 767px) {  
 	#panel_home {
 		margin:0 20px;
 	} 
@@ -214,6 +213,14 @@
 				display:none;
 			}
 			#user-info {
+				p {
+					strong {
+						font-size:16px;
+					}
+					small {
+						font-size:14px;
+					}
+				}
 				a {
 					i {
 						font-size:60px;
@@ -240,6 +247,19 @@
 	}
 }
 
+@media (max-width: 979px) {
+	#loginform { 
+		#loggedin-container {
+			.hero-unit {
+				padding:1.5em 0.5em 1em;
+			}
+			#user-info {
+				padding:1em 0.5em;
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
 	#loginform {
 		#ajaxLoginForm, #loggedin-container {
@@ -261,5 +281,13 @@
 				font-size:36px;
 			}
 		}
+	}
+}
+
+@media (min-width: 979px) {
+   #facebook-login {
+		.facebook-text {
+	  		font-size: 26px;
+	  	}
 	}
 }
