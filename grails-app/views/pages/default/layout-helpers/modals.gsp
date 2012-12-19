@@ -28,9 +28,34 @@
 	</div>
 
 	<div class="modal-footer">
-		<button class="btn mailToAdmin" data-dismiss="modal" aria-hidden="true">
-			Mail to : Admin
+		<button class="btn generateErrorReport" data-dismiss="modal" aria-hidden="true">
+			Generate Error Report
 		</button>
+		<button class="btn" data-dismiss="modal" aria-hidden="true">
+			OK
+		</button>
+	</div>
+</div>
+
+<!-- Modal -->
+<div id="error-report" class="modal hide fade" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">x</button>
+		<h3 id="ajax-error-label">
+			Error Report
+		</h3>
+	</div>
+	<div class="modal-body">
+		<h4 class="content-header"></h4>
+		<div class="content-body">
+			ERROR RRRRRRRRRRRRRRRR
+		
+		</div>
+	</div>
+
+	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">
 			OK
 		</button>

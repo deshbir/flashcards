@@ -357,20 +357,36 @@ com.compro.application.hsc = (function() {
 	        return window.Muscula.settings.suppressErrors===undefined;}
 	    })();
 	}
-	function initializeModal(){
+	function modalEventRegistration(){
 	    $('#ajax-error-modal').on('show', function () {
-			var logs = JSLog.Logs['App.Login'];
-			var innerHTML = "<ol>";
-			var planeLogs = "";
-			for (var i = 0, len = logs.length; i < len; i++) {
-				innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i] + "</li>";
-				// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
-				planeLogs += logs[i]+" ~~ ";
-			}
-		    innerHTML += "</ol>";
+			var innerHTML = getJSLogsAsList";
 		    $('#logs').html(innerHTML);
 	    });
+	    
+	    $('#error-report').on('show', function () {
+		    var innerHTML = getJSLogsAsList";
+		    $('#error-report .modal-body .content-body').html(innerHTML);
+	    });
+
+	    $("#ajax-error-modal .modal-footer .generateErrorReport").click(function(){
+	    	$('#error-report').modal();
+	    }); 
+	    		
 	}
+	
+	function getJSLogsAsList() {
+		var logs = JSLog.Logs['App.Login'];
+		var innerHTML = "<ol>";
+		var planeLogs = "";
+		for (var i = 0, len = logs.length; i < len; i++) {
+			innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i] + "</li>";
+			// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
+			planeLogs += logs[i]+" ~~ ";
+		}
+	    innerHTML += "</ol>";
+	    return innerHTML;
+	}
+	
 	function setHeaderOptions(updateHeader, showHomeLink, showBackLink, showProfileButton) {
 		if (updateHeader) {
 			if (showProfileButton != undefined) {
@@ -480,7 +496,8 @@ com.compro.application.hsc = (function() {
 				logger.info("--- bb start navigation");
 				backbone_start_navigation();
 				//Initializing error modal to trigger logging in modal box each time it is shown.
-				initializeModal();
+				modalEventRegistration();
+				
 				logger.info("--- sound manager");
 				soundmanager2_init();
 				
