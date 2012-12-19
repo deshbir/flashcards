@@ -8,6 +8,9 @@ ProductView = new function() {
 	var mainApp = com.compro.application.hsc;
 	pagePlayer.config.updatePageTitle = false;
 	pagePlayer.events.play = function(){
+		$("#music").show();
+		$("#music i").removeClass('icon-play');
+		$("#music i").addClass('icon-pause');
 		mainApp.soundManagerConfig.musicPlaying = true;
 		mainApp.soundManagerConfig.musicStopped = false;
 		var soundManager = this;
@@ -17,6 +20,8 @@ ProductView = new function() {
 	}
 	var pagePlayerPause = pagePlayer.events.pause;
 	pagePlayer.events.pause = function(){
+		$("#music i").addClass('icon-play');
+		$("#music i").removeClass('icon-pause');
 		mainApp.soundManagerConfig.musicPlaying = false;
 		pagePlayerPause.call(this);
 		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
@@ -24,12 +29,16 @@ ProductView = new function() {
 	var pagePlayerResume = pagePlayer.events.resume;
 	pagePlayer.events.resume = function(){
 		mainApp.soundManagerConfig.musicPlaying = true;
+		$("#music i").removeClass('icon-play');
+		$("#music i").addClass('icon-pause');
 		pagePlayerResume.call(this);
 		$("#product-home .sm2_playing i").addClass('icon-volume-up');
 		$("#product-home .sm2_playing i").addClass('icon-pause'); 
 	}
 	var pagePlayerStop = pagePlayer.events.stop;
 	pagePlayer.events.stop = function(){
+		$("#music i").addClass('icon-play');
+		$("#music i").removeClass('icon-pause');
 		mainApp.soundManagerConfig.musicPlaying = false;
 		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
@@ -38,6 +47,7 @@ ProductView = new function() {
 	}
 	var pagePlayerFinish = pagePlayer.events.finish;
 	pagePlayer.events.finish = function(){
+		$("#music").hide();
 		mainApp.soundManagerConfig.musicPlaying = false;
 		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
@@ -137,7 +147,6 @@ ProductView = new function() {
 			 * 3rd parameter - setBackLink 
 			 */
 			mainApp.setHeaderOptions(false, true, true);
-			$("#music").hide();
 			// Check if we need to update the PANEL HTML - 
 			// if we're back the same/previous product, then do NOT re-create the DOM
 			if(this.current_discipline_id!=this.requested_discipline_id || this.current_product_id!=this.requested_product_id)	{

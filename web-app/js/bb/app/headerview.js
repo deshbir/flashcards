@@ -107,13 +107,9 @@ HeaderView = new function() {
 		},
 		pauseMusic : function(){
 			mainApp.soundManagerConfig.soundManagerObject.pause();
-			$("#music i").addClass('icon-play');
-			$("#music i").removeClass('icon-pause');
 		},
 		playMusic : function(){
 			mainApp.soundManagerConfig.soundManagerObject.play();
-			$("#music i").removeClass('icon-play');
-			$("#music i").addClass('icon-pause');
 		},
 		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
