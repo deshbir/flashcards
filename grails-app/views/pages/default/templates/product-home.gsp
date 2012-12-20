@@ -24,7 +24,7 @@
 		<div class="span2"></div>
 		<div class="span8">
 			{{#tests}}
-			    <button id="{{id}}" class="btn btn-large pull-right flashcardAssess">Flashcards</button>
+			    <button id="{{id}}" class="btn btn-large pull-right flashcardAssess"><i class="icon-edit"></i>      Flashcards</button>
 			{{/tests}}
 	  </div>	
 	  <div class="span2"></div>
