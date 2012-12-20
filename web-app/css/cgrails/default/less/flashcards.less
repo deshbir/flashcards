@@ -51,6 +51,16 @@
 	  	padding: 1em;
 	  	margin: 0px 10px 10px 10px;
 	  	border-bottom: 1px solid @flashcard-header-border-color;
+	  	.btn.disabled, .btn[disabled]  {
+	  		border:solid 1px black;
+	  		text-shadow:none;
+	  		color:black;
+	  		background-color: darken(#E6E6E6, 20%);
+	  		&:hover {
+	  			 background-color: darken(#E6E6E6, 10%);
+    			 background-image: none;
+	  		}
+	  	}
 	  	h4 {
 	  		font-weight:normal;
 	  		letter-spacing: -1px;
