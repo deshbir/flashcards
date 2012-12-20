@@ -49,20 +49,20 @@
 		<h3 id="ajax-error-label">
 			HSC App Error Report
 		</h3>
-		<div class="date">
-			<span>Date:</span>
-			<span class="date-data"></span>
-		</div>
 	</div>
 	<div class="modal-body">
+		<div class="date">
+			<span class="header">Date:</span>
+			<span class="date-data"></span>
+		</div>
 		<h4 class="content-header"></h4>
 		<div class="content-body">
-			<h2>Message</h2>
-			<div class="message"></div>
-			<h2>Logs</h2>
-			<div class="logs"></div>
-			<h2>Headers & Parameters</h2>
-			<div class="params"></div>
+			<h4 class="orange-color">Message</h4>
+			<div class="message logContent"></div>
+			<h4 class="orange-color">Logs</h4>
+			<div class="logs logContent"></div>
+			<h4 class="orange-color">Headers & Parameters</h4>
+			<div class="params logContent"></div>
 		</div>
 	</div>
 	<div class="modal-footer">
