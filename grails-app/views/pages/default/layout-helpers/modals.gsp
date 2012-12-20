@@ -66,9 +66,10 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">
+		<span class="pull-left">Please copy report (clipboard) and email to system admin.</span>
+		<span class="pull-right"><button class="btn" data-dismiss="modal" aria-hidden="true">
 			Ok
-		</button>
+		</button></span>
 	</div>
 </div>
 
