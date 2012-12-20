@@ -37,19 +37,36 @@ Authenticate = new function() {
 	    });		    
   	},
   	this.initialize = function(){
-  		UserModel.get().fetch({
-			success: function(model, response){				
-				mainApp.userinfo.loggedin = true;					
-				mainApp.userinfo.name = model.get("username");
-				mainApp.userinfo.email = model.get("email");
-				mainApp.userinfo.facebookuser = model.get("isFacebookUser");
-				mainApp.userinfo.admin = model.get("isAdmin");	
-				TemplateManager.get('authenticate/home', function(template){			
-					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email, "firstname": model.get("firstName"),"lastname": model.get("lastName")});
-					$("#loginform").html(templateHTML);				
-			 	 });				
+  		
+  		$.ajax({
+			url: com.compro.cgrails.REQUEST_CONTEXT + "/login/ajaxSuccess",
+			type: 'GET',    	
+			success: function(response) {
+				if (response.username != "anonymousUser") {
+					UserModel.get().fetch({
+						success: function(model, response){				
+							mainApp.userinfo.loggedin = true;					
+							mainApp.userinfo.name = model.get("username");
+							mainApp.userinfo.email = model.get("email");
+							mainApp.userinfo.facebookuser = model.get("isFacebookUser");
+							mainApp.userinfo.admin = model.get("isAdmin");	
+							TemplateManager.get('authenticate/home', function(template){			
+								var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email, "firstname": model.get("firstName"),"lastname": model.get("lastName")});
+								$("#loginform").html(templateHTML);				
+						 	 });				
+						}
+					});
+				} else {
+					mainApp.userinfo.loggedin = false;	
+					TemplateManager.get('authenticate/home', function(template){			
+						var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
+						$("#loginform").html(templateHTML);				
+				 	 });
+				}
 			}
 		});
+  		
+  		
 		
   	},
   	this.loginWithFacebook = function(){
