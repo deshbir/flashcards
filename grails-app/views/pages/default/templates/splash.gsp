@@ -1,15 +1,15 @@
 <div class="row">
-        <div class="span7" id="business-info">
+        <div class="span6" id="business-info">
 			<h1>Health Sciences &amp; Careers</h1>
 			<div class="hsc-logo">
 				<r:img uri="/images/camera_homepage_Larger.png" alt="Business-Logo" class="hidden-phone"/>
 				<r:img uri="/images/camera_homepage.png" alt="Business-Logo" class="visible-phone"/>
 			</div>
 	    </div>
-        <div class="span5">
+        <div class="span6" id="login-info">
 	        <div id="loginform">
 			</div>
-		</div>         
+		</div>        
  </div>
 
 <!-- Three column, but responsive, product descriptions
