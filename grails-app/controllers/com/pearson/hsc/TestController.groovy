@@ -50,7 +50,7 @@ class TestController {
 				//render test as JSON
 				return
 			} else {
-				def errorMsg = "<h2>No test found with the product id :<b>${params.id} </b>and test id :<b>${params.pid} </b></h2>"
+				def errorMsg = "<p>No test found with the product id :<b>${params.id} </b>and test id :<b>${params.pid} </b></p>"
 				render(status: 404, text: errorMsg)
 				return
 			}

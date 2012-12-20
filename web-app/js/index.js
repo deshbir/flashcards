@@ -217,7 +217,7 @@
  		    $("#ajax-error-label").text(msgTitle);
  		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
  		    $('#message').html(msgDesc);
- 		    $('#headers').html("<div><h4>Error occured for request: </h4></div><ul>");  
+ 		    $('#headers').html("<ul>");  
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
@@ -361,8 +361,8 @@
 	    $('#error-report').on('show', function () {
 		    var innerHTML = getJSLogsAsList;
 		    var date = new Date();
-		    var dateString = date.toDateString(); 
-		    $('#error-report .modal-header .date .date-data').html(dateString);
+		    var dateString = date.toString(); 
+		    $('#error-report .modal-body .date .date-data').html(dateString);
 		    $('#error-report .modal-body .content-header').html($('#ajax-error-modal .modal-body .content-header').html());
 		    $('#error-report .modal-body .content-body .logs').html(innerHTML);
 		    $('#error-report .modal-body .content-body .params').html($('#headers').html());
@@ -379,7 +379,7 @@
 		var innerHTML = "<ol>";
 		var planeLogs = "";
 		for (var i = 0, len = logs.length; i < len; i++) {
-			innerHTML += "<li value="+(logs.length - i -1)+">" +logs[logs.length - i - 1] + "</li>";
+			innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i - 1] + "</li>";
 			// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
 			planeLogs += logs[i]+" ~~ ";
 		}
@@ -524,7 +524,6 @@
 	 	  }
 	 	  return rv;
 	 	}
-	 
 	 //Object can be a dom object/Jquery Object or a selector string
 	 function resizeColumns (object, isRowByRow){ //for setting the min-height of each column based on the maximun height of that row.
 		
