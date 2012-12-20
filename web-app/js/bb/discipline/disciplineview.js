@@ -84,6 +84,13 @@ DisciplineView = new function() {
 						});		
 					});
 			});
+			$(window).bind("resize.discipline-list", _.bind(function(){
+				if(mainApp.currentPanelId==this.myPanelId){
+					mainApp.resetColumns(this.myPanelId+" .row-fluid");
+					mainApp.resizeColumns(this.myPanelId+" .row-fluid");
+					mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
+				}
+		}, this));
 		},
 		
 		loadCollection: function()	{
@@ -122,7 +129,12 @@ DisciplineView = new function() {
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
-			mainApp.transitionAppPanel(this.myPanelId);
+			var that = this;
+			mainApp.transitionAppPanel(this.myPanelId,function(){
+				$('#discipline-list').imagesLoaded(function() {
+					mainApp.resizeColumns(that.myPanelId+" .row-fluid",false);
+				});		
+			});
 
 			return this; //Do this at the end to allow for method chaining.			
 		},
@@ -179,8 +191,8 @@ DisciplineView = new function() {
 			});
 			$(window).bind("resize.discipline", _.bind(function(){
 					if(mainApp.currentPanelId==this.myPanelId){
-						this.resetColumns();
-						this.resizeColumns();
+						mainApp.resetColumns(this.myPanelId+" .row-fluid");
+						mainApp.resizeColumns(this.myPanelId+" .row-fluid",true);
 						mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 					}
 			}, this));
@@ -243,7 +255,7 @@ DisciplineView = new function() {
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
 				$('#product-list').imagesLoaded(function() {
-					that.resizeColumns();
+					mainApp.resizeColumns(that.myPanelId+" .row-fluid",true);
 				});		
 			});	
 			return this; //Do this at the end to allow for method chaining.			
@@ -254,34 +266,6 @@ DisciplineView = new function() {
 			var productid = e.currentTarget.id;
 			//this.cleanUp();
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);
-		},
-		resizeColumns:function(){ //for setting the min-height of each column based on the maximun height of that row.
-			$(this.myPanelId+" .row-fluid").each(function(){
-				var currentTallest = 0;
-				$(this).children().each(function(i){
-					$(this).children().each(function(){
-						if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
-					});
-				});
-				$(this).children().each(function(){
-					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
-					// for ie6, set height since min-height isn't supported
-					if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currentTallest}); }
-					$(this).children().css({'min-height': currentTallest}); 
-				});
-		    
-			});
-		},
-		resetColumns:function(){ // for removing the min-height of each column.
-			$(this.myPanelId+" .row-fluid").each(function(){
-				$(this).children().each(function(){
-					if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
-					// for ie6, set height since min-height isn't supported
-					if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
-					$(this).children().css({'min-height':''}); 
-				});
-		    
-			});
 		},
 		cleanUp:function() { // for cleaning up view before moving to another view of backbone
 			this.undelegateEvents();
