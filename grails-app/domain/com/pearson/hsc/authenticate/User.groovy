@@ -14,6 +14,7 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 	boolean isAdmin = false
+	boolean isFacebookUser = false
 
 	static constraints = {
 		username blank: false, unique: true

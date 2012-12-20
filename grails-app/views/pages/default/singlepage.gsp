@@ -19,18 +19,6 @@
 			</span>
 		</div>		
 		<r:script disposition="defer">
-			<sec:ifLoggedIn>	
-				var mainApp = com.compro.application.hsc;
-				mainApp.userinfo.loggedin = true;					
-				mainApp.userinfo.name = "John Doe";
-				mainApp.userinfo.email = "(john@pearson.com)";
-				<sec:access expression="hasRole('ROLE_FACEBOOK')">
- 					mainApp.userinfo.facebookuser = true;
-    			</sec:access>
-    			<sec:access expression="hasRole('ROLE_ADMIN')">
- 					mainApp.userinfo.admin = true;
-    			</sec:access>
-   			</sec:ifLoggedIn>	
    			Authenticate.initialize();
    			window.applicationCache.addEventListener('updateready', function(e) {
 				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {

@@ -37,11 +37,20 @@ Authenticate = new function() {
 	    });		    
   	},
   	this.initialize = function(){
-		TemplateManager.get('authenticate/home', function(template){
-			
-			var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": "I dont know", "email": "I dont know. Help me."});
-			$("#loginform").html(templateHTML);				
-	 	 });
+  		UserModel.get().fetch({
+			success: function(model, response){				
+				mainApp.userinfo.loggedin = true;					
+				mainApp.userinfo.name = model.get("username");
+				mainApp.userinfo.email = model.get("email");
+				mainApp.userinfo.facebookuser = model.get("isFacebookUser");
+				mainApp.userinfo.admin = model.get("isAdmin");	
+				TemplateManager.get('authenticate/home', function(template){			
+					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email, "firstname": model.get("firstName"),"lastname": model.get("lastName")});
+					$("#loginform").html(templateHTML);				
+			 	 });				
+			}
+		});
+		
   	},
   	this.loginWithFacebook = function(){
   		if(isStandaloneWebApp()) {
