@@ -10,7 +10,6 @@ import groovy.json.JsonSlurper
 class BootStrap {
 	
 	def bootstrap_user_data =	{ servletContext ->
-		
 		def userRole; 
 		def adminRole;
 		if (!Role.count()) {
