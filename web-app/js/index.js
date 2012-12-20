@@ -524,6 +524,53 @@
 	 	  }
 	 	  return rv;
 	 	}
+	 
+	 //Object can be a dom object/Jquery Object or a selector string
+	 function resizeColumns (object, isRowByRow){ //for setting the min-height of each column based on the maximun height of that row.
+		
+		 var setCurrentTallest = function(obj, currTallest){
+		   $(obj).children().each(function(){
+				if (Number.prototype.pxToEm) currTallest = currTallest.pxToEm(); //use ems unless px is specified
+				// for ie6, set height since min-height isn't supported
+				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currTallest}); }
+				$(this).children().css({'min-height': currTallest}); 
+			});
+		 }
+		 
+		 var currentTallest = 0;
+		 $(object).each(function(){
+			if(isRowByRow){
+				currentTallest = 0;
+			}
+			$(this).children().each(function(i){
+				$(this).children().each(function(){
+					if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+				});
+			});
+			if(isRowByRow){
+				setCurrentTallest(this,currentTallest);
+			}
+	    
+	   });
+	   if(!isRowByRow) {
+		   $(object).each(function(){
+			   setCurrentTallest(this,currentTallest);
+		   });
+	   }
+	 }
+	 
+	 //Object can be a dom object/Jquery Object or a selector string
+	 function resetColumns (object){ // for removing the min-height of each column.
+		$(object).each(function(){
+			$(this).children().each(function(){
+				if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+				// for ie6, set height since min-height isn't supported
+				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
+				$(this).children().css({'min-height':''}); 
+			});
+	    
+		});
+	}
  	
  	
  		
@@ -650,7 +697,9 @@
  		"logger" : logger,
  		"addSuffixToFilepath" : addSuffixToFilepath,
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
- 		"version" : version
+ 		"version" : version,
+ 		"resizeColumns":resizeColumns,
+ 		"resetColumns":resetColumns
  	}
  
 })();
