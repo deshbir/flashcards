@@ -174,7 +174,6 @@
 		h1 {
 			font-size:21px;
 			line-height: 25px;
-			padding-bottom:10px;
 		}
 		img {
 			 margin: 0 auto;
@@ -254,19 +253,6 @@
 	}
 }
 
-@media (max-width: 979px) {
-	#loginform { 
-		#loggedin-container {
-			.hero-unit {
-				padding:1.5em 0.5em 1em;
-			}
-			#user-info {
-				padding:1em 0.5em;
-			}
-		}
-	}
-}
-
 @media (min-width: 768px) and (max-width: 979px) {
 	#loginform {
 		#ajaxLoginForm, #loggedin-container {
@@ -274,6 +260,14 @@
 				#forgot-pwd {
 					font-size:14px;
 				}
+			}
+		}
+		#loggedin-container {
+			.hero-unit {
+				padding:1.5em 0.5em 1em;
+			}
+			#user-info {
+				padding:1em 0.5em;
 			}
 		}
 		#facebook-login {
