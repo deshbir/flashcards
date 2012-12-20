@@ -36,7 +36,7 @@ class DisciplineController {
 				
 				return
 			} else {
-				def errorMsg = "<p>No discipline found with the id :<b>${params.id}</b></p>"
+				def errorMsg = "<h2>No discipline found with the id :<b>${params.id}</b></h2>"
 				render(status: 404, text: errorMsg)
 				return
 			}
