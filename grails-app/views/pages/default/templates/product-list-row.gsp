@@ -5,7 +5,7 @@
 		<a href="javascript:;">
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
 		  {{#book}}
-		      <img alt="{{name}}" class="pull-left" src="${imagePath}{{thumbnail}}"/>
+		      <img alt="{{name}}" class="book pull-left" src="${imagePath}{{thumbnail}}"/>
 	          <div class="media-body">
 				<span class="heading">{{{name}}}</span>
 				<i class="icon-chevron-right visible-phone"></i>
