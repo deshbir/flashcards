@@ -603,7 +603,7 @@
  				
  				//FIX: iphone viewport scaling bug. The bug occurs when you set the viewport width
  				// to device-width and rotate the phone to landscape view.
- 				(function(doc) {
+/* 				(function(doc) {
  
  				    var addEvent = 'addEventListener',
  				        type = 'gesturestart',
@@ -622,7 +622,7 @@
  				        doc[addEvent](type, fix, true);
  				    }
  
- 				}(document));				
+ 				}(document));	*/			
  				
  				logger.info("On Ready - Completed Initialization");
  			});
