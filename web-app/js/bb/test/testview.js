@@ -141,7 +141,8 @@ TestView = new function() {
 				if(document.activeElement)
 					$(document.activeElement).blur();
 				window.scrollTo(0, 0);
-				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1,callback:self.updateQuestionNumber});			
+				mainApp.flashcards = new Swipe(document.getElementById('flashcard'), {"containersequence":1,callback:self.afterQuestionSwipeHandler});	
+				self.afterQuestionSwipeHandler();
 			});
 			
 			
@@ -151,18 +152,25 @@ TestView = new function() {
 			mainApp.flashcards.next();
 			//Calling function for IE browsers
 			if(mainApp.isIE)
-				this.updateQuestionNumber();
+				this.afterQuestionSwipeHandler();
 			return false;
 		},
 		prevQuestion: function() {
 			mainApp.flashcards.prev();
 			//Calling function for IE browsers
 			if(mainApp.isIE)
-				this.updateQuestionNumber();
+				this.afterQuestionSwipeHandler();
 			return false;
 		},
-		updateQuestionNumber:function(){
+		afterQuestionSwipeHandler:function(){
 			$("#current-question-no-home").html(mainApp.flashcards.getPos()+1);
+			if(mainApp.flashcards.getPos()==0){
+				$("#flashcard .previous").attr("disabled","disabled");
+				$("#flashcard .previous").addClass("disabled");
+			} else if($("#flashcard .previous.disabled")){
+				$("#flashcard .previous.disabled").removeAttr("disabled");
+				$("#flashcard .previous.disabled").removeClass("disabled");
+			}
 		},
 		resizeContainer: function() {
 			return false;
