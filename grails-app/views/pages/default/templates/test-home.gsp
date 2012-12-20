@@ -31,10 +31,10 @@
         				<div class="span9">
 							<div class="btn-toolbar">
 								<div class="btn-group">
-									<button class="btn previous">Previous</button>
+									<button class="btn btn-large previous">Previous</button>
 								</div>
 								<div class="btn-group">
-									<button class="btn next">Next</button>
+									<button class="btn btn-large next">Next</button>
 								</div>				
 							</div>
         				</div>
