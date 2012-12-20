@@ -16,10 +16,10 @@ class BootStrap {
 			def facebookRole = new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
 			def adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
 			
-			def appUser = new User(username: 'hsc@pearson.com', firstName: 'John', lastName: 'Doe',enabled: true, password: 'compro', email: 'email@compro.com')
+			def appUser = new User(username: 'hsc@pearson.com', firstName: 'John', lastName: 'Doe',enabled: true, password: 'compro', email: 'email@compro.com', isFacebookUser: false)
 			appUser.save(flush: true)
 			
-			def adminUser = new User(username: 'admin@compro.com', firstName: 'Compro', lastName: 'Admin',enabled: true, password: 'admin', email: 'admin@compro.com', isAdmin:true)
+			def adminUser = new User(username: 'admin@compro.com', firstName: 'Compro', lastName: 'Admin',enabled: true, password: 'admin', email: 'admin@compro.com', isAdmin:true, isFacebookUser: false)
 			adminUser.save(flush: true)
 			
 			UserRole.create appUser, userRole, true
