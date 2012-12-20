@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 4;
+ 	var version = 5;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",

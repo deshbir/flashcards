@@ -56,13 +56,18 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.4"
 
         build ":tomcat:$grailsVersion"
-		runtime ":spring-security-core:1.2.7.3"
+		//runtime ":spring-security-core:1.2.7.3"
+		
+		compile ':spring-security-core:1.2.7.3'
+		compile ':webxml:1.4.1'
+		
 		runtime ":spring-security-facebook:0.9"
 		//runtime ":cookie-session:2.0.2"
 
         runtime ":database-migration:1.1"
 
         compile ':cache:1.0.0'
+		
     }
 }
 grails.plugin.location.'cgrails' = "cgrails"
