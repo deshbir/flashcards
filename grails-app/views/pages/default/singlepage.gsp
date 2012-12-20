@@ -17,22 +17,9 @@
 			<span class="ui-icon ui-icon-loading">
 				<r:img dir="images" file="ajax-loader.gif"/>
 			</span>
-		</div>
-		<r:script disposition="defer">	
-			Authenticate.initialize();
-			window.applicationCache.addEventListener('updateready', function(e) {
-				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-					// Browser downloaded a new app cache.
-					// Swap it in and reload the page to get the new hotness.
-					window.applicationCache.swapCache();
-					if (confirm('A new version/update of this App is available! Click "OK" to reload and update your application from the server.')) {
-						window.location.reload();
-					}
-				} 
-			});
-   		</r:script>
-		<sec:ifLoggedIn>	
-			<r:script disposition="defer">
+		</div>		
+		<r:script disposition="defer">
+			<sec:ifLoggedIn>	
 				var mainApp = com.compro.application.hsc;
 				mainApp.userinfo.loggedin = true;					
 				mainApp.userinfo.name = "John Doe";
@@ -42,8 +29,19 @@
     			</sec:access>
     			<sec:access expression="hasRole('ROLE_ADMIN')">
  					mainApp.userinfo.admin = true;
-    			</sec:access>				
-			</r:script>
-		</sec:ifLoggedIn>   		
+    			</sec:access>
+   			</sec:ifLoggedIn>	
+   			Authenticate.initialize();
+   			window.applicationCache.addEventListener('updateready', function(e) {
+				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+					// Browser downloaded a new app cache.
+					// Swap it in and reload the page to get the new hotness.
+					window.applicationCache.swapCache();
+					if (confirm('A new version/update of this App is available! Click "OK" to reload and update your application from the server.')) {
+						window.location.reload();
+					}
+				} 
+			});			
+		</r:script>			
 	</body>
 </html>
