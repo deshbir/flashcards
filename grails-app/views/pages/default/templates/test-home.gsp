@@ -4,16 +4,16 @@
 	<div class="container">
 		<div class="row">
 		  <div class="span12" id="product">
-		  {{#product.book}}
-	        	<img alt="{{product.name}}" class="pull-left" src="${imagePath}{{product.thumbnail}}"/>
-	        	<h2>{{product.name}}</h2>
-	        	<h3>{{product.author}}</h3>
-		  {{/product.book}}
-		  {{#product.lab}}
-	        	<img alt="{{product.name}}" class="logo pull-right" src="${imagePath}{{product.thumbnail}}"/>
-	        	<h2>{{product.name}}</h2>
-	        	<p class="hidden-phone">{{product.description}}</p>
-		  {{/product.lab}}		
+		  {{#book}}
+	        	<img alt="{{product.name}}" class="pull-left" src="${imagePath}{{thumbnail}}"/>
+	        	<h2>{{name}}</h2>
+	        	<h3>{{author}}</h3>
+		  {{/book}}
+		  {{#lab}}
+	        	<img alt="{{product.name}}" class="logo pull-right" src="${imagePath}{{thumbnail}}"/>
+	        	<h2>{{name}}</h2>
+	        	<p class="hidden-phone">{{description}}</p>
+		  {{/lab}}		
 			</div>
 		</div>
 	</div>
@@ -41,9 +41,10 @@
         			</div>
         		</div>
         		<div id="body-set">
+        		 {{#tests}}
         			{{#questions}}
 	        		<div class="body">
-		        		<h2 class="question"><i class="icon-question-sign"></i> <span>{{text}}</span></h2>
+		        		<h2 class="question"><i class="icon-question-sign"></i><span>{{text}}</span></h2>
 		        		<div class="btn-group btn-group-vertical options" data-toggle="buttons-radio">
 							 {{#options}}
 							    <button class="btn radio-control"><i class="radio-options icon-quiz-circle"></i><span>{{.}}</span></button>
@@ -54,6 +55,7 @@
 						</div>
 					--%></div>
 					{{/questions}}
+				{{/tests}}
 				</div>									        		
         	</div>
         </div>	

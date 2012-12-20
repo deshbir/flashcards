@@ -8,7 +8,7 @@ class Discipline {
 	static hasMany = [products: Product]
 	
 	static mapping = {
-		products lazy: false
+		products lazy: true
 		sort "sequence"
 	}
 

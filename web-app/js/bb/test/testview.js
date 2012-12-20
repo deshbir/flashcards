@@ -101,7 +101,7 @@ TestView = new function() {
 
 				var attribs = this.collection.first().attributes;
 				//Getting all the questions
-				var questions = attribs.questions;
+				var questions = attribs.tests[0].questions;
 				//Shuffling options
 				for(var i=0;i<questions.length;i++){
 					var optionArray = [];
@@ -114,14 +114,14 @@ TestView = new function() {
 					questions[i].options=_.shuffle(optionArray);
 				}
 				
-				if (attribs.product.type == "book") {
-					attribs.product.book = true;
-					attribs.product.lab = false;
+				if (attribs.type == "book") {
+					attribs.book = true;
+					attribs.lab = false;
 				} else {
-					attribs.product.book = false;
-					attribs.product.lab = true;
+					attribs.book = false;
+					attribs.lab = true;
 				}
-				attribs.product.thumbnail = mainApp.addSuffixToFilepath(attribs.product.image, "-thumb2");
+				attribs.thumbnail = mainApp.addSuffixToFilepath(attribs.image, "-thumb2");
 				
 				var compiled_template_body = Mustache.render(this.template_body, this.collection.toJSON());
 				$(this.myPanelId).html(compiled_template_body);
@@ -180,7 +180,7 @@ TestView = new function() {
 			
 			$(e.currentTarget).find("i.radio-options").toggleClass("icon-quiz-circle icon-quiz-selected");
 			//Calculating correct answer matching text
-			var correctAns = this.collection.first().attributes.questions[mainApp.flashcards.getPos()].answer1.trim().toUpperCase();
+			var correctAns = this.collection.first().attributes.tests[0].questions[mainApp.flashcards.getPos()].answer1.trim().toUpperCase();
 			if(($(e.currentTarget).find("span").text()).trim().toUpperCase() !=correctAns){
 				$(currentOptionparentDiv).find(".options").children().each(function(){
 					if($(this).find("span").text().trim().toUpperCase() == correctAns){

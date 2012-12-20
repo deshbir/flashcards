@@ -38,7 +38,7 @@
 	            <li>
 	            	<a href="${grailsApplication.config.hsc.media.assets.basepath}{{audioTrack}}">
 	            		<i class="icon-play"></i> 
-	            		<span>{{audioSequence}}</span>
+	            		<span>{{sequence}}</span>
 	            		{{name}}
 	            	</a>
 	            </li>

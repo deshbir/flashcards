@@ -1,6 +1,7 @@
 package com.pearson.hsc
 
 import grails.converters.JSON
+import groovy.json.JsonBuilder
 
 class DisciplineController {
 
@@ -16,7 +17,23 @@ class DisciplineController {
 			Discipline discipline = Discipline.get(params.id)
 			
 			if(discipline) {
-				render discipline as JSON
+				def data = [
+					id : discipline.id,
+					name : discipline.name,
+					products: discipline.products.collect {[
+						id: it.id, 
+						type : it.type, 
+						author : it.author, 
+						description : it.description, 
+						image: it.image, 
+						thumbnail: it.thumbnail, 
+						name : it.name, 
+						sequence : it.sequence ]}
+				]
+				def json = new JsonBuilder(data)
+				
+				render json.toString()
+				
 				return
 			} else {
 				def errorMsg = "<h2>No discipline found with the id :<b>${params.id}</b></h2>"
@@ -24,9 +41,15 @@ class DisciplineController {
 				return
 			}
 		}
-		else {			
-			def allDiscipline = Discipline.list()
-			render allDiscipline as JSON
+		else {
+			
+			def allDiscipline = Discipline.list()			
+			def data = [
+				disciplines: allDiscipline.collect {[id: it.id, name : it.name, sequence : it.sequence]}
+			]
+
+			def json = new JsonBuilder(data.disciplines)
+			render json.toString()
 		}
 	}
 }

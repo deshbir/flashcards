@@ -1,6 +1,7 @@
 package com.pearson.hsc
 
 import grails.converters.JSON
+import groovy.json.JsonBuilder
 
 class ProductController {
 
@@ -16,7 +17,23 @@ class ProductController {
 			Product product = Product.findByDisciplineAndId(discipline , params.pid) 
 			
 			if(product) {
-				render product as JSON
+				def data = [
+					id : product.id,
+					name : product.name,
+					type : product.type,
+					description : product.description,
+					author : product.author,
+					image : product.image,
+					thumbnail : product.thumbnail,
+					tests: product.tests.collect {[id: it.id]},
+					topics: product.topics.collect {[
+						name: it.name, 
+						sequence: it.sequence, 
+						audioTrack: it.audioTrack]},
+				]
+				def json = new JsonBuilder(data)
+				render json.toString()
+				
 				return
 			} else {
 				def errorMsg = "<h2>No product found with the discipline id :<b>${params.id}</b> and product id :<b>${params.pid}</b></h2>"
