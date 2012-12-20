@@ -217,7 +217,7 @@
  		    $("#ajax-error-label").text(msgTitle);
  		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
  		    $('#message').html(msgDesc);
- 		    $('#headers').html("<div><h4>Error occured for request: </h4></div><ul>");  
+ 		    $('#headers').html("<ul>");  
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
@@ -229,6 +229,7 @@
 		    	$('#ajax-error-modal .modal-body .content-body').show();
 		    }
  		    $('#ajax-error-modal').modal();
+ 		   $('#ajax-error-label').append(" <small>version " + version+"</small>");
  		    return true;
  		});		        
  		$(document).ajaxSuccess(function (e, xhr, opts) {
@@ -361,8 +362,9 @@
 	    $('#error-report').on('show', function () {
 		    var innerHTML = getJSLogsAsList;
 		    var date = new Date();
-		    var dateString = date.toDateString(); 
-		    $('#error-report .modal-header .date .date-data').html(dateString);
+		    var dateString = date.toString(); 
+		    $('#error-report .modal-body .date .date-data').html(dateString);
+		    $('#error-report .modal-body .date .version-data').html(version);
 		    $('#error-report .modal-body .content-header').html($('#ajax-error-modal .modal-body .content-header').html());
 		    $('#error-report .modal-body .content-body .logs').html(innerHTML);
 		    $('#error-report .modal-body .content-body .params').html($('#headers').html());
@@ -379,7 +381,7 @@
 		var innerHTML = "<ol>";
 		var planeLogs = "";
 		for (var i = 0, len = logs.length; i < len; i++) {
-			innerHTML += "<li value="+(logs.length - i -1)+">" +logs[logs.length - i - 1] + "</li>";
+			innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i - 1] + "</li>";
 			// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
 			planeLogs += logs[i]+" ~~ ";
 		}
@@ -698,7 +700,8 @@
  		"addSuffixToFilepath" : addSuffixToFilepath,
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
  		"resizeColumns":resizeColumns,
- 		"resetColumns":resetColumns
+ 		"resetColumns":resetColumns,
+ 		"version" : version
  	}
  
 })();
