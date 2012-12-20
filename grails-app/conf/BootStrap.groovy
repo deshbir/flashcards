@@ -11,17 +11,21 @@ class BootStrap {
 	
 	def bootstrap_user_data =	{ servletContext ->
 		
-		if (!User.count()) {
-			def userRole = new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)
+		def userRole; 
+		def adminRole;
+		if (!Role.count()) {
+			userRole = new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)
 			def facebookRole = new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
-			def adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
+			adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
+		}
 			
+		if (!User.count()) {
 			def appUser = new User(username: 'hsc@pearson.com', firstName: 'John', lastName: 'Doe',enabled: true, password: 'compro', email: 'email@compro.com', isFacebookUser: false)
 			appUser.save(flush: true)
 			
 			def adminUser = new User(username: 'admin@compro.com', firstName: 'Compro', lastName: 'Admin',enabled: true, password: 'admin', email: 'admin@compro.com', isAdmin:true, isFacebookUser: false)
 			adminUser.save(flush: true)
-			
+
 			UserRole.create appUser, userRole, true
 			UserRole.create adminUser, adminRole, true
 		}
