@@ -237,8 +237,6 @@
  
  		$(document).ajaxComplete(function (e, xhr, opts) {
  		    /* Do Nothing */
- 			$(globalAjaxOptions.elProgress).hide();
- 			
  		});
  
  		$(document).ajaxStop(function () {
