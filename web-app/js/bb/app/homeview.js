@@ -84,14 +84,15 @@ HomeView = new function() {
 						 * 3rd parameter - setBackLink 
 						 * 4th parameter - showLogoutIcon
 						 */
-						mainApp.setHeaderOptions(true, false, false, false);
+						
 						if(mainApp.userinfo.facebookuser) {
 							$($("#user-info").find("img")).css("border","1px solid #E5E5E5");
 						}
 						/*
 						 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 						 */
-						mainApp.transitionAppPanel(view.myPanelId);						
+						mainApp.transitionAppPanel(view.myPanelId);
+						mainApp.setHeaderOptions(true, false, false, false);
 					}
 				});
 			} else {
