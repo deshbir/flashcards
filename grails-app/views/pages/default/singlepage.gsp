@@ -19,7 +19,6 @@
 			</span>
 		</div>		
 		<r:script disposition="defer">
-   			Authenticate.initialize();
    			window.applicationCache.addEventListener('updateready', function(e) {
 				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
 					// Browser downloaded a new app cache.

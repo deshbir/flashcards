@@ -1,3 +1,8 @@
+<sec:ifLoggedIn>
+	<script>
+		com.compro.application.hsc.userinfo.loggedin = true;
+	</script>
+</sec:ifLoggedIn>
 <div class="row">
         <div class="span6" id="business-info">
 			<h1>Health Sciences &amp; Careers</h1>
