@@ -48,7 +48,7 @@
 			</div>
 		</form>
 		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
-			<a><i class="icon-facebook"></i></a>
+			<span class="facebook-icon"><i class="icon-facebook"></i></span>
 			<span class="facebook-text">Connect with Facebook</span>
 		</button>
 		<div id="loginErrorMessage"></div> 
