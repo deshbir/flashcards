@@ -424,32 +424,26 @@
  			$(this.currentPanelId).width($(this.currentPanelId).width());
  			$(newPanelId).width($(this.currentPanelId).width());
  			panelContainer.width($(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true));
- 			/*var that=this;
- 			$('.panel-item').each(function(){
- 				if(that.currentPanelId.indexOf($(this).attr("id"))<0){
- 					$(this).hide();
- 				}
- 			});*/
  			var translationWidth = 0;
  			if($(newPanelId).attr("data-order")>$(this.currentPanelId).attr("data-order")){
  				translationWidth = $(this.currentPanelId).outerWidth(true);
- 				applyTransition(panelContainer, 0);
+ 				removeTransition(panelContainer);
  			}else{
  				applyTransition(panelContainer, -$(this.currentPanelId).outerWidth(true));
  			}
- 			$(newPanelId).show();
- 		panelItems.css("float","left");
- 		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
- 		panelContainer.addClass('easing');
- 		applyTransition(panelContainer, -translationWidth);
- 			if(!(typeof callback === 'undefined') )	{
- 				callback();	
- 			}
- 		}
- 		this.currentPanelId = newPanelId;
- 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
-			transitionEndHandler();
-		}
+ 			$(newPanelId).show(0);
+	 		panelItems.css("float","left");
+	 		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
+	 		panelContainer.addClass('easing');
+	 		applyTransition(panelContainer, -translationWidth);
+	 			if(!(typeof callback === 'undefined') )	{
+	 				callback();	
+	 			}
+	 		}
+	 		this.currentPanelId = newPanelId;
+	 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
+				transitionEndHandler();
+			}
  	}
  	
  	/*
@@ -471,17 +465,22 @@
  			"-o-transform":"translate3d("+width+"px,0,0)"
  		});
  	}
- 	/*function to accomodate resizing of browser window or content.
- 	 * @params - currentPanelId
- 	 * */
- 	function onResizeTranslationHandler(panelId){
- 		/*$("#panel-container").removeClass('easing');
- 		var itemWidth = $("#bb-container").width();
- 		$("#panel-container").width(itemWidth * $(".panel-item").length);
- 		$('.panel-item').width(itemWidth);
- 		var translationWidth = $(panelId).attr("data-order") * -itemWidth;
- 		applyTransition($("#panel-container"), translationWidth);
- 		$("#bb-container").height($(panelId).height());*/
+ 	
+ 	/*
+ 	 * function to remove translation(cross-browser)
+ 	 * 
+ 	 */
+ 	function removeTransition(element){
+ 		element.css({
+ 			"transform":"none",
+ 			"-webkit-transform":"none",
+ 			"-moz-transform":"none",
+ 			// For IE 10.0
+ 			"-ms-transform":"none",
+ 			// For IE 9.0
+ 			"-ms-transform":"none",
+ 			"-o-transform":"none"
+ 		});
  	}
  		
  	//function to handle "transitionend" event of panel-container
@@ -497,7 +496,7 @@
 		
 		//removing the styles added for trasitioning 
 		$("#panel-container").removeClass('easing');
-		applyTransition($("#panel-container"),0);
+		removeTransition($("#panel-container"));
 		$("#panel-container").width("auto");
 		$('.panel-item').css({
 			"float":"none",
@@ -606,13 +605,6 @@
  				logger.info("muscula initialization");
  				muscula_log_init();
  
- 				//for resetting translate3d on resize
- 				$(window).bind("resize.translation", _.bind(function(){
- 					onResizeTranslationHandler(com.compro.application.hsc.currentPanelId);
- 					//com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
- 				}, this));
- 				
- 				
  				//to remove styles added for trasitioning on end of transition
 				$("#panel-container").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",transitionEndHandler);
  				
@@ -697,7 +689,6 @@
  		"globalAjaxOptions" : globalAjaxOptions,
  		"transitionAppPanel" : transitionAppPanel,
  		"isIE":isIE,
- 		"onResizeTranslationHandler":onResizeTranslationHandler,
  		"handleLoginSuccess" : handleLoginSuccess,
  		"logger" : logger,
  		"addSuffixToFilepath" : addSuffixToFilepath,
