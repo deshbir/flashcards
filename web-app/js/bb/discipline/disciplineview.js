@@ -88,7 +88,6 @@ DisciplineView = new function() {
 				if(mainApp.currentPanelId==this.myPanelId){
 					mainApp.resetColumns(this.myPanelId+" .row-fluid");
 					mainApp.resizeColumns(this.myPanelId+" .row-fluid");
-					mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 				}
 		}, this));
 		},
@@ -193,7 +192,6 @@ DisciplineView = new function() {
 					if(mainApp.currentPanelId==this.myPanelId){
 						mainApp.resetColumns(this.myPanelId+" .row-fluid");
 						mainApp.resizeColumns(this.myPanelId+" .row-fluid",true);
-						mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 					}
 			}, this));
 		},

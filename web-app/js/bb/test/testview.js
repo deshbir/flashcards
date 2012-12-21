@@ -214,7 +214,6 @@ TestView = new function() {
 				$(answered).addClass('wrong-ans');
 				$(answered).find("i.radio-options").toggleClass("icon-quiz-selected icon-quiz-wrong");
 			}
-			mainApp.onResizeTranslationHandler(mainApp.currentPanelId);
 		},
 		clearMarkedAnswer: function(currentOptionparentDiv){
 			$(currentOptionparentDiv).find('.correct-ans').removeClass('correct-ans');
