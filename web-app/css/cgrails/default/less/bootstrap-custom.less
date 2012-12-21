@@ -11,3 +11,9 @@ h2,h3 {
 	font-weight:normal;
 }
 
+.vertical-gradient(@startColor, @endColor) {
+	#gradient > .vertical(@startColor, @endColor);
+	*background-color: @endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+    .reset-filter();
+}
+

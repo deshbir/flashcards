@@ -4,14 +4,14 @@
 
 /* ----------------- Buttons styling --------------------------- */
 .btn {
-	#gradient > .vertical(@HSCButtonColor, @HSCButtonBottomColor);
+	.vertical-gradient(@HSCButtonColor, @HSCButtonBottomColor);
 	color:#FFFFFF;
 	line-height:22px;
 	font-size:18px;
 	opacity:0.9;
 	.border-radius(6px);
 	&:hover {
-		#gradient > .vertical(@HSCButtonBottomColor, @HSCButtonHoverColor);
+		.vertical-gradient(@HSCButtonBottomColor, @HSCButtonHoverColor);
 		background-position:0 0;
 		color:#FFFFFF;
 	}
