@@ -68,7 +68,7 @@
 		h3 {
 			color:@white;
 			font-size:20px;
-			#gradient > .vertical(@login-h3-color, darken(@login-h3-color, 5%));
+			.vertical-gradient(@login-h3-color, darken(@login-h3-color, 5%));
 			text-align:center;
 			margin:0;
 			padding:0.3em 0;
@@ -111,7 +111,7 @@
 				 margin-right:10px;
 				 a {
 					margin-top:0;
-					#gradient > .vertical(@profile-img-top-color,@profile-img-bottom-color);
+					.vertical-gradient(@profile-img-top-color, @profile-img-bottom-color);
 					display:block;
 					.border-radius(10px);
 					 padding: 17px 12px 10px;
@@ -147,10 +147,10 @@
 		padding:0;
 		border:0 none;
 		.border-radius(0);
-		a {
+		span.facebook-icon {
 			float:left;
 			width:10%;
-			#gradient > .vertical(lighten(@HSCButtonColor, 10%), lighten(@HSCButtonColor, 10%));
+			.vertical-gradient(lighten(@HSCButtonColor, 10%), lighten(@HSCButtonColor, 10%));
 			margin:0;
 			color:white;
 			padding:0.5em 0.5em;
@@ -244,7 +244,7 @@
 				margin-left:7px;
 	    		margin-top:15px;
 			}
-			a {
+			span.facebook-icon {
 				padding-bottom:5px;
 				i {
 					font-size:41px;

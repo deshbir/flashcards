@@ -60,7 +60,7 @@
 	ul.playlist {
 		padding-bottom: 20px;
 		li	{
-		  	#gradient > .vertical(@playlist-li-color, @playlist-li-color);
+		  	.vertical-gradient(@playlist-li-color, @playlist-li-color);
 			line-height:44px;
 			margin-bottom: 5px;
 			.border-radius(6px);
@@ -96,7 +96,7 @@
 	}
 	
 	ul.playlist li.sm2_playing, ul.playlist li.sm2_playing:hover {
-    	#gradient > .vertical(darken(@playlist-li-color, 10%), darken(@playlist-li-color, 15%));
+    	.vertical-gradient(darken(@playlist-li-color, 10%), darken(@playlist-li-color, 15%));
 	}
 	
 	ul.playlist li  {
