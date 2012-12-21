@@ -95,6 +95,9 @@
  		soundManagerObject : null,
  		musicPlaying : false,
  		musicStopped :  true
+ 		//playText:null,
+ 		//pauseText:null,
+ 		//stopText:null,
  	};
  	
  	// Config 

@@ -11,6 +11,11 @@ ProductView = new function() {
 		$("#music").show();
 		$("#music i").removeClass('icon-pause-hsc');
 		$("#music i").addClass('icon-mute-hsc');
+		if(mainApp.soundManagerConfig.playText){
+			$("#music a").attr('title',mainApp.soundManagerConfig.playText);
+		} else {
+			$("#music a").attr('title','Playing Audio. Select to pause.');
+		}
 		mainApp.soundManagerConfig.musicPlaying = true;
 		mainApp.soundManagerConfig.musicStopped = false;
 		var soundManager = this;
@@ -22,6 +27,11 @@ ProductView = new function() {
 	pagePlayer.events.pause = function(){
 		$("#music i").addClass('icon-pause-hsc');
 		$("#music i").removeClass('icon-mute-hsc');
+		if(mainApp.soundManagerConfig.pauseText){
+			$("#music a").attr('title',mainApp.soundManagerConfig.pauseText);
+		} else {
+			$("#music a").attr('title','Audio Paused. Select to resume.');
+		}
 		mainApp.soundManagerConfig.musicPlaying = false;
 		pagePlayerPause.call(this);
 		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
@@ -31,6 +41,11 @@ ProductView = new function() {
 		mainApp.soundManagerConfig.musicPlaying = true;
 		$("#music i").removeClass('icon-pause-hsc');
 		$("#music i").addClass('icon-mute-hsc');
+		if(mainApp.soundManagerConfig.playText){
+			$("#music a").attr('title',mainApp.soundManagerConfig.playText);
+		} else {
+			$("#music a").attr('title','Playing Audio. Select to pause.');
+		}
 		pagePlayerResume.call(this);
 		$("#product-home .sm2_playing i").addClass('icon-volume-up');
 		$("#product-home .sm2_playing i").addClass('icon-pause'); 
@@ -39,6 +54,11 @@ ProductView = new function() {
 	pagePlayer.events.stop = function(){
 		$("#music i").addClass('icon-pause-hsc');
 		$("#music i").removeClass('icon-mute-hsc');
+		if(mainApp.soundManagerConfig.stopText){
+			$("#music a").attr('title',mainApp.soundManagerConfig.stopText);
+		} else {
+			$("#music a").attr('title','Audio Stopped. Select to play.');
+		}
 		mainApp.soundManagerConfig.musicPlaying = false;
 		mainApp.soundManagerConfig.musicStopped = true;
 		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
