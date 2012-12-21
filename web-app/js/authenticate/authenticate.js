@@ -52,7 +52,10 @@ Authenticate = new function() {
 							mainApp.userinfo.admin = model.get("isAdmin");	
 							TemplateManager.get('authenticate/home', function(template){			
 								var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin, "username": mainApp.userinfo.name, "email": mainApp.userinfo.email, "firstname": model.get("firstName"),"lastname": model.get("lastName")});
-								$("#loginform").html(templateHTML);				
+								$("#loginform").html(templateHTML);	
+								if (typeof FB != 'undefined') {
+									$("button#facebook-login").show();
+								}	
 						 	 });				
 						}
 					});
@@ -60,7 +63,10 @@ Authenticate = new function() {
 					mainApp.userinfo.loggedin = false;	
 					TemplateManager.get('authenticate/home', function(template){			
 						var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
-						$("#loginform").html(templateHTML);				
+						$("#loginform").html(templateHTML);	
+						if (typeof FB != 'undefined') {
+							$("button#facebook-login").show();
+						}	
 				 	 });
 				}
 			}
