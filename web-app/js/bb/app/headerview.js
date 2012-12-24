@@ -93,16 +93,7 @@ HeaderView = new function() {
 			return false;
 		},
 		showModal : function(){
-			var logs = JSLog.Logs['App.Login'];
-		    var innerHTML = "<ol>";
-		    var planeLogs = "";
-		    for (var i = 0, len = logs.length; i < len; i++) {
-		    	innerHTML += "<li>" +logs[i] + "</li>";
-		    	// planeLogs is required so tha tags are not included in the text for email. Required to add HTML in email.
-		    	planeLogs += logs[i]+" ~~ ";
-	        }
-		    innerHTML += "</ol>";
-		    $('#logs').html(innerHTML);
+			$("#ajax-error-label").text("HSC-APP");
 		    $('#ajax-error-modal').modal('show');
 		},
 		pauseMusic : function(){
