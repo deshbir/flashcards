@@ -687,7 +687,21 @@
 	"sequence": 6,
 	"type": "lab",
 	"author": "Pearson",
-	"topics": [],
+	"topics": [{
+					"name": "The Story",
+					"sequence": 1,
+					"audioTrack": "Nursing/Live Review/12-12-12 Nursing Readypoint 1 Story.mp3"
+				},
+				{
+					"name": "Competition",
+					"sequence": 2,
+					"audioTrack": "Nursing/Live Review/12-12-12 Nursing Live Review 2 Competition.mp3"
+				},
+				{
+					"name": "Supplements",
+					"sequence": 3,
+					"audioTrack": "Nursing/Live Review/12-12-12 Nursing Live Review 3 Supplements.mp3"
+				}],
 			    "tests": [
 			        {
 			        	"name": "test1",
