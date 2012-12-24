@@ -32,6 +32,7 @@ DisciplineView = new function() {
 			if (detailbbView == null) { //First OR After Browser Refresh
 				
 				detailbbView = new DetailView({displineId:displineId});
+				DisciplineView.detailbbView = detailbbView;
 				
 			} else {  	 //If the View has been created (bbView) never re-create
 				
@@ -157,7 +158,9 @@ DisciplineView = new function() {
 		last_discipline_id: -1,
 		
 		events: {
-			"click .clickbox"	:	"productdetail"
+			"click .clickbox"	:	"productdetail",
+			"click .playAll"	: "playAll",
+			"click .stopAudio" : "stopAudio"
 		},
 		
 		initialize: function() {
@@ -191,7 +194,7 @@ DisciplineView = new function() {
 			$(window).bind("resize.discipline", _.bind(function(){
 					if(mainApp.currentPanelId==this.myPanelId){
 						mainApp.resetColumns(this.myPanelId+" .row-fluid");
-						mainApp.resizeColumns(this.myPanelId+" .row-fluid",true);
+						mainApp.resizeColumns(this.myPanelId+" .row-fluid",true, "audio-playing");
 					}
 			}, this));
 		},
@@ -244,7 +247,23 @@ DisciplineView = new function() {
 				
 				this.setElement(this.myPanelId);
 				
-				this.current_displine_id=this.requested_discipline_id;
+				this.current_discipline_id=this.requested_discipline_id;
+				
+				this.productids = [];
+				for(var product in productCollection){
+					this.productids.push(productCollection[product].id);
+				}
+			} else {
+				if(this.currentSelectedAudioIndex!=null){
+					var productid = this.productids[this.currentSelectedAudioIndex];
+					if($(this.myPanelId + " #" + productid + " li.sm2_paused").length == 0 && 
+							$(this.myPanelId + " #" + productid + " li.sm2_playing").length == 0){
+						this.unloadAudioTemplate(productid);
+						$(".stopAudio").html("Play All");
+						$(".stopAudio").toggleClass("playAll stopAudio");
+						this.currentSelectedAudioIndex = null;
+					}
+				}
 			}
 			
 			/*
@@ -253,17 +272,75 @@ DisciplineView = new function() {
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
 				$('#product-list').imagesLoaded(function() {
-					mainApp.resizeColumns(that.myPanelId+" .row-fluid",true);
+					mainApp.resizeColumns(that.myPanelId+" .row-fluid",true,"audio-playing");
 				});		
 			});	
 			return this; //Do this at the end to allow for method chaining.			
 			
 		},
 		productdetail : function(e) {
+			if($(e.originalEvent.target).parents(".playlist").length!=0){
+				return;
+			}
 			var disciplineid = this.requested_discipline_id;
 			var productid = e.currentTarget.id;
 			//this.cleanUp();
 			Backbone.history.navigate("#/discipline/" + disciplineid + "/product/"+productid);
+		},
+		playAll : function(e) {
+			this.currentSelectedAudioIndex = null;
+			this.loadNextAudioTemplate();
+			$(".playAll").html("Stop");
+			$(".playAll").toggleClass("playAll stopAudio");
+		},
+		stopAudio : function(e) {
+			$(".stopAudio").html("Play All");
+			$(".stopAudio").toggleClass("playAll stopAudio");
+			mainApp.soundManagerConfig.soundManagerObject.stop();
+			$("#music i").removeClass('icon-pause-hsc');
+			this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
+			this.currentSelectedAudioIndex = null;
+		},
+		loadNextAudioTemplate : function() {
+			if(this.currentSelectedAudioIndex!=null){
+				this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
+				this.currentSelectedAudioIndex++;
+			}
+			else {
+				this.currentSelectedAudioIndex=0;
+			}
+			if(this.productids.length>this.currentSelectedAudioIndex){
+				var productid = this.productids[this.currentSelectedAudioIndex];
+				this.loadAudioTemplate(productid);
+			} else {
+				this.currentSelectedAudioIndex--;
+				this.stopAudio();
+			}
+		},
+		unloadAudioTemplate : function(productid){
+			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
+			$(element).html("");
+			$(".audio-playing").removeClass("audio-playing");
+		},
+		loadAudioTemplate : function(productid){
+			var disciplineid = this.requested_discipline_id;
+			var collection  = ProductCollection.get(disciplineid, productid);
+			var that = this;
+			TemplateManager.get('product-list-audio', 
+					function(template){
+						collection.fetch({
+							success: function(){							
+								var compiled_template_body = Mustache.render(template, collection.toJSON());
+								var element = $(that.myPanelId + " #" + productid + " .discipline-music-container");
+								var divContainer = $(that.myPanelId + " #" + productid + " .anchor");
+								$(divContainer).addClass("audio-playing");
+								$(element).html(compiled_template_body);	
+								var anchor  = $(element).find("ul.playlist").first().find('a')[0];
+								mainApp.pagePlayer.handleClick({target:anchor});
+						}
+				 });
+						
+			});
 		},
 		cleanUp:function() { // for cleaning up view before moving to another view of backbone
 			this.undelegateEvents();

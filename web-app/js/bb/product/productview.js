@@ -2,78 +2,7 @@ ProductView = new function() {
 
 	/* ----- Global View Variables ----------------------*/
 	var bbView = null;
-	var pagePlayer = new PagePlayer();
-	/* -------------------------------------------------*/
-	var pagePlayerPlay = pagePlayer.events.play;
-	var mainApp = com.compro.application.hsc;
-	pagePlayer.config.updatePageTitle = false;
-	pagePlayer.events.play = function(){
-		$("#music").show();
-		$("#music i").removeClass('icon-pause-hsc');
-		$("#music i").addClass('icon-mute-hsc');
-		if(mainApp.soundManagerConfig.playText){
-			$("#music a").attr('title',mainApp.soundManagerConfig.playText);
-		} else {
-			$("#music a").attr('title','Playing Audio. Select to pause.');
-		}
-		mainApp.soundManagerConfig.musicPlaying = true;
-		mainApp.soundManagerConfig.musicStopped = false;
-		var soundManager = this;
-		mainApp.soundManagerConfig.soundManagerObject = soundManager;
-		pagePlayerPlay.call(soundManager);
-		$("#product-home .sm2_playing i").toggleClass('icon-volume-up icon-pause');
-	}
-	var pagePlayerPause = pagePlayer.events.pause;
-	pagePlayer.events.pause = function(){
-		$("#music i").addClass('icon-pause-hsc');
-		$("#music i").removeClass('icon-mute-hsc');
-		if(mainApp.soundManagerConfig.pauseText){
-			$("#music a").attr('title',mainApp.soundManagerConfig.pauseText);
-		} else {
-			$("#music a").attr('title','Audio Paused. Select to resume.');
-		}
-		mainApp.soundManagerConfig.musicPlaying = false;
-		pagePlayerPause.call(this);
-		$("#product-home .sm2_paused i").toggleClass('icon-volume-up icon-pause');
-	}
-	var pagePlayerResume = pagePlayer.events.resume;
-	pagePlayer.events.resume = function(){
-		mainApp.soundManagerConfig.musicPlaying = true;
-		$("#music i").removeClass('icon-pause-hsc');
-		$("#music i").addClass('icon-mute-hsc');
-		if(mainApp.soundManagerConfig.playText){
-			$("#music a").attr('title',mainApp.soundManagerConfig.playText);
-		} else {
-			$("#music a").attr('title','Playing Audio. Select to pause.');
-		}
-		pagePlayerResume.call(this);
-		$("#product-home .sm2_playing i").addClass('icon-volume-up');
-		$("#product-home .sm2_playing i").addClass('icon-pause'); 
-	}
-	var pagePlayerStop = pagePlayer.events.stop;
-	pagePlayer.events.stop = function(){
-		$("#music i").addClass('icon-pause-hsc');
-		$("#music i").removeClass('icon-mute-hsc');
-		if(mainApp.soundManagerConfig.stopText){
-			$("#music a").attr('title',mainApp.soundManagerConfig.stopText);
-		} else {
-			$("#music a").attr('title','Audio Stopped. Select to play.');
-		}
-		mainApp.soundManagerConfig.musicPlaying = false;
-		mainApp.soundManagerConfig.musicStopped = true;
-		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
-		$("#product-home .sm2_playing i").removeClass('icon-pause');
-		pagePlayerStop.call(this);
-	}
-	var pagePlayerFinish = pagePlayer.events.finish;
-	pagePlayer.events.finish = function(){
-		$("#music").hide();
-		mainApp.soundManagerConfig.musicPlaying = false;
-		mainApp.soundManagerConfig.musicStopped = true;
-		$("#product-home .sm2_playing i").removeClass('icon-volume-up');
-		$("#product-home .sm2_playing i").removeClass('icon-pause');
-		pagePlayerFinish.call(this);
-	}
+	
 	var mainApp = com.compro.application.hsc;
 	var clsMainHeader = mainApp.clsMainHeader;
 
@@ -138,9 +67,9 @@ ProductView = new function() {
 						success: function(){							
 							//Always call render from initialize - as Backbone does not automatically call it.
 							that.render();
-							soundManager.onready(function() {
+							/*soundManager.onready(function() {
 								  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
-							});							
+							});	*/						
 						}
 					});
 					

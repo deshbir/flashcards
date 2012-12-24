@@ -315,6 +315,68 @@
  			});
  	}
  	
+ 	function pagePlayer_init(){
+ 		var that = this;
+ 		/* -------------------------------------------------*/
+ 		var pagePlayerPlay = pagePlayer.events.play;
+ 		var pagePlayerGetNextItem = pagePlayer.getNextItem;
+ 		pagePlayer.config.updatePageTitle = false;
+ 		pagePlayer.events.play = function(){
+ 			$("#music").show();
+ 			$("#music i").removeClass('icon-pause-hsc');
+ 			$("#music i").addClass('icon-mute-hsc');
+ 			soundManagerConfig.musicPlaying = true;
+ 			soundManagerConfig.musicStopped = false;
+ 			var soundManager = this;
+ 			soundManagerConfig.soundManagerObject = soundManager;
+ 			pagePlayerPlay.call(soundManager);
+ 			$(".sm2_playing i").toggleClass('icon-volume-up icon-pause');
+ 		}
+ 		var pagePlayerPause = pagePlayer.events.pause;
+ 		pagePlayer.events.pause = function(){
+ 			$("#music i").addClass('icon-pause-hsc');
+ 			$("#music i").removeClass('icon-mute-hsc');
+ 			soundManagerConfig.musicPlaying = false;
+ 			pagePlayerPause.call(this);
+ 			$(".sm2_paused i").toggleClass('icon-volume-up icon-pause');
+ 		}
+ 		var pagePlayerResume = pagePlayer.events.resume;
+ 		pagePlayer.events.resume = function(){
+ 			soundManagerConfig.musicPlaying = true;
+ 			$("#music i").removeClass('icon-pause-hsc');
+ 			$("#music i").addClass('icon-mute-hsc');
+ 			pagePlayerResume.call(this);
+ 			$(".sm2_playing i").addClass('icon-volume-up');
+ 			$(".sm2_playing i").addClass('icon-pause'); 
+ 		}
+ 		var pagePlayerStop = pagePlayer.events.stop;
+ 		pagePlayer.events.stop = function(){
+ 			$("#music i").addClass('icon-pause-hsc');
+ 			$("#music i").removeClass('icon-mute-hsc');
+ 			soundManagerConfig.musicPlaying = false;
+ 			soundManagerConfig.musicStopped = true;
+ 			$(".sm2_playing i").removeClass('icon-volume-up');
+ 			$(".sm2_playing i").removeClass('icon-pause');
+ 			pagePlayerStop.call(this);
+ 		}
+ 		var pagePlayerFinish = pagePlayer.events.finish;
+ 		pagePlayer.events.finish = function(){
+ 			$("#music").hide();
+ 			if(com.compro.application.hsc.currentPanelId==DisciplineView.detailbbView.myPanelId){
+ 				if(pagePlayer.getNextItem(this._data.oLI)==null){
+ 					DisciplineView.detailbbView.loadNextAudioTemplate();
+ 				}
+ 			}
+ 			soundManagerConfig.musicPlaying = false;
+ 			soundManagerConfig.musicStopped = true;
+ 			$(".sm2_playing i").removeClass('icon-volume-up');
+ 			$(".sm2_playing i").removeClass('icon-pause');
+ 			pagePlayerFinish.call(this);
+ 		}
+ 		soundManager.onready(function() {
+ 			  pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
+ 		});	
+ 	}
  	// Util function - for adding suffix in images
  	function addSuffixToFilepath(filepath, suffix)	{
  
@@ -532,7 +594,7 @@
 	 	}
 	 
 	 //Object can be a dom object/Jquery Object or a selector string
-	 function resizeColumns (object, isRowByRow){ //for setting the min-height of each column based on the maximun height of that row.
+	 function resizeColumns (object, isRowByRow, exemptClass){ //for setting the min-height of each column based on the maximun height of that row.
 		
 		 var setCurrentTallest = function(obj, currTallest){
 		   $(obj).children().each(function(){
@@ -550,6 +612,11 @@
 			}
 			$(this).children().each(function(i){
 				$(this).children().each(function(){
+					if(exemptClass){
+						if($(this).hasClass(exemptClass)){
+							  return;
+						}
+					}
 					if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
 				});
 			});
@@ -603,7 +670,8 @@
  
  	(function init()	{
  			//Check if browser is IE
- 			isIE = navigator.appVersion.indexOf("MSIE") != -1
+ 			isIE = navigator.appVersion.indexOf("MSIE") != -1;
+ 			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
  				
  				logger.info("On Ready - Starting Initialization");
@@ -623,6 +691,8 @@
  				modalEventRegistration();
  				logger.info("sound manager initialization");
  				soundmanager2_init();
+ 				logger.info("Page Player initialization");
+ 				pagePlayer_init();
  				
  				logger.info("muscula initialization");
  				muscula_log_init();
@@ -717,7 +787,8 @@
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
  		"resizeColumns":resizeColumns,
  		"resetColumns":resetColumns,
- 		"version" : version
+ 		"version" : version,
+ 		"pagePlayer" : pagePlayer
  	}
  
 })();
