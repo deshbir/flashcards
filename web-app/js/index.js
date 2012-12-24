@@ -232,7 +232,6 @@
 		    	$('#ajax-error-modal .modal-body .content-body').show();
 		    }
  		    $('#ajax-error-modal').modal();
- 		   $('#ajax-error-label').append(" <small>version " + version+"</small>");
  		    return true;
  		});		        
  		$(document).ajaxSuccess(function (e, xhr, opts) {
@@ -358,6 +357,9 @@
  	}
  function modalEventRegistration(){
 	    $('#ajax-error-modal').on('show', function () {
+	    	if($('#ajax-error-label').html().indexOf("version")==-1) {
+	    		$('#ajax-error-label').append(" <small>version " + version+"</small>");
+	    	}
 			var innerHTML = getJSLogsAsList;
 		    $('#logs').html(innerHTML);
 	    });
