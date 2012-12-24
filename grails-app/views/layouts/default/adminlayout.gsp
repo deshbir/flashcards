@@ -4,9 +4,6 @@
 <!DOCTYPE html>
 <html manifest="cache.appcache">
 	<head>
-		<g:if test="${isFacebookLoginSuccess}">
-			<script src="//connect.facebook.net/en_US/all.js" id="facebook-jssdk"></script>
-		</g:if>	
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Pearson HSC</title>
@@ -17,10 +14,10 @@
 		<meta name="description" content="Pearson HSC, 2013">
 		<meta name="author" content="Compro Technologies Pvt. Ltd.">
 
-	    <cgrails:stylesheet src="index"/>
-	    <r:require modules="common, application"/>
+	    <cgrails:stylesheet src="indexadmin"/>
+	    <r:require modules="common, admin"/>
 	    
-		<cgrails:environment_setup/>	    
+		<cgrails:environment_setup/>    
 	    <g:layoutHead/>	    
 		<r:layoutResources/>
 		
@@ -54,15 +51,10 @@
         <!-- iPhone 5 SPLASHCREEN -->
         <link rel="apple-touch-startup-image" media="(device-width: 320px)  and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x1096.png"/>"/>
 
-        
-		
 		<link rel="shortcut icon" href="<r:resource uri="/images/favicon.ico"/>" type="image/x-icon">
 		<ga:trackPageview />
 	</head>
-	<body dir="${direction}">
-		<g:include view="layout-helpers/modals.gsp"/>
-		<g:include view="layout-helpers/facebook_init.gsp"/>
-		
+	<body dir="${direction}">	
 		<div id="wrap"> <!--  Sticky Footer Container -->
 			<g:include view="layout-helpers/header.gsp"/>
 

@@ -1,0 +1,58 @@
+/******************* HSC skin variables **********************/
+@import "../../default/less/indexadmin.less";
+
+@navbarInverseBackgroundHighlight:#ED6B06;
+@navbarInverseBackground : #ED6B06;
+@navbarInverseBorder : #C25A3C;
+@bodyBackgroundColor : #FFE5D0;
+@footer-bg-color:#ED6B06;
+@footer-color:@white;
+@navbarInverseLinkColor:@white; 
+@product_heading_color:#5b544e;
+
+@HSCButtonColor: #e39979; //orange
+@HSCButtonBottomColor:#d7604a;
+@HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
+
+
+@profile-img-top-color:#d0cdbc;
+@profile-img-bottom-color:#bbb8aa;
+@login-input-shadow:0px 2px #c2ad9b;
+@login-input-border:#ed6b06;
+
+@playlist-li-color:@white;
+@playlist-icon-border-color:rgb(211,208,191);
+@timing-bg-color :#FFE5D0;
+@playlist-li-text-color:#5b544e;
+@status-bar-bg-color : #ED6B06;
+@product-home-border-color:lighten(#ED6B06,15%);
+
+
+body {
+	background-color: @bodyBackgroundColor;
+}
+
+#footer	{ 
+	.muted {
+		 color: @footer-color;
+	}
+}
+
+// HTML5 invalid states
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color: #595959;
+  border-color: #ed6b06;
+  &:focus {
+    border-color: darken(#ee5f5b, 10%);
+    @shadow: 0 0 6px #c2ad9b;
+    .box-shadow(@shadow);
+  }
+}
+
+.btn {
+	border-color:#c25a3c;
+	.box-shadow(0px 1px #c5231b);
+	text-shadow: none;
+}
