@@ -17,18 +17,6 @@
 			<span class="ui-icon ui-icon-loading">
 				<r:img dir="images" file="ajax-loader.gif"/>
 			</span>
-		</div>		
-		<r:script disposition="defer">
-   			window.applicationCache.addEventListener('updateready', function(e) {
-				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-					// Browser downloaded a new app cache.
-					// Swap it in and reload the page to get the new hotness.
-					window.applicationCache.swapCache();
-					if (confirm('A new version/update of this App is available! Click "OK" to reload and update your application from the server.')) {
-						window.location.reload();
-					}
-				} 
-			});			
-		</r:script>			
+		</div>	
 	</body>
 </html>
