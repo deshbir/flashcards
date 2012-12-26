@@ -1,27 +1,21 @@
 <div id="delete-user">
-	 <div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="span9 headerText">
-					<ul class="breadcrumb">
-	  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
-	  					<li class="active">Delete User</li>
-					</ul>			
-				</div>
-				<div class="span3 manageUser">
-					<span class="pull-right" id="deleteUserSet">			
-						<span id="adminDeleteUser">
-							<button class="btn" ><i class="icon-remove"></i>  Delete</button>
-						</span>		
-						<span id="adminCancelDelete">
-							<button class="btn" ><i class="icon-undo"></i>  Cancel</button>
-						</span>				
-					</span>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="span9 headerText">
+				<ul class="breadcrumb">
+ 					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
+ 					<li class="active">Delete User</li>
+				</ul>			
 			</div>
-		</div>	 
+			<div class="span3">
+				<span class="pull-right">			
+					<button id="adminDeleteUser" class="btn" ><i class="icon-remove"></i>  Delete</button>
+					<button id="adminCancelDelete" class="btn" ><i class="icon-undo"></i>  Cancel</button>
+				</span>
+			</div>
+		</div>
 	</div>
-	<div class="body well">
+	<div class="well">
 		<h4 id="confirmCheck">Are you sure you want to delete this user?</h4><br/>
 		<form class="form-horizontal" id="deleteUser" action="#" method="post" name="removeUser">
 			<div class="control-group">

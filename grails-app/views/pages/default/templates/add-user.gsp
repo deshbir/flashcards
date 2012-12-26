@@ -1,22 +1,20 @@
 <div id="create-user">
-	<div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="span9 headerText">
-					<ul class="breadcrumb">
-	  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
-	  					<li class="active">New user</li>
-					</ul>
-				</div>
-				<div class="span3 manageUser" >
-				 	<span class="pull-right" id="adminAddUser">
-						<button class="btn" ><i class="icon-save"></i>  Save</button>
-					</span>		
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="span9 headerText">
+				<ul class="breadcrumb">
+  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
+  					<li class="active">New user</li>
+				</ul>
+			</div>
+			<div class="span3">
+				<span class="pull-right">
+					<button id="adminAddUser" class="btn" ><i class="icon-save"></i>  Save</button>
+				</span>
 			</div>
 		</div>
 	</div>
-	<div class="body well">
+	<div class="well">
 		<form id="createUser" class="form-horizontal" action="#" method="post" name="addUser">
 			<div class="control-group">
 				<label class="control-label" for="username">Username</label>
@@ -25,11 +23,11 @@
 					<span class="alert alert-error hide" id="error-name">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Username can't be blank.
-					</span>	
+					</span>
 					<span class="alert alert-error hide" id="error-username">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Username must be a valid email id.
-					</span>						
+					</span>		
 				</div>
 			</div>
 			<div class="control-group">
