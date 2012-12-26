@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	
+ 	var version = 13;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -95,6 +95,9 @@
  		soundManagerObject : null,
  		musicPlaying : false,
  		musicStopped :  true
+ 		//playText:null,
+ 		//pauseText:null,
+ 		//stopText:null,
  	};
  	
  	// Config 
@@ -213,7 +216,7 @@
  		    $("#ajax-error-label").text(msgTitle);
  		    $('#ajax-error-modal .modal-body .content-header').text(msgHeader);
  		    $('#message').html(msgDesc);
- 		    $('#headers').html("<div><h4>Error occured for request: </h4></div><ul>");  
+ 		    $('#headers').html("<ul>");  
  		    $('#headers').append("<li>url: " + settings.url + "</li>");
  		    $('#headers').append("<li>type: " + settings.type + "</li>");
  		    $('#headers').append("<li>data: " + settings.data + "</li></ul>");
@@ -233,8 +236,6 @@
  
  		$(document).ajaxComplete(function (e, xhr, opts) {
  		    /* Do Nothing */
- 			$(globalAjaxOptions.elProgress).hide();
- 			
  		});
  
  		$(document).ajaxStop(function () {
@@ -261,7 +262,8 @@
  				 * 2nd parameter - showHomeLink
  				 * 3rd parameter - setBackLink 
  				 */
- 				setHeaderOptions(true, false, false);
+ 				// Fixing issue for back-button disappearance after repeated login. 
+ 				setHeaderOptions(true, false, true);
  			}
  		});	
  		Backbone.history.navigate("#/discipline");
@@ -273,10 +275,9 @@
  		Backbone.history.start();
  		if (location.href.indexOf("?isFacebookLoginSuccess=") != -1) { //Facebook login success in iOS Home Screen Apps
  			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
- 		}
-		else if (location.href.indexOf("#") == -1) { //Normal App startup
+ 		} else if (location.href.indexOf("#") == -1) { //Normal App startup
 			Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
-		}
+		} 		
  	}
  	
  	function getFBLoginStatus(){
@@ -298,7 +299,6 @@
  			  }
  		});
  	}
- 	
  	
  	// Util function - for adding suffix in images
  	function addSuffixToFilepath(filepath, suffix)	{
@@ -342,6 +342,9 @@
  	}
  function modalEventRegistration(){
 	    $('#ajax-error-modal').on('show', function () {
+	    	if($('#ajax-error-label').html().indexOf("version")==-1) {
+	    		$('#ajax-error-label').append(" <small>version " + version+"</small>");
+	    	}
 			var innerHTML = getJSLogsAsList;
 		    $('#logs').html(innerHTML);
 	    });
@@ -349,8 +352,9 @@
 	    $('#error-report').on('show', function () {
 		    var innerHTML = getJSLogsAsList;
 		    var date = new Date();
-		    var dateString = date.toDateString(); 
-		    $('#error-report .modal-header .date .date-data').html(dateString);
+		    var dateString = date.toString(); 
+		    $('#error-report .modal-body .date .date-data').html(dateString);
+		    $('#error-report .modal-body .date .version-data').html(version);
 		    $('#error-report .modal-body .content-header').html($('#ajax-error-modal .modal-body .content-header').html());
 		    $('#error-report .modal-body .content-body .logs').html(innerHTML);
 		    $('#error-report .modal-body .content-body .params').html($('#headers').html());
@@ -367,7 +371,7 @@
 		var innerHTML = "<ol>";
 		var planeLogs = "";
 		for (var i = 0, len = logs.length; i < len; i++) {
-			innerHTML += "<li value="+(logs.length - i -1)+">" +logs[logs.length - i - 1] + "</li>";
+			innerHTML += "<li value="+(logs.length - i)+">" +logs[logs.length - i - 1] + "</li>";
 			// planeLogs is required so that tags are not included in the text for email. Required to add HTML in email.
 			planeLogs += logs[i]+" ~~ ";
 		}
@@ -407,32 +411,26 @@
  			$(this.currentPanelId).width($(this.currentPanelId).width());
  			$(newPanelId).width($(this.currentPanelId).width());
  			panelContainer.width($(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true));
- 			/*var that=this;
- 			$('.panel-item').each(function(){
- 				if(that.currentPanelId.indexOf($(this).attr("id"))<0){
- 					$(this).hide();
- 				}
- 			});*/
  			var translationWidth = 0;
  			if($(newPanelId).attr("data-order")>$(this.currentPanelId).attr("data-order")){
  				translationWidth = $(this.currentPanelId).outerWidth(true);
- 				applyTransition(panelContainer, 0);
+ 				removeTransition(panelContainer);
  			}else{
  				applyTransition(panelContainer, -$(this.currentPanelId).outerWidth(true));
  			}
- 			$(newPanelId).show();
- 		panelItems.css("float","left");
- 		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
- 		panelContainer.addClass('easing');
- 		applyTransition(panelContainer, -translationWidth);
- 			if(!(typeof callback === 'undefined') )	{
- 				callback();	
- 			}
- 		}
- 		this.currentPanelId = newPanelId;
- 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
-			transitionEndHandler();
-		}
+ 			$(newPanelId).show(0);
+	 		panelItems.css("float","left");
+	 		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
+	 		panelContainer.addClass('easing');
+	 		applyTransition(panelContainer, -translationWidth);
+	 			if(!(typeof callback === 'undefined') )	{
+	 				callback();	
+	 			}
+	 		}
+	 		this.currentPanelId = newPanelId;
+	 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
+				transitionEndHandler();
+			}
  	}
  	
  	/*
@@ -454,17 +452,22 @@
  			"-o-transform":"translate3d("+width+"px,0,0)"
  		});
  	}
- 	/*function to accomodate resizing of browser window or content.
- 	 * @params - currentPanelId
- 	 * */
- 	function onResizeTranslationHandler(panelId){
- 		/*$("#panel-container").removeClass('easing');
- 		var itemWidth = $("#bb-container").width();
- 		$("#panel-container").width(itemWidth * $(".panel-item").length);
- 		$('.panel-item').width(itemWidth);
- 		var translationWidth = $(panelId).attr("data-order") * -itemWidth;
- 		applyTransition($("#panel-container"), translationWidth);
- 		$("#bb-container").height($(panelId).height());*/
+ 	
+ 	/*
+ 	 * function to remove translation(cross-browser)
+ 	 * 
+ 	 */
+ 	function removeTransition(element){
+ 		element.css({
+ 			"transform":"none",
+ 			"-webkit-transform":"none",
+ 			"-moz-transform":"none",
+ 			// For IE 10.0
+ 			"-ms-transform":"none",
+ 			// For IE 9.0
+ 			"-ms-transform":"none",
+ 			"-o-transform":"none"
+ 		});
  	}
  		
  	//function to handle "transitionend" event of panel-container
@@ -480,7 +483,7 @@
 		
 		//removing the styles added for trasitioning 
 		$("#panel-container").removeClass('easing');
-		applyTransition($("#panel-container"),0);
+		removeTransition($("#panel-container"));
 		$("#panel-container").width("auto");
 		$('.panel-item').css({
 			"float":"none",
@@ -512,6 +515,75 @@
 	 	  }
 	 	  return rv;
 	 	}
+	 
+	 //Object can be a dom object/Jquery Object or a selector string
+	 function resizeColumns (object, isRowByRow, exemptClass){ //for setting the min-height of each column based on the maximun height of that row.
+		
+		 var setCurrentTallest = function(obj, currTallest){
+		   $(obj).children().each(function(){
+				if (Number.prototype.pxToEm) currTallest = currTallest.pxToEm(); //use ems unless px is specified
+				// for ie6, set height since min-height isn't supported
+				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currTallest}); }
+				$(this).children().css({'min-height': currTallest}); 
+			});
+		 }
+		 
+		 var currentTallest = 0;
+		 $(object).each(function(){
+			if(isRowByRow){
+				currentTallest = 0;
+			}
+			$(this).children().each(function(i){
+				$(this).children().each(function(){
+					if(exemptClass){
+						if($(this).hasClass(exemptClass)){
+							  return;
+						}
+					}
+					if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+				});
+			});
+			if(isRowByRow){
+				setCurrentTallest(this,currentTallest);
+			}
+	    
+	   });
+	   if(!isRowByRow) {
+		   $(object).each(function(){
+			   setCurrentTallest(this,currentTallest);
+		   });
+	   }
+	 }
+	 
+	 //Object can be a dom object/Jquery Object or a selector string
+	 function resetColumns (object){ // for removing the min-height of each column.
+		$(object).each(function(){
+			$(this).children().each(function(){
+				if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+				// for ie6, set height since min-height isn't supported
+				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
+				$(this).children().css({'min-height':''}); 
+			});
+	    
+		});
+	}
+	
+	 //This function adds a listener for cache update(if any).
+	 //If a update is found, it swaps the new cache and reloads the window.
+	function add_cache_listener() {
+		if (window.applicationCache) {
+			 window.applicationCache.addEventListener('updateready', function(e) {
+				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+					// Browser downloaded a new app cache.
+					// Swap it in and reload the page to get the new hotness.
+					window.applicationCache.swapCache();
+					if (confirm('A new version/update of this App is available! Click "OK" to reload and update your application from the server.')) {
+						window.location.reload();
+					}
+				} 
+			});	
+		}	 
+	 }
  	
  	
  		
@@ -521,10 +593,13 @@
  
  	(function init()	{
  			//Check if browser is IE
- 			isIE = navigator.appVersion.indexOf("MSIE") != -1
+ 			isIE = navigator.appVersion.indexOf("MSIE") != -1;
  			$(document).ready(function() {
  				
  				logger.info("On Ready - Starting Initialization");
+ 				
+ 				logger.info("adding HTML5 cache listener");
+ 				add_cache_listener();
  
  				logger.info("global error handlers initialization");
  				ajax_init_global_handlers();
@@ -540,13 +615,6 @@
  				logger.info("muscula initialization");
  				muscula_log_init();
  
- 				//for resetting translate3d on resize
- 				$(window).bind("resize.translation", _.bind(function(){
- 					onResizeTranslationHandler(com.compro.application.hsc.currentPanelId);
- 					//com.compro.application.hsc.transitionAppPanel(com.compro.application.hsc.currentPanelId);
- 				}, this));
- 				
- 				
  				//to remove styles added for trasitioning on end of transition
 				$("#panel-container").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",transitionEndHandler);
  				
@@ -587,7 +655,7 @@
  				
  				//FIX: iphone viewport scaling bug. The bug occurs when you set the viewport width
  				// to device-width and rotate the phone to landscape view.
- 				(function(doc) {
+/* 				(function(doc) {
  
  				    var addEvent = 'addEventListener',
  				        type = 'gesturestart',
@@ -606,7 +674,7 @@
  				        doc[addEvent](type, fix, true);
  				    }
  
- 				}(document));				
+ 				}(document));	*/			
  				
  				logger.info("On Ready - Completed Initialization");
  			});
@@ -631,11 +699,14 @@
  		"globalAjaxOptions" : globalAjaxOptions,
  		"transitionAppPanel" : transitionAppPanel,
  		"isIE":isIE,
- 		"onResizeTranslationHandler":onResizeTranslationHandler,
  		"handleLoginSuccess" : handleLoginSuccess,
  		"logger" : logger,
  		"addSuffixToFilepath" : addSuffixToFilepath,
- 		"JSLogsSettingsConfig" : JSLogsSettingsConfig
+ 		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
+ 		"resizeColumns":resizeColumns,
+ 		"resetColumns":resetColumns,
+ 		"version" : version,
+ 		"getInternetExplorerVersion": getInternetExplorerVersion
  	}
  
 })();
