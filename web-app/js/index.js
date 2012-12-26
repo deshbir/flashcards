@@ -266,7 +266,8 @@
  				 * 2nd parameter - showHomeLink
  				 * 3rd parameter - setBackLink 
  				 */
- 				setHeaderOptions(true, false, false);
+ 				// Fixing issue for back-button disappearance after repeated login. 
+ 				setHeaderOptions(true, false, true);
  			}
  		});	
  		Backbone.history.navigate("#/discipline");
