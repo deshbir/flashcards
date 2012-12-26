@@ -1,9 +1,9 @@
 <div id="manageAccounts">
 	<div class="container">
 		<div class="row">
-			<div class="span9 headerText">
+			<div class="span9">
 				<ul class="breadcrumb">
-  					<li class="active">Manage Accounts</li>
+  					<li class="active"><h2>Manage Accounts</h2></li>
 				</ul>				
 			</div>
 			<div class="span3">

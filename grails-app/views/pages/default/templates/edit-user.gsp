@@ -1,10 +1,10 @@
 <div id="edit-user">
 	<div class="container">
 		<div class="row">
-			<div class="span9 headerText">
+			<div class="span9">
 				<ul class="breadcrumb">
-  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
-  					<li class="active">Edit User</li>
+  					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
+  					<li class="active"><h2>Edit User</h2></li>
 				</ul>			
 			</div>
 			<div class="span3">

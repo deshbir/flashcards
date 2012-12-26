@@ -1,10 +1,10 @@
 <div id="create-user">
 	<div class="container">
 		<div class="row">
-			<div class="span9 headerText">
+			<div class="span9">
 				<ul class="breadcrumb">
-  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
-  					<li class="active">New user</li>
+ 						<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
+ 						<li class="active"><h2>New user</h2></li>
 				</ul>
 			</div>
 			<div class="span3">
