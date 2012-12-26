@@ -16,14 +16,21 @@ Authenticate = new function() {
 	    		j_password:  form.j_password.value
 	    	},
 	        success: function(response) {
-				if (response.error) { 
+				if (response.success) { 
+					mainApp.handleLoginSuccess(false);						
+				} else {
 					mainApp.userinfo.loggedin = false;						
 					$("#loginErrorMessage").show();
-					$("#loginErrorMessage").html("<span class='errorMessage'>" + response.error + "</span>");
+					var errorMessage = "";
+					if (response.error) {
+						errorMessage = response.error;						
+					} else {
+						errorMessage = response;
+					}
+					$("#loginErrorMessage").html("<span class='errorMessage'>" + errorMessage + "</span>");
 					$($("#ajaxLoginForm").find("input[type=email]")).addClass("invalid-name");
 					$($("#ajaxLoginForm").find("input[type=password]")).addClass("invalid-name");
-				} else {
-					mainApp.handleLoginSuccess(false);	
+					
 				} 
 	        }
 	    });		    
