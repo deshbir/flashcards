@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 12;
+ 	var version = 13;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -788,7 +788,8 @@
  		"resizeColumns":resizeColumns,
  		"resetColumns":resetColumns,
  		"version" : version,
- 		"pagePlayer" : pagePlayer
+ 		"pagePlayer" : pagePlayer,
+ 		"getInternetExplorerVersion": getInternetExplorerVersion
  	}
  
 })();

@@ -65,7 +65,15 @@
 	}
 	.discipline-music-container {
 		margin: 30px 20px 0px 20px;
+		height:0px;
+		overflow:hidden;
 	}
+	.discipline-music-container.transition {
+		-webkit-transition:height 0.5s linear;
+     	-moz-transition: height 0.5s linear;
+      	-o-transition: height 0.5s linear;
+         transition: height 0.5s linear;
+    }
 	ul.playlist li a i{
 		float:none;
 	}
@@ -74,6 +82,7 @@
 #panel_discipline-home{
 	.playAll, .stopAudio{
 			float:right;
+			margin-top:5px;
 	}
 }
 
