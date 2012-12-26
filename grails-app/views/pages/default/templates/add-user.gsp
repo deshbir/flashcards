@@ -21,11 +21,9 @@
 				<div class="controls">
 					<input id="username"  type="text" placeholder="Username" name="username" />
 					<span class="alert alert-error hide" id="error-name">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Username can't be blank.
 					</span>
 					<span class="alert alert-error hide" id="error-username">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Username must be a valid email id.
 					</span>		
 				</div>
@@ -35,7 +33,6 @@
 				<div class="controls">
 					<input id="password"  type="password" placeholder="Password" name="password" />
 					<span class="alert alert-error hide" id="error-password">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Password can't be blank.
 					</span>						
 				</div>
