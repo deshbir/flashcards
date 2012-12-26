@@ -23,7 +23,7 @@
 				</div>	
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
 				{{#isAdmin}}
-					<a id="user-button" href="admin" class="btn btn-large btn-block">Manage Accounts</a>	
+					<a id="user-button" href="admin/" class="btn btn-large btn-block">Manage Accounts</a>	
 				{{/isAdmin}}											
 				<button id="logout-button" class="btn btn-large btn-block">Logout</button>
 			</div>

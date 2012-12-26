@@ -108,11 +108,9 @@ grails.plugins.springsecurity.rememberMe.alwaysRemember = true
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
-grails.plugins.springsecurity.interceptUrlMap = [
-	'/*/singlepage/splash':['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/*/singlepage/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
-	'/cgrailstemplate':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
-	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER']	
+grails.plugins.springsecurity.interceptUrlMap = [	
+	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
+	'/admin/**' :['ROLE_ADMIN']
 ]
 grails.plugins.springsecurity.facebook.domain.classname='com.pearson.hsc.authenticate.FacebookUser'
 grails.plugins.springsecurity.facebook.appId='443347489063227'
