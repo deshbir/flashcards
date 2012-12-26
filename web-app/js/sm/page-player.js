@@ -224,8 +224,11 @@ function PagePlayer() {
   this.getOffX = function(o) {
     // http://www.xs4all.nl/~ppk/js/findpos.html
 	// Updating the function for supporting transition in panel. 
-	// Offset width was giving errors in original version.  
-    return $(o).offset().left;
+	// Offset width was giving errors in original version.
+	// Fixing issue for errors in console. 
+	  if($(o).offset()) {
+		  return $(o).offset().left;
+	  }
   };
 
   this.getTime = function(nMSec, bAsString) {
