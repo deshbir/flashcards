@@ -1,22 +1,20 @@
 <div id="edit-user">
-	<div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="span9 headerText">
-					<ul class="breadcrumb">
-	  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
-	  					<li class="active">Edit User</li>
-					</ul>			
-				</div>
-				<div class="span3 manageUser" >
-					<span class="pull-right" id="adminEditUser">
-						<button class="btn" ><i class="icon-save"></i>  Save</button>
-					</span>	
-				</div>	
+	<div class="container">
+		<div class="row">
+			<div class="span9 headerText">
+				<ul class="breadcrumb">
+  					<li><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></li>
+  					<li class="active">Edit User</li>
+				</ul>			
 			</div>
+			<div class="span3">
+				<span class="pull-right">
+					<button id="adminEditUser" class="btn" ><i class="icon-save"></i>  Save</button>
+				</span>
+			</div>	
 		</div>
 	</div>
-	<div class="body well">
+	<div class="well">
 		<form id = "editUser" class="form-horizontal" action="#" method="post" name="updateUser">
 			<div class="control-group">
 				<label class="control-label" for="firstName">First Name</label>

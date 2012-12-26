@@ -1,21 +1,19 @@
 <div id="manageAccounts">
-	<div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="span9 headerText">
-					<ul class="breadcrumb">
-	  					<li class="active">Manage Accounts</li>
-					</ul>				
-				</div>
-				<div class="span3 manageUser" >
-					<span class="pull-right" id="addNewUser">
-						<button  class="btn"><i class="icon-plus"></i>  Add new User</button>
-					</span>							
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="span9 headerText">
+				<ul class="breadcrumb">
+  					<li class="active">Manage Accounts</li>
+				</ul>				
+			</div>
+			<div class="span3">
+				<span class="pull-right">
+					<button id="addNewUser" class="btn"><i class="icon-plus"></i>  Add new User</button>
+				</span>
 			</div>
 		</div>
 	</div>
-	<div class="main-body well">
+	<div class="well">
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
