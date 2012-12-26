@@ -322,11 +322,18 @@ DisciplineView = new function() {
 		},
 		unloadAudioTemplate : function(productid, callback){
 			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
+			if($(element).height()==0){
+				$(element).removeClass('transition').html("");
+				$(element).css("height",0);
+				return;
+			}
 			var that = this;
 			$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
 					function(){
 						$(element).removeClass('transition').html("");
-						callback.apply(that);
+						if(callback!=null){
+							callback.apply(that);
+						}
 					});
 			$(element).css("height",$(element).height());
 			$(element).css("height");
@@ -334,7 +341,9 @@ DisciplineView = new function() {
 			$(".audio-playing").removeClass("audio-playing");
 			if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
 				$(element).removeClass('transition').html("");
-				callback.apply(this);
+				if(callback!=null){
+					callback.apply(this);
+				}
 			}
 		},
 		loadAudioTemplate : function(productid){
