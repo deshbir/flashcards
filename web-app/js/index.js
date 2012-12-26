@@ -788,7 +788,8 @@
  		"resizeColumns":resizeColumns,
  		"resetColumns":resetColumns,
  		"version" : version,
- 		"pagePlayer" : pagePlayer
+ 		"pagePlayer" : pagePlayer,
+ 		"getInternetExplorerVersion": getInternetExplorerVersion
  	}
  
 })();

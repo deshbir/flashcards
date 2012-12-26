@@ -303,24 +303,39 @@ DisciplineView = new function() {
 		},
 		loadNextAudioTemplate : function() {
 			if(this.currentSelectedAudioIndex!=null){
-				this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
 				this.currentSelectedAudioIndex++;
+				this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex-1],callback);
 			}
 			else {
 				this.currentSelectedAudioIndex=0;
+				callback.apply(this);
 			}
-			if(this.productids.length>this.currentSelectedAudioIndex){
-				var productid = this.productids[this.currentSelectedAudioIndex];
-				this.loadAudioTemplate(productid);
-			} else {
-				this.currentSelectedAudioIndex--;
-				this.stopAudio();
+			function callback(){
+				if(this.productids.length>this.currentSelectedAudioIndex){
+					var productid = this.productids[this.currentSelectedAudioIndex];
+					this.loadAudioTemplate(productid);
+				} else {
+					this.currentSelectedAudioIndex--;
+					this.stopAudio();
+				}
 			}
 		},
-		unloadAudioTemplate : function(productid){
+		unloadAudioTemplate : function(productid, callback){
 			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
-			$(element).html("");
+			var that = this;
+			$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
+					function(){
+						$(element).removeClass('transition').html("");
+						callback.apply(that);
+					});
+			$(element).css("height",$(element).height());
+			$(element).css("height");
+			$(element).addClass('transition').css("height",0);
 			$(".audio-playing").removeClass("audio-playing");
+			if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
+				$(element).removeClass('transition').html("");
+				callback.apply(this);
+			}
 		},
 		loadAudioTemplate : function(productid){
 			var disciplineid = this.requested_discipline_id;
@@ -334,9 +349,19 @@ DisciplineView = new function() {
 								var element = $(that.myPanelId + " #" + productid + " .discipline-music-container");
 								var divContainer = $(that.myPanelId + " #" + productid + " .anchor");
 								$(divContainer).addClass("audio-playing");
-								$(element).html(compiled_template_body);	
+								$(element).html(compiled_template_body);
 								var anchor  = $(element).find("ul.playlist").first().find('a')[0];
 								mainApp.pagePlayer.handleClick({target:anchor});
+								var contentH = $($(element).children().eq(0)).outerHeight(true);
+								$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
+										function(){
+											$(element).removeClass('transition').css("height","auto");
+									});
+								$(element).addClass('transition').css("height",contentH);
+								if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
+									$(element).removeClass('transition').css("height","auto");
+								}
+								
 						}
 				 });
 						
