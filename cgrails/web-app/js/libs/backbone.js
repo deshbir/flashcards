@@ -896,10 +896,14 @@
       if (!_.isRegExp(route)) route = this._routeToRegExp(route);
       if (!callback) callback = this[name];
       Backbone.history.route(route, _.bind(function(fragment) {
-        var args = this._extractParameters(route, fragment);
-        callback && callback.apply(this, args);
-        this.trigger.apply(this, ['route:' + name].concat(args));
-        Backbone.history.trigger('route', this, name, args);
+    	if (com.compro.application.hsc.userinfo.loggedin || fragment == "home" || fragment == "home/") {
+	        var args = this._extractParameters(route, fragment);
+	        callback && callback.apply(this, args);
+	        this.trigger.apply(this, ['route:' + name].concat(args));
+	        Backbone.history.trigger('route', this, name, args);
+	      } else {
+	    	  Backbone.history.navigate("#/home");
+	      }    
       }, this));
       return this;
     },
