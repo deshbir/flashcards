@@ -110,6 +110,7 @@ grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [	
+	'/api/user/**':['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
 	'/admin/**' :['ROLE_ADMIN']
 ]

@@ -8,7 +8,12 @@ class UserController {
 
 	def show = {		
 		def user = springSecurityService.currentUser
-		render user as JSON
+		if(user){
+			render user as JSON
+		}
+		else{
+			render([error: true] as JSON)
+		}
 		return		
 	}
 }

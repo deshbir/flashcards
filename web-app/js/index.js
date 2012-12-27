@@ -137,7 +137,21 @@
  		//One time loading of common Header View
  		HeaderView.initialize();
  	}
- 	
+ 	function updateUser(){
+ 		UserModel.get().fetch({
+			success: function(model, response){
+				if(response.error){
+					userinfo.loggedin = false;
+				} else {
+					userinfo.loggedin = true;
+					userinfo.name = model.get("username");
+					userinfo.email =  model.get("email");
+					userinfo.admin =  model.get("isAdmin");
+					userinfo.facebookuser = model.get("isFacebookuser");
+				}
+			}
+		});
+ 	}
  	/*
  	 * Global Viewas
  	 * 
@@ -255,22 +269,7 @@
  		}
  		userinfo.facebookuser =  isFacebookUser;
  		userinfo.loggedin = true;
- 		UserModel.get().fetch({
- 			success: function(model, response){
- 				if(model.get('isAdmin')){
- 					userinfo.admin = true;
- 				}
- 				/*
- 				 * 1st parameter - update header for login
- 				 * 2nd parameter - showHomeLink
- 				 * 3rd parameter - setBackLink 
- 				 */
- 				// Fixing issue for back-button disappearance after repeated login. 
- 				setHeaderOptions(true, false, true);
- 			}
- 		});	
  		Backbone.history.navigate("#/discipline");
- 	  		
  	}
  	
  	
@@ -696,7 +695,8 @@
  
  				logger.info("global error handlers initialization");
  				ajax_init_global_handlers();
- 				
+ 				//updating user state whenever page is refreshed. 
+ 				updateUser();
  				logger.info("backbone routers initialization");
  				backbone_init_routers();
  				

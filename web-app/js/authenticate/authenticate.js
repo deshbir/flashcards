@@ -17,6 +17,7 @@ Authenticate = new function() {
 	    	},
 	        success: function(response) {
 				if (response.success) { 
+					mainApp.userinfo.admin =  response.isAdmin;
 					mainApp.handleLoginSuccess(false);						
 				} else {
 					mainApp.userinfo.loggedin = false;						
