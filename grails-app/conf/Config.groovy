@@ -117,6 +117,7 @@ grails.plugins.springsecurity.interceptUrlMap = [
 grails.plugins.springsecurity.facebook.domain.classname='com.pearson.hsc.authenticate.FacebookUser'
 grails.plugins.springsecurity.facebook.appId='443347489063227'
 grails.plugins.springsecurity.facebook.secret='a1432dcbc23c06047f0d826d520e6c21'
+grails.plugins.springsecurity.facebook.filter.type='transparent'
 
 
 // Google Analaytics

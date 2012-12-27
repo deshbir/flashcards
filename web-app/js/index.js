@@ -147,7 +147,7 @@
 					userinfo.name = model.get("username");
 					userinfo.email =  model.get("email");
 					userinfo.admin =  model.get("isAdmin");
-					userinfo.facebookuser = model.get("isFacebookuser");
+					userinfo.facebookuser = model.get("isFacebookUser");
 				}
 			}
 		});

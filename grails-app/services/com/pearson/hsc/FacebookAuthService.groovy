@@ -16,11 +16,7 @@ class FacebookAuthService {
 			URL url = new URL(authUrl)
 			JSONObject me = JSON.parse(url.readLines().first())
 			user.password = me.first_name.toLowerCase()
-			if(me.username){
-				user.username = me.username
-			} else {
-				user.username = me.id
-			}
+			user.username = me.id
 			user.accountExpired = false
 			user.accountLocked = false
 			user.enabled = true
