@@ -42,7 +42,7 @@ common: &default_settings
   # For example, to report data to"My Application" and "My Application 2" use this:
   # app_name: My Application;My Application 2
   # This setting is required.
-  app_name: My Application
+  app_name: HSC App
 
   # The agent uses its own log file to keep its logging
   # separate from that of your application.  Specify the log level here.
@@ -220,11 +220,11 @@ common: &default_settings
 
 development:
   <<: *default_settings
-  app_name: My Application (Development)
+  app_name: HSC App (Development-d1)
 
 test:
   <<: *default_settings
-  app_name: My Application (Test)
+  app_name: HSC App (Test-q1)
 
 production:
   <<: *default_settings
