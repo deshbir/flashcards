@@ -3,6 +3,7 @@ DisciplineView = new function() {
 	/* ----- Global View Variables ----------------------*/
 	var listbbView = null;
 	var detailbbView = null;
+	var mobileScreenWidth = 767;
 	/* -------------------------------------------------*/
 
 	var mainApp = com.compro.application.hsc;
@@ -88,7 +89,8 @@ DisciplineView = new function() {
 			$(window).bind("resize.discipline-list", _.bind(function(){
 				if(mainApp.currentPanelId==this.myPanelId){
 					mainApp.resetColumns(this.myPanelId+" .row-fluid");
-					mainApp.resizeColumns(this.myPanelId+" .row-fluid");
+					if($(window).width()>mobileScreenWidth)
+						mainApp.resizeColumns(this.myPanelId+" .row-fluid");
 				}
 		}, this));
 		},
@@ -132,7 +134,8 @@ DisciplineView = new function() {
 			var that = this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
 				$('#discipline-list').imagesLoaded(function() {
-					mainApp.resizeColumns(that.myPanelId+" .row-fluid",false);
+					if($(window).width()>mobileScreenWidth)
+						mainApp.resizeColumns(that.myPanelId+" .row-fluid",false);
 				});		
 			});
 
@@ -194,7 +197,8 @@ DisciplineView = new function() {
 			$(window).bind("resize.discipline", _.bind(function(){
 					if(mainApp.currentPanelId==this.myPanelId){
 						mainApp.resetColumns(this.myPanelId+" .row-fluid");
-						mainApp.resizeColumns(this.myPanelId+" .row-fluid",true, "audio-playing");
+						if($(window).width()>mobileScreenWidth)
+							mainApp.resizeColumns(this.myPanelId+" .row-fluid",true, "audio-playing");
 					}
 			}, this));
 		},
@@ -272,7 +276,8 @@ DisciplineView = new function() {
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
 				$('#product-list').imagesLoaded(function() {
-					mainApp.resizeColumns(that.myPanelId+" .row-fluid",true,"audio-playing");
+					if($(window).width()>mobileScreenWidth)
+						mainApp.resizeColumns(that.myPanelId+" .row-fluid",true,"audio-playing");
 				});		
 			});	
 			return this; //Do this at the end to allow for method chaining.			
@@ -324,6 +329,7 @@ DisciplineView = new function() {
 			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
 			if($(element).height()==0){
 				$(element).removeClass('transition').html("");
+				$(".audio-playing").removeClass("audio-playing");
 				$(element).css("height",0);
 				return;
 			}
@@ -331,6 +337,7 @@ DisciplineView = new function() {
 			$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
 					function(){
 						$(element).removeClass('transition').html("");
+						$(".audio-playing").removeClass("audio-playing");
 						if(callback!=null){
 							callback.apply(that);
 						}
@@ -338,9 +345,9 @@ DisciplineView = new function() {
 			$(element).css("height",$(element).height());
 			$(element).css("height");
 			$(element).addClass('transition').css("height",0);
-			$(".audio-playing").removeClass("audio-playing");
 			if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
 				$(element).removeClass('transition').html("");
+				$(".audio-playing").removeClass("audio-playing");
 				if(callback!=null){
 					callback.apply(this);
 				}

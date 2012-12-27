@@ -16,9 +16,9 @@
 			  </div>
 		  {{/book}}
 		  {{#lab}}
+		 		<i class="icon-chevron-right visible-phone lab"></i>
 		        <img alt="{{name}}" class="logo pull-right" src="${imagePath}{{thumbnail}}"/>
 		        <div class="media-body"> 
-		        	<i class="icon-chevron-right visible-phone"></i>
 					<p class="heading">{{{name}}}</p>
 					<p class="hidden-phone">{{description}}</p>
 				</div>	
