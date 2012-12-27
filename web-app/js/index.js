@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 13;
+ 	var version = 14;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -180,7 +180,6 @@
  		    if (xhr.status == 0) { // Not connected. Verify Network
  		    	statusCode = xhr.status;
  		    	msgHeader = statusCode + " :No Network Detected!";
- 		        msgDesc = xhr.responseText;
  		    } else if (xhr.status == 401) { // UnAuthorized
  		    	Backbone.history.navigate("#/home");
  			    return true;
