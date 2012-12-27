@@ -89,7 +89,6 @@ HeaderView = new function() {
 		
 		logout : function() {
 			Backbone.history.navigate("#/home");
-			this.updateloginheader(false);
 			return false;
 		},
 		showModal : function(){

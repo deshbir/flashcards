@@ -30,29 +30,29 @@
 		<![endif]-->
 		
         <!-- iPhone ICON-->
-        <link rel="apple-touch-icon" sizes="57x57" href="<r:resource uri="/images/apple-touch-icon.png"/>" />
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<r:resource uri="/images/apple-touch-icon.png"/>" />
         <!-- iPhone (Retina) ICON-->
-        <link rel="apple-touch-icon" sizes="114x114" href="<r:resource uri="/images/apple-touch-icon-retina.png"/>"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<r:resource uri="/images/apple-touch-icon-retina.png"/>"/>
         <!-- iPad ICON-->
-        <link  rel="apple-touch-icon" sizes="72x72" href="<r:resource uri="/images/ipad-touch-icon.png"/>" />
+        <link  rel="apple-touch-icon-precomposed" sizes="72x72" href="<r:resource uri="/images/ipad-touch-icon.png"/>" />
         <!-- iPad (Retina) ICON-->
-        <link  rel="apple-touch-icon" sizes="144x144" href="<r:resource uri="/images/ipad-touch-icon-retina.png"/>" />
+        <link  rel="apple-touch-icon-precomposed" sizes="144x144" href="<r:resource uri="/images/ipad-touch-icon-retina.png"/>" />
         
          <!-- iPad (landscape)SPLASHCREEN -->
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="<r:resource uri="/images/ipad_startup_landscape.png"/>"/>
-		<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="<r:resource uri="/images/apple-touch-startup-image-320x460.png"/>" />  
+        <link rel="apple-touch-startup-image-precomposed" media="(device-width: 768px) and (orientation: landscape)" href="<r:resource uri="/images/ipad_startup_landscape.png"/>"/>
+		<link rel="apple-touch-startup-image-precomposed" media="(device-width: 320px)" href="<r:resource uri="/images/apple-touch-startup-image-320x460.png"/>" />  
 		
 		<!-- iPad (portrait)-->
-		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="<r:resource uri="/images/ipad-startup-image.png"/>"/>
+		<link rel="apple-touch-startup-image-precomposed" media="(device-width: 768px) and (orientation: portrait)" href="<r:resource uri="/images/ipad-startup-image.png"/>"/>
 		
 		<!-- iPhone (Retina)SPLASHCREEN -->
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x920.png"/>"/>
+        <link rel="apple-touch-startup-image-precomposed" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x920.png"/>"/>
 		<!-- iPad (Retina, portrait) SPLASHCREEN-->
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad-startup-image-retina.png"/>"/>
+        <link rel="apple-touch-startup-image-precomposed" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad-startup-image-retina.png"/>"/>
         <!-- iPad (Retina, landscape) SPLASHCREEN -->
-        <link rel="apple-touch-startup-image" media="(device-width: 768px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad_startup_landscape_retina.png"/>"/>
+        <link rel="apple-touch-startup-image-precomposed" media="(device-width: 768px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/ipad_startup_landscape_retina.png"/>"/>
         <!-- iPhone 5 SPLASHCREEN -->
-        <link rel="apple-touch-startup-image" media="(device-width: 320px)  and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x1096.png"/>"/>
+        <link rel="apple-touch-startup-image-precomposed" media="(device-width: 320px)  and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="<r:resource uri="/images/apple-touch-startup-image-640x1096.png"/>"/>
 
         
 		
