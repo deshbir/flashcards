@@ -8,7 +8,7 @@ cgrails {
 	}
 	less {
 		//Array of Less Files to compile.
-		files = ["index"]
+		files = ["index", "indexadmin"]
 	}
 	offline {
 		username = 'comprotest'

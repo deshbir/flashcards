@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 13;
+ 	var version = 14;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -180,7 +180,6 @@
  		    if (xhr.status == 0) { // Not connected. Verify Network
  		    	statusCode = xhr.status;
  		    	msgHeader = statusCode + " :No Network Detected!";
- 		        msgDesc = xhr.responseText;
  		    } else if (xhr.status == 401) { // UnAuthorized
  		    	Backbone.history.navigate("#/home");
  			    return true;
@@ -326,6 +325,11 @@
  			$("#music").show();
  			$("#music i").removeClass('icon-pause-hsc');
  			$("#music i").addClass('icon-mute-hsc');
+ 			if(soundManagerConfig.playText){
+ 				$("#music a").attr('title',soundManagerConfig.playText);
+ 			} else {
+ 				$("#music a").attr('title','Playing Audio. Select to pause.');
+ 			}
  			soundManagerConfig.musicPlaying = true;
  			soundManagerConfig.musicStopped = false;
  			var soundManager = this;
@@ -337,6 +341,11 @@
  		pagePlayer.events.pause = function(){
  			$("#music i").addClass('icon-pause-hsc');
  			$("#music i").removeClass('icon-mute-hsc');
+ 			if(soundManagerConfig.pauseText){
+ 				$("#music a").attr('title',soundManagerConfig.pauseText);
+ 			} else {
+ 				$("#music a").attr('title','Audio Paused. Select to resume.');
+ 			}
  			soundManagerConfig.musicPlaying = false;
  			pagePlayerPause.call(this);
  			$(".sm2_paused i").toggleClass('icon-volume-up icon-pause');
@@ -346,14 +355,17 @@
  			soundManagerConfig.musicPlaying = true;
  			$("#music i").removeClass('icon-pause-hsc');
  			$("#music i").addClass('icon-mute-hsc');
+ 			if(soundManagerConfig.playText){
+ 				$("#music a").attr('title',soundManagerConfig.playText);
+ 			} else {
+ 				$("#music a").attr('title','Playing Audio. Select to pause.');
+ 			}
  			pagePlayerResume.call(this);
  			$(".sm2_playing i").addClass('icon-volume-up');
  			$(".sm2_playing i").addClass('icon-pause'); 
  		}
  		var pagePlayerStop = pagePlayer.events.stop;
  		pagePlayer.events.stop = function(){
- 			$("#music i").addClass('icon-pause-hsc');
- 			$("#music i").removeClass('icon-mute-hsc');
  			soundManagerConfig.musicPlaying = false;
  			soundManagerConfig.musicStopped = true;
  			$(".sm2_playing i").removeClass('icon-volume-up');
@@ -362,8 +374,10 @@
  		}
  		var pagePlayerFinish = pagePlayer.events.finish;
  		pagePlayer.events.finish = function(){
+ 			$("#music i").addClass('icon-pause-hsc');
+ 			$("#music i").removeClass('icon-mute-hsc');
  			$("#music").hide();
- 			if(com.compro.application.hsc.currentPanelId==DisciplineView.detailbbView.myPanelId){
+ 			if(DisciplineView.detailbbView!=null && com.compro.application.hsc.currentPanelId==DisciplineView.detailbbView.myPanelId){
  				if(pagePlayer.getNextItem(this._data.oLI)==null){
  					DisciplineView.detailbbView.loadNextAudioTemplate();
  				}

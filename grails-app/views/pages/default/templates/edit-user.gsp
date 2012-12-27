@@ -33,7 +33,6 @@
 				<div class="controls">
 					<input id="password"  type="password" name="password" />
 					<span class="alert alert-error hide" id="error-password">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>Warning!</strong> Password can't be blank.
 					</span>						
 				</div>
