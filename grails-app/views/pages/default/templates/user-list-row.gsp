@@ -1,7 +1,6 @@
 <tr>
 	<td>{{id}}</td>									
-	<td>{{firstName}} {{lastName}}</td>									
-	<td>{{username}}</td>
+	<td>{{firstName}} {{lastName}} ({{username}})</td>									
 	<td>
 		<a href="#/users/edit/{{id}}">
 			<i class="icon-pencil"></i>

@@ -1,4 +1,4 @@
-package com.pearson.hsc
+package com.pearson.admin
 
 class AdminController {
 	

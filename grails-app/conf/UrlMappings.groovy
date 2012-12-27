@@ -18,6 +18,7 @@ class UrlMappings {
 		"/api/discipline/$id/product/$pid?"(resource:"product")
 		"/api/product/$id/test/$pid?"(resource:"test")
 		"/api/user/$id?"(resource:"user")
+		"/api/admin/user/$id?"(resource:"adminuser")
 		
 	}
 }
