@@ -11,14 +11,28 @@
 		{{/isFacebookUser}}
 	</td>									
 	<td>
-		<a href="#/users/edit/{{id}}">
-			<i class="icon-pencil"></i>
-		</a>
+		{{#disableEdit}}
+			<a href="#/users/edit/{{id}}" class="disableControls">
+				<i class="icon-pencil"></i>
+			</a>
+		{{/disableEdit}}
+		{{^disableEdit}}
+			<a href="#/users/edit/{{id}}">
+				<i class="icon-pencil"></i>
+			</a>
+		{{/disableEdit}}		
 		<span id="divider">
 		|  
 		</span>
-		<a href="#/users/delete/{{id}}">
-			<i class="icon-remove"></i>
-		</a>	
+		{{#disableDelete}}
+			<a href="#/users/delete/{{id}}" class="disableControls">
+				<i class="icon-remove"></i>
+			</a>
+		{{/disableDelete}}
+		{{^disableDelete}}
+			<a href="#/users/delete/{{id}}">
+				<i class="icon-remove"></i>
+			</a>
+		{{/disableDelete}}			
 	</td>		
 </tr>
