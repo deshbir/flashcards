@@ -2,13 +2,13 @@
 	<td>{{id}}</td>									
 	<td>
 		{{firstName}} {{lastName}} ({{username}})<br/>
+		<span class="label label-important">User</span>
 		{{#isAdmin}}
-			<span class="label label-important">Admin</span>
+			<span class="label label-success">Admin</span>
 		{{/isAdmin}}
 		{{#isFacebookUser}}
-			<span class="label label-important">Facebook User</span>
+			<span class="label label-info">Facebook User</span>
 		{{/isFacebookUser}}
-		<span class="label label-important">User</span>		
 	</td>									
 	<td>
 		<a href="#/users/edit/{{id}}">
