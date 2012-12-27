@@ -303,6 +303,7 @@ DisciplineView = new function() {
 			$(".stopAudio").toggleClass("playAll stopAudio");
 			mainApp.soundManagerConfig.soundManagerObject.stop();
 			$("#music i").removeClass('icon-pause-hsc');
+			$("#music").hide();
 			this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
 			this.currentSelectedAudioIndex = null;
 		},
