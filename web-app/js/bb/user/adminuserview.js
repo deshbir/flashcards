@@ -102,6 +102,17 @@ AdminUserView = new function() {
 			that = this;
 	    	this.collection.fetch({success: function() {
 				that.collection.each( function(user) {
+					var attribs = user.attributes;
+					if(attribs.isAdmin == true || attribs.isFacebookUser == true) {
+						attribs.disableDelete = true;
+					} else {
+						attribs.disableDelete = false;
+					}
+					if(attribs.username == "admin@compro.com") {
+						attribs.disableEdit = true;
+					} else {
+						attribs.disableEdit = false;
+					}					
 					/* ----- Appending Rows  ----------- */
 			    	var compiled_template_body_row = Mustache.render(that.template_body_row, user.toJSON());	    	
 			    	$(that.myPanelRowId).append(compiled_template_body_row);
