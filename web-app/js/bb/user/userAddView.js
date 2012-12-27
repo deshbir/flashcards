@@ -59,11 +59,6 @@ UserAddView = new function() {
 			this.firstName = this.$("#firstName");
 			this.lastName = this.$("#lastName");		
 			
-			/*
-			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 */
-			mainApp.transitionAppPanel(this.myPanelId);			
-			
 			return this; //Do this at the end to allow for method chaining.			    	
 		},		
 	    createOnEnter: function(){

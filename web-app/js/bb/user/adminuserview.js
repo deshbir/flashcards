@@ -110,11 +110,6 @@ AdminUserView = new function() {
 			
 			this.setElement(this.myPanelId);
 
-			/*
-			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 */
-			mainApp.transitionAppPanel(this.myPanelId);
-
 			return this; //Do this at the end to allow for method chaining.			
 		}
 	});

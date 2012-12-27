@@ -1,18 +1,14 @@
 <div id="delete-user">
 	<div class="container">
 		<div class="row">
-			<div class="span9">
+			<div class="span12">
+				<button id="adminDeleteUser" class="btn accountAction" ><i class="icon-remove"></i>  Delete</button>
+				<button id="adminCancelDelete" class="btn accountAction" ><i class="icon-undo"></i>  Cancel</button>
 				<ul class="breadcrumb">
  					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
  					<li class="active"><h2>Delete User</h2></li>
-				</ul>			
-			</div>
-			<div class="span3">
-				<span class="pull-right">			
-					<button id="adminDeleteUser" class="btn" ><i class="icon-remove"></i>  Delete</button>
-					<button id="adminCancelDelete" class="btn" ><i class="icon-undo"></i>  Cancel</button>
-				</span>
-			</div>
+				</ul>		
+        	</div>
 		</div>
 	</div>
 	<div class="well">

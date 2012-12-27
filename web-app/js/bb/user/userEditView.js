@@ -68,11 +68,6 @@ UserEditView = new function() {
 			
 			this.current_user_id=this.requested_user_id;
 			
-			/*
-			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
-			 */
-			mainApp.transitionAppPanel(this.myPanelId);			
-			
 			return this; //Do this at the end to allow for method chaining.			    	
 		},
 		

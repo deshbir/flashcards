@@ -1,17 +1,13 @@
 <div id="edit-user">
 	<div class="container">
 		<div class="row">
-			<div class="span9">
+			<div class="span12">
+				<button id="adminEditUser" class="accountAction btn" ><i class="icon-save"></i>  Save</button>
 				<ul class="breadcrumb">
   					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
   					<li class="active"><h2>Edit User</h2></li>
-				</ul>			
-			</div>
-			<div class="span3">
-				<span class="pull-right">
-					<button id="adminEditUser" class="btn" ><i class="icon-save"></i>  Save</button>
-				</span>
-			</div>	
+				</ul>		
+        	</div>
 		</div>
 	</div>
 	<div class="well">

@@ -393,46 +393,6 @@
  		AdminHeaderView.setBackIcon(showBackLink);
  	}	
  	
- 	function transitionAppPanel(newPanelId, callback) {
- 		var panelContainer = $('#panel-container');
- 		var panelItems = $('.panel-item');
- 		if(this.currentPanelId == -1)  //First time
- 		{	
- 			panelItems.hide();
- 			 $(newPanelId).show("fast",function() {
- 				 if(!(typeof callback === 'undefined') )  {
- 			       callback();  	
- 				 }
- 				 //set fixed width of panel on loading first time
- 				 panelContainer.removeClass('easing');
- 			 });
- 		}
- 		else{
- 			$(this.currentPanelId).width($(this.currentPanelId).width());
- 			$(newPanelId).width($(this.currentPanelId).width());
- 			panelContainer.width($(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true));
- 			var translationWidth = 0;
- 			if($(newPanelId).attr("data-order")>$(this.currentPanelId).attr("data-order")){
- 				translationWidth = $(this.currentPanelId).outerWidth(true);
- 				removeTransition(panelContainer);
- 			}else{
- 				applyTransition(panelContainer, -$(this.currentPanelId).outerWidth(true));
- 			}
- 			$(newPanelId).show(0);
-	 		panelItems.css("float","left");
-	 		$(newPanelId).outerWidth(true) +$(this.currentPanelId).outerWidth(true);
-	 		panelContainer.addClass('easing');
-	 		applyTransition(panelContainer, -translationWidth);
-	 			if(!(typeof callback === 'undefined') )	{
-	 				callback();	
-	 			}
-	 		}
-	 		this.currentPanelId = newPanelId;
-	 		if(getInternetExplorerVersion()>-1 && getInternetExplorerVersion()<=9 ){
-				transitionEndHandler();
-			}
- 	}
- 	
  	/*
  	 * function to apply cross browser transition effect for sliding
  	 * (works for only X coordinate)
@@ -697,7 +657,6 @@
  		"clsMainHeader" : clsMainHeader,
  		"currentPanelId" : currentPanelId,
  		"globalAjaxOptions" : globalAjaxOptions,
- 		"transitionAppPanel" : transitionAppPanel,
  		"isIE":isIE,
  		"handleLoginSuccess" : handleLoginSuccess,
  		"logger" : logger,
