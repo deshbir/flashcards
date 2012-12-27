@@ -273,31 +273,9 @@
  	
  	function backbone_start_navigation()	{
  		Backbone.history.start();
- 		if (location.href.indexOf("?isFacebookLoginSuccess=") != -1) { //Facebook login success in iOS Home Screen Apps
- 			facebookLoginCheckTimer=setInterval(function(){getFBLoginStatus()}, 500);
- 		} else if (location.href.indexOf("#") == -1) { //Normal App startup
+ 		if (location.href.indexOf("#") == -1) { //Normal App startup
 			Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
 		} 		
- 	}
- 	
- 	function getFBLoginStatus(){
- 		
- 		FB.getLoginStatus(function(response) {
- 			  if (response.status === 'connected')  {
- 				  clearInterval(facebookLoginCheckTimer);
- 				  handleLoginSuccess(true);
- 			  }
- 			  else
- 			  {
- 				  facebookLoginTries--;
- 				  if(facebookLoginTries == 0)	{
- 					  //No more checking
- 					  clearInterval(facebookLoginCheckTimer);
- 					  facebookLoginTries=20;
- 					  alert("Unable to login via Facebook. Did not recive a timely response from Facebook.")
- 				  }
- 			  }
- 		});
  	}
  	
  	// Util function - for adding suffix in images
