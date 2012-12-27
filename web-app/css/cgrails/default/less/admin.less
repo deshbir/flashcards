@@ -1,12 +1,13 @@
+@shadow: 0 2px 2px 0 #C2AD9B;
 #create-user, #edit-user, #delete-user, #manageAccounts {
 	.container {
 		border-bottom: solid 1px #FA9445; 
 		margin-bottom: 15px;
 	}
 	.accountAction {
-		float: right;
-		margin-top: 20px;
-		margin-right: 20px;
+		margin-top: 10px;
+		float:right;
+		margin-left: 5px;
 	}	
 }
 
@@ -29,14 +30,15 @@ i {
 .well-admin {
     background-color: #FFFFFF;
     border: 1px solid #ABABAB;
-    .border-radius(6px 6px 6px 6px);
-    @shadow: 0 0 6px lighten(#ee5f5b, 20%);
+    .border-radius(6px);
     .box-shadow(@shadow);    
-    box-shadow: 0 2px 2px 0 #C2AD9B;
     font-size: 16px;
     margin-bottom: 20px;
     min-height: 20px;
     padding: 19px;
+    label, input, button, select, textarea {
+    	font-size: 16px;
+    }
 }
 
 .breadcrumb-admin {
@@ -45,5 +47,21 @@ i {
     padding: 0px;
     .active {
     	color: #333333;
-    }
+    }    
+}
+
+/*********************** Responsive Styles ************************************/
+@media (max-width: 770px) {
+	.breadcrumb-admin {
+		h2 {
+			font-size:26px;
+			line-height: 20px;
+		}	
+	}
+	#create-user, #edit-user, #delete-user, #manageAccounts {
+		.accountAction {
+			margin-top: 0px;
+			margin-bottom: 5px;
+		}	
+	}	
 }

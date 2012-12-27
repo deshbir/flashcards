@@ -1,12 +1,14 @@
 <div id="manageAccounts">
 	<div class="container">
 		<div class="row">
-			<div class="span12">
-				<button id="addNewUser" class="btn accountAction"><i class="icon-plus"></i>  Add new User</button>
+			<div class="span9">
 				<ul class="breadcrumb breadcrumb-admin">
   					<li class="active"><h2>Manage Accounts</h2></li>
-				</ul>	
+				</ul>
         	</div>
+			<div class="span3">
+				<button id="addNewUser" class="btn accountAction"><i class="icon-plus"></i>  Add New User</button>
+			</div>
 		</div>
 	</div>
 	<div class="well well-admin">

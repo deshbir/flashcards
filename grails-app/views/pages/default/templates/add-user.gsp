@@ -1,13 +1,15 @@
 <div id="create-user">
 	<div class="container">
 		<div class="row">
-			<div class="span12">
-				<button id="adminAddUser" class="btn accountAction" ><i class="icon-save"></i>  Save</button>
+			<div class="span9">
 				<ul class="breadcrumb breadcrumb-admin">
- 						<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
- 						<li class="active"><h2>New user</h2></li>
+					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
+					<li class="active"><h2>New user</h2></li>
 				</ul>
         	</div>
+			<div class="span3">
+				<button id="adminAddUser" class="btn accountAction" ><i class="icon-save"></i>  Save</button>
+			</div>        	
 		</div>
 	</div>
 	<div class="well well-admin">
