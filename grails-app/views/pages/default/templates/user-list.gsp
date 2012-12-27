@@ -3,13 +3,13 @@
 		<div class="row">
 			<div class="span12">
 				<button id="addNewUser" class="btn accountAction"><i class="icon-plus"></i>  Add new User</button>
-				<ul class="breadcrumb">
+				<ul class="breadcrumb breadcrumb-admin">
   					<li class="active"><h2>Manage Accounts</h2></li>
 				</ul>	
         	</div>
 		</div>
 	</div>
-	<div class="well">
+	<div class="well well-admin">
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>

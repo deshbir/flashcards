@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="span12">
 				<button id="adminEditUser" class="accountAction btn" ><i class="icon-save"></i>  Save</button>
-				<ul class="breadcrumb">
+				<ul class="breadcrumb breadcrumb-admin">
   					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
   					<li class="active"><h2>Edit User</h2></li>
 				</ul>		
         	</div>
 		</div>
 	</div>
-	<div class="well">
+	<div class="well well-admin">
 		<form id = "editUser" class="form-horizontal" action="#" method="post" name="updateUser">
 			<div class="control-group">
 				<label class="control-label" for="firstName">First Name</label>

@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="span12">
 				<button id="adminAddUser" class="btn accountAction" ><i class="icon-save"></i>  Save</button>
-				<ul class="breadcrumb">
+				<ul class="breadcrumb breadcrumb-admin">
  						<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
  						<li class="active"><h2>New user</h2></li>
 				</ul>
         	</div>
 		</div>
 	</div>
-	<div class="well">
+	<div class="well well-admin">
 		<form id="createUser" class="form-horizontal" action="#" method="post" name="addUser">
 			<div class="control-group">
 				<label class="control-label" for="username">Username</label>

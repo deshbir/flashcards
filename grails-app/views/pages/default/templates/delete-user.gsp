@@ -4,14 +4,14 @@
 			<div class="span12">
 				<button id="adminDeleteUser" class="btn accountAction" ><i class="icon-remove"></i>  Delete</button>
 				<button id="adminCancelDelete" class="btn accountAction" ><i class="icon-undo"></i>  Cancel</button>
-				<ul class="breadcrumb">
+				<ul class="breadcrumb breadcrumb-admin">
  					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
  					<li class="active"><h2>Delete User</h2></li>
 				</ul>		
         	</div>
 		</div>
 	</div>
-	<div class="well">
+	<div class="well well-admin">
 		<h4 id="confirmCheck">Are you sure you want to delete this user?</h4><br/>
 		<form class="form-horizontal" id="deleteUser" action="#" method="post" name="removeUser">
 			<div class="control-group">
