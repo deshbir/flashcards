@@ -51,20 +51,19 @@
 	  	padding: 1em;
 	  	margin: 0px 10px 10px 10px;
 	  	border-bottom: 1px solid @flashcard-header-border-color;
-	  	.btn.disabled, .btn[disabled]  {
-	  		border:solid 1px black;
-	  		text-shadow:none;
-	  		color:black;
-	  		background-color: darken(#E6E6E6, 20%);
-	  		&:hover {
-	  			 background-color: darken(#E6E6E6, 10%);
-    			 background-image: none;
-	  		}
+		.btn.disabled, .btn[disabled]  {
+	  		 .box-shadow(0px 1px lighten(#c25a3c,15%));
+	  		.vertical-gradient(lighten(@HSCButtonColor,15%), lighten(@HSCButtonBottomColor,15%));
+	  		color:#FFFFFF;
+	  		border-color:lighten(#c25a3c,15%);
+	  		font-style:italic;
 	  	}
 	  	h4 {
 	  		font-weight:normal;
 	  		letter-spacing: -1px;
 		  	font-size:16px;
+		  	line-height: 0;
+    		margin: 41px 0 0;
 	  	}
 	  	.btn-toolbar {
 	  		margin:0;
@@ -156,7 +155,7 @@
 			span {
 	  			display:table-cell;
 	  			padding-left:10px;
-	  			vertical-align:middle;
+	  			padding-top: 5px;
 	  			width:99%;
 	  		}
 	  		i	{
@@ -185,7 +184,7 @@
 
 
 /* --------------- Flashcard Component -------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 	#test-home {
 		margin-top:0px;
 	}
@@ -253,11 +252,6 @@
 			}
 		}
 	}	
-}
-@media (min-width: 481px) and (max-width: 979px) {
-	#page-header  {
-		margin-top:10px;
-	}
 }
 
 /* Landscape phone to portrait tablet */
