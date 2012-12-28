@@ -72,7 +72,7 @@ environments {
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
-		grails.serverURL = "http://p-pearson-hsc.herokuapp.com" // server url for facebook
+		grails.serverURL = "http://d1-pearson-hsc.herokuapp.com" // server url for facebook
 		// Google Analaytics
 		google.analytics.webPropertyID = "UA-36885090-1"
 		
