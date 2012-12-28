@@ -258,10 +258,8 @@ DisciplineView = new function() {
 				for(var product in productCollection){
 					this.productids.push(productCollection[product].id);
 				}
-				if(mainApp.soundManagerConfig.musicPlaying){
-					if(mainApp.soundManagerConfig.audioPlayPage == this.myPanelId){
-						mainApp.soundManagerConfig.soundManagerObject.stop();
-					}
+				if(mainApp.soundManagerConfig.audioPlayPage == this.myPanelId){
+					mainApp.soundManagerConfig.soundManagerObject.stop();
 				}
 			} else {
 				if(this.currentSelectedAudioIndex!=null){
