@@ -43,4 +43,16 @@ class User {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+	
+	/***********************************
+	 * START Offline configurations
+	 ***********************************/
+	
+	def static String[] offlineCachedUrls() {
+		return  ["/api/user/"];
+	}
+		
+	/******************************
+	 * END Offline configurations
+	 *******************************/
 }

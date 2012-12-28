@@ -11,7 +11,7 @@ cgrails {
 		files = ["index", "indexadmin"]
 	}
 	offline {
-		username = 'comprotest'
+		username = 'hsc@pearson.com'
 		password = 'compro'
 	}
 	javascriptMVC = "backbone"

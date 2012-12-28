@@ -11,9 +11,10 @@ UserModel = new function() {
 			modelObj = new Model();
 		}		
 		
-		if (typeof modelObj.id === 'undefined' || modelObj.id == null || modelObj.id == "") {
-			modelObj.id = new Date().getTime();
-		}
+		if (com.compro.cgrails.WORKFLOW != "offline"
+			&& (typeof modelObj.id === 'undefined' || modelObj.id == null || modelObj.id == "")) {
+				modelObj.id = new Date().getTime();			
+	 	}		
 		
 		return modelObj;
     },

@@ -901,9 +901,9 @@
 	        callback && callback.apply(this, args);
 	        this.trigger.apply(this, ['route:' + name].concat(args));
 	        Backbone.history.trigger('route', this, name, args);
-	      } else {
-	    	  Backbone.history.navigate("#/home");
-	      }    
+    	} else {
+    		Backbone.history.navigate("#/home");
+    	}    
       }, this));
       return this;
     },
@@ -1177,14 +1177,15 @@
     // **render** is the core function that your view should override, in order
     // to populate its element (`this.el`), with the appropriate HTML. The
     // convention is for **render** to always return `this`.
-	render: function() {
+    render: function() {
     	com.compro.application.hsc.logger.info("Render Start", this.myPanelId);
     	if(this.customRender) {
     		this.customRender();
     	}
     	com.compro.application.hsc.logger.info("Render End", this.myPanelId);
-      return this;
-    },
+    	return this;
+    }, 
+
     // Remove this view from the DOM. Note that the view isn't present in the
     // DOM by default, so calling this method may be a no-op.
     remove: function() {

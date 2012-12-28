@@ -2,7 +2,7 @@ class UrlMappings {
 	static excludes = ["/images/*", "/css/*", "/js/*"]	
 	static mappings = {
 		
-		"/"(controller:"main")
+		"/"(controller:"singlepage")
 		"/admin/"(controller:"admin")
 		"/login/$action?/$id?"(controller:"login")
 		"/logout/$action?/$id?"(controller:"logout")
