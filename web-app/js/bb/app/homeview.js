@@ -8,7 +8,12 @@ HomeView = new function() {
 		routes: {
 	      'home':'home',
 	      '*notFound': 'notFound'
-	    },    
+	    }, 
+	    initialize: function() {
+
+			this.bind('route:home', mainApp.GATrackPageView);
+
+		},
 	    home : function() {
 	    	if (homeView == null) {  //First OR After Browser Refresh
 	    		homeView = new View();

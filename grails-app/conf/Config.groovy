@@ -66,11 +66,15 @@ environments {
         grails.logging.jul.usebridge = true
 		grails.resources.debug = true  // Add this line in development environment.
 		grails.serverURL = "http://localhost:8080/flashcards" // server url for facebook
+		// Google Analaytics
+		google.analytics.webPropertyID = "UA-XXXXXXXX-1"
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
 		grails.serverURL = "http://p-pearson-hsc.herokuapp.com" // server url for facebook
+		// Google Analaytics
+		google.analytics.webPropertyID = "UA-36885090-1"
 		
     }
 }
@@ -120,8 +124,7 @@ grails.plugins.springsecurity.facebook.secret='a1432dcbc23c06047f0d826d520e6c21'
 grails.plugins.springsecurity.facebook.filter.type='transparent'
 
 
-// Google Analaytics
-google.analytics.webPropertyID = "UA-36885090-1"
+
 //assets external path
 hsc.media.assets.basepath = "http://s3.amazonaws.com/pearson-hsc/assets/"
 

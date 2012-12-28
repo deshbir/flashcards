@@ -11,7 +11,11 @@ ProductView = new function() {
 		routes: {
 	      'discipline/:displineId/product/:productId':'producthome'
 	    },	    
-	    
+	    initialize: function() {
+
+			this.bind('all', mainApp.GATrackPageView);
+
+		},
 	    producthome : function(displineId, productId) {
 	    	
 	    	if (bbView == null) {  //First OR After Browser Refresh

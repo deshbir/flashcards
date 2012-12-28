@@ -13,7 +13,12 @@ TestView = new function() {
 	var Router = Backbone.Router.extend({
 		routes: {
 	      'product/:productId/test/:testId':'testhome'
-	    },	    
+	    },
+	    initialize: function() {
+
+			this.bind('all', mainApp.GATrackPageView);
+
+		},
 	    
 	    testhome : function(productId, testId) {
 			

@@ -14,7 +14,11 @@ DisciplineView = new function() {
 	      'discipline':'disciplinelist',
 	      'discipline/:displineId':'disciplinehome'
 	    },	    
-	    
+	    initialize: function() {
+
+			this.bind('all', mainApp.GATrackPageView);
+
+		},
 	    disciplinelist : function() {
 	    	
 			if (listbbView == null) {  //First OR After Browser Refresh

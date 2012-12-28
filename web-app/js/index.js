@@ -597,6 +597,11 @@
 		//$(myApp.currentPanelId).width("auto");
 	}
  	
+	 function GATrackPageView(){
+		var url = Backbone.history.getFragment();
+		_gaq.push(['_trackPageview', "/#/"+url]);
+				
+	}
  	
  	//Check if browser is IE
 	 function getInternetExplorerVersion()
@@ -789,7 +794,8 @@
  		"resetColumns":resetColumns,
  		"version" : version,
  		"pagePlayer" : pagePlayer,
- 		"getInternetExplorerVersion": getInternetExplorerVersion
+ 		"getInternetExplorerVersion": getInternetExplorerVersion,
+ 		"GATrackPageView":GATrackPageView
  	}
  
 })();
