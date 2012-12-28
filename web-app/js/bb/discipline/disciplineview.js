@@ -163,7 +163,8 @@ DisciplineView = new function() {
 		events: {
 			"click .clickbox"	:	"productdetail",
 			"click .playAll"	: "playAll",
-			"click .stopAudio" : "stopAudio"
+			"click .stopAudio" : "stopAudio",
+			"click .skip" : "loadNextAudioTemplate"
 		},
 		
 		initialize: function() {
@@ -263,8 +264,9 @@ DisciplineView = new function() {
 					if($(this.myPanelId + " #" + productid + " li.sm2_paused").length == 0 && 
 							$(this.myPanelId + " #" + productid + " li.sm2_playing").length == 0){
 						this.unloadAudioTemplate(productid);
-						$(".stopAudio").html("Play All");
-						$(".stopAudio").toggleClass("playAll stopAudio");
+						$(".stopAudio span").html("Play All");
+						$(".stopAudio i.icon-pause").toggleClass("icon-pause icon-play");
+						$(".skip").addClass("hide");
 						this.currentSelectedAudioIndex = null;
 					}
 				}
@@ -295,11 +297,15 @@ DisciplineView = new function() {
 		playAll : function(e) {
 			this.currentSelectedAudioIndex = null;
 			this.loadNextAudioTemplate();
-			$(".playAll").html("Stop");
+			$(".playAll span").html("Stop All");
+			$(".playAll i.icon-play").toggleClass("icon-pause icon-play");
+			$(".skip").removeClass("hide");
 			$(".playAll").toggleClass("playAll stopAudio");
 		},
 		stopAudio : function(e) {
-			$(".stopAudio").html("Play All");
+			$(".stopAudio span").html("Play All");
+			$(".stopAudio i.icon-pause").toggleClass("icon-pause icon-play");
+			$(".skip").addClass("hide");
 			$(".stopAudio").toggleClass("playAll stopAudio");
 			mainApp.soundManagerConfig.soundManagerObject.stop();
 			$("#music i").removeClass('icon-pause-hsc');
