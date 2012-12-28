@@ -31,12 +31,6 @@
  com.compro.application.hsc = (function() {
  	
  	var version = 13;
- 	var emailConfig = {
- 			adminEmail : "deshbir.dugal@comprotechnologies.com", 
- 			subject : "Pearson HSC Error Report",
- 			// "cc" is an array. Add other values in comma separated format. 
- 			cc : ["preeti.gupta@comprotechnologies.com"]
- 	}
  	
  	// Add separate Log Settings from Mascula for different logs.
  	var musculaLogSettingsConfig = {
@@ -90,16 +84,6 @@
  	/*                 PRIVATE MEMBERS                     */
  	/********************************************************/
  	
- 	// SoundManager config 
- 	var soundManagerConfig = {
- 		soundManagerObject : null,
- 		musicPlaying : false,
- 		musicStopped :  true
- 		//playText:null,
- 		//pauseText:null,
- 		//stopText:null,
- 	};
- 	
  	// Config 
  	var config = {
  	};
@@ -133,6 +117,22 @@
 		//One time loading of common Header View
 		AdminHeaderView.initialize();		
 	}
+	
+ 	function updateUser(){
+ 		UserModel.get().fetch({
+			success: function(model, response){
+				if(response.error){
+					userinfo.loggedin = false;
+				} else {
+					userinfo.loggedin = true;
+					userinfo.name = model.get("username");
+					userinfo.email =  model.get("email");
+					userinfo.admin =  model.get("isAdmin");
+					userinfo.facebookuser = model.get("isFacebookuser");
+				}
+			}
+		});
+ 	}	
  	
  	/*
  	 * Global Viewas
@@ -371,25 +371,6 @@
  		AdminHeaderView.setBackIcon(showBackLink);
  	}	
  	
- 	/*
- 	 * function to apply cross browser transition effect for sliding
- 	 * (works for only X coordinate)
- 	 * @params 
- 	 * 		- element(jquery wrapper) to apply the trasition on
- 	 * 		- width to be translated (can be -ve or +ve)
- 	 * */
- 	function applyTransition(element, width){
- 		element.css({
- 			"transform":"translate3d("+width+"px,0,0)",
- 			"-webkit-transform":"translate3d("+width+"px,0,0)",
- 			"-moz-transform":"translate3d("+width+"px,0,0)",
- 			// For IE 10.0
- 			"-ms-transform":"translate3d("+width+"px,0,0)",
- 			// For IE 9.0
- 			"-ms-transform":"translateX("+width+"px)",
- 			"-o-transform":"translate3d("+width+"px,0,0)"
- 		});
- 	}
  	
  	/*
  	 * function to remove translation(cross-browser)
@@ -626,7 +607,6 @@
  
  	return	{
  		"config":config,
- 		"soundManagerConfig":soundManagerConfig,
  		"userinfo": userinfo,
  		"flashcards":flashcards,
  		"appHeader":appHeader,

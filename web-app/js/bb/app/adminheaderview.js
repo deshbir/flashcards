@@ -37,8 +37,6 @@ AdminHeaderView = new function() {
 			"click #home"	:	"homebutton",
 			"click #logout"	:	"logout",
 			"click #admin-panel" :	"showModal",
-			"click #music .icon-pause-hsc" :	"playMusic",
-			"click #music .icon-mute-hsc" : "pauseMusic"
 		},
 		
 		initialize: function() {
@@ -98,12 +96,6 @@ AdminHeaderView = new function() {
 			$("#ajax-error-label").text("HSC-APP");
 		    $('#ajax-error-modal').modal('show');
 		},
-		pauseMusic : function(){
-			mainApp.soundManagerConfig.soundManagerObject.pause();
-		},
-		playMusic : function(){
-			mainApp.soundManagerConfig.soundManagerObject.play();
-		},
 		updateloginheader : function(show) {
 			/******* hiding navbar when no elements to show *******
 			var doesElement = $("a.btn-navbar").find("span.icon-bar:visible").length;
@@ -123,18 +115,6 @@ AdminHeaderView = new function() {
 				} else {
 					$(".navbar-inner .loggedin").css("display", "none");
 				}				
-			}
-			if(!mainApp.soundManagerConfig.musicStopped){
-				$("#music").css("display", "block");
-				if(mainApp.soundManagerConfig.musicPlaying){
-					$("#music i").removeClass('icon-pause-hsc');
-					$("#music i").addClass('icon-mute-hsc');
-				} else {
-					$("#music i").addClass('icon-pause-hsc');
-					$("#music i").removeClass('icon-mute-hsc');
-				}
-			} else{
-				$("#music").css("display", "none");
 			}
 			if(mainApp.userinfo.admin){
 				$("#admin-panel").css("display", "block");
