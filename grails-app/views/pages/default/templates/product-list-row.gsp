@@ -5,18 +5,18 @@
 		<div class="anchor">
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
 		  {{#book}}
+		 	  <i class="icon-chevron-right visible-phone arrow"></i>
 		      <img alt="{{name}}" class="book pull-left" src="${imagePath}{{thumbnail}}"/>
 	          <div class="media-body">
 				<span class="heading">{{{name}}}</span>
 				<div>
-					<i class="icon-chevron-right visible-phone"></i>
 					<h3>{{author}}</h3>
 				</div>
 				<p class="hidden-phone">{{description}}</p>
 			  </div>
 		  {{/book}}
 		  {{#lab}}
-		 		<i class="icon-chevron-right visible-phone lab"></i>
+		 		<i class="icon-chevron-right visible-phone arrow"></i>
 		        <img alt="{{name}}" class="logo pull-right" src="${imagePath}{{thumbnail}}"/>
 		        <div class="media-body"> 
 					<p class="heading">{{{name}}}</p>
