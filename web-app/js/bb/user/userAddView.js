@@ -45,7 +45,7 @@ UserAddView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(true, true, true);
+			mainApp.setHeaderOptions(true, false, true);
 			
 			$(this.myPanelId).html(Mustache.render(this.template_body, "{}"));    	
 

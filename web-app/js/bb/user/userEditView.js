@@ -54,7 +54,7 @@ UserEditView = new function() {
 			 * 2nd parameter - showHomeLink
 			 * 3rd parameter - setBackLink 
 			 */
-			mainApp.setHeaderOptions(true, true, true);
+			mainApp.setHeaderOptions(true, false, true);
 			
 			that = this;
 	    	this.collection.fetch({data: {"id": userId}, success: function() {

@@ -54,7 +54,8 @@
 		<link rel="shortcut icon" href="<r:resource uri="/images/favicon.ico"/>" type="image/x-icon">
 		<ga:trackPageview />
 	</head>
-	<body dir="${direction}">	
+	<body dir="${direction}">
+		<g:include view="layout-helpers/modals.gsp"/>	
 		<div id="wrap"> <!--  Sticky Footer Container -->
 			<g:include view="layout-helpers/header.gsp"/>
 
