@@ -17,7 +17,7 @@
 			<div class="control-group">
 				<label class="control-label" for="username">Username</label>
 				<div class="controls">
-					<input id="username"  type="text" placeholder="Username" name="username" />
+					<input id="username" type="email" placeholder="email" name="username" required/>					
 					<span class="alert alert-error hide" id="error-name">
 						<strong>Warning!</strong> Username can't be blank.
 					</span>
@@ -29,7 +29,7 @@
 			<div class="control-group">
 				<label class="control-label" for="password">Password</label>
 				<div class="controls">
-					<input id="password"  type="password" placeholder="Password" name="password" />
+					<input id="password"  type="password" placeholder="password" name="password" required/>
 					<span class="alert alert-error hide" id="error-password">
 						<strong>Warning!</strong> Password can't be blank.
 					</span>						
@@ -38,19 +38,19 @@
 			<div class="control-group">
 				<label class="control-label" for="confirmPassword">Confirm Password</label>
 				<div class="controls">
-					<input id="confirmPassword"  placeholder="Confirm Password" type="password" name="confirmPassword" />
+					<input id="confirmPassword" placeholder="confirm password" type="password" name="confirmPassword" required/>
 				</div>
 			</div>
 			<div class="control-group">													
 				<label class="control-label" for="firstName">First Name</label>
 				<div class="controls">
-					<input id="firstName" placeholder="First Name" type="text" name="firstName" />
+					<input id="firstName" placeholder="first name" type="text" name="firstName" />
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="lastName">Last Name</label>
 				<div class="controls">
-					<input id="lastName" placeholder="Last Name" type="text" name="lastName" />
+					<input id="lastName" placeholder="last name" type="text" name="lastName" />
 				</div>
 			</div>									
 		</form>	
