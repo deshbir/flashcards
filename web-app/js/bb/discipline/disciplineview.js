@@ -258,6 +258,11 @@ DisciplineView = new function() {
 				for(var product in productCollection){
 					this.productids.push(productCollection[product].id);
 				}
+				if(mainApp.soundManagerConfig.musicPlaying){
+					if(mainApp.soundManagerConfig.audioPlayPage == this.myPanelId){
+						mainApp.soundManagerConfig.soundManagerObject.stop();
+					}
+				}
 			} else {
 				if(this.currentSelectedAudioIndex!=null){
 					var productid = this.productids[this.currentSelectedAudioIndex];
@@ -308,8 +313,6 @@ DisciplineView = new function() {
 			$(".skip").addClass("hide");
 			$(".stopAudio").toggleClass("playAll stopAudio");
 			mainApp.soundManagerConfig.soundManagerObject.stop();
-			$("#music i").removeClass('icon-pause-hsc');
-			$("#music").hide();
 			this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
 			this.currentSelectedAudioIndex = null;
 		},

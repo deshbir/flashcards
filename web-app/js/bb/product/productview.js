@@ -119,6 +119,11 @@ ProductView = new function() {
 				
 				this.current_discipline_id=this.requested_discipline_id;
 				this.current_product_id=this.requested_product_id;
+				if(mainApp.soundManagerConfig.musicPlaying){
+					if(mainApp.soundManagerConfig.audioPlayPage == this.myPanelId){
+						mainApp.soundManagerConfig.soundManagerObject.stop();
+					}
+				}
 			}
 
 			/*

@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 18;
+ 	var version = 19;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -332,6 +332,7 @@
  			}
  			soundManagerConfig.musicPlaying = true;
  			soundManagerConfig.musicStopped = false;
+ 			soundManagerConfig.audioPlayPage = com.compro.application.hsc.currentPanelId;
  			var soundManager = this;
  			soundManagerConfig.soundManagerObject = soundManager;
  			pagePlayerPlay.call(soundManager);
@@ -370,7 +371,11 @@
  			soundManagerConfig.musicStopped = true;
  			$(".sm2_playing i").removeClass('icon-volume-up');
  			$(".sm2_playing i").removeClass('icon-pause');
+ 			$("#music i").removeClass('icon-pause-hsc');
+			$("#music").hide();
  			pagePlayerStop.call(this);
+ 			soundManagerConfig.audioPlayPage = "";
+
  		}
  		var pagePlayerFinish = pagePlayer.events.finish;
  		pagePlayer.events.finish = function(){
@@ -384,6 +389,7 @@
  			}
  			soundManagerConfig.musicPlaying = false;
  			soundManagerConfig.musicStopped = true;
+ 			soundManagerConfig.audioPlayPage = "";
  			$(".sm2_playing i").removeClass('icon-volume-up');
  			$(".sm2_playing i").removeClass('icon-pause');
  			pagePlayerFinish.call(this);
