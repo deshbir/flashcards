@@ -149,7 +149,8 @@
 					userinfo.admin =  model.get("isAdmin");
 					userinfo.facebookuser = model.get("isFacebookUser");
 				}
-			}
+			},
+			async:false
 		});
  	}
  	/*
