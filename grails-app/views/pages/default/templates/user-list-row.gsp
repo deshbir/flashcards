@@ -12,9 +12,7 @@
 	</td>									
 	<td>
 		{{#disableEdit}}
-			<a href="#/users/edit/{{id}}" class="disableControls">
-				<i class="icon-pencil"></i>
-			</a>
+			<i class="icon-pencil disableControls"></i>
 		{{/disableEdit}}
 		{{^disableEdit}}
 			<a href="#/users/edit/{{id}}">
@@ -25,9 +23,7 @@
 		|  
 		</span>
 		{{#disableDelete}}
-			<a href="#/users/delete/{{id}}" class="disableControls">
-				<i class="icon-remove"></i>
-			</a>
+			<i class="icon-remove disableControls"></i>
 		{{/disableDelete}}
 		{{^disableDelete}}
 			<a href="#/users/delete/{{id}}">
