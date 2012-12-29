@@ -570,16 +570,16 @@
  	var productImagesGroup = new Riloadr({
  		defer: 'load',
  		onerror: function(){
- 			logger.info("Failed loading image '" + this.alt + "'!");
- 		},
- 		oncomplete: function() {
- 			console.log("All images in Group 1 are loaded");
+ 			logger.error("Failed loading image '" + this.alt + "'!");
  		},
  		retries: 1,
  		breakpoints: [
- 		              {name: 'thumb3', minWidth: 240, maxWidth: 978},
- 		              {name: 'thumb2', minWidth: 979}
- 		              ]
+					{name: 'thumb3', maxWidth: 240},
+					{name: 'thumb3', minWidth: 241, maxWidth: 320},
+					{name: 'thumb3', minWidth: 241, maxWidth: 320, minDevicePixelRatio: 2}, 
+					{name: 'thumb3', minWidth: 321, maxWidth: 640},
+					{name: 'thumb2', minWidth: 641}
+ 		           ]
  	});
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
