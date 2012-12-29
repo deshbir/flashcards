@@ -262,6 +262,8 @@ DisciplineView = new function() {
 				for(var product in productCollection){
 					this.productids.push(productCollection[product].id);
 				}
+				this.preLoadAudioTemplate(this.productids[0]);
+
 				if(mainApp.soundManagerConfig.audioPlayPage == this.myPanelId){
 					mainApp.soundManagerConfig.soundManagerObject.stop();
 				}
@@ -274,11 +276,12 @@ DisciplineView = new function() {
 						$(".stopAudio span").html("Play All");
 						$(".stopAudio i.icon-pause").toggleClass("icon-pause icon-play");
 						$(".skip").addClass("hide");
+						$(".stopAudio").toggleClass("playAll stopAudio");
 						this.currentSelectedAudioIndex = null;
+						this.preLoadAudioTemplate(this.productids[0]);
 					}
 				}
 			}
-			
 			/*
 			 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
 			 */
@@ -303,11 +306,11 @@ DisciplineView = new function() {
 		},
 		playAll : function(e) {
 			this.currentSelectedAudioIndex = null;
-			this.loadNextAudioTemplate();
 			$(".playAll span").html("Stop All");
 			$(".playAll i.icon-play").toggleClass("icon-pause icon-play");
 			$(".skip").removeClass("hide");
 			$(".playAll").toggleClass("playAll stopAudio");
+			this.loadNextAudioTemplate();
 		},
 		stopAudio : function(e) {
 			$(".stopAudio span").html("Play All");
@@ -317,31 +320,34 @@ DisciplineView = new function() {
 			mainApp.soundManagerConfig.soundManagerObject.stop();
 			this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex]);
 			this.currentSelectedAudioIndex = null;
+			this.preLoadAudioTemplate(this.productids[0]);
 		},
 		loadNextAudioTemplate : function() {
 			if(this.currentSelectedAudioIndex!=null){
 				this.currentSelectedAudioIndex++;
-				this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex-1],callback);
+				this.unloadAudioTemplate(this.productids[this.currentSelectedAudioIndex-1]);
 			}
 			else {
 				this.currentSelectedAudioIndex=0;
-				callback.apply(this);
 			}
-			function callback(){
-				if(this.productids.length>this.currentSelectedAudioIndex){
-					var productid = this.productids[this.currentSelectedAudioIndex];
-					this.loadAudioTemplate(productid);
-				} else {
-					this.currentSelectedAudioIndex--;
-					this.stopAudio();
+			if(this.productids.length>this.currentSelectedAudioIndex){
+				var productid = this.productids[this.currentSelectedAudioIndex];
+				this.playAudioTemplate(productid);
+				if(this.productids.length>this.currentSelectedAudioIndex+1){
+					this.preLoadAudioTemplate(this.productids[this.currentSelectedAudioIndex+1]);
 				}
+			} else {
+				this.currentSelectedAudioIndex--;
+				this.stopAudio();
+				this.preLoadAudioTemplate(this.productids[0]);
 			}
 		},
 		unloadAudioTemplate : function(productid, callback){
 			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
+			var divContainer = $(this.myPanelId + " #" + productid + " .anchor");
 			if($(element).height()==0){
 				$(element).removeClass('transition').html("");
-				$(".audio-playing").removeClass("audio-playing");
+				$(divContainer).removeClass("audio-playing");
 				$(element).css("height",0);
 				return;
 			}
@@ -349,7 +355,7 @@ DisciplineView = new function() {
 			$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
 					function(){
 						$(element).removeClass('transition').html("");
-						$(".audio-playing").removeClass("audio-playing");
+						$(divContainer).removeClass("audio-playing");
 						if(callback!=null){
 							callback.apply(that);
 						}
@@ -359,37 +365,47 @@ DisciplineView = new function() {
 			$(element).addClass('transition').css("height",0);
 			if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
 				$(element).removeClass('transition').html("");
-				$(".audio-playing").removeClass("audio-playing");
+				$(divContainer).removeClass("audio-playing");
 				if(callback!=null){
 					callback.apply(this);
 				}
 			}
 		},
-		loadAudioTemplate : function(productid){
+		playAudioTemplate : function(productid){
+			var disciplineid = this.requested_discipline_id;
+			var collection  = ProductCollection.get(disciplineid, productid);
+
+			var element = $(this.myPanelId + " #" + productid + " .discipline-music-container");
+			var divContainer = $(this.myPanelId + " #" + productid + " .anchor");
+			$(divContainer).addClass("audio-playing");
+			var anchor  = $(element).find("ul.playlist").first().find('a')[0];
+			mainApp.pagePlayer.handleClick({target:anchor});
+			var contentH = $($(element).children().eq(0)).outerHeight(true);
+			$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
+					function(){
+						$(element).removeClass('transition').css("height","auto");
+				});
+			$(element).addClass('transition').css("height",contentH);
+			if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
+				$(element).removeClass('transition').css("height","auto");
+			}
+								
+		},
+		preLoadAudioTemplate: function(productid){
 			var disciplineid = this.requested_discipline_id;
 			var collection  = ProductCollection.get(disciplineid, productid);
 			var that = this;
+			$(".playAll,.skip").attr("disabled","disabled");
 			TemplateManager.get('product-list-audio', 
 					function(template){
 						collection.fetch({
-							success: function(){							
+							success: function(){	
+								$(".playAll,.skip").removeAttr("disabled","disabled");
 								var compiled_template_body = Mustache.render(template, collection.toJSON());
 								var element = $(that.myPanelId + " #" + productid + " .discipline-music-container");
 								var divContainer = $(that.myPanelId + " #" + productid + " .anchor");
-								$(divContainer).addClass("audio-playing");
 								$(element).html(compiled_template_body);
-								var anchor  = $(element).find("ul.playlist").first().find('a')[0];
-								mainApp.pagePlayer.handleClick({target:anchor});
-								var contentH = $($(element).children().eq(0)).outerHeight(true);
-								$(element).one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
-										function(){
-											$(element).removeClass('transition').css("height","auto");
-									});
-								$(element).addClass('transition').css("height",contentH);
-								if(mainApp.getInternetExplorerVersion()>-1 && mainApp.getInternetExplorerVersion()<=9 ){
-									$(element).removeClass('transition').css("height","auto");
-								}
-								
+								//$(".skip").removeAttr("disabled");
 						}
 				 });
 						

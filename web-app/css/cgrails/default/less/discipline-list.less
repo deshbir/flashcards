@@ -106,6 +106,13 @@
 					font-size:80%;
 				}
 			}
+			.btn.disabled, .btn[disabled]  {
+		  		.box-shadow(0px 1px lighten(#c25a3c,15%));
+		  		.vertical-gradient(lighten(@HSCButtonColor,15%), lighten(@HSCButtonBottomColor,15%));
+		  		color:#FFFFFF;
+		  		border-color:lighten(#c25a3c,15%);
+		  		font-style:italic;
+		  	}
 			.btn.skip{
 				width:80px;
 			}
