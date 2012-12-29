@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "CJ Today, 12e",
 	"description": "#1 Book.  Satisfying balance between freedom and security, and focus on the crime picture as relates to the CJ system.",
-	"thumbnail": "CJ/Schmall CJT/Schmalleger CJ Today-thumb2.jpg",
+	"thumbnail": "CJ/Schmall CJT/Schmalleger CJ Today-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CJT/Schmalleger CJ Today.jpg",
 	"sequence": 1,
 	"type": "book",
@@ -141,7 +141,7 @@
 {
 	"name": "Criminology Today, 6e",
 	"description": "#1 CJ Author.    Comprehensive coverage. Social problems vs social responsibility theme - is crime a matter of individual responsibility or a symptom of a dysfunctional society. ",
-	"thumbnail": "CJ/Schmall CT6e/Schmalleger Criminology Today-thumb2.jpg",
+	"thumbnail": "CJ/Schmall CT6e/Schmalleger Criminology Today-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CT6e/Schmalleger Criminology Today.jpg",
 	"author": "Schmalleger",
 	"sequence": 2,
@@ -280,7 +280,7 @@
 {
 	"name": "Criminology Brief, 2e",
 	"description": "#1 CJ Author. Practical, brief, approach with a focus on crim theories, research, and implications for crime control.",
-	"thumbnail": "CJ/Schmall CB2e/Criminology Brief Explain Now-thumb2.jpg",
+	"thumbnail": "CJ/Schmall CB2e/Criminology Brief Explain Now-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CB2e/Criminology Brief Explain Now.jpg",
 	"author": "Schmalleger",				        	
 	"sequence": 3,
@@ -419,7 +419,7 @@
 {
 	"name": "CJ Brief, 10e",
 	"description": "#1 Brief Book.   Trusted, authoritative, and impeccably researched introduction to police, courts, and corrections with highly visual design.",
-	"thumbnail": "CJ/Schmall Intro Brief/Schmall Intro Brief-thumb2.jpg",
+	"thumbnail": "CJ/Schmall Intro Brief/Schmall Intro Brief-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall Intro Brief/Schmall Intro Brief.jpg",
 	"author": "Schmalleger",				        	
 	"sequence": 4,
@@ -558,7 +558,7 @@
 {
 	"name": "Corrections, 4e",
 	"description": "InSEITER view into Corrections.  Focuses on what people do in corrections and why, as well as the challenges that face contemporary correctional staff and administrators",
-	"thumbnail": "CJ/Seiter/Seiter-thumb2.jpg",
+	"thumbnail": "CJ/Seiter/Seiter-{breakpoint-name}.jpg",
 	"image": "CJ/Seiter/Seiter.jpg",
 	"author": "Seiter",	
 	"type": "book",			        	
@@ -697,7 +697,7 @@
 {
 	"name": "Criminal Investigation, 1e",
 	"description": "Graphic.  Gory.  Gruesome.  Illustrated case study approach.",
-	"thumbnail": "CJ/Lasley/Lasley-thumb2.jpg",
+	"thumbnail": "CJ/Lasley/Lasley-{breakpoint-name}.jpg",
 	"image": "CJ/Lasley/Lasley.jpg",
 	"author": "Lasley",				        	
 	"sequence": 6,
@@ -836,7 +836,7 @@
 {
 	"name": "Criminal Law and Procedure, 1e",
 	"description": "Comprehensive content broken down into modules. ",
-	"thumbnail": "CJ/Worrall CLP/cover_placeholder-thumb2.gif",
+	"thumbnail": "CJ/Worrall CLP/cover_placeholder-{breakpoint-name}.gif",
 	"image": "CJ/Worrall CLP/cover_placeholder.gif",
 	"author": "Worrall",				        	
 	"sequence": 7,
@@ -975,7 +975,7 @@
 {
 	"name": "MyCJLab",
 	"description": "Video database, simulations, critical thinking exercises, and a personalized student study plan. ",
-	"thumbnail": "CJ/MyCJLab/MyCJLab-thumb2.png",
+	"thumbnail": "CJ/MyCJLab/MyCJLab-{breakpoint-name}.png",
 	"image": "CJ/MyCJLab/MyCJLab.png",
 	"author": "Pearson",     	
 	"sequence": 8,
@@ -1109,7 +1109,7 @@
 {
 	"name": "Juvenile Justice in America, 7e",
 	"description": "Characteristics, procedures, policies, and problems of the juvenile justice systems with evidence-based practices and programs.",
-	"thumbnail": "CJ/Bartollas JJ/cover_placeholder-thumb2.gif",
+	"thumbnail": "CJ/Bartollas JJ/cover_placeholder-{breakpoint-name}.gif",
 	"image": "CJ/Bartollas JJ/cover_placeholder.gif",
 	"author": "Bartollas",				        	
 	"sequence": 9,
@@ -1248,7 +1248,7 @@
 {
 	"name": "Juvenile Delinquency, 9e",
 	"description": "A sociological exploration of the causes and consequences of delinquent behavior with delinquency prevention theme.",
-	"thumbnail": "CJ/Bartollas JD/Bartollas Juvenile Delinquency-thumb2.jpg",
+	"thumbnail": "CJ/Bartollas JD/Bartollas Juvenile Delinquency-{breakpoint-name}.jpg",
 	"image": "CJ/Bartollas JD/Bartollas Juvenile Delinquency.jpg",
 	"author": "Bartollas",				        	
 	"sequence": 10,
@@ -1388,7 +1388,7 @@
 {
 	"name": "Criminal Law Today, 5e",
 	"description": "Comprehensive, authoritative explanation of crimes and law with real life stories, capstone cases, and 60 new short cases. ",
-	"thumbnail": "CJ/Schmall CLT5E/Schmall criminal law-thumb2.jpg",
+	"thumbnail": "CJ/Schmall CLT5E/Schmall criminal law-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CLT5E/Schmall criminal law.jpg",
 	"author": "Schmalleger",				        	
 	"sequence": 11,

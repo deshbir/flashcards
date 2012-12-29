@@ -292,6 +292,7 @@ DisciplineView = new function() {
 						mainApp.resizeColumns(that.myPanelId+" .row-fluid",true,"audio-playing");
 				});		
 			});	
+			mainApp.productImagesGroup.riload();
 			return this; //Do this at the end to allow for method chaining.			
 			
 		},

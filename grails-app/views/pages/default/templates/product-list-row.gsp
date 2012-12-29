@@ -6,7 +6,7 @@
           <!-- r:img alt="{{name}}" class="pull-left" uri="{{thumbnail}}"/ -->
 		  {{#book}}
 		 	  <i class="icon-chevron-right visible-phone arrow"></i>
-		      <img alt="{{name}}" class="book pull-left" src="${imagePath}{{thumbnail}}"/>
+		      <img alt="{{name}}" class="responsive book pull-left" data-src="${imagePath}{{thumbnail}}"/>
 	          <div class="media-body">
 				<span class="heading">{{{name}}}</span>
 				<div>
@@ -17,7 +17,7 @@
 		  {{/book}}
 		  {{#lab}}
 		 		<i class="icon-chevron-right visible-phone arrow"></i>
-		        <img alt="{{name}}" class="logo pull-right" src="${imagePath}{{thumbnail}}"/>
+		        <img alt="{{name}}" class="responsive logo pull-right" data-src="${imagePath}{{thumbnail}}"/>
 		        <div class="media-body"> 
 					<p class="heading">{{{name}}}</p>
 					<p class="hidden-phone">{{description}}</p>

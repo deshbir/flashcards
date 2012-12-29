@@ -68,7 +68,6 @@
  	}
  
  
- 
      /********************************************************/
  	/*                   DEPENDENCIES                       */
  	/********************************************************/
@@ -567,7 +566,21 @@
  			"-o-transform":"none"
  		});
  	}
- 		
+ 	//Groups for riloader to load images lazily depending upon screen-size.
+ 	var productImagesGroup = new Riloadr({
+ 		defer: 'load',
+ 		onerror: function(){
+ 			logger.info("Failed loading image '" + this.alt + "'!");
+ 		},
+ 		oncomplete: function() {
+ 			console.log("All images in Group 1 are loaded");
+ 		},
+ 		retries: 1,
+ 		breakpoints: [
+ 		              {name: 'thumb3', minWidth: 240, maxWidth: 978},
+ 		              {name: 'thumb2', minWidth: 979}
+ 		              ]
+ 	});
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
 		/*
@@ -795,7 +808,8 @@
  		"version" : version,
  		"pagePlayer" : pagePlayer,
  		"getInternetExplorerVersion": getInternetExplorerVersion,
- 		"GATrackPageView":GATrackPageView
+ 		"GATrackPageView":GATrackPageView,
+ 		"productImagesGroup":productImagesGroup
  	}
  
 })();

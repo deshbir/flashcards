@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "Automotive Systems Overview",
 	"description": "An overview of Automotive Systems titles A1-A8 their shared story and their competitive advantage.",
-	"thumbnail": "Auto/Systems/HALDERMAN ENGPERF4 COVER -thumb2.jpg",
+	"thumbnail": "Auto/Systems/HALDERMAN ENGPERF4 COVER -{breakpoint-name}.jpg",
 	"image": "Auto/Systems/HALDERMAN ENGPERF4 COVER .jpg",
 	"sequence": 1,
 	"type": "book",
@@ -153,7 +153,7 @@
 {
 	"name": "MyAutomotiveLab",
 	"description": "Automotive Fundamentals course offerings compared and the competitive landscape.",
-	"thumbnail": "Auto/MAL/myautomotivelab-thumb2.jpg",
+	"thumbnail": "Auto/MAL/myautomotivelab-{breakpoint-name}.jpg",
 	"image": "Auto/MAL/myautomotivelab.jpg",
 	"sequence": 2,
 	"type": "lab",
@@ -292,7 +292,7 @@
 {
 	"name": "Automotive Fundamentals Overview",
 	"description": "MyAutomotiveLab for Fundamentals, new for Systems and the automotive media competition.",
-	"thumbnail": "Auto/Fundamentals/Halderman E&E4 cover-thumb2.jpg",
+	"thumbnail": "Auto/Fundamentals/Halderman E&E4 cover-{breakpoint-name}.jpg",
 	"image": "Auto/Fundamentals/Halderman E&E4 cover.jpg",
 	"sequence": 3,
 	"type": "book",
