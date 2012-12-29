@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 13;
+ 	var version = 20;
  	
  	// Add separate Log Settings from Mascula for different logs.
  	var musculaLogSettingsConfig = {
@@ -244,56 +244,12 @@
  		});
  	}
  	
- 	function handleLoginSuccess(isFacebookUser) {
- 		
- 		//Check for double call
- 		if(userinfo.loggedin)	{
- 			return;
- 		}
- 		userinfo.facebookuser =  isFacebookUser;
- 		userinfo.loggedin = true;
- 		UserModel.get().fetch({
- 			success: function(model, response){
- 				if(model.get('isAdmin')){
- 					userinfo.admin = true;
- 				}
- 				/*
- 				 * 1st parameter - update header for login
- 				 * 2nd parameter - showHomeLink
- 				 * 3rd parameter - setBackLink 
- 				 */
- 				// Fixing issue for back-button disappearance after repeated login. 
- 				setHeaderOptions(true, false, true);
- 			}
- 		});	
- 		Backbone.history.navigate("#/discipline");
- 	  		
- 	}
- 	
- 	
  	function backbone_start_navigation()	{
  		Backbone.history.start();
  		if (location.href.indexOf("#") == -1) { //Normal App startup
 			Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
 		} 		
  	}
- 	
- 	// Util function - for adding suffix in images
- 	function addSuffixToFilepath(filepath, suffix)	{
- 
- 	 	if(typeof filepath === 'undefined' || typeof suffix === 'undefined')	{
- 	 		return filepath;
- 	   	}
- 	   	var retVal = filepath;
- 
- 	 	var arr=new Array()
- 	  	arr=filepath.split('.')
- 
- 		if (typeof arr[1] !== 'undefined' && arr[1] !== null) {
- 	  		retVal=arr[0] + suffix + "." + arr[1]	
- 	  	}
- 	  	return retVal;
- 	}	
  	
  	function muscula_log_init()	{
  		var domain = document.domain;
@@ -418,74 +374,6 @@
 		//$(myApp.currentPanelId).width("auto");
 	}
  	
- 	
- 	//Check if browser is IE
-	 function getInternetExplorerVersion()
-	 	// Returns the version of Internet Explorer or a -1
-	 	// (indicating the use of another browser).
-	 	{
-	 	  var rv = -1; // Return value assumes failure.
-	 	  if (navigator.appName == 'Microsoft Internet Explorer')
-	 	  {
-	 	    var ua = navigator.userAgent;
-	 	    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-	 	    if (re.exec(ua) != null)
-	 	      rv = parseFloat( RegExp.$1 );
-	 	  }
-	 	  return rv;
-	 	}
-	 
-	 //Object can be a dom object/Jquery Object or a selector string
-	 function resizeColumns (object, isRowByRow, exemptClass){ //for setting the min-height of each column based on the maximun height of that row.
-		
-		 var setCurrentTallest = function(obj, currTallest){
-		   $(obj).children().each(function(){
-				if (Number.prototype.pxToEm) currTallest = currTallest.pxToEm(); //use ems unless px is specified
-				// for ie6, set height since min-height isn't supported
-				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': currTallest}); }
-				$(this).children().css({'min-height': currTallest}); 
-			});
-		 }
-		 
-		 var currentTallest = 0;
-		 $(object).each(function(){
-			if(isRowByRow){
-				currentTallest = 0;
-			}
-			$(this).children().each(function(i){
-				$(this).children().each(function(){
-					if(exemptClass){
-						if($(this).hasClass(exemptClass)){
-							  return;
-						}
-					}
-					if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
-				});
-			});
-			if(isRowByRow){
-				setCurrentTallest(this,currentTallest);
-			}
-	    
-	   });
-	   if(!isRowByRow) {
-		   $(object).each(function(){
-			   setCurrentTallest(this,currentTallest);
-		   });
-	   }
-	 }
-	 
-	 //Object can be a dom object/Jquery Object or a selector string
-	 function resetColumns (object){ // for removing the min-height of each column.
-		$(object).each(function(){
-			$(this).children().each(function(){
-				if (Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
-				// for ie6, set height since min-height isn't supported
-				if ($.browser.msie && $.browser.version == 6.0) { $(this).children().css({'height': ''}); }
-				$(this).children().css({'min-height':''}); 
-			});
-	    
-		});
-	}
 	
 	 //This function adds a listener for cache update(if any).
 	 //If a update is found, it swaps the new cache and reloads the window.
@@ -616,14 +504,9 @@
  		"currentPanelId" : currentPanelId,
  		"globalAjaxOptions" : globalAjaxOptions,
  		"isIE":isIE,
- 		"handleLoginSuccess" : handleLoginSuccess,
  		"logger" : logger,
- 		"addSuffixToFilepath" : addSuffixToFilepath,
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
- 		"resizeColumns":resizeColumns,
- 		"resetColumns":resetColumns,
- 		"version" : version,
- 		"getInternetExplorerVersion": getInternetExplorerVersion
+ 		"version" : version
  	}
  
 })();
