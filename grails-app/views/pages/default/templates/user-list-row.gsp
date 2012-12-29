@@ -1,14 +1,30 @@
 <tr>
-	<td>{{id}}</td>									
+	<td>{{id}}</td>										
 	<td>
-		{{firstName}} {{lastName}} ({{username}})<br/>
-		<span class="label label-important">User</span>
-		{{#isAdmin}}
-			<span class="label label-success">Admin</span>
-		{{/isAdmin}}
-		{{#isFacebookUser}}
-			<span class="label label-info">Facebook User</span>
-		{{/isFacebookUser}}
+		<div class="media">
+			{{#isFacebookUser}}
+				<img src="https://graph.facebook.com/{{username}}/picture?type=square" alt="" class="userImage pull-left"/>
+			{{/isFacebookUser}}					
+			<div class="media-body">
+				{{firstName}} {{lastName}} (
+					{{#isFacebookUser}}
+						{{email}}
+					{{/isFacebookUser}}
+					{{^isFacebookUser}}
+						{{username}}
+					{{/isFacebookUser}}
+				)				
+				<div>
+					<span class="label label-important">User</span>
+					{{#isAdmin}}
+						<span class="label label-success">Admin</span>
+					{{/isAdmin}}
+					{{#isFacebookUser}}
+						<span class="label label-info">Facebook User</span>
+					{{/isFacebookUser}}					
+				</div>
+			</div>							
+		</div>
 	</td>									
 	<td>
 		{{#disableEdit}}

@@ -108,7 +108,7 @@ AdminUserView = new function() {
 					} else {
 						attribs.disableDelete = false;
 					}
-					if(attribs.username == "admin@compro.com") {
+					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
 						attribs.disableEdit = true;
 					} else {
 						attribs.disableEdit = false;
