@@ -128,8 +128,6 @@ class LoginController {
 	 * The Ajax success redirect url.
 	 */
 	def ajaxSuccess = {
-		// Transaction name for New Relic
-		request.setAttribute("com.newrelic.agent.TRANSACTION_NAME", "UserLoginSuccess");
 		render([success: true, isAdmin: springSecurityService.currentUser.isAdmin] as JSON)
 	}
 
