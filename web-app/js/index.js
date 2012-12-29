@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 24;
+ 	var version = 25;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -566,8 +566,9 @@
  			"-o-transform":"none"
  		});
  	}
+ 	
  	//Groups for riloader to load images lazily depending upon screen-size.
- 	var productImagesGroup = new Riloadr({
+ 	var responsiveRules_prodListGrp = new Riloadr({
  		defer: 'load',
  		onerror: function(){
  			logger.error("Failed loading image '" + this.alt + "'!");
@@ -809,7 +810,7 @@
  		"pagePlayer" : pagePlayer,
  		"getInternetExplorerVersion": getInternetExplorerVersion,
  		"GATrackPageView":GATrackPageView,
- 		"productImagesGroup":productImagesGroup
+ 		"responsiveRules_prodListGrp":responsiveRules_prodListGrp
  	}
  
 })();
