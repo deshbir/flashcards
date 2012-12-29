@@ -7,9 +7,5 @@ class SinglepageController {
 			isFacebookLoginSuccess = true;
 		}
 		render (view:"singlepage",model:[isFacebookLoginSuccess:isFacebookLoginSuccess])
-	}
-	
-	def facebookLoginSuccess() {
-		redirect(action: "index", params: [isFacebookLoginSuccess: true])
-	}
+	}	
 }

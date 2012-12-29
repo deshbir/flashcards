@@ -137,4 +137,11 @@ class LoginController {
 	def ajaxDenied = {
 		render([error: 'access denied'] as JSON)
 	}
+	
+	/**
+	 * Facebook login success handler (in case of standalone web apps).
+	 */
+	def facebookLoginSuccess() {
+		redirect(controller:"singlepage", action: "index", params: [isFacebookLoginSuccess: true])
+	}
 }

@@ -110,7 +110,7 @@ Authenticate = new function() {
 	function formFacebookRedirectURI () {
   		var URI = window.location.protocol + "//" + window.location.host 
   					+ com.compro.cgrails.REQUEST_CONTEXT + "/"
-  					+ com.compro.cgrails.SKIN + "/main/facebookLoginSuccess/"  					
+  					+ com.compro.cgrails.SKIN + "/login/facebookLoginSuccess/"  					
   		return URI;
   	}
 };

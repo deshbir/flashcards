@@ -50,7 +50,8 @@ HomeView = new function() {
 		events: {
 			"click #login-button"		:	"userlogin",
 			"click #logout-button"		:	"userlogout",
-			"click #discipline-button"	:	"browseDiscipline"
+			"click #discipline-button"	:	"browseDiscipline",
+			"click #user-button"	:	"listUsers"
 		},
 				
 		initialize: function() {
@@ -125,6 +126,9 @@ HomeView = new function() {
 		browseDiscipline: function() {
 			Backbone.history.navigate("#/discipline");
 		},
+		listUsers: function() {
+			window.location.href = "admin";
+		}		
 	});
 	
 	this.routerInitialize = function(){
