@@ -1,8 +1,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="com.compro.cgrails.CgrailsUtils" %>
+<%@ page import="com.compro.cgrails.CgrailsConstants" %>
+
 <g:set var="direction" value="${CgrailsUtils.getOrientation()}" />
+<g:set var="workflow" value="${CgrailsUtils.getWorkflow()}"/>
+
 <!DOCTYPE html>
-<html manifest="cache.appcache">
+<g:if test="${workflow == CgrailsConstants.WORKFLOW_OFFLINE}">
+	<html>
+</g:if>
+<g:else>
+	<html manifest="cache.appcache">
+</g:else>
 	<head>
 		<g:if test="${isFacebookLoginSuccess}">
 			<script src="//connect.facebook.net/en_US/all.js" id="facebook-jssdk"></script>

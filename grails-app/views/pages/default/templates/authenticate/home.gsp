@@ -1,5 +1,9 @@
 <%@ page import="org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils" %>
+<%@ page import="com.compro.cgrails.CgrailsUtils" %>
+<%@ page import="com.compro.cgrails.CgrailsConstants" %>
+
 <g:set var="facebookAppId" value="${SpringSecurityUtils.securityConfig.facebook.appId}" />
+<g:set var="workflow" value="${CgrailsUtils.getWorkflow()}"/>
 
 <div id="home">
 	{{#loggedin}}
@@ -22,10 +26,12 @@
 						
 				</div>	
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
-				{{#isAdmin}}
-					<button id="user-button" class="btn btn-large btn-block">Manage Accounts</button>
-				{{/isAdmin}}											
-				<button id="logout-button" class="btn btn-large btn-block">Logout</button>
+				<g:if test="${workflow != CgrailsConstants.WORKFLOW_OFFLINE}">
+					{{#isAdmin}}
+						<a id="user-button" href="admin/" class="btn btn-large btn-block">Manage Accounts</a>	
+					{{/isAdmin}}											
+					<button id="logout-button" class="btn btn-large btn-block">Logout</button>
+				</g:if>	
 			</div>
 	    </div>
 	{{/loggedin}}
