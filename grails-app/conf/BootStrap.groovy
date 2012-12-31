@@ -27,8 +27,12 @@ class BootStrap {
 			def adminUser = new User(username: 'admin@compro.com', firstName: 'Compro', lastName: 'Admin',enabled: true, password: 'admin', email: 'admin@compro.com', isAdmin:true, isFacebookUser: false)
 			adminUser.save(flush: true)
 
+			def lisaUser = new User(username: 'lisa.strite@pearson.com', firstName: 'Lisa', lastName: 'Strite',enabled: true, password: 'pearson2013', email: 'lisa.strite@pearson.com', isAdmin:true, isFacebookUser: false)
+			lisaUser.save(flush: true)
+			
 			UserRole.create appUser, userRole, true
 			UserRole.create adminUser, adminRole, true
+			UserRole.create lisaUser, adminRole, true
 		}
 
 	}
