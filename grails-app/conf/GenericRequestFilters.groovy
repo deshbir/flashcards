@@ -5,7 +5,12 @@ class GenericRequestFilters {
       logFilter(controller: '*', action: '*') {
 		  
          before = {
-			 request.setAttribute("com.newrelic.agent.TRANSACTION_NAME", request.forwardURI);
+			 String requestURIDetails = request.forwardURI;
+			 // For detailed lagging of "cgrailTemplate".
+			 if(requestURIDetails.contains("cgrailstemplate")) {
+				 requestURIDetails = requestURIDetails + "?path=" + params.path + "&skin=" + params.skin;
+			 }
+			 request.setAttribute("com.newrelic.agent.TRANSACTION_NAME", requestURIDetails);
 			 return true
          }
       }
