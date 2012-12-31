@@ -84,6 +84,7 @@
  		cssProgressLoading : "",
  		disableLoadingProgress : false
  	}
+ 	var mobileScreenWidth = 767;
  		
  	/********************************************************/
  	/*                 PRIVATE MEMBERS                     */
@@ -572,6 +573,10 @@
  		defer: 'load',
  		onerror: function(){
  			logger.error("Failed loading image '" + this.alt + "'!");
+ 		},
+ 		oncomplete: function(){
+ 			if($(window).width()>mobileScreenWidth)
+				resizeColumns("#panel_discipline-home .row-fluid",true,"audio-playing");
  		},
  		retries: 1,
  		breakpoints: [
