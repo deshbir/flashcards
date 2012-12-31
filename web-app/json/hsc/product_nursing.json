@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "Medical Surgical Nursing,2e",
+	"name": "Medical Surgical Nursing, 2/e",
 	"description": "An overview of Osborn's Medical Surgical Nursing",
 	"thumbnail": "Nursing/Osborn/Osborn_front_cvr_highres-{breakpoint-name}.jpg",
 	"image": "Nursing/Osborn/Osborn_front_cvr_highres.jpg",
@@ -139,7 +139,7 @@
 			        }]
 },
 {
-	"name": "Pharmacology,4e",
+	"name": "Pharmacology, 4/e",
 	"description": "An overview of Adams' Pharmacology",
 	"thumbnail": "Nursing/Adams/Adams COV MECH_HIRES-{breakpoint-name}.jpg",
 	"image": "Nursing/Adams/Adams COV MECH_HIRES.jpg",
@@ -278,7 +278,7 @@
 			        }]
 },
 {
-	"name": "Maternal Newborn,8e",
+	"name": "Maternal Newborn, 8/e",
 	"description": "An overview of Ladewig, Maternal Newborn",
 	"thumbnail": "Nursing/Ladewig/Ladewig_NursingCare8e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ladewig/Ladewig_NursingCare8e.jpg",
@@ -292,7 +292,7 @@
 				},
 				{
 					"name": "Driving Sell Thru",
-					"sequence": 3,
+					"sequence": 2,
 					"audioTrack": "Nursing/Ladewig/12-10-12 Nurs Ladewig 2 Driving Sell Through.mp3"
 				}],
 			    "tests": [
@@ -412,7 +412,7 @@
 			        }]
 },
 {
-	"name": "Child Health,3e",
+	"name": "Child Health, 3/e",
 	"description": "An overview of Ball, Child Health",
 	"thumbnail": "Nursing/Ball/Ball_ChildHealthNursing3e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ball/Ball_ChildHealthNursing3e.jpg",
