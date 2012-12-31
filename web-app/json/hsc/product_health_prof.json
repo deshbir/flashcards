@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "MIBC Overview",
 	"description": "What is MIBC and what are the instructors talking about?   Learn how to have a great conversation for a solution sale.",
-	"thumbnail": "Health Professions/MIBC/MIBC-web-thumb2.jpg",
+	"thumbnail": "Health Professions/MIBC/MIBC-web-{breakpoint-name}.jpg",
 	"image": "Health Professions/MIBC/MIBC-web.jpg",
 	"sequence": 1,
 	"type": "lab",
@@ -139,9 +139,9 @@
 			        }]
 },
 {
-	"name": "Medical Coding: A Journey Plus,1e",
+	"name": "Medical Coding: A Journey Plus, 1/e",
 	"description": "How to win vs Buck with Rich.  (For PLS Reps)",
-	"thumbnail": "Health Professions/Rich/Rich-thumb2.jpg",
+	"thumbnail": "Health Professions/Rich/Rich-{breakpoint-name}.jpg",
 	"image": "Health Professions/Rich/Rich.jpg",
 	"sequence": 2,
 	"type": "book",
@@ -278,9 +278,9 @@
 			        }]
 },
 {
-	"name": "Medical Language,3e",
+	"name": "Medical Language, 3/e",
 	"description": "Pearson's number one selling med term book set to take the number one market position in 2013.",
-	"thumbnail": "Health Professions/Turley/Turley-thumb2.jpg",
+	"thumbnail": "Health Professions/Turley/Turley-{breakpoint-name}.jpg",
 	"image": "Health Professions/Turley/Turley.jpg",
 	"sequence": 3,
 	"type": "book",
@@ -424,7 +424,7 @@
 {
 	"name": "MyMedicalTerminologyLab",
 	"description": "New to our Medical Terminology list in 2013.",
-	"thumbnail": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula-thumb2.png",
+	"thumbnail": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula-{breakpoint-name}.png",
 	"image": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula.png",
 	"sequence": 4,
 	"type": "lab",

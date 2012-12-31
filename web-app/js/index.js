@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 22;
+ 	var version = 27;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -66,7 +66,6 @@
  			"loggerPrefix" : "App.Login",
  			"maxLogSize" : "50"
  	}
- 
  
  
      /********************************************************/
@@ -567,7 +566,22 @@
  			"-o-transform":"none"
  		});
  	}
- 		
+ 	
+ 	//Groups for riloader to load images lazily depending upon screen-size.
+ 	var responsiveRules_prodListGrp = new Riloadr({
+ 		defer: 'load',
+ 		onerror: function(){
+ 			logger.error("Failed loading image '" + this.alt + "'!");
+ 		},
+ 		retries: 1,
+ 		breakpoints: [
+					{name: 'thumb3', maxWidth: 240},
+					{name: 'thumb3', minWidth: 241, maxWidth: 320},
+					{name: 'thumb3', minWidth: 241, maxWidth: 320, minDevicePixelRatio: 2}, 
+					{name: 'thumb3', minWidth: 321, maxWidth: 640},
+					{name: 'thumb2', minWidth: 641}
+ 		           ]
+ 	});
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
 		/*
@@ -795,7 +809,8 @@
  		"version" : version,
  		"pagePlayer" : pagePlayer,
  		"getInternetExplorerVersion": getInternetExplorerVersion,
- 		"GATrackPageView":GATrackPageView
+ 		"GATrackPageView":GATrackPageView,
+ 		"responsiveRules_prodListGrp":responsiveRules_prodListGrp
  	}
  
 })();

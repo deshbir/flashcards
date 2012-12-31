@@ -9,6 +9,8 @@ import groovy.json.JsonSlurper
 
 class BootStrap {
 	
+	def grailsApplication
+	
 	def bootstrap_user_data =	{ servletContext ->
 		def userRole; 
 		def adminRole;
@@ -92,12 +94,25 @@ class BootStrap {
 
 	}
 	
+	def updateGrailsConfigForHeroku() {
+		String environment = System.getProperty("newrelic.environment");
+		if (environment.equals("development")) {
+			grailsApplication.config.grails.serverURL = grailsApplication.config.dev.grails.serverURL
+			grailsApplication.config.google.analytics.webPropertyID = grailsApplication.config.dev.google.analytics.webPropertyID
+		} else if (environment.equals("test")) {
+			grailsApplication.config.grails.serverURL =  grailsApplication.config.test.grails.serverURL
+			grailsApplication.config.google.analytics.webPropertyID = grailsApplication.config.test.google.analytics.webPropertyID
+		} else if (environment.equals("production")) {
+			grailsApplication.config.grails.serverURL =  grailsApplication.config.prod.grails.serverURL
+			grailsApplication.config.google.analytics.webPropertyID = grailsApplication.config.prod.google.analytics.webPropertyID
+		}		
+	}
+	
 
 	def init = { servletContext ->
-		
+		updateGrailsConfigForHeroku();
 		bootstrap_user_data(servletContext);
-		bootstrap_disciplines(servletContext);
-	
+		bootstrap_disciplines(servletContext);	
 	}
 	
 	def destroy = {

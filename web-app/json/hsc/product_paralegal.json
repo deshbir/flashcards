@@ -1,8 +1,8 @@
 {
 "products" : [{
-	"name": "The Paralegal Professional,4e",
+	"name": "The Paralegal Professional,4/e",
 	"description": "The Paralegal Professional walkthrough",
-	"thumbnail": "Paralegal/Goldman/goldmanintro-thumb2.png",
+	"thumbnail": "Paralegal/Goldman/goldmanintro-{breakpoint-name}.png",
 	"image": "Paralegal/Goldman/goldmanintro.png",
 	"sequence": 1,
 	"type": "book",
@@ -139,9 +139,9 @@
 			        }]
 },
 {
-	"name": "Real Estate Fundamentals,1e",
+	"name": "Real Estate Fundamentals,1/e",
 	"description": " Real Estate Fundamentals walkthrough",
-	"thumbnail": "Paralegal/Hughes/cover_placeholder-thumb2.gif",
+	"thumbnail": "Paralegal/Hughes/cover_placeholder-{breakpoint-name}.gif",
 	"image": "Paralegal/Hughes/cover_placeholder.gif",
 	"sequence": 2,
 	"type": "book",
@@ -268,9 +268,9 @@
 			        }]
 },
 {
-	"name": "Ethics for the Legal Professional,8e",
+	"name": "Ethics for the Legal Professional,8/e",
 	"description": "Ethics for the Legal Professional Walkthrough",
-	"thumbnail": "Paralegal/Orlik/orlik_i-thumb2.jpg",
+	"thumbnail": "Paralegal/Orlik/orlik_i-{breakpoint-name}.jpg",
 	"image": "Paralegal/Orlik/orlik_i.jpg",
 	"sequence": 3,
 	"type": "book",
@@ -397,9 +397,9 @@
 			        }]
 },
 {
-	"name": "Torts and Personal Injury Law,4e",
+	"name": "Torts and Personal Injury Law,4/e",
 	"description": "Torts and Personal Injury Law Walkthrough",
-	"thumbnail": "Paralegal/Jeffries/cover_placeholder-thumb2.gif",
+	"thumbnail": "Paralegal/Jeffries/cover_placeholder-{breakpoint-name}.gif",
 	"image": "Paralegal/Jeffries/cover_placeholder.gif",
 	"sequence": 4,
 	"type": "book",
@@ -526,9 +526,9 @@
 			        }]
 },
 {
-	"name": "Tort Law , 2e",
+	"name": "Tort Law, 2/e",
 	"description": "Tort Law walkthrough",
-	"thumbnail": "Paralegal/Michaud/michaudtorts_i-thumb2.jpg",
+	"thumbnail": "Paralegal/Michaud/michaudtorts_i-{breakpoint-name}.jpg",
 	"image": "Paralegal/Michaud/michaudtorts_i.jpg",
 	"sequence": 5,
 	"type": "book",
@@ -657,7 +657,7 @@
 {
 	"name": "MyLegalStudiesLab",
 	"description": "MyLegalStudiesLab walkthrough",
-	"thumbnail": "Paralegal/MLSL/mylab-thumb2.png",
+	"thumbnail": "Paralegal/MLSL/mylab-{breakpoint-name}.png",
 	"image": "Paralegal/MLSL/mylab.png",
 	"sequence": 6,
 	"type": "lab",
