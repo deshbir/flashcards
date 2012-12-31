@@ -138,8 +138,8 @@
 			}]
 },
 {
-	"name": "HVAC,2e",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"name": "HVAC,2/e",
+	"description": "An overview of the reader-friendly, updated second edition of Fundamentals of HVACR.",
 	"thumbnail": "Trades/HVAC/stanfield 2e cover-{breakpoint-name}.jpg",
 	"image": "Trades/HVAC/stanfield 2e cover.jpg",
 	"sequence": 2,

@@ -32,7 +32,7 @@
 
 	<div class="modal-footer">
 		<button class="btn generateErrorReport" data-dismiss="modal" aria-hidden="true">
-			Generate Error Report
+			Generate Report
 		</button>
 		<button class="btn" data-dismiss="modal" aria-hidden="true">
 			OK
