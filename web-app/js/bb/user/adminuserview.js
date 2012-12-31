@@ -100,7 +100,7 @@ AdminUserView = new function() {
 			
 			/* ----- Appending Rows  ----------- */
 			that = this;
-	    	this.collection.fetch({cache: false, success: function() {
+	    	this.collection.fetch({cache: !mainApp.isIE, success: function() {
 				that.collection.each( function(user) {
 					var attribs = user.attributes;
 					if(attribs.isAdmin == true || attribs.isFacebookUser == true) {
