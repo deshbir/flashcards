@@ -145,6 +145,7 @@ class LoginController {
 		System.out.println("Facebook login success...");
 		System.out.println("Server URL: " + grailsApplication.config.grails.serverURL);
 		System.out.println("Request URI: " + request.forwardURI);		
-		redirect(controller:"singlepage", action: "index", params: [isFacebookLoginSuccess: true])
+		redirect(url: grailsApplication.config.grails.serverURL + "/?isFacebookLoginSuccess=true")
+		//redirect(controller:"singlepage", action: "index", params: [isFacebookLoginSuccess: true])
 	}
 }

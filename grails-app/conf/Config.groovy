@@ -65,21 +65,22 @@ environments {
     development {
         grails.logging.jul.usebridge = true
 		grails.resources.debug = true  // Add this line in development environment.
+		grails.serverURL = "http://localhost:8080/flashcards"
+		google.analytics.webPropertyID = "UA-37325136-1"
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://p-pearson-hsc.herokuapp.com"
+		google.analytics.webPropertyID = "UA-37304799-1"
     }
 }
 
 // Google Analaytics
-google.analytics.webPropertyID = "UA-37325136-1"
 dev.google.analytics.webPropertyID = "UA-37314552-1"
 test.google.analytics.webPropertyID = "UA-37325619-1"
 prod.google.analytics.webPropertyID = "UA-37304799-1"
 
 // Grails Server URL
-grails.serverURL = "http://localhost:8080/flashcards"
 dev.grails.serverURL = "http://d1-pearson-hsc.herokuapp.com"
 test.grails.serverURL = "http://q1-pearson-hsc.herokuapp.com"
 prod.grails.serverURL = "http://p-pearson-hsc.herokuapp.com"
