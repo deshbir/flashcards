@@ -6,14 +6,10 @@
 				<img src="https://graph.facebook.com/{{username}}/picture?type=square" alt="" class="userImage pull-left"/>
 			{{/isFacebookUser}}					
 			<div class="media-body">
-				{{firstName}} {{lastName}} (
-					{{#isFacebookUser}}
-						{{email}}
-					{{/isFacebookUser}}
-					{{^isFacebookUser}}
-						{{username}}
-					{{/isFacebookUser}}
-				)				
+				{{firstName}} {{lastName}} 
+				<small>
+					({{#isFacebookUser}}{{email}}{{/isFacebookUser}}{{^isFacebookUser}}{{username}}{{/isFacebookUser}})
+				</small>				
 				<div>
 					<span class="label label-important">User</span>
 					{{#isAdmin}}
