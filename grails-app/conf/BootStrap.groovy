@@ -113,6 +113,10 @@ class BootStrap {
 		updateGrailsConfigForHeroku();
 		bootstrap_user_data(servletContext);
 		bootstrap_disciplines(servletContext);	
+		System.out.println("Application startup completed...");
+		System.out.println("Environment: " + System.getProperty("newrelic.environment"));
+		System.out.println("Server URL: " + grailsApplication.config.grails.serverURL);
+		System.out.println("Google Analytics ID: " + grailsApplication.config.google.analytics.webPropertyID);
 	}
 	
 	def destroy = {
