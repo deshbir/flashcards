@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "Construction Management Front List Titles",
 	"description": "An overview of key new 2013 titles, including Mehta 2e, Borden's Architecture, Schodek Structures 7e, Kavanagh 9e, and Andres Principles 9e.",
-	"thumbnail": "Const Mgmt/MEhta 2e cover-thumb2.jpg",
+	"thumbnail": "Const Mgmt/MEhta 2e cover-{breakpoint-name}.jpg",
 	"image": "Const Mgmt/MEhta 2e cover.jpg",
 	"sequence": 1,
 	"type": "book",

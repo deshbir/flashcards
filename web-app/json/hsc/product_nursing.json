@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "Medical Surgical Nursing,2e",
 	"description": "An overview of Osborn's Medical Surgical Nursing",
-	"thumbnail": "Nursing/Osborn/Osborn_front_cvr_highres-thumb2.jpg",
+	"thumbnail": "Nursing/Osborn/Osborn_front_cvr_highres-{breakpoint-name}.jpg",
 	"image": "Nursing/Osborn/Osborn_front_cvr_highres.jpg",
 	"sequence": 1,
 	"type": "book",
@@ -141,7 +141,7 @@
 {
 	"name": "Pharmacology,4e",
 	"description": "An overview of Adams' Pharmacology",
-	"thumbnail": "Nursing/Adams/Adams COV MECH_HIRES-thumb2.jpg",
+	"thumbnail": "Nursing/Adams/Adams COV MECH_HIRES-{breakpoint-name}.jpg",
 	"image": "Nursing/Adams/Adams COV MECH_HIRES.jpg",
 	"sequence": 2,
 	"type": "book",
@@ -280,7 +280,7 @@
 {
 	"name": "Maternal Newborn,8e",
 	"description": "An overview of Ladewig, Maternal Newborn",
-	"thumbnail": "Nursing/Ladewig/Ladewig_NursingCare8e-thumb2.jpg",
+	"thumbnail": "Nursing/Ladewig/Ladewig_NursingCare8e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ladewig/Ladewig_NursingCare8e.jpg",
 	"sequence": 3,
 	"type": "book",
@@ -414,7 +414,7 @@
 {
 	"name": "Child Health,3e",
 	"description": "An overview of Ball, Child Health",
-	"thumbnail": "Nursing/Ball/Ball_ChildHealthNursing3e-thumb2.jpg",
+	"thumbnail": "Nursing/Ball/Ball_ChildHealthNursing3e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ball/Ball_ChildHealthNursing3e.jpg",
 	"sequence": 4,
 	"type": "book",
@@ -553,7 +553,7 @@
 {
 	"name": "Real EHRPrep with Cerner",
 	"description": "An overview of Real EHRPrep with Cerner",
-	"thumbnail": "Nursing/RealEHRPrep/cerner_logo_cmyk_horizontal-thumb2.jpg",
+	"thumbnail": "Nursing/RealEHRPrep/cerner_logo_cmyk_horizontal-{breakpoint-name}.jpg",
 	"image": "Nursing/RealEHRPrep/cerner_logo_cmyk_horizontal.jpg",
 	"sequence": 5,
 	"type": "lab",
@@ -682,7 +682,7 @@
 {
 	"name": "Live Review",
 	"description": "An overview of Pearson's Live Review services",
-	"thumbnail": "Nursing/Live Review/RP_Nursing_blue-thumb2.jpg",
+	"thumbnail": "Nursing/Live Review/RP_Nursing_blue-{breakpoint-name}.jpg",
 	"image": "Nursing/Live Review/RP_Nursing_blue.jpg",
 	"sequence": 6,
 	"type": "lab",
@@ -821,7 +821,7 @@
 {
 	"name": "ReadyPoint",
 	"description": "An overview of Readypoint",
-	"thumbnail": "Nursing/Readypoint/RP_Nursing_blue-thumb2.jpg",
+	"thumbnail": "Nursing/Readypoint/RP_Nursing_blue-{breakpoint-name}.jpg",
 	"image": "Nursing/Readypoint/RP_Nursing_blue.jpg",
 	"sequence": 7,
 	"type": "lab",
@@ -960,7 +960,7 @@
 {
 	"name": "MyNursingLab",
 	"description": "An overview of MyNursingLab",
-	"thumbnail": "Nursing/MNL/MNL Wordmark - Blue-thumb2.jpg",
+	"thumbnail": "Nursing/MNL/MNL Wordmark - Blue-{breakpoint-name}.jpg",
 	"image": "Nursing/MNL/MNL Wordmark - Blue.jpg",
 	"sequence": 8,
 	"type": "lab",
@@ -1099,7 +1099,7 @@
 {
 	"name": "Neighborhood 2.0",
 	"description": "An overview of The Neighborhood",
-	"thumbnail": "Nursing/Neighborhood/TheNeighborhood_logo_blue-thumb2.png",
+	"thumbnail": "Nursing/Neighborhood/TheNeighborhood_logo_blue-{breakpoint-name}.png",
 	"image": "Nursing/Neighborhood/TheNeighborhood_logo_blue.png",
 	"sequence": 9,
 	"type": "lab",
@@ -1238,7 +1238,7 @@
 {
 	"name": "RN-to-BSN",
 	"description": "An overview of RN to BSN program offerings",
-	"thumbnail": "Nursing/RN2BSN/RN to BSN-web-thumb2.jpg",
+	"thumbnail": "Nursing/RN2BSN/RN to BSN-web-{breakpoint-name}.jpg",
 	"image": "Nursing/RN2BSN/RN to BSN-web.jpg",
 	"sequence": 10,
 	"type": "lab",

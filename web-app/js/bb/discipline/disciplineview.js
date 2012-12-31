@@ -288,6 +288,7 @@ DisciplineView = new function() {
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
 				$('#product-list').imagesLoaded(function() {
+					mainApp.responsiveRules_prodListGrp.riload();
 					if($(window).width()>mobileScreenWidth)
 						mainApp.resizeColumns(that.myPanelId+" .row-fluid",true,"audio-playing");
 				});		

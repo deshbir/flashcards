@@ -2,7 +2,8 @@ modules = {
 	common {
 		//'cgrailsLibs' includes JQuery, Backbone, JSON2 & Underscore
 		dependsOn 'cgrailsLibs'
-
+		//riloader lib
+		resource url:'js/libs/riloadr.jquery.js'
 		//logging component
 		resource url:'js/libs/JSLog.js'
 		
