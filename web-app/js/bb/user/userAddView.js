@@ -57,7 +57,8 @@ UserAddView = new function() {
 			this.username = this.$("#username");
 			this.password = this.$("#password");
 			this.firstName = this.$("#firstName");
-			this.lastName = this.$("#lastName");		
+			this.lastName = this.$("#lastName");
+			this.userRole = this.$("#userRole");
 			
 			return this; //Do this at the end to allow for method chaining.			    	
 		},		
@@ -78,7 +79,8 @@ UserAddView = new function() {
 		    	  firstName	: 	this.firstName.val(),
 		    	  lastName	: 	this.lastName.val(),
 		    	  enabled	: 	true,
-		    	  email	: 	this.username.val()
+		    	  email	: 	this.username.val(),
+		    	  userRole	: 	this.userRole.val()
 		    };
 		 }
 	});

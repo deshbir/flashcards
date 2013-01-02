@@ -1,13 +1,13 @@
 <div id="create-user">
 	<div class="container">
 		<div class="row" id="header">
-			<div class="span9">
+			<div class="span8">
 				<ul class="breadcrumb breadcrumb-admin">
 					<li><h2><a href="#/users/list">Manage Accounts</a> <span class="divider">/</span></h2></li>
 					<li class="active"><h2>New user</h2></li>
 				</ul>
         	</div>
-			<div class="span3">
+			<div class="span4">
 				<button id="adminAddUser" class="btn accountAction" ><i class="icon-save"></i>  Save</button>
 			</div>        	
 		</div>
@@ -53,7 +53,16 @@
 							<div class="controls">
 								<input id="lastName" placeholder="last name" type="text" name="lastName" />
 							</div>
-						</div>									
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="lastName">User Role</label>
+							<div class="controls">
+								<select id="userRole" name="userRole">
+								  <option value="ROLE_USER">User</option>
+								  <option value="ROLE_ADMIN">Admin</option>
+								</select>							
+							</div>
+						</div>																
 					</form>	
 				</div>	
 			</div>

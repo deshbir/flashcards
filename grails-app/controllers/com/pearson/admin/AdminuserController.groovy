@@ -20,9 +20,10 @@ class AdminuserController {
 	 */
 	def save = {
 		def user = new User(params)
+		def authority = params.userRole
 		try {
 			user.save(failOnError: true)
-			List<Role> roleList = Role.findAllByAuthority("ROLE_USER")
+			List<Role> roleList = Role.findAllByAuthority(authority)
 			Role userRole = roleList.get(0)
 			UserRole.create user, userRole, true
 			render user as JSON
@@ -53,10 +54,9 @@ class AdminuserController {
 
 	def delete = {
 		if(params.id) {
-			List<Role> roleList = Role.findAllByAuthority("ROLE_USER")
-			Role userRole = roleList.get(0)
 			def user = User.get(params.id)
-			UserRole.remove(user, userRole, true);
+			def userRole = UserRole.findByUser(user)
+			userRole.delete()
 			if(user) {
 				try {
 					user.delete()
