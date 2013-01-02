@@ -91,8 +91,8 @@
  	//User Logged In Flag
  	var userinfo = {
  			loggedin: false,
- 			name: "John Doe",
- 			email: "(john@pearson.com)",
+ 			name: "",
+ 			email: "",
  			facebookuser: false,
  			admin: false
  	}
@@ -118,21 +118,6 @@
 		AdminHeaderView.initialize();		
 	}
 	
- 	function updateUser(){
- 		UserModel.get().fetch({
-			success: function(model, response){
-				if(response.error){
-					userinfo.loggedin = false;
-				} else {
-					userinfo.loggedin = true;
-					userinfo.name = model.get("username");
-					userinfo.email =  model.get("email");
-					userinfo.admin =  model.get("isAdmin");
-					userinfo.facebookuser = model.get("isFacebookuser");
-				}
-			}
-		});
- 	}	
  	
  	/*
  	 * Global Viewas
@@ -404,6 +389,10 @@
  			$(document).ready(function() {
  				
  				logger.info("On Ready - Starting Initialization");
+ 				
+ 				var mainApp = com.compro.application.hsc;
+ 				mainApp.userinfo.loggedin = true;	
+ 				mainApp.userinfo.admin = true;
  				
  				logger.info("adding HTML5 cache listener");
  				add_cache_listener();
