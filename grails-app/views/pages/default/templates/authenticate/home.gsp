@@ -28,7 +28,7 @@
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
 				<g:if test="${workflow != CgrailsConstants.WORKFLOW_OFFLINE}">
 					{{#isAdmin}}
-						<a id="user-button" href="admin/" class="btn btn-large btn-block">Manage Accounts</a>	
+						<button id="user-button" class="btn btn-large btn-block">Manage Accounts</button>	
 					{{/isAdmin}}											
 					<button id="logout-button" class="btn btn-large btn-block">Logout</button>
 				</g:if>	
