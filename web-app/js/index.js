@@ -107,8 +107,8 @@
  	//User Logged In Flag
  	var userinfo = {
  			loggedin: false,
- 			name: "John Doe",
- 			email: "(john@pearson.com)",
+ 			name: "",
+ 			email: "",
  			facebookuser: false,
  			admin: false
  	}

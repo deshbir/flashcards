@@ -2,7 +2,7 @@
 <%@ page import="com.compro.cgrails.CgrailsUtils" %>
 <g:set var="direction" value="${CgrailsUtils.getOrientation()}" />
 <!DOCTYPE html>
-<html manifest="cache.appcache">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
