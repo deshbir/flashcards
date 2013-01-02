@@ -584,7 +584,8 @@
 					{name: 'thumb3', minWidth: 241, maxWidth: 320},
 					{name: 'thumb3', minWidth: 241, maxWidth: 320, minDevicePixelRatio: 2}, 
 					{name: 'thumb3', minWidth: 321, maxWidth: 640},
-					{name: 'thumb2', minWidth: 641}
+					{name: 'thumb2', minWidth: 641},
+					{name: 'thumb2', minWidth: 384, minDevicePixelRatio: 2} // For Retina Display In IPAD 3 Generation
  		           ]
  	});
  	//function to handle "transitionend" event of panel-container
