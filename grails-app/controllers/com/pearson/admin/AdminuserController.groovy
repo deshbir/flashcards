@@ -21,6 +21,9 @@ class AdminuserController {
 	def save = {
 		def user = new User(params)
 		def authority = params.userRole
+		if (authority.equals("ROLE_ADMIN")) {
+			user.isAdmin = true
+		}
 		try {
 			user.save(failOnError: true)
 			List<Role> roleList = Role.findAllByAuthority(authority)
