@@ -5,11 +5,11 @@
 			{{#isFacebookUser}}
 				<img src="https://graph.facebook.com/{{username}}/picture?type=square" alt="" class="userImage pull-left"/>
 			{{/isFacebookUser}}					
-			<div class="media-body">
-				{{firstName}} {{lastName}} 
+			<div class="media-body wordWrap">
+				{{firstName}} {{lastName}}
 				<small>
 					({{#isFacebookUser}}{{email}}{{/isFacebookUser}}{{^isFacebookUser}}{{username}}{{/isFacebookUser}})
-				</small>				
+				</small>
 				<div>
 					<span class="label label-important">User</span>
 					{{#isAdmin}}
