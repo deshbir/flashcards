@@ -382,16 +382,16 @@
  			$("#music i").addClass('icon-pause-hsc');
  			$("#music i").removeClass('icon-mute-hsc');
  			$("#music").hide();
- 			if(DisciplineView.detailbbView!=null && com.compro.application.hsc.currentPanelId==DisciplineView.detailbbView.myPanelId){
- 				if(pagePlayer.getNextItem(this._data.oLI)==null){
- 					DisciplineView.detailbbView.loadNextAudioTemplate();
- 				}
- 			}
  			soundManagerConfig.musicPlaying = false;
  			soundManagerConfig.musicStopped = true;
  			soundManagerConfig.audioPlayPage = "";
  			$(".sm2_playing i").removeClass('icon-volume-up');
  			$(".sm2_playing i").removeClass('icon-pause');
+ 			if(DisciplineView.detailbbView!=null && com.compro.application.hsc.currentPanelId==DisciplineView.detailbbView.myPanelId){
+ 				if(pagePlayer.getNextItem(this._data.oLI)==null){
+ 					DisciplineView.detailbbView.loadNextAudioTemplate();
+ 				}
+ 			}
  			pagePlayerFinish.call(this);
  		}
  		soundManager.onready(function() {
