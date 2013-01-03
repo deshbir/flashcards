@@ -52,10 +52,14 @@
 								<input id="lastName"  type="text" name="lastName" value="{{lastName}}"/>
 							</div>
 						</div>
+						<div class="note">
+							<em>Select the entry box (below) to change password:</em>
+							<hr/>
+						</div>						
 						<div class="control-group">			
 							<label class="control-label" for="password">Password</label>
 							<div class="controls">
-								<input id="password"  type="password" name="password" />
+								<input id="password"  type="password" name="password" class="decoration" onclick="javascript: editPassword();"/>
 								<span class="alert alert-error hide" id="error-password">
 									<strong>Warning!</strong> Password can't be blank.
 								</span>						
@@ -64,7 +68,7 @@
 						<div class="control-group">
 							<label class="control-label" for="confirmPassword">Confirm Password</label>
 							<div class="controls">
-								<input id="confirmPassword"  type="password" name="confirmPassword" />
+								<input id="confirmPassword"  type="password" class="decoration" name="confirmPassword" />
 							</div>
 						</div>														
 					</form>	

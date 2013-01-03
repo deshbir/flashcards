@@ -58,7 +58,7 @@ UserEditView = new function() {
 			
 			that = this;
 	    	this.collection.fetch({data: {"id": userId}, success: function() {
-	    		that.collection.each(function(user){	    		
+	    		that.collection.each(function(user){	
 	    			$(that.myPanelId).html(Mustache.render(that.template_body, user.toJSON()));
 		    	});    		
 	    	}});	    	
@@ -70,26 +70,38 @@ UserEditView = new function() {
 			
 			return this; //Do this at the end to allow for method chaining.			    	
 		},
-		
 		createOnEnter: function(){
 			var userid = this.requested_user_id;
-	    	AdminUserCollection.get().get(userid).save(
-    			this.newAttributes(), {
-	    			success: function() {
-	    				Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
-	    			}	    			
-    			}
-	    	);	 	    	
+			var model = AdminUserCollection.get().get(userid);
+			if($("#edit-user .decoration").length > 0) {
+				model.set(this.newAttributes(), {silent: true});
+				model.save();
+		    	Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
+			} else {
+		    	model.save(
+		    			this.newAttributes(), {
+		    				success: function() {
+			    				Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
+			    			}	    			
+		    			}
+			    );	
+			}
 	    },
 	    
 	    newAttributes: function() {
-		      return {
-		    	  firstName	: 	$("#edit-user #firstName").val(),
-		    	  lastName	: 	$("#edit-user #lastName").val(),
-		    	  password	: 	$("#edit-user #password").val()
-		    };
-		 }
-	    
+	    	var obj = {
+	    			firstName	: 	$("#edit-user #firstName").val(),
+	    			lastName	: 	$("#edit-user #lastName").val(),
+	    	};
+	    	if($("#edit-user .decoration").length > 0) {
+	   	    	if($("#edit-user #password").val() != "") {
+		    		obj.password = $("#edit-user #password").val();
+		    	}
+	    	} else {
+	    		obj.password = $("#edit-user #password").val();	
+	    	}
+   	    	return obj;
+		 }	    
 	});
 	
 	this.initialize = function(userId) {

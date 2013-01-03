@@ -64,6 +64,8 @@ modules = {
 		
 		resource url:'js/libs/bootstrap-alert.js'
 		
+		resource url:'js/admin/admin.js'
+		
 		//Main Application JavaScript - init and event binding
 		resource url:'js/adminindex.js'
 		

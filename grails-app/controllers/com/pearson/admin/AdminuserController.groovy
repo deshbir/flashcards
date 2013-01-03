@@ -79,13 +79,12 @@ class AdminuserController {
 	}
 	
 	def update = {
-		
 		if(params.id) {
 			def user = User.get(params.id)
 			if(user) {
 				user.properties = params['user']
 				try {
-					user.save(failOnError: true)
+					user.save(failOnError: true, flush: true,validate:false, insert:false)
 					render user as JSON
 					return
 				} catch(HibernateException e){
