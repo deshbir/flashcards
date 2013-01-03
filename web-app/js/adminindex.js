@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 32;
+ 	var version = 33;
  	
  	// Add separate Log Settings from Mascula for different logs.
  	var musculaLogSettingsConfig = {
