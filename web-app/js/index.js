@@ -182,7 +182,7 @@
  			
  		});
  		
- 		$(document).ajaxPrefilter(function (options, originalOptions, jqXHR) {
+ 		$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
  			var requestURL = options.url;
  			if (requestURL.indexOf("?") > -1) {
  				requestURL = requestURL + "&version="  + version; 				
