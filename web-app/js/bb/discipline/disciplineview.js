@@ -287,7 +287,7 @@ DisciplineView = new function() {
 			 */
 			var that=this;
 			mainApp.transitionAppPanel(this.myPanelId,function(){
-				mainApp.responsiveRules_prodListGrp.riload();
+				mainApp.responsiveRules.getProdListGrp().riload();
 			});	
 			return this; //Do this at the end to allow for method chaining.			
 			

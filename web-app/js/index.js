@@ -570,25 +570,47 @@
  	}
  	
  	//Groups for riloader to load images lazily depending upon screen-size.
- 	var responsiveRules_prodListGrp = new Riloadr({
- 		defer: 'load',
- 		onerror: function(){
- 			logger.error("Failed loading image '" + this.alt + "'!");
- 		},
- 		oncomplete: function(){
- 			if($(window).width()>mobileScreenWidth)
-				resizeColumns("#panel_discipline-home .row-fluid",true,"audio-playing");
- 		},
- 		retries: 1,
- 		breakpoints: [
-					{name: 'thumb3', maxWidth: 240},
-					{name: 'thumb3', minWidth: 241, maxWidth: 320},
-					{name: 'thumb3', minWidth: 241, maxWidth: 320, minDevicePixelRatio: 2}, 
-					{name: 'thumb3', minWidth: 321, maxWidth: 640},
-					{name: 'thumb2', minWidth: 641},
-					{name: 'thumb2', minWidth: 384, minDevicePixelRatio: 2} // For Retina Display In IPAD 3 Generation
- 		           ]
- 	});
+ 	//Groups for riloader to load images lazily depending upon screen-size.
+ 	var responsiveRules = {
+		getProdListGrp : function(){
+				var group = new Riloadr({
+					defer: 'load',
+			 		onerror: function(){
+			 			logger.error("Failed loading image '" + this.alt + "'!");
+			 		},
+			 		oncomplete: function(){
+			 			if($(window).width()>mobileScreenWidth)
+							resizeColumns("#panel_discipline-home .row-fluid",true,"audio-playing");
+			 		},
+			 		retries: 1,
+			 		breakpoints: [
+								{name: 'thumb3', maxWidth: 240},
+								{name: 'thumb3', minWidth: 241, maxWidth: 320},
+								{name: 'thumb3', minWidth: 241, maxWidth: 320, minDevicePixelRatio: 2}, 
+								{name: 'thumb3', minWidth: 321, maxWidth: 640},
+								{name: 'thumb2', minWidth: 641},
+								{name: 'thumb2', minWidth: 384, minDevicePixelRatio: 2} // For Retina Display In IPAD 3 Generation
+			 		           ]
+		 	});
+			return group;
+		},
+		getHomeImageGrp : function(){
+			var group = new Riloadr({
+				defer: 'foldDistance',
+				name: 'homegrp',
+		 		onerror: function(){
+		 			logger.error("Failed loading image '" + this.alt + "'!");
+		 		},
+		 		retries: 1,
+		 		breakpoints: [
+							{name: '', maxWidth: 767},
+							{name: '_Larger', minWidth: 768}
+		 		           ]
+			});
+			return group;
+		}
+		
+ 	}
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
 		/*
@@ -817,7 +839,7 @@
  		"pagePlayer" : pagePlayer,
  		"getInternetExplorerVersion": getInternetExplorerVersion,
  		"GATrackPageView":GATrackPageView,
- 		"responsiveRules_prodListGrp":responsiveRules_prodListGrp
+ 		"responsiveRules":responsiveRules
  	}
  
 })();
