@@ -102,8 +102,8 @@
 		#user-info {
 			border:solid 1px darken(@hero-unit-color,10%);
 			padding:1em;
-			div {
-				display:inline-block;
+			.media-body {
+				overflow:visible;
 			}
 			.break-word {
 				word-break: break-all;
@@ -216,6 +216,12 @@
 				> p {
 					display:none;
 				}
+				.media {
+					.pull-left {
+						float:left;
+					}
+				}
+				
 			}
 			h3 {
 				display:none;

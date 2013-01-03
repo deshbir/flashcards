@@ -10,21 +10,20 @@
 	    <div id="loggedin-container">
 	    	<h3> Welcome back</h3>
 	    	<div class="hero-unit">
-				<div id="user-info">
-						<div class="profile-image">
-							{{#facebookuser}}
-								<img src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" class=""/>
-							{{/facebookuser}}
-							{{^facebookuser}}
-								<a><i class="icon-user-hsc"></i></a>
-							{{/facebookuser}}	
-						</div>	
-						<div>
-							<p><strong>{{firstname}} {{lastname}}</strong></p>
-							<p><small>{{email}}</small></p>
-						</div>				
-						
-				</div>	
+				<div class="media" id="user-info">
+				  <div class="pull-left profile-image">
+			  			{{#facebookuser}}
+							<img class="media-object" src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" />
+						{{/facebookuser}}
+						{{^facebookuser}}
+							<a class="media-object"><i class="icon-user-hsc"></i></a>
+						{{/facebookuser}}
+				  </div>
+				  <div class="media-body">
+				    <p class="strong">{{firstname}} {{lastname}}</p>
+				    <p class="small break-word">{{email}}</p>
+				  </div>
+				</div>
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
 				<g:if test="${workflow != CgrailsConstants.WORKFLOW_OFFLINE}">
 					{{#isAdmin}}
