@@ -19,6 +19,7 @@ class UrlMappings {
 		"/api/product/$id/test/$pid?"(resource:"test")
 		"/api/user/$id?"(resource:"user")
 		"/api/admin/user/$id?"(resource:"adminuser")
+		"/api/admin/user/total"(controller:"adminuser",action:"total")
 		
 	}
 }

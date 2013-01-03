@@ -49,10 +49,17 @@ class AdminuserController {
 			}
 		}
 		else {
-			def allUsers = User.list()
+			int numUsers = params.ipp.toInteger()
+			int pageNum = params.page.toInteger()
+			def allUsers = User.list(max:numUsers,offset:(pageNum-1)*numUsers)
 			render allUsers as JSON
 			return
 		}
+	}
+	
+	def total = {
+		def totalUsers = User.list().size()
+		render totalUsers
 	}
 
 	def delete = {

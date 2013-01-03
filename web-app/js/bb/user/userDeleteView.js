@@ -76,6 +76,8 @@ UserDeleteView = new function() {
 	    	AdminUserCollection.get().get(userid).destroy({
     			success: function() {
     				Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
+    				//set usersUpdated flag
+    				mainApp.usersUpdated = true;
     			}	
 	    	});
 	    },

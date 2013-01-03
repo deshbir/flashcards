@@ -44,10 +44,13 @@ AdminUserView = new function() {
 		/*--------------- Static Class Variable ------------*/
 		myPanelId:"#bb-container",
 		myPanelRowId:"#bb-container #user-list",
+		totalUsers:0,
 		/*------------------------------------------------------*/
 		
 		events:{
-			"click #addNewUser": "createOnEnter"
+			"click #addNewUser": "createOnEnter",
+			"click #nxtPage" : "nextPage",
+			"click #prevPage" : "previousPage"
 		},
 		
 		initialize: function() {
@@ -57,8 +60,16 @@ AdminUserView = new function() {
 			this.template_body="";
 			this.template_body_row="";
 			/* ------------------------------------------------------------------------*/
-			
 			this.loadCollection();
+			
+			$.ajax({
+				url:com.compro.cgrails.REQUEST_CONTEXT + "/api/admin/user/total",
+				async:false,
+				context:this,
+				success:function(data){
+					this.totalUsers = parseInt(data);
+				}
+			});
 			
 			//Fill Templates
 			var that = this;					
@@ -79,10 +90,90 @@ AdminUserView = new function() {
 		
 		loadCollection: function()	{
 			this.collection = AdminUserCollection.get();	
+			// Enable pagination.
+			var that = this;
+            Backbone.Pagination.enable(this.collection, {
+                pretty:false,
+            	ipp: 2,
+                fetchOptions: {
+                    add: false,  //replacing the collection's model items with new items
+                    cache: !mainApp.isIE,
+                    success: function() {
+                    	//if there are no more records
+                    	if(that.collection.length==0){
+                    		that.collection.currentPage -=1;
+                    		return;
+                    	}
+                    	$(that.myPanelRowId).empty();
+        				that.collection.each( function(user) {
+        					var attribs = user.attributes;
+        					if(attribs.isAdmin == true || attribs.isFacebookUser == true) {
+        						attribs.disableDelete = true;
+        					} else {
+        						attribs.disableDelete = false;
+        					}
+        					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
+        						attribs.disableEdit = true;
+        					} else {
+        						attribs.disableEdit = false;
+        					}					
+        					/* ----- Appending Rows  ----------- */
+        			    	var compiled_template_body_row = Mustache.render(that.template_body_row, user.toJSON());	    	
+        			    	$(that.myPanelRowId).append(compiled_template_body_row);
+        			    });
+        	    	}
+                }
+            });
 		},
 		
 		createOnEnter: function()	{
 			Backbone.history.navigate("#/users/addUser", {trigger:true});
+		},
+		
+		nextPage: function(){
+			//update total users from server if some user is added or deleted
+			if(mainApp.usersUpdated){
+				$.ajax({
+					url:this.collection.baseUrl + "/total",
+					async:false,
+					context:this,
+					success:function(data){
+						this.totalUsers = parseInt(data);
+						mainApp.usersUpdated = false;
+					}
+				});
+			}
+			
+			var currPage = this.collection.currentPage;
+			var paginationConfig = this.collection.paginationConfig;
+			if(currPage * paginationConfig.ipp < this.totalUsers){
+				if ((currPage+1) * paginationConfig.ipp >= this.totalUsers){
+					$("#nxtPage").parent().addClass('disabled');
+				}
+				this.collection.nextPage();
+				$("#prevPage").parent().removeClass('disabled');
+				
+			}
+			else {
+				return;
+			}
+		},
+		
+		previousPage : function(){
+			var currPage = this.collection.currentPage;
+			var paginationConfig = this.collection.paginationConfig;
+			if(currPage>2){
+				this.collection.previousPage();
+				$("#nxtPage").parent().removeClass('disabled');
+			}
+			else if (currPage == 2){
+				this.collection.previousPage();
+				$("#prevPage").parent().addClass('disabled');
+				$("#nxtPage").parent().removeClass('disabled');
+			}
+			else {
+				return;
+			}
 		},
 		
 		render : function() {
@@ -99,25 +190,7 @@ AdminUserView = new function() {
 			$(this.myPanelId).html(compiled_template_body);
 			
 			/* ----- Appending Rows  ----------- */
-			that = this;
-	    	this.collection.fetch({cache: !mainApp.isIE, success: function() {
-				that.collection.each( function(user) {
-					var attribs = user.attributes;
-					if(attribs.isAdmin == true || attribs.isFacebookUser == true) {
-						attribs.disableDelete = true;
-					} else {
-						attribs.disableDelete = false;
-					}
-					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
-						attribs.disableEdit = true;
-					} else {
-						attribs.disableEdit = false;
-					}					
-					/* ----- Appending Rows  ----------- */
-			    	var compiled_template_body_row = Mustache.render(that.template_body_row, user.toJSON());	    	
-			    	$(that.myPanelRowId).append(compiled_template_body_row);
-			    });
-	    	}});	    	
+	    	this.collection.loadPage();	    	
 			
 			this.setElement(this.myPanelId);
 

@@ -79,5 +79,7 @@ modules = {
 		resource url:'js/bb/user/userAddView.js'
 		resource url:'js/bb/user/userEditView.js'
 		resource url:'js/bb/user/userDeleteView.js'
+		// Backbone Pagination
+		resource url:'js/libs/backbone.pagination.js'
 	}
 }

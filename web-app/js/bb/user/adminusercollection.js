@@ -5,7 +5,7 @@ AdminUserCollection = new function() {
 	var Collection = Backbone.Collection.extend({
 		model: AdminUserModel.get(),
 		initialize: function(){
-			this.url= com.compro.cgrails.REQUEST_CONTEXT + "/api/admin/user";
+			this.baseUrl= com.compro.cgrails.REQUEST_CONTEXT + "/api/admin/user";
 		},
 		comparator: function(user) {
 			return user.get('id');

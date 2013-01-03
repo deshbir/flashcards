@@ -79,7 +79,8 @@
  		cssProgressLoading : "",
  		disableLoadingProgress : false
  	}
- 		
+ 	//flag - whether total number of users is changed
+	var usersUpdated = false;	
  	/********************************************************/
  	/*                 PRIVATE MEMBERS                     */
  	/********************************************************/
@@ -495,7 +496,8 @@
  		"isIE":isIE,
  		"logger" : logger,
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
- 		"version" : version
+ 		"version" : version,
+ 		"usersUpdated":usersUpdated
  	}
  
 })();
