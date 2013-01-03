@@ -181,6 +181,7 @@
 
 
 /* --------------- Flashcard Component -------------------------- */
+/* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 	#test-home {
 		margin-top:0px;
@@ -198,7 +199,7 @@
 		  		float:left;
 		  		width:36%;
 		  		h4 {
-		  			font-size:14px;
+		  			font-size:13px;
 		  		}
 		  	}
 		  	.span9 {
@@ -241,35 +242,24 @@
 		#product	{
 			h3 {
 			  font-size: 16px;
+			  line-height: 19px;
 			}
 			h2 {
-			  font-size: 21px;
-              line-height: 25px;
+			  font-size: 21px;               
+			  line-height: 22px;
 			  margin-bottom: 10px;
 			}
 		}
 	}	
 }
 
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-	#page-header  {
-		#product {
-			h3 {
-				 line-height: 19px;
-			}
-			h2 {
-                  line-height: 22px;
-			}
-		}
-	}
+@media (min-width: 768px) and (max-width: 979px) {
 	.flashcard {
 		.header	{
-		  	.span3 {
-		  		h4 {
-		  			font-size:13px;
-		  		}
-		  	}
+			h4 {
+				font-size:13px;
+			}
 		}
 	}	
 }
+
