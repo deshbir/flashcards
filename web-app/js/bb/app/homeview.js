@@ -74,6 +74,7 @@ HomeView = new function() {
 		},
 		render : function() {
 			var compiled_template_body = Mustache.render(this.template_splash);
+			mainApp.responsiveRules.getHomeImageGrp().riload();
 			$(this.myPanelId).html(compiled_template_body);
 			var view = this;
 			if(mainApp.userinfo.loggedin){
@@ -112,7 +113,7 @@ HomeView = new function() {
 				 */
 				mainApp.transitionAppPanel(this.myPanelId);				
 			}
-			this.setElement("#loginform");			
+			this.setElement("#loginform");
 			return this; //Do this at the end to allow for method chaining.		
 		},
 		userlogin : function() {
