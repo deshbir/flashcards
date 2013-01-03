@@ -181,6 +181,16 @@
  		    
  			
  		});
+ 		
+ 		$(document).ajaxPrefilter(function (options, originalOptions, jqXHR) {
+ 			var requestURL = options.url;
+ 			if (requestURL.indexOf("?") > -1) {
+ 				requestURL = requestURL + "&version="  + version; 				
+ 			} else {
+ 				requestURL = requestURL + "?version=" + version;
+ 			}
+ 			options.url = requestURL;
+ 		});
  
  		$(document).ajaxSend(function (e, xhr, opts) {
  		    /* Do Nothing */
