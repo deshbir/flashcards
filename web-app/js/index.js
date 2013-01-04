@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 33;
+ 	var version = 34;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -185,9 +185,9 @@
  		$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
  			var requestURL = options.url;
  			if (requestURL.indexOf("?") > -1) {
- 				requestURL = requestURL + "&version="  + version; 				
+ 				requestURL = requestURL + "&v="  + version; 				
  			} else {
- 				requestURL = requestURL + "?version=" + version;
+ 				requestURL = requestURL + "?v=" + version;
  			}
  			options.url = requestURL;
  		});
