@@ -104,6 +104,7 @@ AdminUserView = new function() {
                     	}
                     	$(that.myPanelRowId).empty();
         				that.collection.each( function(user) {
+        					// Enabling and Disabling edit and delete calls.
         					var attribs = user.attributes;
         					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
         						attribs.disableDelete = true;
@@ -114,7 +115,8 @@ AdminUserView = new function() {
         						attribs.disableEdit = true;
         					} else {
         						attribs.disableEdit = false;
-        					}					
+        					}
+        					
         					/* ----- Appending Rows  ----------- */
         			    	var compiled_template_body_row = Mustache.render(that.template_body_row, user.toJSON());	    	
         			    	$(that.myPanelRowId).append(compiled_template_body_row);
