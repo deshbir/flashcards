@@ -125,7 +125,6 @@ class BootStrap {
 		System.out.println("Environment: " + System.getProperty("newrelic.environment"))
 		System.out.println("Server URL: " + grailsApplication.config.grails.serverURL)
 		System.out.println("Google Analytics ID: " + grailsApplication.config.google.analytics.webPropertyID)
-		dataSource.properties.each { System.out.println(it)}
 	}
 	
 	def destroy = {
