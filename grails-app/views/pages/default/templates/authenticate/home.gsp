@@ -21,7 +21,7 @@
 				  </div>
 				  <div class="media-body">
 				    <p class="strong">{{firstname}} {{lastname}}</p>
-				    <p class="small break-word">deshbir.singh.dugal@comprotechnologies.com</p>
+				    <p class="small break-word">{{email}}</p>
 				  </div>
 				</div>
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
