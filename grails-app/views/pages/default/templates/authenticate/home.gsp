@@ -21,7 +21,7 @@
 				  </div>
 				  <div class="media-body">
 				    <p class="strong">{{firstname}} {{lastname}}</p>
-				    <p class="small break-word">{{email}}</p>
+				    <p class="small break-word">deshbir.singh.dugal@comprotechnologies.com</p>
 				  </div>
 				</div>
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
@@ -44,7 +44,7 @@
 			<div class="hero-unit">
 				 <div class="input-prepend">
 					<span class="add-on"><i class="icon-user-hsc"></i></span>
-					<input class="span2 input-xlarge" id="username" name="j_username" type="email" placeholder="email" required>
+					<input class="span2 input-xlarge" id="username" name="j_username" type="text" placeholder="username" required>
 				</div>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-lock"></i></span>
