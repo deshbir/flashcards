@@ -118,6 +118,7 @@ class BootStrap {
 	
 
 	def init = { servletContext ->
+		System.out.println("Starting custom bootstrap...")
 		updateGrailsConfigForHeroku();
 		bootstrap_user_data(servletContext)
 		bootstrap_disciplines(servletContext)
