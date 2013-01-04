@@ -105,7 +105,7 @@ AdminUserView = new function() {
                     	$(that.myPanelRowId).empty();
         				that.collection.each( function(user) {
         					var attribs = user.attributes;
-        					if(attribs.isAdmin == true || attribs.isFacebookUser == true) {
+        					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
         						attribs.disableDelete = true;
         					} else {
         						attribs.disableDelete = false;
