@@ -1,1 +1,0 @@
-adt -package -storetype pkcs12 -keystore keystore.pfx -storepass compro -tsa none -target native %1  app.xml %2 app.html AIRAliases.js icons 
