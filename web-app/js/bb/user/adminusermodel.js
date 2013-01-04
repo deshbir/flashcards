@@ -7,20 +7,13 @@ AdminUserModel = new function() {
 		    validate: function( attributes ){
 		    	var errors = [];			
 		    	var username = attributes.username;
-		    	var password = attributes.password;
-		    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;		    	
+		    	var password = attributes.password;		    	
 		    	
 	            if (username == "") {
 	            	errors.push("Username can't be blank")
 	            	$('#error-name').removeClass('hide');
-	            	$('#error-username').addClass('hide');
-	            } else if (!re.test(username)) {
-	            	errors.push("Username must be a valid email id")
-	            	$('#error-name').addClass('hide');
-	            	$('#error-username').removeClass('hide');
 	            } else {
 	            	$('#error-name').addClass('hide');
-	            	$('#error-username').addClass('hide');
 	            };
 	            if (password == "") {
 	            	errors.push("Password can't be blank")

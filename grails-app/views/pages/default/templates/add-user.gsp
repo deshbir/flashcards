@@ -18,13 +18,10 @@
 						<div class="control-group">
 							<label class="control-label" for="username">Username</label>
 							<div class="controls">
-								<input id="username" type="email" placeholder="email" name="username" required/>					
+								<input id="username" type="text" placeholder="username" name="username" required/>					
 								<span class="alert alert-error hide" id="error-name">
 									<strong>Warning!</strong> Username can't be blank.
-								</span>
-								<span class="alert alert-error hide" id="error-username">
-									<strong>Warning!</strong> Username must be a valid email id.
-								</span>		
+								</span>	
 							</div>
 						</div>
 						<div class="control-group">
