@@ -61,7 +61,6 @@ AdminUserView = new function() {
 			this.template_body_row="";
 			/* ------------------------------------------------------------------------*/
 			this.loadCollection();
-			
 			$.ajax({
 				url:com.compro.cgrails.REQUEST_CONTEXT + "/api/admin/user/total",
 				async:false,
@@ -93,8 +92,7 @@ AdminUserView = new function() {
 			// Enable pagination.
 			var that = this;
             Backbone.Pagination.enable(this.collection, {
-                pretty:false,
-            	ipp: 2,
+            	ipp: 10,
                 fetchOptions: {
                     add: false,  //replacing the collection's model items with new items
                     cache: !mainApp.isIE,

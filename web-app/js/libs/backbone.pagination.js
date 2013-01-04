@@ -42,6 +42,9 @@
     // Load the page number given.
     loadPage: function(page) {
       this.currentPage = (page > 0) ? page : 1;
+      //##COMPRO## - fetchOptions.url updated 
+      //for sending pagination params only when user list is fetched
+      this.paginationConfig.fetchOptions.url = this.customUrl();
       this.fetch(this.paginationConfig.fetchOptions);
     },
 
@@ -56,16 +59,17 @@
     },
 
     // The url function will append the page and ipp attribute to the result
-    // of an baseUrl property or function (if it exists). Note, that
+    // of an url property or function (if it exists). Note, that
     // this url function will override any previous defined url function.
-    url: function() {
+    //##COMPRO## - function name changed from "url" to "customUrl"
+    customUrl: function() {
 
       // Generate the preceding base of the url.
       var base = "";
-      if (typeof this.baseUrl === 'function') {
-        base += this.baseUrl();
-      } else if (typeof this.baseUrl !== 'undefined') {
-        base += this.baseUrl;
+      if (typeof this.url === 'function') {
+        base += this.url();
+      } else if (typeof this.url !== 'undefined') {
+        base += this.url;
       }
 
       if (this.paginationConfig.pretty) {
