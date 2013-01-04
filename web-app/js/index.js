@@ -614,6 +614,7 @@
 		 		retries: 1,
 		 		breakpoints: [
 							{name: '', maxWidth: 767},
+							{name: '_Larger', minWidth: 384, minDevicePixelRatio: 2}, // For Retina Display In IPAD 3 Generation
 							{name: '_Larger', minWidth: 768}
 		 		           ]
 			});
