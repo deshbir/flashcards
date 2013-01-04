@@ -44,7 +44,7 @@
 			<div class="hero-unit">
 				 <div class="input-prepend">
 					<span class="add-on"><i class="icon-user-hsc"></i></span>
-					<input class="span2 input-xlarge" id="username" name="j_username" type="text" placeholder="username" required>
+					<input class="span2 input-xlarge" id="username" name="j_username" type="text" autocapitalize="off" placeholder="username" required>
 				</div>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-lock"></i></span>
