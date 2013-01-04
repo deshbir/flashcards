@@ -115,7 +115,7 @@ grails.plugins.springsecurity.authority.className = 'com.pearson.hsc.authenticat
 
 grails.plugins.springsecurity.rememberMe.alwaysRemember = true
 grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
-
+grails.plugins.springsecurity.failureHandler.useForward = true
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"

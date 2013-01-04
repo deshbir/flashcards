@@ -119,6 +119,7 @@ AdminUserView = new function() {
         			    	var compiled_template_body_row = Mustache.render(that.template_body_row, user.toJSON());	    	
         			    	$(that.myPanelRowId).append(compiled_template_body_row);
         			    });
+        				that.validateNextButton();
         	    	}
                 }
             });
@@ -132,7 +133,7 @@ AdminUserView = new function() {
 			//update total users from server if some user is added or deleted
 			if(mainApp.usersUpdated){
 				$.ajax({
-					url:this.collection.baseUrl + "/total",
+					url:this.collection.url + "/total",
 					async:false,
 					context:this,
 					success:function(data){
@@ -171,6 +172,25 @@ AdminUserView = new function() {
 			}
 			else {
 				return;
+			}
+		},
+		validateNextButton : function(){
+			//update total users from server if some user is added or deleted
+			if(mainApp.usersUpdated){
+				$.ajax({
+					url:this.collection.url + "/total",
+					async:false,
+					context:this,
+					success:function(data){
+						this.totalUsers = parseInt(data);
+						mainApp.usersUpdated = false;
+					}
+				});
+			}
+			var currPage = this.collection.currentPage;
+			var paginationConfig = this.collection.paginationConfig;
+			if(currPage * paginationConfig.ipp >= this.totalUsers){
+				$("#nxtPage").parent().addClass('disabled');
 			}
 		},
 		

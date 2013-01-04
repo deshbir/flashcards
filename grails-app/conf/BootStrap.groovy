@@ -19,7 +19,7 @@ class BootStrap {
 			def facebookRole = new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
 			adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
 		}
-			
+		
 		if (!User.count()) {
 			def appUser = new User(username: 'hsc@pearson.com', firstName: 'John', lastName: 'Doe',enabled: true, password: 'compro', email: 'email@compro.com', isFacebookUser: false)
 			appUser.save(flush: true)
@@ -29,8 +29,12 @@ class BootStrap {
 
 			def lisaUser = new User(username: 'lisa.strite@pearson.com', firstName: 'Lisa', lastName: 'Strite',enabled: true, password: 'pearson2013', email: 'lisa.strite@pearson.com', isAdmin:true, isFacebookUser: false)
 			lisaUser.save(flush: true)
+
+			def hscUser = new User(username: 'hsc', firstName: 'Default', lastName: 'User',enabled: true, password: 'breakthrough', email: 'hsc@pearson.com', isAdmin:false, isFacebookUser: false)
+			hscUser.save(flush: true)
 			
 			UserRole.create appUser, userRole, true
+			UserRole.create hscUser, userRole, true
 			UserRole.create adminUser, adminRole, true
 			UserRole.create lisaUser, adminRole, true
 		}
@@ -115,12 +119,13 @@ class BootStrap {
 
 	def init = { servletContext ->
 		updateGrailsConfigForHeroku();
-		bootstrap_user_data(servletContext);
-		bootstrap_disciplines(servletContext);	
-		System.out.println("Application startup completed...");
-		System.out.println("Environment: " + System.getProperty("newrelic.environment"));
-		System.out.println("Server URL: " + grailsApplication.config.grails.serverURL);
-		System.out.println("Google Analytics ID: " + grailsApplication.config.google.analytics.webPropertyID);
+		bootstrap_user_data(servletContext)
+		bootstrap_disciplines(servletContext)
+		System.out.println("Application startup completed...")
+		System.out.println("Environment: " + System.getProperty("newrelic.environment"))
+		System.out.println("Server URL: " + grailsApplication.config.grails.serverURL)
+		System.out.println("Google Analytics ID: " + grailsApplication.config.google.analytics.webPropertyID)
+		dataSource.properties.each { System.out.println(it)}
 	}
 	
 	def destroy = {
