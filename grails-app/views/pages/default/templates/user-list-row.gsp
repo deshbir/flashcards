@@ -27,7 +27,7 @@
 			<i class="icon-pencil disableControls"></i>
 		{{/disableEdit}}
 		{{^disableEdit}}
-			<a href="#/users/edit/{{id}}">
+			<a class="editUser" data-id="{{id}}" href="javascript:;" >
 				<i class="icon-pencil"></i>
 			</a>
 		{{/disableEdit}}		
@@ -38,7 +38,7 @@
 			<i class="icon-remove disableControls"></i>
 		{{/disableDelete}}
 		{{^disableDelete}}
-			<a href="#/users/delete/{{id}}">
+			<a  class="deleteUser" data-id="{{id}}"  href="javascript:;">
 				<i class="icon-remove"></i>
 			</a>
 		{{/disableDelete}}			

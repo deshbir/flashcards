@@ -50,7 +50,10 @@ AdminUserView = new function() {
 		events:{
 			"click #addNewUser": "createOnEnter",
 			"click #nxtPage" : "nextPage",
-			"click #prevPage" : "previousPage"
+			"click #prevPage" : "previousPage",
+			"click .editUser" : "editUser",
+			"click .deleteUser" : "deleteUser"
+			
 		},
 		
 		initialize: function() {
@@ -175,6 +178,14 @@ AdminUserView = new function() {
 			else {
 				return;
 			}
+		},
+		editUser: function(ev) {
+			var id = $(ev.currentTarget).data('id');
+			window.location.href = "#/users/edit/" + id;
+		},
+		deleteUser: function(ev) {
+			var id = $(ev.currentTarget).data('id');
+			window.location.href = "#/users/delete/" + id;
 		},
 		validateNextButton : function(){
 			//update total users from server if some user is added or deleted
