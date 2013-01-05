@@ -66,11 +66,22 @@ UserAddView = new function() {
 	    	AdminUserCollection.get().create(
 	    			this.newAttributes(),
 	    			{
-	    				success: function() {
-	    					Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
-	    					//set usersUpdated flag
-	    					mainApp.usersUpdated = true;
-	    				}
+	    		        success: function(response) {
+	    					if (response.toJSON().success) { 
+		    					Backbone.history.navigate("#/users/list", {trigger:true,replace:true});
+		    					//set usersUpdated flag
+		    					mainApp.usersUpdated = true;					
+	    					} else {
+	    						var errorMessage = "";
+	    						if (response.toJSON().error) {
+	    							errorMessage = response.toJSON().error;						
+	    						} else {
+	    							errorMessage = response.toJSON();
+	    						}
+	    						$("#error-username").removeClass("hide");
+	    						$("#errorMessage").html("<strong>Warning!</strong>" + errorMessage);	    						
+	    					} 
+	    		        }	    				
 	    			}
 	    		);
 	    },

@@ -1,6 +1,7 @@
 package com.pearson.admin
 
 import grails.converters.JSON
+import grails.validation.ValidationException
 
 import org.hibernate.HibernateException
 
@@ -30,10 +31,14 @@ class AdminuserController {
 			user.save(failOnError: true)
 			Role role = Role.findByAuthority(authority)
 			UserRole.create user, role, true
-			render user as JSON
+			render([success: true, user: user] as JSON)
 			return
-		} catch(HibernateException e){
-			render (text:user.errors,status:500)
+		} catch(ValidationException e){
+			render([error: "Username already exists."] as JSON)
+			return
+		} 
+		catch(HibernateException e){
+			render([error: user.errors] as JSON)
 			return
 		}
 	}
