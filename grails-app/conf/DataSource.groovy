@@ -62,7 +62,7 @@ environments {
 			*/	
 		
 			dataSource {
-				dbCreate = "none"
+				dbCreate = "update"
 				driverClassName = "org.postgresql.Driver"
 				dialect = org.hibernate.dialect.PostgreSQLDialect
 			
