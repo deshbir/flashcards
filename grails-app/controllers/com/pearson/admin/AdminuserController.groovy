@@ -4,6 +4,7 @@ import grails.converters.JSON
 
 import org.hibernate.HibernateException
 
+import com.pearson.hsc.authenticate.FacebookUser
 import com.pearson.hsc.authenticate.Role
 import com.pearson.hsc.authenticate.User
 import com.pearson.hsc.authenticate.UserRole
@@ -11,7 +12,8 @@ import com.pearson.hsc.authenticate.UserRole
 class AdminuserController {
 	
 	def springSecurityService
-
+	def facebookAuthService
+	
 	/*
 	 GET	show
 	 PUT	update
@@ -26,9 +28,8 @@ class AdminuserController {
 		}
 		try {
 			user.save(failOnError: true)
-			List<Role> roleList = Role.findAllByAuthority(authority)
-			Role userRole = roleList.get(0)
-			UserRole.create user, userRole, true
+			Role role = Role.findByAuthority(authority)
+			UserRole.create user, role, true
 			render user as JSON
 			return
 		} catch(HibernateException e){
@@ -61,13 +62,28 @@ class AdminuserController {
 		def totalUsers = User.list().size()
 		render totalUsers
 	}
-
+	
+	
 	def delete = {
 		if(params.id) {
-			def user = User.get(params.id)
-			def userRole = UserRole.findByUser(user)
-			userRole.delete()
-			if(user) {
+			User user = User.get(params.id)
+			if(user){
+				Set<Role> roles = user.getAuthorities()
+				if(roles.contains(Role.findByAuthority("ROLE_FACEBOOK"))){
+					FacebookUser fbUser = FacebookUser.findByUser(user)
+					if(fbUser) {
+						try {
+							fbUser.delete()
+							render ""
+						} catch(HibernateException e){
+							render (text:"could not delete user",status:500)
+							return
+						}
+					}
+				} 
+				for(Role role : roles){
+					UserRole.remove(user, role)
+				}
 				try {
 					user.delete()
 					render ""
@@ -91,7 +107,7 @@ class AdminuserController {
 			if(user) {
 				user.properties = params['user']
 				try {
-					user.save(failOnError: true, flush: true,validate:false, insert:false)
+					user.save(failOnError: true, flush: true)
 					render user as JSON
 					return
 				} catch(HibernateException e){
