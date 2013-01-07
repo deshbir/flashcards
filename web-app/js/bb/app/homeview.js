@@ -23,7 +23,11 @@ HomeView = new function() {
 	    },
 	    notFound : function(){
 	    	if(location.href.indexOf("#") == -1){
-	    		Backbone.history.navigate("#/home");
+	    		if (com.compro.cgrails.WORKFLOW == "offline") {
+	    			Backbone.history.navigate("#/discipline");
+	    		} else {
+	    			Backbone.history.navigate("#/home");
+	    		}
 	    		return true;
 	    	}
 	    	if(window.location.hash.indexOf("#access_token")>-1){

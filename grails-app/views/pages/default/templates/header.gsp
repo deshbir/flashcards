@@ -1,3 +1,8 @@
+<%@ page import="com.compro.cgrails.CgrailsUtils" %>
+<%@ page import="com.compro.cgrails.CgrailsConstants" %>
+
+<g:set var="workflow" value="${CgrailsUtils.getWorkflow()}"/>
+
 <div class="navbar-inner">
 	<div class="container">
 		<div id="back" class="brand-button">
@@ -25,11 +30,14 @@
 					<i class="icon-home"></i>
 				</a>
 			</li>
-			<li class="loggedin">
-				<a href="javascript:void(0);" id="logout" title="Profile"> 
-					<i class="icon-user"></i>
-				</a>
-			</li>
+			
+			<g:if test="${workflow != CgrailsConstants.WORKFLOW_OFFLINE}">
+				<li class="loggedin">
+					<a href="javascript:void(0);" id="logout" title="Profile"> 
+						<i class="icon-user"></i>
+					</a>
+				</li>
+			</g:if>	
 		</ul>
 		
 

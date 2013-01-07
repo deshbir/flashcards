@@ -23,11 +23,15 @@ class Test {
 	 ***********************************/
 	
 	def static String[] offlineCachedUrls() {
-		return  ["/api/discipline/1/product/1",
-				 "/api/discipline/1/product/2",
-				 "/api/discipline/1/product/3",
-				 "/api/discipline/2/product/12",
-				 "/api/discipline/2/product/13"];
+		def returnList = []
+			def products = Product.list()
+			products.each{product->
+				def tests = Test.findAllByProduct(product)
+				tests.each{test->
+					returnList.add("/api/product/" + product.id + "/test/" + test.id)
+				}
+		}
+		return  returnList;
 	}
 		
 	/******************************

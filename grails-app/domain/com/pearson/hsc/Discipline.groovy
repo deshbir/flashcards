@@ -26,7 +26,13 @@ class Discipline {
 	 ***********************************/
 	
 	def static String[] offlineCachedUrls() {
-		return  ["/api/discipline/"];
+		def returnList = []
+		def disciplines = Discipline.list()
+		returnList.add("/api/discipline/")
+		disciplines.each{discipline->
+			returnList.add("/api/discipline/" + discipline.id)
+		}
+		return  returnList
 	}
 		
 	/******************************

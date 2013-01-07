@@ -20,11 +20,7 @@ class Topic implements Comparable {
 	 ***********************************/
 	
 	def static String[] offlineCachedUrls() {
-		return  ["/api/discipline/1/product/1",
-				 "/api/discipline/1/product/2",
-				 "/api/discipline/1/product/3",
-				 "/api/discipline/2/product/12",
-				 "/api/discipline/2/product/13"];
+		return  [];
 	}
 		
 	/******************************

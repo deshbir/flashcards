@@ -52,6 +52,9 @@ target(generate: "Generates Offline version of the application") {
    
    grailsConsole.updateStatus "Started Generating offline version for " + skin + " skin.....";
    //depends(deployCSS)
+   grailsConsole.updateStatus "Updating config....";
+   offlineApplicationBuilder.updateConfigForOfflineApp();
+   grailsConsole.updateStatus "Successfully updated config.....";  
    grailsConsole.updateStatus "Authenticating User.....";
    offlineApplicationBuilder.authenticate();
    grailsConsole.updateStatus "Cleaning older package.....";
@@ -61,8 +64,11 @@ target(generate: "Generates Offline version of the application") {
    offlineApplicationBuilder.copyScripts("${cgrailsPluginDir}", pluginVersion);
    grailsConsole.updateStatus "Successfully copied javascript files.....";
    grailsConsole.updateStatus "Copying image files....." ;
-   offlineApplicationBuilder.copyImages();
+   offlineApplicationBuilder.copyImages();   
    grailsConsole.updateStatus "Successfully coped image files.....";
+   grailsConsole.updateStatus "Copying assets...." ;
+   offlineApplicationBuilder.copyAssets();
+   grailsConsole.updateStatus "Successfully coped assets.....";
    grailsConsole.updateStatus "Copying CSS files.....";
    offlineApplicationBuilder.copyStyles(skin);
    grailsConsole.updateStatus "Successfully copied CSS files.....";

@@ -1,6 +1,5 @@
 package com.pearson.hsc
 
-import java.util.SortedSet;
 
 class Product implements Comparable {
 
@@ -30,9 +29,16 @@ class Product implements Comparable {
 	 ***********************************/
 	
 	def static String[] offlineCachedUrls() {
-		return  ["/api/discipline/1", 
-				 "/api/discipline/2", 
-				 "/api/discipline/3"];
+		def returnList = []
+		def disciplines = Discipline.list()
+		disciplines.each{discipline->
+			def products = Product.findAllByDiscipline(discipline);
+			products.each{product->
+				returnList.add("/api/discipline/" + discipline.id + "/product/" + product.id)
+			}
+			
+		}
+		return  returnList;
 	}
 		
 	/******************************

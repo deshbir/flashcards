@@ -66,7 +66,7 @@
       , devicePixelRatio = win.devicePixelRatio || 1
       
         // Bandwidth info (bool)
-      , hasLowBandwidth = hasLowBandwidth()
+      , hasLowBandwidth = hasLowBandwidthFunc()
 
         // Support for Opera Mini (executes Js on the server)
       , operaMini = Object[PROTOTYPE].toString[CALL](win.operamini) === '[object OperaMini]'
@@ -468,7 +468,11 @@
      * - W3C Editor's draft: http://dvcs.w3.org/hg/dap/raw-file/tip/network-api/Overview.html
      * List of device bandwidths: http://en.wikipedia.org/wiki/List_of_device_bandwidths#Mobile_telephone_interfaces
      */
-    function hasLowBandwidth() {
+    /****************************
+     * COMPRO CHANGE
+     * Changed the name of function from "hasLowBandwidth" to "hasLowBandwidthFunc" for Offline App compatibility.
+     *************************/
+    function hasLowBandwidthFunc() {
         var navigator = win.navigator
           , connection = navigator.connection || navigator.mozConnection || 
                 navigator.webkitConnection || navigator.oConnection || 

@@ -34,6 +34,7 @@ class OfflineApplicationBuilder {
 	private static final String PAGES_DIR_PATH = "grails-app/views/pages/"	
 	private static final String JAVSCRIPT_DIR_NAME = "js"
 	private static final String IMAGES_DIR_NAME = "images"
+	private static final String ASSETS_DIR_NAME = "assets"	
 	private static final String FONTS_DIR_NAME = "fonts"
 	private static final String CSS_DIR_NAME = "css"
 	private static final String INDEX_FILE_NAME = "index.html"	
@@ -68,6 +69,14 @@ class OfflineApplicationBuilder {
 		public boolean accept(File file) {
 			return file.getName().contains(".css");
 		}
+	}
+	
+	
+	/***********************************************************************
+	 * Function to Update Config for offline application.
+	 ***********************************************************************/
+	public void updateConfigForOfflineApp() {
+		grailsApplication.config.hsc.media.assets.basepath = "assets/"
 	}
 	
 	/***********************************************************************
@@ -229,6 +238,16 @@ class OfflineApplicationBuilder {
 		writeFile(contentString, new File(OFFLINE_PACKAGE_DIR_PATH + "plugins/" +
 							CgrailsConstants.CGRAILS + "-" + pluginVersion + "/"
 							 + JAVSCRIPT_DIR_NAME + PRELOADED_TEMPLATES_JS_PATH) );
+	}	
+	
+	/***********************************************************************
+	 * Function to copy assets in offline package.
+	 * Specific to Flashcards
+	 ***********************************************************************/
+	public void copyAssets() {
+		File src = new File(WEBAPP_DIR_NAME + "/" + ASSETS_DIR_NAME);
+		File dst = new File(OFFLINE_PACKAGE_DIR_PATH + ASSETS_DIR_NAME);
+		copyDirectory(src, dst);
 	}
 	
 	private Set<String> getRequiredTemplates(String skin, def config){
