@@ -1,6 +1,7 @@
 package com.pearson.admin
 
 import grails.converters.JSON
+import grails.util.GrailsUtil
 import grails.validation.ValidationException
 
 import org.hibernate.HibernateException
@@ -44,6 +45,8 @@ class AdminuserController {
 	}
 	
 	def show = {
+		def classLoader = Thread.currentThread().contextClassLoader
+		def facebookUsersConfig = new ConfigSlurper(GrailsUtil.environment).parse(classLoader.loadClass('FacebookUsersConfig'));
 		if(params.id) {
 			def user = User.get(params.id)
 			if(user) {
@@ -57,8 +60,15 @@ class AdminuserController {
 		else {
 			int numUsers = params.ipp.toInteger()
 			int pageNum = params.page.toInteger()
+			def returnList = []
 			def allUsers = User.list(max:numUsers,offset:(pageNum-1)*numUsers)
-			render allUsers as JSON
+			for(User user:allUsers){
+				if(user.isFacebookUser && facebookUsersConfig.userids.contains(user.username)){
+					continue
+				}
+				returnList.add(user)
+			}
+			render returnList as JSON
 			return
 		}
 	}
