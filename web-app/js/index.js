@@ -652,9 +652,20 @@
 	}
  	
 	 function GATrackPageView(){
-		var url = Backbone.history.getFragment();
-		_gaq.push(['_trackPageview', "/#/"+url]);
-				
+		var trackPage = true;
+		var urlParametersString = window.location.search.replace( "?", "" );
+		if(urlParametersString != ""){
+			var urlParameters = urlParametersString.split("&");
+			for(var i=0 ; i< urlParameters.length ; i++){
+				if(urlParameters[i] == "qa=true"){
+					trackPage = false;
+				}
+			}
+		}
+		if(trackPage) {	
+			var url = Backbone.history.getFragment();
+			_gaq.push(['_trackPageview', "/#/"+url]);
+		}
 	}
  	
  	//Check if browser is IE
