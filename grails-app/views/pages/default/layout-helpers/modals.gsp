@@ -79,3 +79,33 @@
 	</div>
 </div>
 
+<div id="unsupported-browser-version-modal" class="modal hide fade" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">x</button>
+		<h3 id="ajax-error-label">
+			UnSupported Browser Version
+		</h3>
+	</div>
+	<div class="modal-body">
+		<div class="content-body">
+			<div class="message logContent">
+				<p>Your browser (IE8 or below) is not fully compatible with our application and some features will not work correctly.</p>
+				<p>
+				We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
+				</p>
+				<ul>
+					<li>Safari </li>
+					<li>Firefox </li>
+					<li>Chrome </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<span class="pull-right"><button class="btn" data-dismiss="modal" aria-hidden="true">
+			Ignore and Proceed
+		</button></span>
+	</div>
+</div>

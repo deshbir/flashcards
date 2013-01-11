@@ -745,7 +745,9 @@
  			isIE = navigator.appVersion.indexOf("MSIE") != -1;
  			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
- 				
+ 				if(isIE && getInternetExplorerVersion()<9){
+					$('#unsupported-browser-version-modal').modal();
+				}
  				logger.info("On Ready - Starting Initialization"); 				
  
  				logger.info("global error handlers initialization");
