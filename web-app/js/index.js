@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 39;
+ 	var version = 38;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -745,7 +745,11 @@
  			isIE = navigator.appVersion.indexOf("MSIE") != -1;
  			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
- 				
+ 				if(isIE && getInternetExplorerVersion()<9){
+					console.log("true####");
+					$('#browser-info').html("IE 8 and below are not supported.");
+					$('#unsupported-browser-version-modal').modal();
+				}
  				logger.info("On Ready - Starting Initialization"); 				
  
  				logger.info("global error handlers initialization");
