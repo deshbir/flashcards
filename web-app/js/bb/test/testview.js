@@ -116,7 +116,8 @@ TestView = new function() {
 							optionArray.push(questions[i]["option"+j]);
 					}
 					//Adding new parameter options which stores shuffled options.
-					questions[i].options=_.shuffle(optionArray);
+					//questions[i].options=_.shuffle(optionArray);
+					questions[i].options = optionArray;
 				}
 				
 				if (attribs.type == "book") {
