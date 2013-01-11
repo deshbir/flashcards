@@ -746,8 +746,6 @@
  			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
  				if(isIE && getInternetExplorerVersion()<9){
-					console.log("true####");
-					$('#browser-info').html("IE 8 and below are not supported.");
 					$('#unsupported-browser-version-modal').modal();
 				}
  				logger.info("On Ready - Starting Initialization"); 				
