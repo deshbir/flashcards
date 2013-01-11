@@ -8,10 +8,10 @@
 @footer-bg-color:#364395;
 @footer-color:@white;
 @navbarInverseLinkColor:@white; 
-@product_heading_color:#5b544e;
+@product_heading_color:#000000;
 
-@HSCButtonColor: #364395; //orange
-@HSCButtonBottomColor:#364395;
+@HSCButtonColor: #2993de; //blue
+@HSCButtonBottomColor:#2993de;
 @HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
 
 
@@ -20,7 +20,7 @@
 
 @playlist-li-color:@white;
 @playlist-icon-border-color:rgb(211,208,191);
-@timing-bg-color :#FFE5D0;
+@timing-bg-color: lighten(@HSCButtonColor, 15%);
 @playlist-li-text-color:#5b544e;
 @status-bar-bg-color : #364395;
 @product-home-border-color:lighten(#364395,15%);
@@ -51,11 +51,12 @@ select:focus:required:invalid {
 
 .btn {
 	border-color:#364395;
-	.box-shadow(0px 1px #364395);
-	text-shadow: 0px 1px 1px #c25a3c;
+	.box-shadow(.21 1px #000000);
+	text-shadow: 0px 1px 1px #0f578a;
 	&:hover {
 		.vertical-gradient(@HSCButtonColor, @HSCButtonBottomColor);
 	}
+	color:#ffffff;
 }
 
 /***************************************** Product-home styles****************************/

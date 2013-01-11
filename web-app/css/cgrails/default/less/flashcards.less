@@ -10,7 +10,7 @@
 	padding-bottom:5px;
 	margin-top:10px;
 	padding-bottom: 10px;
-	border-bottom:solid 1px @flashcard-border-color; 
+	border-bottom:solid 1px @flashcard-header-border-color; 
 	.container {
 		padding-left:0;
 	}
@@ -51,10 +51,10 @@
 	  	margin: 0px 10px 10px 10px;
 	  	border-bottom: 1px solid @flashcard-header-border-color;
 		.btn.disabled, .btn[disabled]  {
-	  		 .box-shadow(0px 1px lighten(#c25a3c,15%));
+	  		 .box-shadow(0px 1px lighten(@HSCButtonColor,5%));
 	  		.vertical-gradient(lighten(@HSCButtonColor,15%), lighten(@HSCButtonBottomColor,15%));
 	  		color:#FFFFFF;
-	  		border-color:lighten(#c25a3c,15%);
+	  		border-color:lighten(@HSCButtonColor,5%);
 	  		font-style:italic;
 	  	}
 	  	h4 {
