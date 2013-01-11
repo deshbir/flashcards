@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "MIBC Overview",
 	"description": "What is MIBC and what are the instructors talking about?   Learn how to have a great conversation for a solution sale.",
-	"thumbnail": "Health Professions/MIBC/MIBC-web-{breakpoint-name}.jpg",
+	"thumbnail": "Health Professions/MIBC/MIBC-web-thumb2.jpg",
 	"image": "Health Professions/MIBC/MIBC-web.jpg",
 	"sequence": 1,
 	"type": "lab",
@@ -424,7 +424,7 @@
 {
 	"name": "MyMedicalTerminologyLab",
 	"description": "New to our Medical Terminology list in 2013.",
-	"thumbnail": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula-{breakpoint-name}.png",
+	"thumbnail": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula-thumb2.png",
 	"image": "Health Professions/MMTL/WM_MYMedicalTerminologyLAB_green_Cformula.png",
 	"sequence": 4,
 	"type": "lab",

@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "NCCER: The Story",
 	"description": "An overview of NCCER, the credentials they provide, the products we jointly publish, knowing when to sell NCCER, and the tips for how to effectively sell the solution.",
-	"thumbnail": "Trades/NCCER/nccer new logo-{breakpoint-name}.jpg",
+	"thumbnail": "Trades/NCCER/nccer new logo-thumb2.jpg",
 	"image": "Trades/NCCER/nccer new logo.jpg",
 	"sequence": 1,
 	"type": "lab",
@@ -289,7 +289,7 @@
 {
 	"name": "NCCERconnect",
 	"description": "A unique online course supplement in the form of an electronic book and essential course management tools ",
-	"thumbnail": "Trades/NCCERConnect/nccer new logo-{breakpoint-name}.jpg",
+	"thumbnail": "Trades/NCCERConnect/nccer new logo-thumb2.jpg",
 	"image": "Trades/NCCERConnect/nccer new logo.jpg",
 	"sequence": 3,
 	"type": "lab",

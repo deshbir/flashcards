@@ -657,7 +657,7 @@
 {
 	"name": "MyLegalStudiesLab",
 	"description": "MyLegalStudiesLab walkthrough",
-	"thumbnail": "Paralegal/MLSL/mylab-{breakpoint-name}.png",
+	"thumbnail": "Paralegal/MLSL/mylab-thumb2.png",
 	"image": "Paralegal/MLSL/mylab.png",
 	"sequence": 6,
 	"type": "lab",

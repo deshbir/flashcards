@@ -2,7 +2,7 @@
 "products" : [{
 	"name": "MyHospitalityLab",
 	"description": "MyHospitalityLab walkthrough",
-	"thumbnail": "Hospitality/mhl-{breakpoint-name}.png",
+	"thumbnail": "Hospitality/mhl-thumb2.png",
 	"image": "Hospitality/mhl.png",
 	"sequence": 1,
 	"type": "lab",

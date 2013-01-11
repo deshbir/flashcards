@@ -141,7 +141,7 @@
 {
 	"name": "MyCulinaryLab",
 	"description": "MyCulinaryLab walkthrough",
-	"thumbnail": "Culinary/MCL/mcl-{breakpoint-name}.png",
+	"thumbnail": "Culinary/MCL/mcl-thumb2.png",
 	"image": "Culinary/MCL/mcl.png",
 	"sequence": 2,
 	"type": "lab",
@@ -280,7 +280,7 @@
 {
 	"name": "NRA: The Story",
 	"description": "A brief overview of the NRA and the four main solutions that Pearson sells.",
-	"thumbnail": "Culinary/NRA/NRA-{breakpoint-name}.jpeg",
+	"thumbnail": "Culinary/NRA/NRA-thumb2.jpeg",
 	"image": "Culinary/NRA/NRA.jpeg",
 	"sequence": 3,
 	"type": "lab",

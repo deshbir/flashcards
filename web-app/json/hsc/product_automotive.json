@@ -153,7 +153,7 @@
 {
 	"name": "MyAutomotiveLab",
 	"description": "Automotive Fundamentals course offerings compared and the competitive landscape.",
-	"thumbnail": "Auto/MAL/myautomotivelab-{breakpoint-name}.jpg",
+	"thumbnail": "Auto/MAL/myautomotivelab-thumb2.jpg",
 	"image": "Auto/MAL/myautomotivelab.jpg",
 	"sequence": 2,
 	"type": "lab",
