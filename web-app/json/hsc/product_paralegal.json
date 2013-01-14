@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "The Paralegal Professional,4/e",
+	"name": "The Paralegal Professional, 4e",
 	"description": "The Paralegal Professional walkthrough",
 	"thumbnail": "Paralegal/Goldman/goldmanintro-{breakpoint-name}.png",
 	"image": "Paralegal/Goldman/goldmanintro.png",
@@ -72,7 +72,7 @@
 			        				},
 									{
 							        	"type": "MCQSS",
-							        	"text": "Our competitors donâ€™t have a chapter on legal technology",
+							        	"text": "Our competitors don’t have a chapter on legal technology",
 							        	"sequence": "3",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
@@ -103,8 +103,8 @@
 							        	"videourl": "",
 							        	"option1": "MyLegalstudiesLab",
 							        	"option2": "MyParalegalLab",
-							        	"option3": "MyLegalWorkship D. Paralegallive",
-							        	"option4": "",
+							        	"option3": "MyLegalWorkship",
+							        	"option4": "Paralegallive",
 							        	"option5": "",
 							        	"option6": "",
 							        	"option7": "",
@@ -139,10 +139,10 @@
 			        }]
 },
 {
-	"name": "Real Estate Fundamentals,1/e",
+	"name": "Real Estate Fundamentals, 1e",
 	"description": " Real Estate Fundamentals walkthrough",
-	"thumbnail": "Paralegal/Hughes/cover_placeholder-{breakpoint-name}.gif",
-	"image": "Paralegal/Hughes/cover_placeholder.gif",
+	"thumbnail": "Paralegal/Hughes/cover_placeholder-{breakpoint-name}.jpg",
+	"image": "Paralegal/Hughes/cover_placeholder.jpg",
 	"sequence": 2,
 	"type": "book",
 	"author": "Hughes",
@@ -268,7 +268,7 @@
 			        }]
 },
 {
-	"name": "Ethics for the Legal Professional,8/e",
+	"name": "Ethics for the Legal Professional, 8e",
 	"description": "Ethics for the Legal Professional Walkthrough",
 	"thumbnail": "Paralegal/Orlik/orlik_i-{breakpoint-name}.jpg",
 	"image": "Paralegal/Orlik/orlik_i.jpg",
@@ -397,10 +397,10 @@
 			        }]
 },
 {
-	"name": "Torts and Personal Injury Law,4/e",
+	"name": "Torts and Personal Injury Law, 4e",
 	"description": "Torts and Personal Injury Law Walkthrough",
-	"thumbnail": "Paralegal/Jeffries/cover_placeholder-{breakpoint-name}.gif",
-	"image": "Paralegal/Jeffries/cover_placeholder.gif",
+	"thumbnail": "Paralegal/Jeffries/cover_placeholder-{breakpoint-name}.jpg",
+	"image": "Paralegal/Jeffries/cover_placeholder.jpg",
 	"sequence": 4,
 	"type": "book",
 	"author": "Jeffries",
@@ -526,7 +526,7 @@
 			        }]
 },
 {
-	"name": "Tort Law, 2/e",
+	"name": "Tort Law, 2e",
 	"description": "Tort Law walkthrough",
 	"thumbnail": "Paralegal/Michaud/michaudtorts_i-{breakpoint-name}.jpg",
 	"image": "Paralegal/Michaud/michaudtorts_i.jpg",

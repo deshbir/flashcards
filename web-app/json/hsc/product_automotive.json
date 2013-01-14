@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "Automotive Systems Overview",
+	"name": "Automotive Systems",
 	"description": "An overview of Automotive Systems titles A1-A8 their shared story and their competitive advantage.",
 	"thumbnail": "Auto/Systems/HALDERMAN ENGPERF4 COVER -{breakpoint-name}.jpg",
 	"image": "Auto/Systems/HALDERMAN ENGPERF4 COVER .jpg",
@@ -37,10 +37,10 @@
 			    "tests": [
 			        {
 			        	"name": "test1",
-			        	"instructions": "What is ASE?",        	
+			        	"instructions": "This is a test.",        	
 			        	"questions": [{
 							        	"type": "MCQSS",
-							        	"text": "What product should you lead with when selling in intro to CJ?",
+							        	"text": "What is ASE?",
 							        	"sequence": "1",
 							        	"maxscore": "5",
 							        	"mediatype": "None",

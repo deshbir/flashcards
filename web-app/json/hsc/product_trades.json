@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "NCCER: The Story",
+	"name": "NCCER-- General Story & Product Line",
 	"description": "An overview of NCCER, the credentials they provide, the products we jointly publish, knowing when to sell NCCER, and the tips for how to effectively sell the solution.",
 	"thumbnail": "Trades/NCCER/nccer new logo-thumb2.jpg",
 	"image": "Trades/NCCER/nccer new logo.jpg",
@@ -138,7 +138,7 @@
 			}]
 },
 {
-	"name": "HVAC,2/e",
+	"name": "HVAC, 2e",
 	"description": "An overview of the reader-friendly, updated second edition of Fundamentals of HVACR.",
 	"thumbnail": "Trades/HVAC/stanfield 2e cover-{breakpoint-name}.jpg",
 	"image": "Trades/HVAC/stanfield 2e cover.jpg",
@@ -186,7 +186,7 @@
 				        	"option1": "Carter travels to many state and national meetings and is well known and liked",
 				        	"option2": "Carter writes a useful teaching and industry blog",
 				        	"option3": "Carter uses MHL in the classroom and can help your instructors with curriculum ideas",
-				        	"option4": "CAll of the above",
+				        	"option4": "All of the above",
 				        	"option5": "",
 				        	"option6": "",
 				        	"option7": "",
@@ -251,7 +251,7 @@
 				        	"videourl": "",
 				        	"option1": "They are more expensive than MHL as stand alone components in class",
 				        	"option2": "They can be used for higher level courses or used in a lab in  conjunction with MHL",
-				        	"option3": "They are great duplications of trouble calls but MHL provides logical problem solving scenatios",							        	
+				        	"option3": "They are great duplications of trouble calls but MHL provides logical problem solving scenarios",							        	
 				        	"option4": "All of the above",
 				        	"option5": "",
 				        	"option6": "",
@@ -399,6 +399,29 @@
 				        	"answer3": "answer 3",
 				        	"answer4": "answer 4",
 				        	"answerDetails": "The accuracy and detail of this book, combined with the graphic nature and number of photographs used in the case study approach, make it an attractive choice compared other books on this topic.  "
+        				}
+        				, 
+						{
+				        	"type": "MCQSS",
+				        	"text": "NCCERconnect is available for to top craft areas, but not for every craft area.",
+				        	"sequence": "5",
+				        	"maxscore": "5",
+				        	"mediatype": "None",
+				        	"imageurl": "",
+				        	"audiourl": "",
+				        	"videourl": "",
+				        	"option1": "True",
+				        	"option2": "False",
+				        	"option3": "",							        	
+				        	"option4": "",
+				        	"option5": "",
+				        	"option6": "",
+				        	"option7": "",
+				        	"answer1": "True",
+				        	"answer2": "answer 2",
+				        	"answer3": "answer 3",
+				        	"answer4": "answer 4",
+				        	"answerDetails": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh."
         				}]
         }]
 }]
