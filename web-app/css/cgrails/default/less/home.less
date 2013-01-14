@@ -6,6 +6,7 @@
 
 
 #business-info {
+	margin-top:35px;
 	h1 {
 		font-size:30px;
 		color:@business-info-header;
@@ -20,9 +21,9 @@
 }
 
 #loginform { 
-	margin-top:4em;
+	margin-top:40px;
 	#loginErrorMessage {
-		background-color:#f9fafb;
+		background-color:#F9FAFB;
 	}
 	#ajaxLoginForm, #loggedin-container {
 		border:solid 2px @login-h3-color;
@@ -175,6 +176,9 @@
 /*********************** Responsive Styles ************************************/ 
 
 @media (max-width: 767px) {  
+	#business-info {
+		margin-bottom:40px;
+	}
 	#panel_home {
 		margin:0 20px;
 	} 
@@ -189,6 +193,9 @@
 	}
 	#loginform {
 		margin-top:1em;
+		#loginErrorMessage {
+			background-color:@bodyBackgroundColor;
+		}
 		#ajaxLoginForm { 
 			border:0 none;
 			.hero-unit {
