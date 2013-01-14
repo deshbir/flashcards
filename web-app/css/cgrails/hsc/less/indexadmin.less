@@ -1,18 +1,18 @@
 /******************* HSC skin variables **********************/
 @import "../../default/less/indexadmin.less";
 
-@navbarInverseBackgroundHighlight:#ED6B06;
-@navbarInverseBackground : #ED6B06;
-@navbarInverseBorder : #C25A3C;
+@navbarInverseBackgroundHighlight: #364395;
+@navbarInverseBackground : #364395;
+@navbarInverseBorder : #364395;
 @bodyBackgroundColor : #fbf5ea;
-@footer-bg-color:#ED6B06;
+@footer-bg-color: #364395;
 @footer-color:@white;
 @navbarInverseLinkColor:@white; 
 @product_heading_color:#5b544e;
 
-@HSCButtonColor: #e39979; //orange
-@HSCButtonBottomColor:#d7604a;
-@HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
+@HSCButtonColor: #0089B7; //Blue
+@HSCButtonBottomColor:#0089B7;
+//@HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
 
 
 @profile-img-top-color:#d0cdbc;
@@ -52,7 +52,10 @@ select:focus:required:invalid {
 }
 
 .btn {
-	border-color:#c25a3c;
-	.box-shadow(0px 1px #c5231b);
+	border-color:#364395; 
+	.box-shadow(.21 1px #000000);
 	text-shadow: none;
+	&:hover {
+		.vertical-gradient(@HSCButtonColor, @HSCButtonBottomColor);
+	}
 }
