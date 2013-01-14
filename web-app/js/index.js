@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 42;
+ 	var version = 43;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -586,7 +586,7 @@
 				var group = new Riloadr({
 					defer: 'load',
 			 		onerror: function(){
-			 			logger.error("Failed loading image '" + this.alt + "'!");
+			 			logger.error("Failed loading image '" + this.src + "'!");
 			 		},
 			 		oncomplete: function(){
 			 			if($(window).width()>mobileScreenWidth)
@@ -603,24 +603,7 @@
 			 		           ]
 		 	});
 			return group;
-		},
-		getHomeImageGrp : function(){
-			var group = new Riloadr({
-				defer: 'foldDistance',
-				name: 'homegrp',
-		 		onerror: function(){
-		 			logger.error("Failed loading image '" + this.alt + "'!");
-		 		},
-		 		retries: 1,
-		 		breakpoints: [
-							{name: '', maxWidth: 767},
-							{name: '_Larger', minWidth: 384, minDevicePixelRatio: 2}, // For Retina Display In IPAD 3 Generation
-							{name: '_Larger', minWidth: 768}
-		 		           ]
-			});
-			return group;
 		}
-		
  	}
  	//function to handle "transitionend" event of panel-container
 	 function transitionEndHandler(event){ 
