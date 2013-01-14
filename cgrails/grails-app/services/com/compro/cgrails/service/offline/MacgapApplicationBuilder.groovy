@@ -18,6 +18,12 @@ class MacgapApplicationBuilder {
 		
 		OfflineApplicationBuilder.copyDirectory(offlineCoreDir, targetMacgapAppCoreDir);
 		
+		File touchIcon = new File("web-app/images/apple-touch-icon.png");
+		File macgapAppIcon = new File(OfflineApplicationBuilder.TARGET_OFFLINE_DIR_PATH 
+										+ MACGAP_DIR_PATH + MACGAP_CORE_DIR + "/application.png");
+		OfflineApplicationBuilder.copyFile(touchIcon, macgapAppIcon);
+		
+		
 		"macgap build --name hsc --output ./build ./core".execute(null, new File(macgapAppDirAbsPath));
 	}
 	

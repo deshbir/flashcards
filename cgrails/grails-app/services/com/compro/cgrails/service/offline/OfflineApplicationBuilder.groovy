@@ -394,6 +394,18 @@ class OfflineApplicationBuilder {
 		}
 	}
 	
+	void copyFile(File sourceFile, File targetFile) {		
+		FileInputStream inputStream = new FileInputStream(sourceFile);
+		OutputStream outputStream = new FileOutputStream(targetFile);
+		byte[] buf = new byte[1024];
+		int len;
+		while ((len = inputStream.read(buf)) > 0) {
+			outputStream.write(buf, 0, len);
+		}
+		inputStream.close();
+		outputStream.close();			
+	}
+	
 	private void writeFile(InputStream inputStream, File targetFile){
 		targetFile.getParentFile().mkdirs();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));		
