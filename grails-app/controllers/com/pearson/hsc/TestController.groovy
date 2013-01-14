@@ -1,7 +1,9 @@
 package com.pearson.hsc
 
-import grails.converters.JSON
 import groovy.json.JsonBuilder
+
+import com.compro.cgrails.CgrailsConstants
+import com.compro.cgrails.CgrailsUtils
 
 class TestController {
 
@@ -24,8 +26,8 @@ class TestController {
 					type : product.type,
 					author : product.author,
 					description : product.description,
-					image : product.image,
-					thumbnail : product.thumbnail,
+					image : (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? product.image.replaceAll(" ", "-") :product.image,
+					thumbnail : (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? product.thumbnail.replaceAll(" ", "-") :product.thumbnail,
 					tests: product.tests.collect {[
 						id: it.id,
 							questions: it.questions.collect {[ 

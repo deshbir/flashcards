@@ -1,7 +1,10 @@
 package com.pearson.hsc
 
-import grails.converters.JSON
 import groovy.json.JsonBuilder
+
+import com.compro.cgrails.CgrailsConstants
+import com.compro.cgrails.CgrailsUtils
+
 
 class DisciplineController {
 
@@ -25,8 +28,8 @@ class DisciplineController {
 						type : it.type,
 						author : it.author,
 						description : it.description,
-						image: it.image,
-						thumbnail: it.thumbnail,
+						image:  (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? it.image.replaceAll(" ", "-") : it.image,
+						thumbnail: (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? it.thumbnail.replaceAll(" ", "-") : it.thumbnail,
 						name : it.name,
 						sequence : it.sequence ]}
 				]

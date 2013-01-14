@@ -1,7 +1,9 @@
 package com.pearson.hsc
 
-import grails.converters.JSON
 import groovy.json.JsonBuilder
+
+import com.compro.cgrails.CgrailsConstants
+import com.compro.cgrails.CgrailsUtils
 
 class ProductController {
 
@@ -23,13 +25,13 @@ class ProductController {
 					type : product.type,
 					description : product.description,
 					author : product.author,
-					image : product.image,
-					thumbnail : product.thumbnail,
+					image : (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? product.image.replaceAll(" ", "-") : product.image,
+					thumbnail : (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? product.thumbnail.replaceAll(" ", "-") : product.thumbnail,
 					tests: product.tests.collect {[id: it.id]},
 					topics: product.topics.collect {[
 						name: it.name, 
 						sequence: it.sequence, 
-						audioTrack: it.audioTrack]},
+						audioTrack: (CgrailsUtils.getWorkflow().equals(CgrailsConstants.WORKFLOW_OFFLINE)) ? it.audioTrack.replaceAll(" ", "-") :it.audioTrack]},
 				]
 				def json = new JsonBuilder(data)
 				render json.toString()

@@ -254,6 +254,7 @@ class OfflineApplicationBuilder {
 		Set<String> templateList = new HashSet<String>();
 		getTemplatesInSkin(config,skin,templateList)
 		return templateList;
+
 	}
 	private void getTemplatesInSkin(def config, String currentSkin, Set<String> templateList){
 		if(currentSkin != config.cgrails.skinning.baseskin){
@@ -272,11 +273,11 @@ class OfflineApplicationBuilder {
 			if (file.isDirectory()) {
 				getFileList(file,fileList);
 			} else {
-				String templatesPath = TEMPLATES_FOLDER_NAME + "\\"
+				String templatesPath = TEMPLATES_FOLDER_NAME + "/"
 				String path = file.getPath();
+				path = path.replace("\\", "/");
 				path = path.substring(path.indexOf(templatesPath) + templatesPath.length());
 				path = path.substring(0, path.indexOf(".gsp"));
-				path = path.replace("\\", "/");
 				fileList.add(path);
 			}
 		}

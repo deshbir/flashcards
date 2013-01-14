@@ -63,6 +63,9 @@ Brief summary/description of the plugin.
 		appjsApplicationBuilder(com.compro.cgrails.service.offline.AppjsApplicationBuilder){
 			it.autowire = true
 		}
+		macgapApplicationBuilder(com.compro.cgrails.service.offline.MacgapApplicationBuilder){
+			it.autowire = true
+		}
 	}
 
 	def doWithDynamicMethods = { ctx ->
