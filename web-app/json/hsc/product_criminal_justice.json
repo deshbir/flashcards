@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "CJ Today, 12/e",
+	"name": "CJ Today, 12e",
 	"description": "#1 Book.  Satisfying balance between freedom and security, and focus on the crime picture as relates to the CJ system.",
 	"thumbnail": "CJ/Schmall CJT/Schmalleger CJ Today-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CJT/Schmalleger CJ Today.jpg",
@@ -139,7 +139,7 @@
 			        }]			        				
 }, 
 {
-	"name": "Criminology Today, 6/e",
+	"name": "Criminology Today, 6e",
 	"description": "#1 CJ Author.    Comprehensive coverage. Social problems vs social responsibility theme - is crime a matter of individual responsibility or a symptom of a dysfunctional society. ",
 	"thumbnail": "CJ/Schmall CT6e/Schmalleger Criminology Today-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CT6e/Schmalleger Criminology Today.jpg",
@@ -278,7 +278,7 @@
 			        }]	
 },
 {
-	"name": "Criminology Brief, 2/e",
+	"name": "Criminology Brief, 2e",
 	"description": "#1 CJ Author. Practical, brief, approach with a focus on crim theories, research, and implications for crime control.",
 	"thumbnail": "CJ/Schmall CB2e/Criminology Brief Explain Now-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CB2e/Criminology Brief Explain Now.jpg",
@@ -417,7 +417,7 @@
 			        }]	
 },
 {
-	"name": "CJ Brief, 10/e",
+	"name": "CJ Brief, 10e",
 	"description": "#1 Brief Book.   Trusted, authoritative, and impeccably researched introduction to police, courts, and corrections with highly visual design.",
 	"thumbnail": "CJ/Schmall Intro Brief/Schmall Intro Brief-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall Intro Brief/Schmall Intro Brief.jpg",
@@ -556,7 +556,7 @@
 			        }]			
 },
 {
-	"name": "Corrections, 4/e",
+	"name": "Corrections, 4e",
 	"description": "InSEITER view into Corrections.  Focuses on what people do in corrections and why, as well as the challenges that face contemporary correctional staff and administrators",
 	"thumbnail": "CJ/Seiter/Seiter-{breakpoint-name}.jpg",
 	"image": "CJ/Seiter/Seiter.jpg",
@@ -695,7 +695,7 @@
 			        }]					
 },     				
 {
-	"name": "Criminal Investigation, 1/e",
+	"name": "Criminal Investigation, 1e",
 	"description": "Graphic.  Gory.  Gruesome.  Illustrated case study approach.",
 	"thumbnail": "CJ/Lasley/Lasley-{breakpoint-name}.jpg",
 	"image": "CJ/Lasley/Lasley.jpg",
@@ -834,10 +834,10 @@
 			        }]					
 },         				
 {
-	"name": "Criminal Law and Procedure, 1/e",
+	"name": "Criminal Law and Procedure, 1e",
 	"description": "Comprehensive content broken down into modules. ",
-	"thumbnail": "CJ/Worrall CLP/cover_placeholder-{breakpoint-name}.gif",
-	"image": "CJ/Worrall CLP/cover_placeholder.gif",
+	"thumbnail": "CJ/Worrall CLP/cover_placeholder-{breakpoint-name}.jpg",
+	"image": "CJ/Worrall CLP/cover_placeholder.jpg",
 	"author": "Worrall",				        	
 	"sequence": 7,
 	"type": "book",
@@ -1107,10 +1107,10 @@
 			        }]							
 },			
 {
-	"name": "Juvenile Justice in America, 7/e",
+	"name": "Juvenile Justice in America, 7e",
 	"description": "Characteristics, procedures, policies, and problems of the juvenile justice systems with evidence-based practices and programs.",
-	"thumbnail": "CJ/Bartollas JJ/cover_placeholder-{breakpoint-name}.gif",
-	"image": "CJ/Bartollas JJ/cover_placeholder.gif",
+	"thumbnail": "CJ/Bartollas JJ/cover_placeholder-{breakpoint-name}.jpg",
+	"image": "CJ/Bartollas JJ/cover_placeholder.jpg",
 	"author": "Bartollas",				        	
 	"sequence": 9,
 	"type": "book",
@@ -1246,7 +1246,7 @@
 			        }]							
 },
 {
-	"name": "Juvenile Delinquency, 9/e",
+	"name": "Juvenile Delinquency, 9e",
 	"description": "A sociological exploration of the causes and consequences of delinquent behavior with delinquency prevention theme.",
 	"thumbnail": "CJ/Bartollas JD/Bartollas Juvenile Delinquency-{breakpoint-name}.jpg",
 	"image": "CJ/Bartollas JD/Bartollas Juvenile Delinquency.jpg",
@@ -1386,7 +1386,7 @@
 	
 },
 {
-	"name": "Criminal Law Today, 5/e",
+	"name": "Criminal Law Today, 5e",
 	"description": "Comprehensive, authoritative explanation of crimes and law with real life stories, capstone cases, and 60 new short cases. ",
 	"thumbnail": "CJ/Schmall CLT5E/Schmall criminal law-{breakpoint-name}.jpg",
 	"image": "CJ/Schmall CLT5E/Schmall criminal law.jpg",
@@ -1421,14 +1421,14 @@
 							        	"imageurl": "",
 							        	"audiourl": "",
 							        	"videourl": "",
-							        	"option1": "End of chapter material",
-							        	"option2": "MyCJLab",
-							        	"option3": "Career Resources Page",
-							        	"option4": "Gary Bauer's office",
+							        	"option1": "Samaha (CEN)",
+							        	"option2": "Scheb",
+							        	"option3": "Gardner",
+							        	"option4": " Worrall",
 							        	"option5": "",
 							        	"option6": "",
 							        	"option7": "",
-							        	"answer1": "Career Resources Page",
+							        	"answer1": "Samaha (CEN)",
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
@@ -1443,14 +1443,14 @@
 							        	"imageurl": "",
 							        	"audiourl": "",
 							        	"videourl": "",
-							        	"option1": "Voices from the American Justice System",
-							        	"option2": "Tweksbury, Behind Bars",
-							        	"option3": "Hanser, Correctional Counseling",
-							        	"option4": "Remove chapters 12-14",
+							        	"option1": "End of chapter material",
+							        	"option2": "MyCJLab",
+							        	"option3": "Career Resources Page",
+							        	"option4": "Gary Bauer's office",
 							        	"option5": "",
 							        	"option6": "",
 							        	"option7": "",
-							        	"answer1": "Voices from the American Justice System",
+							        	"answer1": "Career Resources Page",
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",

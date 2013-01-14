@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "Medical Surgical Nursing, 2/e",
+	"name": "Med Surg, 2e",
 	"description": "An overview of Osborn's Medical Surgical Nursing",
 	"thumbnail": "Nursing/Osborn/Osborn_front_cvr_highres-{breakpoint-name}.jpg",
 	"image": "Nursing/Osborn/Osborn_front_cvr_highres.jpg",
@@ -139,7 +139,7 @@
 			        }]
 },
 {
-	"name": "Pharmacology, 4/e",
+	"name": "Pharmacology, 4e",
 	"description": "An overview of Adams' Pharmacology",
 	"thumbnail": "Nursing/Adams/Adams COV MECH_HIRES-{breakpoint-name}.jpg",
 	"image": "Nursing/Adams/Adams COV MECH_HIRES.jpg",
@@ -278,7 +278,7 @@
 			        }]
 },
 {
-	"name": "Maternal Newborn, 8/e",
+	"name": "Maternal Newborn, 8e",
 	"description": "An overview of Ladewig, Maternal Newborn",
 	"thumbnail": "Nursing/Ladewig/Ladewig_NursingCare8e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ladewig/Ladewig_NursingCare8e.jpg",
@@ -412,7 +412,7 @@
 			        }]
 },
 {
-	"name": "Child Health, 3/e",
+	"name": "Child Health, 3e",
 	"description": "An overview of Ball, Child Health",
 	"thumbnail": "Nursing/Ball/Ball_ChildHealthNursing3e-{breakpoint-name}.jpg",
 	"image": "Nursing/Ball/Ball_ChildHealthNursing3e.jpg",
@@ -657,7 +657,7 @@
 			        				},
 			        				{
 							        	"type": "MCQSS",
-							        	"text": "There area few, but name one RealEHRPrep competitor.",
+							        	"text": "There are few, but name one RealEHRPrep competitor.",
 							        	"sequence": "5",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
@@ -891,7 +891,7 @@
 			        				},
 									{
 							        	"type": "MCQSS",
-							        	"text": "What is Readypoint's name for \"Remediation\"?",
+							        	"text": "What is Readypoint's name for \"remediation\"?",
 							        	"sequence": "3",
 							        	"maxscore": "5",
 							        	"mediatype": "None",

@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "Construction Management Front List Titles",
+	"name": "Construction Management Frontlist Titles",
 	"description": "An overview of key new 2013 titles, including Mehta 2e, Borden's Architecture, Schodek Structures 7e, Kavanagh 9e, and Andres Principles 9e.",
 	"thumbnail": "Const Mgmt/MEhta 2e cover-{breakpoint-name}.jpg",
 	"image": "Const Mgmt/MEhta 2e cover.jpg",
@@ -83,14 +83,14 @@
 							        	"imageurl": "",
 							        	"audiourl": "",
 							        	"videourl": "",
-							        	"option1": "NCCER & Pearson",
+							        	"option1": "NCCER  Program & Pearson",
 							        	"option2": "NCCER & USGBC",
 							        	"option3": "Pearson & Building Capital",
 							        	"option4": "None of the above",
 							        	"option5": "",
 							        	"option6": "",
 							        	"option7": "",
-							        	"answer1": "NCCER & Pearson",
+							        	"answer1": "NCCER  Program & Pearson",
 							        	"answer2": "answer 2",
 							        	"answer3": "answer 3",
 							        	"answer4": "answer 4",
@@ -142,7 +142,7 @@
 			        				},
 			        				{
 							        	"type": "MCQSS",
-							        	"text": "What media can you valpack in constuction mangement?",
+							        	"text": "What media can you valpack in Constuction Management?",
 							        	"sequence": "5",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
