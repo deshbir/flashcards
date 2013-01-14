@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 42;
+ 	var version = 43;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -586,7 +586,7 @@
 				var group = new Riloadr({
 					defer: 'load',
 			 		onerror: function(){
-			 			logger.error("Failed loading image '" + this.alt + "'!");
+			 			logger.error("Failed loading image '" + this.src + "'!");
 			 		},
 			 		oncomplete: function(){
 			 			if($(window).width()>mobileScreenWidth)
