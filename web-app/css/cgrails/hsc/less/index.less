@@ -10,17 +10,17 @@
 @navbarInverseLinkColor:@white; 
 @product_heading_color:#000000;
 
-@HSCButtonColor: #2993de; //blue
-@HSCButtonBottomColor:#2993de;
+@HSCButtonColor: #0089b7; //blue
+@HSCButtonBottomColor:#0089b7;
 @HSCButtonHoverColor:darken(@HSCButtonColor, 10%);
 
 
-@profile-img-top-color:#d0cdbc;
-@profile-img-bottom-color:#bbb8aa;
+@profile-img-top-color:#0089b7;
+@profile-img-bottom-color:#0089b7;
 
 @playlist-li-color:@white;
 @playlist-icon-border-color:rgb(211,208,191);
-@timing-bg-color: lighten(@HSCButtonColor, 15%);
+@timing-bg-color: #0089b7;
 @playlist-li-text-color:#5b544e;
 @status-bar-bg-color : #364395;
 @product-home-border-color:lighten(#364395,15%);
@@ -53,6 +53,8 @@ select:focus:required:invalid {
 	border-color:#364395;
 	.box-shadow(.21 1px #000000);
 	text-shadow: 0px 1px 1px #0f578a;
+	font-family:Arial;
+	font-weight:bold;
 	&:hover {
 		.vertical-gradient(@HSCButtonColor, @HSCButtonBottomColor);
 	}
@@ -69,7 +71,7 @@ select:focus:required:invalid {
 	}
 	
 	ul.playlist li.sm2_playing .timing {
-		color:#364395;
+		color:@white;
 		border:0 none;
 		.border-radius(0);
 	}
