@@ -63,11 +63,11 @@
 		</div>
 		<h4 class="content-header"></h4>
 		<div class="content-body">
-			<h4 class="orange-color">Message</h4>
+			<h4 class="heading">Message</h4>
 			<div class="message logContent"></div>
-			<h4 class="orange-color">Logs</h4>
+			<h4 class="heading">Logs</h4>
 			<div class="logs logContent"></div>
-			<h4 class="orange-color">Headers & Parameters</h4>
+			<h4 class="heading">Headers & Parameters</h4>
 			<div class="params logContent"></div>
 		</div>
 	</div>
@@ -85,7 +85,7 @@
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">x</button>
 		<h3 id="ajax-error-label">
-			UnSupported Browser Version
+			Un-supported Browser Version
 		</h3>
 	</div>
 	<div class="modal-body">
@@ -96,9 +96,9 @@
 				We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
 				</p>
 				<ul>
-					<li>Safari </li>
-					<li>Firefox </li>
-					<li>Chrome </li>
+					<li>Apple Safari</li>
+					<li>Mozilla Firefox</li>
+					<li>Google Chrome</li>
 				</ul>
 			</div>
 		</div>
