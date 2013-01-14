@@ -18,7 +18,7 @@ class MacgapApplicationBuilder {
 		
 		OfflineApplicationBuilder.copyDirectory(offlineCoreDir, targetMacgapAppCoreDir);
 		
-		"macgap build --name hsc --output ./build ./core".execute(null, macgapAppDirAbsPath);
+		"macgap build --name hsc --output ./build ./core".execute(null, new File(macgapAppDirAbsPath));
 	}
 	
 	public void deleteOldPackage() {
