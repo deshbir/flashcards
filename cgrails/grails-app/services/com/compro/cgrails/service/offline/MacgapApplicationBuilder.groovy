@@ -20,11 +20,11 @@ class MacgapApplicationBuilder {
 		
 		File touchIcon = new File("web-app/images/apple-touch-icon.png");
 		File macgapAppIcon = new File(OfflineApplicationBuilder.TARGET_OFFLINE_DIR_PATH 
-										+ MACGAP_DIR_PATH + MACGAP_CORE_DIR + "/application.png");
+										+ MACGAP_DIR_PATH + "application.png");
 		OfflineApplicationBuilder.copyFile(touchIcon, macgapAppIcon);
 		
 		
-		"macgap build --name hsc --output ./build ./core".execute(null, new File(macgapAppDirAbsPath));
+		"macgap build --name HSC --output ./build ./core".execute(null, new File(macgapAppDirAbsPath));
 	}
 	
 	public void deleteOldPackage() {
