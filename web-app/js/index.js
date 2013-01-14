@@ -470,7 +470,6 @@
 		    $('#error-report .modal-body .content-body .message').html($('#message').html());
 	    });
 	    $('#unsupported-browser-version-modal').on('show', function () {
-	    	console.log("hi");
 	    	if($.browser.opera){
 	    		$("#IE-Unsuppported").hide();
 	    	} else {

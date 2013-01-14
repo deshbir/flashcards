@@ -96,18 +96,25 @@
 					<p>
 					We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
 					</p>
+					<ul>
+						<li>Apple Safari</li>
+						<li>Mozilla Firefox</li>
+						<li>Google Chrome</li>
+					</ul>
 				</div>
 				<div id="Opera-Unsuppported">
 					<p>Your browser Opera is not fully compatible with our application and some features will not work correctly.</p>
 					<p>
-					We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
+					We strongly recommend that you switch to one of the following browser:
 					</p>
+					<ul>
+						<li>Apple Safari</li>
+						<li>Mozilla Firefox</li>
+						<li>Google Chrome</li>
+						<li>Internet Explorer 9+</li>
+					</ul>
 				</div>
-				<ul>
-					<li>Apple Safari</li>
-					<li>Mozilla Firefox</li>
-					<li>Google Chrome</li>
-				</ul>
+				
 			</div>
 		</div>
 	</div>
