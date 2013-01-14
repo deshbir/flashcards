@@ -91,10 +91,18 @@
 	<div class="modal-body">
 		<div class="content-body">
 			<div class="message logContent">
-				<p>Your browser (IE8 or below) is not fully compatible with our application and some features will not work correctly.</p>
-				<p>
-				We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
-				</p>
+				<div id="IE-Unsuppported">
+					<p>Your browser (IE8 or below) is not fully compatible with our application and some features will not work correctly.</p>
+					<p>
+					We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
+					</p>
+				</div>
+				<div id="Opera-Unsuppported">
+					<p>Your browser Opera is not fully compatible with our application and some features will not work correctly.</p>
+					<p>
+					We strongly recommend that you upgrade to IE9 (or higher) or use one the following non-IE browsers:
+					</p>
+				</div>
 				<ul>
 					<li>Apple Safari</li>
 					<li>Mozilla Firefox</li>

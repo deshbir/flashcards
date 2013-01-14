@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 44;
+ 	var version = 45;
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -469,6 +469,16 @@
 		    $('#error-report .modal-body .content-body .params').html($('#headers').html());
 		    $('#error-report .modal-body .content-body .message').html($('#message').html());
 	    });
+	    $('#unsupported-browser-version-modal').on('show', function () {
+	    	console.log("hi");
+	    	if($.browser.opera){
+	    		$("#IE-Unsuppported").hide();
+	    	} else {
+	    		$("#Opera-Unsuppported").hide();
+	    	}
+	    	
+	    });
+	   
 
 	    $("#ajax-error-modal .modal-footer .generateErrorReport").click(function(){
 	    	$('#error-report').modal();
@@ -728,7 +738,10 @@
  			isIE = navigator.appVersion.indexOf("MSIE") != -1;
  			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
- 				if(isIE && getInternetExplorerVersion()<9){
+ 				//Initializing error modal to trigger logging in modal box each time it is shown.
+ 				modalEventRegistration();
+ 				
+ 				if((isIE && getInternetExplorerVersion()<9) ||($.browser.opera)){
 					$('#unsupported-browser-version-modal').modal();
 				}
  				logger.info("On Ready - Starting Initialization"); 				
@@ -742,8 +755,6 @@
  				
  				logger.info("backbone navigation start");
  				backbone_start_navigation();
- 				//Initializing error modal to trigger logging in modal box each time it is shown.
- 				modalEventRegistration();
  				logger.info("sound manager initialization");
  				soundmanager2_init();
  				logger.info("Page Player initialization");
