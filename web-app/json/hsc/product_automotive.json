@@ -290,7 +290,7 @@
 			        }]			       
 },
 {
-	"name": "Automotive Fundamentals Overview",
+	"name": "Automotive Fundamentals",
 	"description": "MyAutomotiveLab for Fundamentals, new for Systems and the automotive media competition.",
 	"thumbnail": "Auto/Fundamentals/Halderman E&E4 cover-{breakpoint-name}.jpg",
 	"image": "Auto/Fundamentals/Halderman E&E4 cover.jpg",
@@ -324,7 +324,7 @@
 			        	"instructions": "This is a test.",        	
 			        	"questions": [{
 							        	"type": "MCQSS",
-							        	"text": "How many NEW MyAutomotiveLab's will be available for demo in February?",
+							        	"text": "How many NEW MyAutomotiveLabs will be available for demo in February?",
 							        	"sequence": "1",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
@@ -412,7 +412,7 @@
 			        				},
 			        				{
 							        	"type": "MCQSS",
-							        	"text": "What's the access length of the new systems mylabs?",
+							        	"text": "What's the access length of the new systems MyLabs?",
 							        	"sequence": "5",
 							        	"maxscore": "5",
 							        	"mediatype": "None",
