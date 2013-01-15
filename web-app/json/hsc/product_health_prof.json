@@ -1,6 +1,6 @@
 {
 "products" : [{
-	"name": "MIBC",
+	"name": "MIBC Overview",
 	"description": "What is MIBC and what are the instructors talking about?   Learn how to have a great conversation for a solution sale.",
 	"thumbnail": "Health Professions/MIBC/MIBC-web-thumb2.jpg",
 	"image": "Health Professions/MIBC/MIBC-web.jpg",
@@ -139,7 +139,7 @@
 			        }]
 },
 {
-	"name": "Rich",
+	"name": "Medical Coding: A Journey Plus, 1e",
 	"description": "How to win vs Buck with Rich.  (For PLS Reps)",
 	"thumbnail": "Health Professions/Rich/Rich-{breakpoint-name}.jpg",
 	"image": "Health Professions/Rich/Rich.jpg",
@@ -278,7 +278,7 @@
 			        }]
 },
 {
-	"name": "Turley",
+	"name": "Medical Language, 3e",
 	"description": "Pearson's number one selling med term book set to take the number one market position in 2013.",
 	"thumbnail": "Health Professions/Turley/Turley-{breakpoint-name}.jpg",
 	"image": "Health Professions/Turley/Turley.jpg",
