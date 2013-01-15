@@ -16,6 +16,8 @@
 		text-align:center;
 		img {
 			margin-top:30px;
+			width:313px;
+			height:153px;
 		}
 	}
 }
@@ -111,6 +113,7 @@
 			.profile-image {
 				.border-radius(5px);
 				 margin-right:10px;
+				 margin-bottom:0;
 				 a {
 					margin-top:0;
 					.vertical-gradient(@profile-img-top-color, @profile-img-bottom-color);
@@ -177,7 +180,8 @@
 
 @media (max-width: 767px) {  
 	#business-info {
-		margin-bottom:30px;
+		margin-top:20px;
+		margin-bottom:20px;
 	}
 	#panel_home {
 		margin:0 20px;
@@ -188,12 +192,19 @@
 			font-weight:bold;
 			line-height: 25px;
 		}
+		.hsc-logo {
+			img {
+				margin:0 auto;
+				 height:50px;
+				 width:100px;
+			}
+		}
 	}
 	#login-info {
     	 text-align: center;
 	}
 	#loginform {
-		margin-top:1em;
+		margin-top:10px;
 		#loginErrorMessage {
 			background-color:@bodyBackgroundColor;
 		}
@@ -210,6 +221,9 @@
 					margin-top:10px;
 					font-size:20px;
 				}
+				#login-button {
+					margin-top:10px;
+				}
 			}
 			.input-prepend  {
     			input[type="text"], input[type="email"], input[type="password"] {
@@ -218,6 +232,9 @@
 			}
 			h3 {
 				display:none;
+			}
+			.errorMessage { 
+				padding:0 10px;
 			}
 			margin-bottom:10px;
 		}

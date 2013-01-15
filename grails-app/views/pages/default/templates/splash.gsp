@@ -1,8 +1,8 @@
 <div class="row">
         <div class="span6" id="business-info">
-			<h1>Health Sciences &amp; Careers</h1>
+			<h1 class="hidden-phone">Health Sciences &amp; Careers</h1>
 			<div class="hsc-logo">
-				<img src="images/camera_homepage_Larger.png" alt="Business-Logo" class="hidden-phone"/>
+				<img data-src="images/camera_homepage{breakpoint-name}.png" alt="Business-Logo" class="homegrp"/>
 			</div>
 	    </div>
         <div class="span6" id="login-info">
