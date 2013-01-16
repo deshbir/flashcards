@@ -753,6 +753,7 @@
  			isIE = navigator.appVersion.indexOf("MSIE") != -1;
  			pagePlayer = new PagePlayer();
  			$(document).ready(function() {
+ 				$("body").show();
  				//Initializing error modal to trigger logging in modal box each time it is shown.
  				modalEventRegistration();
  				
