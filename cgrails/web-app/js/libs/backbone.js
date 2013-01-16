@@ -901,8 +901,10 @@
 	        callback && callback.apply(this, args);
 	        this.trigger.apply(this, ['route:' + name].concat(args));
 	        Backbone.history.trigger('route', this, name, args);
-    	} else {
+	        com.compro.application.hsc.setLastVisitedRoute(fragment);
+    	} else {    		
     		Backbone.history.navigate("#/home");
+    		com.compro.application.hsc.setLastVisitedRoute("home");
     	}    
       }, this));
       return this;
@@ -1046,8 +1048,20 @@
         window.history.replaceState({}, document.title, loc.protocol + '//' + loc.host + this.options.root + this.fragment);
       }
 
-      if (!this.options.silent) {
-        return this.loadUrl();
+      if (!this.options.silent) {    	
+    	var hash = window.location.hash;
+    	if ((hash == "#/home") || (hash == "#/home/")) {
+    		var lastVisitedRoute = com.compro.application.hsc.getLastVisitedRoute();  
+    		if ((lastVisitedRoute != null) 
+    				&& (lastVisitedRoute != "") && (lastVisitedRoute != "home")) {
+    			return this.navigate("#/" + lastVisitedRoute);	    
+    		} else {
+    			return this.loadUrl();
+    		}
+    	}
+    	else {
+    		return this.loadUrl();
+    	}	
       }
     },
 

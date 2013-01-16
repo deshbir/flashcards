@@ -31,6 +31,15 @@
  com.compro.application.hsc = (function() {
  	
  	var version = 51;
+ 	
+ 	// last Visited route getter and setter
+ 	function setLastVisitedRoute(route) {
+		localStorage.setItem("lastVisitedRoute", route); 
+	}	
+	function getLastVisitedRoute() {
+		return localStorage.getItem("lastVisitedRoute"); 
+	}
+	
  	var emailConfig = {
  			adminEmail : "deshbir.dugal@comprotechnologies.com", 
  			subject : "Pearson HSC Error Report",
@@ -870,6 +879,8 @@
  		"resizeColumns":resizeColumns,
  		"resetColumns":resetColumns,
  		"version" : version,
+ 		"setLastVisitedRoute" : setLastVisitedRoute,
+ 		"getLastVisitedRoute" : getLastVisitedRoute,
  		"pagePlayer" : pagePlayer,
  		"getInternetExplorerVersion": getInternetExplorerVersion,
  		"GATrackPageView":GATrackPageView,
