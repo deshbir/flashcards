@@ -8,17 +8,17 @@
 	"type": "lab",
 	"author": "Various",
 	"topics": [	{
-					"name": "MIBC Part 1",
+					"name": "Part 1",
 					"sequence": 1,
 					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 1 .mp3"	
 				},
 				{
-					"name": "MIBC Part 2 Billing",
+					"name": "Part 2 Billing",
 					"sequence": 2,
 					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 2 Billing.mp3"					
 				},
 				{
-					"name": "MIBC Part 3 Coding",
+					"name": "Part 3 Coding",
 					"sequence": 3,
 					"audioTrack": "Health Professions/MIBC/12-10-12 Health Prof MIBC Part 3 Coding.mp3"	
 				}],
