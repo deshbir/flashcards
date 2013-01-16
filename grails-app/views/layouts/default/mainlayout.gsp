@@ -79,7 +79,7 @@
 		    })();
 		</script>
 	</head>
-	<body dir="${direction}">
+	<body dir="${direction}" style="display:none;">
 		<g:include view="layout-helpers/modals.gsp"/>
 		<g:include view="layout-helpers/appcache_init.gsp"/>
 		<g:include view="layout-helpers/facebook_init.gsp"/>
