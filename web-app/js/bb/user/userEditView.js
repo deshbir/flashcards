@@ -58,7 +58,19 @@ UserEditView = new function() {
 			
 			that = this;
 	    	this.collection.fetch({data: {"id": userId}, success: function() {
-	    		that.collection.each(function(user){	
+	    		that.collection.each(function(user){
+	    			var attribs = user.attributes;					
+					if(attribs.userRole == "ROLE_ADMIN") {
+						attribs.isAdmin = true;
+					} else if (attribs.userRole == "ROLE_FACEBOOK") {
+						attribs.isFacebookUser = true;
+					} else if (attribs.userRole == "ROLE_LINKEDIN") {
+						attribs.isLinkedinUser = true;
+					} else if (attribs.userRole == "ROLE_TWITTER") {
+						attribs.isTwitterUser = true;
+					} else if (attribs.userRole == "ROLE_GOOGLEPLUS") {
+						attribs.isGoogleplusUser = true;
+					}        			
 	    			$(that.myPanelId).html(Mustache.render(that.template_body, user.toJSON()));
 		    	});    		
 	    	}});	    	

@@ -116,10 +116,24 @@
  	//User Logged In Flag
  	var userinfo = {
  			loggedin: false,
- 			name: "",
+ 			username: "",
+ 			firstname: "",
+ 			lastname: "",
  			email: "",
- 			facebookuser: false,
- 			admin: false
+ 			userRole: "ROLE_USER",
+ 			isPictureUrl:true,
+ 			pictureUrl:""
+ 	}
+ 	
+ 	function resetUserinfo() {
+ 		userinfo.loggedin = false;
+ 		userinfo.username = "";
+ 		userinfo.firstname = "";
+ 		userinfo.lastname = "";
+ 		userinfo.email = "";
+ 		userinfo.userRole = "ROLE_USER";
+ 		userinfo.isPictureUrl = true;
+ 		userinfo.pictureUrl = ""; 	 	
  	}
  	
  	//Global Flashcards holder (object of SwipeJs)
@@ -153,10 +167,17 @@
 					userinfo.loggedin = false;
 				} else {
 					userinfo.loggedin = true;
-					userinfo.name = model.get("username");
+					userinfo.username = model.get("username");
+					userinfo.firstname = model.get("firstName");
+					userinfo.lastname = model.get("lastName");
 					userinfo.email =  model.get("email");
-					userinfo.admin =  model.get("isAdmin");
-					userinfo.facebookuser = model.get("isFacebookUser");					
+					userinfo.userRole =  model.get("userRole");
+					userinfo.pictureUrl = model.get("pictureUrl");
+					if (userinfo.pictureUrl == null || userinfo.pictureUrl == "") {
+						userinfo.isPictureUrl = false
+					} else {
+						userinfo.isPictureUrl = true;
+					}
 				}
 				UserModel.destroy();
 			},
@@ -282,13 +303,12 @@
  		});
  	}
  	
- 	function handleLoginSuccess(isFacebookUser) {
+ 	function handleLoginSuccess() {
  		
  		//Check for double call
  		if(userinfo.loggedin)	{
  			return;
  		}
- 		userinfo.facebookuser =  isFacebookUser;
  		userinfo.loggedin = true;
  		Backbone.history.navigate("#/discipline");
  	}
@@ -306,7 +326,8 @@
  		FB.getLoginStatus(function(response) {
  			  if (response.status === 'connected')  {
  				  clearInterval(facebookLoginCheckTimer);
- 				  handleLoginSuccess(true);
+ 				  userinfo.userRole = "ROLE_FACEBOOK";
+ 				  handleLoginSuccess();
  			  }
  			  else
  			  {
@@ -863,6 +884,7 @@
  		"config":config,
  		"soundManagerConfig":soundManagerConfig,
  		"userinfo": userinfo,
+ 		"resetUserinfo": resetUserinfo,
  		"flashcards":flashcards,
  		"appHeader":appHeader,
  		"setHeaderOptions":setHeaderOptions,

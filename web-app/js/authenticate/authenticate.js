@@ -17,8 +17,8 @@ Authenticate = new function() {
 	    	},
 	        success: function(response) {
 				if (response.success) { 
-					mainApp.userinfo.admin =  response.isAdmin;
-					mainApp.handleLoginSuccess(false);						
+					mainApp.userinfo.userRole =  response.userRole;
+					mainApp.handleLoginSuccess();						
 				} else {
 					mainApp.userinfo.loggedin = false;						
 					$("#loginErrorMessage").show();
@@ -45,8 +45,9 @@ Authenticate = new function() {
   		    return;
   		} else {
 	  		 FB.login(function(response) {
-	   			if (response.authResponse) {	   				
-	   				mainApp.handleLoginSuccess(true);
+	   			if (response.authResponse) {
+	   				mainApp.userinfo.userRole = "ROLE_FACEBOOK";
+	   				mainApp.handleLoginSuccess();
 	 		  	} else {
 	 		  		mainApp.userinfo.loggedin = false;					
 	 				$("#loginErrorMessage").show();
@@ -58,6 +59,15 @@ Authenticate = new function() {
   		}	 
 	},
 	
+	this.loginWithLinkedin = function(){
+		window.location = "login/social/linkedin";
+	},
+	this.loginWithTwitter = function(){
+		window.location = "login/social/twitter";
+	},
+	this.loginWithGoogleplus = function(){
+		window.location = "login/social/googleplus";
+	},	
 	this.logout = function(){
 		FB.getLoginStatus(function(response) {
 		  if (response.status === 'connected') {
@@ -77,15 +87,13 @@ Authenticate = new function() {
 			url: com.compro.cgrails.REQUEST_CONTEXT + "/j_spring_security_logout",
 			type: 'GET',    	
 			success: function(response) {
-				mainApp.userinfo.loggedin = false;
-				mainApp.userinfo.admin = false;
-				mainApp.userinfo.facebookuser =  false;
+				mainApp.resetUserinfo();
 				UserModel.destroy();
 				TemplateManager.get('authenticate/home', function(template){
 					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
 					$("#loginform").html(templateHTML);	
 					if (typeof FB != 'undefined') {
-						$("button#facebook-login").show();
+						$("#facebook-login").show();
 					}					
 			 	 });
 				

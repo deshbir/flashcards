@@ -5,7 +5,13 @@ import grails.converters.JSON
 import javax.servlet.http.HttpServletResponse
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-
+import org.codehaus.groovy.grails.web.json.JSONObject
+import org.scribe.model.OAuthRequest
+import org.scribe.model.Response
+import org.scribe.model.Token
+import org.scribe.model.Verb
+import org.scribe.model.Verifier
+import org.scribe.oauth.OAuthService
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
@@ -13,6 +19,14 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+
+import com.pearson.hsc.authenticate.GoogleplusUser
+import com.pearson.hsc.authenticate.LinkedinUser
+import com.pearson.hsc.authenticate.OauthRequestToken
+import com.pearson.hsc.authenticate.Role
+import com.pearson.hsc.authenticate.TwitterUser
+import com.pearson.hsc.authenticate.User
+import com.pearson.hsc.authenticate.UserRole
 
 class LoginController {
 
@@ -25,6 +39,17 @@ class LoginController {
 	 * Dependency injection for the springSecurityService.
 	 */
 	def springSecurityService
+	
+	/**
+	 * Dependency injection for the rememberMeServices.
+	 */
+	def rememberMeServices
+	
+	/**
+	 * Dependency injection for the authorizationService.
+	 */
+	def authorizationService
+	
 
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
@@ -127,8 +152,9 @@ class LoginController {
 	/**
 	 * The Ajax success redirect url.
 	 */
-	def ajaxSuccess = {
-		render([success: true, isAdmin: springSecurityService.currentUser.isAdmin] as JSON)
+	def ajaxSuccess = {		
+		String userRole = authorizationService.getUserRole(springSecurityService.currentUser)
+		render([success: true, userRole: userRole] as JSON)
 	}
 
 	/**
@@ -147,5 +173,136 @@ class LoginController {
 		System.out.println("Request URI: " + request.forwardURI);		
 		redirect(url: grailsApplication.config.grails.serverURL + "/?isFacebookLoginSuccess=true")
 		//redirect(controller:"singlepage", action: "index", params: [isFacebookLoginSuccess: true])
+	}
+	
+	def social() {
+		OAuthService oAuthService = authorizationService.getOAuthService(params["provider"])
+		Token requestToken = oAuthService.getRequestToken();
+		OauthRequestToken oauthRequestToken = new OauthRequestToken(requestToken)
+		oauthRequestToken.save(flush: true)
+		String url = oAuthService.getAuthorizationUrl(requestToken);
+		return redirect (url:url)
+	}
+	
+	def socialcallback() {		
+		Verifier verifier = new Verifier(params["oauth_verifier"])
+		OauthRequestToken oauthRequestToken = OauthRequestToken.findWhere(token: params["oauth_token"])
+		Token requestToken = new Token(oauthRequestToken.token, oauthRequestToken.secret,
+											 oauthRequestToken.rawResponse)
+		oauthRequestToken.delete()
+		
+		String provider = params["provider"]
+		OAuthService oAuthService = authorizationService.getOAuthService(provider)
+		Token accessToken = oAuthService.getAccessToken(requestToken, verifier)
+		
+		OAuthRequest oAuthRequest = new OAuthRequest(Verb.GET, authorizationService.getUserDetailsApi(provider));
+		oAuthService.signRequest(accessToken, oAuthRequest);
+		Response oAuthResponse = oAuthRequest.send();
+		
+		String memberId, firstName, lastName, emailAddress, pictureUrl
+		def appUser = null
+		
+		if (provider.equals(authorizationService.LINKEDIN_PROVIDER)) {
+			def responseXML = new XmlParser().parseText(oAuthResponse.getBody())
+		    memberId = responseXML."id".text()	
+		    firstName = responseXML."first-name".text()
+			lastName = responseXML."last-name".text()
+			emailAddress = responseXML."email-address".text()
+			pictureUrl = responseXML."picture-url".text()
+			
+			def linkedinUser = LinkedinUser.findWhere(memberId: memberId)
+			
+			if (linkedinUser == null) {
+				appUser = new User(username: memberId, firstName: firstName, lastName:lastName, 
+									enabled: true, password: System.currentTimeMillis(), email: emailAddress)
+				appUser.save(flush: true)
+	
+				linkedinUser = new LinkedinUser(user:appUser, memberId: memberId, pictureUrl:pictureUrl)
+				linkedinUser.save(flush: true)
+	
+				Role linkedinRole = Role.find {authority == "ROLE_LINKEDIN"}
+				UserRole.create appUser, linkedinRole, true
+			} else {
+				linkedinUser.pictureUrl = pictureUrl
+				linkedinUser.save(flush: true)
+				
+				appUser = User.get(linkedinUser["userId"])
+				appUser.firstName = firstName
+				appUser.lastName = lastName
+				appUser.email = emailAddress
+				appUser.save(flush: true)
+			}
+		} else if (provider.equals(authorizationService.TWITTER_PROVIDER)) {
+			def responseXML = new XmlParser().parseText(oAuthResponse.getBody())
+			memberId = responseXML."id".text()
+			pictureUrl = responseXML."profile_image_url".text()		
+			String name = responseXML."name".text()
+			String[] parts = name.split(" ");
+			firstName = parts[0]
+			lastName = parts[1]
+			emailAddress = ""	
+			
+			def twitterUser = TwitterUser.findWhere(memberId: memberId)
+			
+			if (twitterUser == null) {
+				appUser = new User(username: memberId, firstName: firstName, lastName:lastName,
+									enabled: true, password: System.currentTimeMillis(), email: emailAddress)
+				appUser.save(flush: true)
+	
+				twitterUser = new TwitterUser(user:appUser, memberId: memberId, pictureUrl:pictureUrl)
+				twitterUser.save(flush: true)
+	
+				Role twitterRole = Role.find {authority == "ROLE_TWITTER"}
+				UserRole.create appUser, twitterRole, true
+			} else {
+				twitterUser.pictureUrl = pictureUrl
+				twitterUser.save(flush: true)
+				
+				appUser = User.get(twitterUser["userId"])
+				appUser.firstName = firstName
+				appUser.lastName = lastName
+				appUser.email = emailAddress
+				appUser.save(flush: true)
+			}
+		} else if (provider.equals(authorizationService.GOOGLEPLUS_PROVIDER)) {
+			JSONObject responseJson = new JSONObject(oAuthResponse.getBody())
+			memberId = responseJson.get("id")	
+			if (responseJson.has("picture")) {
+				pictureUrl = "https://profiles.google.com/s2/photos/profile/" + memberId + "?sz=50"
+			} else {
+				pictureUrl = ""
+			}				
+			firstName = responseJson.get("given_name")
+			lastName = responseJson.get("family_name")
+			emailAddress = responseJson.get("email")
+			
+			def googleplusUser = GoogleplusUser.findWhere(memberId: memberId)
+			
+			if (googleplusUser == null) {
+				appUser = new User(username: memberId, firstName: firstName, lastName:lastName,
+									enabled: true, password: System.currentTimeMillis(), email: emailAddress)
+				appUser.save(flush: true)
+	
+				googleplusUser = new GoogleplusUser(user:appUser, memberId: memberId, pictureUrl:pictureUrl)
+				googleplusUser.save(flush: true)
+	
+				Role googleplusRole = Role.find {authority == "ROLE_GOOGLEPLUS"}
+				UserRole.create appUser, googleplusRole, true
+			} else {
+				googleplusUser.pictureUrl = pictureUrl
+				googleplusUser.save(flush: true)
+				
+				appUser = User.get(googleplusUser["userId"])
+				appUser.firstName = firstName
+				appUser.lastName = lastName
+				appUser.email = emailAddress
+				appUser.save(flush: true)
+			}
+		}
+		
+		springSecurityService.reauthenticate(appUser["username"], appUser["password"])
+		rememberMeServices.onLoginSuccess(request, response, springSecurityService.authentication)
+
+		return redirect(url:"/#/discipline")
 	}
 }

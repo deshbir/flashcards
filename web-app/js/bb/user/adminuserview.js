@@ -107,16 +107,41 @@ AdminUserView = new function() {
                     	}
                     	$(that.myPanelRowId).empty();
         				that.collection.each( function(user) {
+        					
         					// Enabling and Disabling edit and delete calls.
         					var attribs = user.attributes;
-        					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
+        					
+    						if (attribs.pictureUrl == null || attribs.pictureUrl == "") {
+    							attribs.isPictureUrl = false
+    						} else {
+    							attribs.isPictureUrl = true
+    						}
+    						
+        					if(attribs.userRole == "ROLE_ADMIN") {
+        						attribs.isAdmin = true;
+        					} else if (attribs.userRole == "ROLE_FACEBOOK") {
+        						attribs.isFacebookUser = true;
+        						attribs.isSocialUser = true;
+        					} else if (attribs.userRole == "ROLE_LINKEDIN") {
+        						attribs.isLinkedinUser = true;
+        						attribs.isSocialUser = true;
+        					} else if (attribs.userRole == "ROLE_TWITTER") {
+        						attribs.isTwitterUser = true;
+        						attribs.isSocialUser = true;
+        					} else if (attribs.userRole == "ROLE_GOOGLEPLUS") {
+        						attribs.isGoogleplusUser = true;
+        						attribs.isSocialUser = true;
+        					}     					
+        					
+        					if(attribs.username == "admin@compro.com" 
+        						|| attribs.userRole == "ROLE_FACEBOOK"
+        						|| attribs.userRole == "ROLE_LINKEDIN"
+        						|| attribs.userRole == "ROLE_TWITTER"
+        						|| attribs.userRole == "ROLE_GOOGLEPLUS") {
         						attribs.disableDelete = true;
-        					} else {
-        						attribs.disableDelete = false;
-        					}
-        					if(attribs.username == "admin@compro.com" || attribs.isFacebookUser == true) {
         						attribs.disableEdit = true;
         					} else {
+        						attribs.disableDelete = false;
         						attribs.disableEdit = false;
         					}
         					

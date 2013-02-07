@@ -3,9 +3,11 @@ class UrlMappings {
 	static mappings = {
 		
 		"/"(controller:"singlepage")
-		"/admin/"(controller:"admin")
+		"/admin/"(controller:"admin")		
 		"/login/$action?/$id?"(controller:"login")
 		"/logout/$action?/$id?"(controller:"logout")
+		"/login/social/$provider"(controller:"login", action:"social")
+		"/login/social/$provider/callback"(controller:"login", action:"socialcallback")
 		
 		"/$skin/$controller/$action?/$id?"{
 			constraints {

@@ -22,6 +22,17 @@
 	}
 }
 
+.vertical-gradient-icons(@startColor: #555, @endColor: #333) {
+    background-color:lighten(@endColor, 30%);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
+}
+
 #loginform { 
 	margin-top:40px;
 	#loginErrorMessage {
@@ -114,6 +125,10 @@
 				.border-radius(5px);
 				 margin-right:10px;
 				 margin-bottom:0;
+				 .social-image {
+				 	max-height:50px;
+				 	max-width:50px;
+				 }
 				 a {
 					margin-top:0;
 					.vertical-gradient(@profile-img-top-color, @profile-img-bottom-color);
@@ -143,29 +158,52 @@
 			}
 		}
 	}
-
-	#facebook-login {
-		display:none;
-		padding:0;
-		border:0 none;
-		.border-radius(0);
-		span.facebook-icon {
-			float:left;
-			width:10%;
-			.vertical-gradient(lighten(@HSCButtonColor, 10%), lighten(@HSCButtonColor, 10%));
-			margin:0;
+	
+	.icons {
+		 padding:10px;
+		 .vertical-gradient-icons(#FAAE47, rgba(248, 172, 71, 0.2));
+		 margin:15px 0;
+		.border-radius(10px);
+		.circle {
+			width: 50px;
+			height: 35px;
+			.border-radius(50px);
+			background-color: rgb(78, 78, 78);
+   			display: inline-block;
+    		padding-bottom: 5px;
+    		padding-top: 8px;
+    		text-align: center;
+    		margin-left:50px;
+		}
+		i {
+			font-size:30px;
+			cursor:pointer;
 			color:white;
-			padding:0.5em 0.5em;
-			i {
-				font-size:50px;
+		}
+		i.icon-google-plus {
+			font-size: 26px;
+		}
+		#twitter-login {
+			&:hover {
+				background-color:rgb(0, 192, 247);
 			}
 		}
-		.facebook-text {
-		    float: left;
-			margin-left: 13px;
-			margin-top: 20px;
-			text-shadow: 1px 1px 1px #000000;
+		#googleplus-login {
+			&:hover {
+				background-color:rgb(209, 67, 41);
+			}
 		}
+		#facebook-login {
+			&:hover {
+				background-color:rgb(59, 89, 182);
+			}
+		}
+		#linkedin-login {
+			&:hover {
+				background-color:rgb(2, 92, 126);
+			}
+		}
+		
 	}
 }
 
@@ -277,21 +315,10 @@ body{
 					}
 				}				
 			}
-		}
-		#facebook-login {
-			margin-top:10px;
-			margin-bottom:5px;
-			.facebook-text {
-				margin-left:7px;
-	    		margin-top:15px;
-	    		font-size: 18px;
-			}
-			span.facebook-icon {
-				padding-bottom:5px;
-				i {
-					
-					font-size:41px;
-				}
+		}		
+		.icons {
+			.circle {
+	    		margin-left:5px;
 			}
 		}
 	}
@@ -312,19 +339,6 @@ body{
 			font-size:21px;
 		}
 	}
-	#loginform {
-		#facebook-login {
-			.facebook-text {
-	    		font-size: 11px;
-	    		margin-top: 10px;
-			}
-			span.facebook-icon {
-				i {
-					font-size:26px;
-				}
-			}
-		}
-	}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -343,27 +357,28 @@ body{
 			#user-info {
 				padding:1em 0.5em;
 			}
-		}
-		#facebook-login {
-			.facebook-text {
-				font-size: 21px;
-	    		margin-left: 0.5em;
-			}
-			i {
-				font-size:36px;
+		}		
+		.icons {
+			.circle {
+	    		margin-left:10px;
 			}
 		}
 	}
 }
 
-@media (min-width: 979px) {
-   #facebook-login {
-		.facebook-text {
-	  		font-size: 24px;
-	  	}
-	}
+@media (min-width: 979px) {   
 	#login-info {
 		max-width:510px;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1200px) {
+	#loginform {
+		.icons {
+				.circle {
+		    		margin-left:35px;
+				}
+			}
 	}
 }
 

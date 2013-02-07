@@ -53,6 +53,10 @@ HomeView = new function() {
 		
 		events: {
 			"click #login-button"		:	"userlogin",
+			"click #linkedin-login"		:	"linkedinLogin",
+			"click #facebook-login"		:	"facebookLogin",
+			"click #twitter-login"		:	"twitterLogin",
+			"click #googleplus-login"	:	"googleplusLogin",			
 			"click #logout-button"		:	"userlogout",
 			"click #discipline-button"	:	"browseDiscipline",
 			"click #user-button"	:	"listUsers"
@@ -84,10 +88,28 @@ HomeView = new function() {
 			if(mainApp.userinfo.loggedin){
 				UserModel.get().fetch({
 					success: function(model, response){
-						mainApp.userinfo.name = model.get("username");
+						mainApp.userinfo.username = model.get("username");
+						mainApp.userinfo.firstname = model.get("firstName");
+						mainApp.userinfo.lastname = model.get("lastName");
 						mainApp.userinfo.email =  model.get("email");
-						mainApp.userinfo.admin =  model.get("isAdmin");
-						var compiledTemplate = Mustache.render(view.template_body_home, {"facebookuser":mainApp.userinfo.facebookuser,"loggedin": mainApp.userinfo.loggedin,"username": mainApp.userinfo.name,"firstname": model.get("firstName"),"lastname": model.get("lastName"), "email":  mainApp.userinfo.email, "isAdmin" : mainApp.userinfo.admin} );
+						mainApp.userinfo.userRole = model.get("userRole");
+						mainApp.userinfo.pictureUrl = model.get("pictureUrl");
+						if (mainApp.userinfo.pictureUrl == null || mainApp.userinfo.pictureUrl == "") {
+							mainApp.userinfo.isPictureUrl = false
+						}
+						var compiledTemplate = Mustache.render(view.template_body_home, 
+									{"loggedin": mainApp.userinfo.loggedin,
+									 "username": mainApp.userinfo.username,
+									 "firstname": mainApp.userinfo.firstname,
+									 "lastname": mainApp.userinfo.lastname, 
+									 "email":  mainApp.userinfo.email,									 
+									 "isAdmin" : (mainApp.userinfo.userRole == "ROLE_ADMIN"),
+									 "isFacebookuser":(mainApp.userinfo.userRole == "ROLE_FACEBOOK"),
+									 "isLinkedinuser" : (mainApp.userinfo.userRole == "ROLE_LINKEDIN"),
+									 "isTwitteruser" : (mainApp.userinfo.userRole == "ROLE_TWITTER"),
+									 "isGoogleplususer" : (mainApp.userinfo.userRole == "ROLE_GOOGLEPLUS"),
+									 "isPictureUrl":mainApp.userinfo.isPictureUrl,
+									 "pictureUrl" : mainApp.userinfo.pictureUrl});
 						$("#loginform").html(compiledTemplate);
 						
 						/*
@@ -96,7 +118,7 @@ HomeView = new function() {
 						 * 3rd parameter - setBackLink 
 						 * 4th parameter - showLogoutIcon
 						 */
-						if(mainApp.userinfo.facebookuser) {
+						if(mainApp.userinfo.userRole == "ROLE_FACEBOOK") {
 							$($("#user-info").find("img")).css("border","1px solid #E5E5E5");
 						}
 						/*
@@ -110,7 +132,7 @@ HomeView = new function() {
 				var compiledTemplate = Mustache.render(view.template_body_home, {"loggedin": mainApp.userinfo.loggedin});
 				$("#loginform").html(compiledTemplate);
 				if (typeof FB != 'undefined') {
-					$("button#facebook-login").show();
+					$("#facebook-login").show();
 				}	
 				/*
 				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
@@ -124,6 +146,22 @@ HomeView = new function() {
 			Authenticate.authAjax(); 
 			return false;
 		},
+		linkedinLogin: function() {
+			Authenticate.loginWithLinkedin()
+			return false;
+		},
+		facebookLogin: function() {
+			Authenticate.loginWithFacebook(); 
+			return false;
+		},
+		twitterLogin: function() {
+			Authenticate.loginWithTwitter(); 
+			return false;
+		},
+		googleplusLogin: function() {
+			Authenticate.loginWithGoogleplus(); 
+			return false;
+		},		
 		userlogout : function() {
 			Authenticate.logout();
 			return false;

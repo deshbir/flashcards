@@ -12,12 +12,37 @@
 	    	<div class="hero-unit">
 				<div class="media" id="user-info">
 				  <div class="pull-left profile-image">
-			  			{{#facebookuser}}
-							<img class="media-object" src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" />
-						{{/facebookuser}}
-						{{^facebookuser}}
-							<a class="media-object"><i class="icon-user-hsc"></i></a>
-						{{/facebookuser}}
+			  			{{#isFacebookuser}}
+							<img class="media-object social-image" src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" />
+						{{/isFacebookuser}}
+						{{^isFacebookuser}}
+							{{#isLinkedinuser}}
+								{{#isPictureUrl}}							
+									<img class="media-object social-image" src="{{pictureUrl}}" alt="profile-image" />
+								{{/isPictureUrl}}
+								{{^isPictureUrl}}
+									<img class="media-object social-image" src="http://s.c.lnkd.licdn.com/scds/common/u/img/icon/icon_no_photo_no_border_offset_100x100.png" alt="profile-image" />
+								{{/isPictureUrl}}	
+							{{/isLinkedinuser}}
+							{{^isLinkedinuser}}
+								{{#isTwitteruser}}							
+									<img class="media-object social-image" src="{{pictureUrl}}" alt="profile-image" />
+								{{/isTwitteruser}}
+								{{^isTwitteruser}}
+									{{#isGoogleplususer}}	
+										{{#isPictureUrl}}							
+											<img class="media-object social-image" src="{{pictureUrl}}" alt="profile-image" />
+										{{/isPictureUrl}}
+										{{^isPictureUrl}}
+											<img class="media-object social-image" src="https://lh4.googleusercontent.com/-wlDFRng0dJE/AAAAAAAAAAI/AAAAAAAAA44/7-AIbvz8xU4/photo.jpg?sz=50" alt="profile-image" />
+										{{/isPictureUrl}}
+									{{/isGoogleplususer}}
+									{{^isGoogleplususer}}
+										<a class="media-object"><i class="icon-user-hsc"></i></a>
+									{{/isGoogleplususer}}
+								{{/isTwitteruser}}
+							{{/isLinkedinuser}}			
+						{{/isFacebookuser}}
 				  </div>
 				  <div class="media-body">
 				    <p class="strong">{{firstname}} {{lastname}}</p>
@@ -53,12 +78,15 @@
 				<button class="btn btn-large btn-block" id="login-button">
 					Login
 				</button> 
+				<div class="icons">
+					<div class="circle" id="twitter-login"><i class="icon-twitter"></i></div>
+					<div class="circle" id="googleplus-login"><i class="icon-google-plus"></i></div>
+					<div class="circle" id="facebook-login"><i class="icon-facebook"></i></div>
+					<div class="circle" id="linkedin-login"><i class="icon-linkedin"></i></div>
+				</div>
 			</div>
 		</form>
-		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
-			<span class="facebook-icon"><i class="icon-facebook"></i></span>
-			<span class="facebook-text">Connect with Facebook</span>
-		</button>
+		
 		<div id="loginErrorMessage"></div> 
 	{{/loggedin}}				
 </div>		

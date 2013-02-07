@@ -121,7 +121,7 @@ grails.plugins.springsecurity.logout.afterLogoutUrl = '/logout/after'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [	
 	'/api/user/**':['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_USER'],
+	'/api/**':['ROLE_ADMIN','ROLE_FACEBOOK','ROLE_LINKEDIN','ROLE_TWITTER','ROLE_GOOGLEPLUS','ROLE_USER'],
 	'/admin/**' :['ROLE_ADMIN']
 ]
 grails.plugins.springsecurity.facebook.domain.classname='com.pearson.hsc.authenticate.FacebookUser'
@@ -129,7 +129,14 @@ grails.plugins.springsecurity.facebook.appId='443347489063227'
 grails.plugins.springsecurity.facebook.secret='a1432dcbc23c06047f0d826d520e6c21'
 grails.plugins.springsecurity.facebook.filter.type='transparent'
 
+linkedin.api.key = "8it1sss2q1hn"
+linkedin.secret.key = "QZoglc23T4qFq9qj"
 
+twitter.api.key = "hmEnshpssGRo9bjnsc27ZA"
+twitter.secret.key = "IM9rR03sjSRQjJnk5pWx30N2oxJK4tLYANss9KFuaSY"
+
+googleplus.api.key = "290444840018.apps.googleusercontent.com"
+googleplus.secret.key = "kQs5JGVKe9gVMW_AAEgUmaAC"
 
 //assets external path
 hsc.media.assets.basepath = "http://s3.amazonaws.com/pearson-hsc/assets/"

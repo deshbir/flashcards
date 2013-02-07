@@ -100,10 +100,11 @@
  	//User Logged In Flag
  	var userinfo = {
  			loggedin: false,
- 			name: "",
+ 			username: "",
+ 			firstname: "",
+ 			lastname: "",
  			email: "",
- 			facebookuser: false,
- 			admin: false
+ 			userRole: "ROLE_ADMIN"
  	}
  	
  	//Global Flashcards holder (object of SwipeJs)
@@ -401,7 +402,7 @@
  				
  				var mainApp = com.compro.application.hsc;
  				mainApp.userinfo.loggedin = true;	
- 				mainApp.userinfo.admin = true;
+ 				mainApp.userinfo.userRole = "ROLE_ADMIN";
  				
  				logger.info("adding HTML5 cache listener");
  				add_cache_listener();

@@ -15,9 +15,12 @@ class BootStrap {
 		def userRole; 
 		def adminRole;
 		if (!Role.count()) {
-			userRole = new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)
-			def facebookRole = new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
+			userRole = new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)			
 			adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
+			new Role(authority: 'ROLE_FACEBOOK').save(failOnError: true, flush: true)
+			new Role(authority: 'ROLE_LINKEDIN').save(failOnError: true, flush: true)
+			new Role(authority: 'ROLE_TWITTER').save(failOnError: true, flush: true)
+			new Role(authority: 'ROLE_GOOGLEPLUS').save(failOnError: true, flush: true)
 		}
 		
 		if (!User.count()) {

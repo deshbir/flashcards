@@ -116,7 +116,7 @@ AdminHeaderView = new function() {
 					$(".navbar-inner .loggedin").css("display", "none");
 				}				
 			}
-			if(mainApp.userinfo.admin){
+			if(mainApp.userinfo.userRole == "ROLE_ADMIN"){
 				$("#admin-panel").css("display", "block");
 			} else{
 				$("#admin-panel").css("display", "none");
