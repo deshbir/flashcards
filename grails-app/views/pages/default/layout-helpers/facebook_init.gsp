@@ -19,7 +19,7 @@
 			      oauth  	 : true
 			    });
 			    if (document.getElementById("facebook-login")) {
-					document.getElementById("facebook-login").style.display = "block";
+					document.getElementById("facebook-login").style.display = "inline-block";
 			    }	
 			 }; 
 			 

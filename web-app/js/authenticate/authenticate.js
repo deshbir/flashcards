@@ -93,7 +93,7 @@ Authenticate = new function() {
 					var templateHTML = Mustache.render(template, {"loggedin": mainApp.userinfo.loggedin});
 					$("#loginform").html(templateHTML);	
 					if (typeof FB != 'undefined') {
-						$("#facebook-login").show();
+						$("#facebook-login").css("display", "inline-block");
 					}					
 			 	 });
 				

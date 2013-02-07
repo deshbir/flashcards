@@ -132,7 +132,7 @@ HomeView = new function() {
 				var compiledTemplate = Mustache.render(view.template_body_home, {"loggedin": mainApp.userinfo.loggedin});
 				$("#loginform").html(compiledTemplate);
 				if (typeof FB != 'undefined') {
-					$("#facebook-login").show();
+					$("#facebook-login").css("display", "inline-block");
 				}	
 				/*
 				 * SLIDE myPanelID into com.compro.application.hsc.currentPanelId
