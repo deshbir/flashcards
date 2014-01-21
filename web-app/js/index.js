@@ -30,7 +30,7 @@
  
  com.compro.application.hsc = (function() {
  	
-	var version = 54;
+	var version = 55;
  	
  	// last Visited route getter and setter
  	function setLastVisitedRoute(route) {
