@@ -1,6 +1,6 @@
 <div class="row">
         <div class="span6" id="business-info">
-			<h1 class="hidden-phone">Health Sciences &amp; Careers</h1>
+			<!-- h1 class="hidden-phone">Pearson Personal Trainer</h1-->
 			<div class="hsc-logo">
 				<img data-src="images/camera_homepage{breakpoint-name}.png" alt="Business-Logo" class="homegrp"/>
 			</div>

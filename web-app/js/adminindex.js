@@ -30,7 +30,15 @@
  
  com.compro.application.hsc = (function() {
  	
- 	var version = 52;
+ 	var version = 54;
+ 	
+ 	// last Visited route getter and setter
+ 	function setLastVisitedRoute(route) {
+ 		// Do nothing
+ 	}	
+	function getLastVisitedRoute() {
+		return null 
+	}
  	
  	// Add separate Log Settings from Mascula for different logs.
  	var musculaLogSettingsConfig = {
@@ -497,6 +505,8 @@
  		"logger" : logger,
  		"JSLogsSettingsConfig" : JSLogsSettingsConfig,
  		"version" : version,
+ 		"setLastVisitedRoute" : setLastVisitedRoute,
+ 		"getLastVisitedRoute" : getLastVisitedRoute,
  		"usersUpdated":usersUpdated
  	}
  

@@ -10,7 +10,7 @@
 	    <div id="loggedin-container">
 	    	<h3> Welcome back</h3>
 	    	<div class="hero-unit">
-				<div class="media" id="user-info">
+				<!-- div class="media" id="user-info">
 				  <div class="pull-left profile-image">
 			  			{{#facebookuser}}
 							<img class="media-object" src="https://graph.facebook.com/{{username}}/picture" alt="profile-image" />
@@ -23,7 +23,7 @@
 				    <p class="strong">{{firstname}} {{lastname}}</p>
 				    <p class="small break-word">{{email}}</p>
 				  </div>
-				</div>
+				</div-->
 				<button id="discipline-button" class="btn btn-large btn-block">Browse Disciplines</button>
 				<g:if test="${workflow != CgrailsConstants.WORKFLOW_OFFLINE}">
 					{{#isAdmin}}
@@ -55,10 +55,10 @@
 				</button> 
 			</div>
 		</form>
-		<button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
+		<!-- button id="facebook-login" class="btn btn-large btn-block" onclick="Authenticate.loginWithFacebook()">
 			<span class="facebook-icon"><i class="icon-facebook"></i></span>
 			<span class="facebook-text">Connect with Facebook</span>
-		</button>
+		</button-->
 		<div id="loginErrorMessage"></div> 
 	{{/loggedin}}				
 </div>		

@@ -1,4 +1,4 @@
 <!-- Footer -->
 <div id="footer">
-	<p class="muted credit">Copyright &copy; 2013, Pearson (HSC)</p>
+	<p class="muted credit">Copyright &copy; 2014, Pearson</p>
 </div>
