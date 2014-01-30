@@ -6,12 +6,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Pearson HSC</title>
+		<title>Pearson Personal Trainer</title>
 
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
-		<meta name="description" content="Pearson HSC, 2013">
+		<meta name="description" content="Pearson Personal Trainer, 2014">
 		<meta name="author" content="Compro Technologies Pvt. Ltd.">
 
 	    <cgrails:stylesheet src="indexadmin"/>
